@@ -147,7 +147,7 @@ html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 
 html_theme_options = {'navbar_sidebarrel':False,
                       'navbar_pagenav': False,
-                      'source_link_position': 'footer',
+                      'source_link_position': False,
                       'bootswatch_theme': 'flatly'}
 
 
