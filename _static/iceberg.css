@@ -1,6 +1,12 @@
-.footer {
-    bottom: 0;
-    height: 70px;
-    position: absolute;
-    width: 100%;
+div.sidebar {
+    background-color: #ecf0f1
+}
+
+.sidebar-title {
+    text-align: center;
+    font-size: 20px;
+}
+
+pre {
+    color: #171A1B;
 }
