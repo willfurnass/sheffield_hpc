@@ -89,7 +89,7 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build']
+exclude_patterns = ['_build', 'themes']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -122,7 +122,7 @@ todo_include_todos = False
 # -- Options for HTML output ----------------------------------------------
 
 # ----- alablaster stuff
-
+#
 ## The theme to use for HTML and HTML Help pages.  See the documentation for
 ## a list of builtin themes.
 #html_theme = 'alabaster'
@@ -137,22 +137,33 @@ todo_include_todos = False
 #		      'extra_nav_links':extra_nav_links}
 #
 #
+
 # ---- Bootstrap -------------
+#
+#import sphinx_bootstrap_theme
+#
+#html_theme = 'bootstrap'
+#
+#html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
+#
+#html_theme_options = {'navbar_sidebarrel':False,
+#                      'navbar_pagenav': False,
+#                      'source_link_position': False,
+#                      'bootswatch_theme': 'flatly',
+#                      'navbar_site_name': "Software"}
+#
 
-import sphinx_bootstrap_theme
 
-html_theme = 'bootstrap'
-
-html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
-
-html_theme_options = {'navbar_sidebarrel':False,
-                      'navbar_pagenav': False,
-                      'source_link_position': False,
-                      'bootswatch_theme': 'flatly',
-                      'navbar_site_name': "Software"}
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
+
+
+# ----- sphinx-bootstrap - sidebar -----
+
+html_theme_path = ['themes/sphinx-bootstrap/sphinx-bootstrap', 'themes/sphinx-bootstrap/']
+html_theme = 'sphinx-bootstrap'
+
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".

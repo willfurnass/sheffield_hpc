@@ -1,18 +1,13 @@
 html {
-    background-color: #f1f2f2;
+    /*background-color: #f1f2f2;*/
     color: #414042;
     font-family: "Open Sans",sans-serif;
-    font-size: 0.8125em;
+    font-size: 0.95em;
     line-height: 1.53846;
 }
 
 body {
-    padding-top: 115px;
     background-color: inherit;
-}
-
-.container {
-    background-color: #fff;
 }
 
 div.sidebar {
@@ -29,8 +24,9 @@ pre {
 }
 
 .navbar {
-    height: 100px;
     background-color: #333132;
+    font-size: 19px;
+    line-height: 21px;
 }
 
 .navbar .container {
@@ -38,27 +34,23 @@ pre {
     background-color: inherit;
 }
 
-.navbar-header {
-    height:100%;
-}
-
-.navbar-brand {
-    height:100%;
-    padding: 8.5px 15px 8.5px;
-}
-
-.navbar-brand img {
-    padding-right: 15px;
-}
-
 ul.nav {
     height:100px;
 }
 
-.navbar-nav > li > a {
-    line-height:60px;
+.navbar-inner li a {
+    line-height:80px;
 }
 
-.navbar-form {
-    line-height:75px;
+.pull-right {
+    line-height:100px;
+}
+
+.navbar .nav > li > a {
+    color: #fff;
+    text-shadow: none;
+}
+
+.navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
+    color: #18bc9c;
 }
