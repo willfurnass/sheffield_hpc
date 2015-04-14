@@ -1,3 +1,20 @@
+html {
+    background-color: #f1f2f2;
+    color: #414042;
+    font-family: "Open Sans",sans-serif;
+    font-size: 0.8125em;
+    line-height: 1.53846;
+}
+
+body {
+    padding-top: 115px;
+    background-color: inherit;
+}
+
+.container {
+    background-color: #fff;
+}
+
 div.sidebar {
     background-color: #ecf0f1
 }
@@ -9,4 +26,39 @@ div.sidebar {
 
 pre {
     color: #171A1B;
+}
+
+.navbar {
+    height: 100px;
+    background-color: #333132;
+}
+
+.navbar .container {
+    height:100%;
+    background-color: inherit;
+}
+
+.navbar-header {
+    height:100%;
+}
+
+.navbar-brand {
+    height:100%;
+    padding: 8.5px 15px 8.5px;
+}
+
+.navbar-brand img {
+    padding-right: 15px;
+}
+
+ul.nav {
+    height:100px;
+}
+
+.navbar-nav > li > a {
+    line-height:60px;
+}
+
+.navbar-form {
+    line-height:75px;
 }

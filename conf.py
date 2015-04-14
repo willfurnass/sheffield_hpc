@@ -23,7 +23,7 @@ def file_finder(app):
     dest_dir = './software/'
     files = glob.glob('/usr/local/packages6/*/*rst')
     files += glob.glob('/usr/local/extras/*/*rst')
-    
+
     for i, afile in enumerate(files):
 	print("[{}/{}] Found {}".format(i+1, len(files), os.path.basename(afile)))
         shutil.copy(afile, dest_dir)
@@ -136,7 +136,7 @@ todo_include_todos = False
 #html_theme_options = {'github_button':False,
 #		      'extra_nav_links':extra_nav_links}
 #
-
+#
 # ---- Bootstrap -------------
 
 import sphinx_bootstrap_theme
@@ -148,11 +148,8 @@ html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 html_theme_options = {'navbar_sidebarrel':False,
                       'navbar_pagenav': False,
                       'source_link_position': False,
-                      'bootswatch_theme': 'flatly'}
-
-
-
-
+                      'bootswatch_theme': 'flatly',
+                      'navbar_site_name': "Software"}
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
@@ -166,7 +163,7 @@ html_title = 'iceberg Software'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-#html_logo = None
+html_logo = '_static/crest-l.gif'
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
