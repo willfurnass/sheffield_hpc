@@ -16,7 +16,8 @@ body {
 }
 
 div.sidebar {
-    background-color: #ecf0f1
+    background-color: #ecf0f1;
+    width: inherit;
 }
 
 .sidebar-title {
@@ -38,10 +39,6 @@ pre {
     background-color: inherit;
 }
 
-.navbar-header {
-    height:100%;
-}
-
 .navbar-brand {
     height:100%;
     padding: 8.5px 15px 8.5px;
@@ -51,14 +48,60 @@ pre {
     padding-right: 15px;
 }
 
-ul.nav {
-    height:100px;
-}
-
 .navbar-nav > li > a {
     line-height:60px;
 }
 
 .navbar-form {
     line-height:75px;
+}
+
+.container > .navbar-header,
+.container-fluid > .navbar-header,
+.container > .navbar-collapse,
+.container-fluid > .navbar-collapse {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+/* Side Nav */
+
+div.bs-sidenav {
+    text-shadow: none;
+    background-color: #030000;
+}
+
+.bs-sidenav .nav > li > a { 
+    line-height: 2em;
+    color: #fff;
+    border-left: 3px solid #000
+}
+
+.nav-list .nav > li.current.toctree-l2 > a {
+    background-color: #fff;
+    color: #0066b3;
+    border-left: 3px solid #fff
+}
+
+.bs-sidenav .nav > li.current.toctree-l2 > a:hover,
+.bs-sidenav .nav > li.current.toctree-l2 > a:focus {
+    background-color: #fff;
+    border-right: inherit;
+}
+
+.bs-sidenav .nav > li > a:hover,
+.bs-sidenav .nav > li > a:focus {
+    background-color: inherit;
+    border-right: inherit;
+    border-left: 3px solid #fff;
+}
+
+/* This is a hack to hide the top level items that are not part of
+ * the current document. */
+.bs-sidenav > ul > li.toctree-l1 {
+    display: none;
+}
+
+.bs-sidenav > ul > li.toctree-l1.current {
+    display: inherit;
 }

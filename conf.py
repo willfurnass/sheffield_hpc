@@ -55,13 +55,13 @@ templates_path = ['_templates']
 source_suffix = '.rst'
 
 # The encoding of source files.
-#source_encoding = 'utf-8-sig'
+#source_encoding = 'uDocumentation'
 
 # The master toctree document.
 master_doc = 'index'
 
 # General information about the project.
-project = u'iceberg Software'
+project = u'iceberg Documentation'
 copyright = u'2015, CICS Sheffield'
 author = u'CICS Sheffield'
 
@@ -89,7 +89,7 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build']
+exclude_patterns = ['_build', 'themes']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -149,21 +149,25 @@ html_theme_options = {'navbar_sidebarrel':False,
                       'navbar_pagenav': False,
                       'source_link_position': False,
                       'bootswatch_theme': 'flatly',
-                      'navbar_site_name': "Software"}
+                      'navbar_site_name': "iceberg Documentation",
+                      'navbar_title': ' '}
+
+html_sidebars = {'software/**': ['softwaretoc.html'],
+                 'index': []}
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = 'iceberg Software'
+html_title = 'iceberg Documentaion'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = '_static/crest-l.gif'
+html_logo = '_static/img/crest-l.gif'
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -236,14 +240,14 @@ html_static_path = ['_static']
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'icebergSoftwaredoc'
+htmlhelp_basename = 'icebergdoc'
 
 # -- Options for manual page output ---------------------------------------
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'icebergsoftware', u'iceberg Software Documentation',
+    (master_doc, 'iceberg', u'iceberg Documentation',
      [author], 1)
 ]
 
