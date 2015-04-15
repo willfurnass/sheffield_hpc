@@ -1,17 +1,23 @@
 html {
-    /*background-color: #f1f2f2;*/
+    background-color: #f1f2f2;
     color: #414042;
     font-family: "Open Sans",sans-serif;
-    font-size: 0.95em;
+    font-size: 0.8125em;
     line-height: 1.53846;
 }
 
 body {
+    padding-top: 115px;
     background-color: inherit;
 }
 
+.container {
+    background-color: #fff;
+}
+
 div.sidebar {
-    background-color: #ecf0f1
+    background-color: #ecf0f1;
+    width: inherit;
 }
 
 .sidebar-title {
@@ -24,9 +30,8 @@ pre {
 }
 
 .navbar {
+    height: 100px;
     background-color: #333132;
-    font-size: 19px;
-    line-height: 21px;
 }
 
 .navbar .container {
@@ -34,31 +39,69 @@ pre {
     background-color: inherit;
 }
 
-ul.nav {
-    height:100px;
+.navbar-brand {
+    height:100%;
+    padding: 8.5px 15px 8.5px;
 }
 
-.navbar-inner li a {
-    line-height:80px;
+.navbar-brand img {
+    padding-right: 15px;
 }
 
-.pull-right {
-    line-height:100px;
+.navbar-nav > li > a {
+    line-height:60px;
 }
 
-.navbar .nav > li > a {
-    color: #fff;
+.navbar-form {
+    line-height:75px;
+}
+
+.container > .navbar-header,
+.container-fluid > .navbar-header,
+.container > .navbar-collapse,
+.container-fluid > .navbar-collapse {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+/* Side Nav */
+
+div.bs-sidenav {
     text-shadow: none;
+    background-color: #030000;
 }
 
-.navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
-    color: #18bc9c;
+.bs-sidenav .nav > li > a { 
+    line-height: 2em;
+    color: #fff;
+    border-left: 3px solid #000
 }
 
-.sidebar {
-    margin-bottom: 0.5em;
+.nav-list .nav > li.current.toctree-l2 > a {
+    background-color: #fff;
+    color: #0066b3;
+    border-left: 3px solid #fff
 }
 
-.sidebar table td {
-    vertical-align:middle
+.bs-sidenav .nav > li.current.toctree-l2 > a:hover,
+.bs-sidenav .nav > li.current.toctree-l2 > a:focus {
+    background-color: #fff;
+    border-right: inherit;
+}
+
+.bs-sidenav .nav > li > a:hover,
+.bs-sidenav .nav > li > a:focus {
+    background-color: inherit;
+    border-right: inherit;
+    border-left: 3px solid #fff;
+}
+
+/* This is a hack to hide the top level items that are not part of
+ * the current document. */
+.bs-sidenav > ul > li.toctree-l1 {
+    display: none;
+}
+
+.bs-sidenav > ul > li.toctree-l1.current {
+    display: inherit;
 }
