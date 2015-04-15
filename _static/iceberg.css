@@ -54,3 +54,11 @@ ul.nav {
 .navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
     color: #18bc9c;
 }
+
+.sidebar {
+    margin-bottom: 0.5em;
+}
+
+.sidebar table td {
+    vertical-align:middle
+}
