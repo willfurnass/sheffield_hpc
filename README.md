@@ -1,13 +1,37 @@
-iceberg Software Documentation
-==============================
+iceberg Documentation
+=====================
 
-This repository used the rst files inside the packages directories (currently `packages6` and `extras`)
-to generate a nice looking website.
+This repository builds the iceberg documentation using sphinx.
 
-To build the documentation run
+Currently, it harvests the software documentation from
+`/usr/local/packages6` and `/usr/local/extras` so needs to be run on
+a worker node on iceberg. 
+
+You can activate the python environment to use sphinx by running:
 
 ```
-   make html
+source activate_env.sh
 ```
 
-then open `_build/html/index.html` in your browser.
+once this has been activated you can run 
+
+```
+make html
+```
+
+to build the documentation into a website, you can then view the
+documentation by running:
+
+```
+firefox _build/html/index.html
+```
+
+because sphinx puts the output files into the `_build/html`
+directory.
+
+
+Deploying
+---------
+
+The files in `_build/html` can be copied to Cpanel to deploy the
+site.
