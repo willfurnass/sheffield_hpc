@@ -29,6 +29,11 @@ pre {
     color: #171A1B;
 }
 
+cite {
+    background-color: #ecf0f1;
+    font-family: monospace;
+}
+
 .navbar {
     height: 100px;
     background-color: #333132;

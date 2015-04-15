@@ -10,10 +10,11 @@ iceberg
    self
    getting_started
    software/index
+   cluster_specs
 
 
 .. image:: images/iceberg.png
-   :width: 50%
+   :width: 40%
    :align: right
    :alt: A picture showing some of the iceberg hardware.
 
@@ -26,3 +27,6 @@ If you are new to HPC and iceberg checkout the :ref:`getting-started` guide.
 If you want to see what software is availible for use on iceberg see the :ref:`software` section.
 
 If you want more information about the iceberg hardware take a look at the :ref:`cluster-specs`.
+
+If you get stuck using iceberg or need some specific software please contact the 
+research computing team on <>.
