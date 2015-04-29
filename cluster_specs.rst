@@ -17,7 +17,7 @@ Summary of iceberg hardware specs.
 + All nodes are connected via fast infiniband.
 
 For reliability, there are two iceberg head-nodes
-'for loging in'configured to take over from each other
+'for loging in' configured to take over from each other
 in case of hardware failure.
 
 
