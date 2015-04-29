@@ -78,12 +78,19 @@ Command                Description
                        memory computing, it enables multiple *processes* to 
                        run independently. It is more commonly used in batch 
                        mode.
-
 ====================== ========================================================
 
 Submitting Jobs to the Que
 ##########################
 
+The power of iceberg really comes from the 'batch job' que submission process.
+Using this system, you write a script which executes your job, tell the 
+scheduler how many resources the task requires, then the scheduler will run it 
+when the resources are available.
+
+As the task is running, the terminal output and any errors are captured and 
+saved to a disk, so that you can see the output and verify the execution of the
+task.
 
 
 All Scheduler Options
