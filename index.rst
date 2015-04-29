@@ -8,7 +8,7 @@ iceberg
    :hidden:
 
    self
-   getting_started
+   getting_started/index
    software/index
    cluster_specs
 

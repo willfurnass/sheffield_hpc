@@ -27,7 +27,7 @@ Student's supervisors can request an account for the student by emailing
 
     Once you have obtained your iceberg username, you need to initialize your 
     iceberg password to be the same as your normal password by using the CICS
-    `synchronize passwords link <https://www.shef.ac.uk/cics/password>`_.
+    `synchronize passwords system <https://www.shef.ac.uk/cics/password>`_.
 
 What do you want to Achieve?
 ############################
@@ -98,7 +98,7 @@ Download and install `mobaxterm <https://mobaxterm.mobatek.net/download-home-edi
 
 Running MobaXterm should display the following screen:
 
-.. image:: images/mobaxterm-welcome.png
+.. image:: /images/mobaxterm-welcome.png
    :width: 50%
    :align: center
 
@@ -174,11 +174,5 @@ terminal on a woker node (see :ref:`ssh`).
 Once you have a terminal on a worker node you can load software using the modules
 system.
 For information on modules and the applications availible see :ref:`software`.
-
-
-.. _sge-intro:
-
-Submitting Jobs to the Que
-##########################
 
 
