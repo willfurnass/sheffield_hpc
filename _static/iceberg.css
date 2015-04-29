@@ -34,6 +34,12 @@ cite {
     font-family: monospace;
 }
 
+.note {
+    background-color: #333132;
+    border-color: #333132;
+}
+
+/* Top Nav */
 .navbar {
     height: 100px;
     background-color: #333132;
