@@ -150,7 +150,8 @@ html_theme_options = {'navbar_sidebarrel':False,
                       'source_link_position': False,
                       'bootswatch_theme': 'flatly',
                       'navbar_site_name': "iceberg Documentation",
-                      'navbar_title': ' '}
+                      'navbar_title': ' ',
+                      'globaltoc_depth': 1}
 
 html_sidebars = {'software/**': ['softwaretoc.html'],
                  'index': []}

@@ -1,7 +1,14 @@
 .. _getting-started:
 
+
 Getting Started
 ===============
+
+.. toctree::
+    :hidden:
+
+    self
+    sge-intro
 
 If you have not used a High Performance Computing (HPC) cluster, Linux or
 even a command line before this is the place to start. This guide will get you 
