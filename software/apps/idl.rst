@@ -4,8 +4,6 @@ IDL
 
 .. sidebar:: IDL
    
-   :Maintainer: Stuart Mumford
-   :Email: stuart.mumford@sheffield.ac.uk
    :Version: 8.4
    :Support Level: extras
    :Dependancies: java
@@ -25,7 +23,7 @@ IDL can be activated using the module file::
 
 then run using `idl` or `idlde` for the interactive development environment.
 
-Installing
-----------
+Installation notes
+------------------
 
 Extract the supplied linux x86-64 tar file, run the install shell script and point it at the install directory.
