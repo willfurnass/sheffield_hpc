@@ -22,6 +22,7 @@ To make the library available, run the following module command
 Installing
 ----------
 icu version 42 is the version of icu linked to by the system version of boost -- version 1.41. This build is to allow compilation of that version of boost.
+
 .. code-block:: none
 
         tar -xvzf icu4c-4_2_1-src.tgz
@@ -33,7 +34,7 @@ icu version 42 is the version of icu linked to by the system version of boost --
 
 Testing
 -------
-`make check`
+:code:`make check`
 
 Last few lines of output were
 
@@ -51,11 +52,12 @@ Last few lines of output were
         make: *** [check-recursive] Error 2
 
 The error can be ignored since it is a bug in the test itself:
-* http://sourceforge.net/p/icu/mailman/message/32443311/
+
+- http://sourceforge.net/p/icu/mailman/message/32443311/
 
 Module File
 -----------
-Module File Location: `/usr/local/modulefiles/libs/gcc/4.4.7/icu/42`
+Module File Location: :code:`/usr/local/modulefiles/libs/gcc/4.4.7/icu/42`
 
 .. code-block:: none
 

@@ -16,12 +16,12 @@ Usage
 -----
 This build of the Boost library was built with gcc 4.4.7 and so should only be used with that version of gcc. To make the library available, run the following module command.
 
-`module load libs/gcc/4.4.7/boost/1.41`
+:code:`module load libs/gcc/4.4.7/boost/1.41`
 
 Build a simple program using Boost
 ----------------------------------
 
-Many boost libraries are header-only which makes them particualry simple to compile. The following program reads a sequence of integers from standard input, uses Boost.Lambda to multiply each number by three, and writes them to standard output (taken from http://www.boost.org/doc/libs/1_41_0/more/getting_started/unix-variants.html):
+Many boost libraries are header-only which makes them particularly simple to compile. The following program reads a sequence of integers from standard input, uses Boost.Lambda to multiply each number by three, and writes them to standard output (taken from http://www.boost.org/doc/libs/1_41_0/more/getting_started/unix-variants.html):
 
 .. code-block:: c++
 
@@ -41,7 +41,7 @@ Many boost libraries are header-only which makes them particualry simple to comp
 
 Copy this into a file called example1.cpp and compile with
 
-`g++ example1.cpp -o example`
+:code:`g++ example1.cpp -o example`
 
 Provided you loaded the module given above, and you are using gcc version 4.4.7, the program should compile without error.
 
@@ -72,11 +72,11 @@ The following program is taken from the official Boost dcoumentation http://www.
 This program makes use of the Boost.Regex library, which has a separately-compiled binary component we need to link to.
 Assuming that the above program is called example2.cpp, compile with the following command
 
-`g++ example2.cpp -o example2 -lboost_regex`
+:code:`g++ example2.cpp -o example2 -lboost_regex`
 
 If you get an error message that looks like this:
 
-`example2.cpp:1:27: error: boost/regex.hpp: No such file or directory`
+:code:`example2.cpp:1:27: error: boost/regex.hpp: No such file or directory`
 
 the most likely cause is that you forgot to load the module as detailed above.
 
@@ -99,7 +99,7 @@ The two examples above were compiled and ran.
 
 Module File
 -----------
-Module File Location: `/usr/local/modulefiles/libs/gcc/4.4.7/boost/1.41`
+Module File Location: :code:`/usr/local/modulefiles/libs/gcc/4.4.7/boost/1.41`
 
 .. code-block:: none
 
