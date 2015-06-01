@@ -3,8 +3,6 @@ Paraview
 
 .. sidebar:: Paraview
    
-   :Maintainer: Stuart Mumford
-   :Email: stuart.mumford@sheffield.ac.uk
    :Version: 4.3
    :Support Level: extras
    :Dependancies: openmpi (1.8)
