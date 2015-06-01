@@ -1,4 +1,4 @@
-.. _software:
+.. _applications:
 
 Applications on iceberg
 =======================

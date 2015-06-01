@@ -3,9 +3,6 @@ R
 
 .. sidebar:: R
    
-   :Maintainer: Stuart Mumford
-   :Email: stuart.mumford@sheffield.ac.uk
-   :Version: 3.1.2
    :Support Level: bronze
    :Dependancies: BLAS
    :URL: http://www.r-project.org/ 
@@ -13,12 +10,18 @@ R
 
 R is a statistical computing language.
 
-Usage
------
+Interactive Usage
+-----------------
+After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qsh` command.
 
-R can be loaded with ::
+The lastest version of R can be loaded with ::
 
         module load apps/R
+
+Alternatively, you can load a specific version of R using one of the following ::
+
+        module load apps/R/3.1.2
+        module load apps/R/3.2.0
 
 R can then be run with ::
 

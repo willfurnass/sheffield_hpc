@@ -3,8 +3,6 @@ HDF5
 
 .. sidebar:: HDF5
    
-   :Maintainer: Stuart Mumford
-   :Email: stuart.mumford@sheffield.ac.uk
    :Version: 1.8.13
    :Support Level: bronze
    :Dependancies: openmpi (1.8.13)
