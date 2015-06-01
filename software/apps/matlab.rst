@@ -12,8 +12,8 @@ MATLAB
 
 Scientific Computing and Visualisation 
 
-Usage
------
+Interactive Usage
+-----------------
 After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qsh` command.
 
 The lastest version of MATLAB (currently 2015a) is made available with the command
