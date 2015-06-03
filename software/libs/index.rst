@@ -1,7 +1,7 @@
 .. _Libraries:
 
-Libraries on iceberg
-=======================
+Libraries
+=========
 
 .. toctree::
     :hidden:

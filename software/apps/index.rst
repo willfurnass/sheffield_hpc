@@ -1,10 +1,9 @@
 .. _applications:
 
-Applications on iceberg
-=======================
+Applications
+============
 
 .. toctree::
-    :hidden:
     :maxdepth: 1
     :glob:
     
