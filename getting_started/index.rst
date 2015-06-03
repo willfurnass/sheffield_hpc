@@ -66,13 +66,13 @@ Q) Does your graphical or interactive taks require multiple threads or lots of m
 
 Q) Do you need to run a parallel application on multiple processors or nodes?
 
-   If you have a task that uses distributed memory parallelism, like MPI, you
-   will need to read the section on :ref:`mpi`.
+   If you have a task that uses distributed memory parallelism, like ePI, you
+   will need to read the section on ``mpie``.
 
 Q) Do you want to visualise your results without downloading all the data from iceberg?
 
    You can make use of iceberg's remote visualisation nodes, or run 
-   paraview or the Jupyter (IPython) notebook in server mode. See :ref:`remote-vis`.
+   paraview or the Jupyter (IPython) notebook in server mode. See ``remote-vis``.
 
 
 .. _short-running:
@@ -158,7 +158,7 @@ which will pop up another terminal window, which supports graphical applications
     (X server) support.
 
 
-Now go to :ref:`running_applications`.
+Now go to :ref:`running-applications`.
 
 This video shows the connection process using mobaxterm, and then connection 
 and running matlab from a `qsh` terminal.

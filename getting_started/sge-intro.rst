@@ -11,6 +11,8 @@ interactive session, be run on the cluster and then the scheduler will take
 tasks from the que based on a set of rules and priorities.
 
 
+.. _sge-interactive:
+
 Running an Interactive Shell
 ############################
 
