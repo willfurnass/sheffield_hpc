@@ -6,4 +6,4 @@ script:
 
 deploy:
   bash:
-    command: ssh rcg-cpanel echo "Hello World";
+    command: cp -r _build/html /documents/
