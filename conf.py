@@ -19,17 +19,17 @@ import shlex
 import glob
 import shutil
 
-def file_finder(app):
-    dest_dir = './software/'
-    files = glob.glob('/usr/local/packages6/*/*rst')
-    files += glob.glob('/usr/local/extras/*/*rst')
-
-    for i, afile in enumerate(files):
-	print("[{}/{}] Found {}".format(i+1, len(files), os.path.basename(afile)))
-        shutil.copy(afile, dest_dir)
-
-def setup(app):
-    app.connect('builder-inited', file_finder)
+#def file_finder(app):
+#    dest_dir = './software/'
+#    files = glob.glob('/usr/local/packages6/*/*rst')
+#    files += glob.glob('/usr/local/extras/*/*rst')
+#
+#    for i, afile in enumerate(files):
+#	print("[{}/{}] Found {}".format(i+1, len(files), os.path.basename(afile)))
+#        shutil.copy(afile, dest_dir)
+#
+#def setup(app):
+#    app.connect('builder-inited', file_finder)
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the

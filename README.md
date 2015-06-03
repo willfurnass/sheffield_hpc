@@ -3,35 +3,22 @@ iceberg Documentation
 
 This repository builds the iceberg documentation using sphinx.
 
-Currently, it harvests the software documentation from
-`/usr/local/packages6` and `/usr/local/extras` so needs to be run on
-a worker node on iceberg. 
+Building the .pdf file on Windows
+---------------------------------
+Install the following:-
 
-You can activate the python environment to use sphinx by running:
+* [Anaconda Python](https://store.continuum.io/cshop/anaconda/) 
 
-```
-source activate_env.sh
-```
+Install the following module
 
-once this has been activated you can run 
+     pip install sphinx_bootstrap_theme
 
-```
-make html
-```
+* [GNU Make](http://gnuwin32.sourceforge.net/packages/make.htm)
+* [MikTeX](http://miktex.org/download)
 
-to build the documentation into a website, you can then view the
-documentation by running:
+From the command line:
 
-```
-firefox _build/html/index.html
-```
+    make latexpdf
 
-because sphinx puts the output files into the `_build/html`
-directory.
+On first run, MikTeX will prompt you to install various extra LaTeX packages.
 
-
-Deploying
----------
-
-The files in `_build/html` can be copied to Cpanel to deploy the
-site.
