@@ -7,5 +7,5 @@ script:
 deploy:
   ssh:
     branch: master
-    target: "-i /.ssh/id_rsa cs6rcg@ftp.group.shef.ac.uk:/webusers/cs6rcg/public_html/iceberg"
+    target: cs6rcg@ftp.group.shef.ac.uk:/webusers/cs6rcg/public_html/iceberg
     artifacts: ['_build/html']
