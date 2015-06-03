@@ -6,4 +6,4 @@ script:
 
 deploy:
   bash:
-    command: ~/sync_built_docs.sh 
+    command: ssh rcg-cpanel echo "Hello World";
