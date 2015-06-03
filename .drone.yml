@@ -1,4 +1,4 @@
-image: plaindocs/docker-sphinx
+image: drone-sphinx
 
 script:
   - make html
