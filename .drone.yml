@@ -6,4 +6,4 @@ script:
 
 deploy:
   bash:
-    command: cp -r _build/html /documents/
+    command: su sphinx -c /sphinx/sync_built_docs.sh

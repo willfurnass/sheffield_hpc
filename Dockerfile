@@ -4,11 +4,16 @@ RUN apt-get update && apt-get install -y -q git python-pip
 
 RUN pip install sphinx_bootstrap_theme
 
-RUN mkdir /root/.ssh
-ADD drone_ssh_config /root/.ssh/config
-ADD drone_id_rsa /root/.ssh/id_rsa
-ADD drone_id_rsa.pub /root/.ssh/id_rsa.pub
-ADD sync_built_docs.sh /root/sync_built_docs.sh
+RUN useradd sphinx -m -d /sphinx
 
+RUN mkdir /sphinx/.ssh
+ADD drone_ssh_config /sphinx/.ssh/config
+ADD drone_id_rsa /sphinx/.ssh/id_rsa
+ADD drone_id_rsa.pub /sphinx/.ssh/id_rsa.pub
+ADD sync_built_docs.sh /sphinx/sync_built_docs.sh
+
+RUN chown -R sphinx:sphinx /sphinx
+
+USER sphinx
 
 CMD ["/bin/bash"]
