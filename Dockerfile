@@ -6,6 +6,6 @@ RUN pip install sphinx_bootstrap_theme
 
 RUN mkdir ~/.ssh
 ADD drone_id_rsa ~/.ssh/id_rsa
-ADD sync_built_docs.sh
+ADD sync_built_docs.sh ~/sync_built_docs.sh
 
 CMD ["/bin/bash"]
