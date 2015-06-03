@@ -1,4 +1,5 @@
 image: plaindocs/docker-sphinx
+
 script:
   - make html
   - echo "Done"
