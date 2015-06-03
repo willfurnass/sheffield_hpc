@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y -q git python-pip
 
 RUN pip install sphinx_bootstrap_theme
 
-RUN mkdir .ssh
-ADD drone_id_rsa .ssh/id_rsa
+RUN mkdir /.ssh
+ADD drone_id_rsa /.ssh/id_rsa
 
 CMD ["/bin/bash"]
