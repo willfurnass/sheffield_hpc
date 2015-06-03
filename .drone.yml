@@ -6,4 +6,5 @@ script:
 
 deploy:
   bash:
+    branch: master
     command: su sphinx -c /sphinx/sync_built_docs.sh
