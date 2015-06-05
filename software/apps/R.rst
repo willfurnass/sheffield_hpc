@@ -27,8 +27,36 @@ R can then be run with ::
 
         $ R
 
-Installing
-----------
+Serial (one CPU) Batch usage
+----------------------------
+Here, we assume that you wish to run the program :code:`my_code.R` on the system.
+
+First, you need to write a submission file. We assume you'll call this :code:`my_job.sge` ::
+
+	#!/bin/bash
+	#$ -S /bin/bash
+	#$ -cwd               # Run job from current directory
+	
+        module load apps/R/3.2.0 # Load version 3.2.0 of R
+    
+	R CMD BATCH my_code.R my_code.R.o$JOB_ID
+
+Note that R must be called with both the :code:`CMD` and :code:`BATCH` options which tell it to run an R program, in this case :code:`my_code.R`. If you do not do this, R will attempt to open an interactive prompt.
+
+The final argument, :code:`my_test.R.o$JOBID`, tells R to send output to a file with this name. Since :code:`$JOBID` will always be unique, this ensures that all of your output files are unique. Without this argument R sends all output to a file called :code:`my_code.Rout`.
+
+Ensuring that :code:`my_code.R` and :code:`my_job.sge` are both in your current working directory, submit your job to the batch system ::
+
+	qsub my_job.sge
+
+Replace :code:`my_job.sge` with the name of your submission script.
+
+Graphical output
+----------------
+By default, graphical output from batch jobs is sent to a file called :code:`Rplots.pdf`
+
+Installation Notes
+------------------
 
 R was compiled from source using the following commands::
 
