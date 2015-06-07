@@ -1,14 +1,14 @@
 .. _sge-intro:
 
-iceberg's Que System
-====================
+iceberg's queue System
+======================
 
-To manage use of the iceberg cluster, there is a que system 
+To manage use of the iceberg cluster, there is a queue system 
 (`SoGE <https://arc.liv.ac.uk/trac/SGE>`_, a derivative of the Sun Grid Engine).
 
-The que system works by a user requesting some task, either a script or an 
+The queue system works by a user requeuesting some task, either a script or an 
 interactive session, be run on the cluster and then the scheduler will take
-tasks from the que based on a set of rules and priorities.
+tasks from the queue based on a set of rules and priorities.
 
 
 .. _sge-interactive:
@@ -17,7 +17,7 @@ Running an Interactive Shell
 ############################
 
 If you wish to use the cluster for interactive use, such as running applications
-such as MATLAB or Ansys, or compiling software, you will need to request that
+such as MATLAB or Ansys, or compiling software, you will need to requeuest that
 the scheduler gives you an interactive session. For an introduction to this see
 :ref:`getting-started`.
 
@@ -47,12 +47,12 @@ or a session with access to 8 cores::
     [te1st@iceberg-login2 ~]$ qsh -pe openmp 8
 
 A table of :ref:`sge-interactive-options` is given below, any of these can be 
-combined together to request more resources.
+combined together to requeuest more resources.
 
 .. note::
 
     Long running jobs *should* use the batch submission system rather than 
-    requesting an interactive session for a very long time. Doing this will 
+    requeuesting an interactive session for a very long time. Doing this will 
     lead to better cluster performance for all users.
 
 
@@ -82,10 +82,10 @@ Command                Description
                        mode.
 ====================== ========================================================
 
-Submitting Jobs to the Que
-##########################
+Submitting Jobs to the queue
+############################
 
-The power of iceberg really comes from the 'batch job' que submission process.
+The power of iceberg really comes from the 'batch job' queue submission process.
 Using this system, you write a script which executes your job, tell the 
 scheduler how many resources the task requires, then the scheduler will run it 
 when the resources are available.
@@ -106,7 +106,7 @@ Command                Description
 
 -l mem=xxG             Specify the maximum amount (xx) of memory to be used. 
 
--N                     Job name, used to name output files and in the que list.
+-N                     Job name, used to name output files and in the queue list.
 
 -j                     Join the error and normal output into one file rather 
                        than two.
