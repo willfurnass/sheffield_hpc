@@ -38,3 +38,18 @@ will look like the following to programs on a Unix system ::
 If you suspect that this is affecting your jobs, run the following command on the system :: 
 
         dos2unix your_files_filename
+
+error: no DISPLAY variable found with interactive job
+-----------------------------------------------------
+If you receive the error message ::
+
+        error: no DISPLAY variable found with interactive job
+
+the most likely cause is that you forgot the -X switch when you logged into iceberg. That is, you might have typed ::
+
+        ssh username@iceberg.sheffield.ac.uk
+
+instead of ::
+
+        ssh -X username@iceberg.sheffield.ac.uk
+
