@@ -3,9 +3,9 @@ HDF5
 
 .. sidebar:: HDF5
    
-   :Version: 1.8.13
+   :Version: 1.8.14 and 1.8.13
    :Support Level: bronze
-   :Dependancies: openmpi (1.8.13)
+   :Dependancies: openmpi (1.8.3)
    :URL: http://www.hdfgroup.org/HDF5/
    :Documentation: http://www.hdfgroup.org/HDF5/doc/ 
 
@@ -15,17 +15,32 @@ It supports an unlimited variety of datatypes, and is designed for flexible and 
 HDF5 is portable and is extensible, allowing applications to evolve in their use of HDF5.
 The HDF5 Technology suite includes tools and applications for managing, manipulating, viewing, and analyzing data in the HDF5 format. 
 
-Usage
------
+Two primary versions of this library are provided, MPI parallel enabled versions and serial versions.
 
-A module file is provided along with this library, it can be enabled using the standard module loading syntax::
+Usage - Serial
+---------------
+The serial versions were built with gcc version 4.8.2. As such, if you are going to build anything against these versions of HDF5, we recommend that you use gcc 4.8.2 which can be enabled with the following module command ::
 
-     module load libs/hdf5/gcc/openmpi/1.8.13
+    module load compilers/gcc/4.8.2
+
+To enable the serial version of HDF5, use one of the following module commands depending on which version of the library you require:: 
+
+     module load libs/hdf5/gcc/1.8.14
      module load libs/hdf5/gcc/1.8.13
 
+Usage -- Parallel
+-----------------
+The MPI Parallel version was built using gcc version 4.4.7 and OpenMPI version 1.8.3.  Version 4.4.7 of gcc is the default compiler on the system so no module command is required for this.
 
-Installing
-----------
+To make the MPI version of HDF5 available, use one of the following module commands ::
+
+    module load libs/hdf5/gcc/openmpi/1.8.14
+    module load libs/hdf5/gcc/openmpi/1.8.13
+
+It is not necessary to load the OpenMPI module in either case since this is done automatically on execution of one of the above commands.
+
+Installation notes
+------------------
 
 This package is built from the source code distribution from the HDF Group website.
 
