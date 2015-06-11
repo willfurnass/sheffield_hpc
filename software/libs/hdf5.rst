@@ -39,6 +39,10 @@ To make the MPI version of HDF5 available, use one of the following module comma
 
 It is not necessary to load the OpenMPI module in either case since this is done automatically on execution of one of the above commands.
 
+Optional HDF5 features
+----------------------
+Our HDF5 builds have zlib support built in but do not have support for the SZIP Encoder.
+
 Installation notes
 ------------------
 
