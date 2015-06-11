@@ -29,5 +29,7 @@ If you want to see what software is availible for use on iceberg see the :ref:`s
 
 If you want more information about the iceberg hardware take a look at the :ref:`cluster-specs`.
 
+If you have a problem using iceberg, try some of our :ref:`troubleshooting` tips in the first instance.
+
 If you get stuck using iceberg or need some specific software please contact the 
 research computing team on `hpchub@sheffield.ac.uk <hpchub@sheffield.ac.uk>`_.
