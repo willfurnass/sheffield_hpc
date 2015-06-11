@@ -19,6 +19,8 @@ To make this library available, run the following module command
 
         module load libs/gcc/4.4.7/cgns/3.2.1
 
+This will also load the module files for the pre-requisute libraries, Open MPI 1.8.3 and HDF5 1.8.14 with parallel support.
+
 Installing
 ----------
 * This is a pre-requisite for Code Saturne version 4.0.
@@ -87,7 +89,7 @@ Module File Location: ``/usr/local/modulefiles/libs/gcc/4.4.7/cgns/3.2.1``
 	}
 
 	module-whatis   "Makes the cgns 3.2.1 library available"
-	module load mpi/gcc/openmpi/1.8.3
+	module load libs/hdf5/gcc/openmpi/1.8.14
 
 	set CGNS_DIR /usr/local/packages6/libs/gcc/4.4.7/cgnslib/3.2.1
 
