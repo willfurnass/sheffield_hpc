@@ -59,3 +59,15 @@ the most likely cause is that you forgot the -X switch when you logged into iceb
 instead of ::
 
         ssh -X username@iceberg.sheffield.ac.uk
+
+Insufficent memory in an interactive session
+--------------------------------------------
+By default, an interactive session provides you with 2 Gigabytes of RAM (sometimes called real memory) and 6 Gigabytes of Virtual Memory. You can request more than this when running your ``qsh`` or ``qrsh`` command ::
+
+        qsh -l mem=64G   -l rmem=8G
+
+This asks for 64 Gigabytes of Virtual Memory and 8 Gigabytes of RAM. Note that you should
+
+* not specify more than 768 Gigabytes of virtual memory (mem) .
+* not specify more than 256 GB of real memory (rmem)
+
