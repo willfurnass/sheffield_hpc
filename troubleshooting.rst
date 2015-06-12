@@ -66,8 +66,8 @@ By default, an interactive session provides you with 2 Gigabytes of RAM (sometim
 
         qsh -l mem=64G   -l rmem=8G
 
-This asks for 64 Gigabytes of Virtual Memory and 8 Gigabytes of RAM. Note that you should
+This asks for 64 Gigabytes of Virtual Memory and 8 Gigabytes of RAM (real memory). Note that you should
 
 * not specify more than 768 Gigabytes of virtual memory (mem) .
-* not specify more than 256 GB of real memory (rmem)
+* not specify more than 256 GB of RAM (real memory) (rmem)
 
