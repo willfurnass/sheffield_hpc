@@ -20,3 +20,4 @@ The `GPUComputing@Sheffield website
     gpu_interactive
     nvidia_compiler
     PGI_compiler
+    gpu_software
