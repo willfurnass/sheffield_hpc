@@ -32,3 +32,8 @@ In order to ensure that the nodes hosting the GPUs run only GPU related tasks, w
 
 Any iceberg user can apply to join this group. However, because our GPU resources are limited we will need to discuss the needs of the user and obtain consent from the project leader before allowing usage.
 
+.. toctree::
+    :hidden:
+
+    self
+    interactive_gpu
