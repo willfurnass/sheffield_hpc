@@ -21,8 +21,8 @@ Building the documentation locally
 
 It is also possible to build the documentation on your own machine. Clone the repository and follow the instructions below
 
-Building the .pdf file on a local Windows machine
--------------------------------------------------
+Building the documentation  on a local Windows machine
+------------------------------------------------------
 
 Install the following:-
 
@@ -35,9 +35,19 @@ Install the following module
 * [GNU Make](http://gnuwin32.sourceforge.net/packages/make.htm)
 * [MikTeX](http://miktex.org/download)
 
-From the command line:
+From the command line, the following will build the .pdf file ::
 
     make latexpdf
 
-On first run, MikTeX will prompt you to install various extra LaTeX packages.
+On first run, MikTeX will prompt you to install various extra LaTeX packages. To build the HTML documentation :: 
+
+    make html
+
+Building the documentation on a local Linux machine
+---------------------------------------------------
+TODO
+
+Building the documentation on a local Mac machine
+-------------------------------------------------
+TODO
 
