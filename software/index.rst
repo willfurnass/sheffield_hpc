@@ -15,4 +15,5 @@ the research computing team at `hpchub@sheffield.ac.uk <hpchub@sheffield.ac.uk>`
     modules
     apps/index
     libs/index
+    compilers/index
 
