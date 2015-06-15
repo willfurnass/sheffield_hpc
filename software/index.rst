@@ -1,6 +1,6 @@
 .. _software:
 
-iceberg Software
+Iceberg Software
 ================
 
 These pages list the software availible on iceberg. If you notice an error or
