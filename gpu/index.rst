@@ -19,3 +19,4 @@ The `GPUComputing@Sheffield website
     GPUAccess
     gpu_interactive
     nvidia_compiler
+    PGI_compiler
