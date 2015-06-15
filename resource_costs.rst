@@ -18,7 +18,7 @@ Researchers requiring compute resources beyond the capabilities of  "free at the
 Use the N8 Facilities
 ---------------------
 
-The University of Sheffield has a ⅛ share of the N8 HPC facility and manages access to it on behalf of researchers at The University of Sheffield. Details on how to access the facility are at http://n8hpc.org.uk/getting-started
+The University of Sheffield has a 1/8 share of the N8 HPC facility and manages access to it on behalf of researchers at The University of Sheffield. Details on how to access the facility are at http://n8hpc.org.uk/getting-started
 We also provide some local N8 related information on our web pages.  
 
 Purchase HPC Hardware
