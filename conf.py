@@ -151,7 +151,7 @@ html_theme_options = {'navbar_sidebarrel':False,
                       'bootswatch_theme': 'flatly',
                       'navbar_site_name': "iceberg Documentation",
                       'navbar_title': ' ',
-                      'navbar_links': [("<img src='/_static/img/pdf_icon.png'>", "http://rcg.group.shef.ac.uk/iceberg/icebergDocumentation.pdf", True)],
+                      'navbar_links': [("<img src='/iceberg/_static/img/pdf_icon.png'>", "http://rcg.group.shef.ac.uk/iceberg/icebergDocumentation.pdf", True)],
                       'globaltoc_depth': 1}
 
 html_sidebars = {'software/**': ['softwaretoc.html'],
