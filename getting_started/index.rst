@@ -4,12 +4,6 @@
 Getting Started
 ===============
 
-.. toctree::
-    :hidden:
-
-    self
-    sge-intro
-
 If you have not used a High Performance Computing (HPC) cluster, Linux or
 even a command line before this is the place to start. This guide will get you 
 set up using iceberg in the easiest way that fits your requirements.
@@ -160,10 +154,12 @@ which will pop up another terminal window, which supports graphical applications
 
 Now go to :ref:`running-applications`.
 
-This video shows the connection process using mobaxterm, and then connection 
-and running matlab from a `qsh` terminal.
-
 .. raw:: html
+
+   <p>
+    This video shows the connection process using mobaxterm, and then connection 
+    and running matlab from a <cite>qsh</cite> terminal.
+   </p>
 
    <video style="margin-left: auto; margin-right:auto; display: block;" width=70% controls>
        <source src="http://rcg.group.shef.ac.uk/tutorial_videos/mobaxterm-login-matlab-demo.webm" type="video/webm" />
@@ -183,3 +179,9 @@ system.
 For information on modules and the applications availible see :ref:`software`.
 
 
+
+.. toctree::
+    :hidden:
+
+    self
+    sge-intro
