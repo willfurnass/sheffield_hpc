@@ -3,18 +3,6 @@
 iceberg
 =======
 
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
-   self
-   getting_started/index
-   software/index
-   gpu/index
-   troubleshooting
-   cluster_specs
-
-
 .. image:: images/iceberg.png
    :width: 40%
    :align: right
@@ -34,3 +22,16 @@ If you have a problem using iceberg, try some of our :ref:`troubleshooting` tips
 
 If you get stuck using iceberg or need some specific software please contact the 
 research computing team on `hpchub@sheffield.ac.uk <hpchub@sheffield.ac.uk>`_.
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   self
+   getting_started/index
+   software/index
+   gpu/index
+   troubleshooting
+   cluster_specs
+
+
