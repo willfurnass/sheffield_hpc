@@ -1,3 +1,9 @@
+.. _GPUInteractive:
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
 Interactive use of the GPUs
 ===========================
 Once you are included in the GPU project group you may start using the GPU enabled nodes interactively by typing ::
