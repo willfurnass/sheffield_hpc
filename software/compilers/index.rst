@@ -1,10 +1,9 @@
-.. _Libraries:
+.. _compilers:
 
-Libraries
+Compilers
 =========
 
 .. toctree::
-    :hidden:
     :maxdepth: 1
     :glob:
     

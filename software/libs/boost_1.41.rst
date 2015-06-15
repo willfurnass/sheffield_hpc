@@ -1,5 +1,5 @@
 Boost C++ Library v1.41
-======================
+=======================
 
 .. sidebar:: Boost version 1.41
    
