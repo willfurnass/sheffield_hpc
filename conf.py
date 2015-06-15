@@ -154,6 +154,7 @@ html_theme_options = {'navbar_sidebarrel':False,
                       'globaltoc_depth': 1}
 
 html_sidebars = {'software/**': ['softwaretoc.html'],
+                 'gpu/**': ['softwaretoc.html'],
                  'index': []}
 
 # Add any paths that contain custom themes here, relative to this directory.
