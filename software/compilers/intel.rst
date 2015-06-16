@@ -23,6 +23,7 @@ The following links are to Intel's website
 
 * `User and Reference Guide for the Intel® C++ Compiler 15.0 <https://software.intel.com/en-us/compiler_15.0_ug_c>`_
 * `User and Reference Guide for the Intel® Fortran Compiler 15.0 <https://software.intel.com/en-us/compiler_15.0_ug_f>`_
+* `Step by Step optimizing with Intel C++ Compiler <https://software.intel.com/en-us/articles/step-by-step-optimizing-with-intel-c-compiler>`_
 
 Installation Notes
 ------------------
