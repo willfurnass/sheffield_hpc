@@ -17,7 +17,7 @@ JAGS is Just Another Gibbs Sampler.  It is a program for analysis of Bayesian hi
 
 Interactive Usage
 -----------------
-After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qsh` command. To make JAGS available in this session, run the following module command
+After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qsh` or :code:`qrsh` command. To make JAGS available in this session, run the following module command
 
 .. code-block:: none
 
