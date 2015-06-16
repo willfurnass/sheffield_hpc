@@ -17,6 +17,13 @@ To compile the C++ hello world example into an executable called ``hello`` using
 
       icc hello.cpp -o hello
 
+Detailed Documentation
+----------------------
+The following links are to Intel's website
+
+* `User and Reference Guide for the Intel® C++ Compiler 15.0 <https://software.intel.com/en-us/compiler_15.0_ug_c>`_
+* `User and Reference Guide for the Intel® Fortran Compiler 15.0 <https://software.intel.com/en-us/compiler_15.0_ug_f>`_
+
 Installation Notes
 ------------------
 The following notes are primarily for system sysadmins.
