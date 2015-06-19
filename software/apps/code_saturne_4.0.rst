@@ -75,7 +75,7 @@ This gave the following configuration ::
 	 HDF (Hierarchical Data Format) support: yes
 	 CGNS (CFD General Notation System) support: yes
 	 MED (Model for Exchange of Data) support: yes
-	   MED MPI I/O support: no
+	   MED MPI I/O support: yes
 	 MEDCoupling support: no
 	 Catalyst (ParaView co-processing) support: no
 	 EOS support: no
