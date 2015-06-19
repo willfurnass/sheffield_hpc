@@ -7,7 +7,6 @@ MED
 
    :Version: 3.0.8
    :Support Level: Bronze
-   :Dependancies: None
    :URL: http://www.salome-platform.org/downloads/current-version
    :Location: /usr/local/packages6/libs/gcc/4.4.7/med/3.0.8
 
@@ -24,7 +23,7 @@ To make this library available, run the following module command
 Installing
 ----------
 * This is a pre-requisite for Code Saturne version 4.0.
-* It was built with gcc 4.4.7
+* It was built with gcc 4.4.7, openmpi 1.8.3 and hdf5 1.8.14
 
 .. code-block:: none
 
@@ -42,8 +41,40 @@ Python was disabled because it didn't have MPI support.
 
 testing
 -------
+The following was submiited as an SGE job from the med-3.0.8 build directory
+
 .. code-block:: none
 
-        make check
+	#!/bin/bash
+
+	#$ -pe openmpi-ib 8
+	#$ -l mem=6G
+
+	module load mpi/gcc/openmpi/1.8.3
+	make check
 
 All tests passed
+
+Module File
+-----------
+.. code-block:: none
+
+	#%Module1.0#####################################################################
+	##
+	## MED 3.0.8 module file
+	##
+
+	## Module file logging
+	source /usr/local/etc/module_logging.tcl
+	##
+
+	proc ModulesHelp { } {
+		puts stderr "Makes the MED 3.0.8 library available"
+	}
+
+	module-whatis   "Makes the MED 3.0.8 library available"
+
+	set MED_DIR /usr/local/packages6/libs/gcc/4.4.7/med/3.0.8
+
+	prepend-path LD_LIBRARY_PATH $MED_DIR/lib64
+	prepend-path CPATH $MED_DIR/include
