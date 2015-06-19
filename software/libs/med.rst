@@ -1,3 +1,5 @@
+.. _MED:
+
 MED
 ===
 
@@ -26,14 +28,17 @@ Installing
 
 .. code-block:: none
 
+        module load mpi/gcc/openmpi/1.8.3
 	tar -xvzf med-3.0.8.tar.gz
 	cd med-3.0.8
 	mkdir -p /usr/local/packages6/libs/gcc/4.4.7/med/3.0.8
-	./configure --prefix=/usr/local/packages6/libs/gcc/4.4.7/med/3.0.8 --disable-fortran
-	make
+	./configure --prefix=/usr/local/packages6/libs/gcc/4.4.7/med/3.0.8 --disable-fortran --with-hdf5=/usr/local/packages6/hdf5/gcc-4.4.7/openmpi-1.8.3/hdf5-1.8.14/ --disable-python
+        make
 	make install
 
 Fortran was disabled because otherwise the build failed with compilation errors. It's not needed for Code Saturne 4.0.
+
+Python was disabled because it didn't have MPI support.
 
 testing
 -------

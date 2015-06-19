@@ -28,7 +28,7 @@ This version of Code Saturne was built with the following:-
 
 * gcc 4.4.7
 * CGNS 3.2.1
-* MED 3.0.8
+* :ref:`med` 3.0.8
 * OpenMPI 1.8.3
 * HDF5 1.8.14
 
