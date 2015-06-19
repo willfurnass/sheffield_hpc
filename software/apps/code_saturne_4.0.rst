@@ -5,7 +5,6 @@ Code Saturne 4.0
    
    :Version: 4.0
    :Support Level: Bronze
-   :Dependancies:  
    :URL: http://code-saturne.org/cms/
    :Documentation: http://code-saturne.org/cms/documentation
    :Location: /usr/local/packages6/apps/gcc/4.4.7/code_saturne/4.0
@@ -27,10 +26,10 @@ Pre-requisites:
 This version of Code Saturne was built with the following:-
 
 * gcc 4.4.7
-* CGNS 3.2.1
-* MED 3.0.8
+* :ref:`CGNS` 3.2.1
+* :ref:`med` 3.0.8
 * OpenMPI 1.8.3
-* HDF5 1.8.14
+* :ref:`HDF5` 1.8.14
 
 .. code-block:: none
         
@@ -75,7 +74,7 @@ This gave the following configuration ::
 	 HDF (Hierarchical Data Format) support: yes
 	 CGNS (CFD General Notation System) support: yes
 	 MED (Model for Exchange of Data) support: yes
-	   MED MPI I/O support: no
+	   MED MPI I/O support: yes
 	 MEDCoupling support: no
 	 Catalyst (ParaView co-processing) support: no
 	 EOS support: no
@@ -88,6 +87,10 @@ I then did ::
 
          make
          make install    
+
+Post Install Steps
+------------------
+ * Modifed ``/usr/local/packages6/apps/gcc/4.4.7/code_saturne/4.0/etc/code_saturne.cfg`` to match the file at 
 
 Testing
 -------
