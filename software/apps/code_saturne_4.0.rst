@@ -17,7 +17,6 @@ To make code saturne available, run the following module command after starting 
 
 :code:`module load apps/code_saturne/4.0.0`
 
-
 Installation Notes
 ------------------
 Installation notes for the version referenced by module ``module load apps/code_saturne/4.0.0``:
@@ -90,11 +89,17 @@ I then did ::
 
 Post Install Steps
 ------------------
- * Modifed ``/usr/local/packages6/apps/gcc/4.4.7/code_saturne/4.0/etc/code_saturne.cfg`` to match the file at 
+To make Code Saturne aware of the SGE system:
+
+ * Created ``/usr/local/packages6/apps/gcc/4.4.7/code_saturne/4.0/etc/code_saturne.cfg`` to match `this file <https://github.com/rcgsheffield/iceberg_software/blob/master/software/apps/assets/code_saturne/4.0/code_saturne.cfg>`_
+
+* Modified ``/usr/local/packages6/apps/gcc/4.4.7/code_saturne/4.0/share/code_saturne/batch/batch.SGE`` to match `this file <https://github.com/rcgsheffield/iceberg_software/blob/master/software/apps/assets/code_saturne/4.0/batch.SGE>`_
 
 Testing
 -------
-This module has not been yet been tested and so should be considered experimental.
+This module has not been yet been properly tested and so should be considered experimental.
+
+So far, a users 4 core job was run to completion. Tests are required.
 
 Module File
 -----------
