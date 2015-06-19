@@ -88,6 +88,10 @@ I then did ::
          make
          make install    
 
+Post Install Steps
+------------------
+ * Modifed ``/usr/local/packages6/apps/gcc/4.4.7/code_saturne/4.0/etc/code_saturne.cfg`` to match the file at 
+
 Testing
 -------
 This module has not been yet been tested and so should be considered experimental.
