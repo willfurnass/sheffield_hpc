@@ -116,3 +116,24 @@ div.bs-sidenav {
 .bs-sidenav > ul > li.toctree-l1.current {
     display: inherit;
 }
+
+/* Table */
+
+table.table {
+    border-top: 1px solid #333132;
+    border-right: 1px solid #333132;
+    border-collapse: collapse;
+}
+
+table.table td {
+    border-bottom: 1px solid #333132 !important;
+    border-left: 1px solid #333132 !important;
+}
+
+table.table thead th {
+    border-bottom: 1px solid #333132 !important;
+    border-left: 1px solid #333132 !important;
+    background-color: #333132;
+    font-weight: bold;
+    color: #ffffff
+}
