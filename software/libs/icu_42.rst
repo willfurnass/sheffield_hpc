@@ -19,8 +19,10 @@ To make the library available, run the following module command
 
         module load libs/gcc/4.4.7/icu/42
 
-Installing
-----------
+Installation notes
+------------------
+This section is primarily for administrators of the system.
+
 icu version 42 is the version of icu linked to by the system version of boost -- version 1.41. This build is to allow compilation of that version of boost.
 
 .. code-block:: none

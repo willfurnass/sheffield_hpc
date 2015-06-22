@@ -20,9 +20,11 @@ This build of the icu library requires gcc version 4.8.2. To make the compiler a
         module load compilers/gcc/4.8.2
         module load libs/gcc/4.8.2/icu/55
 
-Installing
-----------
-Originally Installed For: Dagmar S Divjak, Centre for Linguistic Research. icu 55 is a pre-requisite for the version of boost required for an experimental R module used by Dagmar.
+Installation Notes
+------------------
+This section is primarily for administrators of the system.
+
+Icu 55 is a pre-requisite for the version of boost required for an experimental R module used by one of our users.
 
 .. code-block:: none
 

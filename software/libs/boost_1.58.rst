@@ -81,8 +81,10 @@ If you get an error message that looks like this:
 
 the most likely cause is that you forgot to load the module as detailed above.
 
-Installing
-----------
+Installation Notes
+------------------
+This section is primarily for administrators of the system.
+
 .. code-block:: none
 
     module load compilers/gcc/4.8.2

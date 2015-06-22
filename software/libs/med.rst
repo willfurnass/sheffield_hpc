@@ -20,8 +20,10 @@ To make this library available, run the following module command
 
         module load libs/gcc/4.4.7/med/3.0.8
 
-Installing
-----------
+Installation notes
+------------------
+This section is primarily for administrators of the system.
+
 * This is a pre-requisite for Code Saturne version 4.0.
 * It was built with gcc 4.4.7, openmpi 1.8.3 and hdf5 1.8.14
 
