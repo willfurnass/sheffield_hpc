@@ -45,7 +45,16 @@ On first run, MikTeX will prompt you to install various extra LaTeX packages. To
 
 Building the documentation on a local Linux machine
 ---------------------------------------------------
-TODO
+
+Have 
+
+* Python 2
+* sphinx
+* phinx_bootstrap_theme
+
+installed, then run ::
+
+     make html
 
 Building the documentation on a local Mac machine
 -------------------------------------------------
