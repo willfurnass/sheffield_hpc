@@ -48,7 +48,8 @@ Provided you loaded the modules given above, and you are using gcc version 4.8.2
 
 Linking to a Boost library
 --------------------------
-The following program is taken from the official Boost dcoumentation http://www.boost.org/doc/libs/1_58_0/more/getting_started/unix-variants.html
+
+The following program is taken from the official Boost documentation http://www.boost.org/doc/libs/1_58_0/more/getting_started/unix-variants.html
 
 .. code-block:: c++
 
