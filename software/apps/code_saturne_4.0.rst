@@ -13,12 +13,14 @@ Code_Saturne solves the Navier-Stokes equations for 2D, 2D-axisymmetric and 3D f
 
 Usage
 -----
-To make code saturne available, run the following module command after starting a ``qsh`` or ``qrsh`` session
+To make code saturne available, run the following module command after starting a ``qsh`` session.
 
 :code:`module load apps/code_saturne/4.0.0`
 
 Installation Notes
 ------------------
+These notes are primarily for system administrators.
+
 Installation notes for the version referenced by module ``module load apps/code_saturne/4.0.0``:
 
 Pre-requisites:
