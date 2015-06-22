@@ -25,6 +25,8 @@ This will also load the module files for the pre-requisute libraries, Open MPI 1
 
 Installing
 ----------
+This section is primarily for administrators of the system.
+
 * This is a pre-requisite for Code Saturne version 4.0.
 * It was built with gcc 4.4.7, openmpi 1.8.3 and hdf 1.8.14
 

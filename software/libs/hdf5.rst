@@ -47,6 +47,7 @@ Our HDF5 builds have zlib support built in but do not have support for the SZIP 
 
 Installation notes
 ------------------
+This section is primarily for administrators of the system.
 
 This package is built from the source code distribution from the HDF Group website.
 
