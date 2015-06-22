@@ -21,13 +21,13 @@ To make this library available, run the following module command
 
         module load libs/gcc/4.4.7/cgns/3.2.1
 
-This will also load the module files for the pre-requisute libraries, Open MPI 1.8.3 and HDF5 1.8.14 with parallel support.
+This will also load the module files for the prerequisite libraries, Open MPI 1.8.3 and HDF5 1.8.14 with parallel support.
 
 Installing
 ----------
 This section is primarily for administrators of the system.
 
-* This is a pre-requisite for Code Saturne version 4.0.
+* This is a prerequisite for Code Saturne version 4.0.
 * It was built with gcc 4.4.7, openmpi 1.8.3 and hdf 1.8.14
 
 .. code-block:: none
