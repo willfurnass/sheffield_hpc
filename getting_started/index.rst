@@ -74,16 +74,10 @@ Q) Do you want to visualise your results without downloading all the data from i
 Short Running Applications
 ##########################
 
+.. _connecting:
 
-Option 1: Web Interface
-```````````````````````
-
-Not me
-
-
-
-Option 2: Terminal Access
-`````````````````````````
+Terminal Access
+```````````````
 
 Accessing iceberg through a terminal is the most flexible way of using iceberg,
 as it is the native way of interfacing with the linux cluster.
@@ -165,6 +159,14 @@ Now go to :ref:`running-applications`.
        <source src="http://rcg.group.shef.ac.uk/tutorial_videos/mobaxterm-login-matlab-demo.webm" type="video/webm" />
        <source src="http://rcg.group.shef.ac.uk/tutorial_videos/mobaxterm-login-matlab-demo.mp4" type="video/mp4" />
    </video>
+
+
+#Option 2: Web Interface
+#```````````````````````
+#
+#Not me
+#
+#
 
 
 .. _running-applications:
