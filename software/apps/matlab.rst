@@ -32,8 +32,31 @@ Alternatively, you can load a specific version with one of of the following comm
 
 You can then run MATLAB by entering :code:`matlab` 
 
+Serial (one CPU) Batch usage
+----------------------------
+Here, we assume that you wish to run the program :code:`hello.m` on the system.
+
+First, you need to write a batch submission file. We assume you'll call this :code:`my_job.sge` ::
+
+    #!/bin/bash
+    #$ -l mem=4G                       # Requiest 4 Gigabytes of memory
+    $ -cwd                             # Run job from current directory
+    module load apps/matlab            # Make latest version of MATLAB available
+
+    matlab -nosplash -nodisplay -nodesktop -r 'hello'
+
+Ensuring that :code:`hello.m` and :code:`myjob.sge` are both in your current working directory, submit your job to the batch system ::
+
+    qsub my_job.sge
+
+Some notes about this example:
+
+* We are running the script :code:`hello.m` but we drop the `.m` in the call to MATLAB. That is, we do :code:`-r 'hello'` rather than :code:`-r hello.m`.
+* All of the :code:`module` commands introducted in the Interactive usage section will also work in batch mode. This allows you to select a specific version of MATLAB if you wish.
+
 Installation notes
 ------------------
+These notes are primarily for system administrators.
 
 Requires the floating license server licserv4.shef.ac.uk to serve the licenses 
 for the version of MATLAB to be installed ( or higher versions ) .
