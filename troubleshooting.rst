@@ -68,6 +68,19 @@ By default, an interactive session provides you with 2 Gigabytes of RAM (sometim
 
 This asks for 64 Gigabytes of Virtual Memory and 8 Gigabytes of RAM (real memory). Note that you should
 
-* not specify more than 768 Gigabytes of virtual memory (mem) .
+* not specify more than 768 Gigabytes of virtual memory (mem)
 * not specify more than 256 GB of RAM (real memory) (rmem)
+
+Problems connecting with WinSCP
+-------------------------------
+Some users have reported issues while connetcing to the system using WinSCP, usually when working from home with a poor connection and when accessing folders with large numbers of files.
+
+In these instances, turning off ``Optimize Connection Buffer Size`` in WinSCP can help:
+
+* In WinSCP, goto the settings for the site (ie. from the menu ``Session->Sites->SiteManager``)
+* From the ``Site Manager`` dialog click on the selected session and click edit button
+* Click the advanced button
+* The Advanced Site Settings dialog opens.
+* Click on connection
+* Untick the box which says ``Optimize Connection Buffer Size``
 
