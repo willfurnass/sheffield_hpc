@@ -38,8 +38,9 @@ Here, we assume that you wish to run the program :code:`hello.m` on the system.
 
 First, you need to write a batch submission file. We assume you'll call this :code:`my_job.sge` ::
 
-    #!/bin/bash
-    #$ -l mem=4G                       # Requiest 4 Gigabytes of memory
+    #!/bin/bash                      
+    #$ -l rmem=4G                      # Request 4 Gigabytes of real memory
+    #$ -l mem=8G                       # Request 8 Gigabytes of virtual memory
     $ -cwd                             # Run job from current directory
     module load apps/matlab            # Make latest version of MATLAB available
 

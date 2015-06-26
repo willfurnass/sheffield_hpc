@@ -36,4 +36,5 @@ research computing team on `hpchub@sheffield.ac.uk <hpchub@sheffield.ac.uk>`_.
    troubleshooting
    cluster_specs
    resource_costs
+   glossary
 
