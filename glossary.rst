@@ -10,6 +10,6 @@ The worlds of scientific and high performance computing are full of technical ja
 
 * **SGE** - Acronymn for Sun Grid Engine.
 
-* **Sun Grid Engine** - The Sun Grid Engine is the software that controls and allocates resources on the system. There are many variants of 'Sun Grid Engine' in use worldwide and the variant in use at Sheffield is the ?????
+* **Sun Grid Engine** - The Sun Grid Engine is the software that controls and allocates resources on the system. There are many variants of 'Sun Grid Engine' in use worldwide and the variant in use at Sheffield is the `Son of Grid Engine <https://arc.liv.ac.uk/trac/SGE>`_
 
 * **Wallclock time** - The actual time taken to complete a job as measured by a clock on the wall or your wristwatch. 
