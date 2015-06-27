@@ -31,7 +31,7 @@ Serial (one CPU) Batch usage
 ----------------------------
 Here, we assume that you wish to run the program :code:`my_code.R` on the system.
 
-First, you need to write a submission file. We assume you'll call this :code:`my_job.sge` ::
+First, you need to write a batch submission file. We assume you'll call this :code:`my_job.sge` ::
 
 	#!/bin/bash
 	#$ -S /bin/bash
