@@ -5,7 +5,7 @@ Abaqus
 
    :Versions:  6.13,6.12 and 6.11
    :Support Level: FULL
-   :Dependancies: None
+   :Dependancies: Intel Compiler
    :URL: http://www.3ds.com/products-services/simulia/products/abaqus/
    :Local URL:  https://www.shef.ac.uk/wrgrid/software/abaqus
 
@@ -43,9 +43,9 @@ Batch submission of a single core job
 -------------------------------------
 In this example, we will run the s4d.inp file on a single core using 8 Gigabytes of memory.  After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qrsh` command. 
 
-Load the latest version of Abaqus and fetch the s4d example by running the following commands ::
+Load version 6.13-3 of Abaqus and fetch the s4d example by running the following commands ::
 
-    module load apps/abaqus
+    module load apps/abaqus/613
     abaqus fetch job=s4d
 
 Now, you need to write a batch submission file. We assume you'll call this :code:`my_job.sge` ::
@@ -58,7 +58,7 @@ Now, you need to write a batch submission file. We assume you'll call this :code
     
     module load apps/abaqus    
 
-    abaqus job=my_job input=s4d.inp scratch=/scratch memory="8gb" interactive
+    abq6133 job=my_job input=s4d.inp scratch=/scratch memory="8gb" interactive
 
 Submit the job with the command ``qsub my_job.sge``
 
@@ -71,9 +71,9 @@ Batch submission of a single core job with user subroutine
 ----------------------------------------------------------
 In this example, we will fetch a simulation from Abaqus' built in set of problems that makes use of user subroutines (UMATs) and run it in batch on a single core.  After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qrsh` command. 
 
-Load the latest version of Abaqus and fetch the umatmst3 example by running the following commands ::
+Load version 6.13-3 of Abaqus and fetch the umatmst3 example by running the following commands ::
 
-    module load apps/abaqus
+    module load apps/abaqus/613
     abaqus fetch job=umatmst3* 
 
 This will produce 2 files: The input file ``umatmst3.inp`` and the Fortran user subroutine ``umatmst3.f``. 
@@ -86,10 +86,10 @@ Now, you need to write a batch submission file. We assume you'll call this :code
     #$ -l rmem=8G
     #$ -l mem=8G
     
-    module load apps/abaqus    
+    module load apps/abaqus/613    
     module load compilers/intel/12.1.15
 
-    abaqus job=my_user_job input=umatmst3.inp user=umatmst3.f scratch=/scratch memory="8gb" interactive
+    abq6133 job=my_user_job input=umatmst3.inp user=umatmst3.f scratch=/scratch memory="8gb" interactive
 
 Submit the job with the command ``qsub my_user_job.sge``
 

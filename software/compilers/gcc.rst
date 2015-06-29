@@ -1,2 +1,18 @@
 GNU Compiler Collection (gcc)
 =============================
+The GNU Compiler Collection (gcc) is a widely used, free collection of compilers including C (gcc), C++ (g++) and Fortran (gfortran). The defaut version of gcc on the system is 4.4.7 ::
+
+    gcc -v
+
+    Using built-in specs.
+    Target: x86_64-redhat-linux
+    Configured with: ../configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-bootstrap --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-languages=c,c++,objc,obj-c++,java,fortran,ada --enable-java-awt=gtk --disable-dssi --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-1.5.0.0/jre --enable-libgcj-multifile --enable-java-maintainer-mode --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --disable-libjava-multilib --with-ppl --with-cloog --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux
+    Thread model: posix
+    gcc version 4.4.7 20120313 (Red Hat 4.4.7-11) (GCC) 
+
+It is possible to switch to other versions of the gcc compiler suite using modules. After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qrsh` or `qsh` command. Choose the version of the compiler you wish to use using one of the following commands ::
+
+    module load compilers/gcc/4.8.2
+    module load compilers/gcc/4.5.3
+
+Confirm that you've loaded the version of gcc you wanted using ``gcc -v``.
