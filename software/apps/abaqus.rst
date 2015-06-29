@@ -33,7 +33,7 @@ After that, simply type :code:`abaqus` to get the command-line interface to abaq
 
 Abaqus example problems
 -----------------------
-Abaqus contains a large number of example problems which can be used to become familiar with Abaqus on the CSF. These example problems are described in the Abaqus documentation, and can be obtained using the Abaqus fetch command. For example, after loading the Abaqus module enter the following at the command line to extract the input file for test problem s4d ::
+Abaqus contains a large number of example problems which can be used to become familiar with Abaqus on the system. These example problems are described in the Abaqus documentation, and can be obtained using the Abaqus fetch command. For example, after loading the Abaqus module enter the following at the command line to extract the input file for test problem s4d ::
 
     abaqus fetch job=s4d
 
@@ -43,7 +43,7 @@ Batch submission of a single core job
 -------------------------------------
 In this example, we will run the s4d.inp file on a single core using 8 Gigabytes of memory.  After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qrsh` command. 
 
-Load the latest version of Abaqus and fetch the s4d example ::
+Load the latest version of Abaqus and fetch the s4d example by running the following commands ::
 
     module load apps/abaqus
     abaqus fetch job=s4d
@@ -67,5 +67,34 @@ Important notes:
 * We have requested 8 gigabytes of memory in the above job. The ``memory="8gb"`` switch tells abaqus to use 8 gigabytes. The ``#$ -l rmem=8G`` and ``#$ -l mem=8G`` tells the system to reserve 8 gigabytes of real and virtual memory resptively. It is important that these numbers match.
 * Note the word ``interactive`` at the end of the abaqus command. Your job will not run without it.
 
+Batch submission of a single core job with user subroutine
+----------------------------------------------------------
+In this example, we will fetch a simulation from Abaqus' built in set of problems that makes use of user subroutines (UMATs) and run it in batch on a single core.  After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qrsh` command. 
 
+Load the latest version of Abaqus and fetch the umatmst3 example by running the following commands ::
+
+    module load apps/abaqus
+    abaqus fetch job=umatmst3* 
+
+This will produce 2 files: The input file ``umatmst3.inp`` and the Fortran user subroutine ``umatmst3.f``. 
+
+Now, you need to write a batch submission file. We assume you'll call this :code:`my_user_job.sge` ::
+
+    #!/bin/bash
+    #$ -S /bin/bash
+    #$ -cwd
+    #$ -l rmem=8G
+    #$ -l mem=8G
+    
+    module load apps/abaqus    
+    module load compilers/intel/12.1.15
+
+    abaqus job=my_user_job input=umatmst3.inp user=umatmst3.f scratch=/scratch memory="8gb" interactive
+
+Submit the job with the command ``qsub my_user_job.sge``
+
+Important notes:
+
+* In order to use user subroutimes, it is necessary to load the module for the intel compiler.
+* The user-subroutine itself is passed to Abaqus with the switch ``user=umatmst3.f``
 
