@@ -1,5 +1,6 @@
 html {
-    background-color: #f1f2f2;
+    /*background-color: #f1f2f2;*/
+    background-color: #fff;
     color: #414042;
     font-family: "Open Sans",sans-serif;
     font-size: 0.8125em;
@@ -75,6 +76,13 @@ cite {
     margin-right: -15px;
 }
 
+
+@media (max-width: 979px){
+    .navbar-collapse {
+            background-color: #333132;
+    }
+}
+
 /* Side Nav */
 
 div.bs-sidenav {
@@ -119,18 +127,18 @@ div.bs-sidenav {
 
 /* Table */
 
-table.table {
+table.table:not(.field-list) {
     border-top: 1px solid #333132;
     border-right: 1px solid #333132;
     border-collapse: collapse;
 }
 
-table.table td {
+table.table td:not(.field-body) {
     border-bottom: 1px solid #333132 !important;
     border-left: 1px solid #333132 !important;
 }
 
-table.table thead th {
+table.table thead th:not(.field-name) {
     border-bottom: 1px solid #333132 !important;
     border-left: 1px solid #333132 !important;
     background-color: #333132;
