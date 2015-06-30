@@ -119,18 +119,18 @@ div.bs-sidenav {
 
 /* Table */
 
-table.table {
+table.table:not(.field-list) {
     border-top: 1px solid #333132;
     border-right: 1px solid #333132;
     border-collapse: collapse;
 }
 
-table.table td {
+table.table td:not(.field-body) {
     border-bottom: 1px solid #333132 !important;
     border-left: 1px solid #333132 !important;
 }
 
-table.table thead th {
+table.table thead th:not(.field-name) {
     border-bottom: 1px solid #333132 !important;
     border-left: 1px solid #333132 !important;
     background-color: #333132;
