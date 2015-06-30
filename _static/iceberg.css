@@ -1,5 +1,6 @@
 html {
-    background-color: #f1f2f2;
+    /*background-color: #f1f2f2;*/
+    background-color: #fff;
     color: #414042;
     font-family: "Open Sans",sans-serif;
     font-size: 0.8125em;
@@ -73,6 +74,13 @@ cite {
 .container-fluid > .navbar-collapse {
     margin-left: -15px;
     margin-right: -15px;
+}
+
+
+@media (max-width: 979px){
+    .navbar-collapse {
+            background-color: #333132;
+    }
 }
 
 /* Side Nav */
