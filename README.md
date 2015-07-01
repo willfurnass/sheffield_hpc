@@ -5,7 +5,7 @@ Iceberg is The University of Sheffield's High Performance Computing cluster. The
 
 This repository contains a proposed replacement for the page linked to above. It makes use of [Sphinx](http://sphinx-doc.org/) to build the results and represents a move to a more open, collaborative way of working.
 
-For a guide on the rst file format see [this](http://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html#headings) document.
+For a guide on the rst file format see [this](http://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html) document.
 
 Rendered Documentation
 ----------------------
