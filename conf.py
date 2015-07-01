@@ -156,6 +156,7 @@ html_theme_options = {'navbar_sidebarrel':False,
 
 html_sidebars = {'software/**': ['softwaretoc.html'],
                  'gpu/**': ['softwaretoc.html'],
+                 'using-iceberg/**': ['softwaretoc.html'],
                  'index': []}
 
 # Add any paths that contain custom themes here, relative to this directory.
