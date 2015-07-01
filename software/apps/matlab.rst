@@ -29,6 +29,7 @@ Alternatively, you can load a specific version with one of of the following comm
        module apps/matlab/2013a
        module apps/matlab/2013b
        module apps/matlab/2014a
+       module apps/matlab/2015a
 
 You can then run MATLAB by entering :code:`matlab` 
 
