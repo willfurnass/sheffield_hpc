@@ -42,7 +42,7 @@ If you’ve never installed an R package before on the system, it will ask you i
 
 The library will be installed to a sub-directory called ``R`` in your home directory and you should only need to perform the above procedure once.
 
-Once you have performed the installation, you use ``regos`` as you would any other library in R ::
+Once you have performed the installation, you will only need to run the ``module`` commands above to make the geos library available to the system. Then, you use ``regos`` as you would any other library in R ::
 
     library('rgeos')
 
