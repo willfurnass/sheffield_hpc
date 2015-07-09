@@ -99,17 +99,14 @@ output from the ``configure`` step was ::
       Obj-C compiler:
 
       Interfaces supported:      X11, tcltk
-      External libraries:        readline, BLAS(generic), LAPACK(generic)
+      External libraries:        readline
       Additional capabilities:   PNG, JPEG, TIFF, NLS, cairo
-      Options enabled:           shared R library, R profiling
+      Options enabled:           shared R library, shared BLAS, R profiling
 
       Capabilities skipped:      ICU
-      Options not enabled:       shared BLAS, memory profiling
+      Options not enabled:       memory profiling
 
       Recommended packages:      yes
-
-    configure: WARNING: you cannot build info or HTML versions of the R manuals
-    configure: WARNING: neither inconsolata.sty nor zi4.sty found: PDF vignettes and package manuals will not be rendered optimally
 
 Built with ::
 
