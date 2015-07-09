@@ -65,6 +65,32 @@ The associated R packages are not included in the system install of R, so you wi
 * :ref:`geos` This is the library required for the ``rgeos`` package.
 * :ref:`jags` This is the library required for the ``rjags`` package
 
+Using libRmath
+--------------
+libRmath alows you to access some of R's functionality from a C program. For example, consider the C-program below ::
+
+    #include <stdio.h>
+    #define MATHLIB_STANDALONE
+    #include "Rmath.h"
+
+    main(){
+       double shape1,shape2,prob;
+
+       shape1 = 1.0;
+       shape2 = 2.0;
+       prob = 0.5;
+
+       printf("Critical value is %lf\n",qbeta(prob,shape1,shape2,1,0));
+    }
+
+This makes use of R's ``qbeta`` function. You can compile and run this on a worker node. Start a session on a worker node with ``qrsh`` or ``qsh`` and load the R module ::
+
+    module load apps/R/3.2.1
+
+Assuming the program is called ``test_rmath.c``, compile with ::
+
+    gcc test_rmath.c -lRmath -lm -o test_rmath
+
 Installation Notes
 ------------------
 These notes are primarily for administrators of the system.
@@ -99,21 +125,27 @@ output from the ``configure`` step was ::
       Obj-C compiler:
 
       Interfaces supported:      X11, tcltk
-      External libraries:        readline, BLAS(generic), LAPACK(generic)
+      External libraries:        readline
       Additional capabilities:   PNG, JPEG, TIFF, NLS, cairo
-      Options enabled:           shared R library, R profiling
+      Options enabled:           shared R library, shared BLAS, R profiling
 
       Capabilities skipped:      ICU
-      Options not enabled:       shared BLAS, memory profiling
+      Options not enabled:       memory profiling
 
       Recommended packages:      yes
-
-    configure: WARNING: you cannot build info or HTML versions of the R manuals
-    configure: WARNING: neither inconsolata.sty nor zi4.sty found: PDF vignettes and package manuals will not be rendered optimally
 
 Built with ::
 
     $ make
+
+To build libRmath.so ::
+
+    $ cd R-3.2.1/src/nmath/standalone
+    $ make
+    $ mv /usr/local/packages6/R/3.2.1/lib64/libRmath.* /usr/local/packages6/R/3.2.1/lib64/R/lib
+
+Install to the system ::
+
     $ make install
 
 Testing was performed with ::
@@ -121,3 +153,30 @@ Testing was performed with ::
     $ make check
 
 All tests passed.
+
+Module file
+-----------
+location ``/usr/local/modulefiles/apps/R/3.2.1`` ::
+
+  #%Module10.2#####################################################################
+
+  ## Module file logging
+  source /usr/local/etc/module_logging.tcl
+  ##
+
+
+  proc ModulesHelp { } {
+      global helpmsg
+      puts stderr "\t$helpmsg\n"
+  }
+
+
+  #
+  # 1. change 'version' string to appropriate version number: 6.0, 5.2, ...
+  #
+  set version 3.2.1
+
+  set R_DIR /usr/local/packages6/R
+
+  prepend-path PATH $R_DIR/$version/bin
+  prepend-path LD_LIBRARY_PATH $R_DIR/$version/lib64/R/lib/
