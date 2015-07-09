@@ -21,8 +21,8 @@ The latest version of R can be loaded with ::
 Alternatively, you can load a specific version of R using one of the following ::
 
         module load apps/R/3.2.1
+        module load apps/R/3.2.0
         module load apps/R/3.1.2
-
 
 R can then be run with ::
 
