@@ -2,11 +2,11 @@ R
 =
 
 .. sidebar:: R
-   
+
    :Support Level: bronze
    :Dependancies: BLAS
-   :URL: http://www.r-project.org/ 
-   :Documentation: http://www.r-project.org/  
+   :URL: http://www.r-project.org/
+   :Documentation: http://www.r-project.org/
 
 R is a statistical computing language.
 
@@ -14,14 +14,15 @@ Interactive Usage
 -----------------
 After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qsh` command.
 
-The lastest version of R can be loaded with ::
+The latest version of R can be loaded with ::
 
         module load apps/R
 
 Alternatively, you can load a specific version of R using one of the following ::
 
-        module load apps/R/3.1.2
         module load apps/R/3.2.1
+        module load apps/R/3.2.0
+        module load apps/R/3.1.2
 
 R can then be run with ::
 
@@ -36,9 +37,9 @@ First, you need to write a batch submission file. We assume you'll call this :co
 	#!/bin/bash
 	#$ -S /bin/bash
 	#$ -cwd               # Run job from current directory
-	
-        module load apps/R/3.2.0 # Load version 3.2.0 of R
-    
+
+  module load apps/R/3.2.1     # Load version 3.2.1 of R
+
 	R CMD BATCH my_code.R my_code.R.o$JOB_ID
 
 Note that R must be called with both the :code:`CMD` and :code:`BATCH` options which tell it to run an R program, in this case :code:`my_code.R`. If you do not do this, R will attempt to open an interactive prompt.
@@ -55,15 +56,68 @@ Graphical output
 ----------------
 By default, graphical output from batch jobs is sent to a file called :code:`Rplots.pdf`
 
+R Packages that require external libraries
+------------------------------------------
+Some R packages require external libraries to be installed before you can install and use them. Since there are so many, we only install those libraries that have been explicitly requested by users of the system.
+
+The associated R packages are not included in the system install of R, so you will need to install them yourself to your home directory following the instructions linked to below.
+
+* :ref:`geos` This is the library required for the ``rgeos`` package.
+* :ref:`jags` This is the library required for the ``rjags`` package
+
 Installation Notes
 ------------------
+These notes are primarily for administrators of the system.
 
-R was compiled from source using the following commands::
+**Version 3.2.1**
+
+R was compiled from source using gcc 4.4.7 and the following commands::
+
+        $ qrsh -l rmem=8G mem=16G
+        $ tar -xvzf ./R-3.2.1.tar.gz
+        $ cd R-3.2.1
+
+The standard amount of memory allocated for a qrsh session was insufficient to build R, which is why 8gig was requested instead. ::
 
         $ module load libs/gcc/lapack
         $ module load libs/gcc/blas
-        $ ./configure --prefix /usr/local/packages6/R/3.2.1 --with-blas --with-lapack
-        $ make -j 6
-        $ make install
+        $ ./configure --prefix /usr/local/packages6/R/3.2.1 --with-blas --with-lapack --enable-R-shlib
 
-It seems like it did not pick up the lapack library, but it did pick up the BLAS lib ok.
+output from the ``configure`` step was ::
+
+    R is now configured for x86_64-unknown-linux-gnu
+
+      Source directory:          .
+      Installation directory:    /usr/local/packages6/R/3.2.1
+
+      C compiler:                gcc -std=gnu99  -g -O2
+      Fortran 77 compiler:       gfortran  -g -O2
+
+      C++ compiler:              g++  -g -O2
+      C++ 11 compiler:           g++  -std=c++0x -g -O2
+      Fortran 90/95 compiler:    gfortran -g -O2
+      Obj-C compiler:
+
+      Interfaces supported:      X11, tcltk
+      External libraries:        readline, BLAS(generic), LAPACK(generic)
+      Additional capabilities:   PNG, JPEG, TIFF, NLS, cairo
+      Options enabled:           shared R library, R profiling
+
+      Capabilities skipped:      ICU
+      Options not enabled:       shared BLAS, memory profiling
+
+      Recommended packages:      yes
+
+    configure: WARNING: you cannot build info or HTML versions of the R manuals
+    configure: WARNING: neither inconsolata.sty nor zi4.sty found: PDF vignettes and package manuals will not be rendered optimally
+
+Built with ::
+
+    $ make
+    $ make install
+
+Testing was performed with ::
+
+    $ make check
+
+All tests passed.
