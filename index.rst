@@ -8,9 +8,11 @@ iceberg
    :align: right
    :alt: A picture showing some of the iceberg hardware.
 
-Iceberg is the University of Sheffield's centralised High Perfomance Computing 
-(HPC) resource. Its mission is to meet the intensive computing requirements of 
-research projects at Sheffield University.
+Welcome to the **iceberg** user manual. Iceberg is the University of Sheffield's 
+central High Perfomance Computing (HPC) resource. Its mission is to meet 
+the intensive computing requirements of research projects at Sheffield University.
+
+This manual aims to provide you all the information you need to use iceberg.
 
 If you are new to HPC and iceberg checkout the :ref:`getting-started` guide.
 
@@ -23,14 +25,15 @@ If you are interested in GPU computing, take a look at :ref:`The GPU Computing s
 If you have a problem using iceberg, try some of our :ref:`troubleshooting` tips in the first instance.
 
 If you get stuck using iceberg or need some specific software please contact the 
-research computing team on `hpchub@sheffield.ac.uk <hpchub@sheffield.ac.uk>`_.
+research computing team on `helpdesk@sheffield.ac.uk <helpdesk@sheffield.ac.uk>`_.
 
 .. toctree::
    :maxdepth: 1
    :hidden:
 
    self
-   getting_started/index
+   getting-started
+   using-iceberg/index
    software/index
    gpu/index
    troubleshooting

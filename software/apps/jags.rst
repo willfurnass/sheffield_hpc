@@ -1,3 +1,5 @@
+.. _jags:
+
 JAGS
 ====
 
@@ -5,7 +7,7 @@ JAGS
 
    :Version: 4.8.2
    :Support Level: Bronze
-   :Dependancies: compilers/gcc/4.8.2 
+   :Dependancies: compilers/gcc/4.8.2
    :URL: http://mcmc-jags.sourceforge.net/
    :Location: /usr/local/packages6/apps/gcc/4.8.2/JAGS/3.4/include/
 
@@ -31,7 +33,7 @@ You can now run the ``jags`` command ::
         JAGS is free software and comes with ABSOLUTELY NO WARRANTY
         Loading module: basemod: ok
         Loading module: bugs: ok
-        . 
+        .
 
 The rjags interface in R
 ------------------------
@@ -41,7 +43,7 @@ After connecting to iceberg (see :ref:`ssh`), start an interactive sesssion with
 
         module load compilers/gcc/4.8.2
         module load apps/gcc/4.8.2/JAGS/3.4
-        module load apps/R/3.4
+        module load apps/R/3.2
 
 Launch R by typing ``R`` and pressing return. Within R, execute the following command ::
 
@@ -73,7 +75,7 @@ Installation notes
 
 .. code-block:: none
 
-    module load compilers/gcc/4.8.2 
+    module load compilers/gcc/4.8.2
     tar -xvzf ./JAGS-3.4.0.tar.gz
     cd JAGS-3.4.
     mkdir -p /usr/local/packages6/apps/gcc/4.8.2/JAGS/3.4
