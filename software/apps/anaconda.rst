@@ -20,7 +20,7 @@ The latest version of Anaconda can be loaded with ::
 
 Alternatively, you can load a specific version of Anaconda Python using ::
 
-        apps/binapps/anacondapython/2.3
+        module load apps/binapps/anacondapython/2.3
 
 Python can then be started with the ``python`` command::
 
@@ -52,6 +52,11 @@ These are primarily for administrators of the system. Anaconda Python is a binar
 When the installer asks for location, use ::
 
   /usr/local/packages6/apps/binapps/anacondapython/2.3
+
+Some modules were requested by users that were not included in the standard Anaconda installer. I installed these by doing ::
+
+  module load apps/binapps/anacondapython/2.3
+  conda install wxPython
 
 Module file
 -----------
