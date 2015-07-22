@@ -42,7 +42,7 @@ Researchers can reserve a fraction of the central HPC facility for a length of t
 Extra File Storage Costs
 ------------------------
 
-CiCS also provides general purpose networked file storage at prices ranging from £260 per TB per annum to £900 per TB per annum depending on backup requirements (e.g if there is a requirement to backup to tape, or mirror data to a separate location) - for more information on this please see the `CICS information on filestore <http://www.shef.ac.uk/cics/filestore>`_.
+CiCS also provides a research data file store costing £100 per TB per annum per copy - for more information on general file storage please see the `CICS information on filestore <http://www.shef.ac.uk/cics/filestore>`_.
 
 Current HPC Purchasing and costs
 --------------------------------
