@@ -13,6 +13,7 @@ the research computing team at `hpchub@sheffield.ac.uk <hpchub@sheffield.ac.uk>`
     :glob:
     
     modules
+    SunGridEngine
     apps/index
     libs/index
     compilers/index
