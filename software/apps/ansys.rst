@@ -5,7 +5,7 @@ Ansys
 
    :Latest version:  15
    :Support Level: FULL
-   :Dependencies: ???????????
+   :Dependencies: TODO
    :URL: http://www.ansys.com/en_uk
 
 Ansys is some software. INSERT DESCRIPTION HERE
@@ -24,7 +24,7 @@ Alternatively, you can make a specific version available with one of the followi
 
 .. code-block:: none
 
-To launch Ansys, ?????????????
+To launch Ansys, TODO
 
 Batch submission of a single core job
 -------------------------------------
