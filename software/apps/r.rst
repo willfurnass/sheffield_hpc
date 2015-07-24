@@ -56,6 +56,32 @@ Graphical output
 ----------------
 By default, graphical output from batch jobs is sent to a file called :code:`Rplots.pdf`
 
+Installing additional packages
+------------------------------
+
+Load R in interactive mode as described above. Install a package with:
+::
+        install.packages()
+        
+You will be prompted to create a personal package library. Choose yes. The package will download and install from a CRAN mirror (you may be asked to select a nearby mirror, which you can do simply by entering the number of your preferred mirror).
+
+Once the chosen package has been installed, additional packages can be installed either in the same way, or by creating a .R script. An example script might look like:
+::
+        install.packages("dplyr")
+        install.packages("devtools")
+        
+Call this using :code:`source()`. For example if your script is called :code:`packages.R` and is stored in your home folder, source this from an interactive R session with:
+::
+        source("~/packages.R")
+        
+These additional packages will be installed without prompting to your personal package library.
+
+To check your packages are up to date, and update them if necessary, run the following line from an R interactive session:
+::
+        update.packages(lib.loc = "~/R/x86_64-unknown-linux-gnu-library/3.2/")
+
+The folder name after ~/R/ will likely change, but this can be completed with tab autocompletion from the R session. Ensure :code:`lib.loc` folder is specified, or R will attempt to update the wrong library.
+
 R Packages that require external libraries
 ------------------------------------------
 Some R packages require external libraries to be installed before you can install and use them. Since there are so many, we only install those libraries that have been explicitly requested by users of the system.
