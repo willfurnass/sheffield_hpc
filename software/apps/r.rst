@@ -59,7 +59,7 @@ By default, graphical output from batch jobs is sent to a file called :code:`Rpl
 Installing additional packages
 ------------------------------
 
-Load R in interactive mode as described above. Install a package with:
+As you will not have permissions to install packages to the default folder, additional R packages can be installed to your home folder :code:`~/`. To create the appropriate folder, install your first package in R in interactive mode. Load an interactive R session as described above, and install a package with:
 ::
         install.packages()
         
