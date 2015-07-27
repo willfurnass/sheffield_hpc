@@ -38,6 +38,7 @@ research computing team on `helpdesk@sheffield.ac.uk <helpdesk@sheffield.ac.uk>`
    gpu/index
    troubleshooting
    cluster_specs
+   filestore
    resource_costs
    glossary
 
