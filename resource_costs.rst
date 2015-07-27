@@ -29,7 +29,7 @@ Purchase of HPC Hardware
 
 .. _PurchaseHPCHardware:
 
-Research groups can work with CICS to purchase hardware that will sit within the framework of iceberg while delivering dedicated HPC services for their research. This will give research teams the advantage of having access to dedicated resources while continuing to take advantage of the 'free' facilities as well. The University of Sheffield has a framework agreement for procuring such extra HPC hardware at favourable prices. This is prepared by CICS working with the Research Computing Advisory Group. Research groups who are interested should initially contact hpchub@sheffield.ac.uk to start a dialog.  
+Research groups can work with CICS to purchase hardware that will sit within the framework of iceberg while delivering dedicated HPC services for their research. This will give research teams the advantage of having access to dedicated resources while continuing to take advantage of the 'free' facilities as well. The University of Sheffield has a framework agreement for procuring such extra HPC hardware at favourable prices. This is prepared by CICS working with the Research Computing Advisory Group. Research groups who are interested should initially contact helpdesk@sheffield.ac.uk to start a dialog.  
 It is important to note that the 'framework agreement' ensures and in a way limits the choice of new hardware so as to be able to integrate it with the iceberg cluster.
 
 Reservation of HPC Compute Resources
@@ -42,13 +42,13 @@ Researchers can reserve a fraction of the central HPC facility for a length of t
 Extra File Storage Costs
 ------------------------
 
-CiCS also provides general purpose networked file storage at prices ranging from £260 per TB per annum to £900 per TB per annum depending on backup requirements (e.g if there is a requirement to backup to tape, or mirror data to a separate location) - for more information on this please see the `CICS information on filestore <http://www.shef.ac.uk/cics/filestore>`_.
+CiCS also provides a research data file store costing £100 per TB per annum per copy - for more information on general file storage please see the `CICS information on filestore <http://www.shef.ac.uk/cics/filestore>`_.
 
 Current HPC Purchasing and costs
 --------------------------------
 The current costs for dedicated HPC resources are shown in the tables below.  
 
-To apply for dedicated resource, researchers should e-mail hpchub@sheffield.ac.uk and provide the following information:
+To apply for dedicated resource, researchers should e-mail helpdesk@sheffield.ac.uk and provide the following information:
 
 * Project name
 * Contact details for the project which will be paying for the resource
