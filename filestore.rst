@@ -9,9 +9,9 @@ Here are the current details of filestore available to each user.
 
 Home directory
 --------------
-All users have a home directory in the location ``/home/username``. The filestore quota is **10 GB** per user and the area is backed up nightly.
+All users have a home directory in the location ``/home/username``. The filestore quota is **10 GB** per user.
 
-We hold 2 copies of the data and can recover files from up to 1 month ago.
+**Backup policy:** ``/home`` has backup snapshots taken every 4 hours and we keep the 10 most recent. ``/home`` also has daily snapshots taken each night, and we keep 28 days worth, mirrored onto a separate storage system.
 
 Data directory
 --------------
@@ -19,7 +19,7 @@ Every user has access to a much larger data-storage area provided at the locatio
 
 The quota for this area is **100 GB** per user.
 
-It is important to note that this data area is not backed up to tape. We do, however, keep a snapshot copy of this drive on the mirror storage node. As such, we can usually recover files from this area from up to 1 week ago.
+**Backup policy:** ``/data`` has snapshots taken every 4 hours and we keep the 10 most recent. ``/data`` also has daily snapshots taken each night, and we keep 7 days worth, but this is not mirrored.
 
 Fastdata directory
 ------------------
