@@ -62,3 +62,15 @@ These methods provide much faster access to data than the network attached stora
 If you decide to use the ``/scratch`` area we recommend that under ``/scratch`` you create a directory with the same name as your username and work under that directory to avoid the possibility of clashing with other users.
 
 Anything under the ``/scratch`` is deleted periodically when the worker-node is idle, whereas files on the ``/fastdata`` area will be deleted only when they are 3 months old.
+
+Recovering snapshots
+--------------------
+We take regular back-ups of your ``/home`` and ``/data`` directories and it is possible to directly access a limited subset of them.
+
+There are 7 days worth of snapshots available in your ``/home`` and ``data`` directories in a hidden directory called ``.snapshot``. You need to explicitly ``cd`` into this directory to get at the files::
+
+    cd /home/YOURUSERNAME/.snapshot
+
+The files are read-only. This allows you to attempt recover any files you might have accidentally deleted recently.
+
+This does not apply for ``/fastdata`` for which we take no back-ups.
