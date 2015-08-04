@@ -21,7 +21,7 @@ the permission of their supervisors:
 * Undergraduates 3rd & 4th year  - project work
 
 Student's supervisors can request an account for the student by emailing
-`helpdesk@sheffield.ac.uk <helpdesk@sheffield.ac.uk>`_.
+`research-it@sheffield.ac.uk <research-it@sheffield.ac.uk>`_.
 
 .. note::
 
