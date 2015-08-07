@@ -48,7 +48,7 @@ Current HPC Purchasing and costs
 --------------------------------
 The current costs for dedicated HPC resources are shown in the tables below.  
 
-To apply for dedicated resource, researchers should e-mail helpdesk@sheffield.ac.uk and provide the following information:
+To apply for dedicated resource, researchers should e-mail research-it@sheffield.ac.uk and provide the following information:
 
 * Project name
 * Contact details for the project which will be paying for the resource

@@ -116,5 +116,8 @@ Command                Description
 -m bea                 Type of notifications to send. Can be any combination of
                        begin (b) end (e) or abort (a) i.e. `-m ea` for end and 
                        abortion messages.
+-a                     Specify the earliest time for a job to start, in the
+                       format MMDDhhmm. e.g. -a 01011130 will schedule the job
+                       to begin no sooner than 11:30 on 1st January.
 ====================== ========================================================
 

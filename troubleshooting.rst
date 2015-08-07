@@ -24,7 +24,7 @@ To see if you have exceeded your disk space quota, run the quota command:
 
 In the above, you can see that the quota was set to 5.1 gigabytes and all of this is in use. Any jobs submitted by this user will likely result in an Eqw status. The recommended action is for the user to delete enough files to allow normal work to continue.
 
-Sometimes, it is not possible to log-in to the system because of a full quota, in which case you need to contact iceberg-admins@lists.shef.ac.uk and ask to the unfrozen.
+Sometimes, it is not possible to log-in to the system because of a full quota, in which case you need to contact research-it@sheffield.ac.uk and ask to the unfrozen.
 
 Windows-style line endings
 --------------------------

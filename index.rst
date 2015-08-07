@@ -25,7 +25,7 @@ If you are interested in GPU computing, take a look at :ref:`The GPU Computing s
 If you have a problem using iceberg, try some of our :ref:`troubleshooting` tips in the first instance.
 
 If you get stuck using iceberg or need some specific software please contact the 
-research computing team on `helpdesk@sheffield.ac.uk <helpdesk@sheffield.ac.uk>`_.
+research computing team on `research-it@sheffield.ac.uk <research-it@sheffield.ac.uk>`_.
 
 .. toctree::
    :maxdepth: 1
