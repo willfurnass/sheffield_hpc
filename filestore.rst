@@ -67,7 +67,7 @@ Recovering snapshots
 --------------------
 We take regular back-ups of your ``/home`` and ``/data`` directories and it is possible to directly access a limited subset of them.
 
-There are 7 days worth of snapshots available in your ``/home`` and ``data`` directories in a hidden directory called ``.snapshot``. You need to explicitly ``cd`` into this directory to get at the files::
+There are 7 days worth of snapshots available in your ``/home`` and ``/data`` directories in a hidden directory called ``.snapshot``. You need to explicitly ``cd`` into this directory to get at the files::
 
     cd /home/YOURUSERNAME/.snapshot
 
