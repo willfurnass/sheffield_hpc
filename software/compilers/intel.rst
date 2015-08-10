@@ -47,6 +47,12 @@ The following links are to Intel's website
 * `User and Reference Guide for the Intel® Fortran Compiler 15.0 <https://software.intel.com/en-us/compiler_15.0_ug_f>`_
 * `Step by Step optimizing with Intel C++ Compiler <https://software.intel.com/en-us/articles/step-by-step-optimizing-with-intel-c-compiler>`_
 
+Related Software on the system
+------------------------------
+Users of the Intel Compilers may also find the following useful:
+
+* :ref:`NAG Fortran Library (serial)` - A library of over 1800 numerical and statistical functions.
+
 Installation Notes
 ------------------
 The following notes are primarily for system administrators.
