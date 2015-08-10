@@ -1,3 +1,5 @@
+.. _`Intel Compilers`:
+
 Intel Compilers
 ===============
 Intel Compilers help create C, C++ and Fortran applications that can take full advantage of the advanced hardware capabilities available in Intel processors and co-processors. They also simplify that development by providing high level parallel models and built-in features like explicit vectorization and optimization reports.
