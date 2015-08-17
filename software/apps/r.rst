@@ -3,7 +3,6 @@ R
 
 .. sidebar:: R
 
-   :Support Level: bronze
    :Dependencies: BLAS
    :URL: http://www.r-project.org/
    :Documentation: http://www.r-project.org/
@@ -20,6 +19,7 @@ The latest version of R can be loaded with ::
 
 Alternatively, you can load a specific version of R using one of the following ::
 
+        module load apps/R/3.2.2
         module load apps/R/3.2.1
         module load apps/R/3.2.0
         module load apps/R/3.1.2
@@ -34,13 +34,13 @@ Here, we assume that you wish to run the program :code:`my_code.R` on the system
 
 First, you need to write a batch submission file. We assume you'll call this :code:`my_job.sge` ::
 
-	#!/bin/bash
-	#$ -S /bin/bash
-	#$ -cwd               # Run job from current directory
+  #!/bin/bash
+  #$ -S /bin/bash
+  #$ -cwd               # Run job from current directory
 
-  module load apps/R/3.2.1     # Load version 3.2.1 of R
+  module load apps/R/3.2.2     # Load version 3.2.2 of R
 
-	R CMD BATCH my_code.R my_code.R.o$JOB_ID
+  R CMD BATCH my_code.R my_code.R.o$JOB_ID
 
 Note that R must be called with both the :code:`CMD` and :code:`BATCH` options which tell it to run an R program, in this case :code:`my_code.R`. If you do not do this, R will attempt to open an interactive prompt.
 
@@ -62,18 +62,18 @@ Installing additional packages
 As you will not have permissions to install packages to the default folder, additional R packages can be installed to your home folder :code:`~/`. To create the appropriate folder, install your first package in R in interactive mode. Load an interactive R session as described above, and install a package with ::
 
         install.packages()
-        
+
 You will be prompted to create a personal package library. Choose yes. The package will download and install from a CRAN mirror (you may be asked to select a nearby mirror, which you can do simply by entering the number of your preferred mirror).
 
 Once the chosen package has been installed, additional packages can be installed either in the same way, or by creating a .R script. An example script might look like ::
 
         install.packages("dplyr")
         install.packages("devtools")
-        
+
 Call this using :code:`source()`. For example if your script is called :code:`packages.R` and is stored in your home folder, source this from an interactive R session with ::
 
         source("~/packages.R")
-        
+
 These additional packages will be installed without prompting to your personal package library.
 
 To check your packages are up to date, and update them if necessary, run the following line from an R interactive session ::
@@ -89,11 +89,11 @@ Some R packages require external libraries to be installed before you can instal
 The associated R packages are not included in the system install of R, so you will need to install them yourself to your home directory following the instructions linked to below.
 
 * :ref:`geos` This is the library required for the ``rgeos`` package.
-* :ref:`jags` This is the library required for the ``rjags`` package
+* :ref:`jags` This is the library required for the ``rjags`` and ``runjags`` packages
 
-Using libRmath
---------------
-libRmath alows you to access some of R's functionality from a C program. For example, consider the C-program below ::
+Using the Rmath library in C Programs
+-------------------------------------
+The Rmath library allows you to access some of R's functionality from a C program. For example, consider the C-program below ::
 
     #include <stdio.h>
     #define MATHLIB_STANDALONE
@@ -111,98 +111,35 @@ libRmath alows you to access some of R's functionality from a C program. For exa
 
 This makes use of R's ``qbeta`` function. You can compile and run this on a worker node. Start a session on a worker node with ``qrsh`` or ``qsh`` and load the R module ::
 
-    module load apps/R/3.2.1
+    module load apps/R/3.2.2
 
 Assuming the program is called ``test_rmath.c``, compile with ::
 
     gcc test_rmath.c -lRmath -lm -o test_rmath
 
+For full details about the functions made available by the Rmath library, see section 6.7 of the document `Writing R extensions <https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Numerical-analysis-subroutines>`_
+
 Installation Notes
 ------------------
 These notes are primarily for administrators of the system.
 
+**Version 3.2.2**
+
+* `What's new in R version 3.2.2 <https://stat.ethz.ch/pipermail/r-announce/2015/000589.html>`_
+
+This was a scripted install. It was compiled from source with gcc 4.4.7 and with ``--enable-R-shlib`` enabled. You will need a large memory ``qrsh`` session in order to successfully run the build script. I used ``qrsh -l rmem=8G -l mem=16G``
+
+* `install_R_3.2.2.sh <https://github.com/rcgsheffield/iceberg_software/blob/master/software/install_scripts/apps/R/install_R_3.2.2.sh>`_ Downloads, compiles and installs R 3.2.2 and the ``Rmath`` library.
+* `R 3.2.2 Modulefile <https://github.com/rcgsheffield/iceberg_software/blob/master/software/modulefiles/apps/R/3.2.2>`_ located on the system at ``/usr/local/modulefiles/apps/R/3.2.2``
+* Install log-files were manually copied to ``/usr/local/packages6/R/3.2.2/install_logs`` on the system. This step should be included in the next version of the install script.
+
 **Version 3.2.1**
 
-R was compiled from source using gcc 4.4.7 and the following commands::
+This was a manual install. It was compiled from source with gcc 4.4.7 and with ``--enable-R-shlib`` enabled.
 
-        $ qrsh -l rmem=8G mem=16G
-        $ tar -xvzf ./R-3.2.1.tar.gz
-        $ cd R-3.2.1
+* `Install notes <https://github.com/rcgsheffield/iceberg_software/blob/master/software/install_scripts/apps/R/R-3.2.1.md>`_
+* `R 3.2.1 Modulefile <https://github.com/rcgsheffield/iceberg_software/blob/master/software/modulefiles/apps/R/3.2.1>`_ located on the system at ``/usr/local/modulefiles/apps/R/3.2.1``
 
-The standard amount of memory allocated for a qrsh session was insufficient to build R, which is why 8gig was requested instead. ::
+**Older versions**
 
-        $ module load libs/gcc/lapack
-        $ module load libs/gcc/blas
-        $ ./configure --prefix /usr/local/packages6/R/3.2.1 --with-blas --with-lapack --enable-R-shlib
-
-output from the ``configure`` step was ::
-
-    R is now configured for x86_64-unknown-linux-gnu
-
-      Source directory:          .
-      Installation directory:    /usr/local/packages6/R/3.2.1
-
-      C compiler:                gcc -std=gnu99  -g -O2
-      Fortran 77 compiler:       gfortran  -g -O2
-
-      C++ compiler:              g++  -g -O2
-      C++ 11 compiler:           g++  -std=c++0x -g -O2
-      Fortran 90/95 compiler:    gfortran -g -O2
-      Obj-C compiler:
-
-      Interfaces supported:      X11, tcltk
-      External libraries:        readline
-      Additional capabilities:   PNG, JPEG, TIFF, NLS, cairo
-      Options enabled:           shared R library, shared BLAS, R profiling
-
-      Capabilities skipped:      ICU
-      Options not enabled:       memory profiling
-
-      Recommended packages:      yes
-
-Built with ::
-
-    $ make
-
-To build libRmath.so ::
-
-    $ cd R-3.2.1/src/nmath/standalone
-    $ make
-    $ mv /usr/local/packages6/R/3.2.1/lib64/libRmath.* /usr/local/packages6/R/3.2.1/lib64/R/lib
-
-Install to the system ::
-
-    $ make install
-
-Testing was performed with ::
-
-    $ make check
-
-All tests passed.
-
-Module file
------------
-location ``/usr/local/modulefiles/apps/R/3.2.1`` ::
-
-  #%Module10.2#####################################################################
-
-  ## Module file logging
-  source /usr/local/etc/module_logging.tcl
-  ##
-
-
-  proc ModulesHelp { } {
-      global helpmsg
-      puts stderr "\t$helpmsg\n"
-  }
-
-
-  #
-  # 1. change 'version' string to appropriate version number: 6.0, 5.2, ...
-  #
-  set version 3.2.1
-
-  set R_DIR /usr/local/packages6/R
-
-  prepend-path PATH $R_DIR/$version/bin
-  prepend-path LD_LIBRARY_PATH $R_DIR/$version/lib64/R/lib/
+Install notes for older versions of R are not available.
