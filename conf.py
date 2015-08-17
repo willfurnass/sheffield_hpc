@@ -19,17 +19,17 @@ import shlex
 import glob
 import shutil
 
-def file_finder(app):
-    dest_dir = './software/'
-    files = glob.glob('/usr/local/packages6/*/*rst')
-    files += glob.glob('/usr/local/extras/*/*rst')
-
-    for i, afile in enumerate(files):
-	print("[{}/{}] Found {}".format(i+1, len(files), os.path.basename(afile)))
-        shutil.copy(afile, dest_dir)
-
-def setup(app):
-    app.connect('builder-inited', file_finder)
+#def file_finder(app):
+#    dest_dir = './software/'
+#    files = glob.glob('/usr/local/packages6/*/*rst')
+#    files += glob.glob('/usr/local/extras/*/*rst')
+#
+#    for i, afile in enumerate(files):
+#	print("[{}/{}] Found {}".format(i+1, len(files), os.path.basename(afile)))
+#        shutil.copy(afile, dest_dir)
+#
+#def setup(app):
+#    app.connect('builder-inited', file_finder)
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -150,9 +150,13 @@ html_theme_options = {'navbar_sidebarrel':False,
                       'source_link_position': False,
                       'bootswatch_theme': 'flatly',
                       'navbar_site_name': "iceberg Documentation",
-                      'navbar_title': ' '}
+                      'navbar_title': ' ',
+                      'navbar_links': [("<img src='/iceberg/_static/img/pdf_icon.png'>", "http://rcg.group.shef.ac.uk/iceberg/icebergDocumentation.pdf", True)],
+                      'globaltoc_depth': 1}
 
 html_sidebars = {'software/**': ['softwaretoc.html'],
+                 'gpu/**': ['softwaretoc.html'],
+                 'using-iceberg/**': ['softwaretoc.html'],
                  'index': []}
 
 # Add any paths that contain custom themes here, relative to this directory.

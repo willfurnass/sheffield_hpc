@@ -1,37 +1,64 @@
-iceberg Documentation
+Iceberg Documentation
 =====================
 
-This repository builds the iceberg documentation using sphinx.
+Iceberg is The University of Sheffield's High Performance Computing cluster. The current official documentation for it is at [https://www.shef.ac.uk/wrgrid/iceberg](https://www.shef.ac.uk/wrgrid/iceberg).
 
-Currently, it harvests the software documentation from
-`/usr/local/packages6` and `/usr/local/extras` so needs to be run on
-a worker node on iceberg. 
+This repository contains a proposed replacement for the page linked to above. It makes use of [Sphinx](http://sphinx-doc.org/) to build the results and represents a move to a more open, collaborative way of working.
 
-You can activate the python environment to use sphinx by running:
+For a guide on the rst file format see [this](http://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html) document.
 
-```
-source activate_env.sh
-```
+Rendered Documentation
+----------------------
+Two versions of the documentation are currently automatically built from this repository:
 
-once this has been activated you can run 
+* [A website](http://rcg.group.shef.ac.uk/iceberg/)
+* [A .pdf document](http://rcg.group.shef.ac.uk/iceberg/icebergDocumentation.pdf)
 
-```
-make html
-```
+How to Contribute
+-----------------
+Contribution is via githib Pull Requests, even for those who have direct commit access to the repository. To contribute, please fork this repo, make your changes in the fork and submit a Pull Request when you are ready.
 
-to build the documentation into a website, you can then view the
-documentation by running:
+Building the documentation locally
+----------------------------------
 
-```
-firefox _build/html/index.html
-```
+It is also possible to build the documentation on your own machine. Clone the repository and follow the instructions below
 
-because sphinx puts the output files into the `_build/html`
-directory.
+Building the documentation  on a local Windows machine
+------------------------------------------------------
 
+Install the following:-
 
-Deploying
----------
+* [Anaconda Python](https://store.continuum.io/cshop/anaconda/) 
 
-The files in `_build/html` can be copied to Cpanel to deploy the
-site.
+Install the following module
+
+     pip install sphinx_bootstrap_theme
+
+* [GNU Make](http://gnuwin32.sourceforge.net/packages/make.htm)
+* [MikTeX](http://miktex.org/download)
+
+From the command line, the following will build the .pdf file ::
+
+    make latexpdf
+
+On first run, MikTeX will prompt you to install various extra LaTeX packages. To build the HTML documentation :: 
+
+    make html
+
+Building the documentation on a local Linux machine
+---------------------------------------------------
+
+Have 
+
+* Python 2
+* sphinx
+* phinx_bootstrap_theme
+
+installed, then run ::
+
+     make html
+
+Building the documentation on a local Mac machine
+-------------------------------------------------
+TODO
+

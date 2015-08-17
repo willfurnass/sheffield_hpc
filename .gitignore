@@ -1,4 +1,3 @@
 _build/**
-software/*rst
 .doctrees
 get_docs.py

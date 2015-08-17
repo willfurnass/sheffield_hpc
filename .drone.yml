@@ -1,4 +1,11 @@
-image: plaindocs/docker-sphinx
+image: drone-sphinx
+
 script:
   - make html
-  - echo "Done"
+  - make latexpdf
+  - echo "Done!"
+
+deploy:
+  bash:
+    branch: master
+    command: su sphinx -c /sphinx/sync_built_docs.sh

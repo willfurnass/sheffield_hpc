@@ -1,9 +1,11 @@
 html {
-    background-color: #f1f2f2;
+    background-color: #fff;
     color: #414042;
-    font-family: "Open Sans",sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    /*
     font-size: 0.8125em;
     line-height: 1.53846;
+     */
 }
 
 body {
@@ -75,6 +77,13 @@ cite {
     margin-right: -15px;
 }
 
+
+@media (max-width: 979px){
+    .navbar-collapse {
+            background-color: #333132;
+    }
+}
+
 /* Side Nav */
 
 div.bs-sidenav {
@@ -115,4 +124,25 @@ div.bs-sidenav {
 
 .bs-sidenav > ul > li.toctree-l1.current {
     display: inherit;
+}
+
+/* Table */
+
+table.table:not(.field-list):not(.footnote) {
+    border-top: 1px solid #333132;
+    border-right: 1px solid #333132;
+    border-collapse: collapse;
+}
+
+table.table:not(.footnote) td:not(.field-body) {
+    border-bottom: 1px solid #333132 !important;
+    border-left: 1px solid #333132 !important;
+}
+
+table.table:not(.footnote) thead th:not(.field-name) {
+    border-bottom: 1px solid #333132 !important;
+    border-left: 1px solid #333132 !important;
+    background-color: #333132;
+    font-weight: bold;
+    color: #ffffff
 }
