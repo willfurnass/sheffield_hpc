@@ -39,7 +39,7 @@ Remove all modules to return to the base environment ::
     module purge
 
 Module Command Reference
-------------------------
+########################
 Here is a list of the most useful module commands. For full details, type ``man module`` at an iceberg command prompt.
 
 * ``module list`` – lists currently loaded modules
