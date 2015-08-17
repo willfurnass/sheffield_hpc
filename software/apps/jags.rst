@@ -35,9 +35,9 @@ You can now run the ``jags`` command ::
         Loading module: bugs: ok
         .
 
-The rjags interface in R
-------------------------
-rjags is a CRAN package that provides an R interface to jags. It is not installed in R by default.
+The rjags and runjags interfaces in R
+-------------------------------------
+`rjags <https://cran.r-project.org/web/packages/rjags/index.html>`_ and `runjags <https://cran.r-project.org/web/packages/runjags/index.html>`_ are CRAN packages that provide an R interface to jags. They are not installed in R by default.
 
 After connecting to iceberg (see :ref:`ssh`), start an interactive sesssion with the :code:`qrsh` command. Run the following module commands ::
 
@@ -45,19 +45,21 @@ After connecting to iceberg (see :ref:`ssh`), start an interactive sesssion with
         module load apps/gcc/4.8.2/JAGS/3.4
         module load apps/R/3.2
 
-Launch R by typing ``R`` and pressing return. Within R, execute the following command ::
+Launch R by typing ``R`` and pressing return. Within R, execute the following commands ::
 
         install.packages('rjags')
+        install.packages('runjags')
 
 and follow the on-screen inctructions. Answer ``y`` to any questions about the creation of a personal library should they be asked.
 
-The package will be stored in a directory called `R` within your home directory.
+The packages will be stored in a directory called `R` within your home directory.
 
-You should only need to run the ``install.packages`` command once. When you log into the system in future, you will only need to run the ``module`` commands above to make JAGS available to the system.
+You should only need to run the ``install.packages`` commands once. When you log into the system in future, you will only need to run the ``module`` commands above to make JAGS available to the system.
 
-Loading the rjags package is the same as for any other R package ::
+You load the rjags packages the same as you would any other R package ::
 
         library('rjags')
+        library('runjags')
 
 If you received an error message such as ::
 
