@@ -2,7 +2,7 @@ Code Saturne 4.0
 ================
 
 .. sidebar:: Code Saturne
-   
+
    :Version: 4.0
    :Support Level: Bronze
    :URL: http://code-saturne.org/cms/
@@ -33,7 +33,7 @@ This version of Code Saturne was built with the following:-
 * :ref:`HDF5` 1.8.14
 
 .. code-block:: none
-        
+
     module load libs/gcc/4.4.7/cgns/3.2.1
 
     tar -xvzf code_saturne-4.0.0.tar.gz
@@ -87,7 +87,7 @@ This gave the following configuration ::
 I then did ::
 
          make
-         make install    
+         make install
 
 Post Install Steps
 ------------------
@@ -101,7 +101,7 @@ Testing
 -------
 This module has not been yet been properly tested and so should be considered experimental.
 
-So far, a users 4 core job was run to completion. Tests are required.
+Several user's jobs up to 8 cores have been submitted and ran to completion.
 
 Module File
 -----------
@@ -124,11 +124,11 @@ Module File Location: :code:`/usr/local/modulefiles/apps/code_saturne/4.0.0`
 		puts stderr "   Adds `code_saturn-$codesaturneversion' to your PATH environment variable and necessary libraries"
 	}
 
-	set     codesaturneversion 4.0.0
+	set     codesaturneversion 4.0.
+  module load mpi/gcc/openmpi/1.8.3
 
 	module-whatis   "loads the necessary `code_saturne-$codesaturneversion' library paths"
 
 	set cspath /usr/local/packages6/apps/gcc/4.4.7/code_saturne/4.0
 	prepend-path MANPATH $cspath/share/man
 	prepend-path PATH $cspath/bin
-
