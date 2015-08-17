@@ -34,13 +34,13 @@ Here, we assume that you wish to run the program :code:`my_code.R` on the system
 
 First, you need to write a batch submission file. We assume you'll call this :code:`my_job.sge` ::
 
-	#!/bin/bash
-	#$ -S /bin/bash
-	#$ -cwd               # Run job from current directory
+  #!/bin/bash
+  #$ -S /bin/bash
+  #$ -cwd               # Run job from current directory
 
   module load apps/R/3.2.1     # Load version 3.2.1 of R
 
-	R CMD BATCH my_code.R my_code.R.o$JOB_ID
+  R CMD BATCH my_code.R my_code.R.o$JOB_ID
 
 Note that R must be called with both the :code:`CMD` and :code:`BATCH` options which tell it to run an R program, in this case :code:`my_code.R`. If you do not do this, R will attempt to open an interactive prompt.
 
@@ -91,9 +91,9 @@ The associated R packages are not included in the system install of R, so you wi
 * :ref:`geos` This is the library required for the ``rgeos`` package.
 * :ref:`jags` This is the library required for the ``rjags`` package
 
-Using libRmath
---------------
-libRmath alows you to access some of R's functionality from a C program. For example, consider the C-program below ::
+Using the Rmath library in C Programs
+-------------------------------------
+The Rmath library allows you to access some of R's functionality from a C program. For example, consider the C-program below ::
 
     #include <stdio.h>
     #define MATHLIB_STANDALONE
@@ -117,37 +117,15 @@ Assuming the program is called ``test_rmath.c``, compile with ::
 
     gcc test_rmath.c -lRmath -lm -o test_rmath
 
+For full details about the functions made available by the Rmath library, see section 6.7 of the document `Writing R extensions <https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Numerical-analysis-subroutines>`_
+
 Installation Notes
 ------------------
 These notes are primarily for administrators of the system.
 
-**Version 3.2.2**
-
 **Version 3.2.1**
 
-Module file
------------
-location ``/usr/local/modulefiles/apps/R/3.2.1`` ::
+This was a manual install. It was compiled from source with gcc 4.4.7 and with ``--enable-R-shlib`` enabled.
 
-  #%Module10.2#####################################################################
-
-  ## Module file logging
-  source /usr/local/etc/module_logging.tcl
-  ##
-
-
-  proc ModulesHelp { } {
-      global helpmsg
-      puts stderr "\t$helpmsg\n"
-  }
-
-
-  #
-  # 1. change 'version' string to appropriate version number: 6.0, 5.2, ...
-  #
-  set version 3.2.1
-
-  set R_DIR /usr/local/packages6/R
-
-  prepend-path PATH $R_DIR/$version/bin
-  prepend-path LD_LIBRARY_PATH $R_DIR/$version/lib64/R/lib/
+* `Install notes <https://github.com/rcgsheffield/iceberg_software/blob/master/software/install_scripts/apps/R/R-3.2.1.md>`_
+* `R 3.2.1 Modulefile <https://github.com/rcgsheffield/iceberg_software/blob/master/software/modulefiles/apps/R/3.2.1>`_ located on the system at ``/usr/local/modulefiles/apps/R/3.2.1``
