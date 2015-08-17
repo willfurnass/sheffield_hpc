@@ -3,7 +3,6 @@ R
 
 .. sidebar:: R
 
-   :Support Level: bronze
    :Dependencies: BLAS
    :URL: http://www.r-project.org/
    :Documentation: http://www.r-project.org/
@@ -20,6 +19,7 @@ The latest version of R can be loaded with ::
 
 Alternatively, you can load a specific version of R using one of the following ::
 
+        module load apps/R/3.2.2
         module load apps/R/3.2.1
         module load apps/R/3.2.0
         module load apps/R/3.1.2
@@ -38,7 +38,7 @@ First, you need to write a batch submission file. We assume you'll call this :co
   #$ -S /bin/bash
   #$ -cwd               # Run job from current directory
 
-  module load apps/R/3.2.1     # Load version 3.2.1 of R
+  module load apps/R/3.2.2     # Load version 3.2.2 of R
 
   R CMD BATCH my_code.R my_code.R.o$JOB_ID
 
@@ -89,7 +89,7 @@ Some R packages require external libraries to be installed before you can instal
 The associated R packages are not included in the system install of R, so you will need to install them yourself to your home directory following the instructions linked to below.
 
 * :ref:`geos` This is the library required for the ``rgeos`` package.
-* :ref:`jags` This is the library required for the ``rjags`` package
+* :ref:`jags` This is the library required for the ``rjags`` and ``runjags`` packages
 
 Using the Rmath library in C Programs
 -------------------------------------
@@ -111,7 +111,7 @@ The Rmath library allows you to access some of R's functionality from a C progra
 
 This makes use of R's ``qbeta`` function. You can compile and run this on a worker node. Start a session on a worker node with ``qrsh`` or ``qsh`` and load the R module ::
 
-    module load apps/R/3.2.1
+    module load apps/R/3.2.2
 
 Assuming the program is called ``test_rmath.c``, compile with ::
 
@@ -123,9 +123,23 @@ Installation Notes
 ------------------
 These notes are primarily for administrators of the system.
 
+**Version 3.2.2**
+
+* `What's new in R version 3.2.2 <https://stat.ethz.ch/pipermail/r-announce/2015/000589.html>`_
+
+This was a scripted install. It was compiled from source with gcc 4.4.7 and with ``--enable-R-shlib`` enabled. You will need a large memory ``qrsh`` session in order to successfully run the build script. I used ``qrsh -l rmem=8G -l mem=16G``
+
+* `install_R_3.2.2.sh <https://github.com/rcgsheffield/iceberg_software/blob/master/software/install_scripts/apps/R/install_R_3.2.2.sh>`_ Downloads, compiles and installs R 3.2.2 and the ``Rmath`` library.
+* `R 3.2.2 Modulefile <https://github.com/rcgsheffield/iceberg_software/blob/master/software/modulefiles/apps/R/3.2.2>`_ located on the system at ``/usr/local/modulefiles/apps/R/3.2.2``
+* Install log-files were manually copied to ``/usr/local/packages6/R/3.2.2/install_logs`` on the system. This step should be included in the next version of the install script.
+
 **Version 3.2.1**
 
 This was a manual install. It was compiled from source with gcc 4.4.7 and with ``--enable-R-shlib`` enabled.
 
 * `Install notes <https://github.com/rcgsheffield/iceberg_software/blob/master/software/install_scripts/apps/R/R-3.2.1.md>`_
 * `R 3.2.1 Modulefile <https://github.com/rcgsheffield/iceberg_software/blob/master/software/modulefiles/apps/R/3.2.1>`_ located on the system at ``/usr/local/modulefiles/apps/R/3.2.1``
+
+**Older versions**
+
+Install notes for older versions of R are not available.
