@@ -17,6 +17,26 @@ To make code saturne available, run the following module command after starting 
 
 :code:`module load apps/code_saturne/4.0.0`
 
+Troubleshooting
+---------------
+If you run Code Saturne jobs from ``/fastdata`` they will fail since the underlying filesystem used by ``/fastdata`` does not support posix locks. If you need more space than is available in your home directory, use ``/data`` instead. If you use ``/fastdata`` with Code Saturne you may get an error message similar to the one below ::
+
+  File locking failed in ADIOI_Set_lock(fd 14,cmd F_SETLKW/7,type F_WRLCK/1,whence 0) with return value FFFFFFFF and errno 26.
+  - If the file system is NFS, you need to use NFS version 3, ensure that the lockd daemon is running on all the machines, and mount the directory with the 'noac' option (no attribute caching).
+  - If the file system is LUSTRE, ensure that the directory is mounted with the 'flock' option.
+  ADIOI_Set_lock:: Function not implemented
+  ADIOI_Set_lock:offset 0, length 8
+  --------------------------------------------------------------------------
+  MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+  with errorcode 1.
+  NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+  You may or may not see output from other processes, depending on
+  exactly when Open MPI kills them.
+  --------------------------------------------------------------------------
+   solver script exited with status 1.
+  Error running the calculation.
+  Check Code_Saturne log (listing) and error* files for details.
+
 Installation Notes
 ------------------
 These notes are primarily for system administrators.
@@ -109,26 +129,26 @@ Module File Location: :code:`/usr/local/modulefiles/apps/code_saturne/4.0.0`
 
 .. code-block:: none
 
-	#%Module1.0#####################################################################
-	##
-	## code_saturne 4.0 module file
-	##
+  #%Module1.0#####################################################################
+  ##
+  ## code_saturne 4.0 module file
+  ##
 
-	## Module file logging
-	source /usr/local/etc/module_logging.tcl
-	##
+  ## Module file logging
+  source /usr/local/etc/module_logging.tcl
+  ##
 
-	proc ModulesHelp { } {
-		global code-saturneversion
+  proc ModulesHelp { } {
+  	global code-saturneversion
 
-		puts stderr "   Adds `code_saturn-$codesaturneversion' to your PATH environment variable and necessary libraries"
-	}
+  	puts stderr "   Adds `code_saturn-$codesaturneversion' to your PATH environment variable and necessary libraries"
+  }
 
-	set     codesaturneversion 4.0.
+  set     codesaturneversion 4.0.
   module load mpi/gcc/openmpi/1.8.3
 
-	module-whatis   "loads the necessary `code_saturne-$codesaturneversion' library paths"
+  module-whatis   "loads the necessary `code_saturne-$codesaturneversion' library paths"
 
-	set cspath /usr/local/packages6/apps/gcc/4.4.7/code_saturne/4.0
-	prepend-path MANPATH $cspath/share/man
-	prepend-path PATH $cspath/bin
+  set cspath /usr/local/packages6/apps/gcc/4.4.7/code_saturne/4.0
+  prepend-path MANPATH $cspath/share/man
+  prepend-path PATH $cspath/bin
