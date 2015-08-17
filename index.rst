@@ -1,31 +1,35 @@
 .. _ib-docs:
 
-iceberg
+Iceberg
 =======
 
 .. image:: images/iceberg.png
    :width: 40%
    :align: right
-   :alt: A picture showing some of the iceberg hardware.
+   :alt: A picture showing some of the Iceberg hardware.
 
-Welcome to the **iceberg** user manual. Iceberg is the University of Sheffield's 
-central High Perfomance Computing (HPC) resource. Its mission is to meet 
+Welcome to the **Iceberg** user manual. Iceberg is the University of Sheffield's
+central High Perfomance Computing (HPC) resource. Its mission is to meet
 the intensive computing requirements of research projects at Sheffield University.
 
 This manual aims to provide you all the information you need to use iceberg.
 
-If you are new to HPC and iceberg checkout the :ref:`getting-started` guide.
+**About the Iceberg Service**
 
-If you want to see what software is availible for use on iceberg see the :ref:`software` section.
+* :ref:`cluster-specs` - Information about Iceberg's hardware
+* :ref:`filestore` - Information about the amount of disk space you get on Iceberg and the different types of filesystem available.
+* :ref:`How to buy additional compute power on Iceberg <resourcecosts>`
+* :ref:`The GPU Computing section <GPUIntro>` - GPU computing on Iceberg
 
-If you want more information about the iceberg hardware take a look at the :ref:`cluster-specs`.
+**Using the Iceberg Service**
 
-If you are interested in GPU computing, take a look at :ref:`The GPU Computing section <GPUIntro>`
+* :ref:`getting-started` guide - If you are new to HPC and Iceberg, we suggest you start here.
+* :ref:`software` - Details about the software installed on Iceberg and how to use it
+* :ref:`troubleshooting` - Start here if you have a problem using the system.
 
-If you have a problem using iceberg, try some of our :ref:`troubleshooting` tips in the first instance.
+**Support**
 
-If you get stuck using iceberg or need some specific software please contact the 
-research computing team on `research-it@sheffield.ac.uk <research-it@sheffield.ac.uk>`_.
+If you have a problem using Iceberg or need some specific software installing please contact the research computing team on `research-it@sheffield.ac.uk <research-it@sheffield.ac.uk>`_.
 
 .. toctree::
    :maxdepth: 1
@@ -41,4 +45,3 @@ research computing team on `research-it@sheffield.ac.uk <research-it@sheffield.a
    filestore
    resource_costs
    glossary
-
