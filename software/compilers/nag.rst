@@ -25,7 +25,7 @@ Once you've run the NAG Compiler module command, ``man`` documentation is availa
 Online documentation:
 
 * `PDF version of the NAG Fortran Compiler Manual <http://www.nag.co.uk/nagware/np/r60_doc/np60_manual.pdf>`_
-* `NAG Fortran Compiler Documentation Index (NAG's Website) <http://www.nag.co.uk/nagware/np/doc_index.asp>`_
+* `NAG Fortran Compiler Documentation Index (NAG's Website) <http://www.nag.co.uk/nagware/np.asp>`_
 
 Installation Notes
 ------------------
