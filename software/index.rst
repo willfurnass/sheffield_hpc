@@ -17,4 +17,5 @@ the research computing team at `research-it@sheffield.ac.uk <research-it@sheffie
     apps/index
     libs/index
     compilers/index
+    mpi/index
 
