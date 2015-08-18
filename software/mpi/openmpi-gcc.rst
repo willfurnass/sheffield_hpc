@@ -33,4 +33,4 @@ These are primarily for administrators of the system.
 Compiled using gcc 4.4.7.
 
 * `install_openMPI.sh  <https://github.com/rcgsheffield/iceberg_software/blob/master/software/install_scripts/mpi/gcc/openmpi/install_openMPI_1.8.8.sh>`_ Downloads, compiles and installs OpenMPI 1.8.8 using the system gcc.
-* `Modulefile <https://github.com/rcgsheffield/iceberg_software/blob/master/software/mpi/gcc/openmpi/1.8.8>`_ located on the system at ``/usr/local/modulefiles/mpi/gcc/openmpi/1.8.8``
+* `Modulefile <https://github.com/rcgsheffield/iceberg_software/blob/master/software/modulefiles/mpi/gcc/openmpi/1.8.8>`_ located on the system at ``/usr/local/modulefiles/mpi/gcc/openmpi/1.8.8``
