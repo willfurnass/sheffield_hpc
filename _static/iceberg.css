@@ -128,18 +128,18 @@ div.bs-sidenav {
 
 /* Table */
 
-table.table:not(.field-list) {
+table.table:not(.field-list):not(.footnote) {
     border-top: 1px solid #333132;
     border-right: 1px solid #333132;
     border-collapse: collapse;
 }
 
-table.table td:not(.field-body) {
+table.table:not(.footnote) td:not(.field-body) {
     border-bottom: 1px solid #333132 !important;
     border-left: 1px solid #333132 !important;
 }
 
-table.table thead th:not(.field-name) {
+table.table:not(.footnote) thead th:not(.field-name) {
     border-bottom: 1px solid #333132 !important;
     border-left: 1px solid #333132 !important;
     background-color: #333132;

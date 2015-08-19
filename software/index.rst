@@ -5,7 +5,7 @@ Iceberg Software
 
 These pages list the software availible on iceberg. If you notice an error or
 an omission, or wish to request new software please email 
-the research computing team at `hpchub@sheffield.ac.uk <hpchub@sheffield.ac.uk>`_.
+the research computing team at `research-it@sheffield.ac.uk <research-it@sheffield.ac.uk>`_.
 
 .. toctree::
     :hidden:
@@ -13,7 +13,9 @@ the research computing team at `hpchub@sheffield.ac.uk <hpchub@sheffield.ac.uk>`
     :glob:
     
     modules
+    SunGridEngine
     apps/index
     libs/index
     compilers/index
+    mpi/index
 

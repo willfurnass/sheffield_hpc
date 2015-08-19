@@ -11,7 +11,7 @@ Getting an Account
 ##################
 
 Before you can start using iceberg you need to register for an account.
-Accounts are availible for staff by emailing `helpdesk@sheffield.ac.uk <helpdesk@sheffield.ac.uk>`_.
+Accounts are availible for staff by emailing `research-it@sheffield.ac.uk <research-it@sheffield.ac.uk>`_.
 
 The following categories of students can also have an account on iceberg with 
 the permission of their supervisors:
@@ -21,7 +21,7 @@ the permission of their supervisors:
 * Undergraduates 3rd & 4th year  - project work
 
 Student's supervisors can request an account for the student by emailing
-`helpdesk@sheffield.ac.uk <helpdesk@sheffield.ac.uk>`_.
+`research-it@sheffield.ac.uk <research-it@sheffield.ac.uk>`_.
 
 .. note::
 
