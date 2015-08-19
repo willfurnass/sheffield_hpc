@@ -93,7 +93,7 @@ I am getting warning messages and warning emails from my batch jobs about insuff
 There are two types of memory resources that can be requested when submitting batch jobs using the qsub command. These are, virtual memory ( -l mem=nnn ) and real memory ( -l rmem=nnn ).
 Virtual memory limit specified should always be greater than equal to the real memory limit specification.
 
-If a job exceeds its virtual memory resource it gets terminated. However if a job exceeds its real memory resource it does not get terminated but an email message is sent to the user asking him to specify a larger rmem= parameter the next time so that the job can run more efficiently. 
+If a job exceeds its virtual memory resource it gets terminated. However if a job exceeds its real memory resource it does not get terminated but an email message is sent to the user asking him to specify a larger rmem= parameter the next time, so that the job can run more efficiently. 
 
 
 What is rmem ( real_memory) and mem ( virtual_memory) 
