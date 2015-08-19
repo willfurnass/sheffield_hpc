@@ -38,6 +38,8 @@ Additional resources
 
 Installation Notes
 ------------------
+*Version 15.7*
+
 The installer is interactive. Most of the questions are obvious.
 Here is how I answered the rest
 
@@ -81,6 +83,8 @@ Other questions ::
   Do you wish to install MPICH? (y/n) y
   Do you wish to generate license keys? (y/n) n
   Do you want the files in the install directory to be read-only? (y/n) n
+
+The license file is on the system at ``/usr/local/packages6/compilers/pgi/license.dat`` and is a 5 seat network license. Licenses are only used at compile time.
 
 Modulefile
 ----------
