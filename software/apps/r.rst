@@ -30,7 +30,7 @@ R can then be run with ::
 
 Serial (one CPU) Batch usage
 ----------------------------
-Here, we assume that you wish to run the program :code:`my_code.R` on the system.
+Here, we assume that you wish to run the program :code:`my_code.R` on the system. With batch usage it is recommended to load a specific version of R, for example :code:`module load apps/R/3.2.2`, to ensure the expected output is achieved.
 
 First, you need to write a batch submission file. We assume you'll call this :code:`my_job.sge` ::
 
@@ -38,7 +38,7 @@ First, you need to write a batch submission file. We assume you'll call this :co
   #$ -S /bin/bash
   #$ -cwd               # Run job from current directory
 
-  module load apps/R/3.2.2     # Load version 3.2.2 of R
+  module load apps/R/3.2.2     # Recommended to load a specific version of R
 
   R CMD BATCH my_code.R my_code.R.o$JOB_ID
 
