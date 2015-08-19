@@ -37,7 +37,7 @@ Available Python Modules
 ------------------------
 Anaconda Python provides a large number of Python modules including numpy, scipy, matplotlib, scikit-learn, scikit-image, ipython and many more. To see which modules are available, run the following command in an interactive Python session ::
 
-     help('modules') 
+     help('modules')
 
 Installation Notes
 ------------------
@@ -57,6 +57,9 @@ Some modules were requested by users that were not included in the standard Anac
 
   module load apps/binapps/anacondapython/2.3
   conda install wxPython
+
+  module load mpi/gcc/openmpi/1.8.8
+  pip install mpi4py
 
 Module file
 -----------
