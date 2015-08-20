@@ -36,7 +36,7 @@ Load and launch Mathematica ::
     module load apps/binapps/mathematica
     mathematica
 
-In Mathematica, let's time how long it takes to the first 20 million primes on 1 CPU core ::
+In Mathematica, let's time how long it takes to calculate the first 20 million primes on 1 CPU core ::
 
     AbsoluteTiming[primelist = Table[Prime[k], {k, 1, 20000000}];]
 
