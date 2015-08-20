@@ -12,7 +12,7 @@ Anaconda Python is a Python distribution that contains Python itself and a large
 
 Interactive Usage
 -----------------
-After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qsh` or `qrsh` command.
+After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the :code:`qsh` or `qrsh` command.
 
 The latest version of Anaconda can be loaded with ::
 
