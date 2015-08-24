@@ -89,10 +89,26 @@ The power of iceberg really comes from the 'batch job' queue submission process.
 Using this system, you write a script which executes your job, tell the 
 scheduler how many resources the task requires, then the scheduler will run it 
 when the resources are available.
-
 As the task is running, the terminal output and any errors are captured and 
 saved to a disk, so that you can see the output and verify the execution of the
 task.
+
+Any task that can be executed without any user intervention while it is running 
+can be submitted as a batch job to iceberg. This exculdes jobs that require a 
+GUI, however, many common applications such as Ansys or MATLAB can also be 
+used without their GUIs.
+
+When you submit a batch job, you provide an executable file that will be run by
+the scheduler. This is normally a script file which provides commands and
+options to the program you are using. For instance, it might tell Ansys which 
+files to use as input and where to save the output. Once you have a script 
+file, or other executable file, you can submit it to the queue by running::
+
+    qsh myscript.sh
+
+you can also specify extra arguments to this, or at the start of your script, 
+to give you access to more cores or memory or change the maximum execution time,
+a full list of the availble options are given below.
 
 
 All Scheduler Options
