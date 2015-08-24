@@ -9,6 +9,67 @@ I'm a new user and my password is not recognised
 When you get a username on the system, the first thing you need to do is to `syncronise your passwords
 <https://www.shef.ac.uk/cics/password>`_ which will set your password to be the same as your network password.
 
+I can no longer log onto iceberg
+--------------------------------
+If you are confident that you have no password or remote-access-client related issues but you still can not log onto iceberg you may be having problems due to exceeding your iceberg filestore quota.
+If you exceed your filestore quota in your /home area it is sometimes possible that crucial system files in your home directory gets truncated that effect the subsequent login process.
+  
+If this happens, you should immediately email research-it@sheffield.ac.uk and ask to be unfrozen. 
+
+
+My program, which use to work, stopped working
+----------------------------------------------
+
+If a program that use to work suddenly stops working one day, it may be due to reasons such as;
+
+   * Hardware Faults
+   * Software Environment Changes
+   * Filestore Related Issues
+
+Hardware faults: 
+################
+It is very rare but not impossible to hit a hardware fault while using iceberg. Considering we have well over 100 machines operating %100 of the time, chances of one of these failing while running your job is rare but still possible. Possibilities of hardware faults effecting your jobs will increase if you are running parallel jobs. This is because the failures of the communications equipment ( for MPI jobs ) will also be a factor.
+If your job fails for some inexpicable 'or incomprehensible!' reason with hints of hardware problems it may be worth resubmitting it to see if it will run OK the next time. This is because, there is a very strong chance that your next job will be running on a different worker-node and hence using different hardware.
+
+Software Environment Changes:
+#############################
+Programs rely on the underlying operating system and libraries to provide some of their functionality as well as prepare the environment for task execution. If the underlying operating system is subjected to any change 'such as caused by operating system, software, library or package updates, there is a risk of it effecting the users' programs.
+
+If your code is written with 'portability in mind' in a standard, supported language such as Fortran or C, you will be less effected by such changes as recompiling your program will usually fix the problem. However, when working with a source-code, you will not be immune from problems arising from updates to the compilers.
+
+From time to time we update our suite of compilers and inform the users via `iceberg news <http://www.wrgrid.group.shef.ac.uk/icebergdocs/news.dat>`_ It is then advisable to recompile your programs to generate new executables.
+
+Filestore Related Issues: 
+#########################
+Surprisingly this is one of the common causes of failure. By default all users have a filestore limit of 10 GBytes in their /home areas and 100 GBytes in their /data areas. Further to this there is also /fastdata area which has no quota imposed on it but the files that are left untouched for two months gets deleted and can not be recovered.
+
+If you have a program or job that is creating large files, you must ensure that you have sufficient free filestore available before you start running it. While your job is running, if your filestore gets filled and hits the quota limit, the job will terminate abruptly and unpleasantly, leaving some of the output files corrupt, truncated and unusable.
+
+As /data area is much bigger than /home area, we strongly recommend working in your /data area while running jobs that produce large output files. 
+
+
+
+
+I can not log into iceberg via the applications portal
+------------------------------------------------------
+Most of the time such problems arise due to due to JAVA version issues. As JAVA updates are released regularly, these problems are usually caused by the changes to the JAVA plug-in for the browser.
+Follow the trouble-shooting link from the `iceberg browser-access page <http://www.sheffield.ac.uk/cics/research/hpc/using/access/browser>`_ to resolve these problems. There is also a link on that page to test the functionality of your java plug-in. It can also help to try a different browser to see if it makes any difference. 
+All failing, you may have to fall back to one of the `non-browser access methods <http://www.sheffield.ac.uk/cics/research/hpc/using/access>`_.
+
+
+
+My batch job terminates without any messages or warnings
+--------------------------------------------------------
+
+When a batch job that is initiated by using the qsub command or runfluent, runansys or runabaqus commands, it gets allocated specific amount of virtual memory and real-time.
+If a job exceeds either of these memory or time limits it gets terminated immediately and usually without any warning messages.
+
+It is therefore important to estimate the amount of memory and time that is needed to run your job to completion and specify it at the time of submitting the job to the batch queue.
+
+Please refer to the section on `hitting-limits and estimating-resources <http://www.sheffield.ac.uk/cics/research/hpc/using/requirements>`_ for information on how to avoid these problems. 
+
+
+
 Exceeding your disk space quota
 -------------------------------
 Each user of the system has a fixed amount of disk space available in their home directory. If you exceed this quota, various problems can emerge such as an inability to launch applications and run jobs.
@@ -19,12 +80,51 @@ To see if you have exceeded your disk space quota, run the quota command:
        quota
 
        Size  Used Avail Use% Mounted on
-       5.1G  5.1G     0 100% /home/foo11b
-        50G     0   50G   0% /data/foo11b
+       10.1G  5.1G     0 100% /home/foo11b
+       100G     0   100G   0% /data/foo11b
 
-In the above, you can see that the quota was set to 5.1 gigabytes and all of this is in use. Any jobs submitted by this user will likely result in an Eqw status. The recommended action is for the user to delete enough files to allow normal work to continue.
+In the above, you can see that the quota was set to 10.1 gigabytes and all of this is in use. Any jobs submitted by this user will likely result in an Eqw status. The recommended action is for the user to delete enough files to allow normal work to continue.
 
 Sometimes, it is not possible to log-in to the system because of a full quota, in which case you need to contact research-it@sheffield.ac.uk and ask to the unfrozen.
+
+I am getting warning messages and warning emails from my batch jobs about insufficient memory!
+----------------------------------------------------------------------------------------------
+
+There are two types of memory resources that can be requested when submitting batch jobs using the qsub command. These are, virtual memory ( -l mem=nnn ) and real memory ( -l rmem=nnn ).
+Virtual memory limit specified should always be greater than equal to the real memory limit specification.
+
+If a job exceeds its virtual memory resource it gets terminated. However if a job exceeds its real memory resource it does not get terminated but an email message is sent to the user asking him to specify a larger rmem= parameter the next time, so that the job can run more efficiently. 
+
+
+What is rmem ( real_memory) and mem ( virtual_memory) 
+-----------------------------------------------------
+
+Running a program always involves loading the program instructions and also its data i.e. all variables and arrays that it uses into the computers "RAM" memory. A program's entire instructions and its entire data, along with any dynamic link libraries it may use, defines the VIRTUAL STORAGE requirements of that program.
+If we did not have clever operating systems we would need as much physical memory (RAM) as the virtual-storage requirements of that program. 
+However, operating systems are clever enough to deal with situations where we have insufficient REAL MEMORY to load all the program instructions and data into the available Real Memory ( i.e. RAM ) . This technique works because hardly any program needs to access all its instructions and its data simultaneously. Therefore the operating system loads into RAM only those bits of the instructions and data that are needed by the program at a given instance. This is called PAGING and it involves copying bits of the programs instructions and data to/from hard-disk to RAM as they are needed.
+
+If the REAL MEMORY (i.e. RAM) allocated to a job is much smaller than the entire memory requirements of a job ( i.e. VIRTUAL MEMORY) then there will be excessive need for 'paging' that will slow the execution of the program considerably due to the relatively slow speeds of transferring information to/from the disk into RAM.
+
+On the other hand if the Real Memory (RAM) allocated to a job is larger than the Virtual Memory requirement of that job then it will result in waste of RAM resources which will be idle duration of that job.
+
+It is therefore crucial to strike a fine balance between the VIRTUAL MEMORY (i.e. mem) and the PHYSICAL MEMORY ( i.e. rmem) allocated to a job. Virtual memory limit defined by the -l mem parameter defines the maximum amount of virtual-memory your job will be allowed to use. If your job's virtual memory requirements exceed this limit during its execution your job will be killed immediately. Real memory limit defined by the -l rmem parameter defines the amount of RAM that will be allocated to your job.
+
+The way we have configured SGE, if your job starts paging excessively your job is not killed but you receive warning messages to increase the RAM allocated to your job next time by means of the rmem parameter.
+
+It is important to make sure that your -l mem value is always greater than your -l rmem value so as not to waste the valuable RAM resources as mentioned earlier. 
+
+Insufficent memory in an interactive session
+--------------------------------------------
+By default, an interactive session provides you with 2 Gigabytes of RAM (sometimes called real memory) and 6 Gigabytes of Virtual Memory. You can request more than this when running your ``qsh`` or ``qrsh`` command ::
+
+        qsh -l mem=64G   -l rmem=8G
+
+This asks for 64 Gigabytes of Virtual Memory and 8 Gigabytes of RAM (real memory). Note that you should
+
+* not specify more than 768 Gigabytes of virtual memory (mem)
+* not specify more than 256 GB of RAM (real memory) (rmem)
+
+
 
 Windows-style line endings
 --------------------------
@@ -60,16 +160,6 @@ instead of ::
 
         ssh -X username@iceberg.sheffield.ac.uk
 
-Insufficent memory in an interactive session
---------------------------------------------
-By default, an interactive session provides you with 2 Gigabytes of RAM (sometimes called real memory) and 6 Gigabytes of Virtual Memory. You can request more than this when running your ``qsh`` or ``qrsh`` command ::
-
-        qsh -l mem=64G   -l rmem=8G
-
-This asks for 64 Gigabytes of Virtual Memory and 8 Gigabytes of RAM (real memory). Note that you should
-
-* not specify more than 768 Gigabytes of virtual memory (mem)
-* not specify more than 256 GB of RAM (real memory) (rmem)
 
 Problems connecting with WinSCP
 -------------------------------
