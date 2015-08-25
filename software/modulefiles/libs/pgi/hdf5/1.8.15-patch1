@@ -25,3 +25,4 @@ set HDF5_DIR  /usr/local/packages6/hdf5/pgi-15.7/hdf5-$version
 setenv           LD_LIBRARY_PATH     $HDF5_DIR/lib
 setenv           LD_RUN_PATH         $HDF5_DIR/lib
 setenv           CPLUS_INCLUDE_FILE  $HDF5_DIR/include
+setenv           CPATH               $HDF5_DIR/include
