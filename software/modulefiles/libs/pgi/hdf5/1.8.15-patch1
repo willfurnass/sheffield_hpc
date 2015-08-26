@@ -1,0 +1,28 @@
+#%Module1.0#####################################################################
+##
+## HDF5 library module file
+##
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "Adds environment variables to allow access to the PGI version of HDF5 1.8.15-patch1"
+}
+
+module load mpi/pgi/openmpi/1.8.8
+
+set version 1.8.15-patch1
+
+module-whatis   "Adds environment variables to allow access to the PGI version of HDF5 1.8.15-patch1"
+
+set HDF5_DIR  /usr/local/packages6/hdf5/pgi-15.7/hdf5-$version
+
+setenv           LD_LIBRARY_PATH     $HDF5_DIR/lib
+setenv           LD_RUN_PATH         $HDF5_DIR/lib
+setenv           CPLUS_INCLUDE_FILE  $HDF5_DIR/include
+setenv           CPATH               $HDF5_DIR/include

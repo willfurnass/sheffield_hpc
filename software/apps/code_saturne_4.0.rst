@@ -50,7 +50,7 @@ This version of Code Saturne was built with the following:-
 * :ref:`CGNS` 3.2.1
 * :ref:`med` 3.0.8
 * OpenMPI 1.8.3
-* :ref:`HDF5` 1.8.14
+* :ref:`hdf5gcc` 1.8.14
 
 .. code-block:: none
 

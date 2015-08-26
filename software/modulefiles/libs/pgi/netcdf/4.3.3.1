@@ -1,0 +1,29 @@
+#%Module1.0#####################################################################
+##
+## NetCDF library module file
+##
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "Adds environment variables to allow access to the PGI version of NetCDF 4.3.3.1"
+}
+
+module load mpi/pgi/openmpi/1.8.8
+module load libs/hdf5/pgi/1.8.15-patch1
+
+set version 4.3.3.1
+
+module-whatis   "Adds environment variables to allow access to the PGI version of NetCDF 4.3.3.1"
+
+set NETCDF_DIR  /usr/local/packages6/libs/pgi/netcdf/$version
+
+setenv           LD_LIBRARY_PATH     $NETCDF_DIR/lib
+setenv           LD_RUN_PATH         $NETCDF_DIR/lib
+setenv           CPLUS_INCLUDE_FILE  $NETCDF_DIR/include
+setenv           CPATH               $NETCDF_DIR/include
