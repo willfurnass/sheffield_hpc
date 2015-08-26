@@ -1,9 +1,9 @@
-.. _hdf5_pgi:
+.. _hdf5pgi:
 
 HDF5 (PGI build)
 ================
 
-.. sidebar:: HDF5
+.. sidebar:: HDF5 (PGI build)
 
    :Latest version: 1.8.15-patch1
    :Dependancies: PGI Compiler 15.7, PGI Openmpi 1.8.8

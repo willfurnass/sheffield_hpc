@@ -1,9 +1,9 @@
-.. _hdf5_gcc:
+.. _hdf5gcc:
 
 HDF5 (gcc build)
 ================
 
-.. sidebar:: HDF5
+.. sidebar:: HDF5 (gcc build)
 
    :Version: 1.8.14 and 1.8.13
    :Support Level: bronze
