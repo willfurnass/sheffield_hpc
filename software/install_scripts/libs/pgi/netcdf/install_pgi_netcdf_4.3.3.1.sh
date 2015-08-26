@@ -10,7 +10,7 @@ mkdir -p $install_dir
 tar -xzf netcdf-c-4.3.3.1.tar.gz
 cd netcdf-c-4.3.3.1
 
-env CPP=cpp CC=mpicc CXX=mpicxx FC=mpif90 F90=mpif90 LD=mpif90 CPPFLAGS="-DpgiFortran" ./configure --prefix=$install_dir
+env CPP=cpp CC=mpicc CXX=mpicxx FC=mpif90 F90=mpif90 CPPFLAGS="-DpgiFortran" CFLAGS="-fpic" ./configure --prefix=$install_dir
 
 make 2>&1 | tee make.log
 make check 2>&1 | tee make-check.log
