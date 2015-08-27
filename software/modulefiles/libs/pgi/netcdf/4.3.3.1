@@ -24,7 +24,7 @@ module-whatis   "Adds environment variables to allow access to the PGI version o
 set NETCDF_DIR  /usr/local/packages6/libs/pgi/netcdf/$version
 
 prepend-path           LD_LIBRARY_PATH     $NETCDF_DIR/lib
+prepend-path           LIBRARY_PATH        $NETCDF_DIR/lib
 prepend-path           LD_RUN_PATH         $NETCDF_DIR/lib
 prepend-path           CPLUS_INCLUDE_FILE  $NETCDF_DIR/include
 prepend-path           CPATH               $NETCDF_DIR/include
-
