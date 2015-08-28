@@ -63,3 +63,20 @@ The GATK .jar file was obtained from https://www.broadinstitute.org/gatk/downloa
 
     module load apps/gcc/5.2/bcbio/devel
     bcbio_nextgen.py upgrade --tools --toolplus gatk=./cooper/GenomeAnalysisTK.jar
+
+Testing
+-------
+The following test script was submitted to the system. All tests passed. The output is at ``/usr/local/packages6/apps/gcc/5.2/bcbio/devel/tests/tests_28_8_2015`` ::
+
+  #!/bin/bash
+  #$ -pe openmp 12
+  #$ -l mem=4G  #Per Core!
+  #$ -l rmem=4G #Per Core!
+
+  bcbio_dir=/data/fe1mpc/bcbio_install/tools
+  module add apps/gcc/5.2/bcbio/devel
+
+  git clone https://github.com/chapmanb/bcbio-nextgen.git
+  cd bcbio-nextgen/tests
+  ./run_tests.sh devel
+  ./run_tests.sh rnaseq
