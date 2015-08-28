@@ -1,5 +1,5 @@
 bcbio
------
+=====
 .. sidebar:: bcbio
 
    :Latest version: Unknown
