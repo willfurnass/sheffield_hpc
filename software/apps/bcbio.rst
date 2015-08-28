@@ -66,7 +66,7 @@ The GATK .jar file was obtained from https://www.broadinstitute.org/gatk/downloa
 
 Testing
 -------
-The following test script was submitted to the system. All tests passed. The output is at ``/usr/local/packages6/apps/gcc/5.2/bcbio/devel/tests/tests_28_8_2015``
+The following test script was submitted to the system. All tests passed. The output is at ``/usr/local/packages6/apps/gcc/5.2/bcbio/devel/tests/tests_28_8_2015`` ::
 
   #!/bin/bash
   #$ -pe openmp 12
