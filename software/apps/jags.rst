@@ -5,11 +5,9 @@ JAGS
 
 .. sidebar:: JAGS
 
-   :Version: 4.8.2
-   :Support Level: Bronze
+   :Latest version: 4.8.2
    :Dependancies: compilers/gcc/4.8.2
    :URL: http://mcmc-jags.sourceforge.net/
-   :Location: /usr/local/packages6/apps/gcc/4.8.2/JAGS/3.4/include/
 
 JAGS is Just Another Gibbs Sampler.  It is a program for analysis of Bayesian hierarchical models using Markov Chain Monte Carlo (MCMC) simulation not wholly unlike BUGS.  JAGS was written with three aims in mind:
 
@@ -19,11 +17,12 @@ JAGS is Just Another Gibbs Sampler.  It is a program for analysis of Bayesian hi
 
 Interactive Usage
 -----------------
-After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qsh` or :code:`qrsh` command. To make JAGS available in this session, run the following module command
+After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qsh` or :code:`qrsh` command. To make JAGS available in this session, run one of the following module command
 
 .. code-block:: none
 
-        module load apps/gcc/4.8.2/JAGS/3.4
+      module load apps/gcc/4.8.3/JAGS/3.1
+      module load apps/gcc/4.8.2/JAGS/3.4
 
 You can now run the ``jags`` command ::
 
@@ -73,14 +72,30 @@ the most likely cause is that you forget to load the necessary modules before st
 
 Installation notes
 -------------------
-* JAGS was built with gcc 4.8.2
+* Version 3.4
+
+JAGS 3.4 was built with gcc 4.8.2
 
 .. code-block:: none
 
     module load compilers/gcc/4.8.2
     tar -xvzf ./JAGS-3.4.0.tar.gz
-    cd JAGS-3.4.
+    cd JAGS-3.4.0
     mkdir -p /usr/local/packages6/apps/gcc/4.8.2/JAGS/3.4
     ./configure --prefix=/usr/local/packages6/apps/gcc/4.8.2/JAGS/3.4
+    make
+    make install
+
+* Version 3.1
+
+JAGS 3.1 was built with gcc 4.8.2
+
+.. code-block:: none
+
+    module load compilers/gcc/4.8.2
+    tar -xvzf ./JAGS-3.1.0.tar.gz
+    cd JAGS-3.1.0
+    mkdir -p /usr/local/packages6/apps/gcc/4.8.2/JAGS/3.1
+    ./configure --prefix=/usr/local/packages6/apps/gcc/4.8.2/JAGS/3.1
     make
     make install
