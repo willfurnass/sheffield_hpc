@@ -82,6 +82,8 @@ Command                Description
                        mode.
 ====================== ========================================================
 
+.. _sge-batch:
+
 Submitting Jobs to the queue
 ----------------------------
 
@@ -89,10 +91,26 @@ The power of iceberg really comes from the 'batch job' queue submission process.
 Using this system, you write a script which executes your job, tell the 
 scheduler how many resources the task requires, then the scheduler will run it 
 when the resources are available.
-
 As the task is running, the terminal output and any errors are captured and 
 saved to a disk, so that you can see the output and verify the execution of the
 task.
+
+Any task that can be executed without any user intervention while it is running 
+can be submitted as a batch job to iceberg. This exculdes jobs that require a 
+GUI, however, many common applications such as Ansys or MATLAB can also be 
+used without their GUIs.
+
+When you submit a batch job, you provide an executable file that will be run by
+the scheduler. This is normally a script file which provides commands and
+options to the program you are using. For instance, it might tell Ansys which 
+files to use as input and where to save the output. Once you have a script 
+file, or other executable file, you can submit it to the queue by running::
+
+    qsh myscript.sh
+
+you can also specify extra arguments to this, or at the start of your script, 
+to give you access to more cores or memory or change the maximum execution time,
+a full list of the availble options are given below.
 
 
 All Scheduler Options
@@ -116,5 +134,23 @@ Command                Description
 -m bea                 Type of notifications to send. Can be any combination of
                        begin (b) end (e) or abort (a) i.e. `-m ea` for end and 
                        abortion messages.
+-a                     Specify the earliest time for a job to start, in the
+                       format MMDDhhmm. e.g. -a 01011130 will schedule the job
+                       to begin no sooner than 11:30 on 1st January.
 ====================== ========================================================
 
+Frequently Asked SGE questions
+------------------------------
+**How do you ensure that a job starts after a specified time?**
+
+Add the following line in your submission script ::
+
+    #$ -a time
+
+but replace ``time`` with a time in the format MMDDhhmm
+
+For example, for 22nd July at 14:10, you’d do ::
+
+    #$ -a 07221410
+
+This won’t guarantee that it will run precisely at this time since that depends on available resources. It will, however, ensure that the job runs *after* this time. If your resource requirements aren’t too heavy, it will be pretty soon after. When I tried it, it started about 10 seconds afterwards but this will vary.
