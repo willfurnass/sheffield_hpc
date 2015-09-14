@@ -31,7 +31,7 @@ System Python
 #############
 
 The system Python 2.6 is available by default as it is installed with the
-cluster OS Scientific Python 5, it is not recommended for general us
+cluster OS Scientific Python 5, it is not recommended for general use.
 
 
 Using conda Python
