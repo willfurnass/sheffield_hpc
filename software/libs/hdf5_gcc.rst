@@ -1,21 +1,21 @@
-.. _hdf5:
+.. _hdf5gcc:
 
-HDF5
-====
+HDF5 (gcc build)
+================
 
-.. sidebar:: HDF5
-   
+.. sidebar:: HDF5 (gcc build)
+
    :Version: 1.8.14 and 1.8.13
    :Support Level: bronze
    :Dependancies: openmpi (1.8.3)
    :URL: http://www.hdfgroup.org/HDF5/
-   :Documentation: http://www.hdfgroup.org/HDF5/doc/ 
+   :Documentation: http://www.hdfgroup.org/HDF5/doc/
 
 
 HDF5 is a data model, library, and file format for storing and managing data.
 It supports an unlimited variety of datatypes, and is designed for flexible and efficient I/O and for high volume and complex data.
 HDF5 is portable and is extensible, allowing applications to evolve in their use of HDF5.
-The HDF5 Technology suite includes tools and applications for managing, manipulating, viewing, and analyzing data in the HDF5 format. 
+The HDF5 Technology suite includes tools and applications for managing, manipulating, viewing, and analyzing data in the HDF5 format.
 
 Two primary versions of this library are provided, MPI parallel enabled versions and serial versions.
 
@@ -25,7 +25,7 @@ The serial versions were built with gcc version 4.8.2. As such, if you are going
 
     module load compilers/gcc/4.8.2
 
-To enable the serial version of HDF5, use one of the following module commands depending on which version of the library you require:: 
+To enable the serial version of HDF5, use one of the following module commands depending on which version of the library you require::
 
      module load libs/hdf5/gcc/1.8.14
      module load libs/hdf5/gcc/1.8.13

@@ -86,6 +86,22 @@ Other questions ::
 
 The license file is on the system at ``/usr/local/packages6/compilers/pgi/license.dat`` and is a 5 seat network license. Licenses are only used at compile time.
 
+Extra install steps
+-------------------
+Unlike gcc, the PGI Compilers do not recognise the environment variable LIBRARY_PATH which is used by a lot of installers to specify the locations of libraries at compile time. This is fixed by creating a ``siterc`` file at ``/usr/local/packages6/compilers/pgi/linux86-64/15.7/bin/siterc`` with the following contents ::
+
+  # get the value of the environment variable LIBRARY_PATH
+  variable LIBRARY_PATH is environment(LD_LIBRARY_PATH);
+
+  # split this value at colons, separate by -L, prepend 1st one by -L
+  variable library_path is
+  default($if($LIBRARY_PATH,-L$replace($LIBRARY_PATH,":", -L)));
+
+  # add the -L arguments to the link line
+  append LDLIBARGS=$library_path;
+
+At the time of writing (August 2015), this is documented on PGI's website at https://www.pgroup.com/support/link.htm#lib_path_ldflags
+
 Modulefile
 ----------
 The PGI compiler installer creates a suitable modulefile that's configured to our system. It puts it at ``/usr/local/packages6/compilers/pgi/modulefiles/pgi64/15.7`` so all that is required is to copy this to where we keep modules at ``/usr/local/modulefiles/compilers/pgi/15.7``
