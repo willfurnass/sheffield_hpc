@@ -1,3 +1,5 @@
+.. _anaconda:
+
 Anaconda Python
 ===============
 
