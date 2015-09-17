@@ -126,7 +126,6 @@ using pip::
 
     pip install colormath
 
-
 Installation Notes
 ------------------
 These are primarily for administrators of the system.
