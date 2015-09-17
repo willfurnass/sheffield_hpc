@@ -5,9 +5,12 @@ sudo: false
 addons:
     apt:
         packages:
+            - texlive
             - texlive-latex-extra
             - dvipng
             - graphviz
+            - pandoc
+
 python:
     - 2.7
 
