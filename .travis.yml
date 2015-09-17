@@ -1,5 +1,12 @@
 language: python
 
+sudo: false
+
+addons:
+    apt:
+        packages:
+            - texlive-latex-extra
+            - dvipng
 python:
     - 2.7
 
