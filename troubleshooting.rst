@@ -174,3 +174,8 @@ In these instances, turning off ``Optimize Connection Buffer Size`` in WinSCP ca
 * Click on connection
 * Untick the box which says ``Optimize Connection Buffer Size``
 
+
+Login Nodes RSA Fingerprint
+---------------------------
+
+The RSA key fingerprint for Iceberg's login nodes is "de:72:72:e5:5b:fa:0f:96:03:d8:72:9f:02:d6:1d:fd".
