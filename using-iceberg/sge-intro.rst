@@ -1,6 +1,6 @@
 .. _sge-intro:
 
-iceberg's queue System
+Iceberg's Queue System
 ======================
 
 To manage use of the iceberg cluster, there is a queue system 
@@ -139,7 +139,7 @@ Command                Description
                        to begin no sooner than 11:30 on 1st January.
 ====================== ========================================================
 
-Frequently Asked SGE questions
+Frequently Asked SGE Questions
 ------------------------------
 **How do you ensure that a job starts after a specified time?**
 
