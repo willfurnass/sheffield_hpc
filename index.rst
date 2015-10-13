@@ -14,18 +14,20 @@ the intensive computing requirements of research projects at Sheffield Universit
 
 This manual aims to provide you all the information you need to use iceberg.
 
+**Using the Iceberg Service**
+
+* :ref:`getting-started` - If you are new to HPC and Iceberg, we suggest you start here.
+* :ref:`software` - Details about the software installed on Iceberg and how to use it
+* :ref:`sge-intro` - Details about submitting interactive and batch jobs.
+* :ref:`troubleshooting` - Start here if you have a problem using the system.
+
+
 **About the Iceberg Service**
 
 * :ref:`cluster-specs` - Information about Iceberg's hardware
 * :ref:`filestore` - Information about the amount of disk space you get on Iceberg and the different types of filesystem available.
 * :ref:`How to buy additional compute power on Iceberg <resourcecosts>`
-* :ref:`The GPU Computing section <GPUIntro>` - GPU computing on Iceberg
-
-**Using the Iceberg Service**
-
-* :ref:`getting-started` guide - If you are new to HPC and Iceberg, we suggest you start here.
-* :ref:`software` - Details about the software installed on Iceberg and how to use it
-* :ref:`troubleshooting` - Start here if you have a problem using the system.
+* :ref:`The GPU Computing section <GPUIntro>` - GPU computing on Iceberg.
 
 **Support**
 
