@@ -1,6 +1,6 @@
-FROM plaindocs/docker-sphinx
+FROM ubuntu:latest
 
-RUN apt-get update && apt-get install -y -q git python-pip
+RUN apt-get update && apt-get install -y -q git python-pip python-sphinx texlive texlive-latex-extra pandoc build-essential
 
 RUN pip install sphinx_bootstrap_theme
 
@@ -15,5 +15,6 @@ ADD sync_built_docs.sh /sphinx/sync_built_docs.sh
 RUN chown -R sphinx:sphinx /sphinx
 
 USER sphinx
+WORKDIR /sphinx
 
 CMD ["/bin/bash"]

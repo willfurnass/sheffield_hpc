@@ -9,3 +9,6 @@ deploy:
   bash:
     branch: master
     command: su sphinx -c /sphinx/sync_built_docs.sh
+  bash:
+    branch: unify
+    command: su sphinx -c /sphinx/sync_unify_docs.sh
