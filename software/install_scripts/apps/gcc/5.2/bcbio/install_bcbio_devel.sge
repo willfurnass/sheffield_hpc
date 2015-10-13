@@ -1,0 +1,15 @@
+#!/bin/bash
+#$ -l rmem=32G -l mem=32G
+
+module load apps/binapps/anacondapython/2.3
+module load compilers/gcc/5.2
+module load apps/gcc/5.2/git/2.5
+module load apps/R/3.2.1
+
+install_dir=/usr/local/packages6/apps/gcc/5.2/bcbio/devel
+mkdir -p $install_dir
+
+wget https://raw.github.com/chapmanb/bcbio-nextgen/master/scripts/bcbio_nextgen_install.py
+
+python bcbio_nextgen_install.py $install_dir --tooldir=$install_dir/tools --isolate \
+   --genomes GRCh37 --aligners bwa --aligners bowtie2

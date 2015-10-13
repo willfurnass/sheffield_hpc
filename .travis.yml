@@ -1,0 +1,25 @@
+language: python
+
+sudo: false
+
+addons:
+    apt:
+        packages:
+            - texlive
+            - texlive-latex-extra
+            - dvipng
+            - graphviz
+            - pandoc
+
+python:
+    - 2.7
+
+virtualenv:
+     system_site_packages: false
+
+install:
+    - pip install -r requirements.txt
+
+script:
+    - make html
+    - make latexpdf

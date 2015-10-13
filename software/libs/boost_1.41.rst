@@ -82,6 +82,8 @@ the most likely cause is that you forgot to load the module as detailed above.
 
 Installation Notes
 ------------------
+This section is primarily for administrators of the system.
+
 This build of boost was built with gcc 4.4.7 and ICU version 42.
 
 .. code-block:: none
