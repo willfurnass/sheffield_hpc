@@ -11,6 +11,7 @@ ADD drone_id_rsa /sphinx/.ssh/id_rsa
 ADD drone_id_rsa.pub /sphinx/.ssh/id_rsa.pub
 ADD drone_ssh_known_hosts /sphinx/.ssh/known_hosts
 ADD sync_built_docs.sh /sphinx/sync_built_docs.sh
+ADD sync_unify_docs.sh /sphinx/sync_unify_docs.sh
 
 RUN chown -R sphinx:sphinx /sphinx
 
