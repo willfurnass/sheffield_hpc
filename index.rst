@@ -44,5 +44,4 @@ Take a look at the `Research Computing <https://www.shef.ac.uk/cics/research>`_ 
    gpu/index
    troubleshooting
    cluster_specs
-   using-iceberg/filestore
    glossary

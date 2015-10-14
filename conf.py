@@ -151,13 +151,17 @@ html_theme_options = {'navbar_sidebarrel':False,
                       'bootswatch_theme': 'flatly',
                       'navbar_site_name': "iceberg Documentation",
                       'navbar_title': ' ',
-                      'navbar_links': [("<img src='/iceberg/_static/img/pdf_icon.png'>", "http://rcg.group.shef.ac.uk/iceberg/icebergDocumentation.pdf", True)],
+                      'navbar_links': [("RCG Home", "http://www.shef.ac.uk/cics/research", True),
+                                       ("Iceberg Home", "index"),
+                                       ],
                       'globaltoc_depth': 1}
 
-html_sidebars = {'software/**': ['softwaretoc.html'],
-                 'gpu/**': ['softwaretoc.html'],
-                 'using-iceberg/**': ['softwaretoc.html'],
-                 'index': []}
+#html_sidebars = {'software/**': ['softwaretoc.html'],
+#                 'gpu/**': ['softwaretoc.html'],
+#                 'using-iceberg/**': ['softwaretoc.html'],
+#                 'index': []}
+
+html_sidebars = {'**': ['softwaretoc.html']}
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
