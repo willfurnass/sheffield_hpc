@@ -1,7 +1,7 @@
 Iceberg Documentation
 =====================
 
-Iceberg is The University of Sheffield's High Performance Computing cluster. The current official documentation for it is at [https://www.shef.ac.uk/wrgrid/iceberg](https://www.shef.ac.uk/wrgrid/iceberg).
+Iceberg is The University of Sheffield's High Performance Computing cluster. The current official documentation for it is at [https://www.shef.ac.uk/research/cics](https://www.shef.ac.uk/research/cics).
 
 This repository contains a proposed replacement for the page linked to above. It makes use of [Sphinx](http://sphinx-doc.org/) to build the results and represents a move to a more open, collaborative way of working.
 
