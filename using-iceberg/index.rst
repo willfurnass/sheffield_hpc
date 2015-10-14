@@ -25,7 +25,7 @@ To learn how to use the queue see :ref:`sge-batch`.
 
     getting-started
     sge
-
+    filestore
 
 
 
