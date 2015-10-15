@@ -1,25 +1,31 @@
 Using iceberg
 =============
 
-Now you have connected to iceberg you need to learn how to put icebergs power
-to good use for your research. In this section you will learn how to use iceberg
-for different types of tasks.
+The first step in using iceberg is getting an account and running an interactive
+session, if you don't know how to do this you should start with 
+:ref:`getting-started`.
 
-.. note::
+Once you have connected to iceberg in interactive mode you can run jobs which 
+take less than **8 hours** and which are graphical or require user interaction.
+For more information on what applications you can run read :ref:`software`.
 
-    This section assumes you have connected to iceberg. If you have not, read the :ref:`getting-started` guide.
+If you require more memory or more processes when running interactive jobs you 
+will need to tell the cluster management software (the scheduler) what you need.
+For more information on this read :ref:`sge-interactive`.
 
-The first step in using iceberg effectively is to identifty the best solution 
-for your task. Take a look at the :ref:`iceberg-tasks` section.
+If you want to run jobs which are not interactive you should submit these to the 
+'queue'. Jobs in the queue will be run when there is free resources for them.
+To learn how to use the queue see :ref:`sge-batch`.
 
-If you are looking for a reference on the scheduler, look at the :ref:`sge-intro` section.
+
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :hidden:
 
-    intro
-    sge-intro
+    getting-started
+    sge
+    filestore
 
 
 

@@ -1,4 +1,4 @@
-.. _sge-intro:
+.. _sge-queue:
 
 Iceberg's Queue System
 ======================
@@ -29,14 +29,14 @@ and::
     
     [te1st@iceberg-login2 ~]$ qrsh
 
-qsh will open a separate xterm terminal and supports running graphical 
+``qsh`` will open a separate xterm terminal and supports running graphical 
 applications. qrsh gives a shell running on a worker node inside the currently 
 open terminal, it does not support graphical applications because it has no 
 X server forwarding configured.
 
 You can configure the resources available to the interactive session by 
 specifying them as command line options to the qsh or qrsh commands.
-For example to run a qsh session with access to 16 GB of virtual RAM::
+For example to run a ``qsh`` session with access to 16 GB of virtual RAM::
 
 
     [te1st@iceberg-login2 ~]$ qsh -l mem=16G

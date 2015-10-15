@@ -4,6 +4,9 @@ Troubleshooting
 ===============
 In this section, we'll discuss some tips for solving problems with iceberg. It is suggested that you work through some of the ideas here before contacting the service desk for assistance.
 
+Frequently Asked Questions
+``````````````````````````
+
 I'm a new user and my password is not recognised
 ------------------------------------------------
 When you get a username on the system, the first thing you need to do is to `syncronise your passwords
