@@ -2,10 +2,8 @@ html {
     background-color: #fff;
     color: #414042;
     font-family: 'Open Sans', sans-serif;
-    /*
     font-size: 0.8125em;
     line-height: 1.53846;
-     */
 }
 
 body {
@@ -97,6 +95,7 @@ cite {
 
 /* Side Nav */
 
+/* Top Level */
 div.bs-sidenav {
     text-shadow: none;
     background-color: #030000;
@@ -104,22 +103,10 @@ div.bs-sidenav {
     position: static !important;
 }
 
-.bs-sidenav .nav > li > a { 
+.bs-sidenav .nav > li > a {
     line-height: 2em;
     color: #fff;
     border-left: 3px solid #000
-}
-
-.nav-list .nav > li.current.toctree-l2 > a {
-    background-color: #fff;
-    color: #0066b3;
-    border-left: 3px solid #fff
-}
-
-.bs-sidenav .nav > li.current.toctree-l2 > a:hover,
-.bs-sidenav .nav > li.current.toctree-l2 > a:focus {
-    background-color: #fff;
-    border-right: inherit;
 }
 
 .bs-sidenav .nav > li > a:hover,
@@ -128,6 +115,52 @@ div.bs-sidenav {
     border-right: inherit;
     border-left: 3px solid #fff;
 }
+
+.bs-sidenav .nav > li.current > ul{
+    background-color: #414042;
+}
+
+/* Second Level */
+
+.bs-sidenav .nav > li.toctree-l2 > a {
+    border-left: 3px solid #414042;
+}
+
+.bs-sidenav .nav > li.toctree-l2 > a:hover,
+.bs-sidenav .nav > li.toctree-l2 > a:focus {
+    border-left: 3px solid #fff;
+}
+
+.bs-sidenav .nav > li.current.toctree-l2 > a {
+    background-color: #fff;
+    color: #0066b3;
+    border-left: 3px solid #fff;
+}
+
+
+/* Third Level */
+
+.bs-sidenav .nav > li.toctree-l3 {
+    border-left: 3px solid #fff;
+}
+
+.bs-sidenav .nav > li.toctree-l3 > a {
+    border-left: 3px solid #414042;
+}
+
+.bs-sidenav .nav > li.toctree-l3 > a:hover,
+.bs-sidenav .nav > li.toctree-l3 > a:focus{
+    border-left: 3px solid #fff;
+}
+
+/*
+.bs-sidenav .nav > li.current.toctree-l3 > a:hover,
+.bs-sidenav .nav > li.current.toctree-l3 > a:focus {
+    border-left: 3px solid #fff;
+    border-radius: 0;
+}
+*/
+/* Screen width fixes */
 
 @media (max-width: 324px) {
     .navbar-brand {
@@ -150,17 +183,17 @@ div.bs-sidenav {
         box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
     }
     .navbar-fixed-top {
-		top: 0;
-		border-width: 0 0 1px;
-	}
+        top: 0;
+        border-width: 0 0 1px;
+    }
     .navbar-collapse.collapse {
         display: none!important;
     }
     .navbar-nav {
         float: none!important;
-		margin-top: 7.5px;
-	}
-	.navbar-nav>li {
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
         float: none;
     }
     .navbar-nav>li>a {
@@ -168,20 +201,9 @@ div.bs-sidenav {
         padding-bottom: 10px;
     }
     .collapse.in{
-  		display:block !important;
-	}
+        display:block !important;
+    }
 }
-
-/* This is a hack to hide the top level items that are not part of
- * the current document. 
-.bs-sidenav > ul > li.toctree-l1 {
-    display: none;
-}
-
-.bs-sidenav > ul > li.toctree-l1.current {
-    display: inherit;
-}
-*/
 /* Table */
 
 table.table:not(.field-list):not(.footnote) {
