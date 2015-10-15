@@ -101,8 +101,15 @@ div.bs-sidenav {
     border-left: 3px solid #fff;
 }
 
+.bs-sidenav .nav > li.current > a {
+    border-left: 3px solid #fff;
+}
+
+/* all non-first level menus */
 .bs-sidenav .nav > li.current > ul{
     background-color: #414042;
+    border-left: 3px solid #fff;
+
 }
 
 /* Second Level */
@@ -121,7 +128,6 @@ div.bs-sidenav {
     color: #0066b3;
     border-left: 3px solid #fff;
 }
-
 
 /* Third Level */
 
