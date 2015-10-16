@@ -30,7 +30,7 @@ Install the following:-
 
 * `Anaconda Python <https://store.continuum.io/cshop/anaconda>`_.
 
-Install the following module
+Install the following module ::
 
      pip install sphinx_bootstrap_theme
 
