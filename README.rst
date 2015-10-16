@@ -1,18 +1,18 @@
 Iceberg Documentation
 =====================
 
-Iceberg is The University of Sheffield's High Performance Computing cluster. The current official documentation for it is at [https://www.shef.ac.uk/research/cics](https://www.shef.ac.uk/research/cics).
+Iceberg is The University of Sheffield's High Performance Computing cluster. The current official documentation for it is at `https://www.shef.ac.uk/research/cics <https://www.shef.ac.uk/research/cics>`_.
 
-This repository contains a proposed replacement for the page linked to above. It makes use of [Sphinx](http://sphinx-doc.org/) to build the results and represents a move to a more open, collaborative way of working.
+This repository contains a proposed replacement for the page linked to above. It makes use of `Sphinx <http://sphinx-doc.org/>`_ to build the results and represents a move to a more open, collaborative way of working.
 
-For a guide on the rst file format see [this](http://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html) document.
+For a guide on the rst file format see `this <http://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html>`_ document.
 
 Rendered Documentation
 ----------------------
 Two versions of the documentation are currently automatically built from this repository:
 
-* [A website](http://rcg.group.shef.ac.uk/iceberg/)
-* [A .pdf document](http://rcg.group.shef.ac.uk/iceberg/icebergDocumentation.pdf)
+* `A website <http://rcg.group.shef.ac.uk/iceberg/>`_.
+* `A .pdf document <http://rcg.group.shef.ac.uk/iceberg/icebergDocumentation.pdf>`_.
 
 How to Contribute
 -----------------
@@ -28,27 +28,27 @@ Building the documentation  on a local Windows machine
 
 Install the following:-
 
-* [Anaconda Python](https://store.continuum.io/cshop/anaconda/) 
+* `Anaconda Python <https://store.continuum.io/cshop/anaconda>`_.
 
-Install the following module
+Install the following module ::
 
      pip install sphinx_bootstrap_theme
 
-* [GNU Make](http://gnuwin32.sourceforge.net/packages/make.htm)
-* [MikTeX](http://miktex.org/download)
+* `GNU Make <http://gnuwin32.sourceforge.net/packages/make.htm>`_
+* `MikTeX <http://miktex.org/download>`_
 
 From the command line, the following will build the .pdf file ::
 
     make latexpdf
 
-On first run, MikTeX will prompt you to install various extra LaTeX packages. To build the HTML documentation :: 
+On first run, MikTeX will prompt you to install various extra LaTeX packages. To build the HTML documentation ::
 
     make html
 
 Building the documentation on a local Linux machine
 ---------------------------------------------------
 
-Have 
+Have
 
 * Python 2
 * sphinx
