@@ -22,7 +22,7 @@ There are many versions of applications, libraries and compilers installed on th
    
 * :ref:`modules_usage`
 * :ref:`applications` Packages
-* :ref:`Compilers`
+* :ref:`Development Tools` ( including Compilers )
 * :ref:`Libraries`
 * :ref:`mpi` Parallel Programming
 
