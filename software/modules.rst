@@ -1,10 +1,10 @@
-.. _modules_usage
+.. _modules_usage:
+
+******************
 Modules on Iceberg 
-==================
+******************
 
-
-Modules
--------
+ 
 
 In general the software available on iceberg is loaded and unloaded via the use
 of the modules system [#env-modules]_. 
