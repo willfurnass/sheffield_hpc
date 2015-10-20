@@ -11,7 +11,7 @@ Getting an Account
 ##################
 
 Before you can start using iceberg you need to register for an account.
-Accounts are availible for staff by emailing `research-it@sheffield.ac.uk <research-it@sheffield.ac.uk>`_.
+Accounts are availible for staff by emailing `helpdesk@sheffield.ac.uk <helpdesk@sheffield.ac.uk>`_.
 
 The following categories of students can also have an account on iceberg with 
 the permission of their supervisors:
@@ -21,7 +21,7 @@ the permission of their supervisors:
 * Undergraduates 3rd & 4th year  - project work
 
 Student's supervisors can request an account for the student by emailing
-`research-it@sheffield.ac.uk <research-it@sheffield.ac.uk>`_.
+`helpdesk@sheffield.ac.uk <helpdesk@sheffield.ac.uk>`_.
 
 .. note::
 
@@ -34,9 +34,14 @@ Student's supervisors can request an account for the student by emailing
 Connecting to iceberg (Terminal)
 ################################
 
-Accessing iceberg through a terminal is easy and the most flexible way of 
-using iceberg, as it is the native way of interfacing with the linux cluster.
+Accessing iceberg through an ssh terminal is easy and the most flexible way of 
+using iceberg, as it is the native way of interfacing with the linux cluster. 
+It also allows you to access iceberg from any remote location without having to setup VPN
+connections.  
 
+Rest of this page summarizes the recommended methods of accessing iceberg from commonly used platforms. 
+A more comprehensive guide to accessing iceberg and transfering files is located at 
+`http://www.sheffield.ac.uk/cics/research/hpc/using/access <http://www.sheffield.ac.uk/cics/research/hpc/using/access>`_
 
 Windows
 ```````
