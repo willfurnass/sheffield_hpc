@@ -1,7 +1,7 @@
 .. _software:
 
-Iceberg Software
-================
+Software available on iceberg
+=============================
 
 These pages list the software available on iceberg. If you notice an error or
 an omission, or wish to request new software please email 
