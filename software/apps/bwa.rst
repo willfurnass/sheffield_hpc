@@ -59,4 +59,4 @@ No test suite was found.
 Modulefile
 ----------
 * The module file is on the system at `/usr/local/modulefiles/apps/gcc/5.2/bwa/0.7.12`
-* The module file is `on github <https://github.com/rcgsheffield/iceberg_software/blob/master/software/software/modulefiles/apps/gcc/5.2/bwa/0.7.12>`_.
+* The module file is `on github <https://github.com/rcgsheffield/iceberg_software/blob/master/software/modulefiles/apps/gcc/5.2/bwa/0.7.12>`_.
