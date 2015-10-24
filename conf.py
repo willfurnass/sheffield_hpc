@@ -61,7 +61,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'iceberg Documentation'
+project = u'Iceberg Documentation'
 copyright = u'2015, CICS Sheffield'
 author = u'CICS Sheffield'
 
