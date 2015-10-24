@@ -20,6 +20,6 @@ proc ModulesHelp { } {
 set version 4.0
 set OCTAVE_DIR /usr/local/packages6/apps/gcc/5.2/octave/$version
 
-module-whatis   "Makes git 4.0 available"
+module-whatis   "Makes Octave 4.0 available"
 
 prepend-path PATH $OCTAVE_DIR/bin
