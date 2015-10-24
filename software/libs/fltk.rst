@@ -1,4 +1,4 @@
-.. _FLTK:
+.. _fltk:
 
 FLTK
 ====
