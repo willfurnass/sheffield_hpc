@@ -223,3 +223,7 @@ For information, here is the relevant part of the Configure log that describes h
   call Java methods.
   configure: WARNING: Qscintilla library not found -- disabling built-in GUI editor
   configure:
+
+  Module File
+  -----------
+  The module file is on `GitHub <https://github.com/rcgsheffield/iceberg_software/blob/master/software/modulefiles/apps/gcc/5.2/octave/4.0>`_
