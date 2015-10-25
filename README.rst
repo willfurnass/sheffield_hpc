@@ -16,15 +16,16 @@ Two versions of the documentation are currently automatically built from this re
 
 How to Contribute
 -----------------
-Contribution is via githib Pull Requests, even for those who have direct commit access to the repository. To contribute, please fork this repo, make your changes in the fork and submit a Pull Request when you are ready.
+To contribute to this documentation, first you have to fork it on GitHub and clone it to your machine, see `Fork a Repo <https://help.github.com/articles/fork-a-repo/>`_ for the GitHub documentation on this process.
 
-Building the documentation locally
-----------------------------------
+Once you have the git repository locally on your computer, you will need to install ``sphinx`` and ``sphinx_bootstrap_theme`` to be able to build the documentation. See the instructions below for how to achieve this.
 
-It is also possible to build the documentation on your own machine. Clone the repository and follow the instructions below
+Once you have made your changes and updated your Fork on GitHub you will need to `Open a Pull Request <https://help.github.com/articles/using-pull-requests/>`_.
+All changes to the repository should be made through Pull Requests, including those made by the people with direct push access.
 
-Building the documentation  on a local Windows machine
-------------------------------------------------------
+
+Building the documentation on a local Windows machine
+#####################################################
 
 Install the following:-
 
@@ -34,31 +35,55 @@ Install the following module ::
 
      pip install sphinx_bootstrap_theme
 
-* `GNU Make <http://gnuwin32.sourceforge.net/packages/make.htm>`_
-* `MikTeX <http://miktex.org/download>`_
-
-From the command line, the following will build the .pdf file ::
-
-    make latexpdf
-
-On first run, MikTeX will prompt you to install various extra LaTeX packages. To build the HTML documentation ::
+To build the HTML documentation run::
 
     make html
 
+If you want to build the PDF documentation you will need:
+
+* `GNU Make <http://gnuwin32.sourceforge.net/packages/make.htm>`_
+* `MikTeX <http://miktex.org/download>`_
+
+Then from the command line, the following will build the .pdf file ::
+
+    make latexpdf
+
+On first run, MikTeX will prompt you to install various extra LaTeX packages.
+
+
 Building the documentation on a local Linux machine
----------------------------------------------------
+###################################################
 
 Have
 
 * Python 2
 * sphinx
-* phinx_bootstrap_theme
+* sphinx_bootstrap_theme
 
 installed, then run ::
 
      make html
 
-Building the documentation on a local Mac machine
--------------------------------------------------
-TODO
 
+Building the documentation on a local Mac machine
+#################################################
+
+For the HTML documentation you will need ``sphinx`` and ``sphinx_bootstrap_theme``. If you do not already have a python distribution installed, we recommend you install `Anaconda Python <https://store.continuum.io/cshop/anaconda>`_.
+
+Then once installed, install the following module ::
+
+     pip install sphinx_bootstrap_theme
+
+To build the HTML documentation run::
+
+    make html
+
+
+Making Changes to the Documentation
+-----------------------------------
+
+The documentation consists of a series of `reStructured Text <http://sphinx-doc.org/rest.html>`_ files which have the ``.rst`` extension.
+These files are then automatically converted to HTMl and combined into the web version of the documentation by sphinx.
+It is important that when editing the files the syntax of the rst files is followed.
+If there are any errors in your changes the build will fail and the documentaion  will not update, you can test your build locally by running ``make html``.
+The easiest way to learn what files should look like is to read the ``rst`` files already in the repository.
