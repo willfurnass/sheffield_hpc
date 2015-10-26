@@ -1,4 +1,4 @@
-.. _Development Tools:
+.. _development-tools:
 
 Development Tools
 =================
@@ -6,6 +6,6 @@ Development Tools
 .. toctree::
     :maxdepth: 1
     :glob:
-    
+
     ./*
 

@@ -1,17 +1,18 @@
 .. _modules_usage:
 
-******************
-Modules on Iceberg 
-******************
 
- 
+Modules on Iceberg
+==================
+
+
 
 In general the software available on iceberg is loaded and unloaded via the use
-of the modules system [#env-modules]_. 
+of the modules system [#env-modules]_.
 
-Modules make it easy for us to install many versions of different applications, compilers and libraries side by side and allow users to setup the computing environment to include exactly what they need. 
+Modules make it easy for us to install many versions of different applications, compilers and libraries side by side and allow users to setup the computing environment to include exactly what they need.
 
-**Important Note:** Modules are not available on the login node. You must move to a worker node using either ``qrsh`` or ``qsh`` before any of the following commands will work.
+.. note::
+    Modules are not available on the login node. You must move to a worker node using either ``qrsh`` or ``qsh`` (see :ref:`getting-started`) before any of the following commands will work.
 
 Available modules can be listed using the following command::
 
@@ -28,7 +29,7 @@ You can unload this module with::
 It is possible to load multiple modules at once, to create your own environment
 with just the software you need. For example, perhaps you want to use version 4.8.2 of the gcc compiler along with MATLAB 2014a ::
 
-    module load compilers/gcc/4.8.2 
+    module load compilers/gcc/4.8.2
     module load apps/matlab/2014a
 
 Confirm that you have loaded these modules wih ::
@@ -36,7 +37,7 @@ Confirm that you have loaded these modules wih ::
    module list
 
 Remove the MATLAB module with ::
-    
+
     module unload apps/matlab/2014a
 
 Remove all modules to return to the base environment ::
