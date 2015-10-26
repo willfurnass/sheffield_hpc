@@ -34,14 +34,6 @@ It is very rare but not impossible to hit a hardware fault while using iceberg. 
 
 If your job fails for some inexplicable reason with hints of hardware problems it may be worth resubmitting it to see if it will run OK the next time. This is because, there is a very strong chance that your next job will be running on a different worker-node and hence using different hardware.
 
-Software Environment Changes
-----------------------------
-Programs rely on the underlying operating system and libraries to provide some of their functionality as well as prepare the environment for task execution. If the underlying operating system is subjected to any change 'such as caused by operating system, software, library or package updates, there is a risk of it effecting the users' programs.
-
-If your code is written with 'portability in mind' in a standard, supported language such as Fortran or C, you will be less effected by such changes as recompiling your program will usually fix the problem. However, when working with a source-code, you will not be immune from problems arising from updates to the compilers.
-
-From time to time we update our suite of compilers and inform the users via `iceberg news <http://www.wrgrid.group.shef.ac.uk/icebergdocs/news.dat>`_ It is then advisable to recompile your programs to generate new executables.
-
 Filestore Related Issues
 ------------------------
 Surprisingly this is one of the common causes of failure. By default all users have a filestore limit of 10 GBytes in their /home areas and 100 GBytes in their /data areas. Further to this there is also /fastdata area which has no quota imposed on it but the files that are left untouched for two months gets deleted and can not be recovered.
@@ -55,8 +47,6 @@ I can not log into iceberg via the applications portal
 Most of the time such problems arise due to due to JAVA version issues. As JAVA updates are released regularly, these problems are usually caused by the changes to the JAVA plug-in for the browser.
 Follow the trouble-shooting link from the `iceberg browser-access page <http://www.sheffield.ac.uk/cics/research/hpc/using/access/browser>`_ to resolve these problems. There is also a link on that page to test the functionality of your java plug-in. It can also help to try a different browser to see if it makes any difference.
 All failing, you may have to fall back to one of the `non-browser access methods <http://www.sheffield.ac.uk/cics/research/hpc/using/access>`_.
-
-
 
 My batch job terminates without any messages or warnings
 --------------------------------------------------------
