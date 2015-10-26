@@ -18,8 +18,7 @@ If you want to run jobs which are not interactive you should submit these to the
 To learn how to use the queue see :ref:`sge-batch`.
 
 
-Quick Links
------------
+**Quick Links:**
 
 * :ref:`Getting-started` : Getting an account and connecting to iceberg
 * :ref:`sge-interactive` : Running programs and applications on iceberg interactively.
