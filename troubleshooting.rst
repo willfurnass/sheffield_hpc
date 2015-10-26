@@ -78,7 +78,7 @@ The way we have configured SGE, if your job starts paging excessively your job i
 
 It is important to make sure that your -l mem value is always greater than your -l rmem value so as not to waste the valuable RAM resources as mentioned earlier.
 
-Insufficent memory in an interactive session
+Insufficient memory in an interactive session
 --------------------------------------------
 By default, an interactive session provides you with 2 Gigabytes of RAM (sometimes called real memory) and 6 Gigabytes of Virtual Memory. You can request more than this when running your ``qsh`` or ``qrsh`` command ::
 
@@ -88,8 +88,6 @@ This asks for 64 Gigabytes of Virtual Memory and 8 Gigabytes of RAM (real memory
 
 * not specify more than 768 Gigabytes of virtual memory (mem)
 * not specify more than 256 GB of RAM (real memory) (rmem)
-
-
 
 Windows-style line endings
 --------------------------
