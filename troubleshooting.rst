@@ -28,12 +28,6 @@ If a program that use to work suddenly stops working one day, it may be due to r
    * Software Environment Changes
    * Filestore Related Issues
 
-Hardware faults
----------------
-It is very rare but not impossible to hit a hardware fault while using iceberg. Considering we have well over 100 machines operating 100% of the time, chances of one of these failing while running your job is rare but still possible. Possibilities of hardware faults effecting your jobs will increase if you are running parallel jobs. This is because the failures of the communications equipment ( for MPI jobs ) will also be a factor.
-
-If your job fails for some inexplicable reason with hints of hardware problems it may be worth resubmitting it to see if it will run OK the next time. This is because, there is a very strong chance that your next job will be running on a different worker-node and hence using different hardware.
-
 Filestore Related Issues
 ------------------------
 Surprisingly this is one of the common causes of failure. By default all users have a filestore limit of 10 GBytes in their /home areas and 100 GBytes in their /data areas. Further to this there is also /fastdata area which has no quota imposed on it but the files that are left untouched for two months gets deleted and can not be recovered.
