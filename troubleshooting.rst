@@ -19,23 +19,6 @@ If you exceed your filestore quota in your /home area it is sometimes possible t
 
 If this happens, you should immediately email research-it@sheffield.ac.uk and ask to be unfrozen.
 
-My program, which use to work, stopped working
-----------------------------------------------
-
-If a program that use to work suddenly stops working one day, it may be due to reasons such as;
-
-   * Hardware Faults
-   * Software Environment Changes
-   * Filestore Related Issues
-
-Filestore Related Issues
-------------------------
-Surprisingly this is one of the common causes of failure. By default all users have a filestore limit of 10 GBytes in their /home areas and 100 GBytes in their /data areas. Further to this there is also /fastdata area which has no quota imposed on it but the files that are left untouched for two months gets deleted and can not be recovered.
-
-If you have a program or job that is creating large files, you must ensure that you have sufficient free filestore available before you start running it. While your job is running, if your filestore gets filled and hits the quota limit, the job will terminate abruptly and unpleasantly, leaving some of the output files corrupt, truncated and unusable.
-
-As /data area is much bigger than /home area, we strongly recommend working in your /data area while running jobs that produce large output files.
-
 I can not log into iceberg via the applications portal
 ------------------------------------------------------
 Most of the time such problems arise due to due to JAVA version issues. As JAVA updates are released regularly, these problems are usually caused by the changes to the JAVA plug-in for the browser.
@@ -51,8 +34,6 @@ If a job exceeds either of these memory or time limits it gets terminated immedi
 It is therefore important to estimate the amount of memory and time that is needed to run your job to completion and specify it at the time of submitting the job to the batch queue.
 
 Please refer to the section on `hitting-limits and estimating-resources <http://www.sheffield.ac.uk/cics/research/hpc/using/requirements>`_ for information on how to avoid these problems.
-
-
 
 Exceeding your disk space quota
 -------------------------------
