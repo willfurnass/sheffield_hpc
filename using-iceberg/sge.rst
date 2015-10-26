@@ -13,8 +13,8 @@ tasks from the queue based on a set of rules and priorities.
 
 .. _sge-interactive:
 
-Running an Interactive Shell
-----------------------------
+Using iceberg Interactively
+---------------------------
 
 If you wish to use the cluster for interactive use, such as running applications
 such as MATLAB or Ansys, or compiling software, you will need to requeuest that
@@ -84,8 +84,9 @@ Command                Description
 
 .. _sge-batch:
 
-Submitting Jobs to the queue
-----------------------------
+Running Batch Jobs on iceberg
+-----------------------------
+
 
 The power of iceberg really comes from the 'batch job' queue submission process.
 Using this system, you write a script which executes your job, tell the 
