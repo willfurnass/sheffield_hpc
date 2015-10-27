@@ -1,38 +1,25 @@
+.. _python-conda:
+
 Python
 ======
 
 .. sidebar:: Python
 
-   :Support Level: gold
-   :Dependancies: None
+   :Support Level: Gold
+   :Dependencies: None
    :URL: https://python.org
-   :Version: multiple
+   :Version: All
 
 
-There are multiple ways of accessing Python on iceberg, this section gives an
-overview, and details on the recommended method.
+This page documents the "miniconda" installation on iceberg. This is the
+recommended way of using Python on iceberg, and the best way to be able to
+configure custom sets of packages for your use.
 
-Avalible Python Installations
------------------------------
-
-Anaconda Python
-###############
-
-Unless you need to install custom modules beyond those included in Anaconda on 
-Python 2 this is the recommended method. See :ref:`anaconda` for more details.
-
-conda Python
-############
-
-This is the primary method of using Python on iceberg if you need to install 
-custom packages, the rest of this document will be talking about this system.
-
-System Python
-#############
-
-The system Python 2.6 is available by default as it is installed with the
-cluster OS Scientific Python 5, it is not recommended for general use.
-
+"conda" a Python package manager, allows you to create "environments" which are
+sets of packages that you can modify. It does this by installing them in your
+home area. This page will guide you through loading conda and then creating and
+modifying environments so you can install and use whatever Python packages you
+need.
 
 Using conda Python
 ------------------
@@ -43,25 +30,24 @@ Conda Python can be loaded with::
 
         module load apps/python-conda
 
-
 The ``root`` conda environment (the default) provides Python 3 and no extra
 modules, it is automatically updated, and not recommended for general use, just
 as a base for your own environments. There is also a ``python2`` environment,
-which is the same by with a Python 2 installation.
+which is the same but with a Python 2 installation.
 
 
 Using conda Environments
 ########################
 
-Once the system conda module is loaded you have to load or create the desired
+Once the conda module is loaded you have to load or create the desired
 conda environments. For the documentation on conda environments see
-`here <http://conda.pydata.org/docs/using/envs.html>`_.
+`the conda documentation <http://conda.pydata.org/docs/using/envs.html>`_.
 
 You can load a conda environment with::
 
     source activate python2
 
-and unload one with::
+where ``python2`` is the name of the environment, and unload one with::
 
     source deactivate
 
@@ -92,6 +78,10 @@ To create a clean environment with just Python 2 and numpy you can run::
 This will download the latest release of Python 2.7 and numpy, and create an
 environment named ``mynumpy``.
 
+Any version of Python or list of packages can be provided::
+
+    conda create -n myscience python=3.5 numpy=1.8.1 scipy
+
 If you wish to modify an existing environment, such as one of the anaconda
 installations, you can ``clone`` that environment::
 
@@ -99,6 +89,7 @@ installations, you can ``clone`` that environment::
 
 This will create an environment called ``myexperiment`` which has all the
 anaconda 2.3.0 packages installed with Python 3.
+
 
 Installing Packages Inside an Environment
 #########################################
