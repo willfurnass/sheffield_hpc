@@ -52,8 +52,8 @@ In the above, you can see that the quota was set to 10.1 gigabytes and all of th
 
 Sometimes, it is not possible to log-in to the system because of a full quota, in which case you need to contact research-it@sheffield.ac.uk and ask to the unfrozen.
 
-I am getting warning messages and warning emails from my batch jobs about insufficient memory!
-----------------------------------------------------------------------------------------------
+I am getting warning messages and warning emails from my batch jobs about insufficient memory
+---------------------------------------------------------------------------------------------
 
 There are two types of memory resources that can be requested when submitting batch jobs using the qsub command. These are, virtual memory ( -l mem=nnn ) and real memory ( -l rmem=nnn ).
 Virtual memory limit specified should always be greater than equal to the real memory limit specification.
@@ -79,7 +79,7 @@ The way we have configured SGE, if your job starts paging excessively your job i
 It is important to make sure that your -l mem value is always greater than your -l rmem value so as not to waste the valuable RAM resources as mentioned earlier.
 
 Insufficient memory in an interactive session
---------------------------------------------
+---------------------------------------------
 By default, an interactive session provides you with 2 Gigabytes of RAM (sometimes called real memory) and 6 Gigabytes of Virtual Memory. You can request more than this when running your ``qsh`` or ``qrsh`` command ::
 
         qsh -l mem=64G   -l rmem=8G
