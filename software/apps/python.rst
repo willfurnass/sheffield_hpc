@@ -1,3 +1,5 @@
+.. _python-conda:
+
 Python
 ======
 
@@ -8,6 +10,16 @@ Python
    :URL: https://python.org
    :Version: All
 
+
+This page documents the "miniconda" installation on iceberg. This is the
+recommended way of using Python on iceberg, and the best way to be able to
+configure custom sets of packages for your use.
+
+"conda" a Python package manager, allows you to create "environments" which are
+sets of packages that you can modify. It does this by installing them in your
+home area. This page will guide you through loading conda and then creating and
+modifying environments so you can install and use whatever Python packages you
+need.
 
 Using conda Python
 ------------------
