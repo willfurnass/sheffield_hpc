@@ -241,8 +241,8 @@ table.table:not(.footnote) thead th:not(.field-name) {
 /* Forkme Banner */
 a.forkme>img {
     position: absolute;
-    top: 78px;
-    right: -2px;
+    top: 80px;
+    right: 0px;
     border: 0;
 }
 
