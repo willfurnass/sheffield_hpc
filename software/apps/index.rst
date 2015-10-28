@@ -4,8 +4,10 @@ Applications
 ============
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :glob:
     
-    ./*
+    ./languages/index
+    ./other/index
+
 
