@@ -43,6 +43,7 @@ cite {
 .navbar {
     height: 80px;
     background-color: #333132;
+    margin: 0;
 }
 
 .navbar .container {
@@ -62,6 +63,7 @@ cite {
 
 .navbar-nav > li > a {
     line-height:40px;
+    margin: 0;
 }
 
 .navbar-form {
@@ -82,6 +84,21 @@ cite {
     width: 215px;
 }
 
+.navbar-header {
+    height: 100%;
+}
+
+.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+    max-height: none;
+}
+
+.navbar-form{
+    box-shadow: none;
+}
+
+.navbar-form .form-group {
+    margin-bottom: 0;
+}
 /* Side Nav */
 
 /* Top Level */
@@ -219,4 +236,18 @@ table.table:not(.footnote) thead th:not(.field-name) {
     background-color: #333132;
     font-weight: bold;
     color: #ffffff
+}
+
+/* Forkme Banner */
+a.forkme>img {
+    position: absolute;
+    top: 78px;
+    right: -2px;
+    border: 0;
+}
+
+@media (max-width: 850px) {
+    a.forkme>img {
+        display: none;
+    }
 }
