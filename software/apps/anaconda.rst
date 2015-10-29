@@ -12,6 +12,9 @@ Anaconda Python
 
 Anaconda Python is a Python distribution that contains Python itself and a large number of popular modules.
 
+If you want to install custom packages it is recommended that you follow the
+:ref:`python-conda` documentation.
+
 Interactive Usage
 -----------------
 After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qsh` or `qrsh` command.

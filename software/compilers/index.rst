@@ -1,11 +1,11 @@
-.. _compilers:
+.. _development-tools:
 
-Compilers
-=========
+Development Tools
+=================
 
 .. toctree::
     :maxdepth: 1
     :glob:
-    
+
     ./*
 

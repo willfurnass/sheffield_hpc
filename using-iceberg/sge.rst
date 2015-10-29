@@ -1,6 +1,6 @@
-.. _sge-intro:
+.. _sge-queue:
 
-iceberg's queue System
+Iceberg's Queue System
 ======================
 
 To manage use of the iceberg cluster, there is a queue system 
@@ -13,8 +13,8 @@ tasks from the queue based on a set of rules and priorities.
 
 .. _sge-interactive:
 
-Running an Interactive Shell
-----------------------------
+Using iceberg Interactively
+---------------------------
 
 If you wish to use the cluster for interactive use, such as running applications
 such as MATLAB or Ansys, or compiling software, you will need to requeuest that
@@ -29,14 +29,14 @@ and::
     
     [te1st@iceberg-login2 ~]$ qrsh
 
-qsh will open a separate xterm terminal and supports running graphical 
+``qsh`` will open a separate xterm terminal and supports running graphical 
 applications. qrsh gives a shell running on a worker node inside the currently 
 open terminal, it does not support graphical applications because it has no 
 X server forwarding configured.
 
 You can configure the resources available to the interactive session by 
 specifying them as command line options to the qsh or qrsh commands.
-For example to run a qsh session with access to 16 GB of virtual RAM::
+For example to run a ``qsh`` session with access to 16 GB of virtual RAM::
 
 
     [te1st@iceberg-login2 ~]$ qsh -l mem=16G
@@ -84,8 +84,9 @@ Command                Description
 
 .. _sge-batch:
 
-Submitting Jobs to the queue
-----------------------------
+Running Batch Jobs on iceberg
+-----------------------------
+
 
 The power of iceberg really comes from the 'batch job' queue submission process.
 Using this system, you write a script which executes your job, tell the 
@@ -139,7 +140,7 @@ Command                Description
                        to begin no sooner than 11:30 on 1st January.
 ====================== ========================================================
 
-Frequently Asked SGE questions
+Frequently Asked SGE Questions
 ------------------------------
 **How do you ensure that a job starts after a specified time?**
 

@@ -34,7 +34,7 @@ then
     mkdir -p $build_dir
 fi
 
-cd build_dir
+cd $build_dir
 
 # Create the install directory
 if [ ! -d $prefix/$version ]

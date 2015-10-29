@@ -61,7 +61,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'iceberg Documentation'
+project = u'Iceberg Documentation'
 copyright = u'2015, CICS Sheffield'
 author = u'CICS Sheffield'
 
@@ -89,7 +89,7 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'themes']
+exclude_patterns = ['_build', 'themes', 'README.rst']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -151,13 +151,18 @@ html_theme_options = {'navbar_sidebarrel':False,
                       'bootswatch_theme': 'flatly',
                       'navbar_site_name': "iceberg Documentation",
                       'navbar_title': ' ',
-                      'navbar_links': [("<img src='/iceberg/_static/img/pdf_icon.png'>", "http://rcg.group.shef.ac.uk/iceberg/icebergDocumentation.pdf", True)],
+                      'navbar_links': [("RCG Home", "http://www.shef.ac.uk/cics/research", True),
+                                       ("Iceberg Home", "index"),
+                                       ("GitHub", "https://github.com/rcgsheffield/iceberg_software", True),
+                                       ],
                       'globaltoc_depth': 1}
 
-html_sidebars = {'software/**': ['softwaretoc.html'],
-                 'gpu/**': ['softwaretoc.html'],
-                 'using-iceberg/**': ['softwaretoc.html'],
-                 'index': []}
+#html_sidebars = {'software/**': ['softwaretoc.html'],
+#                 'gpu/**': ['softwaretoc.html'],
+#                 'using-iceberg/**': ['softwaretoc.html'],
+#                 'index': []}
+
+html_sidebars = {'**': ['softwaretoc.html']}
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
