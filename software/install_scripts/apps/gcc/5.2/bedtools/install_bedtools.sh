@@ -9,18 +9,18 @@
 
 
 ############################# Module Loads ###################################
-module load compilers/cmake/3.3.0
+module load compilers/gcc/5.2
 
 ############################## Variable Setup ################################
-version=<version>
-prefix=/usr/local/packages6/<type>/<compiler>/<compiler_version>/<name>/<version>
-build_dir=/scratch/$USER/<name>
+version=2.25.0
+prefix=/usr/local/packages6/apps/gcc/5.2/bedtools/2.25.0
+build_dir=/scratch/$USER/bedtools
 
-filename=<name>-$version.tar.gz
-baseurl=<URL>
+filename=v2.25.0.tar.gz
+baseurl=https://github.com/arq5x/bedtools2/archive/
 
 # Set this to 'sudo' if you want to create the install dir using sudo.
-sudo=''
+sudo='sudo'
 
 
 ##############################################################################
@@ -57,3 +57,16 @@ fi
 ##############################################################################
 # Installation (Write the install script here)
 ##############################################################################
+
+tar -xvf $filename
+
+cd bedtools2-$version/
+
+sed -i "s@/usr/local@$prefix@g" Makefile
+make -j 6
+
+$sudo mkdir $prefix/bin
+$sudo cp -r ./bin $prefix/
+
+
+
