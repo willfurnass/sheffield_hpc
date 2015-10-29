@@ -18,8 +18,6 @@ It is possible to switch to other versions of the gcc compiler suite using modul
 
 Confirm that you've loaded the version of gcc you wanted using ``gcc -v``.
 
-* **NOTE (7th August 2015)**: The version 5.2 build has only just been built and has only been minimally tested. It should be treated as experimental for now.
-
 Documentation
 -------------
 
