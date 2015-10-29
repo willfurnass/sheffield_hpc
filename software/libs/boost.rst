@@ -1,3 +1,5 @@
+.. _boost:
+
 Boost C++ Library
 =================
 
