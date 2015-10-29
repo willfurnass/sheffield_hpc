@@ -28,9 +28,9 @@ Tophat 2.1.0 was installed using gcc 4.8.2. Installs were attempted using gcc 5.
 
 This install has dependencies on the following
 
-* gcc 4.8.2
-* boost 1.58
-* bowtie2
+* :ref:`gcc` 4.8.2
+* :ref:`boost` 1.58
+* :ref:`bowtie2` (not needed at install time but is needed at runtime)
 
 Install details ::
 
@@ -68,4 +68,4 @@ A test script was executed based on the documentation `on the tophat website <ht
 Modulefile
 ----------
 * The module file is on the system at `/usr/local/modulefiles/apps/gcc/4.8.2/tophat/2.1.0`
-* The module file is `on github <https://github.com/rcgsheffield/iceberg_software/blob/master/software/modulefiles/apps/gcc/5.8.2/tophat/2.1.0>`_.
+* The module file is `on github <https://github.com/rcgsheffield/iceberg_software/blob/master/software/modulefiles/apps/gcc/4.8.2/tophat/2.1.0>`_.
