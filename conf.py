@@ -153,6 +153,7 @@ html_theme_options = {'navbar_sidebarrel':False,
                       'navbar_title': ' ',
                       'navbar_links': [("RCG Home", "http://www.shef.ac.uk/cics/research", True),
                                        ("Iceberg Home", "index"),
+                                       ("GitHub", "https://github.com/rcgsheffield/iceberg_software", True),
                                        ],
                       'globaltoc_depth': 1}
 
