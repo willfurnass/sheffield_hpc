@@ -40,7 +40,7 @@ Using the Notebook on iceberg
 To create a new notebook session, select the "New" menu on the right hand side
 of the top menu.
 
-.. image:: images/jupyterhub-kernels.png
+.. image:: /images/jupyterhub-kernels.png
 
 You will be presented with a menu showing all available conda environments that
 have Jupyter available. To learn more about installing custom Python
@@ -57,5 +57,5 @@ web terminal, running on a worker node. You can use this terminal to perform
 any command line only operation on iceberg. Including configuring new Python
 environments and installing packages.
 
-.. image:: images/jupyterhub-terminal.png
+.. image:: /images/jupyterhub-terminal.png
 

@@ -41,7 +41,6 @@ Take a look at the `Research Computing <https://www.shef.ac.uk/cics/research>`_ 
    self
    using-iceberg/index
    software/index
-   jupyterhub
    gpu/index
    troubleshooting
    cluster_specs
