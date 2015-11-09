@@ -131,6 +131,14 @@ using pip::
 
     pip install colormath
 
+Previous Anaconda Installation
+------------------------------
+
+There is a legacy anaconda installation which is accessible through the
+``binapps/anacondapython/2.3`` module.
+This module should be considered **deprecated** and should no longer be used.
+
+
 Installation Notes
 ------------------
 These are primarily for administrators of the system.
