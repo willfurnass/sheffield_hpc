@@ -45,7 +45,10 @@ of Anaconda for Python 3 and Python 2.
 The anaconda environments can be loaded through provided module files::
 
     module load apps/python/anaconda2-2.4.0
+    module load apps/python/anaconda3-2.4.0
 
+Where ``anaconda2`` represents Python 2 installations and ``anaconda3``
+represents Python 3 installations.
 These commands will also load the ``apps/python/conda`` module and then
 activate the anaconda environment specified.
 
