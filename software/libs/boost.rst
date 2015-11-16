@@ -1,3 +1,5 @@
+.. _boost:
+
 Boost C++ Library
 =================
 
@@ -12,7 +14,12 @@ Usage
 -----
 On Iceberg, different versions of Boost were built using different versions of gcc. We suggest that you use the matching version of gcc to build your code.
 
-The latest version of Boost, version 1.58, was built using gcc 4.8.2. To make both the compiler and Boost library available to the system, execute the following module commands while in a `qrsh` or `qsh` session ::
+The latest version of Boost, version 1.59, was built using gcc 5.2. To make both the compiler and Boost library available to the system, execute the following module commands while in a `qrsh` or `qsh` session ::
+
+    module load compilers/gcc/5.2
+    module load libs/gcc/5.2/boost/1.59
+
+Boost version 1.58 was built using gcc 4.8.2. To make both the compiler and Boost library available to the system, execute the following module commands while in a `qrsh` or `qsh` session ::
 
     module load compilers/gcc/4.8.2
     module load libs/gcc/4.8.2/boost/1.58
@@ -87,6 +94,23 @@ Installation Notes
 ------------------
 This section is primarily for administrators of the system
 
+**version 1.59: Compiled with gcc 5.2 and icu version 55** ::
+
+  module load compilers/gcc/5.2
+  module load libs/gcc/4.8.2/libunistring/0.9.5
+  module load libs/gcc/4.8.2/icu/55
+
+  mkdir -p /usr/local/packages6/libs/gcc/5.2/boost/1.59.0/
+  tar -xvzf ./boost_1_59_0.tar.gz
+  cd boost_1_59_0
+  ./bootstrap.sh --prefix=/usr/local/packages6/libs/gcc/5.2/boost/1.59.0/
+
+It complained that it could not find the icu library but when I ran ::
+
+./b2 install --prefix=/usr/local/packages6/libs/gcc/5.2/boost/1.59.0/
+
+It said that it had detected the icu library and was compiling it in
+
 **Version 1.58: Compiled with gcc 4.8.2 and icu version 55** ::
 
     module load compilers/gcc/4.8.2
@@ -117,9 +141,37 @@ The two examples above were compiled and run.
 
 Module Files
 ------------
-Version 1.58
+**Version 1.59**
 
-Module File Location: :code:`/usr/local/modulefiles/libs/gcc/4.8.2/boost/1.58`
+Module file location: `/usr/local/modulefiles/libs/gcc/5.2/boost/1.59` ::
+
+  #%Module1.0#####################################################################
+  ##
+  ## boost 1.59 module file
+  ##
+
+  ## Module file logging
+  source /usr/local/etc/module_logging.tcl
+  ##
+
+  module load libs/gcc/4.8.2/libunistring/0.9.5
+  module load libs/gcc/4.8.2/icu/55
+
+  proc ModulesHelp { } {
+          puts stderr "Makes the Boost 1.59 library available"
+  }
+
+  set BOOST_DIR /usr/local/packages6/libs/gcc/5.2/boost/1.59.0
+
+  module-whatis   "Makes the Boost 1.59 library available"
+
+  prepend-path LD_LIBRARY_PATH $BOOST_DIR/lib
+  prepend-path CPLUS_INCLUDE_PATH $BOOST_DIR/include
+  prepend-path LIBRARY_PATH $BOOST_DIR/lib
+
+**Version 1.58**
+
+Module file location: `/usr/local/modulefiles/libs/gcc/4.8.2/boost/1.58`
 
 .. code-block:: none
 

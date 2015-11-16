@@ -28,12 +28,29 @@ with the ``qsh`` or ``qrsh`` command.
 
 Conda Python can be loaded with::
 
-        module load apps/python-conda
+        module load apps/python/conda
 
 The ``root`` conda environment (the default) provides Python 3 and no extra
 modules, it is automatically updated, and not recommended for general use, just
 as a base for your own environments. There is also a ``python2`` environment,
 which is the same but with a Python 2 installation.
+
+Quickly Loading Anaconda Environments
+-------------------------------------
+
+There are a small number of environments provided for everyone to use, these are
+the default ``root`` and ``python2`` environments as well as various versions
+of Anaconda for Python 3 and Python 2.
+
+The anaconda environments can be loaded through provided module files::
+
+    module load apps/python/anaconda2-2.4.0
+    module load apps/python/anaconda3-2.4.0
+
+Where ``anaconda2`` represents Python 2 installations and ``anaconda3``
+represents Python 3 installations.
+These commands will also load the ``apps/python/conda`` module and then
+activate the anaconda environment specified.
 
 
 Using conda Environments
@@ -117,6 +134,14 @@ using pip::
 
     pip install colormath
 
+Previous Anaconda Installation
+------------------------------
+
+There is a legacy anaconda installation which is accessible through the
+``binapps/anacondapython/2.3`` module.
+This module should be considered **deprecated** and should no longer be used.
+
+
 Installation Notes
 ------------------
 These are primarily for administrators of the system.
@@ -145,4 +170,9 @@ under requirements then run::
     $ conda env create -f anaconda2-x.y.z.yml
 
 then repeat for the Python 3 installation.
+
+Then copy the modulefile for the previous version of anaconda to the new
+version and update the name of the environment. Also you will need to append
+the new module to the ``conflict`` line in
+`apps/python/.conda-environments.tcl`.
 
