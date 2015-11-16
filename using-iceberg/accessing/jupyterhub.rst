@@ -12,7 +12,7 @@ with access to both your data stores and the resources of iceberg.
 
 
 .. warning::
-    This service is currenty **experimental**, if you this service and
+    This service is currenty **experimental**, if you use this service and
     encounter a problem, please provide feedback to
     `research-it@sheffield.ac.uk <research-it@sheffield.ac.uk>`_.
 

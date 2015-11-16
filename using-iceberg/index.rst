@@ -30,6 +30,7 @@ To learn how to use the queue see :ref:`sge-batch`.
     :hidden:
 
     getting-started
+    accessing/index
     sge
     filestore
 
