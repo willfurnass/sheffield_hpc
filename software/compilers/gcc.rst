@@ -15,6 +15,7 @@ The GNU Compiler Collection (gcc) is a widely used, free collection of compilers
 It is possible to switch to other versions of the gcc compiler suite using modules. After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qrsh` or `qsh` command. Choose the version of the compiler you wish to use using one of the following commands ::
 
     module load compilers/gcc/5.2
+    module load compilers/gcc/4.9.2
     module load compilers/gcc/4.8.2
     module load compilers/gcc/4.5.3
 
@@ -22,6 +23,10 @@ Confirm that you've loaded the version of gcc you wanted using ``gcc -v``.
 
 Documentation
 -------------
+man pages are available on the system. Once you have loaded the required version of `gcc`, type ::
+
+    man gcc
+
 * `What's new in the gcc version 5 series? <https://gcc.gnu.org/gcc-5/changes.html>`_
 
 Installation Notes
@@ -32,4 +37,10 @@ These notes are primarily for system administrators
 
   * `install_gcc_5.2.sh <https://github.com/rcgsheffield/iceberg_software/blob/master/software/install_scripts/compilers/gcc/install_gcc_5.2.sh>`_
   * `gcc 5.2 modulefile <https://github.com/rcgsheffield/iceberg_software/blob/master/software/modulefiles/compilers/gcc/5.2>`_ located on the system at ``/usr/local/modulefiles/compilers/gcc/5.2``
+
+* gcc version 5.2 was installed using :
+
+    * `install_gcc_4.9.2.sh <https://github.com/rcgsheffield/iceberg_software/blob/master/software/install_scripts/compilers/gcc/install_gcc_5.9.2.sh>`_
+    * `gcc 4.9.2 modulefile <https://github.com/rcgsheffield/iceberg_software/blob/master/software/modulefiles/compilers/gcc/4.9.2>`_ located on the system at ``/usr/local/modulefiles/compilers/gcc/4.9.2``
+
 * Installation notes for versions 4.8.2 and below are not available.
