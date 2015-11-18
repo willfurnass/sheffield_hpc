@@ -59,3 +59,13 @@ environments and installing packages.
 
 .. image:: /images/jupyterhub-terminal.png
 
+Troubleshooting
+---------------
+
+Below is a list of common problems:
+
+1. If you modify the ``PYTHON_PATH`` variable in your ``.bashrc`` file your
+   jupyter server may not start correctly, and you may encounter a 503 error
+   after logging into the hub. The solution to this is to remove these lines
+   from your ``.bashrc`` file.
+
