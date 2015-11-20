@@ -163,6 +163,8 @@ which currently include openmpi, hdf5, mpi4py and h5py::
 Currently, there are Python 2.7, 3.4 and 3.5 versions of mpi4py and h5py
 compiled in this repository.
 
+The build scripts for these packages can be found in this
+[GitHub](https://github.com/rcgsheffield/conda-packages) repository.
 
 Installation Notes
 ------------------
