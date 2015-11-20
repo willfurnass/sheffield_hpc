@@ -142,6 +142,30 @@ There is a legacy anaconda installation which is accessible through the
 This module should be considered **deprecated** and should no longer be used.
 
 
+Using Python with MPI
+---------------------
+
+There is an **experimental** set of packages for conda that have been compiled
+by the iceberg team, which allow you to use a MPI stack entirely managed by
+conda.  This allows you to easily create complex evironments and use MPI
+without worrying about other modules or system libraries.
+
+To get access to these packages you need to run the following command to add
+the repo to your conda config::
+
+    conda config --add channels file:///usr/local/packages6/conda/conda-bld/
+
+you should then be able to install the packages with the ``openmpi`` feature,
+which currently include openmpi, hdf5, mpi4py and h5py::
+
+    conda create -n mpi python=3.5 openmpi mpi4py
+
+Currently, there are Python 2.7, 3.4 and 3.5 versions of mpi4py and h5py
+compiled in this repository.
+
+The build scripts for these packages can be found in this
+[GitHub](https://github.com/rcgsheffield/conda-packages) repository.
+
 Installation Notes
 ------------------
 These are primarily for administrators of the system.
