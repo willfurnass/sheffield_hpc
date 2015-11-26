@@ -10,9 +10,9 @@ SAM (Sequence Alignment/Map) format is a generic format for storing large nucleo
 
 Interactive Usage
 -----------------
-After connecting to Iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qsh` command.
+After connecting to Iceberg (see :ref:`ssh`),  start an interactive session with the :code:`qsh` command.
 
-The lastest version of Samtools (currently 1.2) is made available with the command
+The latest version of Samtools (currently 1.2) is made available with the command
 
 .. code-block:: none
 
