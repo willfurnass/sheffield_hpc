@@ -11,9 +11,9 @@ Collectively, the bedtools utilities are a swiss-army knife of tools for a wide-
 
 Interactive usage
 -----------------
-After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qsh` command.
+After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the :code:`qsh` command.
 
-The lastest version of bedtools (currently version 2.25.0) is made available with the command:
+The latest version of bedtools (currently version 2.25.0) is made available with the command:
 
 .. code-block:: none
 
@@ -64,4 +64,3 @@ The contents of the module file is ::
     module load compilers/gcc/5.2
 
     prepend-path PATH /usr/local/packages6/apps/gcc/5.2/bedtools/2.25.0/bin
-
