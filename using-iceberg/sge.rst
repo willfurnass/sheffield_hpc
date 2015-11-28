@@ -81,34 +81,71 @@ Running Batch Jobs on iceberg
 -----------------------------
 
 The power of iceberg really comes from the 'batch job' queue submission process.
-Using this system, you write a script which executes your job, tell the
-scheduler how many resources the task requires, then the scheduler will run it
-when the resources are available.
+Using this system, you write a script which requests various resources, initializes the computational environment and then executes your program(s).
+The scheduler will run your job when resources are available.
 As the task is running, the terminal output and any errors are captured and
-saved to a disk, so that you can see the output and verify the execution of the
+saved to disk, so that you can see the output and verify the execution of the
 task.
 
 Any task that can be executed without any user intervention while it is running
-can be submitted as a batch job to iceberg. This excludes jobs that require a
-GUI, however, many common applications such as Ansys or MATLAB can also be
+can be submitted as a batch job to Iceberg. This excludes jobs that require a
+Graphical User Interface (GUI), however, many common GUI applications such as Ansys or MATLAB can also be
 used without their GUIs.
 
 When you submit a batch job, you provide an executable file that will be run by
-the scheduler. This is normally a script file which provides commands and
-options to the program you are using. For instance, it might tell Ansys which
-files to use as input and where to save the output. Once you have a script
-file, or other executable file, you can submit it to the queue by running::
+the scheduler. This is normally a bash script file which provides commands and
+options to the program you are using.
+Once you have a script file, or other executable file, you can submit it to the queue by running::
 
     qsub myscript.sh
 
-you can also specify extra arguments to this, or at the start of your script,
-to give you access to more cores or memory or change the maximum execution time,
-a full list of the available options are given below.
+Here is an example batch submission script that runs a fictitious program called `foo` ::
 
+    #!/bin/bash
+    # Request 5 gigabytes of real memory (mem)
+    # and 5 gigabytes of virtual memory (mem)
+    #$ -l mem=5G -l rmem=5G
 
-All Scheduler Options
----------------------
+    # load the module for the program we want to run
+    module load apps/gcc/foo
 
+    #Run the program foo with input foo.dat
+    #and output foo.res
+    foo < foo.dat > foo.res
+
+Some things to note:
+
+* The first line always needs to be `#!/bin/bash` to tell the scheduler that this is a bash batch script.
+* Comments start with a `#`
+* Scheduler options, such as the amount of memory requested, start with `#$`
+* You will usually require one or more `module` commands in your submission file. These make programs and libraries available to your scripts.
+
+Here is a more complex example that requests more resources ::
+
+  #!/bin/bash
+  # Request 16 gigabytes of real memory (mem)
+  # and 16 gigabytes of virtual memory (mem)
+  #$ -l mem=16G -l rmem=16G
+  # Request 4 cores in an OpenMP environment
+  #$ -pe openmp 4
+  # Email notifications to me@somedomain.com
+  #$ -M me@somedomain.com
+  # Email notifications if the job aborts
+  #$ -m a
+
+  # load the modules required by our program
+  module load compilers/gcc/5.2
+  module load apps/gcc/foo
+
+  #Set the OPENMP_NUM_THREADS environment variable to 4
+  export OMP_NUM_THREADS=4
+
+  #Run the program foo with input foo.dat
+  #and output foo.res
+  foo < foo.dat > foo.res
+
+Scheduler Options
+-----------------
 
 ====================== ========================================================
 Command                Description
