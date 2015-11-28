@@ -43,16 +43,15 @@ For example to run a ``qsh`` session with access to 16 GB of virtual RAM::
 
 or a session with access to 8 cores::
 
-
     [te1st@iceberg-login2 ~]$ qsh -pe openmp 8
 
 A table of :ref:`sge-interactive-options` is given below, any of these can be
-combined together to requeuest more resources.
+combined together to request more resources.
 
 .. note::
 
     Long running jobs *should* use the batch submission system rather than
-    requeuesting an interactive session for a very long time. Doing this will
+    requesting an interactive session for a very long time. Doing this will
     lead to better cluster performance for all users.
 
 
@@ -72,8 +71,7 @@ Command                Description
 -pe <env> <nn>         Specify a parallel environment and number of processors.
 
 -pe openmp <nn>        The openmp parallel environment provides multiple threads
-                       on one node. It is the most commonly used in an
-                       interactive session. <nn> specifies the max number of
+                       on one node. <nn> specifies the max number of
                        threads.
 ====================== ========================================================
 
@@ -91,7 +89,7 @@ saved to a disk, so that you can see the output and verify the execution of the
 task.
 
 Any task that can be executed without any user intervention while it is running
-can be submitted as a batch job to iceberg. This exculdes jobs that require a
+can be submitted as a batch job to iceberg. This excludes jobs that require a
 GUI, however, many common applications such as Ansys or MATLAB can also be
 used without their GUIs.
 
@@ -101,11 +99,11 @@ options to the program you are using. For instance, it might tell Ansys which
 files to use as input and where to save the output. Once you have a script
 file, or other executable file, you can submit it to the queue by running::
 
-    qsh myscript.sh
+    qsub myscript.sh
 
 you can also specify extra arguments to this, or at the start of your script,
 to give you access to more cores or memory or change the maximum execution time,
-a full list of the availble options are given below.
+a full list of the available options are given below.
 
 
 All Scheduler Options
