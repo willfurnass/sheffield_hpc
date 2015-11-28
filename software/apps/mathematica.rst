@@ -105,3 +105,7 @@ Remove the ``playerpass`` file ::
   rm /usr/local/packages6/apps/binapps/mathematica/10.2/Configuration/Licensing/playerpass
 
 Install the University network ``mathpass`` file at ``/usr/local/packages6/apps/binapps/mathematica/10.2/Configuration/Licensing``
+
+Modulefile
+----------
+* The module file is `on github <https://github.com/rcgsheffield/iceberg_software/blob/master/software/modulefiles/apps/binapps/mathematica/10.2>`_.
