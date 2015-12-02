@@ -54,7 +54,7 @@ Ensuring that :code:`hello.m` and :code:`myjob.sge` are both in your current wor
 Some notes about this example:
 
 * We are running the script :code:`hello.m` but we drop the `.m` in the call to MATLAB. That is, we do :code:`-r 'hello'` rather than :code:`-r hello.m`.
-* All of the :code:`module` commands introducted in the Interactive usage section will also work in batch mode. This allows you to select a specific version of MATLAB if you wish.
+* All of the :code:`module` commands introduced in the Interactive usage section will also work in batch mode. This allows you to select a specific version of MATLAB if you wish.
 
 Parallel MATLAB on iceberg
 --------------------------
@@ -68,13 +68,11 @@ jobs and slow them considerably. It is therefore advisable to start parallel MAT
 use the 'local' profile from a parallel SGE job.
 For example, to use the local profile with 5 workers, do the following;
 
-Start a parallel OPENMP job with 6 workers.
+Start a parallel OPENMP job with 6 workers ::
 
     Qsh -pe openmp 6
 
-Run MATLAB in that session and select 5 workers.
-
-.. code-block:: none
+Run MATLAB in that session and select 5 workers ::
 
     MATLAB
     parpool ('local' , 5 )
@@ -97,12 +95,13 @@ For example, during your MATLAB session type:
     global sge_params
     sge_params='-l mem=16G -l h_rt=36:00:00'
 
-to make sure that all the MATLAB batch jobs will use upto 16GBytes of memory and will not be killed
+to make sure that all the MATLAB batch jobs will use up to 16GBytes of memory and will not be killed
 unless they exceed 36 hours of run time.
 
 Training
 --------
-* Here is a link to CICS' Introduction to MATLAB course - (http://rcg.group.shef.ac.uk/courses/matlab/)[http://rcg.group.shef.ac.uk/courses/matlab/]
+* Here is a link to CICS' Introduction to MATLAB course - `http://rcg.group.shef.ac.uk/courses/matlab/ <http://rcg.group.shef.ac.uk/courses/matlab/>`_
+* In November 2015, CiCS hosted a Parallel Computing in MATLAB Masterclass. The materials are available at `http://rcg.group.shef.ac.uk/courses/mathworks-parallelmatlab/ <http://rcg.group.shef.ac.uk/courses/mathworks-parallelmatlab/>`_
 
 Installation notes
 ------------------
