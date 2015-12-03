@@ -41,6 +41,12 @@ Samtools was installed using gcc 5.2 ::
     mkdir -p /usr/local/packages6/apps/gcc/5.2/samtools/1.2
     make prefix=/usr/local/packages6/apps/gcc/5.2/samtools/1.2
     make prefix=/usr/local/packages6/apps/gcc/5.2/samtools/1.2 install
+    #tabix and bgzip are not installed by the above procedure.
+    #We can get them by doing the following
+    cd htslib-1.2.1/
+    make
+    mv ./tabix /usr/local/packages6/apps/gcc/5.2/samtools/1.2/bin/
+    mv ./bgzip /usr/local/packages6/apps/gcc/5.2/samtools/1.2/bin/
 
 Testing
 -------
