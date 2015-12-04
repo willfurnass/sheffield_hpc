@@ -49,7 +49,7 @@ There was one failure ::
   updated 10 variants
        annotate-tool.t2 ... ok
 
-This has been reported to the developers. Currently waiting for advice.
+This was reported to the developers who `indicated that it was nothing to worry about <https://github.com/arq5x/gemini/issues/621>`_
 
 Modulefile
 ----------
