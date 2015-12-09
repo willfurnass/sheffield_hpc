@@ -25,5 +25,7 @@ not be needed.
 Installation notes
 ------------------
 
-OpenFoam was compiled using the `install_openfoam.sh<>`_ script, the module
-file is `3.0.0<>`_.
+OpenFoam was compiled using the
+`install_openfoam.sh<https://github.com/rcgsheffield/iceberg_software/blob/master/software/install_scripts/apps/gcc/5.2/openfoam/install_openfoam.sh>`_ script, the module
+file is
+`3.0.0<https://github.com/rcgsheffield/iceberg_software/blob/master/software/install_scripts/apps/gcc/5.2/openfoam/3.0.0>`_.
