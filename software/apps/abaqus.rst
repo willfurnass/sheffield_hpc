@@ -13,9 +13,9 @@ Abaqus is a software suite for Finite Element Analysis (FEA) developed by Dassau
 
 Interactive usage
 -----------------
-After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qsh` command. Alternatively, if you require more memory, for example 16 gigabytes, use the command :code:`qsh -l mem=16G` 
+After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the :code:`qsh` command. Alternatively, if you require more memory, for example 16 gigabytes, use the command :code:`qsh -l mem=16G` 
 
-The lastest version of Abaqus (currently version 6.13) is made available with the command
+The latest version of Abaqus (currently version 6.13) is made available with the command
 
 .. code-block:: none
 
@@ -26,8 +26,8 @@ Alternatively, you can make a specific version available with one of the followi
 .. code-block:: none
 
       module load apps/abaqus/613
-      module load apps/abaqus/612 
-      module load apps/abaqus/611 
+      module load apps/abaqus/612
+      module load apps/abaqus/611
 
 After that, simply type :code:`abaqus` to get the command-line interface to abaqus or type :code:`abaqus cae` to get the GUI interface.
 
@@ -41,7 +41,7 @@ This will extract the input file s4d.inp, to run the computation defined by this
 
 Batch submission of a single core job
 -------------------------------------
-In this example, we will run the s4d.inp file on a single core using 8 Gigabytes of memory.  After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qrsh` command. 
+In this example, we will run the s4d.inp file on a single core using 8 Gigabytes of memory.  After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qrsh` command.
 
 Load version 6.13-3 of Abaqus and fetch the s4d example by running the following commands ::
 
@@ -55,8 +55,8 @@ Now, you need to write a batch submission file. We assume you'll call this :code
     #$ -cwd
     #$ -l rmem=8G
     #$ -l mem=8G
-    
-    module load apps/abaqus    
+
+    module load apps/abaqus
 
     abq6133 job=my_job input=s4d.inp scratch=/scratch memory="8gb" interactive
 
@@ -69,14 +69,14 @@ Important notes:
 
 Batch submission of a single core job with user subroutine
 ----------------------------------------------------------
-In this example, we will fetch a simulation from Abaqus' built in set of problems that makes use of user subroutines (UMATs) and run it in batch on a single core.  After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qrsh` command. 
+In this example, we will fetch a simulation from Abaqus' built in set of problems that makes use of user subroutines (UMATs) and run it in batch on a single core.  After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qrsh` command.
 
 Load version 6.13-3 of Abaqus and fetch the umatmst3 example by running the following commands ::
 
     module load apps/abaqus/613
-    abaqus fetch job=umatmst3* 
+    abaqus fetch job=umatmst3*
 
-This will produce 2 files: The input file ``umatmst3.inp`` and the Fortran user subroutine ``umatmst3.f``. 
+This will produce 2 files: The input file ``umatmst3.inp`` and the Fortran user subroutine ``umatmst3.f``.
 
 Now, you need to write a batch submission file. We assume you'll call this :code:`my_user_job.sge` ::
 
@@ -85,8 +85,8 @@ Now, you need to write a batch submission file. We assume you'll call this :code
     #$ -cwd
     #$ -l rmem=8G
     #$ -l mem=8G
-    
-    module load apps/abaqus/613    
+
+    module load apps/abaqus/613
     module load compilers/intel/12.1.15
 
     abq6133 job=my_user_job input=umatmst3.inp user=umatmst3.f scratch=/scratch memory="8gb" interactive
@@ -97,4 +97,3 @@ Important notes:
 
 * In order to use user subroutimes, it is necessary to load the module for the intel compiler.
 * The user-subroutine itself is passed to Abaqus with the switch ``user=umatmst3.f``
-

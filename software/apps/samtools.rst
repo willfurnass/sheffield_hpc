@@ -10,9 +10,9 @@ SAM (Sequence Alignment/Map) format is a generic format for storing large nucleo
 
 Interactive Usage
 -----------------
-After connecting to Iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qsh` command.
+After connecting to Iceberg (see :ref:`ssh`),  start an interactive session with the :code:`qsh` command.
 
-The lastest version of Samtools (currently 1.2) is made available with the command
+The latest version of Samtools (currently 1.2) is made available with the command
 
 .. code-block:: none
 
@@ -41,6 +41,12 @@ Samtools was installed using gcc 5.2 ::
     mkdir -p /usr/local/packages6/apps/gcc/5.2/samtools/1.2
     make prefix=/usr/local/packages6/apps/gcc/5.2/samtools/1.2
     make prefix=/usr/local/packages6/apps/gcc/5.2/samtools/1.2 install
+    #tabix and bgzip are not installed by the above procedure.
+    #We can get them by doing the following
+    cd htslib-1.2.1/
+    make
+    mv ./tabix /usr/local/packages6/apps/gcc/5.2/samtools/1.2/bin/
+    mv ./bgzip /usr/local/packages6/apps/gcc/5.2/samtools/1.2/bin/
 
 Testing
 -------
