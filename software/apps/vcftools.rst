@@ -5,7 +5,7 @@ VCFtools
 .. sidebar:: VCFtools
    
    :Version: 0.1.14
-   :Dependancies: gcc/5.5
+   :Dependancies: gcc/5.2
    :URL: https://vcftools.github.io/
    :Documentation: https://vcftools.github.io/examples.html
 
