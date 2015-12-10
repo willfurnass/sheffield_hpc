@@ -13,8 +13,6 @@ proc ModulesHelp { } {
         puts stderr "Makes the vcftools library available"
 }
 
-set S_DIR /usr/local/packages6/libs/gcc/5.2/scotch/6.0.4
-
 module-whatis   "Makes the vcftools library available"
 
 prepend-path PATH /usr/local/packages6/apps/gcc/5.2/vcftools/0.1.14/bin
