@@ -7,7 +7,6 @@
 # This script will then create the directories you need and download and unzip
 # the source in to the build dir.
 
-module unload apps/python/conda
 ############################# Module Loads ###################################
 module load compilers/gcc/5.2
 module load mpi/gcc/openmpi/1.10.0
