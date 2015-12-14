@@ -29,7 +29,7 @@ Installation notes
 ------------------
 These are primarily for administrators of the system.
 
-**Version 1.10.0**
+**Version 1.10.1**
 
 Compiled using gcc 4.4.7.
 
