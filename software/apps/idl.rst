@@ -4,7 +4,7 @@ IDL
 
 .. sidebar:: IDL
    
-   :Version: 8.4
+   :Version: 8.5
    :Support Level: extras
    :Dependancies: java
    :URL: http://www.exelisvis.co.uk/ProductsServices/IDL.aspx 
@@ -19,7 +19,7 @@ session using something like `qsh -l mem=8G`.
 
 IDL can be activated using the module file::
 
-    module load apps/idl/8.4
+    module load apps/idl/8.5
 
 then run using `idl` or `idlde` for the interactive development environment.
 
