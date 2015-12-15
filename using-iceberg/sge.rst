@@ -171,6 +171,10 @@ Command                Description
 
 Frequently Asked SGE Questions
 ------------------------------
+**How many jobs can I submit at any one time**
+
+You can submit up to 2000 jobs to the cluster, and the scheduler will allow up to 200 of your jobs to run simultaneously (we occasionally alter this value depending on the load on the cluster).
+
 **How do I ensure that my jobs run on Ivybridge processors**
 
 Add the following line to your submission script ::
