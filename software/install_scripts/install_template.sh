@@ -9,11 +9,10 @@
 
 
 ############################# Module Loads ###################################
-module load compilers/cmake/3.3.0
 
 ############################## Variable Setup ################################
 version=<version>
-prefix=/usr/local/packages6/<type>/<compiler>/<compiler_version>/<name>/<version>
+prefix=/usr/local/packages6/<type>/<compiler>/<compiler_version>/<name>/$version
 build_dir=/scratch/$USER/<name>
 
 filename=<name>-$version.tar.gz
@@ -39,8 +38,8 @@ cd $build_dir
 # Create the install directory
 if [ ! -d $prefix/$version ]
 then
-   $sudo mkdir -p $prefix/$version
-   $sudo chown $USER:cs $prefix/$version
+   $sudo mkdir -p $prefix
+   $sudo chown $USER:app-admins $prefix
 fi 
 
 # Download the source
