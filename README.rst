@@ -12,7 +12,7 @@ Rendered Documentation
 Two versions of the documentation are currently automatically built from this repository:
 
 * `A website <http://rcg.group.shef.ac.uk/iceberg/>`_.
-* `A .pdf document <http://rcg.group.shef.ac.uk/iceberg/icebergDocumentation.pdf>`_.
+* `A .pdf document <http://rcg.group.shef.ac.uk/iceberg/IcebergDocumentation.pdf>`_.
 
 How to Contribute
 -----------------
