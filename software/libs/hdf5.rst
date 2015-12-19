@@ -1,13 +1,12 @@
-.. _hdf5gcc:
+.. _hdf5:
 
-HDF5 (gcc build)
-================
+HDF5
+====
 
-.. sidebar:: HDF5 (gcc build)
+.. sidebar:: HDF5
 
-   :Version: 1.8.14 and 1.8.13
-   :Support Level: bronze
-   :Dependancies: openmpi (1.8.3)
+   :Version: 1.8.16, 1.8.15-patch1, 1.8.14 and 1.8.13
+   :Dependencies: gcc or pgi compiler, openmpi (optional)
    :URL: http://www.hdfgroup.org/HDF5/
    :Documentation: http://www.hdfgroup.org/HDF5/doc/
 
@@ -21,29 +20,42 @@ Two primary versions of this library are provided, MPI parallel enabled versions
 
 Usage - Serial
 ---------------
-The serial versions were built with gcc version 4.8.2. As such, if you are going to build anything against these versions of HDF5, we recommend that you use gcc 4.8.2 which can be enabled with the following module command ::
+The serial versions were built with gcc version 4.8.2. As such, if you are
+going to build anything against these versions of HDF5, we recommend that you
+use gcc 4.8.2 which can be enabled with the following module command ::
 
     module load compilers/gcc/4.8.2
 
-To enable the serial version of HDF5, use one of the following module commands depending on which version of the library you require::
+To enable the serial version of HDF5, use one of the following module commands
+depending on which version of the library you require::
 
      module load libs/hdf5/gcc/1.8.14
      module load libs/hdf5/gcc/1.8.13
 
 Usage -- Parallel
 -----------------
-The MPI Parallel version was built using gcc version 4.4.7 and OpenMPI version 1.8.3.  Version 4.4.7 of gcc is the default compiler on the system so no module command is required for this.
 
-To make the MPI version of HDF5 available, use one of the following module commands ::
+There are multiple versions of parallel HDF5 installed with different openmpi
+and compiler versions. 
+
+Two versions of HDF were built using gcc version 4.4.7 and OpenMPI version
+1.8.3.  Version 4.4.7 of gcc is the default compiler on the system so no module
+command is required for this ::
 
     module load libs/hdf5/gcc/openmpi/1.8.14
     module load libs/hdf5/gcc/openmpi/1.8.13
 
-It is not necessary to load the OpenMPI module in either case since this is done automatically on execution of one of the above commands.
 
-Optional HDF5 features
-----------------------
-Our HDF5 builds have zlib support built in but do not have support for the SZIP Encoder.
+One version was built with the PGI compiler version 15.7 and openmpi version
+1.8.8 ::
+
+    module load libs/hdf5/pgi/1.8.15-patch1
+
+Finally, another version was built with GCC 4.4.7 and openmpi 1.10.1, this
+version is also linked against ZLIB and SZIP.::
+
+    module load libs/gcc/4.4.7/openmpi/1.10.1/hdf5/1.8.16
+
 
 Installation notes
 ------------------
