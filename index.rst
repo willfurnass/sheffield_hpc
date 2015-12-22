@@ -9,7 +9,7 @@ Iceberg
    :alt: A picture showing some of the Iceberg hardware.
 
 Welcome to the **Iceberg** user manual. Iceberg is the University of Sheffield's
-central High Perfomance Computing (HPC) resource. Its mission is to meet
+central High Perfomance Computing (:term:`HPC`) resource. Its mission is to meet
 the intensive computing requirements of research projects at Sheffield University.
 
 This manual aims to provide you all the information you need to use iceberg.
