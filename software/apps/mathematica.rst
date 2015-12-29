@@ -5,7 +5,7 @@ Mathematica
 
    :Dependancies: None
    :URL: http://www.wolfram.com/mathematica/
-   :Version: 10.2
+   :Latest version: 10.3.1
 
 Mathematica is a technical computing environment and programming language with strong symbolic and numerical abilities.
 
@@ -19,6 +19,7 @@ The latest version of Mathematica can be loaded with ::
 
 Alternatively, you can load a specific version of Mathematica using ::
 
+        module load apps/binapps/mathematica/10.3.1
         module load apps/binapps/mathematica/10.2
 
 Mathematica can then be started with the ``mathematica`` command ::
@@ -75,7 +76,7 @@ An example batch submission script for this file is ::
   # and 4 gigabytes of virtual memory (mem)
   #$ -l mem=4G -l rmem=4G
 
-  module load apps/binapps/mathematica/10.2
+  module load apps/binapps/mathematica/10.3.1
 
   math -script very_simple_mathematica.m
 
@@ -85,7 +86,7 @@ Copy and paste the above into a file called `run_job.sh` and submit with ::
 
 Once the job has successfully completed, the output will be in a file named like `run_job.sh.o396699`. The number at the end refers to the job-ID given to this job by the system and will be different for you. Let's take a look at the contents of this file ::
 
-  more run_job.sh.o396699 
+  more run_job.sh.o396699
 
   Mathematica version is 10.2.0 for Linux x86 (64-bit) (July 28, 2015)
   The machine name is node131
@@ -94,7 +95,56 @@ Once the job has successfully completed, the output will be in a file named like
 
 Installation notes
 ------------------
-These are primarily for administrators of the system ::
+These are primarily for administrators of the system
+
+**For Version 10.3.1** ::
+
+  mkdir -p /usr/local/packages6/apps/binapps/mathematica/10.3.1
+  chmod +x ./Mathematica_10.3.1_LINUX.sh
+  ./Mathematica_10.3.1_LINUX.sh
+
+The installer is interactive. Here's the session output ::
+
+  --------------------------------------------------------------------------------
+                        Wolfram Mathematica 10.3 Installer
+  --------------------------------------------------------------------------------
+
+  Copyright (c) 1988-2015 Wolfram Research, Inc. All rights reserved.
+
+  WARNING: Wolfram Mathematica is protected by copyright law and international
+  treaties. Unauthorized reproduction or distribution may result in severe
+  civil and criminal penalties and will be prosecuted to the maximum extent
+  possible under law.
+
+  Enter the installation directory, or press ENTER to select
+  /usr/local/Wolfram/Mathematica/10.3:
+  > /usr/local/packages6/apps/binapps/mathematica/10.3.1
+
+  Now installing...
+
+  [*****************************************************************************]
+
+  Type the directory path in which the Wolfram Mathematica script(s) will be
+  created, or press ENTER to select /usr/local/bin:
+  > /usr/local/packages6/apps/binapps/mathematica/10.3.1/scripts
+
+  Create directory (y/n)?
+  > y
+
+
+  WARNING: No Avahi Daemon was detected so some Kernel Discovery features will
+  not be available. You can install Avahi Daemon using your distribution's
+  package management system.
+
+  For Red Hat based distributions, try running (as root):
+
+  yum install avahi
+
+  Installation complete.
+
+Install the University network ``mathpass`` file at ``/usr/local/packages6/apps/binapps/mathematica/10.3.1/Configuration/Licensing``
+
+**For Version 10.2** ::
 
   mkdir -p /usr/local/packages6/apps/binapps/mathematica/10.2
   chmod +x ./Mathematica_10.2.0_LINUX.sh
@@ -146,6 +196,7 @@ Remove the ``playerpass`` file ::
 
 Install the University network ``mathpass`` file at ``/usr/local/packages6/apps/binapps/mathematica/10.2/Configuration/Licensing``
 
-Modulefile
-----------
-* The module file is `on github <https://github.com/rcgsheffield/iceberg_software/blob/master/software/modulefiles/apps/binapps/mathematica/10.2>`_.
+Modulefiles
+-----------
+* The `10.3.1 module file  <https://github.com/rcgsheffield/iceberg_software/blob/master/software/modulefiles/apps/binapps/mathematica/10.3.1>`_.
+* The `10.2 module file  <https://github.com/rcgsheffield/iceberg_software/blob/master/software/modulefiles/apps/binapps/mathematica/10.2>`_.
