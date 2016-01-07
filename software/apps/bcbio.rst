@@ -2,7 +2,7 @@ bcbio
 =====
 .. sidebar:: bcbio
 
-   :Latest version: Unknown
+   :Latest version: 0.9.6a
    :Dependancies: gcc 5.2, R 3.2.1, Anaconda Python 2.3
    :URL: http://bcbio-nextgen.readthedocs.org/en/latest/
 
@@ -10,11 +10,41 @@ A python toolkit providing best-practice pipelines for fully automated high thro
 
 Usage
 -----
-Load the development version of bcbio with the command. The development version may be upgraded or modified at any time without warning. ::
+Load version 0.9.6a of bcbio with the command ::
+
+    module add apps/gcc/5.2/bcbio/0.9.6a
+
+There is also a development version of bcbio installed on iceberg. This could change without warning and should not be used for production ::
 
     module load apps/gcc/5.2/bcbio/devel
 
-This correctly populates the PATH, LD_LIBRARY_PATH and PERL5LIB environment variables for bcbio usage.
+These module commands add bcbio commands to the PATH, load any supporting environments and correctly configure the system for bcbio usage.
+
+Once the module is loaded you can, for example, check the version of bcbio ::
+
+  bcbio_nextgen.py -v
+
+  /usr/local/packages6/apps/gcc/5.2/bcbio/0.9.6a/anaconda/lib/python2.7/site-packages/matplotlib/__init__.py:872: UserWarning: axes.color_cycle is deprecated and replaced with axes.prop_cycle; please use the latter.
+    warnings.warn(self.msg_depr % (key, alt_key))
+  0.9.6a
+
+To check how the loaded version of bcbio has been configured ::
+
+    more $BCBIO_DIR/config/install-params.yaml
+
+At the time of writing, the output from the above command is ::
+
+    aligners:
+    - bwa
+    - bowtie2
+    - rtg
+    - hisat2
+    genomes:
+    - hg38
+    - hg19
+    isolate: true
+    tooldir: /usr/local/packages6/apps/gcc/5.2/bcbio/0.9.6a/tools
+    toolplus: []
 
 Example batch submission
 ------------------------
@@ -27,6 +57,23 @@ TODO
 Installation Notes
 ------------------
 These are primarily for system administrators.
+
+**0.9.6a**
+
+Version 0.9.6a was installed using gcc 5.2, R 3.2.1 and Anaconda Python 2.3. The install was performed in two parts.
+
+The first step was to run the SGE script below in batch mode. Note that the install often fails due to external services being flaky. See https://github.com/rcgsheffield/iceberg_software/issues/219 for details. Depending on the reason for the failure, it should be OK to simply restart the install. This particular install was done in one-shot...no restarts necessary.
+
+* `install_bcbio_0.96a <https://github.com/rcgsheffield/iceberg_software/blob/master/software/install_scripts/apps/gcc/5.2/bcbio/install_bcbio_0.96a.sge>`_
+
+The output from this batch run can be found in `/usr/local/packages6/apps/gcc/5.2/bcbio/0.9.6a/install_output/`
+
+Once the install completed, the module file (see Modulefile section) was created and loaded and the following upgrades were performed ::
+
+  bcbio_nextgen.py upgrade --toolplus gatk=./GenomeAnalysisTK.jar
+  bcbio_nextgen.py upgrade --genomes hg38 --aligners hisat2
+
+The GATK .jar file was obtained from https://www.broadinstitute.org/gatk/download/
 
 **Development version**
 
@@ -64,17 +111,53 @@ The GATK .jar file was obtained from https://www.broadinstitute.org/gatk/downloa
     module load apps/gcc/5.2/bcbio/devel
     bcbio_nextgen.py upgrade --tools --toolplus gatk=./cooper/GenomeAnalysisTK.jar
 
+Module files
+------------
+
+* `0.96a <https://github.com/rcgsheffield/iceberg_software/blob/master/software/modulefiles/apps/gcc/5.2/bcbio/0.9.6a>`_
+
 Testing
 -------
-The following test script was submitted to the system. All tests passed. The output is at ``/usr/local/packages6/apps/gcc/5.2/bcbio/devel/tests/tests_28_8_2015`` ::
+**Version 0.9.6a**
+
+The following test script was submitted to the system as an SGE batch script ::
 
   #!/bin/bash
   #$ -pe openmp 12
   #$ -l mem=4G  #Per Core!
   #$ -l rmem=4G #Per Core!
 
-  bcbio_dir=/data/fe1mpc/bcbio_install/tools
-  module add apps/gcc/5.2/bcbio/devel
+  module add apps/gcc/5.2/bcbio/0.9.6a
+
+  git clone https://github.com/chapmanb/bcbio-nextgen.git
+  cd bcbio-nextgen/tests
+  ./run_tests.sh devel
+  ./run_tests.sh rnaseq
+
+The tests failed due to a lack of pandoc ::
+
+  [2016-01-07T09:40Z] Error: pandoc version 1.12.3 or higher is required and was not found.
+  [2016-01-07T09:40Z] Execution halted
+  [2016-01-07T09:40Z] Skipping generation of coverage report: Command 'set -o pipefail; /usr/local/packages6/apps/gcc/5.2/bcbio/0.9.6a/anaconda/bin/Rscript /data/fe1mpc/bcbio-nextgen/tests/test_automated_ou
+  tput/report/qc-coverage-report-run.R
+  Error: pandoc version 1.12.3 or higher is required and was not found.
+  Execution halted
+  ' returned non-zero exit status 1
+
+The full output of this testrun is on the system at `/usr/local/packages6/apps/gcc/5.2/bcbio/0.9.6a/tests/7-jan-2016/`
+
+Pandoc has been added to the list of applications that need to be installed on iceberg.
+
+**Development version**
+
+The following test script was submitted to the system. All tests passed. The output is at ``/usr/local/packages6/apps/gcc/5.2/bcbio/0.9.6a/tests/tests_07_01_2016/`` ::
+
+  #!/bin/bash
+  #$ -pe openmp 12
+  #$ -l mem=4G  #Per Core!
+  #$ -l rmem=4G #Per Core!
+
+  module add apps/gcc/5.2/bcbio/0.9.6a
 
   git clone https://github.com/chapmanb/bcbio-nextgen.git
   cd bcbio-nextgen/tests
