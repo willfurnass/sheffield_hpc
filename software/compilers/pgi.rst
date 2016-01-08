@@ -7,27 +7,32 @@ Making the PGI Compilers available
 
 After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the :code:`qsh` or :code:`qrsh` command. To make one of the versions of the PGI Compiler Suite available, run one of the following module commands ::
 
+    module load compilers/pgi/15.10
     module load compilers/pgi/15.7
     module load compilers/pgi/14.4
     module load compilers/pgi/13.1
+
+Once you've loaded the module, you can check the version with ::
+
+    pgcc --version
 
 Compilation examples
 --------------------
 **C**
 
-To compile the C hello world example into an executable called ``hello`` using the PGI C compiler ::
+To compile a C hello world example into an executable called ``hello`` using the PGI C compiler ::
 
     pgcc hello.c -o hello
 
 **C++**
 
-To compile the C++ hello world example into an executable called ``hello`` using the PGI C++ compiler ::
+To compile a C++ hello world example into an executable called ``hello`` using the PGI C++ compiler ::
 
       pgc++ hello.cpp -o hello
 
 **Fortran**
 
-To compile the Fortran hello world example into an executable called ``hello`` using the PGI Fortran compiler ::
+To compile a Fortran hello world example into an executable called ``hello`` using the PGI Fortran compiler ::
 
       pgf90 hello.f90 -o hello
 
@@ -38,6 +43,10 @@ Additional resources
 
 Installation Notes
 ------------------
+*Version 15.10*
+
+The interactive installer was slightly different to that of 15.7 (below) but the questions and answers were essentially the same.
+
 *Version 15.7*
 
 The installer is interactive. Most of the questions are obvious.
@@ -88,7 +97,7 @@ The license file is on the system at ``/usr/local/packages6/compilers/pgi/licens
 
 Extra install steps
 -------------------
-Unlike gcc, the PGI Compilers do not recognise the environment variable LIBRARY_PATH which is used by a lot of installers to specify the locations of libraries at compile time. This is fixed by creating a ``siterc`` file at ``/usr/local/packages6/compilers/pgi/linux86-64/15.7/bin/siterc`` with the following contents ::
+Unlike gcc, the PGI Compilers do not recognise the environment variable LIBRARY_PATH which is used by a lot of installers to specify the locations of libraries at compile time. This is fixed by creating a ``siterc`` file at ``/usr/local/packages6/compilers/pgi/linux86-64/VER/bin/siterc`` with the following contents ::
 
   # get the value of the environment variable LIBRARY_PATH
   variable LIBRARY_PATH is environment(LD_LIBRARY_PATH);
@@ -100,8 +109,15 @@ Unlike gcc, the PGI Compilers do not recognise the environment variable LIBRARY_
   # add the -L arguments to the link line
   append LDLIBARGS=$library_path;
 
+Where VER is the version number in question: 15.7, 15.10 etc
+
 At the time of writing (August 2015), this is documented on PGI's website at https://www.pgroup.com/support/link.htm#lib_path_ldflags
 
 Modulefile
 ----------
+**Version 15.10**
+The PGI compiler installer creates a suitable modulefile that's configured to our system. It puts it at ``/usr/local/packages6/compilers/pgi/modulefiles/pgi64/15.10`` so all that is required is to copy this to where we keep modules at ``/usr/local/modulefiles/compilers/pgi/15.10``
+
+**Version 15.7**
+
 The PGI compiler installer creates a suitable modulefile that's configured to our system. It puts it at ``/usr/local/packages6/compilers/pgi/modulefiles/pgi64/15.7`` so all that is required is to copy this to where we keep modules at ``/usr/local/modulefiles/compilers/pgi/15.7``
