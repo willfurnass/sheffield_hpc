@@ -1,0 +1,18 @@
+#%Module1.0#####################################################################
+##
+## pov 3.7  module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+module load compilers/gcc/5.2
+module load libs/gcc/5.2/boost/1.59
+
+module-whatis   "Make version 3.7 of pov available"
+
+set POV_DIR /usr/local/packages6/apps/gcc/5.2/povray/3.7/
+
+prepend-path PATH $POV_DIR/bin
+prepend-path MANPATH $POV_DIR/share/man/
