@@ -9,10 +9,9 @@ Cufflinks
 Cufflinks assembles transcripts, estimates their abundances, and tests for differential expression and regulation in RNA-Seq samples.
 It accepts aligned RNA-Seq reads and assembles the alignments into a parsimonious set of transcripts. Cufflinks then estimates the relative abundances of these transcripts based on how many reads support each one, taking into account biases in library preparation protocols.
 
-
 Interactive Usage
 -----------------
-After connecting to Iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qsh` or `qrsh` command.
+After connecting to Iceberg (see :ref:`ssh`),  start an interactive session with the :code:`qsh` or `qrsh` command.
 
 The latest version of Cufflinks (currently 2.2.1) is made available with the command
 
@@ -42,7 +41,7 @@ Modulefile
 ----------
 * The module file is on the system at `/usr/local/modulefiles/apps/binapps/cufflinks/2.2.1`
 
-Its contents is ::
+Its contents are ::
 
   ## cufflinks 2.2.1 modulefile
   ##
