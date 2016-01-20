@@ -12,7 +12,7 @@ It accepts aligned RNA-Seq reads and assembles the alignments into a parsimoniou
 
 Interactive Usage
 -----------------
-After connecting to Iceberg (see :ref:`ssh`),  start an interactive session with the :code:`qsh` or `qrsh` command.
+After connecting to Iceberg (see :ref:`ssh`),  start an interactive session with the `qsh` or `qrsh` command.
 
 To add the annovar binaries to the system PATH, execute the following command ::
 
@@ -24,8 +24,8 @@ The annovar manual is available online at http://annovar.openbioinformatics.org/
 
 Installation notes
 ------------------
-The install is a collection of executable Perl scripts. Installation involves copying the directory and adding it to the PATH ::
-It seems that annovar uses dates to distinguish between releases rather than version numbers
+The install is a collection of executable Perl scripts. Installation involves copying the directory and adding it to the PATH.
+It seems that annovar uses dates to distinguish between releases rather than version numbers ::
 
     tar -xvzf ./annovar.latest.tar.gz
     mkdir -p mkdir -p /usr/local/packages6/apps/binapps/annovar
