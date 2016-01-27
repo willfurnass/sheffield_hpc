@@ -24,11 +24,11 @@ As Phyluce is a Python package your default Python interpreter will be changed b
 Installation notes
 ------------------
 
-As root:
+As root::
 
-$ module load apps/python/conda
-$ conda create -p /usr/local/packages6/apps/binapps/conda/phyluce python=2
-$ source activate /usr/local/packages6/apps/binapps/conda/phyluce
-$ conda install -c https://conda.binstar.org/faircloth-lab phyluce
+  $ module load apps/python/conda
+  $ conda create -p /usr/local/packages6/apps/binapps/conda/phyluce python=2
+  $ source activate /usr/local/packages6/apps/binapps/conda/phyluce
+  $ conda install -c https://conda.binstar.org/faircloth-lab phyluce
 
 This installs Phyluce as a conda environment in the /usr/local/packages6/apps/binapps/conda/phyluce folder, which is then loaded by the module file `phyluce/1.5.0 <https://github.com/rcgsheffield/iceberg_software/blob/master/software/modulefiles/apps/binapps/phyluce/1.5.0>`_, which is a modification of the anaconda module files.
