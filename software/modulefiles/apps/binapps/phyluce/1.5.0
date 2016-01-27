@@ -14,7 +14,7 @@ if {[module-info mode load]} {
     module unload apps/python/conda
 }
 
-module-whatis   "conda is a scientific python package manager"
+module-whatis   "Phyluce (phy-loo-chee) is a software package that was initially developed for analyzing data collected from ultraconserved elements in organismal genomes."
 
 # Import shared procedures
 source /usr/local/modulefiles/apps/python/.conda-environment.tcl
