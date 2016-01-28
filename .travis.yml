@@ -25,6 +25,7 @@ virtualenv:
 
 install:
     - pip install -r requirements.txt
+    - wget http://math.sut.ac.th/lab/software/texlive/texmf-dist/tex/latex/caption/newfloat.sty
 
 script:
     - make $BUILD_CMD
