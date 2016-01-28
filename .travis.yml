@@ -11,6 +11,11 @@ addons:
             - graphviz
             - pandoc
 
+env:
+  matrix:
+    - BUILD_CMD='html'
+    - BUILD_CMD='latexpdf'
+            
 python:
     - 2.7
 
@@ -21,5 +26,4 @@ install:
     - pip install -r requirements.txt
 
 script:
-    - make html
-    - make latexpdf
+    - make $BUILD_CMD
