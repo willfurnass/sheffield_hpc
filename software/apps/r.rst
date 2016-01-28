@@ -11,7 +11,7 @@ R is a statistical computing language.
 
 Interactive Usage
 -----------------
-After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qsh` command.
+After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the :code:`qsh` command.
 
 The latest version of R can be loaded with ::
 
@@ -19,6 +19,7 @@ The latest version of R can be loaded with ::
 
 Alternatively, you can load a specific version of R using one of the following ::
 
+        module load apps/R/3.2.3
         module load apps/R/3.2.2
         module load apps/R/3.2.1
         module load apps/R/3.2.0
@@ -30,7 +31,7 @@ R can then be run with ::
 
 Serial (one CPU) Batch usage
 ----------------------------
-Here, we assume that you wish to run the program :code:`my_code.R` on the system. With batch usage it is recommended to load a specific version of R, for example :code:`module load apps/R/3.2.2`, to ensure the expected output is achieved.
+Here, we assume that you wish to run the program :code:`my_code.R` on the system. With batch usage it is recommended to load a specific version of R, for example :code:`module load apps/R/3.2.3`, to ensure the expected output is achieved.
 
 First, you need to write a batch submission file. We assume you'll call this :code:`my_job.sge` ::
 
@@ -38,7 +39,7 @@ First, you need to write a batch submission file. We assume you'll call this :co
   #$ -S /bin/bash
   #$ -cwd               # Run job from current directory
 
-  module load apps/R/3.2.2     # Recommended to load a specific version of R
+  module load apps/R/3.2.3     # Recommended to load a specific version of R
 
   R CMD BATCH my_code.R my_code.R.o$JOB_ID
 
@@ -109,7 +110,9 @@ The Rmath library allows you to access some of R's functionality from a C progra
        printf("Critical value is %lf\n",qbeta(prob,shape1,shape2,1,0));
     }
 
-This makes use of R's ``qbeta`` function. You can compile and run this on a worker node. Start a session on a worker node with ``qrsh`` or ``qsh`` and load the R module ::
+This makes use of R's ``qbeta`` function. You can compile and run this on a worker node as follows.
+
+Start a session on a worker node with ``qrsh`` or ``qsh`` and load the R module ::
 
     module load apps/R/3.2.2
 
@@ -122,6 +125,16 @@ For full details about the functions made available by the Rmath library, see se
 Installation Notes
 ------------------
 These notes are primarily for administrators of the system.
+
+**Version 3.2.3**
+
+* `What's new in R version 3.2.3 <https://cran.r-project.org/bin/windows/base/NEWS.R-3.2.3.html>`_
+
+This was a scripted install. It was compiled from source with gcc 4.4.7 and with ``--enable-R-shlib`` enabled. You will need a large memory ``qrsh`` session in order to successfully run the build script. I used ``qrsh -l rmem=8G -l mem=16G``
+
+* `install_R_3.2.3.sh <https://github.com/rcgsheffield/iceberg_software/blob/master/software/install_scripts/apps/R/install_R_3.2.3.sh>`_ Downloads, compiles, tests and installs R 3.2.3 and the ``Rmath`` library.
+* `R 3.2.3 Modulefile <https://github.com/rcgsheffield/iceberg_software/blob/master/software/modulefiles/apps/R/3.2.3>`_ located on the system at ``/usr/local/modulefiles/apps/R/3.2.3``
+* Install log-files, including the output of the `make check` tests are available on the system at `/usr/local/packages6/R/3.2.3/install_logs`
 
 **Version 3.2.2**
 
