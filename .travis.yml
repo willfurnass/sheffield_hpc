@@ -6,8 +6,7 @@ addons:
     apt:
         packages:
             - texlive
-            - texlive-latex-extra
-            - texlive-latex-recommended
+            - texlive-full
             - dvipng
             - graphviz
             - pandoc
