@@ -30,6 +30,46 @@ Start Octave by executing the command ::
 
 If you are using a `qsh` session, the graphical user interface version will begin. If you are using a `qrsh` session, you will only be able to use the text-only terminal version.
 
+Batch Usage
+-----------
+Here is an example batch submission script that will run an Octave program called `foo.m` ::
+
+  #!/bin/bash
+  # Request 5 gigabytes of real memory (mem)
+  # and 5 gigabytes of virtual memory (mem)
+  #$ -l mem=5G -l rmem=5G
+  # Request 64 hours of run time
+  #$ -l h_rt=64:00:00
+
+  module load apps/gcc/5.2/octave/4.0
+
+  octave foo.m
+
+Using Packages (Toolboxes)
+--------------------------
+Octave toolboxes are referred to as packages. To see which ones are installed, use the command `ver` from within Octave.
+
+Unlike MATLAB, Octave does not load all of its packages at startup. It is necessary to load the package before its commands are available to your session. For example, as with MATLAB, the `pdist` command is part of the statistics package. Unlike MATLAB, `pdist` is not immediately available to you ::
+
+  octave:1> pdist([1 2 3; 2 3 4; 1 1 1])
+  warning: the 'pdist' function belongs to the statistics package from Octave
+  Forge which you have installed but not loaded. To load the package, run
+  `pkg load statistics' from the Octave prompt.
+
+  Please read `http://www.octave.org/missing.html' to learn how you can
+  contribute missing functionality.
+  warning: called from
+      __unimplemented__ at line 524 column 5
+  error: 'pdist' undefined near line 1 column 1
+
+As the error message suggests, you need to load the `statistics` package ::
+
+  octave:1> pkg load statistics
+  octave:2> pdist([1 2 3; 2 3 4; 1 1 1])
+  ans =
+
+     1.7321   2.2361   3.7417
+
 Installation notes
 ------------------
 These are primarily for administrators of the system.
@@ -224,6 +264,16 @@ For information, here is the relevant part of the Configure log that describes h
   configure: WARNING: Qscintilla library not found -- disabling built-in GUI editor
   configure:
 
-  Module File
-  -----------
-  The module file is on `GitHub <https://github.com/rcgsheffield/iceberg_software/blob/master/software/modulefiles/apps/gcc/5.2/octave/4.0>`_
+* Some commonly-used packages were additionally installed from `Octave Forge <http://octave.sourceforge.net/>`_ using the following commands from within Octave ::
+
+    pkg install -global -forge io
+    pkg install -global -forge statistics
+    pkg install -global -forge mapping
+    pkg install -global -forge image
+    pkg install -global -forge struct
+    pkg install -global -forge optim
+
+Module File
+-----------
+
+The module file is `octave_4.0 <https://github.com/rcgsheffield/iceberg_software/blob/master/software/modulefiles/apps/gcc/5.2/octave/4.0>`_
