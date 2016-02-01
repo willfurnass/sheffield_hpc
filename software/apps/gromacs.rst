@@ -12,7 +12,7 @@ GROMACS
 
 Interactive Usage
 -----------------
-After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the :code:`qsh` or :code:`qrsh` command. To make GROMACS available in this session, run one of the following command:
+After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the :code:`qsh` or :code:`qrsh` command. To make GROMACS available in this session, run one of the following command:
 
 .. code-block:: none
 
