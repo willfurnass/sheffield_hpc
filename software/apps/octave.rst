@@ -22,7 +22,7 @@ Alternatively, you can load a specific version with ::
 
        module load apps/gcc/5.2/octave/4.0
 
-This adds Octave to your PATH and also loads all of the supporting libraries and compielrs required by the system.
+This adds Octave to your PATH and also loads all of the supporting libraries and compilers required by the system.
 
 Start Octave by executing the command ::
 
