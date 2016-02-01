@@ -28,4 +28,6 @@ install:
 script:
     - wget http://math.sut.ac.th/lab/software/texlive/texmf-dist/tex/latex/caption/newfloat.sty
     - ls
+    - mkdir _build
+    - mv newfloat.sty ./_build/
     - make $BUILD_CMD
