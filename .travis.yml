@@ -27,4 +27,5 @@ install:
 
 script:
     - wget http://math.sut.ac.th/lab/software/texlive/texmf-dist/tex/latex/caption/newfloat.sty
+    - ls
     - make $BUILD_CMD
