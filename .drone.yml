@@ -5,6 +5,7 @@ script:
   - make latexpdf
   - echo "Done!"
 
+
 deploy:
   bash:
     branch: master
