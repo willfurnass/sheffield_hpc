@@ -26,4 +26,8 @@ install:
     - pip install -r requirements.txt
 
 script:
+    - wget http://math.sut.ac.th/lab/software/texlive/texmf-dist/tex/latex/caption/newfloat.sty
+    - ls
+    - mkdir -p _build/latex/
+    - mv newfloat.sty ./_build/latex/
     - make $BUILD_CMD

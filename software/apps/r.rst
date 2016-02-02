@@ -37,7 +37,7 @@ First, you need to write a batch submission file. We assume you'll call this :co
 
   #!/bin/bash
   #$ -S /bin/bash
-  #$ -cwd               # Run job from current directory
+  #$ -cwd                      # Run job from current directory
 
   module load apps/R/3.2.3     # Recommended to load a specific version of R
 
