@@ -141,6 +141,7 @@ todo_include_todos = False
 
 import sphinx_bootstrap_theme
 
+html_style = 'iceberg.css'
 html_theme = 'bootstrap'
 
 html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
