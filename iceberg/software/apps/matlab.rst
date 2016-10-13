@@ -16,7 +16,7 @@ Scientific Computing and Visualisation
 
 Interactive Usage
 -----------------
-After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the :code:`qsh` command.
+After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the ``qsh`` command.
 
 The latest version of MATLAB (currently 2016a) is made available with the command
 
@@ -34,7 +34,7 @@ Alternatively, you can load a specific version with one of of the following comm
        module load apps/matlab/2015a
        module load apps/matlab/2016a
 
-You can then run MATLAB by entering :code:`matlab`
+You can then run MATLAB by entering ``matlab``
 
 Serial (one CPU) Batch usage
 ----------------------------
@@ -52,7 +52,7 @@ First, you need to write a batch submission file. We assume you'll call this ``m
 
     matlab -nodesktop -r 'hello'
 
-Ensuring that :code:`hello.m` and :code:`myjob.sge` are both in your current working directory, submit your job to the batch system.
+Ensuring that ``hello.m`` and ``myjob.sge`` are both in your current working directory, submit your job to the batch system.
 
 .. code-block:: none
 
@@ -60,16 +60,16 @@ Ensuring that :code:`hello.m` and :code:`myjob.sge` are both in your current wor
 
 Some notes about this example:
 
-* We are running the script :code:`hello.m` but we drop the :code:`.m` in the call to MATLAB. That is, we do :code:`-r 'hello'` rather than :code:`-r hello.m`.
-* All of the :code:`module` commands introduced in the Interactive usage section will also work in batch mode. This allows you to select a specific version of MATLAB if you wish.
+* We are running the script ``hello.m`` but we drop the ``.m`` in the call to MATLAB. That is, we do ``-r 'hello'`` rather than ``-r hello.m``.
+* All of the ``module`` commands introduced in the Interactive usage section will also work in batch mode. This allows you to select a specific version of MATLAB if you wish.
 
 
 Easy Way of Running MATLAB Jobs on the Batch Queue
 --------------------------------------------------
 
 Firstly prepare a MATLAB script that contains all the commands for running a MATLAB task.  
-Let us assume that this script is called :code:`mymatlabwork.m`.
-Next select the version of MATLAB you wish to use by using the :code:`module load` command, for example;
+Let us assume that this script is called ``mymatlabwork.m``.
+Next select the version of MATLAB you wish to use by using the ``module load`` command, for example;
 
 .. code-block:: none
 
@@ -84,7 +84,7 @@ Now submit a job that runs this MATLAB script as a batch job.
 That is all to it! 
 
 The ``runmatlab`` command can take a number of parameters to refine the control of your MATLAB batch job, such as the maximum time and memory needs. 
-To get a full listing of these parameters simply type :code:`runmatlab` on iceberg command line. 
+To get a full listing of these parameters simply type ``runmatlab`` on iceberg command line. 
  
 
 MATLAB Compiler and running free-standing compiled MATLAB programs
@@ -104,7 +104,7 @@ To compile a MATLAB function or script for example called myscript.m  the follow
     ./run_myscript.sh $MCRROOT     #  Finally run your program
 
 If myscript.m is a MATLAB function that require inputs these can be suplied on the command line. 
-For example if the first line of :code:`myscript.m` reads:
+For example if the first line of ``myscript.m`` reads:
 
 .. code-block:: none
 
@@ -126,7 +126,7 @@ by copying the installer file from iceberg itself which resides in:
     /usr/local/packages6/matlab/R2016a/toolbox/compiler/deploy/glnxa64/MCRInstaller.zip
 
 This file can be unzipped in a temporary area and run the setup script that unzipping yields to install the MATLAB runtime environment.
-Finally the environment variable :code:`$MCRROOT` can be set to the directory containing the runtime environment.  
+Finally the environment variable ``$MCRROOT`` can be set to the directory containing the runtime environment.  
  
 
 Parallel MATLAB on iceberg
@@ -157,12 +157,12 @@ Run MATLAB in that session and select 5 workers:
 
 The above example will use 5 MATLAB workers on a single iceberg node to run a parallel task.
 
-To take advantage of the multiple iceberg nodes, you will need to make use of a parallel cluster profile named :code:`sge`.
-This can be done by issuing a locally provided MATLAB command named :code:`iceberg` that imports the
-parallel cluster profile named :code:`sge` that can take advantage of the SGE scheduler to run
+To take advantage of the multiple iceberg nodes, you will need to make use of a parallel cluster profile named ``sge``.
+This can be done by issuing a locally provided MATLAB command named ``iceberg`` that imports the
+parallel cluster profile named ``sge`` that can take advantage of the SGE scheduler to run
 larger parallel jobs.
 
-When using the :code:`sge` profile, 
+When using the ``sge`` profile, 
 MATLAB will be able to submit multiple MATLAB jobs the the SGE scheduler from within MATLAB itself.  
 However, each job will have the default resource requirements unless the following trick is deployed.
 For example, during your MATLAB session type:
@@ -188,22 +188,60 @@ Installation notes
 
 These notes are primarily for system administrators.
 
-Requires the floating license server ``licserv4.shef.ac.uk`` to serve the licenses.
-An install script named ``installer_input.txt`` and associated files are 
-downloadable from Mathworks site along with all the required toolbox specific installation files. 
+Installation and configuration is a four-stage process:
 
-The following steps are performed to install MATLAB on iceberg.
+* Set up the floating license server (the license server for earlier MATLAB versions can be used), ensuring that it can serve licenses for any new versions of MATLAB that you want to install
+* Run a graphical installer to download MATLAB *archive* files used by the main (automated) installation process
+* Run the same installer in 'silent' command-line mode to perform the installation using those archive files and a text config file.
+* Install a relevant modulefile
+
+In more detail:
 
 #. If necessary, update the floating license keys on ``licserv4.shef.ac.uk`` to ensure that the licenses are served for the versions to install.
-#. Log onto Mathworks site to download the MATLAB installer package for 64-bit Linux ( for R2016a this was called ``matlab_R2016a_glnxa64.zip`` )
-#. Unzip the installer package in a temporary directory: :code:`unzip matlab_R2016a_glnxa64.zip` ( This will create a few items including files named ``install`` and ``installer_input.txt``)
-#. Run the installer: :code:`./install` 
-#. Select install choice of *Log in to Mathworks Account*
+#. Log on to Mathworks site to download the MATLAB installer package for 64-bit Linux ( for R2016a this was called ``matlab_R2016a_glnxa64.zip`` )
+
+#. ``unzip`` the installer package in a directory with ~10GB of space (needed as many MATLAB *archive* files will subsequently be downloaded here).  Using a directory on an NFS mount (e.g. ``/data/${USER}/MathWorks/R2016a``) allows the same downloaded archives to be used to install MATLAB on multiple clusters.
+#. ``./install`` to start the graphical installer (needed to download the MATLAB archive files).
+#. Select install choice of *Log in to Mathworks Account* and log in with a *License Administrator* account (not a *Licensed End User* (personal) account).
 #. Select *Download only*.
-#. Select the offered default *Download path* ( this will be in your home area :code:`$HOME/Downloads/MathWorks/...` ) Note: This is the default download location that is later used by the silent installer.  Another option is to move all downloaded files to the same directory where install script resides. 
-#. Finally run the installer using our customized ``installer_input.txt`` script as input ( :code:`./install -inputFile installer_input.txt` ).
+#. Select the offered default *Download path* and select the directory you ran ``./install`` from.  Wait a while for all requested archive files to be downloaded.
+#. Next, ensure ``installer_input.txt`` looks like the following ::
+    
+    fileInstallationKey=XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
+    agreeToLicense=yes
+    outputFile=matlab_2016a_install.log
+    mode=silent
+    licensePath=/usr/local/packages6/matlab/network.lic
+    lmgrFiles=false
+    lmgrService=false
+#. Create the installation directory ::
+    mkdir -m 2755 -p /usr/local/packages6/matlab/R2016a
+    chown ${USER}:app-admins /usr/local/packages6/matlab/R2016a
+#. Run the installer using our customized ``installer_input.txt`` like so: ``./install -inputFile installer_input.txt`` ; installation should finish with exit status ``0`` if all has worked.
+# Install a *modulefile* with a name and path like ``/usr//local/modulefiles/apps/matlab/2016a`` and contents like ::
+    #%Module1.0#####################################################################
 
-Installation should finish with exit status :code:`0` if all has worked.
+    ## Module file logging
+    source /usr/local/etc/module_logging.tcl
 
-Note: A template installer_input file for 2016a is available at ``/usr/local/packages6/matlab`` directory named 
-``2016a_installer_input.txt``. This will need minor edits to install the next versions in the same way. 
+    proc ModulesHelp { } {
+        global version
+        puts stderr "	Makes MATLAB 2016a available for use"
+    }
+    module-whatis   "Makes MATLAB 2016a available"
+
+    # Do not use other versions at the same time.
+    conflict apps/matlab/2013a 
+    conflict apps/matlab/2013b 
+    conflict apps/matlab/2014a 
+    conflict apps/matlab/2015a 
+
+    set     version 2016a
+    set     matlabroot     /usr/local/packages6/matlab/R2016a
+    set     mcrroot  /usr/local/packages6/matlab/runtime/R2016a/v901
+    prepend-path PATH $matlabroot/bin 
+    setenv MCRROOT $mcrroot
+#. Ensure the contents of the install directory and the modulefile are writable by those in ``app-admins`` group ::
+    chmod -R g+w ${USER}:app-admins /usr/local/packages6/matlab/R2016a /usr//local/modulefiles/apps/matlab/2016a
+
+**TODO**: add notes on MATLAB parallel configuration.
