@@ -217,7 +217,7 @@ In more detail:
 #. Create the installation directory ::
     mkdir -m 2755 -p /usr/local/packages6/matlab/R2016a
     chown ${USER}:app-admins /usr/local/packages6/matlab/R2016a
-#. Run the installer using our customized ``installer_input.txt`` like so: ``./install -inputFile installer_input.txt`` ; installation should finish with exit status ``0`` if all has worked.
+#. Run the installer using our customized ``installer_input.txt`` like so: ``./install -mode silent -inputFile ${PWD}/installer_input.txt`` ; installation should finish with exit status ``0`` if all has worked.
 # Install a *modulefile* with a name and path like ``/usr//local/modulefiles/apps/matlab/2016a`` and contents like ::
     #%Module1.0#####################################################################
 
