@@ -231,14 +231,11 @@ In more detail:
     module-whatis   "Makes MATLAB 2016a available"
 
     # Do not use other versions at the same time.
-    conflict apps/matlab/2013a 
-    conflict apps/matlab/2013b 
-    conflict apps/matlab/2014a 
-    conflict apps/matlab/2015a 
+    conflict apps/matlab
 
-    set     version 2016a
+    set     version        2016a
     set     matlabroot     /usr/local/packages6/matlab/R2016a
-    set     mcrroot  /usr/local/packages6/matlab/runtime/R2016a/v901
+    set     mcrroot        /usr/local/packages6/matlab/runtime/R2016a/v901
     prepend-path PATH $matlabroot/bin 
     setenv MCRROOT $mcrroot
 #. Ensure the contents of the install directory and the modulefile are writable by those in ``app-admins`` group ::
