@@ -214,11 +214,15 @@ In more detail:
     licensePath=/usr/local/packages6/matlab/network.lic
     lmgrFiles=false
     lmgrService=false
+
 #. Create the installation directory ::
+
     mkdir -m 2755 -p /usr/local/packages6/matlab/R2016a
     chown ${USER}:app-admins /usr/local/packages6/matlab/R2016a
+
 #. Run the installer using our customized ``installer_input.txt`` like so: ``./install -mode silent -inputFile ${PWD}/installer_input.txt`` ; installation should finish with exit status ``0`` if all has worked.
 # Install a *modulefile* with a name and path like ``/usr//local/modulefiles/apps/matlab/2016a`` and contents like ::
+
     #%Module1.0#####################################################################
 
     ## Module file logging
@@ -238,7 +242,9 @@ In more detail:
     set     mcrroot        /usr/local/packages6/matlab/runtime/R2016a/v901
     prepend-path PATH $matlabroot/bin 
     setenv MCRROOT $mcrroot
+
 #. Ensure the contents of the install directory and the modulefile are writable by those in ``app-admins`` group ::
+
     chmod -R g+w ${USER}:app-admins /usr/local/packages6/matlab/R2016a /usr//local/modulefiles/apps/matlab/2016a
 
 **TODO**: add notes on MATLAB parallel configuration.
