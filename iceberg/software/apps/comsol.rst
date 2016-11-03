@@ -1,7 +1,7 @@
 .. _iceberg_comsol:
 
 COMSOL Multiphysics
-======
+===================
 
 .. sidebar:: COMSOL
 
