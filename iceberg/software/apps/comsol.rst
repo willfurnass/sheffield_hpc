@@ -15,7 +15,7 @@ COMSOL Multiphysics provides a range of simulation, finite element analysis and 
 Availability, licensing and modules
 -----------------------------------
 
-COMSOL Multiphysics is installed on Iceberg but is not presently supported by CiCS.  There is no site license for COMSOL so to run it on Iceberg you will need either your own license or access to licenses managed by others.  For example, a research group may operate a *license server* that can issue COMSOL licenses to (approved) users.  If you need access to a license on a temporary basis then you could try contacting `Prof. Will Zimmerman <>`_, who has purchased several licenses for his research group and may be willing to hire out licenses to other researchers.  See `Interactive usage` for information on how to specify a COMSOL license when starting COMSOL on Iceberg.
+COMSOL Multiphysics is installed on Iceberg but is not presently supported by CiCS.  There is no site license for COMSOL so to run it on Iceberg you will need either your own license or access to licenses managed by others.  For example, a research group may operate a *license server* that can issue COMSOL licenses to (approved) users.  If you need access to a license on a temporary basis then you could try contacting `Prof. Will Zimmerman <https://www.sheffield.ac.uk/cbe/staff/staffprofiles/wzimmerman>`_, who has purchased several licenses for his research group and may be willing to hire out licenses to other researchers.  See `Interactive usage` for information on how to specify a COMSOL license when starting COMSOL on Iceberg.
 
 The following COMSOL Multiphysics 5.2 modules are installed:
 
