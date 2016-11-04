@@ -1,0 +1,32 @@
+#%Module1.0#####################################################################
+##
+## Gromacs 2016.1 (with CUDA 8.0.44) module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+
+set gromacsvers 2016.1
+set cudavers 8.0.44
+
+proc ModulesHelp { } {
+    global gromacsvers
+    global cudavers
+    puts stderr "\tAdds Gromacs $gromacsvers (with CUDA $cudavers) to your environment"
+}
+
+module load libs/cuda/$cudavers
+
+set             GROMACS_DIR     /usr/local/packages6/apps/gcc/4.9.2/gromacs/$gromacsvers-cuda-$cudavers
+
+setenv          GROMACS_DIR     $GROMACS_DIR
+prepend-path    PATH            $GROMACS_DIR/bin
+setenv          GMXBIN          $GROMACS_DIR/bin
+prepend-path    LD_LIBRARY_PATH $GROMACS_DIR/lib64
+setenv          GMXLDLIB        $GROMACS_DIR/lib
+setenv          GMXMAN          $GROMACS_DIR/share/man
+prepend-path    MANPATH         $GROMACS_DIR/share/man
+setenv          GMXDATA         $GROMACS_DIR/share/gromacs
+prepend-path    PKG_CONFIG_PATH $GROMACS_DIR/lib64/pkgconfig
+
+setenv TMPDIR /scratch/
