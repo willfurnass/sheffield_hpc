@@ -29,6 +29,8 @@ Start the NetLogo Graphical User Interface with the command ::
 
 Troubleshooting
 ---------------
+**Problems with X Windows**
+
 When you run the NetLogo command, you get the following error ::
 
   NetLogo Error invoking method.
@@ -36,9 +38,23 @@ When you run the NetLogo command, you get the following error ::
 
 This could be because you have not requested an X session properly. Ensure that you have logged into the system using the `-X` flag e.g. ::
 
-  ssh -x abcd1@iceberg.sheffield.ac.uk
+  ssh -X abcd1@iceberg.sheffield.ac.uk
 
 Also ensure that you have requested a :ref:`qrshx` session rather than a :ref:`qrsh` session.
+
+**Java memory issues**
+
+You get the following error message ::
+
+  Error occurred during initialization of VM
+  Could not reserve enough space for object heap
+  Error: Could not create the Java Virtual Machine.
+  Error: A fatal exception has occurred. Program will exit.
+
+This is the 'Virtual Memory' problem described in the :ref:`Java-iceberg` section. You need to request more memory for your session.
+For example, request an interactive session like this ::
+
+    qrshx -l mem=8G -l rmem=8G
 
 Installation notes
 ------------------
