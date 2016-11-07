@@ -1,0 +1,33 @@
+#%Module1.0#####################################################################
+##
+## Relion 2 (beta) module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+
+set relion2vers 2-beta-a622560
+
+proc ModulesHelp { } {
+    global relion2vers 
+    puts stderr "Adds Relion $relionvers to your environment"
+}
+module-whatis "Adds Relion 2 (beta) to your environment"
+
+set relion2root /usr/local/packages6/apps/gcc/4.9.2/relion2/$relion2vers
+set cudavers    7.5.18
+set openmpivers 1.10.1
+
+module load libs/cuda/$cudavers
+module load mpi/gcc/openmpi/$openmpivers
+# module load apps/gcc/4.4.7/ctffind/3.140609 -> TODO: up to user
+# Local-resolution estimation using ResMap
+# module load apps/binapps/resmap/1.1.4 -> TODO: up to user
+# Need GCC for libstdc++
+module load compilers/gcc/4.9.2
+module load libs/gcc/4.9.2/fltk/1.3.3
+module load libs/gcc/4.9.2/fftw/3.3.5
+
+prepend-path    PATH             $relion2root/bin
+prepend-path    LD_LIBRARY_PATH  $relion2root/lib
+setenv          TMPDIR           /scratch/
