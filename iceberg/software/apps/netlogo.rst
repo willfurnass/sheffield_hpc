@@ -27,6 +27,19 @@ Start the NetLogo Graphical User Interface with the command ::
 
     NetLogo
 
+Troubleshooting
+---------------
+When you run the NetLogo command, you get the following error ::
+
+  NetLogo Error invoking method.
+  NetLogo Failed to launch JVM
+
+This could be because you have not requested an X session properly. Ensure that you have logged into the system using the `-X` flag e.g. ::
+
+  ssh -x abcd1@iceberg.sheffield.ac.uk
+
+Also ensure that you have requested a :ref:`qrshx` session rather than a :ref:`qrsh` session.
+
 Installation notes
 ------------------
 Download and untar the installer to `/usr/local/packages6/apps/binapps/netlogo/netlogo-5.3.1-64`
