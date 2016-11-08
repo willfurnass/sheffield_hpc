@@ -14,7 +14,7 @@ proc ModulesHelp { } {
 }
 module-whatis "Adds Relion 2 (beta) to your environment"
 
-set relion2root /usr/local/packages6/apps/gcc/4.9.2/relion2/$relion2vers
+set relion2root /usr/local/packages6/apps/gcc/4.9.2/relion/$relion2vers
 set cudavers    7.5.18
 set openmpivers 1.10.1
 

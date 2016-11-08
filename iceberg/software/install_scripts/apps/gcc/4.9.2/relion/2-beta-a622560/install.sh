@@ -14,10 +14,9 @@ openmpi_vers=1.10.1
 cuda_vers=7.5.18
 workers=10
 
-builddir="${TMPDIR-/tmp}/${USER}/relion2/${vers_str}"
-testdir="/fastdata/${USER}/relion2/${vers_str}"
-prefix="/usr/local/packages6/apps/${compiler}/${compiler_vers}/relion2/${vers_str}"
-modulefile="/usr/local/modulefiles/apps/${compiler}/${compiler_vers}/relion2/${vers_str}"
+builddir="${TMPDIR-/tmp}/${USER}/relion/${vers_str}"
+prefix="/usr/local/packages6/apps/${compiler}/${compiler_vers}/relion/${vers_str}"
+modulefile="/usr/local/modulefiles/apps/${compiler}/${compiler_vers}/relion/${vers_str}"
 
 ################################################################################
 # Error handling
