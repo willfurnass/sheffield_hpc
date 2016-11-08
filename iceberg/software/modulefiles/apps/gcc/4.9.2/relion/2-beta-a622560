@@ -2,32 +2,102 @@
 ##
 ## Relion 2 (beta) module file
 ##
+################################################################################
 
-## Module file logging
+################################################################################
+# Module file logging
+################################################################################
 source /usr/local/etc/module_logging.tcl
 
+################################################################################
+# Version
+################################################################################
 set relion2vers 2-beta-a622560
 
+################################################################################
+# Help
+################################################################################
 proc ModulesHelp { } {
     global relion2vers 
     puts stderr "Adds Relion $relionvers to your environment"
 }
-module-whatis "Adds Relion 2 (beta) to your environment"
+module-whatis "Adds Relion $relionvers to your environment"
 
+################################################################################
+# Set Tcl variables
+################################################################################
 set relion2root /usr/local/packages6/apps/gcc/4.9.2/relion/$relion2vers
 set cudavers    7.5.18
 set openmpivers 1.10.1
 
+################################################################################
+# Main module dependencies
+################################################################################
 module load libs/cuda/$cudavers
 module load mpi/gcc/openmpi/$openmpivers
-# module load apps/gcc/4.4.7/ctffind/3.140609 -> TODO: up to user
-# Local-resolution estimation using ResMap
-# module load apps/binapps/resmap/1.1.4 -> TODO: up to user
 # Need GCC for libstdc++
 module load compilers/gcc/4.9.2
 module load libs/gcc/4.9.2/fltk/1.3.3
 module load libs/gcc/4.9.2/fftw/3.3.5
 
+################################################################################
+# Main env vars
+################################################################################
 prepend-path    PATH             $relion2root/bin
 prepend-path    LD_LIBRARY_PATH  $relion2root/lib
 setenv          TMPDIR           /scratch/
+
+################################################################################
+# Dependency: ctffind / gctf
+################################################################################
+# module load apps/gcc/4.4.7/ctffind/3.140609
+module load apps/gcc/4.9.2/ctffind/4.1.5
+#
+# Default CTFFIND executable, version 4.0.x
+#setenv RELION_CTFFIND_EXECUTABLE '"/public/EM/ctffind/ctffind.exe --omp-num-threads 1 --old-school-input"'
+# For CTFFIND3 this would be
+#setenv RELION_CTFFIND_EXECUTABLE /public/EM/CTFFIND_130307/ctffind3.exe
+# For the new CTFFIND 4.1+ this would be
+#setenv RELION_CTFFIND_EXECUTABLE /lmb/home/scheres/app/Alexis_16-03-18_5138_ctffind_160404_1358.exe
+setenv RELION_CTFFIND_EXECUTABLE ctffind
+# # Default Gctf executable
+# setenv RELION_GCTF_EXECUTABLE /public/EM/Gctf/bin/Gctf
+
+################################################################################
+# Dependency: ResMap (for local-resolution estimation)
+################################################################################
+module load apps/binapps/resmap/1.1.4
+setenv RELION_RESMAP_EXECUTABLE ResMap.py
+
+################################################################################
+# Dependency: MotionCor2 (TODO)
+################################################################################
+# # Default MOTIONCORR executable
+# setenv RELION_MOTIONCORR_EXECUTABLE /public/EM/MOTIONCORR/bin/motioncorr
+
+################################################################################
+# Dependency (?): Unblur / SumMovie (TODO)
+################################################################################
+# setenv RELION_UNBLUR_EXECUTABLE /public/EM/UNBLUR/unblur.exe
+# setenv RELION_SUMMOVIE_EXECUTABLE /public/EM/SUMMOVIE/summovie.exe
+
+################################################################################
+# Thread / node management (TODO)
+################################################################################
+# # Enforce cluster jobs to occupy entire nodes with 24 hyperthreads
+# setenv RELION_MINIMUM_DEDICATED 24
+# # Do not allow the user to change the enforcement of entire nodes
+# setenv RELION_ALLOW_CHANGE_MINIMUM_DEDICATED 0
+#
+# # Ask for confirmation if users try to submit local jobs with more than 12 MPI nodes
+# setenv RELION_WARNING_LOCAL_MPI 12
+
+################################################################################
+# Grid Engine job submission template (TODO)
+################################################################################
+# setenv RELION_QSUB_TEMPLATE $relion2root/bin/relion_qsub.csh
+
+################################################################################
+# PDF viewer (TODO)
+################################################################################
+# setenv RELION_PDFVIEWER_EXECUTABLE evince
