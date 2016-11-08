@@ -19,9 +19,9 @@ set relion2vers 2-beta-a622560
 ################################################################################
 proc ModulesHelp { } {
     global relion2vers 
-    puts stderr "Adds Relion $relionvers to your environment"
+    puts stderr "Adds Relion $relion2vers to your environment"
 }
-module-whatis "Adds Relion $relionvers to your environment"
+module-whatis "Adds Relion $relion2vers to your environment"
 
 ################################################################################
 # Set Tcl variables
