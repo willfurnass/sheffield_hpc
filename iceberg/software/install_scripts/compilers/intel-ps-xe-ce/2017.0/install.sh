@@ -23,11 +23,11 @@ export LIC_FPATH="/usr/local/packages6/compilers/intel/license.lic"
 # Mapping from modulefile sources to destinations
 declare -A modfile_dests_map
 MODFILE_DEST_ROOT="/usr/local/modulefiles/"
-modfile_dests_map["compilers"]="${MODFILE_DEST_ROOT}/compilers/intel-compilers/${VERS}/binary"
-modfile_dests_map["daal"]="${MODFILE_DEST_ROOT}/libs/intel-daal/${VERS}/binary"
-modfile_dests_map["ipp"]="${MODFILE_DEST_ROOT}/libs/intel-ipp/${VERS}/binary"
-modfile_dests_map["mkl"]="${MODFILE_DEST_ROOT}/libs/intel-mkl/${VERS}/binary"
-modfile_dests_map["tbb"]="${MODFILE_DEST_ROOT}/libs/intel-tbb/${VERS}/binary"
+modfile_dests_map["compilers"]="${MODFILE_DEST_ROOT}/compilers/intel-compilers/${VERS}"
+modfile_dests_map["daal"]="${MODFILE_DEST_ROOT}/libs/binlibs/intel-daal/${VERS}"
+modfile_dests_map["ipp"]="${MODFILE_DEST_ROOT}/libs/binlibs/intel-ipp/${VERS}"
+modfile_dests_map["mkl"]="${MODFILE_DEST_ROOT}/libs/binlibs/intel-mkl/${VERS}"
+modfile_dests_map["tbb"]="${MODFILE_DEST_ROOT}/libs/binlibs/intel-tbb/${VERS}"
 
 ################
 # Error handling
