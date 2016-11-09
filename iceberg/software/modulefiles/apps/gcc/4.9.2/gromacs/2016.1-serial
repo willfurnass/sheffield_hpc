@@ -13,6 +13,8 @@ proc ModulesHelp { } {
     puts stderr "\tAdds Gromacs $gromacsvers (serial) to your environment"
 }
 
+module load compilers/gcc/4.9.2
+
 set             GROMACS_DIR     /usr/local/packages6/apps/gcc/4.9.2/gromacs/$gromacsvers-serial
 
 setenv          GROMACS_DIR     $GROMACS_DIR

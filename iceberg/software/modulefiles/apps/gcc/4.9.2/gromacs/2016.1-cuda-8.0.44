@@ -16,6 +16,7 @@ proc ModulesHelp { } {
 }
 
 module load libs/cuda/$cudavers
+module load compilers/gcc/4.9.2
 
 set             GROMACS_DIR     /usr/local/packages6/apps/gcc/4.9.2/gromacs/$gromacsvers-cuda-$cudavers
 
