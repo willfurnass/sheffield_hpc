@@ -11,6 +11,7 @@ vers_str="2-beta-${git_commit}"
 compiler=gcc
 compiler_vers=4.9.2
 openmpi_vers=1.10.1
+cuda_short_vers=7.5
 cuda_vers=7.5.18
 workers=10
 
@@ -71,3 +72,29 @@ mkdir build
 pushd build
 cmake -DCMAKE_INSTALL_PREFIX=${prefix} ..
 make -j${workers} all install
+
+################################################################################
+# Install MotionCor2 in ${prefix}/bin
+################################################################################
+motioncor2_vers="10-19-2016"
+motioncor2_tarball_url="http://msg.ucsf.edu/MotionCor2/MotionCor2-${motioncor2_vers}.tar.gz"
+pushd ${prefix}/bin
+curl -L $motioncor2_tarball_url | tar -zx
+popd
+
+################################################################################
+# Install GCTF in ${prefix}/bin
+################################################################################
+# NB requires CUDA
+gctf_vers="0.50"
+gctf_tarball_url="http://www.mrc-lmb.cam.ac.uk/kzhang/Gctf/Gctf_v${gctf_vers}_and_examples.tar.gz"
+gctf_tmpdir="${TMPDIR-/tmp}/${USER}/gctf/${gctf_vers}"
+mkdir -m 0700 -p $gctf_tmpdir
+pushd $gctf_tmpdir
+curl -L $gctf_tarball_url | tar -zx
+pushd Gctf_v${gctf_vers}/bin
+cp Gctf-v${gctf_vers}_sm_*_cu${cuda_short_vers}_x86_64 star_replace_UVA.com ${prefix}/bin
+popd
+popd
+
+
