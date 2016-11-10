@@ -60,6 +60,16 @@ Installation notes
 ------------------
 Download and untar the installer to `/usr/local/packages6/apps/binapps/netlogo/netlogo-5.3.1-64`
 
+**post installation actions**
+
+One netlogo user required the Dynamic scheduler extenstion. Installed by doing ::
+
+  wget https://github.com/colinsheppard/Dynamic-Scheduler-Extension/archive/v0.2.1.tar.gz
+  tar -xvzf ./v0.2.1.tar.gz
+  mv Dynamic-Scheduler-Extension ./dynamic-scheduler
+  mv ./dynamic-scheduler/ /usr/local/packages6/apps/binapps/netlogo/netlogo-5.3.1-64/app/extensions/
+
+
 Modulefile
 ----------
 * The module file is on the system at `/usr/local/modulefiles/apps/binapps/netlogo/5.3.1`
