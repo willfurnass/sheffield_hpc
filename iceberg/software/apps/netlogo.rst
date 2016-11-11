@@ -49,7 +49,7 @@ Using BehaviourSpace is the easiest way to exploit parallel processors in Netlog
   #Will be called out_4.csv in this case
   output_table=out_$threads.csv
   #Experiment and model names
-  experiment=experiment
+  experiment=ParallelExperiment1
   model=ParallelPredation.nlogo
 
   echo "$threads threads requested"
