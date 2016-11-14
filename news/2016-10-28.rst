@@ -1,0 +1,27 @@
+Iceberg: Perl updates
+---------------------
+
+.. feed-entry::
+   :date: 2016-10-28
+   :author: Will Furnass
+
+The bioinformaticians amongst us may appreciate there is now a :ref:`much newer version of Perl <iceberg_perl>` on Iceberg. 
+In addition there are nicer ways of managing Perl packages and BioPerl is installed by default.
+
+.. cut::
+
+**Perl 5.24.0** is purportedly quite a bit faster than our older version of Perl when it comes to numerical operations.  
+This version can be activated using the standard 'module load' mechanism.  
+
+Several popular Perl packages have been included with this newer Perl version for convenience,
+including: 
+
+* BioPerl (many useful modules for bioinformatics), 
+* ``cpanm`` (the de-facto standard Perl package manager)
+* ``local::lib`` (for managing your own Perl modules in your home directory.  
+  
+See :ref:`here <iceberg_perl>` for more info, including
+how to use ``local::lib`` to install modules yourself.  
+
+Feedback on this documentation is very welcome.
+

@@ -36,5 +36,6 @@ Take a look at the `Research Software Engineering <http://rse.shef.ac.uk/>`_ web
    iceberg/index
    sharc/index
    parallel/index
+   news/index
    troubleshooting
    glossary

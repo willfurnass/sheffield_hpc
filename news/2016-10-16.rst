@@ -1,0 +1,17 @@
+Iceberg: CUDA; NVIDIA device driver
+===================================
+
+.. feed-entry::
+   :date: 2016-10-16
+   :author: Will Furnass
+
+Version 8.0 of CUDA is :ref:`now available on Iceberg <cuda>`
+and the NVIDIA device driver of all nodes containing GPUs has been upgraded to version 367.44.
+
+.. cut::
+
+Some users had reported that the previous NVIDIA device driver had caused problems 
+when accessing GPUs from MATLAB; 
+initial tests indicate that this is no longer a problem.  
+Please let us know if you notice any undesirable changes in behaviour 
+on GPU compute nodes or GPU-accelerated visualisation nodes.
