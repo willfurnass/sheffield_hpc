@@ -28,9 +28,12 @@ You can find sample TBB programs in the directory ``$TBB_SAMPLES``: ::
 
         common  concurrent_hash_map  concurrent_priority_queue  GettingStarted  graph  index.html  license.txt  parallel_do  parallel_for  parallel_reduce  pipeline  task  task_arena  task_group  test_all
 
-We can compile and run a sample program by moving in to its directory (containing a ``Makefile``) then running ``make``: ::
+We can compile and run a sample program by copying the samples to our (writable) home directory, 
+moving in to the directory containing the sample program (which should have a ``Makefile``) 
+then running ``make``: ::
 
-        $ cd $TBB_SAMPLES/GettingStarted/sub_string_finder/
+        $ cp -r $TBB_SAMPLES ~/tbb_samples
+        $ cd ~/tbb_samples/GettingStarted/sub_string_finder/
         $ ls
 
         license.txt  Makefile  readme.html  sub_string_finder.cpp  sub_string_finder_extended.cpp  sub_string_finder_pretty.cpp
@@ -51,7 +54,7 @@ We can compile and run a sample program by moving in to its directory (containin
 Many of the sample directories contain HTML documentation.  
 To read this you need to start an :ref:`interactive graphical session <sge-queue>` (using ``qsh`` or ``qrshx``) then run: ::
 
-    $ firefox $TBB_SAMPLES/index.html
+        $ firefox ~/tbb_samples/index.html
  
 Tutorials
 ---------
