@@ -99,6 +99,12 @@ sed -e "s:.*ACCEPT_EULA=.*:ACCEPT_EULA=accept:" \
 # sed -i -e "s:.*PSET_MODE=.*:PSET_MODE=repair:" silent.cfg.custom && \
 # ./install.sh --silent silent.cfg.custom --user-mode --tmp-dir ${TMPDIR}
 
+#######################
+# Install code examples
+#######################
+samples_tarball="/usr/local/media/protected/intel/${VERS}/ipsxe${SHORT_VERS}_samples_lin_20161018.tgz"
+tar -C $INSTALL_DIR/samples_2017/en/ -zxf $samples_tarball
+
 #################
 # Set permissions
 #################

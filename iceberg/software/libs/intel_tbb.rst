@@ -7,16 +7,50 @@ Threading Building Blocks (TBB) lets you write "parallel C++ programs that take
 full advantage of multicore performance, that are portable and composable, and
 that have future-proof scalability."  
 
-Parallel Studio Composer Edition version
-----------------------------------------
+Interactive usage
+-----------------
 
 TBB can be used with and without :ref:`other Parallel Studio packages
 <iceberg_intel_parallel_studio>`.
 
-To access it: ::
+To make use of it you first need to start an interactive session that has access to multiple cores.  
+Here we request six cores from the clusters' scheduler: ::
 
-        module load libs/binlibs/intel-tbb/2017.0
+        $ qrsh -pe openmp 6
 
+Next, we need to *active* a specific version of TBB: ::
+
+        $ module load libs/binlibs/intel-tbb/2017.0
+
+You can find sample TBB programs in the directory ``$TBB_SAMPLES``: ::
+
+        $ ls $TBB_SAMPLES
+
+        common  concurrent_hash_map  concurrent_priority_queue  GettingStarted  graph  index.html  license.txt  parallel_do  parallel_for  parallel_reduce  pipeline  task  task_arena  task_group  test_all
+
+We can compile and run a sample program by moving in to its directory (containing a ``Makefile``) then running ``make``: ::
+
+        $ cd $TBB_SAMPLES/GettingStarted/sub_string_finder/
+        $ ls
+
+        license.txt  Makefile  readme.html  sub_string_finder.cpp  sub_string_finder_extended.cpp  sub_string_finder_pretty.cpp
+
+        $ make
+
+        g++ -O2 -DNDEBUG  -o sub_string_finder sub_string_finder.cpp -ltbb -lrt 
+        g++ -O2 -DNDEBUG  -o sub_string_finder_pretty sub_string_finder_pretty.cpp -ltbb -lrt 
+        g++ -O2 -DNDEBUG  -o sub_string_finder_extended sub_string_finder_extended.cpp -ltbb -lrt 
+        ./sub_string_finder_extended 
+         Done building string.
+         Done with serial version.
+         Done with parallel version.
+         Done validating results.
+        Serial version ran in 8.51745 seconds
+        Parallel version ran in 1.51716 seconds
+
+Many of the sample directories contain HTML documentation.  
+To read this you need to start an interactive *graphical* session (using ``qsh`` or ``qrshx``) then run ``firefox $TBB_SAMPLES/index.html``.
+ 
 Tutorials
 ---------
 
