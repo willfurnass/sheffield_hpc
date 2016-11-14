@@ -69,6 +69,7 @@ For documentation and a tutorial, start an :ref:`interactive session <sge-queue>
 using ``qsh``, load MKL, then run: ::
 
         $ firefox $MKL_SAMPLES/mkl_fortran_samples/matrix_multiplication/tutorial/en/index.htm
+
 Licensing and availability
 --------------------------
 

@@ -81,5 +81,5 @@ Installed as part of :ref:`Parallel Studio Composer Edition 2017
 <sharc-intel-parallel-studio>`.
 
 :download:`This modulefile 
-</sharc/software/modulefiles/libs/intel-tbb/2017.0>` was installed as
+</sharc/software/modulefiles/libs/intel-tbb/2017.0/binary>` was installed as
 ``/usr/local/modulefiles/libs/intel-tbb/2017.0/binary``.
