@@ -66,4 +66,4 @@ The following notes are primarily for system administrators.
 
 Installed as part of :ref:`Parallel Studio Composer Edition 2017 <sharc-intel-parallel-studio>`.
 
-`This modulefile <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/modulefiles/dev/intel-compilers/17.0.0>`__ was installed as ``/usr/local/modulefiles/dev/intel-compilers/17.0.0``.
+:download:`This modulefile </sharc/software/modulefiles/dev/intel-compilers/17.0.0>` was installed as ``/usr/local/modulefiles/dev/intel-compilers/17.0.0``.

@@ -93,7 +93,7 @@ These are primarily for system administrators
                             --samples --samplespath=/usr/local/packages6/libs/binlibs/CUDA/8.0.44/samples \
                             --no-opengl-libs -silent
 
-#. `This modulefile <https://github.com/rcgsheffield/sheffield_hpc/blob/master/software/modulefiles/libs/binlibs/cuda/8.0.44>`__ was installed as ``/usr/local/modulefiles/libs/cuda/8.0.44``
+#. :download:`This modulefile </iceberg/software/modulefiles/libs/binlibs/cuda/8.0.44>` was installed as ``/usr/local/modulefiles/libs/cuda/8.0.44``
 
 **CUDA 7.5.18**
 
@@ -106,7 +106,7 @@ These are primarily for system administrators
                             --samples --samplespath=/usr/local/packages6/libs/binlibs/CUDA/7.5.18/samples \
                             --no-opengl-libs  -silent
 
-#. `This modulefile <https://github.com/rcgsheffield/sheffield_hpc/blob/master/software/modulefiles/libs/binlibs/cuda/7.5.18>`__ was installed as ``/usr/local/modulefiles/libs/cuda/7.5.18``
+#. :download:`This modulefile </iceberg/software/modulefiles/libs/binlibs/cuda/7.5.18>` was installed as ``/usr/local/modulefiles/libs/cuda/7.5.18``
 
 **Previous versions**
 

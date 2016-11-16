@@ -43,24 +43,24 @@ These notes are primarily for system administrators
 
 * gcc version 6.2 was installed using :
 
-  * `install_gcc_6.2.sh <https://github.com/mikecroucher/HPC_Installers/compilers/gcc/6.2/sheffield/iceberg/install_gcc_6.2.sh>`_
-  * `gcc 6.2 modulefile <https://github.com/mikecroucher/HPC_Installers/compilers/gcc/6.2/sheffield/iceberg/6.2>`_ located on the system at ``/usr/local/modulefiles/compilers/gcc/6.2``
+  * :download:`install_gcc_6.2.sh </iceberg/software/install_scripts/compilers/gcc/install_gcc_6.2.sh>`
+  * :download:`gcc 6.2 modulefile </iceberg/software/modulefiles/compilers/gcc/6.2>` located on the system at ``/usr/local/modulefiles/compilers/gcc/6.2``
 
 * gcc version 5.4 was installed using :
 
-  * `install_gcc_5.4.sh <https://github.com/mikecroucher/HPC_Installers/compilers/gcc/5.4/sheffield/iceberg/install_gcc_5.4.sh>`_
-  * `gcc 5.4 modulefile <https://github.com/mikecroucher/HPC_Installers/compilers/gcc/5.4/sheffield/iceberg/5.4>`_ located on the system at ``/usr/local/modulefiles/compilers/gcc/5.4``
+  * :download:`install_gcc_5.4.sh </iceberg/software/install_scripts/compilers/gcc/install_gcc_5.4.sh>`
+  * :download:`gcc 5.4 modulefile </iceberg/software/modulefiles/compilers/gcc/5.4>` located on the system at ``/usr/local/modulefiles/compilers/gcc/5.4``
 
 * Installation notes for version 5.3 are not available.
 
 * gcc version 5.2 was installed using :
 
-  * `install_gcc_5.2.sh <https://github.com/rcgsheffield/sheffield_hpc/blob/master/software/install_scripts/compilers/gcc/install_gcc_5.2.sh>`_
-  * `gcc 5.2 modulefile <https://github.com/rcgsheffield/sheffield_hpc/blob/master/software/modulefiles/compilers/gcc/5.2>`_ located on the system at ``/usr/local/modulefiles/compilers/gcc/5.2``
+  * :download:`install_gcc_5.2.sh </iceberg/software/install_scripts/compilers/gcc/install_gcc_5.2.sh>`
+  * :download:`gcc 5.2 modulefile </iceberg/software/modulefiles/compilers/gcc/5.2>` located on the system at ``/usr/local/modulefiles/compilers/gcc/5.2``
 
 * gcc version 4.9.2 was installed using :
 
-  * `install_gcc_4.9.2.sh <https://github.com/rcgsheffield/sheffield_hpc/blob/master/software/install_scripts/compilers/gcc/install_gcc_5.9.2.sh>`_
-  * `gcc 4.9.2 modulefile <https://github.com/rcgsheffield/sheffield_hpc/blob/master/software/modulefiles/compilers/gcc/4.9.2>`_ located on the system at ``/usr/local/modulefiles/compilers/gcc/4.9.2``
+  * :download:`install_gcc_4.9.2.sh </iceberg/software/install_scripts/compilers/gcc/install_gcc_4.9.2.sh>`
+  * :download:`gcc 4.9.2 modulefile </iceberg/software/modulefiles/compilers/gcc/4.9.2>` located on the system at ``/usr/local/modulefiles/compilers/gcc/4.9.2``
 
 * Installation notes for versions 4.8.2 and below are not available.

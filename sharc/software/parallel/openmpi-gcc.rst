@@ -57,14 +57,14 @@ These are primarily for administrators of the system.
 **Version 2.0.1**
 
 1. Enable :ref:`GCC <gcc_sharc>` 6.2.0.
-2. Download, compile and install OpenMPI 2.0.1 using the `this script <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/install_scripts/mpi/openmpi/2.0.1/gcc-6.2/install.sh>`__.
-3. Install `this modulefile <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/modulefiles/mpi/openmpi/2.0.1/sheffield/sharc/gcc-6.2>`__ as ``/usr/local/modulefiles/mpi/openmpi/2.0.1/gcc-6.2``
+2. Download, compile and install OpenMPI 2.0.1 using the :download:`this script </sharc/software/install_scripts/mpi/openmpi/2.0.1/gcc-6.2/install.sh>`.
+3. Install :download:`this modulefile </sharc/software/modulefiles/mpi/openmpi/2.0.1/sheffield/sharc/gcc-6.2>` as ``/usr/local/modulefiles/mpi/openmpi/2.0.1/gcc-6.2``
 
 **Version 1.10.4**
 
 1. Enable :ref:`GCC <gcc_sharc>` 6.2.0.
-2. Download, compile and install OpenMPI 1.10.4 using `this script <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/install_scripts/mpi/openmpi/1.10.4/gcc-6.2/install.sh>`__.
-3. Install `this modulefile <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/modulefiles/mpi/openmpi/1.10.4/sheffield/sharc/gcc-6.2>`__ as ``/usr/local/modulefiles/mpi/openmpi/1.10.4/gcc-6.2``
+2. Download, compile and install OpenMPI 1.10.4 using :download:`this script </sharc/software/install_scripts/mpi/openmpi/1.10.4/gcc-6.2/install.sh>`.
+3. Install :download:`this modulefile </sharc/software/modulefiles/mpi/openmpi/1.10.4/sheffield/sharc/gcc-6.2>` as ``/usr/local/modulefiles/mpi/openmpi/1.10.4/gcc-6.2``
 
 	
 	

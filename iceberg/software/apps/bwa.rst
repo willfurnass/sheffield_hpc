@@ -91,10 +91,10 @@ The default version is controlled by the `.version` file at `/usr/local/modulefi
 
 *Version 0.7.12*
 
-* The module file is on the system at `/usr/local/modulefiles/apps/gcc/5.2/bwa/0.7.12`
-* On github: `0.7.12 <https://github.com/rcgsheffield/sheffield_hpc/blob/master/software/modulefiles/apps/gcc/5.2/bwa/0.7.12>`_.
+* The module file is on the system at ``/usr/local/modulefiles/apps/gcc/5.2/bwa/0.7.12``
+* On github: :download:`0.7.12 </iceberg/software/modulefiles/apps/gcc/5.2/bwa/0.7.12>`.
 
 *Version 0.7.5a*
 
-* The module file is on the system at `/usr/local/modulefiles/apps/gcc/5.2/bwa/0.7.5a`
-* On github: `0.7.5a <https://github.com/rcgsheffield/sheffield_hpc/blob/master/software/modulefiles/apps/gcc/5.2/bwa/0.7.5a>`_.
+* The module file is on the system at ``/usr/local/modulefiles/apps/gcc/5.2/bwa/0.7.5a``
+* On github: :download:`0.7.5a </iceberg/software/modulefiles/apps/gcc/5.2/bwa/0.7.5a>`.

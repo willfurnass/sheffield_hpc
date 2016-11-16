@@ -36,10 +36,10 @@ These notes are primarily for system administrators
 
 * gcc version 6.2 was installed using :
 
-* `this script <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/install_scripts/dev/gcc/6.2/install.sh>`__
-* `gcc 6.2 modulefile <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/modulefiles/dev/gcc/6.2>`__ saved as `/usr/local/modulefiles/dev/gcc/6.2``
+* :download:`this script </sharc/software/install_scripts/dev/gcc/6.2/install.sh>`
+* :download:`gcc 6.2 modulefile </sharc/software/modulefiles/dev/gcc/6.2>` saved as `/usr/local/modulefiles/dev/gcc/6.2``
 
 * gcc version 5.4 was installed using :
 
-* `this script <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/install_scripts/dev/gcc/5.4/install.sh>`__
-* `this modulefile <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/modulefiles/dev/gcc/5.4>`__, saved as ``/usr/local/modulefiles/dev/gcc/5.4``
+* :download:`this script </sharc/software/install_scripts/dev/gcc/5.4/install.sh>`
+* :download:`this modulefile </sharc/software/modulefiles/dev/gcc/5.4>`, saved as ``/usr/local/modulefiles/dev/gcc/5.4``

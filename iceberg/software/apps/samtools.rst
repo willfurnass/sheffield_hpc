@@ -32,7 +32,7 @@ This section is primarily for system administrators.
 
 **Version 1.3.1**
 
-`This install script <https://github.com/rcgsheffield/sheffield_hpc/blob/master/iceberg/software/install_scripts/apps/samtools/install_samtools_1.3.1.sh>`_:
+:download:`This install script </iceberg/software/install_scripts/apps/samtools/install_samtools_1.3.1.sh>`:
 
 #. Built Samtools plus the bundled **HTSlib**, **HTSlib utilities** such as ``bgzip`` plus various useful plugins.  Compiled using `GCC <gcc_iceberg>`_ 6.2.
 #. Ran all tests using ``make tests``; a summary of the results is shown below; for full results see ``/usr/local/packages6/apps/gcc/6.2/samtools/1.3.1/tests.log`` ::
@@ -69,7 +69,7 @@ This section is primarily for system administrators.
 
 #. Installed Samtools to ``/usr/local/packages6/apps/gcc/6.2/samtools/1.3.1``
 
-Next, `this modulefile <https://github.com/rcgsheffield/sheffield_hpc/blob/master/iceberg/software/modulefiles/apps/gcc/6.2/samtools/1.3.1>`__ was installed as ``/usr/local/modulefiles/apps/gcc/6.2/samtools/1.3.1``
+Next, :download:`this modulefile </iceberg/software/modulefiles/apps/gcc/6.2/samtools/1.3.1>` was installed as ``/usr/local/modulefiles/apps/gcc/6.2/samtools/1.3.1``
 
 **Version 1.2**
 
@@ -120,4 +120,4 @@ The summary of the test output was ::
 
 The full log is on the system at `/usr/local/packages6/apps/gcc/5.2/samtools/1.2/make_tests.log`
 
-`This modulefile <https://github.com/rcgsheffield/sheffield_hpc/blob/master/software/modulefiles/apps/gcc/5.2/samtools/1.2>`__ was installed as ``/usr/local/modulefiles/apps/gcc/5.2/samtools/1.2``
+:download:`This modulefile </iceberg/software/modulefiles/apps/gcc/5.2/samtools/1.2>` was installed as ``/usr/local/modulefiles/apps/gcc/5.2/samtools/1.2``

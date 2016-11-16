@@ -28,5 +28,5 @@ This section is primarily for administrators of the system.
 
 **Version 4.4.3**
 
-* `install_gcc_netcdf-fortran_4.4.3.sh  <https://github.com/rcgsheffield/sheffield_hpc/blob/master/software/install_scripts/libs/gcc/4.4.7/netcdf-fortran/install_gcc_netcdf-fortran_4.4.3.sh>`_ Install script
-* `Modulefile <https://github.com/mikecroucher/iceberg_software/blob/master/software/modulefiles/libs/gcc/4.4.7/openmpi/1.10.1/netcdf-fortran/4.4.3>`_.
+* :download:`install_gcc_netcdf-fortran_4.4.3.sh </iceberg/software/install_scripts/libs/gcc/4.4.7/netcdf-fortran/install_gcc_netcdf-fortran_4.4.3.sh>` Install script
+* :download:`Modulefile </iceberg/software/modulefiles/libs/gcc/4.4.7/openmpi/1.10.1/netcdf-fortran/4.4.3>`.
