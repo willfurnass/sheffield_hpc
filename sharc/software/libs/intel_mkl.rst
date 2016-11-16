@@ -84,4 +84,4 @@ The following notes are primarily for system administrators.
 
 Installed as part of :ref:`Parallel Studio Composer Edition 2017 <sharc-intel-parallel-studio>`.
 
-`This modulefile <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/modulefiles/libs/intel-mkl/2017.0>`__ was installed as ``/usr/local/modulefiles/libs/intel-mkl/2017.0/binary``.
+:download:`This modulefile </sharc/software/modulefiles/libs/intel-mkl/2017.0/binary>` was installed as ``/usr/local/modulefiles/libs/intel-mkl/2017.0/binary``.

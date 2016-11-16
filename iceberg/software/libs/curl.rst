@@ -46,5 +46,5 @@ This section is primarily for administrators of the system.
 
 Curl 7.47.1 was compiled with gcc 4.47
 
-* Install script: `install_curl_7.47.1.sh <https://github.com/rcgsheffield/sheffield_hpc/blob/master/software/install_scripts/libs/gcc/4.4.7/curl/nstall_curl_7.47.1.sh>`_
-* Module file: `7.47.1 <https://github.com/rcgsheffield/sheffield_hpc/blob/master/software/modulefiles/libs/gcc/4.4.7/curl/7.47.1>`_
+* Install script: :download:`install_curl_7.47.1.sh </iceberg/software/install_scripts/libs/gcc/4.4.7/curl/install_curl_7.47.1.sh>`
+* Module file: :download:`7.47.1 </iceberg/software/modulefiles/libs/gcc/4.4.7/curl/7.47.1>`

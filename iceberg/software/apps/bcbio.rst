@@ -65,7 +65,7 @@ Version 0.9.6a was installed using gcc 5.2, R 3.2.1 and Anaconda Python 2.3. The
 
 The first step was to run the SGE script below in batch mode. Note that the install often fails due to external services being flaky. See https://github.com/rcgsheffield/sheffield_hpc/issues/219 for details. Depending on the reason for the failure, it should be OK to simply restart the install. This particular install was done in one-shot...no restarts necessary.
 
-* `install_bcbio_0.96a <https://github.com/rcgsheffield/sheffield_hpc/blob/master/software/install_scripts/apps/gcc/5.2/bcbio/install_bcbio_0.96a.sge>`_
+* :download:`install_bcbio_0.96a </iceberg/software/install_scripts/apps/gcc/5.2/bcbio/install_bcbio_0.96a.sge>`
 
 The output from this batch run can be found in `/usr/local/packages6/apps/gcc/5.2/bcbio/0.9.6a/install_output/`
 
@@ -140,8 +140,8 @@ Update: **14th March 2016**
 
 The development version was installed using gcc 5.2, R 3.2.1 and Anaconda Python 2.3.
 
-* `install_bcbio_devel.sge <https://github.com/rcgsheffield/sheffield_hpc/blob/master/software/install_scripts/apps/gcc/5.2/bcbio/install_bcbio_devel.sge>`_ This is a SGE submit script. The long running time of the installer made it better-suited to being run as a batch job.
-* `bcbio-devel modulefile <https://github.com/rcgsheffield/sheffield_hpc/blob/master/software/modulefiles/apps/gcc/5.2/bcbio/devel>`_ located on the system at ``/usr/local/modulefiles/apps/gcc/5.2/bcbio/devel``
+* :download:`install_bcbio_devel.sge </iceberg/software/install_scripts/apps/gcc/5.2/bcbio/install_bcbio_devel.sge>` This is a SGE submit script. The long running time of the installer made it better-suited to being run as a batch job.
+* :download:`bcbio-devel modulefile </iceberg/software/modulefiles/apps/gcc/5.2/bcbio/devel>` located on the system at ``/usr/local/modulefiles/apps/gcc/5.2/bcbio/devel``
 
 The first install attempt failed with the error ::
 
@@ -175,7 +175,7 @@ The GATK .jar file was obtained from https://www.broadinstitute.org/gatk/downloa
 Module files
 ------------
 
-* `0.9.6a <https://github.com/rcgsheffield/sheffield_hpc/blob/master/software/modulefiles/apps/gcc/5.2/bcbio/0.9.6a>`_
+* :download:`0.9.6a </iceberg/software/modulefiles/apps/gcc/5.2/bcbio/0.9.6a>`
 
 Testing
 -------

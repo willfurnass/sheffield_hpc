@@ -107,5 +107,5 @@ No test suite was found.
 
 Modulefile
 ----------
-* The module file is on the system at `/usr/local/modulefiles/apps/gcc/4.9.2/bless/1.02`
-* The module file is `on github <https://github.com/rcgsheffield/sheffield_hpc/blob/master/software/modulefiles/apps/gcc/4.9.2/bless/1.02>`_.
+* The module file is on the system at ``/usr/local/modulefiles/apps/gcc/4.9.2/bless/1.02``
+* The module file is :download:`on github </iceberg/software/modulefiles/apps/gcc/4.9.2/bless/1.02>`.

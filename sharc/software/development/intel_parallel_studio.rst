@@ -43,8 +43,8 @@ The following notes are primarily for system administrators.
    only readable by the ``app-admins`` group.
 #. Ensure details of the Intel license server are in the file
    ``/usr/local/packages/dev/intel-pe-xe-ce/license.lic``
-#. Run `this script
-   <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/install_scripts/dev/intel-ps-xe-ce/2017.0/install.sh>`__.
+#. Run :download:`this script
+   </sharc/software/install_scripts/dev/intel-ps-xe-ce/2017.0/install.sh>`.
    This installs Parallel Studio into
    ``/usr/local/packages/dev/intel-pe-xe-ce/2017.0/binary/``.  Products are
    activated using the aforementioned license file during the installation
@@ -56,11 +56,11 @@ The following notes are primarily for system administrators.
    modulefile for all Parallel Studio software and other modulefiles for
    specific products.  
 
-    * The `Compilers modulefile <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/modulefiles/dev/intel-compilers/17.0.0>`__ should be installed as ``/usr/local/modulefiles/dev/intel-compilers/17.0.0``.
-    * The `DAAL modulefile <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/modulefiles/libs/intel-daal/2017.0>`__ should be installed as ``/usr/local/modulefiles/libs/intel-daal/2017.0/binary``.
-    * The `IPP modulefile <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/modulefiles/libs/intel-ipp/2017.0>`__ should be installed as ``/usr/local/modulefiles/libs/intel-ipp/2017.0/binary``.
-    * The `MKL modulefile <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/modulefiles/libs/intel-mkl/2017.0>`__ should be installed as ``/usr/local/modulefiles/libs/intel-mkl/2017.0/binary``.
-    * The `TBB modulefile <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/modulefiles/libs/intel-tbb/2017.0>`__ should be installed as ``/usr/local/modulefiles/libs/intel-tbb/2017.0/binary``.
+    * The :download:`Compilers modulefile </sharc/software/modulefiles/dev/intel-compilers/17.0.0>` should be installed as ``/usr/local/modulefiles/dev/intel-compilers/17.0.0``.
+    * The :download:`DAAL modulefile </sharc/software/modulefiles/libs/intel-daal/2017.0/binary>` should be installed as ``/usr/local/modulefiles/libs/intel-daal/2017.0/binary``.
+    * The :download:`IPP modulefile </sharc/software/modulefiles/libs/intel-ipp/2017.0/binary>` should be installed as ``/usr/local/modulefiles/libs/intel-ipp/2017.0/binary``.
+    * The :download:`MKL modulefile </sharc/software/modulefiles/libs/intel-mkl/2017.0/binary>` should be installed as ``/usr/local/modulefiles/libs/intel-mkl/2017.0/binary``.
+    * The :download:`TBB modulefile </sharc/software/modulefiles/libs/intel-tbb/2017.0/binary>` should be installed as ``/usr/local/modulefiles/libs/intel-tbb/2017.0/binary``.
     * See the (TCL) modulefiles for details of how they were derived from Intel-supplied environment-manipulating shell scripts.
 
 #. Check that licensing is working by activating the Intel Compilers modulefile

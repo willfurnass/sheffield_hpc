@@ -116,8 +116,8 @@ These notes are primarily for administrators of the system.
 
 * `What's new in R version 3.3.2 <https://stat.ethz.ch/pipermail/r-announce/2016/000608.html>`_
 
-This was a scripted install. It was compiled from source with gcc 4.8.5 and with `--enable-R-shlib` enabled. It was run in batch mode.
+This was a scripted install. It was compiled from source with gcc 4.8.5 and with ``--enable-R-shlib`` enabled. It was run in batch mode.
 
-* `install_r_3.3.2_gcc4.8.5.sh <https://raw.githubusercontent.com/rcgsheffield/sheffield_hpc/master/sharc/software/install_scripts/apps/R/3.3.2/gcc-4.8.5/install_r_3.3.2_gcc4.8.5.sh>`_ Downloads, compiles, tests and installs R 3.3.2 and the ``Rmath`` library.
-* `R 3.3.2 Modulefile <https://raw.githubusercontent.com/rcgsheffield/sheffield_hpc/master/sharc/software/modulefiles/apps/R/gcc-4.8.5>`_ located on the system at ``/usr/local/modulefiles/apps/R/3.3.2/``
+* :download:`install_r_3.3.2_gcc4.8.5.sh </sharc/software/install_scripts/apps/R/3.3.2/gcc-4.8.5/install_r_3.3.2_gcc4.8.5.sh>` Downloads, compiles, tests and installs R 3.3.2 and the ``Rmath`` library.
+* :download:`R 3.3.2 Modulefile </sharc/software/modulefiles/apps/R/gcc-4.8.5>` located on the system at ``/usr/local/modulefiles/apps/R/3.3.2/``
 * Install log-files, including the output of the `make check` tests are available on the system at `/usr/local/packages/apps/R/3.3.2/gcc-4.8.5/install_logs/`
