@@ -1,4 +1,4 @@
-.. _cudnn:
+.. _iceberg_cudnn:
 
 cuDNN
 =====
@@ -30,7 +30,9 @@ Installation notes
 This section is primarily for administrators of the system.
 
 - The cuDNN library is only available to download through the `developer portal <https://developer.nvidia.com/cudnn>`_.
-- Install script: `install_cudnn5.0_for_cuda7.5_cuda8.0.sh <https://github.com/rcgsheffield/sheffield_hpc/tree/master/iceberg/software/install_scripts/libs/binlibs/cudnn/install_cudnn5.0_for_cuda7.5_cuda8.0.sh>`_
+- Installation
+	- Install script: `install_cudnn5.0_for_cuda7.5_cuda8.0.sh <https://github.com/rcgsheffield/sheffield_hpc/tree/master/iceberg/software/install_scripts/libs/binlibs/cudnn/install_cudnn5.0_for_cuda7.5_cuda8.0.sh>`_
+	- Installation ``.tgz`` files are located in ``/usr/local/media/protected/cuDNN``
 - Module file: 
 	- `cuDNN 5.0 for CUDA 7.5 <https://github.com/rcgsheffield/sheffield_hpc/tree/master/iceberg/software/modulefiles/libs/binlibs/cudnn/cuda7.5/cudnn5.0>`_
 	- `cuDNN 5.0 for CUDA 8.0 <https://github.com/rcgsheffield/sheffield_hpc/tree/master/iceberg/software/modulefiles/libs/binlibs/cudnn/cuda8.0/cudnn5.0>`_

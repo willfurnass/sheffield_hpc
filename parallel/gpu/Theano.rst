@@ -7,12 +7,14 @@ Theano is a Python library that allows you to define, optimize, and evaluate mat
 
 Request an interactive session with a sufficient amount of memory ::
 
-		qsh -l gpu=1 -P gpu --l gpu_arch=nvidia-k40m -l mem=13G
+		qsh -l gpu=1 --l gpu_arch=nvidia-k40m -l mem=13G
 
-Load the relevant modules ::
+Load the relevant modules (our example uses CUDA 8.0 with cuDNN 5.0 but :ref:`other versions are available <iceberg_cudnn>`) ::
 
 		module load apps/python/anaconda3-2.5.0
 		module load libs/binlibs/cudnn/cuda8.0/cudnn5.0
+
+
 
 Create a conda environment to load relevant modules on your local user account ::
 
@@ -21,12 +23,9 @@ Create a conda environment to load relevant modules on your local user account :
 		
 Install the other Python module dependencies which are required using pip (alternatively these could be installed with conda if you prefer) ::
 
-		pip install theano
-		pip install nose
-		pip install nose-parameterized
-		pip install pycuda
+		pip install theano nose nose-parameterized pycuda
 
-For optimal Theano performance, enable the CUDA memory manager CNMeM. To do this, create the .theanorc file in your HOME directory and set the fraction of GPU memory reserved by Theano. The exact amount of energy may have to be hand-picked: if Theano asks for more memory that is currently available on the GPU, an error will be thrown during import of theano module. Create or edit the .theanorc file with nano ::
+For optimal Theano performance, enable the CUDA memory manager CNMeM. To do this, create the .theanorc file in your HOME directory and set the fraction of GPU memory reserved by Theano. The exact amount of energy may have to be hand-picked: if Theano asks for more memory that is currently available on the GPU, an error will be thrown during import of theano module. Create or edit the ``.theanorc`` file with nano ::
 
 		nano ~/.theanorc
 
