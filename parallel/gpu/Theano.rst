@@ -7,12 +7,12 @@ Theano is a Python library that allows you to define, optimize, and evaluate mat
 
 Request an interactive session with a sufficient amount of memory ::
 
-		qsh -l gpu=1 --l gpu_arch=nvidia-k40m -l mem=13G
+		qsh -l gpu=1 -l gpu_arch=nvidia-k40m -l mem=13G
 
 Load the relevant modules (our example uses CUDA 8.0 with cuDNN 5.0 but :ref:`other versions are available <iceberg_cudnn>`) ::
 
 		module load apps/python/anaconda3-2.5.0
-		module load libs/binlibs/cudnn/cuda8.0/cudnn5.0
+		module load libs/binlibs/cudnn/5.0-cuda-8.0.44
 
 
 
