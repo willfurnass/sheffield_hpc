@@ -39,6 +39,14 @@ cite {
     background-color: #333132;
     border-color: #333132;
 }
+/* Hack to move anchor links down by the 80px height of the header bar
+   See: http://nicolasgallagher.com/jump-links-and-viewport-positioning/demo/#method-B */
+div.section::before {
+    display: block;
+    content: "";
+    height: 80px;
+    margin: -80px 0 0;
+}
 
 /* Footer */
 .footer {
