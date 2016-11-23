@@ -16,9 +16,8 @@ proc ModulesHelp { } {
 module-whatis   "Makes the `Intel Integrated Performance Primitives (IPP)' available for use"
 
 # module variables
-#
-set     version      2017.0
-set     intelpsroot     /usr/local/packages6/compilers/intel-ps-xe-ce/$version/binary/
+set version     2017.0
+set intelpsroot /usr/local/packages6/compilers/intel-ps-xe-ce/$version/binary/
 
 # Variables determined using
 # env2 -from bash -to modulecmd "/usr/local/packages6/compilers/intel-ps-xe-ce/2017.0/binary/compilers_and_libraries_2017.0.098/linux/ipp/bin/ippvars.sh intel64" | sed -e "s#/usr/local/packages6/compilers/intel-ps-xe-ce/2017.0/binary#\$intelpsroot#g" -e 's/[{}]//g'
