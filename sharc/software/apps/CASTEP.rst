@@ -113,7 +113,8 @@ Serial (1 CPU core) and parallel (MPI) builds were compiled.
 Both builds were compiled with GCC 5.4, Intel MKL 2017.1 (for BLAS and FFT routines).  
 The parallel build was compiled using OpenMPI 2.0.1.
 
-Both builds were installed using :download:`this script </iceberg/software/install_scripts/apps/castep/16.11/gcc-5.4/install.sh>`.
+Both builds were installed using :download:`this script </iceberg/software/install_scripts/apps/castep/16.11/gcc-5.4/install.sh>`.  
+**Note** that this compiles both builds in ``/data/$USER`` as the build directory must be availble to all cluster nodes to allow for subsequent `Testing` of the parallel build.  ~2.2 GB of free space is required.
 
 * :download:`The serial build modulefile </iceberg/software/apps/castep/16.11/gcc-5.4>` was installed as ``/usr/local/modulefiles/apps/castep/16.11/gcc-5.4``
 * :download:`The parallel build modulefile </iceberg/software/apps/castep/16.11/gcc-5.4-openmpi-2.0.1>` was installed as ``/usr/local/modulefiles/apps/castep/16.11/gcc-5.4-openmpi-2.0.1``
@@ -126,29 +127,28 @@ Version 16.11, serial build
 
 The following script was submitted via ``qsub`` from inside the build directory: ::
 
-  #!/bin/bash
-  #$ -l mem=10G
-  #$ -l rmem=10G
-  module load apps/castep/16.11/gcc-5.4
+        #!/bin/bash
+        #$ -l mem=10G
+        #$ -l rmem=10G
+        module load apps/castep/16.11/gcc-5.4
 
-  cd /scratch/$USER/castep/16.11/gcc-5.4/serial/Test
-  ../bin/testcode.py -q  --total-processors=1 -e /home/fe1mpc/CASTEP/CASTEP-16.1/obj/linux_x86_64_ifort15/castep.serial -c simple -v -v -v
+        cd /scratch/$USER/castep/16.11/gcc-5.4/serial/Test
+        ../bin/testcode.py -q  --total-processors=1 -e castep.serial -c simple -v -v -v
 
-All but one of the tests passed. It seems that the failed test is one that fails for everyone for this version since there is a missing input file. The output from the test run is on the system at ``/usr/local/packages6/apps/intel/15/castep/16.1/CASTEP_SERIAL_tests_09022016.txt``
+All 416 tests passed.  Results can be found at ``/usr/local/packages/apps/castep/16.11/gcc-5.4/castep-serial-tests-2016-11-23.txt``
 
 Version 16.1, parallel build
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following script was submitted via ``qsub`` from inside the build directory: ::
 
-  #!/bin/bash
-  #$ -pe mpi 4
-  #$ -l mem=10G
-  #$ -l rmem=10G
-  module load apps/castep/16.11/gcc-5.4-openmpi-2.0.1
+        #!/bin/bash
+        #$ -pe mpi 4
+        #$ -l mem=10G
+        #$ -l rmem=10G
+        module load apps/castep/16.11/gcc-5.4-openmpi-2.0.1
 
-  cd /scratch/$USER/castep/16.11/gcc-5.4/parallel/Test
-  ../bin/testcode.py -q  --total-processors=4 --processors=4 -e /home/fe1mpc/CASTEP/CASTEP-16.1/obj/linux_x86_64_ifort15/castep.mpi -c simple -v -v -v
+        cd /scratch/$USER/castep/16.11/gcc-5.4/parallel/Test
+        ../bin/testcode.py -q  --total-processors=4 --processors=4 -e castep.parallel -c simple -v -v -v
 
-All but one of the tests passed. It seems that the failed test is one that fails for everyone for this version since there is a missing input file. The output from the test run is on the system at ``/usr/local/packages6/apps/intel/15/castep/16.1/CASTEP_Parallel_tests_09022016.txt``
-
+All 416 tests passed.  Results can be found at ``/usr/local/packages/apps/castep/16.11/gcc-5.4/castep-parallel-tests-2016-11-23.txt``
