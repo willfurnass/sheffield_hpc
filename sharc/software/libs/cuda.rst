@@ -104,10 +104,10 @@ CUDA 8.0.44
                                       --samples --samplespath=${prefix}/samples \
                                       --no-opengl-libs -silent
 
-#. :download:`This modulefile </sharc/software/modulefiles/libs/cuda/8.0.44/binary>` was installed as ``/usr/local/modulefiles/libs/cuda/8.0.44/binary``
+#. :download:`This modulefile </sharc/software/modulefiles/libs/CUDA/8.0.44/binary>` was installed as ``/usr/local/modulefiles/libs/CUDA/8.0.44/binary``
 
 CUDA 7.5.18
 ^^^^^^^^^^^
 
 #. The CUDA toolkit binaries and samples were installed using a binary ``.run`` file as per version 8.0.44.
-#. :download:`This modulefile </sharc/software/modulefiles/libs/cuda/7.5.18/binary>` was installed as ``/usr/local/modulefiles/libs/cuda/7.5.18/binary``
+#. :download:`This modulefile </sharc/software/modulefiles/libs/CUDA/7.5.18/binary>` was installed as ``/usr/local/modulefiles/libs/CUDA/7.5.18/binary``

@@ -1,6 +1,6 @@
 #%Module1.0#####################################################################
 ##
-## cuda 8.0.44 module file
+## cuda 7.5.18 module file
 ##
 ################################################################################
 
@@ -12,8 +12,8 @@ proc ModulesHelp { } {
         puts stderr "	Adds `Nvidia Cuda-$vers' to your PATH environment variable and necessary libraries"
 }
 
-set vers      8.0.44
-set shortvers 8.0
+set vers      7.5.18
+set shortvers 7.5
 
 
 module-whatis   "Loads the necessary `cuda-$vers' library paths"
@@ -22,8 +22,8 @@ set prefix /usr/local/packages/libs/CUDA/$vers/binary
 
 setenv       CUDA_DIR        $prefix/cuda
 setenv       CUDA_HOME       $prefix/cuda
-setenv	     CUDA_SDK	     $prefix/samples/NVIDIA_CUDA-$shortvers_Samples/
+setenv	     CUDA_SDK	     [format "%s/samples/NVIDIA_CUDA-%s_Samples" $prefix $shortvers]
 
-prepend-path PATH            $CUDA_DIR/bin/
-prepend-path LD_LIBRARY_PATH $CUDA_DIR/lib/
-prepend-path LD_LIBRARY_PATH $CUDA_DIR/lib64/
+prepend-path PATH            $prefix/cuda/bin
+prepend-path LD_LIBRARY_PATH $prefix/cuda/lib
+prepend-path LD_LIBRARY_PATH $prefix/cuda/lib64
