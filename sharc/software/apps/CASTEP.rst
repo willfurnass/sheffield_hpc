@@ -12,7 +12,7 @@ Only licensed users of CASTEP are entitled to use it and license details are ava
 
 Interactive Usage
 -----------------
-The serial version of CASTEP should be used for interactive usage. After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the ``qrsh`` or ``qsh`` command. Make the serial version of CASTEP available using the following command: ::
+The serial version of CASTEP should be used for interactive usage. After connecting to ShARC (see :ref:`ssh`),  start an interactive session with the ``qrsh`` or ``qsh`` command. Make the serial version of CASTEP available using the following command: ::
 
         module load apps/castep/16.11/gcc-5.4
 
@@ -75,7 +75,7 @@ The parallel version of CASTEP is called ``castep.mpi``. To make the parallel en
 
 As an example of a parallel submission, we will calculate the bandstructure of graphite following the tutorial at http://www.castep.org/Tutorials/BandStructureAndDOS
 
-After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the ``qrsh`` or ``qsh`` command. Download and decompress the example input files with the commands ::
+After connecting to ShARC (see :ref:`ssh`),  start an interactive session with the ``qrsh`` or ``qsh`` command. Download and decompress the example input files with the commands ::
 
   wget http://www.castep.org/files/bandstructure.tgz
   tar -xvzf ./bandstructure.tgz
@@ -113,11 +113,11 @@ Serial (1 CPU core) and parallel (MPI) builds were compiled.
 Both builds were compiled with GCC 5.4, Intel MKL 2017.1 (for BLAS and FFT routines).  
 The parallel build was compiled using OpenMPI 2.0.1.
 
-Both builds were installed using :download:`this script </iceberg/software/install_scripts/apps/castep/16.11/gcc-5.4/install.sh>`.  
+Both builds were installed using :download:`this script </sharc/software/install_scripts/apps/castep/16.11/gcc-5.4/install.sh>`.  
 **Note** that this compiles both builds in ``/data/$USER`` as the build directory must be availble to all cluster nodes to allow for subsequent `Testing` of the parallel build.  ~2.2 GB of free space is required.
 
-* :download:`The serial build modulefile </iceberg/software/apps/castep/16.11/gcc-5.4>` was installed as ``/usr/local/modulefiles/apps/castep/16.11/gcc-5.4``
-* :download:`The parallel build modulefile </iceberg/software/apps/castep/16.11/gcc-5.4-openmpi-2.0.1>` was installed as ``/usr/local/modulefiles/apps/castep/16.11/gcc-5.4-openmpi-2.0.1``
+* :download:`The serial build modulefile </sharc/software/apps/castep/16.11/gcc-5.4>` was installed as ``/usr/local/modulefiles/apps/castep/16.11/gcc-5.4``
+* :download:`The parallel build modulefile </sharc/software/apps/castep/16.11/gcc-5.4-openmpi-2.0.1>` was installed as ``/usr/local/modulefiles/apps/castep/16.11/gcc-5.4-openmpi-2.0.1``
 
 Testing
 -------
