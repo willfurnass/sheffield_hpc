@@ -24,8 +24,8 @@ compiler_vers="5.4"
 tarball_path="/usr/local/media/protected/CASTEP/${vers}/CASTEP-${vers}.tar.gz"
 base_prefix="/usr/local/packages/apps/castep"
 prefix="${base_prefix}/${vers}/${compiler}-${compiler_vers}/"
-serial_build_dir="/scratch/$USER/castep/${vers}/${compiler}-${compiler_vers}/serial"
-parallel_build_dir="/scratch/$USER/castep/${vers}/${compiler}-${compiler_vers}/parallel"
+serial_build_dir="/data/$USER/castep/${vers}/${compiler}-${compiler_vers}/serial"
+parallel_build_dir="/data/$USER/castep/${vers}/${compiler}-${compiler_vers}/parallel"
 workers=16
 
 ##############################################################################
