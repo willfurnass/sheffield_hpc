@@ -116,8 +116,8 @@ The parallel build was compiled using OpenMPI 2.0.1.
 Both builds were installed using :download:`this script </sharc/software/install_scripts/apps/castep/16.11/gcc-5.4/install.sh>`.  
 **Note** that this compiles both builds in ``/data/$USER`` as the build directory must be availble to all cluster nodes to allow for subsequent `Testing` of the parallel build.  ~2.2 GB of free space is required.
 
-* :download:`The serial build modulefile </sharc/software/apps/castep/16.11/gcc-5.4>` was installed as ``/usr/local/modulefiles/apps/castep/16.11/gcc-5.4``
-* :download:`The parallel build modulefile </sharc/software/apps/castep/16.11/gcc-5.4-openmpi-2.0.1>` was installed as ``/usr/local/modulefiles/apps/castep/16.11/gcc-5.4-openmpi-2.0.1``
+* :download:`The serial build modulefile </sharc/software/modulefiles/apps/castep/16.11/gcc-5.4>` was installed as ``/usr/local/modulefiles/apps/castep/16.11/gcc-5.4``
+* :download:`The parallel build modulefile </sharc/software/modulefiles/apps/castep/16.11/gcc-5.4-openmpi-2.0.1>` was installed as ``/usr/local/modulefiles/apps/castep/16.11/gcc-5.4-openmpi-2.0.1``
 
 Testing
 -------
