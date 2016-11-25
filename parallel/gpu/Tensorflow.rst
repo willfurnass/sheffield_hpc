@@ -15,8 +15,8 @@ Request an interactive session with a sufficient amount of memory ::
 
 Load the relevant modules (our example uses CUDA 8.0 with cuDNN 5.0 but :ref:`other versions are available <iceberg_cudnn>`) ::
 
-	module load apps/python/anaconda3-2.5.0
-	module load libs/binlibs/cudnn/cudnn/5.0-cuda-8.0.44
+	module load apps/python/anaconda3-4.2.0
+	module load libs/cudnn/5.1/binary-cuda-8.0.44
 
 
 Create a conda environment to load relevant modules on your local user account and activate it ::
@@ -26,8 +26,8 @@ Create a conda environment to load relevant modules on your local user account a
 		
 Then install tensorflow with the following commands ::
 
-	export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.11.0rc2-cp35-cp35m-linux_x86_64.whl
-	pip install --ignore-installed --upgrade $TF_BINARY_URL
+	export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.11.0-cp35-cp35m-linux_x86_64.whl
+	pip install $TF_BINARY_URL
 
 You can test that Tensorflow is running on the GPU with the following python code ::
 
