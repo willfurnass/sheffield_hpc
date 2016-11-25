@@ -1,13 +1,13 @@
 .. _Theano:
 
 Deep Learning with Theano on GPU Nodes
---------------------------------------
+======================================
 
 Theano is a Python library that allows you to define, optimize, and evaluate mathematical expressions involving multi-dimensional arrays efficiently. Theano is most commonly used to perform deep learning and has excellent GPU support and integration through PyCUDA. The following steps can be used to setup and configure Theano on your own profile.
 
 Request an interactive session with a sufficient amount of memory ::
 
-		qsh -l gpu=1 -l gpu_arch=nvidia-k40m -l mem=13G
+		qrshx -l gpu=1 -l gpu_arch=nvidia-k40m -l mem=13G
 
 Load the relevant modules (our example uses CUDA 8.0 with cuDNN 5.0 but :ref:`other versions are available <iceberg_cudnn>`) ::
 
