@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#The script installs cuDNN 5.0 for CUDA 7.5 and CUDA 8.0 in to the correct iceberg directory
+#The script installs cuDNN 5.1 for CUDA 7.5 and CUDA 8.0 in to the correct iceberg directory
 
 #The binaries can be downloaded from Nvidia at https://developer.nvidia.com/cudnn
 
