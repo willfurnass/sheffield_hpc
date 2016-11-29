@@ -80,8 +80,8 @@ setenv RELION_MOTIONCORR_EXECUTABLE $relion2root/bin/MotionCor2-10-19-2016
 ################################################################################
 # Dependency (?): Unblur / SumMovie
 ################################################################################
-setenv RELION_UNBLUR_EXECUTABLE $relion2root/sum_movie_openmp_7_17_15.exe
-setenv RELION_SUMMOVIE_EXECUTABLE $relion2root/unblur_openmp_7_17_15.exe
+setenv RELION_SUMMOVIE_EXECUTABLE $relion2root/sum_movie_openmp_7_17_15.exe
+setenv RELION_UNBLUR_EXECUTABLE $relion2root/unblur_openmp_7_17_15.exe
 
 ################################################################################
 # Thread / node management (TODO)
