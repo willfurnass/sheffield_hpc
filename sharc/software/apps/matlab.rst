@@ -138,7 +138,7 @@ In more detail:
     chown ${USER}:app-admins /usr/local/packages/apps/matlab/R2016b/binary
 
 #. Run the installer using our customized ``installer_input.txt`` like so: ``./install -mode silent -inputFile ${PWD}/installer_input.txt`` ; installation should finish with exit status ``0`` if all has worked.
-# Install a *modulefile* to prepend to to the ``PATH`` environment variable and set the ``MCRROOT`` environment variable (used by the ``mcc`` compiler):
+#. Install a *modulefile* to prepend to to the ``PATH`` environment variable and set the ``MCRROOT`` environment variable (used by the ``mcc`` compiler):
     
     - :download:`This modulefile </sharc/software/modulefiles/apps/matlab/2016b/binary>` was installed as ``/usr/local/modulefiles/apps/matlab/2016b/binary``
     - :download:`This modulefile </sharc/software/modulefiles/apps/matlab/2016a/binary>` was installed as ``/usr/local/modulefiles/apps/matlab/2016a/binary``

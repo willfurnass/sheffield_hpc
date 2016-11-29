@@ -1,4 +1,4 @@
-.. matlab:
+.. _matlab_iceberg:
 
 MATLAB
 ======
@@ -200,7 +200,7 @@ In more detail:
     chown ${USER}:app-admins /usr/local/packages6/matlab/R2016a
 
 #. Run the installer using our customized ``installer_input.txt`` like so: ``./install -mode silent -inputFile ${PWD}/installer_input.txt`` ; installation should finish with exit status ``0`` if all has worked.
-# Install a *modulefile* with a name and path like ``/usr//local/modulefiles/apps/matlab/2016a`` and contents like ::
+#. Install a *modulefile* with a name and path like ``/usr//local/modulefiles/apps/matlab/2016a`` and contents like ::
 
     #%Module1.0#####################################################################
 
