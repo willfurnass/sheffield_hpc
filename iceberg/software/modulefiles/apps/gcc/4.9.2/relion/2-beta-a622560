@@ -51,36 +51,37 @@ setenv          RELION2ROOT      $relion2root
 ################################################################################
 # Dependency: ctffind / gctf
 ################################################################################
-# module load apps/gcc/4.4.7/ctffind/3.140609
-#module load apps/gcc/4.9.2/ctffind/4.1.5
-#
 # Default CTFFIND executable, version 4.0.x
 #setenv RELION_CTFFIND_EXECUTABLE '"/public/EM/ctffind/ctffind.exe --omp-num-threads 1 --old-school-input"'
+
 # For CTFFIND3 this would be
+# module load apps/gcc/4.4.7/ctffind/3.140609
 #setenv RELION_CTFFIND_EXECUTABLE /public/EM/CTFFIND_130307/ctffind3.exe
+
 # For the new CTFFIND 4.1+ this would be
-#setenv RELION_CTFFIND_EXECUTABLE /lmb/home/scheres/app/Alexis_16-03-18_5138_ctffind_160404_1358.exe
-#setenv RELION_CTFFIND_EXECUTABLE ctffind
-# # Default Gctf executable
-# setenv RELION_GCTF_EXECUTABLE /public/EM/Gctf/bin/Gctf
+module load apps/gcc/4.9.2/ctffind/4.1.5
+setenv RELION_CTFFIND_EXECUTABLE "$::env(CTFFIND_HOME)/bin/ctffind"
+
+# Default Gctf executable
+setenv RELION_GCTF_EXECUTABLE $relion2root/bin/Gctf-v0.50_sm_30_cu7.5_x86_64
 
 ################################################################################
 # Dependency: ResMap (for local-resolution estimation)
 ################################################################################
-#module load apps/binapps/resmap/1.1.4
-#setenv RELION_RESMAP_EXECUTABLE ResMap.py
+module load apps/binapps/resmap/1.1.4
+setenv RELION_RESMAP_EXECUTABLE "$::env(RESMAP_HOME)/ResMap.py"
 
 ################################################################################
-# Dependency: MotionCor2 (TODO)
+# Dependency: MotionCor2
 ################################################################################
-# # Default MOTIONCORR executable
-# setenv RELION_MOTIONCORR_EXECUTABLE /public/EM/MOTIONCORR/bin/motioncorr
+# Default MOTIONCORR executable
+setenv RELION_MOTIONCORR_EXECUTABLE $relion2root/bin/MotionCor2-10-19-2016
 
 ################################################################################
-# Dependency (?): Unblur / SumMovie (TODO)
+# Dependency (?): Unblur / SumMovie
 ################################################################################
-# setenv RELION_UNBLUR_EXECUTABLE /public/EM/UNBLUR/unblur.exe
-# setenv RELION_SUMMOVIE_EXECUTABLE /public/EM/SUMMOVIE/summovie.exe
+setenv RELION_UNBLUR_EXECUTABLE $relion2root/sum_movie_openmp_7_17_15.exe
+setenv RELION_SUMMOVIE_EXECUTABLE $relion2root/unblur_openmp_7_17_15.exe
 
 ################################################################################
 # Thread / node management (TODO)

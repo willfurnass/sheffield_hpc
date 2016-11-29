@@ -97,4 +97,53 @@ cp Gctf-v${gctf_vers}_sm_*_cu${cuda_short_vers}_x86_64 star_replace_UVA.com ${pr
 popd
 popd
 
+################################################################################
+# Install UNBLUR {prefix}/bin
+################################################################################
+unblur_vers="1.0.2"
+unblur_tarball_url="http://grigoriefflab.janelia.org/sites/default/files/unblur_${unblur_vers}.tar.gz"
+unblur_tmpdir="${TMPDIR-/tmp}/${USER}/unblur/${unblur_vers}"
+mkdir -m 0700 $unblur_tmpdir
+pushd $unblur_tmpdir
+curl -L $unblur_tarball_url | tar -zx
+pushd unblur_${unblur_vers}/bin
+for f in unblur_openmp_7_17_15.exe  unblur_plot_shifts.sh; do
+    cp $f ${prefix}/bin
+popd
+popd
 
+################################################################################
+# Install SUMMOVIE {prefix}/bin
+################################################################################
+summovie_vers="1.0.2"
+summovie_tarball_url="http://grigoriefflab.janelia.org/sites/default/files/unblur_${unblur_vers}.tar.gz"
+summovie_tmpdir="${TMPDIR-/tmp}/${USER}/unblur/${unblur_vers}"
+summovie_exe=sum_movie_openmp_7_17_15.exe
+mkdir -m 0700 $summovie_tmpdir
+pushd $summovie_tmpdir
+curl -L $summovie_tarball_url | tar -zx
+cp summovie_${unblur_vers}/bin/$summovie_exe ${prefix}/bin
+popd
+popd
+
+################################################################################
+# Install MotionCorr2.1 (different to MotionCor2!) in {prefix}/bin
+################################################################################
+motioncorr_vers=2.1
+motioncorr_tarball_url="http://cryoem.ucsf.edu/software/motioncorr_v${motioncorr_vers}.tar"
+motioncorr_tmpdir="${TMPDIR-/tmp}/${USER}/motioncorr/${motioncorr_vers}"
+mkdir -m 0700 $motioncorr_tmpdir
+pushd $motioncorr_tmpdir
+curl -L $motioncorr_tarball_url | tar -zx
+pushd motioncorr_${motioncorr_vers}/bin
+for f in dosefgpu_driftcorr dosef_logviewer gpuinfo; do
+    cp $f ${prefix}/bin
+popd
+popd
+
+#
+################################################################################
+# Ensure all binaries have right permissions
+################################################################################
+chown $USER:app-admins ${prefix}/bin/*
+chmod 0775 ${prefix}/bin/*
