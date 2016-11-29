@@ -61,32 +61,5 @@ Version 1.4
 
 * Installed using the GCC 4.4.7 compiler and OpenMPI 1.8.8
 * :download:`install_relion.sh </iceberg/software/install_scripts/apps/gcc/4.4.7/relion/1.4/install_relion.sh>`
+* :download:`This modulefile </iceberg/software/modulefiles/apps/gcc/4.4.7/relion/1.4>` was installed as ``/usr/local/modulefiles/apps/gcc/4.4.7/relion/1.4``
 * The environment variable ``RELION_QSUB_TEMPLATE`` points to an Sun Grid Engine ``qsub`` template, which needs customizing to work with our environment
-* The following module file is on the system at ``/usr/local/modulefiles/apps/gcc/4.4.7/relion/1.4``: ::
-
-        #%Module1.0#####################################################################
-        ##
-        ## relion module file
-        ##
-
-        ## Module file logging
-        source /usr/local/etc/module_logging.tcl
-        ##
-
-        proc ModulesHelp { } {
-            global bedtools-version
-
-            puts stderr "   Setups `relion-$relionversion' environment variables"
-        }
-
-        set     relionversion 1.4
-
-        module load apps/gcc/4.4.7/ctffind/3.140609
-        module load apps/binapps/resmap/1.1.4
-        module load mpi/gcc/openmpi/1.8.8
-
-        prepend-path PATH /usr/local/packages6/apps/gcc/4.4.7/relion/1.4/bin
-        prepend-path LD_LIBRARY_PATH /usr/local/packages6/apps/gcc/4.4.7/relion/1.4/lib
-        setenv RELION_QSUB_TEMPLATE /usr/local/packages6/apps/gcc/4.4.7/relion/1.4/bin/relion_qsub.csh
-        setenv RELION_CTFFIND_EXECUTABLE ctffind3_mp.exe
-        setenv RELION_RESMAP_EXECUTABLE /usr/local/packages6/apps/binapps/resmap/1.1.4
