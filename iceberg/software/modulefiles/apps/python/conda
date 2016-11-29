@@ -1,0 +1,30 @@
+#%Module1.0#####################################################################
+##
+## conda module file
+##
+################################################################################
+# Module file logging
+source /usr/local/etc/module_logging.tcl
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "Add conda managed scientific Python to the path"
+}
+
+
+module-whatis   "conda is a scientific python package manager"
+
+prepend-path PATH /usr/local/packages6/conda/bin
+
+if {[module-info mode load]} {
+    puts stderr "Conda uses environments to load different sets of Python packages"
+    puts stderr "type conda env list to see the environments availible."
+}
+
+set-alias "conda-activate" "source activate"
+set-alias "conda-deactivate" "source deactivate"
+set-alias "conda-envlist" "conda env list"
+set-alias "cac" "source activate"
+set-alias "cde" "source deactivate"
+
