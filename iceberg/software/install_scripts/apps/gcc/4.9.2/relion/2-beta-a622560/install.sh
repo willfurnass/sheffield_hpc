@@ -130,9 +130,10 @@ motioncorr_tmpdir="${TMPDIR-/tmp}/${USER}/motioncorr/${motioncorr_vers}"
 mkdir -m 0700 $motioncorr_tmpdir
 pushd $motioncorr_tmpdir
 curl -L $motioncorr_tarball_url | tar -zx
-pushd motioncorr_${motioncorr_vers}/bin
+pushd motioncorr_${motioncorr_vers}/src
+make
 for f in dosefgpu_driftcorr dosef_logviewer gpuinfo; do
-    cp $f ${prefix}/bin
+    cp ../bin/$f ${prefix}/bin
 popd
 popd
 
