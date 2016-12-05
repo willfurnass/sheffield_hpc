@@ -27,14 +27,17 @@ To compile and run these programs: copy that directory to your home directory, s
 
 In more detail ::
 
-    # Connect to iceberg
-    ssh user@iceberg  
-
-    # Copy the examples to your home directory
-    cp -r /usr/local/packages/mpi/openmpi/2.0.1/intel-17.0.0/examples/ ~/openmpi_2.0.1_examples
+    # Connect to ShARC
+    ssh user@sharc  
 
     # Start an interactive session from which we can run MPI processes using a core on each of four nodes
     qrsh -pe mpi 4
+
+    # Load an MPI implementation
+    module load mpi/openmpi/2.0.1/intel-17.0.0
+
+    # Copy the examples to your home directory
+    cp -r $MPI_HOME/examples ~/openmpi_2.0.1_examples
 
     # Compile all programs in the examples directory
     cd ~/openmpi_2.0.1_examples

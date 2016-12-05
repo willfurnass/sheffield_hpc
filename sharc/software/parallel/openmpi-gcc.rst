@@ -26,20 +26,23 @@ Note that if you are using :ref:`CUDA <cuda_sharc>` with OpenMPI then you curren
 Examples
 --------
 
-Example programs are available in the ``/usr/local/packages/mpi/openmpi/XXX/gcc-6.2/examples/`` directory (where ``XXX`` is the version of OpenMPI you are using e.g. ``2.0.1``).  
+Example programs are available in the ``$MPI_HOME/examples/`` directory.  
 
 To compile and run these programs: copy that directory to your home directory, start an interactive MPI-aware session on a worker node, activate the version of OpenMPI you wish to use, compile the examples then run them.
 
 In more detail ::
 
-    # Connect to iceberg
-    ssh user@iceberg  
-
-    # Copy the examples to your home directory
-    cp -r /usr/local/packages/mpi/openmpi/2.0.1/gcc-6.2/examples/ ~/openmpi_2.0.1_examples
+    # Connect to ShARC
+    ssh user@sharc  
 
     # Start an interactive session from which we can run MPI processes using a core on each of four nodes
     qrsh -pe mpi 4
+
+    # Load an MPI implementation
+    module load mpi/openmpi/2.0.1/gcc-6.2
+
+    # Copy the examples to your home directory
+    cp -r $MPI_HOME/examples ~/openmpi_2.0.1_examples
 
     # Compile all programs in the examples directory
     cd ~/openmpi_2.0.1_examples
