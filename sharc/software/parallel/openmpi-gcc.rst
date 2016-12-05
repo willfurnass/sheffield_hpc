@@ -16,9 +16,12 @@ You can load a specific version using ::
 
    module load mpi/openmpi/2.0.1/gcc-6.2
    module load mpi/openmpi/2.0.1/gcc-5.4
+   module load mpi/openmpi/2.0.1/gcc-4.9.4
    module load mpi/openmpi/1.10.4/gcc-6.2
 
 See `here <https://mail-archive.com/announce@lists.open-mpi.org/msg00085.html>`__ for a brief guide to the new features in OpenMPI 2.x and `here <https://raw.githubusercontent.com/open-mpi/ompi/v2.x/NEWS>`__ for a detailed view of the changes between OpenMPI versions.
+
+Note that if you are using :ref:`CUDA <cuda_sharc>` with OpenMPI then you currently need to use a version of CUDA built with GCC < 5.0.
 
 Examples
 --------
@@ -66,6 +69,11 @@ These are primarily for administrators of the system.
 1. Enable :ref:`GCC <gcc_sharc>` 5.4.0
 2. Download, compile and install OpenMPI 2.0.1 using the :download:`this script </sharc/software/install_scripts/mpi/openmpi/2.0.1/gcc-5.4/install.sh>`.
 3. Install :download:`this modulefile </sharc/software/modulefiles/mpi/openmpi/2.0.1/gcc-5.4>` as ``/usr/local/modulefiles/mpi/openmpi/2.0.1/gcc-5.4``
+
+**Version 2.0.1, gcc 4.9.4**
+
+1. Download, compile and install OpenMPI 2.0.1 using the :download:`this script </sharc/software/install_scripts/mpi/openmpi/2.0.1/gcc-4.9.4/install.sh>`.
+2. Install :download:`this modulefile </sharc/software/modulefiles/mpi/openmpi/2.0.1/gcc-4.9.4>` as ``/usr/local/modulefiles/mpi/openmpi/2.0.1/gcc-4.9.4``
 
 **Version 1.10.4, gcc 6.2**
 
