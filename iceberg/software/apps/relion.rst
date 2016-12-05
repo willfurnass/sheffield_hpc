@@ -36,7 +36,7 @@ and how to configure your environment so RELION can find third-party tools that
 it depends on.
 
 Version 2.0.1-beta
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 * Commit ``a6225608e270ac68af463ec3ba7567dbbbc4a4a0`` of `this repository <https://bitbucket.org/tcblab/relion2-beta.git>`_.
 * Cloned, configured, compiled and installed using :download:`this script </iceberg/software/install_scripts/apps/gcc/4.9.2/relion/2-beta-a622560/install.sh>`
