@@ -31,11 +31,11 @@ This section is primarily for administrators of the system.
 
 - The cuDNN library is only available to download through the `developer portal <https://developer.nvidia.com/cudnn>`_.
 - Installation
-	- Install script: :download:`install_cudnn5.1_for_cuda7.5_cuda8.0.sh <https://github.com/rcgsheffield/sheffield_hpc/tree/master/iceberg/software/install_scripts/libs/cudnn/install_cudnn5.1_for_cuda7.5_cuda8.0.sh>`
+	- Install script: :download:`install_cudnn5.1_for_cuda7.5_cuda8.0.sh </sharc/software/install_scripts/libs/cudnn/install_cudnn5.1_for_cuda7.5_cuda8.0.sh>`
 	- Installation ``.tgz`` files are located in ``/usr/local/media/protected/cudnn``
 - Module file: 
-	- :download:`cuDNN 5.1 for CUDA 7.5 <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/modulefiles/libs/cudnn/5.1/binary-cuda-7.5.18>`
-	- :download:`cuDNN 5.1 for CUDA 8.0 <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/modulefiles/libs/cudnn/5.1/binary-cuda-8.0.44>`
+	- :download:`cuDNN 5.1 for CUDA 7.5 </sharc/software/modulefiles/libs/cudnn/5.1/binary-cuda-7.5.18>`
+	- :download:`cuDNN 5.1 for CUDA 8.0 </sharc/software/modulefiles/libs/cudnn/5.1/binary-cuda-8.0.44>`
 
 
 
