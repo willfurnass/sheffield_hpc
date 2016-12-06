@@ -27,7 +27,9 @@ module load dev/$compiler/$compilerversion
 
 setenv MPI_HOME $openmpiroot
 
-prepend-path PATH $openmpiroot/bin/
-prepend-path LD_LIBRARY_PATH $openmpiroot/lib/
-prepend-path MANPATH $openmpiroot/share/man/
+prepend-path CPATH $openmpiroot/include
+prepend-path PATH $openmpiroot/bin
+prepend-path LD_LIBRARY_PATH $openmpiroot/lib
+prepend-path LIBRARY_PATH $openmpiroot/lib
+prepend-path MANPATH $openmpiroot/share/man
 
