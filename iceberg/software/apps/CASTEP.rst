@@ -8,36 +8,36 @@ CASTEP
 
 Licensing
 ---------
-Only licensed users of CASTEP are entitled to use it and license details are available on `CASTEP's website <http://www.castep.org/CASTEP/GettingCASTEP>`_. Access to CASTEP on the system is controlled using a Unix group. That is, only members of the ``castep`` group can access and run the program. To be added to this group, you will need to contact the Iceberg email the team at research-it@sheffield.ac.uk and provide evidence of your eligibility to use CASTEP.
+Only licensed users of CASTEP are entitled to use it and license details are available on `CASTEP's website <http://www.castep.org/CASTEP/GettingCASTEP>`_. Access to CASTEP on the system is controlled using a Unix group. That is, only members of the ``castep`` group can access and run the program. To be added to this group, you will need to contact ``research-it@sheffield.ac.uk`` and provide evidence of your eligibility to use CASTEP.
 
 Interactive Usage
 -----------------
-The serial version of CASTEP should be used for interactive usage. After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the ``qrsh`` or ``qsh`` command. Make the serial version of CASTEP available using the one of the commands ::
+The serial version of CASTEP should be used for interactive usage. After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the ``qrsh`` or ``qsh`` command. Make the serial version of CASTEP available using one of the following commands: ::
 
-    module load apps/intel/15/castep/16.1-serial
-    module load apps/intel/15/castep/8.0-serial
+        module load apps/intel/15/castep/16.1-serial
+        module load apps/intel/15/castep/8.0-serial
 
-The CASTEP executable is called ``castep-serial`` so if you execute ::
+The CASTEP executable is called ``castep.serial`` so if you execute: ::
 
-    castep.serial
+        castep.serial
 
-You should get the following ::
+You should get the following: ::
 
-  Usage:
-  castep <seedname>                : Run files <seedname>.cell [and <seedname>.param]
-    "    [-d|--dryrun] <seedanme>  : Perform a dryrun calculation on files <seedname>.cell
-    "    [-s|--search] <text>      : print list of keywords with <text> match in description
-    "    [-v|--version]            : print version information
-    "    [-h|--help] <keyword>     : describe specific keyword in <>.cell or <>.param
-    "         "      all           : print list of all keywords
-    "         "      basic         : print list of basic-level keywords
-    "         "      inter         : print list of intermediate-level keywords
-    "         "      expert        : print list of expert-level keywords
-    "         "      dummy         : print list of dummy keywords
+        Usage:
+        castep <seedname>                : Run files <seedname>.cell [and <seedname>.param]
+          "    [-d|--dryrun] <seedanme>  : Perform a dryrun calculation on files <seedname>.cell
+          "    [-s|--search] <text>      : print list of keywords with <text> match in description
+          "    [-v|--version]            : print version information
+          "    [-h|--help] <keyword>     : describe specific keyword in <>.cell or <>.param
+          "         "      all           : print list of all keywords
+          "         "      basic         : print list of basic-level keywords
+          "         "      inter         : print list of intermediate-level keywords
+          "         "      expert        : print list of expert-level keywords
+          "         "      dummy         : print list of dummy keywords
 
-If, instead, you get ::
+If, instead, you get: ::
 
-    -bash: castep.serial: command not found
+        -bash: castep.serial: command not found
 
 It is probably because you are not a member of the ``castep`` group. See the section on Licensing above for details on how to be added to this group.
 
@@ -181,10 +181,10 @@ The directory ``CASTEP-8.0`` was then deleted and the parallel version was insta
 
 Modulefiles
 -----------
-* `CASTEP 16.1-serial <https://github.com/rcgsheffield/sheffield_hpc/blob/master/software/modulefiles/apps/intel/15/castep/16.1-serial>`_
-* `CASTEP 16.1-parallel <https://github.com/rcgsheffield/sheffield_hpc/blob/master/software/modulefiles/apps/intel/15/castep/16.1-parallel>`_
-* `CASTEP 8.0-serial <https://github.com/rcgsheffield/sheffield_hpc/blob/master/software/modulefiles/apps/intel/15/castep/8.0-serial>`_
-* `CASTEP 8.0-parallel <https://github.com/rcgsheffield/sheffield_hpc/blob/master/software/modulefiles/apps/intel/15/castep/16.1-parallel>`_
+* :download:`CASTEP 16.1-serial </iceberg/software/modulefiles/apps/intel/15/castep/16.1-serial>`
+* :download:`CASTEP 16.1-parallel </iceberg/software/modulefiles/apps/intel/15/castep/16.1-parallel>`
+* :download:`CASTEP 8.0-serial </iceberg/software/modulefiles/apps/intel/15/castep/8.0-serial>`
+* :download:`CASTEP 8.0-parallel </iceberg/software/modulefiles/apps/intel/15/castep/16.1-parallel>`
 
 Testing
 -------

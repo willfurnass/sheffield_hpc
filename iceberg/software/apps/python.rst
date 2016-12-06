@@ -205,3 +205,6 @@ version and update the name of the environment. Also you will need to append
 the new module to the ``conflict`` line in
 `apps/python/.conda-environments.tcl`.
 
+Modulefiles
+-----------
+* :download:`The conda modulefile </iceberg/software/modulefiles/apps/python/conda>` was installed as ``/usr/local/modulefiles/apps/python/conda``.

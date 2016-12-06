@@ -13,7 +13,6 @@ If you need advice on how to parallelise your workflow, please contact the `Rese
    :maxdepth: 1
    :hidden:
 
-   self
    JobArray
    SMP
    MPI

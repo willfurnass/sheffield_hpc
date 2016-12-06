@@ -1,0 +1,23 @@
+#%Module1.0#####################################################################
+##
+## CASTEP 16.11 module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+
+set vers 16.11
+
+proc ModulesHelp { } {
+        global vers
+
+        puts stderr "	Adds `CASTEP-$vers' to your PATH environment"
+}
+module-whatis "	Adds `CASTEP-$vers' to your PATH environment"
+
+module load dev/gcc/5.4
+module load libs/intel-mkl/2017.0/binary
+
+set casteppath /usr/local/packages/apps/castep/$vers/gcc-5.4
+prepend-path PATH $casteppath
+setenv TMPDIR /scratch/

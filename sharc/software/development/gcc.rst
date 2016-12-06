@@ -32,14 +32,19 @@ man pages are available on the system. Once you have loaded the required version
 
 Installation Notes
 ------------------
-These notes are primarily for system administrators
+These notes are primarily for system administrators: 
 
-* gcc version 6.2 was installed using :
+Version 6.2
+^^^^^^^^^^^
+* :download:`Installation script </sharc/software/install_scripts/dev/gcc/6.2/install.sh>`
+* :download:`gcc 6.2 modulefile </sharc/software/modulefiles/dev/gcc/6.2>` saved as ``/usr/local/modulefiles/dev/gcc/6.2``
 
-* `this script <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/install_scripts/dev/gcc/6.2/install.sh>`__
-* `gcc 6.2 modulefile <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/modulefiles/dev/gcc/6.2>`__ saved as `/usr/local/modulefiles/dev/gcc/6.2``
+Version 5.4
+^^^^^^^^^^^
+* :download:`Installation script </sharc/software/install_scripts/dev/gcc/5.4/install.sh>`
+* :download:`this modulefile </sharc/software/modulefiles/dev/gcc/5.4>`, saved as ``/usr/local/modulefiles/dev/gcc/5.4``
 
-* gcc version 5.4 was installed using :
-
-* `this script <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/install_scripts/dev/gcc/5.4/install.sh>`__
-* `this modulefile <https://github.com/rcgsheffield/sheffield_hpc/tree/master/sharc/software/modulefiles/dev/gcc/5.4>`__, saved as ``/usr/local/modulefiles/dev/gcc/5.4``
+Version 4.9.4
+^^^^^^^^^^^^^
+* :download:`this script </sharc/software/install_scripts/dev/gcc/4.9.4/install.sh>`
+* :download:`this modulefile </sharc/software/modulefiles/dev/gcc/4.9.4>`, saved as ``/usr/local/modulefiles/dev/gcc/4.9.4``

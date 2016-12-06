@@ -1,0 +1,29 @@
+#%Module1.0#####################################################################
+##
+## cuda 7.5.18 module file
+##
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+
+proc ModulesHelp { } {
+        global vers
+        puts stderr "	Adds `Nvidia Cuda-$vers' to your PATH environment variable and necessary libraries"
+}
+
+set vers      7.5.18
+set shortvers 7.5
+
+
+module-whatis   "Loads the necessary `cuda-$vers' library paths"
+
+set prefix /usr/local/packages/libs/CUDA/$vers/binary
+
+setenv       CUDA_DIR        $prefix/cuda
+setenv       CUDA_HOME       $prefix/cuda
+setenv	     CUDA_SDK	     [format "%s/samples/NVIDIA_CUDA-%s_Samples" $prefix $shortvers]
+
+prepend-path PATH            $prefix/cuda/bin
+prepend-path LD_LIBRARY_PATH $prefix/cuda/lib
+prepend-path LD_LIBRARY_PATH $prefix/cuda/lib64
