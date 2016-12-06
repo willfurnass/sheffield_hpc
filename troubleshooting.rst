@@ -34,7 +34,7 @@ All failing, you may have to fall back to one of the `non-browser access methods
 My batch job terminates without any messages or warnings
 --------------------------------------------------------
 
-When a batch job that is initiated by using the qsub command or runfluent, runansys or runabaqus commands, it gets allocated specific amount of virtual memory and real-time.
+When a batch job that is initiated by using the ``qsub`` command or ``runfluent``, ``runansys`` or ``runabaqus`` commands, it gets allocated specific amount of virtual memory and real-time.
 If a job exceeds either of these memory or time limits it gets terminated immediately and usually without any warning messages.
 
 It is therefore important to estimate the amount of memory and time that is needed to run your job to completion and specify it at the time of submitting the job to the batch queue.
