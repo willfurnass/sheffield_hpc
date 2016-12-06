@@ -31,7 +31,6 @@ Take a look at the `Research Software Engineering <http://rse.shef.ac.uk/>`_ web
    :maxdepth: 1
    :hidden:
 
-   self
    hpc/index
    iceberg/index
    sharc/index
