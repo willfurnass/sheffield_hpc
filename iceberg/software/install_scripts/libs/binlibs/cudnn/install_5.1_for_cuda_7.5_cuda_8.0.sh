@@ -1,20 +1,19 @@
 #!/bin/bash
+#
+# The script installs cuDNN 5.1 for CUDA 7.5 and CUDA 8.0 in to the correct iceberg directory
+# The binaries can be downloaded from NVIDIA at https://developer.nvidia.com/cudnn
+# and need to be saved in $MEDIA_DIR (see below)
 
-#The script installs cuDNN 5.1 for CUDA 7.5 and CUDA 8.0 in to the correct iceberg directory
+VERS=5.1
+MEDIA_DIR=/usr/local/media/protected/cuDNN
+PREFIX_BASE=/usr/local/packages/libs/binlibs/cudnn/
 
-#The binaries can be downloaded from Nvidia at https://developer.nvidia.com/cudnn
+for cuda_vers in 7.5 8.0; do 
+    install_dir=${PREFIX_BASE}/${VERS}-cuda-${cuda_vers}
+    mkdir -p $install_dir
+    tar -C $install_dir -xvzf ${MEDIA_DIR}/cudnn-${cuda_vers}-linux-x64-v${VERS}.tgz 
+done
 
-#Binaries on Iceberg are located at /usr/local/media/protected/cuDNN
-
-#We assume that the .tgz fils are in current working directory
-
-#Install cuDNN 5.1 for CUDA 7.5
-install_dir=/usr/local/packages6/libs/binlibs/cudnn/5.1-cuda-7.5
-mkdir -p $install_dir
-tar -C $install_dir -xvzf ./cudnn-7.5-linux-x64-v5.1-ga.tgz 
-
-#Install cuDNN 5.1 for CUDA 8.0
-install_dir=/usr/local/packages6/libs/binlibs/cudnn/5.1-cuda-8.0
-mkdir -p $install_dir
-tar -C $install_dir -xvzf ./cudnn-8.0-linux-x64-v5.1-ga.tgz 
+sudo chgrp -R app-admins $PREFIX_BASE
+sudo chmod -R g+w $PREFIX_BASE
 
