@@ -1,0 +1,29 @@
+#%Module1.0#####################################################################
+##
+## cuDNN 5.1 module file for CUDA 7.5.18
+##
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "	Adds `Nvidia cuDNN-$version and CUDA 7.5.18' to your PATH environment variable 
+}
+
+set     version 5.1
+
+module-whatis   "loads the necessary `cuDNN-$version and CUDA 7.5.18' library paths"
+
+module load libs/CUDA/7.5.18/binary
+
+set CUDNN_DIR /usr/local/packages/libs/cudnn/5.1/binary-cuda-7.5/cuda
+
+prepend-path C_INCLUDE_PATH $CUDNN_DIR/include/
+prepend-path CPLUS_INCLUDE_PATH $CUDNN_DIR/include/
+prepend-path LD_LIBRARY_PATH $CUDNN_DIR/lib64/
+prepend-path CPATH $CUDNN_DIR/include/
+prepend-path LIBRARY_PATH $CUDNN_DIR/lib64/
