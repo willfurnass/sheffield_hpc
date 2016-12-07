@@ -1,20 +1,24 @@
-.. _boost:
+.. _boost_iceberg:
 
 Boost C++ Library
 =================
 
 .. sidebar:: Boost C++ Library
 
-   :Latest version: 1.58
+   :Latest version: 1.60.0
    :URL: www.boost.org
 
 Boost provides free, peer-reviewed and portable C++ source libraries.
 
 Usage
 -----
-On Iceberg, different versions of Boost were built using different versions of gcc. We suggest that you use the matching version of gcc to build your code.
+On Iceberg, different versions of Boost were built using different versions of the gcc compiler, where each version of GCC provides a potentially different version of the C++ standard library. We therefore suggest that you use the matching version of gcc to build your code.  
 
-The latest version of Boost, version 1.59, was built using gcc 5.2. To make both the compiler and Boost library available to the system, execute the following module commands while in a `qrsh` or `qsh` session ::
+Boost 1.60.0 was built using gcc 4.9.2. To make both the compiler and Boost library available to the system, execute the following module commands while in a `qrsh` or `qsh` session ::
+
+    module load libs/gcc/4.9.2/boost/1.60.0
+
+Boost 1.59 was built using gcc 5.2. To make both the compiler and Boost library available to the system, execute the following module commands while in a `qrsh` or `qsh` session ::
 
     module load compilers/gcc/5.2
     module load libs/gcc/5.2/boost/1.59
@@ -49,9 +53,9 @@ Many boost libraries are header-only which makes them particularly simple to com
                 in(std::cin), in(), std::cout << (_1 * 3) << " " );
         }
 
-Copy this into a file called example1.cpp and compile with
+Copy this into a file called example1.cpp and compile with: ::
 
-:code:`g++ example1.cpp -o example`
+        g++ example1.cpp -o example
 
 Provided you loaded the correct modules given above, the program should compile without error.
 
@@ -79,14 +83,15 @@ The following program is taken from the official Boost documentation http://www.
             }
         }
 
-This program makes use of the Boost.Regex library, which has a separately-compiled binary component we need to link to.
-Assuming that the above program is called example2.cpp, compile with the following command
 
-:code:`g++ example2.cpp -o example2 -lboost_regex`
+This program makes use of the Boost.Regex library, which has a separately-compiled binary component we need to link to.
+Assuming that the above program is called example2.cpp, compile with the following command: ::
+
+        g++ example2.cpp -o example2 -lboost_regex
 
 If you get an error message that looks like this:
 
-:code:`example2.cpp:1:27: error: boost/regex.hpp: No such file or directory`
+    example2.cpp:1:27: error: boost/regex.hpp: No such file or directory
 
 the most likely cause is that you forgot to load the correct modules as detailed above.
 
@@ -141,6 +146,42 @@ The two examples above were compiled and run.
 
 Module Files
 ------------
+
+**Version 1.60.0**
+
+Module file location: `/usr/local/modulefiles/libs/gcc/4.9.2/boost/1.60.0` ::
+
+
+        #%Module1.0#####################################################################
+        ##
+        ## boost 1.60.0 module file
+        ##
+
+        ## Module file logging
+        source /usr/local/etc/module_logging.tcl
+        ##
+
+        set vers 1.60.0
+        set gccvers 4.9.2
+
+        module load compilers/gcc/$gccvers
+        module load libs/gcc/4.8.2/libunistring/0.9.5
+        module load libs/gcc/$gccvers/icu/58.1
+
+        proc ModulesHelp { } {
+            global vers
+            global gccvers
+            puts stderr "Makes the Boost $vers library (plus gcc $gccvers) available"
+        }
+        module-whatis puts stderr "Makes the Boost $vers library (plus gcc $gccvers) available"
+
+        set BOOST_DIR /usr/local/packages6/libs/gcc/$gccvers/boost/$vers
+
+        prepend-path LD_LIBRARY_PATH $BOOST_DIR/lib
+        prepend-path CPLUS_INCLUDE_PATH $BOOST_DIR/include
+        prepend-path LIBRARY_PATH $BOOST_DIR/lib
+
+
 **Version 1.59**
 
 Module file location: `/usr/local/modulefiles/libs/gcc/5.2/boost/1.59` ::
