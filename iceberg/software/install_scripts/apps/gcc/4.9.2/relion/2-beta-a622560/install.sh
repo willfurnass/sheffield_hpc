@@ -18,6 +18,7 @@ workers=10
 builddir="${TMPDIR-/tmp}/${USER}/relion/${vers_str}"
 prefix="/usr/local/packages6/apps/${compiler}/${compiler_vers}/relion/${vers_str}"
 modulefile="/usr/local/modulefiles/apps/${compiler}/${compiler_vers}/relion/${vers_str}"
+qsub_template="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/qsub_template.sh"
 
 ################################################################################
 # Error handling
@@ -67,6 +68,14 @@ mkdir build
 pushd build
 cmake -DCMAKE_INSTALL_PREFIX=${prefix} ..
 make -j${workers} all install
+
+################################################################################
+# qsub template
+################################################################################
+# Rename original qsub template so more obvious that it came with the Relion 2
+# tarball
+mv ${prefix}/bin/qsub_template.csh{,.orig}
+cp $qsub_template ${prefix}/bin/
 
 ################################################################################
 # Install MotionCor2 in ${prefix}/bin

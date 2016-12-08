@@ -95,9 +95,9 @@ setenv RELION_UNBLUR_EXECUTABLE $relion2root/unblur_openmp_7_17_15.exe
 # setenv RELION_WARNING_LOCAL_MPI 12
 
 ################################################################################
-# Grid Engine job submission template (TODO)
+# Grid Engine job submission template
 ################################################################################
-# setenv RELION_QSUB_TEMPLATE $relion2root/bin/relion_qsub.csh
+setenv RELION_QSUB_TEMPLATE $relion2root/bin/relion_qsub.sh
 
 ################################################################################
 # PDF viewer (TODO)
