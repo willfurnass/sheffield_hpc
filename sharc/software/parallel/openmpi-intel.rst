@@ -15,6 +15,8 @@ Versions
 You can load a specific version using ::
 
    module load mpi/openmpi/2.0.1/intel-17.0.0
+   module load mpi/openmpi/2.0.1/intel-15.0.7
+   module load mpi/openmpi/1.10.4/intel-15.0.7
 
 See `here <https://mail-archive.com/announce@lists.open-mpi.org/msg00085.html>`__ for a brief guide to the new features in OpenMPI 2.x and `here <https://raw.githubusercontent.com/open-mpi/ompi/v2.x/NEWS>`__ for a detailed view of the changes between OpenMPI versions.
 
@@ -58,9 +60,26 @@ Installation notes
 
 These are primarily for administrators of the system.
 
-**Version 2.0.1**
+Version 2.0.1, Intel 17.0.0 compiler
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Ensure :ref:`Intel compilers 17.0.0 <sharc-intel-compilers>` are installed and licensed.
 #. Download, compile and install OpenMPI 2.0.1 using :download:`this script </sharc/software/install_scripts/mpi/openmpi/2.0.1/intel-17.0.0/install.sh>`.
 #. Install :download:`this modulefile </sharc/software/modulefiles/mpi/openmpi/2.0.1/intel-17.0.0>` as ``/usr/local/modulefiles/mpi/openmpi/2.0.1/intel-17.0.0``
+#. Test by running some <Examples>_.
+
+Version 2.0.1, Intel 15.0.7 compiler
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Ensure :ref:`Intel compilers 15.0.7 <sharc-intel-compilers>` are installed and licensed.
+#. Download, compile and install OpenMPI 2.0.1 using :download:`this script </sharc/software/install_scripts/mpi/openmpi/2.0.1/intel-15.0.7/install.sh>`.
+#. Install :download:`this modulefile </sharc/software/modulefiles/mpi/openmpi/2.0.1/intel-15.0.7>` as ``/usr/local/modulefiles/mpi/openmpi/2.0.1/intel-15.0.7``
+#. Test by running some <Examples>_.
+
+Version 1.10.4, Intel 15.0.7 compiler
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Ensure :ref:`Intel compilers 15.0.7 <sharc-intel-compilers>` are installed and licensed.
+#. Download, compile and install OpenMPI 1.10.4 using :download:`this script </sharc/software/install_scripts/mpi/openmpi/1.10.4/intel-15.0.7/install.sh>`.
+#. Install :download:`this modulefile </sharc/software/modulefiles/mpi/openmpi/1.10.4/intel-15.0.7>` as ``/usr/local/modulefiles/mpi/openmpi/1.10.4/intel-15.0.7``
 #. Test by running some <Examples>_.
