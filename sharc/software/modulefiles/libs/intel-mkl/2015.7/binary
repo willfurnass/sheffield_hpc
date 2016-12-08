@@ -1,0 +1,38 @@
+#%Module1.0#####################################################################
+#
+# Intel Math Kernel Library (MKL) 2015.7 module file
+# 
+################################################################################
+
+# Module file logging
+source /usr/local/etc/module_logging.tcl
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes the `Intel Math Kernel Library (MLK) $version' available for use"
+}
+
+module-whatis   "Makes the `Intel Math Kernel Library (MLK) available for use"
+
+# module variables
+#
+set     version      2015.7
+set     intelpsroot     /usr/local/packages/dev/intel-ps-xe-ce/$version/binary/
+
+# Variables determined using
+# env2 -from bash -to modulecmd "/usr/local/packages/dev/intel-ps-xe-ce/2015.7/binary/composer_xe_2015.7.235/mkl/bin/mklvars.sh intel64" | sed -e "s#/usr/local/packages/dev/intel-ps-xe-ce/2015.7/binary#\$intelpsroot#g" -e 's/[{}]//g'
+prepend-path MIC_LD_LIBRARY_PATH $intelpsroot/composer_xe_2015.7.235/mkl/lib/mic;
+prepend-path MIC_LD_LIBRARY_PATH $intelpsroot/composer_xe_2015.7.235/compiler/lib/mic;
+prepend-path CPATH $intelpsroot/composer_xe_2015.7.235/mkl/include;
+prepend-path LD_LIBRARY_PATH $intelpsroot/composer_xe_2015.7.235/mkl/lib/intel64;
+prepend-path LD_LIBRARY_PATH $intelpsroot/composer_xe_2015.7.235/compiler/lib/intel64;
+prepend-path MANPATH $intelpsroot/composer_xe_2015.7.235/man/en_US;
+prepend-path LIBRARY_PATH $intelpsroot/composer_xe_2015.7.235/mkl/lib/intel64;
+prepend-path LIBRARY_PATH $intelpsroot/composer_xe_2015.7.235/compiler/lib/intel64;
+prepend-path NLSPATH $intelpsroot/composer_xe_2015.7.235/mkl/lib/intel64/locale/%l_%t/%N;
+
+setenv MKLROOT $intelpsroot/composer_xe_2015.7.235/mkl
+
+# License file (points at license server)
+setenv INTEL_LICENSE_FILE /usr/local/packages/dev/intel-ps-xe-ce/license.lic
