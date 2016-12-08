@@ -77,7 +77,7 @@ Version 2.0.1, Intel 15.0.7 compiler
 #. Test by running some <Examples>_.
 
 Version 1.10.4, Intel 15.0.7 compiler
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Ensure :ref:`Intel compilers 15.0.7 <sharc-intel-compilers>` are installed and licensed.
 #. Download, compile and install OpenMPI 1.10.4 using :download:`this script </sharc/software/install_scripts/mpi/openmpi/1.10.4/intel-15.0.7/install.sh>`.
