@@ -1,6 +1,6 @@
 #%Module1.0#####################################################################
 ##
-## Gromacs 2016.1 (serial + FFTW3) module file
+## Gromacs 2016.1 (serial + MKL) module file
 ##
 
 ## Module file logging
@@ -14,11 +14,12 @@ proc ModulesHelp { } {
     global gromacsvers
     global compiler
     global compilervers
-    puts stderr "\tAdds Gromacs $gromacsvers (serial + FFTW3) (and $compiler $compilervers) to your environment"
+    puts stderr "\tAdds Gromacs $gromacsvers (serial + MKL) (and $compiler $compilervers) to your environment"
 }
-module-whatis "\tAdds Gromacs $gromacsvers (serial + FFTW3) (and $compiler $compilervers) to your environment"
+module-whatis "\tAdds Gromacs $gromacsvers (serial + MKL) (and $compiler $compilervers) to your environment"
 
 module load compilers/$compiler/$compilervers
+module load libs/binlibs/intel-mkl/2017.0
 
 set             GROMACS_DIR     /usr/local/packages6/apps/$compiler/$compilervers/gromacs/$gromacsvers-serial
 

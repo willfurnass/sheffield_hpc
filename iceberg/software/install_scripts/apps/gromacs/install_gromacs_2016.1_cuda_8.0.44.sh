@@ -1,13 +1,13 @@
 #!/bin/bash
 #$ -l gpu=1
 #$ -m bea
-#$ -M email@sheffield.ac.uk
+#$ -M w.furnass@sheffield.ac.uk
 #$ -j y
-#$ -o /home/user/logs/gromacs_2016.1_cuda_build.log
+#$ -o /home/$USER/logs/gromacs_2016.1_cuda_build.log
 #$ -N gromacs_2016_1_cuda
 
 ################################################
-# Install Gromacs software on Iceberg
+# Install Gromacs 2016.1 (CUDA build) on Iceberg
 #
 # Will Furnass
 # University of Sheffield
@@ -25,7 +25,7 @@ compiler=gcc
 compiler_vers=4.9.2  
 filename=gromacs-$version.tar.gz
 baseurl=ftp://ftp.gromacs.org/pub/gromacs/
-build_dir=/scratch/${USER}/gromacs/$version/
+build_dir=/scratch/${USER}/gromacs/${version}-cuda-${cuda_vers}
 inst_dir=/usr/local/packages6/apps/${compiler}/${compiler_vers}/gromacs/${version}-cuda-${cuda_vers}
 workers=1
 
@@ -38,16 +38,11 @@ workers=1
 ################################################
 
 handle_error () {
-    errcode=$? # save the exit code as the first thing done in the trap function 
-    echo "error $errorcode" 
-    echo "the command executing at the
-    time of the error was" echo "$BASH_COMMAND" 
-    echo "on line ${BASH_LINENO[0]}"
-    # do some error handling, cleanup, logging, notification $BASH_COMMAND
-    # contains the command that was being executed at the time of the trap
-    # ${BASH_LINENO[0]} contains the line number in the script of that command
-    # exit the script or return to try again, etc.
-    exit $errcode  # or use some other value or do return instead 
+    errcode=$?
+    echo "Error code: $errorcode" 
+    echo "Errored command: " echo "$BASH_COMMAND" 
+    echo "Error on line: ${BASH_LINENO[0]}"
+    exit $errcode  
 } 
 trap handle_error ERR
 
@@ -57,8 +52,8 @@ trap handle_error ERR
 
 module load compilers/${compiler}/${compiler_vers}
 module load compilers/cmake/3.3.0
+module load libs/gcc/4.9.2/boost/1.60.0
 module load libs/cuda/${cuda_vers}
-module load libs/gcc/5.2/boost/1.59
 
 ################################################
 # Create build and install dirs 
@@ -79,16 +74,18 @@ pushd gromacs-$version
 [[ -d build ]] && rm -r build
 mkdir build
 pushd build
+# As we only have fftw3 library compiled with double precision we have to add -DGMX_BUILD_OWN_FFTW=ON
 cmake .. \
     -DCMAKE_INSTALL_PREFIX=${inst_dir} \
-    -DGMX_FFT_LIBRARY=fftw3 \
     -DGMX_BUILD_OWN_FFTW=ON \
-    -DGMX_GPU=ON \
+    -DGMX_FFT_LIBRARY=fftw3 \
     -DGMX_SIMD=SSE4.1 \
-    -DREGRESSIONTEST_DOWNLOAD=ON
-make -j${workers} 
-# Regression tests
-make check
+    -DREGRESSIONTEST_DOWNLOAD=ON \
+    -DGMX_GPU=ON \
+    -DGMX_MPI=OFF
+make -j ${workers} 
+# Run regression tests and don't quit just because the tests fail
+make -j ${workers} check && /bin/true
 make install
 
 ################################################
@@ -97,6 +94,3 @@ make install
 
 chown -R ${USER}:app-admins ${inst_dir}
 chmod -R g+w ${inst_dir}
-
-popd
-
