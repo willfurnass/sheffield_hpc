@@ -15,12 +15,27 @@ Interactive Usage
 
 After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the ``qsh`` or ``qrsh`` command. To make GROMACS available in this session, run one of the following commands: ::
 
-        module load apps/gcc/4.9.2/gromacs/2016.1-cuda-8.0.44
         module load apps/gcc/4.9.2/gromacs/2016.1-serial
-        module load apps/gcc/4.9.2/gromacs/2016.1-serial-mkl
+        module load apps/gcc/4.9.2/gromacs/2016.1-cuda-8.0.44
 
         module load apps/intel/15/gromacs/5.1.2
         module load apps/intel/15/gromacs/5.1.2-cuda-7.5.18
+
+Testing
+-------
+
+Like so: ::
+
+        cd /data/$USER
+        git clone https://gerrit.gromacs.org/regressiontests gromacs_regression_tests
+        cd gromacs_regression_tests
+        ./gmxtest.pl all -noverbose
+
+Tests were run for:
+
+* apps/gcc/4.9.2/gromacs/2016.1-serial using one core and 16GB of real memory
+* apps/gcc/4.9.2/gromacs/2016.1-serial using 16 cores and 1GB of real memory per core
+* apps/gcc/4.9.2/gromacs/2016.1-cuda using one core and 16GB of real memory
 
 Installation notes
 -------------------
