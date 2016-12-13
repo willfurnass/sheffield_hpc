@@ -61,7 +61,7 @@ tar -xzf openmpi-${version}.tar.gz
 cd openmpi-${version}
 
 ./configure --prefix=${prefix} --with-psm2 CC=icc CXX=icpc FC=ifort
-make 
+make
 make check
 make install
 
@@ -77,7 +77,7 @@ cp ${mca_conf} ${prefix}/etc/openmpi-mca-params.conf
 pushd ${prefix}
 curl -L https://github.com/open-mpi/ompi/archive/v${short_version}.tar.gz | tar -zx
 mv ompi-${short_version}/examples .
-rm -r ompi-${short_version} 
+rm -r ompi-${short_version}
 popd
 
 echo "Next, install modulefile as $modulefile."

@@ -20,9 +20,6 @@ set openmpiroot      /usr/local/packages/mpi/openmpi/$openmpiversion/$compiler-$
 
 module-whatis   "loads the necessary `openmpi-$openmpiversion' library paths"
 
-#setenv OMPI_MCA_btl_tcp_if_include eth0
-#setenv OMPI_MCA_btl tcp,self
-
 module load dev/$compiler/$compilerversion
 
 setenv MPI_HOME $openmpiroot
