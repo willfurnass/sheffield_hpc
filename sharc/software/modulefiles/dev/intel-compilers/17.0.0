@@ -26,20 +26,21 @@ set     intelroot    /usr/local/packages/dev/intel-ps-xe-ce/$parallelstudioversi
 module load apps/java
 
 # Compiler variables determined using
-# env2 -from bash -to modulecmd "/usr/local/packages/dev/intel-ps-xe-ce/2017.0/binary/bin/compilervars.sh intel64" | sed -e "s#/usr/local/packages/dev/intel-ps-xe-ce/2017.0/binary#\$intelroot#g" -e 's/[{}]//g'
+#    env2 -from bash -to modulecmd "/usr/local/packages/dev/intel-ps-xe-ce/2017.0/binary/bin/compilervars.sh intel64" | sed -e "s#/usr/local/packages/dev/intel-ps-xe-ce/2017.0/binary#\$intelroot#g" -e 's/[{}]//g'
+# Then comment-out any lines containing '/mpi'
 prepend-path MIC_LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/tbb/lib/mic;
 prepend-path MIC_LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/mkl/lib/mic;
 prepend-path MIC_LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/compiler/lib/mic;
 prepend-path MIC_LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/ipp/lib/mic;
 prepend-path MIC_LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/compiler/lib/mic;
-prepend-path MIC_LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/mpi/mic/lib;
+#prepend-path MIC_LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/mpi/mic/lib;
 prepend-path PATH $intelroot/debugger_2017/gdb/intel64_mic/bin;
-prepend-path PATH $intelroot/compilers_and_libraries_2017.0.098/linux/mpi/intel64/bin;
+#prepend-path PATH $intelroot/compilers_and_libraries_2017.0.098/linux/mpi/intel64/bin;
 prepend-path PATH $intelroot/compilers_and_libraries_2017.0.098/linux/bin/intel64;
 prepend-path MANPATH $intelroot/documentation_2017/en/debugger//gdb-igfx/man/;
 prepend-path MANPATH $intelroot/documentation_2017/en/debugger//gdb-mic/man/;
 prepend-path MANPATH $intelroot/documentation_2017/en/debugger//gdb-ia/man/;
-prepend-path MANPATH $intelroot/compilers_and_libraries_2017.0.098/linux/mpi/man;
+#prepend-path MANPATH $intelroot/compilers_and_libraries_2017.0.098/linux/mpi/man;
 prepend-path MANPATH $intelroot/man/common;
 prepend-path LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/daal/lib/intel64_lin;
 prepend-path LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/tbb/lib/intel64/gcc4.7;
@@ -50,9 +51,9 @@ prepend-path MIC_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linu
 prepend-path MIC_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/mkl/lib/mic;
 prepend-path MIC_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/compiler/lib/mic;
 prepend-path MIC_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/compiler/lib/mic;
-prepend-path MIC_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/mpi/mic/lib;
+#prepend-path MIC_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/mpi/mic/lib;
 prepend-path CLASSPATH $intelroot/compilers_and_libraries_2017.0.098/linux/daal/lib/daal.jar;
-prepend-path CLASSPATH $intelroot/compilers_and_libraries_2017.0.098/linux/mpi/intel64/lib/mpi.jar;
+#prepend-path CLASSPATH $intelroot/compilers_and_libraries_2017.0.098/linux/mpi/intel64/lib/mpi.jar;
 append-path INTEL_LICENSE_FILE $intelroot/compilers_and_libraries_2017.0.098/linux/licenses;
 append-path INTEL_LICENSE_FILE /opt/intel/licenses;
 append-path INTEL_LICENSE_FILE /home/sa_cs1wf/intel/licenses;
@@ -67,8 +68,8 @@ prepend-path LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux
 prepend-path LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/mkl/lib/intel64;
 prepend-path LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/compiler/lib/intel64;
 prepend-path LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/ipp/lib/intel64;
-prepend-path LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/mpi/mic/lib;
-prepend-path LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/mpi/intel64/lib;
+#prepend-path LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/mpi/mic/lib;
+#prepend-path LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/mpi/intel64/lib;
 prepend-path LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/compiler/lib/intel64_lin;
 prepend-path LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2017.0.098/linux/compiler/lib/intel64;
 prepend-path INFOPATH $intelroot/documentation_2017/en/debugger//gdb-igfx/info/;
