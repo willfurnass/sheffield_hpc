@@ -20,9 +20,6 @@ set openmpiroot      /usr/local/packages/mpi/openmpi/$openmpiversion/intel-$comp
 
 module-whatis   "Adds `openmpi-$openmpiversion' (+ Intel compilers) to your PATH environment variable and necessary libraries"
 
-#setenv OMPI_MCA_btl_tcp_if_include eth0
-#setenv OMPI_MCA_btl tcp,self
-
 module load dev/intel-compilers/$compilerversion
 
 setenv MPI_HOME $openmpiroot

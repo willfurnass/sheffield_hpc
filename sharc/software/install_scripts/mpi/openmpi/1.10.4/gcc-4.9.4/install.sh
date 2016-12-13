@@ -1,5 +1,5 @@
 #!/bin/bash
-# Install OpenMPI 1.10.4 built with Intel 15.0.7 compilers on the ShARC cluster
+# Install OpenMPI 1.10.4 built with GCC 4.9.4 on the ShARC cluster
 
 ##############################################################################
 # Error handling
@@ -19,7 +19,7 @@ trap handle_error ERR
 ##############################################################################
 
 module purge
-module load dev/intel-compilers/15.0.7
+module load dev/gcc/4.9.4
 
 ##############################################################################
 # Variable setup
@@ -27,10 +27,9 @@ module load dev/intel-compilers/15.0.7
 
 short_version=1.10
 version=${short_version}.4
-compiler=intel-15.0.7
-build_dir="${TMPDIR-/tmp}/${USER}/openmpi_${version}"
-prefix="/usr/local/packages/mpi/openmpi/${version}/${compiler}"
-modulefile="/usr/local/modulefiles/mpi/openmpi/${version}/${compiler}"
+build_dir="/scratch/${USER}/openmpi_${version}"
+prefix="/usr/local/packages/mpi/openmpi/${version}/gcc-4.9.4"
+
 filename="openmpi-${version}.tar.gz"
 baseurl="http://www.open-mpi.org/software/ompi/v${short_version}/downloads/"
 mca_conf="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/openmpi-mca-params.conf"
@@ -40,18 +39,19 @@ mca_conf="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/openmpi-mca-params.c
 ##############################################################################
 
 [[ -d $build_dir ]] || mkdir -p $build_dir
-
-for d in $prefix $(dirname $modulefile); do 
-    mkdir -m 2775 -p $d
-    chown -R ${USER}:app-admins $d
-done
-
-##############################################################################
-# Download source
-##############################################################################
-
 cd $build_dir
-wget -c ${baseurl}/${filename}
+
+mkdir -p $prefix
+chown ${USER}:app-admins $prefix
+chmod 2775 $prefix
+
+######################### Download source ###################################
+if [[ -e $filename ]]; then
+    echo "Install tarball exists. Download not required."                         
+else                                                                            
+    echo "Downloading source" 
+    wget ${baseurl}/${filename}
+fi
 
 ##############################################################################
 # Build and install
@@ -60,7 +60,7 @@ wget -c ${baseurl}/${filename}
 tar -xzf openmpi-${version}.tar.gz
 cd openmpi-${version}
 
-./configure --prefix=${prefix} --with-psm2 CC=icc CXX=icpc FC=ifort
+./configure --prefix=${prefix} --with-psm2
 make
 make check
 make install
@@ -79,5 +79,3 @@ curl -L https://github.com/open-mpi/ompi/archive/v${short_version}.tar.gz | tar 
 mv ompi-${short_version}/examples .
 rm -r ompi-${short_version}
 popd
-
-echo "Next, install modulefile as $modulefile."

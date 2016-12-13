@@ -1,44 +1,42 @@
 #!/bin/bash
+# Install OpenMPI 1.10.4 built with GCC 6.2 on the ShARC cluster
 
-# This is a template script for building and installing software on ShARC.
-# You should use it to document how you install things.
-# You will need to configure any module loads the build needs and then 
-# configure the variables for the build.
-# This script will then create the directories you need and download and unzip
-# the source in to the build dir.
-
-############################# Error handling ###################################
+##############################################################################
+# Error handling
+##############################################################################
 
 handle_error () {
-    errcode=$? # save the exit code as the first thing done in the trap function 
-    echo "error $errorcode" 
-    echo "the command executing at the
-    time of the error was" echo "$BASH_COMMAND" 
-    echo "on line ${BASH_LINENO[0]}"
-    # do some error handling, cleanup, logging, notification $BASH_COMMAND
-    # contains the command that was being executed at the time of the trap
-    # ${BASH_LINENO[0]} contains the line number in the script of that command
-    # exit the script or return to try again, etc.
-    exit $errcode  # or use some other value or do return instead 
+    errcode=$?
+    echo "Error code: $errorcode" 
+    echo "Error command: " echo "$BASH_COMMAND" 
+    echo "Error on line: ${BASH_LINENO[0]}"
+    exit $errcode 
 } 
 trap handle_error ERR
 
+##############################################################################
+# Module loads
+##############################################################################
 
-############################# Module Loads ###################################
-
+module purge
 module load dev/gcc/6.2
 
-############################## Variable Setup ################################
+##############################################################################
+# Variable setup
+##############################################################################
+
 short_version=1.10
 version=${short_version}.4
 build_dir="/scratch/${USER}/openmpi_${version}"
 prefix="/usr/local/packages/mpi/openmpi/${version}/gcc-6.2"
-workers=4
 
 filename="openmpi-${version}.tar.gz"
 baseurl="http://www.open-mpi.org/software/ompi/v${short_version}/downloads/"
+mca_conf="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/openmpi-mca-params.conf"
 
-##################### Create build and install dir ###########################
+##############################################################################
+# Create build, install and modulefile dirs
+##############################################################################
 
 [[ -d $build_dir ]] || mkdir -p $build_dir
 cd $build_dir
@@ -63,17 +61,21 @@ tar -xzf openmpi-${version}.tar.gz
 cd openmpi-${version}
 
 ./configure --prefix=${prefix} --with-psm2
-make -j${workers}
+make
 make check
 make install
+
+##############################################################################
+# Configure default settings
+##############################################################################
+cp ${mca_conf} ${prefix}/etc/openmpi-mca-params.conf
 
 ##############################################################################
 # Download and install examples
 ##############################################################################
 
 pushd ${prefix}
-wget https://github.com/open-mpi/ompi/archive/v${short_version}.zip
-unzip v${short_version}.zip 
+curl -L https://github.com/open-mpi/ompi/archive/v${short_version}.tar.gz | tar -zx
 mv ompi-${short_version}/examples .
-rm -r ompi-${short_version}.x v${short_version}.zip
+rm -r ompi-${short_version}
 popd
