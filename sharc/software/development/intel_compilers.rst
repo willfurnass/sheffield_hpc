@@ -5,41 +5,47 @@ Intel Compilers
 
 Intel Compilers help create C, C++ and Fortran applications that can take full advantage of the advanced hardware capabilities available in Intel processors and co-processors. They also simplify that development by providing high level parallel models and built-in features like explicit vectorization and optimization reports.
 
-Parallel Studio Composer Edition 2017 versions
-----------------------------------------------
+Versions
+--------
 
-These versions of the Intel compilers were installed as part of :ref:`Intel Parallel Studio <sharc-intel-parallel-studio>` but can be used with or without the other Parallel Studio components.
+The Intel compilers were installed as part of :ref:`Intel Parallel Studio <sharc-intel-parallel-studio>` but can be used with or without the other Parallel Studio components.
 
-After connecting to the ShARC cluster (see :ref:`ssh`),  start an interactive session with the :code:`qsh` or :code:`qrsh` command then run ::
+After connecting to the ShARC cluster (see :ref:`ssh`),  start an interactive session with the :code:`qsh` or :code:`qrsh` command then activate a specific version of the compilers using one of: ::
 
-    dev/intel-compilers/17.0.0/binary
+        module load dev/intel-compilers/17.0.0/binary
+        module load dev/intel-compilers/15.0.7/binary
 
 Compilation examples
 --------------------
-**C**
 
-To compile the C hello world example into an executable called ``hello`` using the Intel C compiler ::
+C
+^
 
-    icc hello.c -o hello
 
-**C++**
+To compile the C hello world example into an executable called ``hello`` using the Intel C compiler: ::
 
-To compile the C++ hello world example into an executable called ``hello`` using the Intel C++ compiler ::
+        icc hello.c -o hello
+
+C++
+^^^
+
+To compile the C++ hello world example into an executable called ``hello`` using the Intel C++ compiler: ::
 
       icpc hello.cpp -o hello
 
-**Fortran**
+Fortran
+^^^^^^^
 
-To compile the Fortran hello world example into an executable called ``hello`` using the Intel Fortran compiler ::
+To compile the Fortran hello world example into an executable called ``hello`` using the Intel Fortran compiler: ::
 
       ifort hello.f90 -o hello
 
 Detailed Documentation
 ----------------------
-Once you have loaded the module on Iceberg, ``man`` pages are available for Intel compiler products ::
+Once you have loaded the module on Iceberg, ``man`` pages are available for Intel compiler products: ::
 
-    man ifort
-    man icc
+        man ifort
+        man icc
 
 The following links are to Intel's website:
 
@@ -62,8 +68,16 @@ Installation Notes
 
 The following notes are primarily for system administrators.
 
-**Intel Compilers 2017**
+Intel Compilers 17.0.0
+^^^^^^^^^^^^^^^^^^^^^^
 
 Installed as part of :ref:`Parallel Studio Composer Edition 2017 <sharc-intel-parallel-studio>`.
 
 :download:`This modulefile </sharc/software/modulefiles/dev/intel-compilers/17.0.0>` was installed as ``/usr/local/modulefiles/dev/intel-compilers/17.0.0``.
+
+Intel Compilers 15.0.7
+^^^^^^^^^^^^^^^^^^^^^^
+
+Installed as part of :ref:`Parallel Studio Composer Edition 2015.7 <sharc-intel-parallel-studio>`.
+
+:download:`This modulefile </sharc/software/modulefiles/dev/intel-compilers/15.0.7>` was installed as ``/usr/local/modulefiles/dev/intel-compilers/15.0.7``.

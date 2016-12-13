@@ -1,0 +1,100 @@
+#%Module1.0#####################################################################
+##
+## Intel compilers 15.0.7 module file
+## 
+################################################################################
+
+## Module file logging
+#source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global $compilerversion
+
+        puts stderr "   Makes `Intel C++ and Fortran compilers plus debugger version $compilerversion' available for use"
+}
+
+module-whatis   "Makes Intel C++ and Fortran compilers (ifort and icc) and debugger available"
+
+conflict dev/intel-compilers
+
+set     compilerversion 15.0.7
+set     parallelstudioversion 2015.7
+set     intelroot    /usr/local/packages/dev/intel-ps-xe-ce/$parallelstudioversion/binary
+ 
+# load java  ( needed with debugging etc. ) 
+module load apps/java
+
+# Compiler variables determined using
+# env2 -from bash -to modulecmd "/usr/local/packages/dev/intel-ps-xe-ce/2015.7/binary/bin/compilervars.sh intel64" | sed -e "s#/usr/local/packages/dev/intel-ps-xe-ce/2015.7/binary#\$intelroot#g" -e 's/[{}]//g' | grep -v 'append-path MANPATH ;'
+append-path MIC_LD_LIBRARY_PATH $intelroot/composer_xe_2015.7.235/compiler/lib/mic;
+append-path MIC_LD_LIBRARY_PATH $intelroot/composer_xe_2015.7.235/mpirt/lib/mic;
+append-path MIC_LD_LIBRARY_PATH $intelroot/composer_xe_2015.7.235/compiler/lib/mic;
+append-path MIC_LD_LIBRARY_PATH $intelroot/composer_xe_2015.7.235/mkl/lib/mic;
+append-path MIC_LD_LIBRARY_PATH $intelroot/composer_xe_2015.7.235/tbb/lib/mic;
+prepend-path PATH $intelroot/composer_xe_2015.7.235/debugger/gdb/intel64_mic/bin;
+prepend-path PATH $intelroot/composer_xe_2015.7.235/bin/intel64;
+append-path INTEL_LICENSE_FILE $intelroot/composer_xe_2015.7.235/licenses;
+append-path INTEL_LICENSE_FILE /opt/intel/licenses;
+append-path INTEL_LICENSE_FILE /home/sa_cs1wf/intel/licenses;
+append-path CPATH $intelroot/composer_xe_2015.7.235/ipp/include;
+append-path CPATH $intelroot/composer_xe_2015.7.235/mkl/include;
+append-path CPATH $intelroot/composer_xe_2015.7.235/tbb/include;
+append-path LD_LIBRARY_PATH $intelroot/composer_xe_2015.7.235/compiler/lib/intel64;
+append-path LD_LIBRARY_PATH $intelroot/composer_xe_2015.7.235/mpirt/lib/intel64;
+append-path LD_LIBRARY_PATH $intelroot/composer_xe_2015.7.235/ipp/../compiler/lib/intel64;
+append-path LD_LIBRARY_PATH $intelroot/composer_xe_2015.7.235/ipp/lib/intel64;
+append-path LD_LIBRARY_PATH $intelroot/composer_xe_2015.7.235/ipp/tools/intel64/perfsys;
+append-path LD_LIBRARY_PATH $intelroot/composer_xe_2015.7.235/compiler/lib/intel64;
+append-path LD_LIBRARY_PATH $intelroot/composer_xe_2015.7.235/mkl/lib/intel64;
+append-path LD_LIBRARY_PATH $intelroot/composer_xe_2015.7.235/tbb/lib/intel64/gcc4.4;
+append-path LD_LIBRARY_PATH $intelroot/composer_xe_2015.7.235/debugger/libipt/intel64/lib;
+prepend-path MANPATH $intelroot/composer_xe_2015.7.235/debugger/gdb/intel64_mic/share/man/;
+prepend-path MANPATH $intelroot/composer_xe_2015.7.235/debugger/gdb/intel64/share/man/;
+prepend-path MANPATH $intelroot/composer_xe_2015.7.235/man/en_US;
+prepend-path MANPATH $intelroot/composer_xe_2015.7.235/man/en_US;
+append-path LIBRARY_PATH $intelroot/composer_xe_2015.7.235/compiler/lib/intel64;
+append-path LIBRARY_PATH $intelroot/composer_xe_2015.7.235/ipp/../compiler/lib/intel64;
+append-path LIBRARY_PATH $intelroot/composer_xe_2015.7.235/ipp/lib/intel64;
+append-path LIBRARY_PATH $intelroot/composer_xe_2015.7.235/compiler/lib/intel64;
+append-path LIBRARY_PATH $intelroot/composer_xe_2015.7.235/mkl/lib/intel64;
+append-path LIBRARY_PATH $intelroot/composer_xe_2015.7.235/tbb/lib/intel64/gcc4.4;
+append-path INFOPATH $intelroot/composer_xe_2015.7.235/debugger/gdb/intel64/share/info/;
+append-path INFOPATH $intelroot/composer_xe_2015.7.235/debugger/gdb/intel64_mic/share/info/;
+append-path MIC_LIBRARY_PATH $intelroot/composer_xe_2015.7.235/compiler/lib/mic;
+append-path MIC_LIBRARY_PATH $intelroot/composer_xe_2015.7.235/mpirt/lib/mic;
+append-path MIC_LIBRARY_PATH $intelroot/composer_xe_2015.7.235/tbb/lib/mic;
+append-path NLSPATH $intelroot/composer_xe_2015.7.235/compiler/lib/intel64/locale/%l_%t/%N;
+append-path NLSPATH $intelroot/composer_xe_2015.7.235/ipp/lib/intel64/locale/%l_%t/%N;
+append-path NLSPATH $intelroot/composer_xe_2015.7.235/mkl/lib/intel64/locale/%l_%t/%N;
+append-path NLSPATH $intelroot/composer_xe_2015.7.235/debugger/gdb/intel64_mic/share/locale/%l_%t/%N;
+append-path NLSPATH $intelroot/composer_xe_2015.7.235/debugger/gdb/intel64/share/locale/%l_%t/%N;
+
+# Debugger variables determined using
+# env2 -from bash -to modulecmd "/usr/local/packages/dev/intel-ps-xe-ce/2015.7/binary/composer_xe_2015.7.235/bin/debuggervars.sh intel64" | sed -e "s#/usr/local/packages/dev/intel-ps-xe-ce/2015.7/binary#\$intelroot#g" -e 's/[{}]//g'
+prepend-path PATH $intelroot/composer_xe_2015.7.235/debugger/gdb/intel64_mic/bin;
+prepend-path LD_LIBRARY_PATH $intelroot/composer_xe_2015.7.235/debugger/libipt/intel64/lib;
+prepend-path MANPATH $intelroot/composer_xe_2015.7.235/debugger/gdb/intel64_mic/share/man/;
+prepend-path MANPATH $intelroot/composer_xe_2015.7.235/debugger/gdb/intel64/share/man/;
+append-path INFOPATH $intelroot/composer_xe_2015.7.235/debugger/gdb/intel64/share/info/;
+append-path INFOPATH $intelroot/composer_xe_2015.7.235/debugger/gdb/intel64_mic/share/info/;
+prepend-path NLSPATH $intelroot/composer_xe_2015.7.235/debugger/gdb/intel64/share/locale/%l_%t/%N;
+prepend-path NLSPATH $intelroot/composer_xe_2015.7.235/debugger/gdb/intel64_mic/share/locale/%l_%t/%N;
+
+# Shorthand variables for compilers
+
+set     cc              icc
+set     cxx             icpc
+set     f77             ifort
+set     f90             ifort
+set     f95             ifort
+set     fc              ifort
+setenv          CC              $cc
+setenv          CXX             $cxx
+setenv          F77             $f77
+setenv          FC              $fc
+setenv          F90             $f90
+setenv          F95             $f95
+
+# License file (points at license server)
+setenv INTEL_LICENSE_FILE /usr/local/packages/dev/intel-ps-xe-ce/license.lic

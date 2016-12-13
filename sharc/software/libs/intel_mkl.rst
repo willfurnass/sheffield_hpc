@@ -9,9 +9,10 @@ Parallel Studio Composer Edition version
 ----------------------------------------
 
 MKL can be used with and without :ref:`other Parallel Studio packages <sharc-intel-parallel-studio>`.
-To access it: ::
+To access it run **one** of the following: ::
 
     module load libs/intel-mkl/2017.0/binary
+    module load libs/intel-mkl/2015.7/binary
 
 Sample C and Fortran programs demonstrating matrix multiplication 
 are available for **version 2017.0** in the directory ``$MKL_SAMPLES``: ::
@@ -80,8 +81,16 @@ Installation Notes
 
 The following notes are primarily for system administrators.
 
-**Intel MKL 2017.0**
+Intel MKL 2017.0
+^^^^^^^^^^^^^^^^
 
 Installed as part of :ref:`Parallel Studio Composer Edition 2017 <sharc-intel-parallel-studio>`.
 
 :download:`This modulefile </sharc/software/modulefiles/libs/intel-mkl/2017.0/binary>` was installed as ``/usr/local/modulefiles/libs/intel-mkl/2017.0/binary``.
+
+Intel MKL 2015.7
+^^^^^^^^^^^^^^^^
+
+Installed as part of :ref:`Parallel Studio Composer Edition 2015.7 <sharc-intel-parallel-studio>`.
+
+:download:`This modulefile </sharc/software/modulefiles/libs/intel-mkl/2015.7/binary>` was installed as ``/usr/local/modulefiles/libs/intel-mkl/2015.7/binary``.
