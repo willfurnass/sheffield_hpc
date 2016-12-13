@@ -1,16 +1,21 @@
+.. _cmake_iceberg:
+
 CMake
 =====
 
 CMake is a build tool commonly used when compiling other libraries.
 
-CMake is installed in `/usr/local/packages6/cmake`.
-
 Usage
 -----
 
-CMake can be loaded with::
+CMake can be loaded with: ::
 
-    module load compilers/cmake
+    module load compilers/cmake/3.3.0
+
+Usage often involves: 
+
+1. Creating and ``cd``-ing into a dedicated build directory within a source tree then
+2. Running something like ``cmake -DSOME_OPTION -DANOTHER_OPTION ..``
 
 Installation
 ------------
@@ -25,3 +30,9 @@ Run the following commands::
     gmake -j8
 
     gmake install
+
+Module file: ::
+
+        module-whatis    loads the necessary `cmake-3.3.0' library paths 
+        prepend-path     PATH /usr/local/packages6/cmake/3.3.0/bin 
+        prepend-path     MANPATH /usr/local/packages6/cmake/3.3.0/man 
