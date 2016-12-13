@@ -6,16 +6,11 @@
 ##############################################################################
 
 handle_error () {
-    errcode=$? # save the exit code as the first thing done in the trap function 
-    echo "error $errorcode" 
-    echo "the command executing at the
-    time of the error was" echo "$BASH_COMMAND" 
-    echo "on line ${BASH_LINENO[0]}"
-    # do some error handling, cleanup, logging, notification $BASH_COMMAND
-    # contains the command that was being executed at the time of the trap
-    # ${BASH_LINENO[0]} contains the line number in the script of that command
-    # exit the script or return to try again, etc.
-    exit $errcode  # or use some other value or do return instead 
+    errcode=$?
+    echo "Error code: $errorcode" 
+    echo "Error command: " echo "$BASH_COMMAND" 
+    echo "Error on line: ${BASH_LINENO[0]}"
+    exit $errcode 
 } 
 trap handle_error ERR
 
@@ -23,6 +18,7 @@ trap handle_error ERR
 # Module loads
 ##############################################################################
 
+module purge
 module load dev/intel-compilers/15.0.7
 
 ##############################################################################
@@ -37,7 +33,7 @@ prefix="/usr/local/packages/mpi/openmpi/${version}/${compiler}"
 modulefile="/usr/local/modulefiles/mpi/openmpi/${version}/${compiler}"
 filename="openmpi-${version}.tar.gz"
 baseurl="http://www.open-mpi.org/software/ompi/v${short_version}/downloads/"
-workers=16  # for building in parallel
+mca_conf="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/openmpi-mca-params.conf"
 
 ##############################################################################
 # Create build, install and modulefile dirs
@@ -65,9 +61,14 @@ tar -xzf openmpi-${version}.tar.gz
 cd openmpi-${version}
 
 ./configure --prefix=${prefix} --with-psm2 CC=icc CXX=icpc FC=ifort
-make -j${workers}
+make 
 make check
 make install
+
+##############################################################################
+# Configure default settings
+##############################################################################
+cp ${mca_conf} ${prefix}/etc/openmpi-mca-params.conf
 
 ##############################################################################
 # Download and install examples
