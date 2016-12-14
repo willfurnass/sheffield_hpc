@@ -91,16 +91,16 @@ To find out your current filestore quota allocation and usage type ``quota``.
 
 If you exceed your file storage allocation
 ------------------------------------------
-As soon as the quota is exceeded your account becomes frozen. In order to avoid this situation it is strongly recommended that you
+As soon as the quota is exceeded your account becomes frozen. In order to avoid this situation it is strongly recommended that you:
 
 * Use the ``quota`` command to check your usage regularly.
-* Copy files that do not need to be backed to the  ``/data/username`` area, or remove them from iceberg completely.
+* Copy files that do not need to be backed up to the  ``/data/username`` area, or remove them from iceberg completely.
 
-Efficiency considerations - The /scratch areas
-----------------------------------------------
+Efficiency considerations: the ``/scratch`` areas
+-------------------------------------------------
 For jobs requiring a lot of Input and Output (I/O), it may sometimes be necessary to store copies of the data on the actual compute node on which your job is running. For this, you can create temporary areas of storage under the directory ``/scratch``. **The** ``/scratch`` **area is local to each worker node** and is not visible to the other worker nodes or to the head-nodes. Therefore any data created by jobs should be transferred to either your ``/data`` or ``/home`` area before the job finishes if you wish to keep them.
 
-The next best I/O performance that requires the minimum amount of work is achieved by keeping your data in the ``/fastdata`` area and running your jobs on the new intel nodes by specifying ``-l arch=intel`` in your job submission script.
+The next best I/O performance that requires the minimum amount of work is achieved by keeping your data in the ``/fastdata`` area and running your jobs on the Intel nodes by specifying ``-l arch=intel*`` in your job submission script.
 
 These methods provide much faster access to data than the network attached storage on either ``/home`` or ``/data`` areas, but you must remember to copy important data back onto your ``/home`` area.
 
@@ -108,7 +108,7 @@ If you decide to use the ``/scratch`` area we recommend that under ``/scratch`` 
 
 Anything under the ``/scratch`` is deleted periodically when the worker-node is idle, whereas files on the ``/fastdata`` area will be deleted only when they are 3 months old.
 
-``\scratch`` uses the ext4 filesystem.
+``/scratch`` uses the ext4 filesystem.
 
 Recovering snapshots
 --------------------
