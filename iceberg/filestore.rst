@@ -65,9 +65,9 @@ You can use the ``lfs``  command to find out which files under /fastdata are old
 
     lfs find -ctime +50 /fastdata/yourusername
 
-``/fastdata`` uses the `Lustre <https://en.wikipedia.org/wiki/Lustre_(file_system)>`_ filesystem. This does not support POSIX locking which can cause issues for some applications.
+``/fastdata`` uses the `Lustre <https://en.wikipedia.org/wiki/Lustre_(file_system)>`_ filesystem. This does not support POSIX locking which can cause issues for some applications (e.g. programs that create/use SQLite databases).
 
-**fastdata** is optimised for large file operations and does not handle lots of small files very well. An example of how slow it can be for large numbers of small files is detailed at http://www.walkingrandomly.com/?p=6167
+``/fastdata`` is optimised for large file operations and does not handle lots of small files very well. An example of how slow it can be for large numbers of small files is detailed at http://www.walkingrandomly.com/?p=6167
 
 Shared directories
 --------------------
@@ -83,6 +83,7 @@ A note regarding permissions: behind the scenes, the file server that provides t
 
 * `which <http://linux.die.net/man/1/which>`_: a directory under ``/shared`` may be on your path and you may be able to run a contained executable without prefixing it with a absolute/relative directory but `which` may fail to find that executable.
 * Perl: scripts that check for executability of files on ``/shared`` using `-x` may fail unless Perl is explicitly told to test for file permissions in a more thorough way (see the mention of ``use filetest 'access'`` `here <http://perldoc.perl.org/functions/-X.html>`_).
+* git: may complain that permissions have changed if a repository is simply moved to ``/shared/someplace`` from elsewhere on Iceberg.  As a workaround you can tell git to not to track Linux permissions for a single repository using ``git config core.filemode false`` or for all repositories using ``git config --global core.filemode false``.
 
 Determining your current filestore allocation
 ---------------------------------------------
