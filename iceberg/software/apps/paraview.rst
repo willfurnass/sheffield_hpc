@@ -16,42 +16,57 @@ Using Paraview on iceberg
 
 This guide describes how to use `Paraview <http://www.paraview.org/>`_ from iceberg.
 Paraview is a parallel visualisation tool designed for use on clusters like iceberg.
-Because iceberg is designed primarily as a headless computational cluster paraview
+Because iceberg is designed primarily as a headless computational cluster Paraview
 has not been installed on iceberg in such a way that you load the GUI remotely on iceberg [1]_.
 Paraview therefore runs on iceberg in client + server mode, the server running 
-on iceberg, and the client on your local machine.
+on iceberg, and the client on your local machine.  You need to: 
 
-Configuring the Client
-######################
+#. **Configure and start the client on your machine** first then
+#. **then start the server on Iceberg**, which will then connect back to the client.
 
-To use Paraview on iceberg, first download and install `Paraview 4.3 <http://www.paraview.org/download/>`_ [2]_.
-Once you have installed Paraview locally (the client) you need to configure the 
-connection to iceberg.
-In Paraview go to File > Connect, then click Add Server, name the connection 
-iceberg, and select 'Client / Server (reverse connection)' for the Server Type,
-the port should retain the default value of 11111.
-Then click configure, on the next screen leave the connection as manual and 
-click save.
-Once you are back at the original connect menu, click connect to start listening
-for the connection from iceberg.
+Configure the Client
+^^^^^^^^^^^^^^^^^^^^
 
-Starting the Server
-###################
+#. Download and install `Paraview 4.3 <http://www.paraview.org/download/>`_ [2]_ on your own machine.
+#. Start the ``paraview`` program on your own machine.
+#. Click **File** -> **Connect** -> **Add Server**
+#. **Name**: ``my_iceberg_paraview_config``
+#. **Server Type**: **Client / Server (reverse connection)** (we want Iceberg to connect to our local machine)
+#. **Port**: ``11111`` (the default)
+#. Click **Configure** to go to the next screen
+#. **Startup Type**: **Manual** (the default)
+#. Click **Save**
+#. Back at the original **Choose Server Configuration** menu, click **Connect** to start listening for a connection from Iceberg
 
-Once you have configured the local paraview client, login to iceberg from the 
-client machine via ssh [3]_ and run `qsub-paraview`.
-This will submit a job to the scheduler que for 16 processes with 4GB or RAM each.
+.. note:: 
+    This method requires that Iceberg can connect to port 11111 on your machine.  
+    You **may need to modify your machine's firewall** to permit such connections.  
+    On Linux machines using the `UFW <https://wiki.archlinux.org/index.php/Uncomplicated_Firewall>`_ firewall you can allow connections
+    to port 11111 on your machine from other machines on the University network (including Iceberg) and from no other machines using: ::
+
+            sudo ufw allow from 143.167.0.0/16 to any port 11111
+
+Start the Server
+^^^^^^^^^^^^^^^^
+
+After configuring the client:
+
+#. Log in to iceberg **from the client machine** via ssh [3]_ 
+#.  Run ``qsub-paraview``.
+
+This will submit a job to the scheduler queue for 16 processes with 4GB of RAM each.
 This is designed to be used for large visualisation tasks, smaller jobs can be 
-requested by specifying standard qsub commands to `qsub-paraview` 
-i.e. `qsub-paraview -pe openmpi-ib 1` will only request one process.
+requested by specifying standard ``qsub`` commands to ``qsub-paraview``.  For example, 
+to request just one process: ::
+
+        qsub-paraview -pe openmpi-ib 1
 
 Assuming you still have the client listening for connections, once the paraview
-job starts in the que it should connect to your client and you should be able 
+job starts in the queue it should connect to your client and you should be able 
 to start accessing data stored on iceberg and rendering images.
 
-
 .. [1] It is not possible to install the latest version of the paraview GUI on  
-   iceberg due to the Qt version shipped with Scientific Liunx 5.
+   iceberg due to the Qt version shipped with Scientific Linux 5.
 .. [2] The client and server versions have to match.
 .. [3] Connecting to Paraview via the automatic method descibed here is not 
    supported on the MyApps portal.
@@ -72,21 +87,22 @@ memory for visualising very large datasets.
 
 Manually Starting the Server
 ----------------------------
-The `qsub-paraview` command is a wrapper that automatically detects the client
+The ``qsub-paraview`` command is a wrapper that automatically detects the client
 IP address from the SSH connection and submits the job.
 It is possible to customise this behavior by copying and modifying this script.
 This for instance would allow you to start the paraview server via MyApps or 
 from a different computer to the one with the client installed.
-The script used by `qsub-paraview` also serves as a good example script and 
-can be copied into your home directory by running `cp /usr/local/bin/pvserver_submit.sh ~/`.
-This script can then be qsubmitted as normal by `qsub`.
-The client IP address can be added manually by replacing `echo $SSH_CLIENT | awk '{ print $1}'`
+The script used by ``qsub-paraview`` also serves as a good example script and 
+can be copied into your home directory by running ``cp /usr/local/bin/pvserver_submit.sh ~/``.
+This script can then be qsubmitted as normal by ``qsub``.
+The client IP address can be added manually by replacing ``echo $SSH_CLIENT | awk '{ print $1}'``
 with the IP address.
-More information on Paraview client/server can be found `Here <http://www.paraview.org/Wiki/Setting_up_a_ParaView_Server#Running_the_Server>`_.
+More information on Paraview client/server can be found 
+`here <http://www.paraview.org/Wiki/Setting_up_a_ParaView_Server#Running_the_Server>`_.
 
 
 Installation
 ------------
 
-Custom build scripts are availible in `/usr/local/extras/paraview/build_scripts`
+Custom build scripts are availible in ``/usr/local/extras/paraview/build_scripts``
 which can be used to recompile.
