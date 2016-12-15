@@ -1,0 +1,964 @@
+/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11 ~/repos/sheffield_hpc_tmp/sharc/software/install_scripts/apps/castep/16.11/intel-15.0.7
+make -C "obj/linux_x86_64_ifort15" ARCH=linux_x86_64_ifort15 castep
+make[1]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/obj/linux_x86_64_ifort15'
+/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/bin/mkdepf90.pl -src buildinfo.f90 -depdir dependencies/
+make[1]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/obj/linux_x86_64_ifort15'
+make[1]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/obj/linux_x86_64_ifort15'
+No need to recompile hartree.o, hartree.mod
+No need to recompile locps.o, locps.mod
+No need to recompile locpot.o, locpot.mod
+No need to recompile magres_utils.o, magres_utils.mod
+No need to recompile secondd.o, secondd.mod
+No need to recompile tddft.o, tddft.mod
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/firstd.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/electronic.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/bs.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    buildinfo.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/raman.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/phonon.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/efield.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/elnes.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/md_pathint.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/pair_pot.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/md.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/geometry.f90 
+No need to recompile paw_recon.o, paw_recon.mod
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/magres_efg.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/magres_hyperfine.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/magres_jcoupling.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/magres_nmr.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/magres.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/optics.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/spectral.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/thermodynamics.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/tssearch_utils.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/tssearch_algor.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/tssearch.f90 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/castep.f90 
+ar rv libutility.a  buildinfo.o
+r - buildinfo.o
+ranlib libutility.a 
+ar rv libfunctional.a bs.o efield.o electronic.o elnes.o firstd.o geometry.o hartree.o locpot.o locps.o magres.o magres_utils.o magres_nmr.o magres_efg.o magres_hyperfine.o magres_jcoupling.o md.o md_pathint.o optics.o pair_pot.o paw_recon.o phonon.o raman.o secondd.o spectral.o tddft.o thermodynamics.o tssearch.o tssearch_algor.o tssearch_utils.o
+r - bs.o
+r - efield.o
+r - electronic.o
+r - elnes.o
+r - firstd.o
+r - geometry.o
+r - hartree.o
+r - locpot.o
+r - locps.o
+r - magres.o
+r - magres_utils.o
+r - magres_nmr.o
+r - magres_efg.o
+r - magres_hyperfine.o
+r - magres_jcoupling.o
+r - md.o
+r - md_pathint.o
+r - optics.o
+r - pair_pot.o
+r - paw_recon.o
+r - phonon.o
+r - raman.o
+r - secondd.o
+r - spectral.o
+r - tddft.o
+r - thermodynamics.o
+r - tssearch.o
+r - tssearch_algor.o
+r - tssearch_utils.o
+ranlib libfunctional.a
+ifort -o castep.serial -O1 -g -traceback -static-intel -openmp castep.o  -L. -lfunctional -lfundamental -lutility f90wrap_stub.o -Wl,-Bstatic  -mkl=sequential  -lsymspg  -Wl,-Bdynamic 
+make[1]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/obj/linux_x86_64_ifort15'
+make -C "obj/linux_x86_64_ifort15" ARCH=linux_x86_64_ifort15 tools
+make[1]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/obj/linux_x86_64_ifort15'
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/efield.f90 
+No need to recompile magres_efg.o, magres_efg.mod
+No need to recompile magres.o, magres.mod
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/tssearch.f90 
+ar rv libfunctional.a efield.o magres.o magres_efg.o tssearch.o
+r - efield.o
+r - magres.o
+r - magres_efg.o
+r - tssearch.o
+ranlib libfunctional.a
+ifort -o bands2dos -O1 -g -traceback -static-intel -openmp bands2dos.o  -L. -lfunctional -lfundamental -lutility f90wrap_stub.o -Wl,-Bstatic  -mkl=sequential  -lsymspg  -Wl,-Bdynamic 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Tools/bs_sc2pc.f90 
+ifort -o bs_sc2pc -O1 -g -traceback -static-intel -openmp bs_sc2pc.o  -L. -lfunctional -lfundamental -lutility f90wrap_stub.o -Wl,-Bstatic  -mkl=sequential  -lsymspg  -Wl,-Bdynamic 
+ifort -o castep2casino -O1 -g -traceback -static-intel -openmp castep2casino.o  -L. -lfunctional -lfundamental -lutility f90wrap_stub.o -Wl,-Bstatic  -mkl=sequential  -lsymspg  -Wl,-Bdynamic 
+ifort -o castep2cif -O1 -g -traceback -static-intel -openmp castep2cif.o  -L. -lfunctional -lfundamental -lutility f90wrap_stub.o -Wl,-Bstatic  -mkl=sequential  -lsymspg  -Wl,-Bdynamic 
+No need to recompile castep2cube.o, castep2cube_mod.mod
+ifort -o castep2cube -O1 -g -traceback -static-intel -openmp castep2cube.o  -L. -lfunctional -lfundamental -lutility f90wrap_stub.o cube_tools.o -Wl,-Bstatic  -mkl=sequential  -lsymspg  -Wl,-Bdynamic 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Tools/castep2ngwst.f90 
+ifort -o castep2ngwst -O1 -g -traceback -static-intel -openmp castep2ngwst.o  -L. -lfunctional -lfundamental -lutility f90wrap_stub.o -Wl,-Bstatic  -mkl=sequential  -lsymspg  -Wl,-Bdynamic 
+ifort -o castep2w90 -O1 -g -traceback -static-intel -openmp castep2w90.o  -L. -lfunctional -lfundamental -lutility f90wrap_stub.o -Wl,-Bstatic  -mkl=sequential  -lsymspg  -Wl,-Bdynamic 
+ifort -o cellmerge -O1 -g -traceback -static-intel -openmp cellmerge.o  -L. -lfunctional -lfundamental -lutility f90wrap_stub.o -Wl,-Bstatic  -mkl=sequential  -lsymspg  -Wl,-Bdynamic 
+ifort -o charge2d -O1 -g -traceback -static-intel -openmp charge2d.o  -L. -lfunctional -lfundamental -lutility f90wrap_stub.o -Wl,-Bstatic  -mkl=sequential  -lsymspg  -Wl,-Bdynamic 
+ifort -o geom2xtl -O1 -g -traceback -static-intel -openmp geom2xtl.o  -L. -lfunctional -lfundamental -lutility f90wrap_stub.o -Wl,-Bstatic  -mkl=sequential  -lsymspg  -Wl,-Bdynamic 
+ifort -o geom2xyz -O1 -g -traceback -static-intel -openmp geom2xyz.o  -L. -lfunctional -lfundamental -lutility f90wrap_stub.o -Wl,-Bstatic  -mkl=sequential  -lsymspg  -Wl,-Bdynamic 
+ifort -o md2xyz -O1 -g -traceback -static-intel -openmp md2xyz.o  -L. -lfunctional -lfundamental -lutility f90wrap_stub.o -Wl,-Bstatic  -mkl=sequential  -lsymspg  -Wl,-Bdynamic 
+ifort -o mode_follow -O1 -g -traceback -static-intel -openmp mode_follow.o  -L. -lfunctional -lfundamental -lutility f90wrap_stub.o -Wl,-Bstatic  -mkl=sequential  -lsymspg  -Wl,-Bdynamic 
+ifort -o orbitals2bands -O1 -g -traceback -static-intel -openmp orbitals2bands.o  -L. -lfunctional -lfundamental -lutility f90wrap_stub.o -Wl,-Bstatic  -mkl=sequential  -lsymspg  -Wl,-Bdynamic 
+ifort -o phonon_kpoints -O1 -g -traceback -static-intel -openmp phonon_kpoints.o  -L. -lfunctional -lfundamental -lutility f90wrap_stub.o -Wl,-Bstatic  -mkl=sequential  -lsymspg  -Wl,-Bdynamic 
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Tools/phonons.f90 
+ifort -o phonons -O1 -g -traceback -static-intel -openmp phonons.o  -L. -lfunctional -lfundamental -lutility f90wrap_stub.o -Wl,-Bstatic  -mkl=sequential  -lsymspg  -Wl,-Bdynamic 
+No need to recompile pot1d.o
+ifort -o pot1d -O1 -g -traceback -static-intel -openmp pot1d.o  -L. -lfunctional -lfundamental -lutility f90wrap_stub.o -Wl,-Bstatic  -mkl=sequential  -lsymspg  -Wl,-Bdynamic 
+ifort -o symmetry_snap -O1 -g -traceback -static-intel -openmp symmetry_snap.o  -L. -lfunctional -lfundamental -lutility f90wrap_stub.o -Wl,-Bstatic  -mkl=sequential  -lsymspg  -Wl,-Bdynamic 
+make[1]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/obj/linux_x86_64_ifort15'
+make -C "Utilities" ARCH=linux_x86_64_ifort15 all
+make[1]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities'
+if [ -d obj/linux_x86_64_ifort15 ]; then mv  obj/linux_x86_64_ifort15  obj/linux_x86_64_ifort15.bak; fi
+mkdir obj/linux_x86_64_ifort15
+touch obj/linux_x86_64_ifort15/exists
+for d in mdtep cube_tools optados/src ; do \
+   make -C obj/linux_x86_64_ifort15 -f ../../$d/Makefile VPATH=../../$d; \
+done
+make[2]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/obj/linux_x86_64_ifort15'
+ifort -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    -c -o MD_Constants.o ../../mdtep/MD_Constants.f90
+ifort -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    -c -o Global.o ../../mdtep/Global.f90
+ifort -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    -c -o Utility.o ../../mdtep/Utility.f90
+ifort -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    -c -o MD_IO.o ../../mdtep/MD_IO.f90
+ifort -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    -c -o analyse.o ../../mdtep/analyse.f90
+ifort -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    -c -o Main.o ../../mdtep/Main.f90
+ifort -o mdtep MD_Constants.o Global.o Utility.o MD_IO.o analyse.o Main.o  -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback   
+make[2]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/obj/linux_x86_64_ifort15'
+make[2]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/obj/linux_x86_64_ifort15'
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../cube_tools/cube_tools.f90
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../cube_tools/cube_to_xsf.f90
+ifort -o cube_to_xsf -O1 -g -traceback -static-intel -openmp cube_to_xsf.o  cube_tools.o
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../cube_tools/cube_add.f90
+ifort -o cube_add -O1 -g -traceback -static-intel -openmp cube_add.o  cube_tools.o
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../cube_tools/cube_subtract.f90
+ifort -o cube_subtract -O1 -g -traceback -static-intel -openmp cube_subtract.o  cube_tools.o
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../cube_tools/cube_info.f90
+ifort -o cube_info -O1 -g -traceback -static-intel -openmp cube_info.o  cube_tools.o
+make[2]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/obj/linux_x86_64_ifort15'
+make[2]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/obj/linux_x86_64_ifort15'
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     ../../optados/src/constants.f90
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     ../../optados/src/comms.F90
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     ../../optados/src/io.f90
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     ../../optados/src/algorithms.f90
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     ../../optados/src/cell.f90
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     ../../optados/src/parameters.f90
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     ../../optados/src/electronic.f90
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     ../../optados/src/dos_utils.f90
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     ../../optados/src/xmgrace_utils.f90
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     ../../optados/src/core.f90
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     ../../optados/src/dos.f90
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     ../../optados/src/jdos_utils.f90
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     ../../optados/src/jdos.f90
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     ../../optados/src/optics.f90
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     ../../optados/src/pdos.F90
+ifort -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     ../../optados/src/optados.f90 algorithms.o cell.o comms.o constants.o core.o dos.o dos_utils.o electronic.o io.o jdos.o jdos_utils.o optics.o parameters.o pdos.o xmgrace_utils.o -o optados 
+make[2]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/obj/linux_x86_64_ifort15'
+make[1]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities'
+make -C "obj/linux_x86_64_ifort15" install-castep
+make[1]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/obj/linux_x86_64_ifort15'
+ifort -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/castep.f90 
+ifort -o castep.serial -O1 -g -traceback -static-intel -openmp castep.o  -L. -lfunctional -lfundamental -lutility f90wrap_stub.o -Wl,-Bstatic  -mkl=sequential  -lsymspg  -Wl,-Bdynamic 
+/bin/cp castep.serial "/usr/local/packages/apps/castep/16.11/intel-15.0.7/"/
+make[1]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/obj/linux_x86_64_ifort15'
+make -C "obj/linux_x86_64_ifort15" install-tools
+make[1]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/obj/linux_x86_64_ifort15'
+/bin/cp bands2dos bs_sc2pc castep2casino castep2cif castep2cube castep2ngwst castep2w90 cellmerge charge2d geom2xtl geom2xyz md2xyz mode_follow orbitals2bands phonon_kpoints phonons pot1d symmetry_snap "/usr/local/packages/apps/castep/16.11/intel-15.0.7/"/
+make[1]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/obj/linux_x86_64_ifort15'
+make -C Utilities install
+make[1]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities'
+for d in mdtep cube_tools optados/src ; do \
+   make -C obj/linux_x86_64_ifort15 -f ../../$d/Makefile VPATH=../../$d; \
+done
+make[2]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/obj/linux_x86_64_ifort15'
+make[2]: `mdtep' is up to date.
+make[2]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/obj/linux_x86_64_ifort15'
+make[2]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/obj/linux_x86_64_ifort15'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/obj/linux_x86_64_ifort15'
+make[2]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/obj/linux_x86_64_ifort15'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/obj/linux_x86_64_ifort15'
+for d in mdtep cube_tools optados/src ; do \
+   make -C obj/linux_x86_64_ifort15 -f ../../$d/Makefile VPATH=../../$d install; \
+done
+make[2]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/obj/linux_x86_64_ifort15'
+/bin/cp mdtep "/usr/local/packages/apps/castep/16.11/intel-15.0.7/"
+make[2]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/obj/linux_x86_64_ifort15'
+make[2]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/obj/linux_x86_64_ifort15'
+cp cube_to_xsf cube_add cube_subtract cube_info "/usr/local/packages/apps/castep/16.11/intel-15.0.7/"
+make[2]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/obj/linux_x86_64_ifort15'
+make[2]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/obj/linux_x86_64_ifort15'
+cp optados /usr/local/packages/apps/castep/16.11/intel-15.0.7/
+make[2]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/obj/linux_x86_64_ifort15'
+for d in scripts cteprouts cif2cell CASTEPconv elastic_constants ; do \
+   make -C $d install; \
+done
+make[2]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/scripts'
+/bin/cp awk_elf_to_xsf dispersion.pl dos.pl perl_md.pl perl_pimd.pl pimerge.pl "/usr/local/packages/apps/castep/16.11/intel-15.0.7/"
+make[2]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/scripts'
+make[2]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/cteprouts'
+/bin/cp ceteprouts.pm castep2cell castep2cssr castep2pdb castep2shak castep2shx castep2xsf castep2xtl castep2xyz cell2cell cell2pdb cell2sgroup cell2shx cell2xsf cell2xtl cell2xyz cssr2cell cssr2gulp den2grd den2xplor den2xsf geom2dcd geom2pdbseq geom2xsf geom2xyz.pl pdb2cell pdb2pdb pdb2shak pdb2shx pdb2xtl phonon2xyz shx2cell vasp2cell vasp2pdb xtl2cell xtl2cssr xtl2pdb xtl2sgroup xtl2shx "/usr/local/packages/apps/castep/16.11/intel-15.0.7/"
+make[2]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/cteprouts'
+make[2]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/cif2cell'
+python setup.py install --install-scripts="/usr/local/packages/apps/castep/16.11/intel-15.0.7/" --install-lib="/usr/local/packages/apps/castep/16.11/intel-15.0.7/" --install-data="/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11"
+PyCifRW not found. Installing relevant modules.
+running install
+running build
+running build_py
+creating build
+creating build/lib
+copying CifFile.py -> build/lib
+copying StarFile.py -> build/lib
+copying YappsStarParser_1_0.py -> build/lib
+copying YappsStarParser_1_1.py -> build/lib
+copying YappsStarParser_DDLm.py -> build/lib
+copying yapps3_compiled_rt.py -> build/lib
+copying utils.py -> build/lib
+copying uctools.py -> build/lib
+copying spacegroupdata.py -> build/lib
+copying elementdata.py -> build/lib
+copying ESPInterfaces.py -> build/lib
+running build_scripts
+creating build/scripts-2.7
+copying and adjusting cif2cell -> build/scripts-2.7
+changing mode of build/scripts-2.7/cif2cell from 644 to 755
+running install_lib
+copying build/lib/CifFile.py -> /usr/local/packages/apps/castep/16.11/intel-15.0.7
+copying build/lib/StarFile.py -> /usr/local/packages/apps/castep/16.11/intel-15.0.7
+copying build/lib/YappsStarParser_1_0.py -> /usr/local/packages/apps/castep/16.11/intel-15.0.7
+copying build/lib/YappsStarParser_1_1.py -> /usr/local/packages/apps/castep/16.11/intel-15.0.7
+copying build/lib/YappsStarParser_DDLm.py -> /usr/local/packages/apps/castep/16.11/intel-15.0.7
+copying build/lib/yapps3_compiled_rt.py -> /usr/local/packages/apps/castep/16.11/intel-15.0.7
+byte-compiling /usr/local/packages/apps/castep/16.11/intel-15.0.7/CifFile.py to CifFile.pyc
+byte-compiling /usr/local/packages/apps/castep/16.11/intel-15.0.7/StarFile.py to StarFile.pyc
+byte-compiling /usr/local/packages/apps/castep/16.11/intel-15.0.7/YappsStarParser_1_0.py to YappsStarParser_1_0.pyc
+byte-compiling /usr/local/packages/apps/castep/16.11/intel-15.0.7/YappsStarParser_1_1.py to YappsStarParser_1_1.pyc
+byte-compiling /usr/local/packages/apps/castep/16.11/intel-15.0.7/YappsStarParser_DDLm.py to YappsStarParser_DDLm.pyc
+byte-compiling /usr/local/packages/apps/castep/16.11/intel-15.0.7/yapps3_compiled_rt.py to yapps3_compiled_rt.pyc
+running install_scripts
+copying build/scripts-2.7/cif2cell -> /usr/local/packages/apps/castep/16.11/intel-15.0.7
+changing mode of /usr/local/packages/apps/castep/16.11/intel-15.0.7/cif2cell to 755
+running install_data
+creating /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell
+copying LICENSE -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell
+copying HOWTOCITE -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell
+creating /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs
+copying cifs/BaTiO3_orthorhombic.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs
+copying cifs/SiC.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs
+copying cifs/alpha-Mn.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs
+copying cifs/LSMO.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs
+copying cifs/Ni20Mn3P6.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs
+copying cifs/FeAs.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs
+copying cifs/BaTiO3_cubic.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs
+copying cifs/b-Pu.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs
+copying cifs/gamma-Pu.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs
+copying cifs/Si.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs
+creating /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/K.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Be.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Sn-beta.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Pt.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Pu-epsilon.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Th.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Gd.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Cu.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Mo.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/P.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Ac.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Dy.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Pu-gamma.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Ra.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Nb.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Pb.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Sr.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/In.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Li.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Se.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Cm.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Ti.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Er.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Eu.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Mg.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Tl.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Cr.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Tc2.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Sm.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Hg.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Na.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Bi.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Rh.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Lu.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/C.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Y.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/V.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Pu-alpha.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/La.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Yb.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Hf.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Cd.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Rb.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Ta.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Tm.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Ho.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Al.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Cs.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Tc.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Sc.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Te.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Ce-gamma.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Ag.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Fe.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Ge.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Sn-alpha.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Ca.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Np.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/W.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Ga.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Ir.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Co.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/S.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Pu-delta.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Am.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Ni.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Bk.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Pa.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Os.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/I.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/As.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Pd.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Nd.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Re.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Ba.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/diamond.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/B.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Pr.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Sb.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Ru.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Po.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Mn.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Br.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Au.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Zn.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Tb.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/U.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Zr.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/Si.cif -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+copying cifs/periodic_table/README -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/sample_cifs/periodic_table
+creating /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/docs
+copying docs/cif2cell.pdf -> /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/lib/cif2cell/docs
+running install_egg_info
+Removing /usr/local/packages/apps/castep/16.11/intel-15.0.7/cif2cell-1.2.7-py2.7.egg-info
+Writing /usr/local/packages/apps/castep/16.11/intel-15.0.7/cif2cell-1.2.7-py2.7.egg-info
+make[2]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/cif2cell'
+make[2]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/CASTEPconv'
+python setup.py install --install-scripts="/usr/local/packages/apps/castep/16.11/intel-15.0.7/" --install-lib="/usr/local/packages/apps/castep/16.11/intel-15.0.7/" --install-data="/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11"
+running install
+running build
+running build_py
+creating build
+creating build/lib
+creating build/lib/cconv
+copying cconv/units.py -> build/lib/cconv
+copying cconv/io_freeform.py -> build/lib/cconv
+copying cconv/__init__.py -> build/lib/cconv
+copying cconv/graphs.py -> build/lib/cconv
+running build_scripts
+creating build/scripts-2.7
+copying and adjusting castepconv.py -> build/scripts-2.7
+changing mode of build/scripts-2.7/castepconv.py from 644 to 755
+running install_lib
+running install_scripts
+copying build/scripts-2.7/castepconv.py -> /usr/local/packages/apps/castep/16.11/intel-15.0.7
+changing mode of /usr/local/packages/apps/castep/16.11/intel-15.0.7/castepconv.py to 755
+running install_egg_info
+Removing /usr/local/packages/apps/castep/16.11/intel-15.0.7/castepconv-1.0-py2.7.egg-info
+Writing /usr/local/packages/apps/castep/16.11/intel-15.0.7/castepconv-1.0-py2.7.egg-info
+make[2]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/CASTEPconv'
+make[2]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/elastic_constants'
+python setup.py install --install-scripts="/usr/local/packages/apps/castep/16.11/intel-15.0.7/" --install-lib="/usr/local/packages/apps/castep/16.11/intel-15.0.7/" --install-data="/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11"
+running install
+running build
+running build_py
+creating build
+creating build/lib
+copying CijUtil.py -> build/lib
+copying castep.py -> build/lib
+copying rotCij.py -> build/lib
+copying rotate_Albite.py -> build/lib
+copying test-CijUtil.py -> build/lib
+running build_scripts
+creating build/scripts-2.7
+copying and adjusting generate_strain.py -> build/scripts-2.7
+copying and adjusting elastics.py -> build/scripts-2.7
+changing mode of build/scripts-2.7/generate_strain.py from 644 to 755
+changing mode of build/scripts-2.7/elastics.py from 644 to 755
+running install_lib
+running install_scripts
+copying build/scripts-2.7/generate_strain.py -> /usr/local/packages/apps/castep/16.11/intel-15.0.7
+copying build/scripts-2.7/elastics.py -> /usr/local/packages/apps/castep/16.11/intel-15.0.7
+changing mode of /usr/local/packages/apps/castep/16.11/intel-15.0.7/generate_strain.py to 755
+changing mode of /usr/local/packages/apps/castep/16.11/intel-15.0.7/elastics.py to 755
+running install_egg_info
+Removing /usr/local/packages/apps/castep/16.11/intel-15.0.7/elasticconstants-1.0-py2.7.egg-info
+Writing /usr/local/packages/apps/castep/16.11/intel-15.0.7/elasticconstants-1.0-py2.7.egg-info
+make[2]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities/elastic_constants'
+make[1]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11/Utilities'
+make: Nothing to be done for `install-tools'.
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11 /data/$USER/sharc/castep/16.11/intel-15.0.7/serial/CASTEP-16.11 ~/repos/sheffield_hpc_tmp/sharc/software/install_scripts/apps/castep/16.11/intel-15.0.7
+rm -f *~
+make -C obj/linux_x86_64_ifort15 ARCH=linux_x86_64_ifort15 clean
+make -C Utilities clean
+make[1]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/Utilities'
+for d in mdtep cube_tools optados/src ; do \
+   make -C obj/linux_x86_64_ifort15 -f ../../$d/Makefile clean; \
+done
+make: Entering an unknown directory
+make: Leaving an unknown directory
+make: Entering an unknown directory
+make: Leaving an unknown directory
+make: Entering an unknown directory
+make: Leaving an unknown directory
+make[1]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/Utilities'
+make -C Spec clean
+make[1]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/Spec'
+/bin/rm -f *.aux *.log *.lot *.lof *.toc *.dvi *.bak *~
+make[1]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/Spec'
+make -C Doc clean
+make[1]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/Doc'
+make[1]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/Doc'
+if [ -d obj/linux_x86_64_ifort15 ]; then mv  obj/linux_x86_64_ifort15  obj/linux_x86_64_ifort15.bak; fi
+mkdir obj/linux_x86_64_ifort15  obj/linux_x86_64_ifort15/dependencies obj/linux_x86_64_ifort15/spglib obj/linux_x86_64_ifort15/libxc obj/linux_x86_64_ifort15/python
+cp obj/Makefile obj/linux_x86_64_ifort15
+cp obj/Makefile.python obj/linux_x86_64_ifort15/python/Makefile
+if [ -f Source/Utility/buildinfo.f90 ]; then cp Source/Utility/buildinfo.f90 obj/linux_x86_64_ifort15 ; fi
+if [ linux_x86_64_ifort15 = linux_x86_64_ifort15 -o ! -f obj/linux_x86_64_ifort15.mk ]; then cp obj/platforms/linux_x86_64_ifort15.mk  obj/linux_x86_64_ifort15.mk; fi
+touch obj/linux_x86_64_ifort15/exists
+***********************************************************************************
+Please enter directory where mkl10 LAPACK and BLAS libraries are kept:
+      Hit the "return" key if these are in the default linker path.
+      The value you enter will be stored and used in future compiles.
+      Delete file obj/linux_x86_64_ifort15/mathlibdir.mkl10 to remove saved value.
+***********************************************************************************
+Please enter directory where mkl FFT libraries are kept:
+      Hit the "return" key if these are in the default linker path.
+      The value you enter will be stored and used in future compiles.
+      Delete file obj/linux_x86_64_ifort15/fftlibdir.mkl to remove saved value.
+cd obj/linux_x86_64_ifort15/spglib && ../../../LibSource/spglib-1.7.4/configure FC=ifort CC=gcc CFLAGS=-fPIC --enable-shared=no --libdir=/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/obj/linux_x86_64_ifort15
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+checking whether gcc and cc understand -c and -o together... yes
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /bin/ld
+checking if the linker (/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /bin/nm -B
+checking the name lister (/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 3458764513820540925
+checking how to convert x86_64-unknown-linux-gnu file names to x86_64-unknown-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-unknown-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... no
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for sqrt... no
+checking for ANSI C header files... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking math.h usability... yes
+checking math.h presence... yes
+checking for math.h... yes
+checking for an ANSI C-conforming const... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+make -C obj/linux_x86_64_ifort15/spglib install-exec
+make[1]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/obj/linux_x86_64_ifort15/spglib'
+Making install-exec in src
+make[2]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/obj/linux_x86_64_ifort15/spglib/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I..     -fPIC -MT cell.lo -MD -MP -MF .deps/cell.Tpo -c -o cell.lo ../../../../LibSource/spglib-1.7.4/src/cell.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I.. -fPIC -MT cell.lo -MD -MP -MF .deps/cell.Tpo -c ../../../../LibSource/spglib-1.7.4/src/cell.c -o cell.o
+mv -f .deps/cell.Tpo .deps/cell.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I..     -fPIC -MT debug.lo -MD -MP -MF .deps/debug.Tpo -c -o debug.lo ../../../../LibSource/spglib-1.7.4/src/debug.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I.. -fPIC -MT debug.lo -MD -MP -MF .deps/debug.Tpo -c ../../../../LibSource/spglib-1.7.4/src/debug.c -o debug.o
+mv -f .deps/debug.Tpo .deps/debug.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I..     -fPIC -MT hall_symbol.lo -MD -MP -MF .deps/hall_symbol.Tpo -c -o hall_symbol.lo ../../../../LibSource/spglib-1.7.4/src/hall_symbol.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I.. -fPIC -MT hall_symbol.lo -MD -MP -MF .deps/hall_symbol.Tpo -c ../../../../LibSource/spglib-1.7.4/src/hall_symbol.c -o hall_symbol.o
+mv -f .deps/hall_symbol.Tpo .deps/hall_symbol.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I..     -fPIC -MT kpoint.lo -MD -MP -MF .deps/kpoint.Tpo -c -o kpoint.lo ../../../../LibSource/spglib-1.7.4/src/kpoint.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I.. -fPIC -MT kpoint.lo -MD -MP -MF .deps/kpoint.Tpo -c ../../../../LibSource/spglib-1.7.4/src/kpoint.c -o kpoint.o
+mv -f .deps/kpoint.Tpo .deps/kpoint.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I..     -fPIC -MT lattice.lo -MD -MP -MF .deps/lattice.Tpo -c -o lattice.lo ../../../../LibSource/spglib-1.7.4/src/lattice.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I.. -fPIC -MT lattice.lo -MD -MP -MF .deps/lattice.Tpo -c ../../../../LibSource/spglib-1.7.4/src/lattice.c -o lattice.o
+mv -f .deps/lattice.Tpo .deps/lattice.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I..     -fPIC -MT mathfunc.lo -MD -MP -MF .deps/mathfunc.Tpo -c -o mathfunc.lo ../../../../LibSource/spglib-1.7.4/src/mathfunc.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I.. -fPIC -MT mathfunc.lo -MD -MP -MF .deps/mathfunc.Tpo -c ../../../../LibSource/spglib-1.7.4/src/mathfunc.c -o mathfunc.o
+mv -f .deps/mathfunc.Tpo .deps/mathfunc.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I..     -fPIC -MT niggli.lo -MD -MP -MF .deps/niggli.Tpo -c -o niggli.lo ../../../../LibSource/spglib-1.7.4/src/niggli.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I.. -fPIC -MT niggli.lo -MD -MP -MF .deps/niggli.Tpo -c ../../../../LibSource/spglib-1.7.4/src/niggli.c -o niggli.o
+mv -f .deps/niggli.Tpo .deps/niggli.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I..     -fPIC -MT pointgroup.lo -MD -MP -MF .deps/pointgroup.Tpo -c -o pointgroup.lo ../../../../LibSource/spglib-1.7.4/src/pointgroup.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I.. -fPIC -MT pointgroup.lo -MD -MP -MF .deps/pointgroup.Tpo -c ../../../../LibSource/spglib-1.7.4/src/pointgroup.c -o pointgroup.o
+mv -f .deps/pointgroup.Tpo .deps/pointgroup.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I..     -fPIC -MT primitive.lo -MD -MP -MF .deps/primitive.Tpo -c -o primitive.lo ../../../../LibSource/spglib-1.7.4/src/primitive.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I.. -fPIC -MT primitive.lo -MD -MP -MF .deps/primitive.Tpo -c ../../../../LibSource/spglib-1.7.4/src/primitive.c -o primitive.o
+mv -f .deps/primitive.Tpo .deps/primitive.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I..     -fPIC -MT refinement.lo -MD -MP -MF .deps/refinement.Tpo -c -o refinement.lo ../../../../LibSource/spglib-1.7.4/src/refinement.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I.. -fPIC -MT refinement.lo -MD -MP -MF .deps/refinement.Tpo -c ../../../../LibSource/spglib-1.7.4/src/refinement.c -o refinement.o
+mv -f .deps/refinement.Tpo .deps/refinement.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I..     -fPIC -MT site_symmetry.lo -MD -MP -MF .deps/site_symmetry.Tpo -c -o site_symmetry.lo ../../../../LibSource/spglib-1.7.4/src/site_symmetry.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I.. -fPIC -MT site_symmetry.lo -MD -MP -MF .deps/site_symmetry.Tpo -c ../../../../LibSource/spglib-1.7.4/src/site_symmetry.c -o site_symmetry.o
+mv -f .deps/site_symmetry.Tpo .deps/site_symmetry.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I..     -fPIC -MT sitesym_database.lo -MD -MP -MF .deps/sitesym_database.Tpo -c -o sitesym_database.lo ../../../../LibSource/spglib-1.7.4/src/sitesym_database.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I.. -fPIC -MT sitesym_database.lo -MD -MP -MF .deps/sitesym_database.Tpo -c ../../../../LibSource/spglib-1.7.4/src/sitesym_database.c -o sitesym_database.o
+mv -f .deps/sitesym_database.Tpo .deps/sitesym_database.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I..     -fPIC -MT spacegroup.lo -MD -MP -MF .deps/spacegroup.Tpo -c -o spacegroup.lo ../../../../LibSource/spglib-1.7.4/src/spacegroup.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I.. -fPIC -MT spacegroup.lo -MD -MP -MF .deps/spacegroup.Tpo -c ../../../../LibSource/spglib-1.7.4/src/spacegroup.c -o spacegroup.o
+mv -f .deps/spacegroup.Tpo .deps/spacegroup.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I..     -fPIC -MT spg_database.lo -MD -MP -MF .deps/spg_database.Tpo -c -o spg_database.lo ../../../../LibSource/spglib-1.7.4/src/spg_database.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I.. -fPIC -MT spg_database.lo -MD -MP -MF .deps/spg_database.Tpo -c ../../../../LibSource/spglib-1.7.4/src/spg_database.c -o spg_database.o
+mv -f .deps/spg_database.Tpo .deps/spg_database.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I..     -fPIC -MT spglib.lo -MD -MP -MF .deps/spglib.Tpo -c -o spglib.lo ../../../../LibSource/spglib-1.7.4/src/spglib.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I.. -fPIC -MT spglib.lo -MD -MP -MF .deps/spglib.Tpo -c ../../../../LibSource/spglib-1.7.4/src/spglib.c -o spglib.o
+mv -f .deps/spglib.Tpo .deps/spglib.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I..     -fPIC -MT spglib_f.lo -MD -MP -MF .deps/spglib_f.Tpo -c -o spglib_f.lo ../../../../LibSource/spglib-1.7.4/src/spglib_f.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I.. -fPIC -MT spglib_f.lo -MD -MP -MF .deps/spglib_f.Tpo -c ../../../../LibSource/spglib-1.7.4/src/spglib_f.c -o spglib_f.o
+mv -f .deps/spglib_f.Tpo .deps/spglib_f.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I..     -fPIC -MT spin.lo -MD -MP -MF .deps/spin.Tpo -c -o spin.lo ../../../../LibSource/spglib-1.7.4/src/spin.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I.. -fPIC -MT spin.lo -MD -MP -MF .deps/spin.Tpo -c ../../../../LibSource/spglib-1.7.4/src/spin.c -o spin.o
+mv -f .deps/spin.Tpo .deps/spin.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I..     -fPIC -MT symmetry.lo -MD -MP -MF .deps/symmetry.Tpo -c -o symmetry.lo ../../../../LibSource/spglib-1.7.4/src/symmetry.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I.. -fPIC -MT symmetry.lo -MD -MP -MF .deps/symmetry.Tpo -c ../../../../LibSource/spglib-1.7.4/src/symmetry.c -o symmetry.o
+mv -f .deps/symmetry.Tpo .deps/symmetry.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I..     -fPIC -MT tetrahedron_method.lo -MD -MP -MF .deps/tetrahedron_method.Tpo -c -o tetrahedron_method.lo ../../../../LibSource/spglib-1.7.4/src/tetrahedron_method.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I.. -fPIC -MT tetrahedron_method.lo -MD -MP -MF .deps/tetrahedron_method.Tpo -c ../../../../LibSource/spglib-1.7.4/src/tetrahedron_method.c -o tetrahedron_method.o
+mv -f .deps/tetrahedron_method.Tpo .deps/tetrahedron_method.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I..     -fPIC -MT triplet_kpoint.lo -MD -MP -MF .deps/triplet_kpoint.Tpo -c -o triplet_kpoint.lo ../../../../LibSource/spglib-1.7.4/src/triplet_kpoint.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../../../../LibSource/spglib-1.7.4/src -I.. -fPIC -MT triplet_kpoint.lo -MD -MP -MF .deps/triplet_kpoint.Tpo -c ../../../../LibSource/spglib-1.7.4/src/triplet_kpoint.c -o triplet_kpoint.o
+mv -f .deps/triplet_kpoint.Tpo .deps/triplet_kpoint.Plo
+/bin/sh ../libtool  --tag=CC   --mode=link gcc  -fPIC   -o libsymspg.la -rpath /data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/obj/linux_x86_64_ifort15 cell.lo debug.lo hall_symbol.lo kpoint.lo lattice.lo mathfunc.lo niggli.lo pointgroup.lo primitive.lo refinement.lo site_symmetry.lo sitesym_database.lo spacegroup.lo spg_database.lo spglib.lo spglib_f.lo spin.lo symmetry.lo tetrahedron_method.lo triplet_kpoint.lo -lm 
+libtool: link: ar cru .libs/libsymspg.a  cell.o debug.o hall_symbol.o kpoint.o lattice.o mathfunc.o niggli.o pointgroup.o primitive.o refinement.o site_symmetry.o sitesym_database.o spacegroup.o spg_database.o spglib.o spglib_f.o spin.o symmetry.o tetrahedron_method.o triplet_kpoint.o
+libtool: link: ranlib .libs/libsymspg.a
+libtool: link: ( cd ".libs" && rm -f "libsymspg.la" && ln -s "../libsymspg.la" "libsymspg.la" )
+ /bin/mkdir -p '/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/obj/linux_x86_64_ifort15'
+ /bin/sh ../libtool   --mode=install /bin/install -c   libsymspg.la '/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/obj/linux_x86_64_ifort15'
+libtool: install: /bin/install -c .libs/libsymspg.lai /data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/obj/linux_x86_64_ifort15/libsymspg.la
+libtool: install: /bin/install -c .libs/libsymspg.a /data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/obj/linux_x86_64_ifort15/libsymspg.a
+libtool: install: chmod 644 /data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/obj/linux_x86_64_ifort15/libsymspg.a
+libtool: install: ranlib /data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/obj/linux_x86_64_ifort15/libsymspg.a
+libtool: finish: PATH="/usr/local/packages/mpi/openmpi/2.0.1/intel-15.0.7/bin:/usr/local/packages/dev/intel-ps-xe-ce/2015.7/binary/composer_xe_2015.7.235/bin/intel64:/usr/local/packages/dev/intel-ps-xe-ce/2015.7/binary/composer_xe_2015.7.235/debugger/gdb/intel64_mic/bin:/usr/local/packages/apps/java/jdk1.8.0_102/binary/bin:/usr/lib/ccache:/home/$USER/bin:/home/$USER/Software/git/bin:/usr/local/scripts/:/usr/lib64/qt-3.3/bin:/usr/local/sge/live/bin/lx-amd64:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/$USER/bin:/sbin" ldconfig -n /data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/obj/linux_x86_64_ifort15
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/obj/linux_x86_64_ifort15
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[2]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/obj/linux_x86_64_ifort15/spglib/src'
+make[2]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/obj/linux_x86_64_ifort15/spglib'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/obj/linux_x86_64_ifort15/spglib'
+make[1]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/obj/linux_x86_64_ifort15/spglib'
+MATHLIBS changed from default to mkl10 - must recompile Source/Utility/license.F90
+make -C "obj/linux_x86_64_ifort15" ARCH=linux_x86_64_ifort15 castep
+make[1]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/obj/linux_x86_64_ifort15'
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/castep.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Tools/cube_tools.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/phonon_symmetry_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/xc_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/wave_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/stress_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/pot_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/parameters_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/nlpot_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/model_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/locps_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/locpot_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/ion_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/io_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/hartree_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/force_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/fft_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/ewald_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/electronic_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/density_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/comms_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/cell_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/bs_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/bib_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/basis_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Test/algor_test.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Tools/symmetry_snap.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Tools/pot1d.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Tools/phonons.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Tools/phonon_kpoints.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Tools/orbitals2bands.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Tools/mode_follow.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Tools/md2xyz.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Tools/geom2xyz.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Tools/geom2xtl.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Tools/charge2d.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Tools/cellmerge.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Tools/castep2w90.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Tools/castep2ngwst.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Tools/castep2cube.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Tools/castep2cif.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Tools/castep2casino.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Tools/bs_sc2pc.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Tools/bands2dos.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/xc_libxc.stub.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/wannier.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/xc_kernels.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/xc.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/tssearch_utils.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/tssearch_algor.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/tssearch.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/thermodynamics.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/tddft.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/spectral.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/semp_disp_corr.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/secondd_symmetry.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/secondd.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/raman.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/popn.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/phonon.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/paw_recon.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/pair_pot.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/optics.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/oep.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/nlxc_utils.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/nlxc.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/nlpot.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/model.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/md_pathint.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/md.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/mbd_disp_corr.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/magres_jcoupling.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/magres_gtensor.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/magres_hyperfine.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/magres_efg.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/magres_nmr.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/magres_utils.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/magres.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/locps.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/locpot.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/hubbard.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/hirshfeld.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/hartree.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/hamiltonian.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/geometry_deloc_utils.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/geometry_deloc_algor.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/geometry.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/firstd.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/ewald.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/elnes.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/elf.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/electronic.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/efield.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/dm.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/dftd.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Functional/bs.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Fundamental/wave.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Fundamental/pot.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Fundamental/parameters.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Fundamental/ion_atom.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Fundamental/soc.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Fundamental/ion.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Fundamental/nlxc_basis.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Fundamental/density.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Fundamental/cell_symmetry.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Fundamental/cell.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Fundamental/basis_utils.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Fundamental/basis.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src /usr/local/packages/dev/intel-ps-xe-ce/2017.0/binary//compilers_and_libraries_2017.0.098/linux/mkl/include/mkl_dfti.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Utility/FreeIPC.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Utility/spglib_f08.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Utility/plumed_wrapper.F90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Utility/license.F90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src buildinfo.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Utility/trace.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Utility/memory.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Utility/io.F90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Utility/fft.mkl.F90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Utility/constants.F90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Utility/comms.mpi.F90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Utility/cml.dummy.F90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Utility/bib.f90 -depdir dependencies/
+/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/bin/mkdepf90.pl -src ../../Source/Utility/algor.F90 -depdir dependencies/
+make[1]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/obj/linux_x86_64_ifort15'
+make[1]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/obj/linux_x86_64_ifort15'
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Utility/constants.F90 
+mkdir hidden
+touch hidden/mpif.h
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Utility/FreeIPC.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Utility/trace.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Utility/comms.mpi.F90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Utility/io.F90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Utility/algor.F90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    /usr/local/packages/dev/intel-ps-xe-ce/2017.0/binary//compilers_and_libraries_2017.0.098/linux/mkl/include/mkl_dfti.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Utility/fft.mkl.F90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Utility/cml.dummy.F90 
+touch hidden/MS_ModelingLicensePolicy.h
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    -DMKL ../../Source/Utility/license.F90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Fundamental/parameters.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Fundamental/basis_utils.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Utility/bib.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Fundamental/cell_symmetry.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Utility/spglib_f08.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Fundamental/cell.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Fundamental/basis.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Fundamental/ion_atom.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Fundamental/soc.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Fundamental/ion.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Fundamental/wave.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Fundamental/density.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/hirshfeld.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/mbd_disp_corr.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Fundamental/pot.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/nlpot.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/nlxc_utils.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/hubbard.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/model.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/semp_disp_corr.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/dftd.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/dm.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/ewald.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Fundamental/nlxc_basis.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/xc_kernels.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/xc_libxc.stub.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/xc.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/hartree.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/locps.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/locpot.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/nlxc.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/hamiltonian.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/magres_utils.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/secondd_symmetry.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/secondd.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/tddft.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/firstd.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/electronic.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/bs.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    buildinfo.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/raman.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/phonon.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/efield.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/elf.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/elnes.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/geometry_deloc_utils.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/geometry_deloc_algor.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/md_pathint.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/pair_pot.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Utility/plumed_wrapper.F90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/popn.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/md.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/geometry.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/paw_recon.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/magres_efg.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/magres_gtensor.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/magres_hyperfine.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/magres_jcoupling.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/magres_nmr.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/magres.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Utility/memory.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/oep.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/optics.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/spectral.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/thermodynamics.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/tssearch_utils.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/tssearch_algor.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/tssearch.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Functional/wannier.f90 
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/castep.f90 
+mpicc    -c -o FreeIPC_c.o ../../Source/Utility/FreeIPC_c.c
+ar rv libutility.a  algor.o bib.o cml.dummy.o comms.mpi.o constants.o fft.mkl.o io.o memory.o trace.o buildinfo.o license.o plumed_wrapper.o spglib_f08.o FreeIPC.o FreeIPC_c.o mkl_dfti.o
+a - algor.o
+a - bib.o
+a - cml.dummy.o
+a - comms.mpi.o
+a - constants.o
+a - fft.mkl.o
+a - io.o
+a - memory.o
+a - trace.o
+a - buildinfo.o
+a - license.o
+a - plumed_wrapper.o
+a - spglib_f08.o
+a - FreeIPC.o
+a - FreeIPC_c.o
+a - mkl_dfti.o
+ranlib libutility.a 
+ar rv libfundamental.a basis.o basis_utils.o cell.o cell_symmetry.o density.o nlxc_basis.o ion.o soc.o ion_atom.o parameters.o pot.o wave.o
+a - basis.o
+a - basis_utils.o
+a - cell.o
+a - cell_symmetry.o
+a - density.o
+a - nlxc_basis.o
+a - ion.o
+a - soc.o
+a - ion_atom.o
+a - parameters.o
+a - pot.o
+a - wave.o
+ranlib libfundamental.a
+ar rv libfunctional.a bs.o dftd.o dm.o efield.o electronic.o elf.o elnes.o ewald.o firstd.o geometry.o geometry_deloc_algor.o geometry_deloc_utils.o hamiltonian.o hartree.o hirshfeld.o hubbard.o locpot.o locps.o magres.o magres_utils.o magres_nmr.o magres_efg.o magres_hyperfine.o magres_gtensor.o magres_jcoupling.o mbd_disp_corr.o md.o md_pathint.o model.o nlpot.o nlxc.o nlxc_utils.o oep.o optics.o pair_pot.o paw_recon.o phonon.o popn.o raman.o secondd.o secondd_symmetry.o semp_disp_corr.o spectral.o tddft.o thermodynamics.o tssearch.o tssearch_algor.o tssearch_utils.o xc.o xc_kernels.o wannier.o xc_libxc.stub.o
+a - bs.o
+a - dftd.o
+a - dm.o
+a - efield.o
+a - electronic.o
+a - elf.o
+a - elnes.o
+a - ewald.o
+a - firstd.o
+a - geometry.o
+a - geometry_deloc_algor.o
+a - geometry_deloc_utils.o
+a - hamiltonian.o
+a - hartree.o
+a - hirshfeld.o
+a - hubbard.o
+a - locpot.o
+a - locps.o
+a - magres.o
+a - magres_utils.o
+a - magres_nmr.o
+a - magres_efg.o
+a - magres_hyperfine.o
+a - magres_gtensor.o
+a - magres_jcoupling.o
+a - mbd_disp_corr.o
+a - md.o
+a - md_pathint.o
+a - model.o
+a - nlpot.o
+a - nlxc.o
+a - nlxc_utils.o
+a - oep.o
+a - optics.o
+a - pair_pot.o
+a - paw_recon.o
+a - phonon.o
+a - popn.o
+a - raman.o
+a - secondd.o
+a - secondd_symmetry.o
+a - semp_disp_corr.o
+a - spectral.o
+a - tddft.o
+a - thermodynamics.o
+a - tssearch.o
+a - tssearch_algor.o
+a - tssearch_utils.o
+a - xc.o
+a - xc_kernels.o
+a - wannier.o
+a - xc_libxc.stub.o
+ranlib libfunctional.a
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback    ../../Source/Utility/f90wrap_stub.f90 
+mpif90 -o castep.mpi -O1 -g -traceback -shared-intel -openmp castep.o  -L. -lfunctional -lfundamental -lutility f90wrap_stub.o -Wl,-Bstatic  -mkl=sequential  -lsymspg  -Wl,-Bdynamic 
+make[1]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/obj/linux_x86_64_ifort15'
+make -C "Utilities" ARCH=linux_x86_64_ifort15 all
+make[1]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/Utilities'
+if [ -d obj/linux_x86_64_ifort15 ]; then mv  obj/linux_x86_64_ifort15  obj/linux_x86_64_ifort15.bak; fi
+mkdir obj/linux_x86_64_ifort15
+touch obj/linux_x86_64_ifort15/exists
+for d in optados/src ; do \
+   make -C obj/linux_x86_64_ifort15 -f ../../$d/Makefile VPATH=../../$d; \
+done
+make[2]: Entering directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/Utilities/obj/linux_x86_64_ifort15'
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     -DMPI ../../optados/src/constants.f90
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     -DMPI ../../optados/src/comms.F90
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     -DMPI ../../optados/src/io.f90
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     -DMPI ../../optados/src/algorithms.f90
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     -DMPI ../../optados/src/cell.f90
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     -DMPI ../../optados/src/parameters.f90
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     -DMPI ../../optados/src/electronic.f90
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     -DMPI ../../optados/src/dos_utils.f90
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     -DMPI ../../optados/src/xmgrace_utils.f90
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     -DMPI ../../optados/src/core.f90
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     -DMPI ../../optados/src/dos.f90
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     -DMPI ../../optados/src/jdos_utils.f90
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     -DMPI ../../optados/src/jdos.f90
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     -DMPI ../../optados/src/optics.f90
+mpif90 -c -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     -DMPI ../../optados/src/pdos.F90
+mpif90 -convert big_endian -assume norealloc_lhs -diag-disable 8290 -diag-disable 8291 -openmp -fPIC -O1 -g -traceback     -DMPI ../../optados/src/optados.f90 algorithms.o cell.o comms.o constants.o core.o dos.o dos_utils.o electronic.o io.o jdos.o jdos_utils.o optics.o parameters.o pdos.o xmgrace_utils.o -o optados.mpi 
+make[2]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/Utilities/obj/linux_x86_64_ifort15'
+make[1]: Leaving directory `/data/$USER/sharc/castep/16.11/intel-15.0.7/parallel/CASTEP-16.11/Utilities'

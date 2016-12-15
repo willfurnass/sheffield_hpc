@@ -15,10 +15,10 @@ proc ModulesHelp { } {
 }
 module-whatis "	Adds `CASTEP-$vers' to your PATH environment"
 
-module load dev/gcc/5.4
+module load dev/intel-compilers/15.0.7
 module load libs/intel-mkl/2017.0/binary
-module load mpi/openmpi/2.0.1/gcc-5.4
+module load mpi/openmpi/2.0.1/intel-15.0.7
 
-set casteppath /usr/local/packages/apps/castep/$vers/gcc-5.4
+set casteppath /usr/local/packages/apps/castep/$vers/intel-15.0.7
 prepend-path PATH $casteppath
 setenv TMPDIR /scratch/

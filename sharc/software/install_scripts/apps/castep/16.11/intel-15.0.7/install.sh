@@ -1,5 +1,9 @@
 #!/bin/bash
 # Install CASTEP 16.11 on the ShARC cluster
+#$ -N castep_16_11_sharc_build
+#$ -m bea
+#$ -M w.furnass@sheffield.ac.uk
+#$ -j y
 
 ##############################################################################
 # Error handling
@@ -19,14 +23,13 @@ trap handle_error ERR
 ##############################################################################
 
 vers="16.11"
-compiler="gcc"
-compiler_vers="5.4"
+compiler="intel"
+compiler_vers="15.0.7"
 tarball_path="/usr/local/media/protected/CASTEP/${vers}/CASTEP-${vers}.tar.gz"
 base_prefix="/usr/local/packages/apps/castep"
 prefix="${base_prefix}/${vers}/${compiler}-${compiler_vers}/"
-serial_build_dir="/data/$USER/castep/${vers}/${compiler}-${compiler_vers}/serial"
-parallel_build_dir="/data/$USER/castep/${vers}/${compiler}-${compiler_vers}/parallel"
-workers=16
+serial_build_dir="/data/$USER/sharc/castep/${vers}/${compiler}-${compiler_vers}/serial"
+parallel_build_dir="/data/$USER/sharc/castep/${vers}/${compiler}-${compiler_vers}/parallel"
 
 ##############################################################################
 # Create dirs
@@ -39,15 +42,16 @@ mkdir -m 2750 -p $prefix
 # Build and install serial version
 ##############################################################################
 
-module load dev/${compiler}/${compiler_vers}
+module purge
+module load dev/${compiler}-compilers/${compiler_vers}
 module load libs/intel-mkl/2017.0/binary
 
 tar -xzf ${tarball_path} -C ${serial_build_dir}
 pushd ${serial_build_dir}/CASTEP-${vers}
 
-make clean
-make -j $workers INSTALL_DIR=$prefix FFT=mkl MATHLIBS=mkl10
-make -j $workers INSTALL_DIR=$prefix FFT=mkl MATHLIBS=mkl10 install install-tools
+#make clean
+make INSTALL_DIR=$prefix FFT=mkl MATHLIBS=mkl10
+make INSTALL_DIR=$prefix FFT=mkl MATHLIBS=mkl10 install install-tools
 
 ##############################################################################
 # Build and install parallel version
@@ -64,7 +68,7 @@ if [[ $compiler == "intel" ]] && [[ $compiler_vers =~ ^15\. ]]; then
 fi
 
 make clean
-make -j $workers COMMS_ARCH=mpi  FFT=mkl MATHLIBS=mkl10
+make COMMS_ARCH=mpi  FFT=mkl MATHLIBS=mkl10
 mv ./obj/linux_x86_64_*/castep.mpi $prefix
 
 ##############################################################################
