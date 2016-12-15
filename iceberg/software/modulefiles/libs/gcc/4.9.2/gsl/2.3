@@ -1,0 +1,27 @@
+#%Module1.0#####################################################################
+##
+## GSL 2.3 module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+set gslvers      2.3
+set compiler     gcc
+set compilervers 4.9.2
+
+proc ModulesHelp { } {
+    global gslvers
+    puts stderr "Makes the GNU Scientific Library (GSL) $gslvers library available"
+}
+module-whatis "Makes the GNU Scientific Library (GSL) $gslvers library available"
+
+set GSL_HOME /usr/local/packages6/libs/$compiler/$compilervers/gsl/$gslvers
+
+prepend-path CPATH            $GSL_HOME/include
+prepend-path LD_LIBRARY_PATH  $GSL_HOME/lib
+prepend-path LIBRARY_PATH     $GSL_HOME/lib
+prepend-path PATH             $GSL_HOME/bin
+prepend-path MANPATH          $GSL_HOME/share/man
+prepend-path INFOPATH         $GSL_HOME/share/info
