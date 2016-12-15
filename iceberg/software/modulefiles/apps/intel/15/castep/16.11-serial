@@ -1,0 +1,22 @@
+#%Module1.0#####################################################################
+##
+## CASTEP 16.11 (serial) module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+set vers 16.11
+
+proc ModulesHelp { } {
+        global vers
+        puts stderr "	Adds `CASTEP-$vers' to your PATH"
+}
+module-whatis "Adds `CASTEP-$vers' to your PATH"
+
+module load compilers/intel/15.0.3
+
+set casteppath /usr/local/packages6/apps/intel/15/castep 
+prepend-path PATH $casteppath/$vers
+setenv TMPDIR /scratch/

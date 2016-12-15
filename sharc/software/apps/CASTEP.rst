@@ -8,10 +8,12 @@ CASTEP
 
 Licensing
 ---------
-Only licensed users of CASTEP are entitled to use it and license details are available on `CASTEP's website <http://www.castep.org/CASTEP/GettingCASTEP>`_. 
+Only licensed users of CASTEP are entitled to use it and 
+license details are available on `CASTEP's website <http://www.castep.org/CASTEP/GettingCASTEP>`_. 
 Access to CASTEP on the system is controlled using a Unix group. 
 That is, only members of the ``castep`` group can access and run the program. 
-To be added to this group, you will need to contact ``research-it@sheffield.ac.uk`` and provide evidence of your eligibility to use CASTEP.
+To be added to this group, you will need to contact ``research-it@sheffield.ac.uk`` 
+and provide evidence of your eligibility to use CASTEP.
 
 Interactive Usage
 -----------------
@@ -21,7 +23,7 @@ Make the serial version of CASTEP available using the following command: ::
 
         module load apps/castep/16.11/intel-15.0.7
 
-The CASTEP executable is called ``castep.serial`` so if you execute ::
+The CASTEP executable is called ``castep.serial`` so if you execute: ::
 
         castep.serial
 
@@ -75,13 +77,16 @@ or list all of the input parameters: ::
 
 Batch Submission - Parallel
 ---------------------------
-The parallel version of CASTEP is called ``castep.mpi``. To make the parallel environment available, use the following command: ::
+The parallel version of CASTEP is called ``castep.mpi``. 
+To make the parallel environment available, use the following command: ::
 
         module load apps/castep/16.11/intel-15.0.7-openmpi-2.0.1
 
 As an example of a parallel submission, we will calculate the bandstructure of graphite following the tutorial at http://www.castep.org/Tutorials/BandStructureAndDOS
 
-After connecting to ShARC (see :ref:`ssh`),  start an interactive session with the ``qrsh`` or ``qsh`` command. Download and decompress the example input files with the commands ::
+After connecting to ShARC (see :ref:`ssh`),  
+start an interactive session with the ``qrsh`` or ``qsh`` command. 
+Download and decompress the example input files with the commands ::
 
         wget http://www.castep.org/files/bandstructure.tgz
         tar -xvzf ./bandstructure.tgz
@@ -94,8 +99,7 @@ Create a file called ``submit.sge`` that contains the following: ::
 
         #!/bin/bash
         #$ -pe mpi 4    # Run the calculation on 4 CPU cores
-        #$ -l rmem=4G   # Request 4 Gigabytes of real memory per core
-        #$ -l mem=4G    # Request 4 Gigabytes of virtual memory per core
+        #$ -l rmem=4G   # Request 4 GB of real memory per core
         module load apps/castep/16.11/intel-15.0.7-openmpi-2.0.1
 
         mpirun castep.mpi graphite
@@ -115,7 +119,7 @@ These are primarily for system administrators.
 Version 16.11
 ^^^^^^^^^^^^^
 
-Serial (1 CPU core) and parallel (MPI) builds were compiled. 
+Serial (no MPI) and parallel (MPI) builds were compiled. 
 Both builds were compiled with Intel compiler 15.0.7 (including the Intel MKL 2015.7 for BLAS and FFT routines).  
 The parallel build was compiled using OpenMPI 2.0.1.
 
