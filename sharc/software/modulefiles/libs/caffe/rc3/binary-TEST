@@ -18,8 +18,6 @@ set     version rc3
 
 module-whatis   "loads the necessary `Caffe-$version' library paths"
 
-module load
-
 set PREFIX /usr/local/packages/libs/caffe/rc3
 
 #Caffe dependencies
