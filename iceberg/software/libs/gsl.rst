@@ -48,10 +48,12 @@ Installation notes
 ------------------
 This section is primarily for administrators of the system.
 
+The GSL was installed as a user wanted to build `EIGENSOFT <https://github.com/DReichLab/EIG>`_.
+
 Version 2.3
 ^^^^^^^^^^^
 
-This was compiled using GCC
+This was compiled using GCC on an Intel x5650 node.
 
 #. ``cd`` to a scratch directory.
 #. Download, build and install PROJ.4 using `install_proj_4.9.3.sh <https://github.com/mikecroucher/HPC_Installers/blob/master/libs/proj/4.9.3/sheffield/iceberg/install_proj_4.9.3.sh>`_.  Files are installed into ``/usr/local/packages6/libs/gcc/6.2/proj/4.9.3/``
