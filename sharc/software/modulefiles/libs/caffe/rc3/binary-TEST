@@ -20,18 +20,11 @@ module-whatis   "loads the necessary `Caffe-$version' library paths"
 
 set PREFIX /usr/local/packages/libs/caffe/rc3
 
-#Caffe dependencies
+#Caffe and dependencies
 prepend-path PATH $PREFIX/bin
 prepend-path C_INCLUDE_PATH $PREFIX/include
 prepend-path CPLUS_INCLUDE_PATH $PREFIX/include
 prepend-path LD_LIBRARY_PATH $PREFIX/lib
-
-
-#Caffe 
-prepend-path PATH $PREFIX/caffe/distribute/bin
-prepend-path C_INCLUDE_PATH $PREFIX/caffe/distribute/include
-prepend-path CPLUS_INCLUDE_PATH $PREFIX/caffe/distribute/include
-prepend-path LD_LIBRARY_PATH $PREFIX/caffe/distribute/lib
-prepend-path CAFFE_ROOT $PREFIX/caffe
-prepend-path PYTHONPATH $PREFIX/caffe/distribute/python
-prepend-path PYTHONPATH $PREFIX/caffe/python
+prepend-path CAFFE_ROOT $PREFIX
+prepend-path PYTHONPATH $PREFIX/distribute/python
+prepend-path PYTHONPATH $PREFIX/python
