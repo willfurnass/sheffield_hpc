@@ -52,7 +52,7 @@ Start the Server
 After configuring the client:
 
 #. Log in to iceberg **from the client machine** via ssh [3]_ 
-#.  Run ``qsub-paraview``.
+#.  Run ``qsub-paraview`` from this login node (**not** from a worker node)
 
 This will submit a job to the scheduler queue for 16 processes with 4GB of RAM each.
 This is designed to be used for large visualisation tasks, smaller jobs can be 
