@@ -135,7 +135,7 @@ to allow for subsequent `Testing` of the parallel build.
 
 * :download:`The non-MPI build modulefile </iceberg/software/modulefiles/apps/intel/15/castep/16.11-serial>` was installed as 
   ``/usr/local/modulefiles/apps/intel/15/castep/16.11-serial``
-* :download:`The MPI build modulefile </iceberg/software/modulefiles/apps/intel/15/castep/16.11-parallel` was installed as 
+* :download:`The MPI build modulefile </iceberg/software/modulefiles/apps/intel/15/castep/16.11-parallel>` was installed as 
   ``/usr/local/modulefiles/apps/intel/15/castep/16.11-parallel``
 
 Version 16.1
