@@ -1,0 +1,24 @@
+#%Module1.0#####################################################################
+##
+## ICU 58.2 module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+set vers 58.2
+set compiler gcc
+set compilervers 4.9.4
+
+proc ModulesHelp { } {
+    global vers
+    puts stderr "Makes the icu $vers library (plus $compiler $compilervers) available"
+}
+module-whatis   "Makes the icu $vers library (plus $compiler $compilervers) available"
+
+set ICU_HOME /usr/local/packages/libs/icu/$vers/$compiler-$compilervers
+
+prepend-path LD_LIBRARY_PATH $ICU_HOME/lib
+prepend-path LIBRARY_PATH $ICU_HOME/lib
+prepend-path CPATH $ICU_HOME/include
