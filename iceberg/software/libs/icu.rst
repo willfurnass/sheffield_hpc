@@ -38,8 +38,9 @@ This Icu 58.1 build links against the GCC 4.9.2 C++ standard library and was ins
         tar -xvzf icu4c-58_1-src.tgz
         cd icu/source
         ./runConfigureICU Linux/gcc --prefix=/usr/local/packages6/libs/gcc/4.9.2/icu/58.1/
-        make check
         make
+        make check
+        make install
 
 Version 55
 ^^^^^^^^^^
