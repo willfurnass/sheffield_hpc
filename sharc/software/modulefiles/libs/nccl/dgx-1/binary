@@ -1,0 +1,26 @@
+#%Module1.0#####################################################################
+##
+## NCCL Optimised for DGX-1
+##
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "	Adds `NCCL-$version to your PATH environment variable"
+}
+
+set     version dgx-1
+
+module-whatis   "loads the necessary `NCCL-$version' library paths"
+
+set PREFIX /usr/local/packages/libs/nccl/dgx-1
+
+prepend-path C_INCLUDE_PATH $PREFIX/include
+prepend-path CPLUS_INCLUDE_PATH $PREFIX/include
+prepend-path LD_LIBRARY_PATH $PREFIX/lib/x86_64-linux-gnu
+
