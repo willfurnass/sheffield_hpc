@@ -1,5 +1,5 @@
 #!/bin/bash
-# Install CASTEP 16.11 on the ShARC cluster
+# Install CASTEP 16.11 on the Iceberg cluster
 
 ##############################################################################
 # Error handling
@@ -19,14 +19,17 @@ trap handle_error ERR
 ##############################################################################
 
 vers="16.11"
-compiler="gcc"
-compiler_vers="5.4"
+compiler="intel"
+compiler_short_vers="15"
+compiler_vers="15.0.3"
 tarball_path="/usr/local/media/protected/CASTEP/${vers}/CASTEP-${vers}.tar.gz"
-base_prefix="/usr/local/packages/apps/castep"
-prefix="${base_prefix}/${vers}/${compiler}-${compiler_vers}/"
-serial_build_dir="/data/$USER/castep/${vers}/${compiler}-${compiler_vers}/serial"
-parallel_build_dir="/data/$USER/castep/${vers}/${compiler}-${compiler_vers}/parallel"
-workers=16
+base_prefix="/usr/local/packages6/apps/"
+prefix="${base_prefix}/${compiler}/${compiler_short_vers}/castep/${vers}"
+serial_build_dir="/data/$USER/iceberg/castep/${vers}/${compiler}-${compiler_short_vers}/serial"
+parallel_build_dir="/data/$USER/iceberg/castep/${vers}/${compiler}-${compiler_short_vers}/parallel"
+#export OMP_NUM_THREADS=4
+#workers=$OMP_NUM_THREADS
+workers=1
 
 ##############################################################################
 # Create dirs
@@ -39,8 +42,9 @@ mkdir -m 2750 -p $prefix
 # Build and install serial version
 ##############################################################################
 
-module load dev/${compiler}/${compiler_vers}
-module load libs/intel-mkl/2017.0/binary
+module purge
+module load compilers/${compiler}/${compiler_vers}
+module load libs/binlibs/intel-mkl/11.2.3
 
 tar -xzf ${tarball_path} -C ${serial_build_dir}
 pushd ${serial_build_dir}/CASTEP-${vers}
@@ -53,7 +57,7 @@ make -j $workers INSTALL_DIR=$prefix FFT=mkl MATHLIBS=mkl10 install install-tool
 # Build and install parallel version
 ##############################################################################
 
-module load mpi/openmpi/2.0.1/${compiler}-${compiler_vers}
+module load mpi/intel/openmpi/1.10.0
 
 tar -xzf ${tarball_path} -C ${parallel_build_dir}
 pushd ${parallel_build_dir}/CASTEP-${vers}

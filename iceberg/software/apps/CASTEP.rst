@@ -3,17 +3,25 @@ CASTEP
 
 .. sidebar:: CASTEP
 
-   :Latest Version:  16.1
+   :Latest Version:  16.11
    :URL: http://www.castep.org/
 
 Licensing
 ---------
-Only licensed users of CASTEP are entitled to use it and license details are available on `CASTEP's website <http://www.castep.org/CASTEP/GettingCASTEP>`_. Access to CASTEP on the system is controlled using a Unix group. That is, only members of the ``castep`` group can access and run the program. To be added to this group, you will need to contact ``research-it@sheffield.ac.uk`` and provide evidence of your eligibility to use CASTEP.
+Only licensed users of CASTEP are entitled to use it and 
+license details are available on `CASTEP's website <http://www.castep.org/CASTEP/GettingCASTEP>`_. 
+Access to CASTEP on the system is controlled using a Unix group. 
+That is, only members of the ``castep`` group can access and run the program. 
+To be added to this group, you will need to contact ``research-it@sheffield.ac.uk`` 
+and provide evidence of your eligibility to use CASTEP.
 
 Interactive Usage
 -----------------
-The serial version of CASTEP should be used for interactive usage. After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the ``qrsh`` or ``qsh`` command. Make the serial version of CASTEP available using one of the following commands: ::
+The serial version of CASTEP should be used for interactive usage. 
+After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the ``qrsh`` or ``qsh`` command. 
+Make the serial version of CASTEP available using one of the following commands: ::
 
+        module load apps/intel/15/castep/16.11-serial
         module load apps/intel/15/castep/16.1-serial
         module load apps/intel/15/castep/8.0-serial
 
@@ -39,76 +47,99 @@ If, instead, you get: ::
 
         -bash: castep.serial: command not found
 
-It is probably because you are not a member of the ``castep`` group. See the section on Licensing above for details on how to be added to this group.
+It is probably because you are not a member of the ``castep`` group. 
+See `Licensing` for details on how to be added to this group.
 
 Interactive usage is fine for small CASTEP jobs such as the Silicon example given at http://www.castep.org/Tutorials/BasicsAndBonding
 
-To run this example, you can do ::
+To run this example, you can do: ::
 
-  # Get the files, decompress them and enter the directory containing them
-  wget http://www.castep.org/files/Si2.tgz
-  tar -xvzf ./Si2.tgz
-  cd Si2
+        # Get the files, decompress them and enter the directory containing them
+        wget http://www.castep.org/files/Si2.tgz
+        tar -xvzf ./Si2.tgz
+        cd Si2
 
-  #Run the CASTEP job in serial
-  castep.serial Si2
+        # Run the CASTEP job in serial
+        castep.serial Si2
 
-  #Read the output using the more command
-  more Si2.castep
+        # Read the output using the more command
+        less Si2.castep
 
-CASTEP has a built in help system. To get more information on using castep use ::
+CASTEP has a built in help system. To get more information on using castep use: ::
 
-  castep.serial -help
+        castep.serial -help
 
-Alternatively you can search for help on a particular topic ::
+Alternatively you can search for help on a particular topic: ::
 
-  castep.serial -help search keyword
+        castep.serial -help search keyword
 
-or list all of the input parameters ::
+or list all of the input parameters: ::
 
-  castep.serial -help search all
+        castep.serial -help search all
 
 Batch Submission - Parallel
 ---------------------------
-The parallel version of CASTEP is called ``castep.mpi``. To make the parallel environment available, use one of the following module commands ::
+The parallel version of CASTEP is called ``castep.mpi``. 
+To make the parallel environment available, use one of the following module commands: ::
 
-    module load apps/intel/15/castep/16.1-parallel
-    module load apps/intel/15/castep/8.0-parallel
+        module load apps/intel/15/castep/16.11-parallel
+        module load apps/intel/15/castep/16.1-parallel
+        module load apps/intel/15/castep/8.0-parallel
 
 As an example of a parallel submission, we will calculate the bandstructure of graphite following the tutorial at http://www.castep.org/Tutorials/BandStructureAndDOS
 
-After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the ``qrsh`` or ``qsh`` command. Download and decompress the example input files with the commands ::
+After connecting to iceberg (see :ref:`ssh`),  
+start an interactive session with the ``qrsh`` or ``qsh`` command. 
+Download and decompress the example input files with the commands ::
 
-  wget http://www.castep.org/files/bandstructure.tgz
-  tar -xvzf ./bandstructure.tgz
+        wget http://www.castep.org/files/bandstructure.tgz
+        tar -xvzf ./bandstructure.tgz
 
-Enter the directory containing the input files for graphite ::
+Enter the directory containing the input files for graphite: ::
 
-  cd bandstructure/graphite/
+        cd bandstructure/graphite/
 
-Create a file called ``submit.sge`` that contains the following ::
+Create a file called ``submit.sge`` that contains the following: ::
 
-  #!/bin/bash
-  #$ -pe openmpi-ib 4    # Run the calculation on 4 CPU cores
-  #$ -l rmem=4G          # Request 4 Gigabytes of real memory per core
-  #$ -l mem=4G           # Request 4 Gigabytes of virtual memory per core
-  module load apps/intel/15/castep/16.1-parallel
+        #!/bin/bash
+        #$ -pe openmpi-ib 4    # Run the calculation on 4 CPU cores
+        #$ -l rmem=4G          # Request 4 GB of real memory per core
+        #$ -l mem=4G           # Request 4 GB of virtual memory per core
+        module load apps/intel/15/castep/16.11-parallel
 
-  mpirun castep.mpi graphite
+        mpirun castep.mpi graphite
 
-Submit it to the system with the command ::
+Submit it to the system with the command: ::
 
-    qsub submit.sge
+        qsub submit.sge
 
-After the calculation has completed, get an overview of the calculation by looking at the file ``graphite.castep`` ::
+After the calculation has completed, get an overview of the calculation by looking at the file ``graphite.castep``: ::
 
-    more graphite.castep
+        more graphite.castep
 
 Installation Notes
 ------------------
 These are primarily for system administrators.
 
-**CASTEP Version 16.1**
+Version 16.1
+^^^^^^^^^^^^
+
+Serial (no MPI) and parallel (MPI) builds were compiled. 
+Both builds were compiled with Intel compiler 15.0.3 (including the Intel MKL 2015.3 for BLAS and FFT routines).  
+The parallel build was compiled using OpenMPI 1.10.0.
+
+Both builds were installed using :download:`this script </iceberg/software/install_scripts/apps/intel/15/castep/16.11/install.sh>`
+**Note** that this compiles both builds in ``/data/$USER`` as the build directory must be availble to all cluster nodes 
+to allow for subsequent `Testing` of the parallel build.  
+~2.2 GB of free space is required.
+
+* :download:`The non-MPI build modulefile </iceberg/software/modulefiles/apps/intel/15/castep/16.11-serial>` was installed as 
+  ``/usr/local/modulefiles/apps/intel/15/castep/16.11-serial``
+* :download:`The MPI build modulefile </iceberg/software/modulefiles/apps/intel/15/castep/16.11-parallel>` was installed as 
+  ``/usr/local/modulefiles/apps/intel/15/castep/16.11-parallel``
+
+Version 16.1
+^^^^^^^^^^^^
 
 The jump in version numbers from 8 to 16.1 is a result of CASTEP's change of version numbering. There are no versions 9-15.
 
@@ -200,7 +231,7 @@ The following script was submitted via ``qsub`` from inside the build directory:
   cd CASTEP-16.1/Test
   ../bin/testcode.py -q  --total-processors=1 -e /home/fe1mpc/CASTEP/CASTEP-16.1/obj/linux_x86_64_ifort15/castep.serial -c simple -v -v -v
 
-All but one of the tests passed. It seems that the failed test is one that fails for everyone for this version since there is a missing input file. The output from the test run is on the system at `/usr/local/packages6/apps/intel/15/castep/16.1/CASTEP_SERIAL_tests_09022016.txt`
+All but one of the tests passed. It seems that the failed test is one that fails for everyone for this version since there is a missing input file. The output from the test run is on the system at ``/usr/local/packages6/apps/intel/15/castep/16.1/CASTEP_SERIAL_tests_09022016.txt``
 
 **Version 16.1 Parallel**
 
@@ -215,7 +246,7 @@ The following script was submitted via ``qsub`` from inside the build directory 
   cd CASTEP-16.1/Test
   ../bin/testcode.py -q  --total-processors=4 --processors=4 -e /home/fe1mpc/CASTEP/CASTEP-16.1/obj/linux_x86_64_ifort15/castep.mpi -c simple -v -v -v
 
-All but one of the tests passed. It seems that the failed test is one that fails for everyone for this version since there is a missing input file. The output from the test run is on the system at `/usr/local/packages6/apps/intel/15/castep/16.1/CASTEP_Parallel_tests_09022016.txt`
+All but one of the tests passed. It seems that the failed test is one that fails for everyone for this version since there is a missing input file. The output from the test run is on the system at ``/usr/local/packages6/apps/intel/15/castep/16.1/CASTEP_Parallel_tests_09022016.txt``
 
 **Version 8 Parallel**
 The following script was submitted via ``qsub`` ::
