@@ -32,7 +32,7 @@ module load dev/${COMPILER}/${COMPILER_VERS}
 
 # Create build, install and modulefile dirs
 mkdir -m 0700 -p $BUILD_DIR
-for d in $prefix $(dirname $modulefile); do
+for d in $PREFIX $(dirname $MODULEFILE); do
     mkdir -m 2775 -p $d
 done
 
@@ -55,7 +55,7 @@ popd
 popd
 
 # Set permissions and ownership
-for d in $prefix $(dirname $MODULEFILE); do
+for d in $PREFIX $(dirname $MODULEFILE); do
     chmod -R g+w $d
     chown -R ${USER}:app-admins $d
 done
