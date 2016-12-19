@@ -6,19 +6,26 @@ libunistring
 .. sidebar:: libunistring
 
    :Latest version: 0.9.5
-   :URL: http://www.gnu.org/software/libunistring/#TOCdownloading/
+   :URL: http://www.gnu.org/software/libunistring/
 
-Text files are nowadays usually encoded in Unicode, and may consist of very different scripts – from Latin letters to Chinese Hanzi –, with many kinds of special characters – accents, right-to-left writing marks, hyphens, Roman numbers, and much more. But the POSIX platform APIs for text do not contain adequate functions for dealing with particular properties of many Unicode characters. In fact, the POSIX APIs for text have several assumptions at their base which don't hold for Unicode text.
+Text files are nowadays usually encoded in Unicode, and may consist of very
+different scripts - from Latin letters to Chinese Hanzi, with many kinds of
+special characters: accents, right-to-left writing marks, hyphens, Roman
+numbers, and much more. But the POSIX platform APIs for text do not contain
+adequate functions for dealing with particular properties of many Unicode
+characters. In fact, the POSIX APIs for text have several assumptions at their
+base which don’t hold for Unicode text.
 
-This library provides functions for manipulating Unicode strings and for manipulating C strings according to the Unicode standard.
+This library provides functions for manipulating Unicode strings and for
+manipulating C strings according to the Unicode standard.
 
 Usage
 -----
-To make this library available, run the following module command ::
+To make this library available, run the following module command: ::
 
         module load libs/gcc/4.8.2/libunistring/0.9.5
 
-This correctly populates the environment variables LD_LIBRARY_PATH, LIBRARY_PATH and CPLUS_INCLUDE_PATH
+This correctly populates the environment variables ``LD_LIBRARY_PATH``, ``LIBRARY_PATH`` and ``CPLUS_INCLUDE_PATH``.
 
 Installation notes
 ------------------

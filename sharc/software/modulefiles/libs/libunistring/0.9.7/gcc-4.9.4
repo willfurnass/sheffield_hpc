@@ -1,0 +1,22 @@
+#%Module1.0#####################################################################
+##
+## libunistring 0.9.7 module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+
+set vers 0.9.7 
+
+proc ModulesHelp { } {
+    global $vers
+    puts stderr "Makes the libunistring $vers library available"
+}
+
+set LIBUNISTRING_DIR /usr/local/packages/libs/libunistring/0.9.7/gcc-4.9.4
+
+module-whatis   "Makes the libunistring $vers library available"
+
+prepend-path LD_LIBRARY_PATH $LIBUNISTRING_DIR/lib/
+prepend-path LIBRARY_PATH $LIBUNISTRING_DIR/lib
+prepend-path CPATH $LIBUNISTRING_DIR/include
