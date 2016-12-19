@@ -21,23 +21,13 @@ set     version rc3
 
 module-whatis   "loads the necessary `Caffe-$version' library paths"
 
-#Check that there are no conflicted modules and unload them if so
-set CONFLICT_MODS [list apps/python/anaconda2-4.2.0 libs/CUDA/7.5.18/binary libs/cudnn/5.1/binary-cuda-7.5.18 dev/gcc/5.4 dev/gcc/6.2]
-
-foreach cm $CONFLICT_MODS {
-	if { [ is-loaded $cm ]} {
-		puts stderr "Unloading module $cm as it is incompatible."
-		module unload $cm
-	}
-}
-
 # Loads the required modules
 module load apps/python/anaconda3-4.2.0
 module load dev/gcc/4.9.4 
 module load libs/cudnn/5.1/binary-cuda-8.0.44
 
 # Sets the paths
-set PREFIX /usr/local/packages/libs/caffe/r3
+set PREFIX /usr/local/packages/libs/caffe/r3/testing-0.1
 
 #Caffe and dependencies
 prepend-path PATH $PREFIX/bin

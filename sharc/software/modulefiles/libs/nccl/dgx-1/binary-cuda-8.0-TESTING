@@ -18,6 +18,8 @@ set     version dgx-1
 
 module-whatis   "loads the necessary `NCCL-$version' library paths"
 
+module load libs/CUDA/8.0.44/binary
+
 set PREFIX /usr/local/packages/libs/nccl/dgx-1
 
 prepend-path C_INCLUDE_PATH $PREFIX/include
