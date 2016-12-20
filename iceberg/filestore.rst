@@ -69,6 +69,8 @@ You can use the ``lfs``  command to find out which files under /fastdata are old
 
 ``/fastdata`` is optimised for large file operations and does not handle lots of small files very well. An example of how slow it can be for large numbers of small files is detailed at http://www.walkingrandomly.com/?p=6167
 
+**Backup policy:** ``/fastdata`` is **not backed up**.
+
 Shared directories
 --------------------
 
