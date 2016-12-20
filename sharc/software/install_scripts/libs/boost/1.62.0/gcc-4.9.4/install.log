@@ -1,0 +1,915 @@
+/tmp/boost/1.62.0/gcc-4.9.4 ~/repos/sheffield_hpc/sharc/software/install_scripts/libs/boost/1.62.0/gcc-4.9.4
+Grabbing http://downloads.sourceforge.net/project/boost/boost/1.62.0/boost_1_62_0.tar.gz (if not already downloaded)
+/tmp/boost/1.62.0/gcc-4.9.4/boost_1_62_0 /tmp/boost/1.62.0/gcc-4.9.4 ~/repos/sheffield_hpc/sharc/software/install_scripts/libs/boost/1.62.0/gcc-4.9.4
+Building Boost.Build engine with toolset gcc... tools/build/src/engine/bin.linuxx86_64/b2
+Detecting Python version... 2.7
+Detecting Python root... /usr
+Unicode/ICU support for Boost.Regex?... not found.
+Backing up existing Boost.Build configuration in project-config.jam.1
+Generating Boost.Build configuration in project-config.jam...
+
+Bootstrapping is done. To build, run:
+
+    ./b2
+    
+To adjust configuration, edit 'project-config.jam'.
+Further information:
+
+   - Command line help:
+     ./b2 --help
+     
+   - Getting started guide: 
+     http://www.boost.org/more/getting_started/unix-variants.html
+     
+   - Boost.Build documentation:
+     http://www.boost.org/build/doc/html/index.html
+
+Performing configuration checks
+
+    - 32-bit                   : no  (cached)
+    - 64-bit                   : yes (cached)
+    - arm                      : no  (cached)
+    - mips1                    : no  (cached)
+    - power                    : no  (cached)
+    - sparc                    : no  (cached)
+    - x86                      : yes (cached)
+    - symlinks supported       : yes (cached)
+    - C++11 mutex              : no  (cached)
+    - lockfree boost::atomic_flag : yes (cached)
+    - Boost.Config Feature Check: cxx11_auto_declarations : no  (cached)
+    - Boost.Config Feature Check: cxx11_constexpr : no  (cached)
+    - Boost.Config Feature Check: cxx11_defaulted_functions : no  (cached)
+    - Boost.Config Feature Check: cxx11_final : yes (cached)
+    - Boost.Config Feature Check: cxx11_hdr_tuple : no  (cached)
+    - Boost.Config Feature Check: cxx11_lambdas : no  (cached)
+    - Boost.Config Feature Check: cxx11_noexcept : no  (cached)
+    - Boost.Config Feature Check: cxx11_nullptr : no  (cached)
+    - Boost.Config Feature Check: cxx11_rvalue_references : no  (cached)
+    - Boost.Config Feature Check: cxx11_template_aliases : no  (cached)
+    - Boost.Config Feature Check: cxx11_thread_local : no  (cached)
+    - Boost.Config Feature Check: cxx11_variadic_templates : yes (cached)
+    - has_icu builds           : no  (cached)
+warning: Graph library does not contain MPI-based parallel components.
+note: to enable them, add "using mpi ;" to your user-config.jam
+    - zlib                     : yes (cached)
+    - bzip2                    : yes (cached)
+    - iconv (libc)             : yes (cached)
+    - icu                      : no  (cached)
+    - icu (lib64)              : no  (cached)
+    - native-atomic-int32-supported : yes (cached)
+    - pthread-supports-robust-mutexes : yes (cached)
+    - compiler-supports-visibility : yes (cached)
+    - compiler-supports-ssse3  : yes (cached)
+    - compiler-supports-avx2   : yes (cached)
+    - gcc visibility           : yes (cached)
+    - long double support      : yes (cached)
+warning: skipping optional Message Passing Interface (MPI) library.
+note: to enable MPI support, add "using mpi ;" to user-config.jam.
+note: to suppress this message, pass "--without-mpi" to bjam.
+note: otherwise, you can safely ignore this message.
+    - zlib                     : yes (cached)
+    - bzip2                    : yes (cached)
+
+Component configuration:
+
+    - atomic                   : building
+    - chrono                   : building
+    - container                : building
+    - context                  : building
+    - coroutine                : building
+    - coroutine2               : building
+    - date_time                : building
+    - exception                : building
+    - fiber                    : building
+    - filesystem               : building
+    - graph                    : building
+    - graph_parallel           : building
+    - iostreams                : building
+    - locale                   : building
+    - log                      : building
+    - math                     : building
+    - metaparse                : building
+    - mpi                      : building
+    - program_options          : building
+    - python                   : building
+    - random                   : building
+    - regex                    : building
+    - serialization            : building
+    - signals                  : building
+    - system                   : building
+    - test                     : building
+    - thread                   : building
+    - timer                    : building
+    - type_erasure             : building
+    - wave                     : building
+
+...patience...
+...patience...
+...patience...
+...patience...
+...patience...
+...patience...
+...found 38777 targets...
+...updating 157 targets...
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_atomic.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_container.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_thread.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_context.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_coroutine.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_date_time.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_filesystem.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_regex.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_graph.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_iostreams.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_locale.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_log.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_log_setup.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_math_tr1.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_math_tr1f.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_math_tr1l.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_math_c99.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_math_c99f.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_math_c99l.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_program_options.a
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/numeric.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/numeric.hpp:8,
+                 from libs/python/src/numeric.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/numeric.o" "libs/python/src/numeric.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/numeric.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/list.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/list.hpp:8,
+                 from libs/python/src/list.cpp:5:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/list.o" "libs/python/src/list.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/list.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/long.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/long.hpp:8,
+                 from libs/python/src/long.cpp:5:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/long.o" "libs/python/src/long.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/long.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/dict.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/dict.hpp:8,
+                 from libs/python/src/dict.cpp:4:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/dict.o" "libs/python/src/dict.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/dict.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/tuple.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/tuple.hpp:8,
+                 from libs/python/src/tuple.cpp:5:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/tuple.o" "libs/python/src/tuple.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/tuple.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/str.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/str.hpp:8,
+                 from libs/python/src/str.cpp:4:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/str.o" "libs/python/src/str.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/str.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/slice.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/slice.hpp:9,
+                 from libs/python/src/slice.cpp:1:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/slice.o" "libs/python/src/slice.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/slice.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/converter/from_python.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/converter/from_python.hpp:8,
+                 from libs/python/src/converter/from_python.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/converter/from_python.o" "libs/python/src/converter/from_python.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/converter/from_python.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/converter/registry.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/type_id.hpp:8,
+                 from ./boost/python/converter/registry.hpp:7,
+                 from libs/python/src/converter/registry.cpp:5:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/converter/registry.o" "libs/python/src/converter/registry.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/converter/registry.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/converter/type_id.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/type_id.hpp:8,
+                 from libs/python/src/converter/type_id.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/converter/type_id.o" "libs/python/src/converter/type_id.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/converter/type_id.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/enum.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/object_core.hpp:10,
+                 from ./boost/python/object/enum_base.hpp:8,
+                 from libs/python/src/object/enum.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/enum.o" "libs/python/src/object/enum.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/enum.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/class.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from libs/python/src/object/class.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/class.o" "libs/python/src/object/class.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/class.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/function.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/object/function.hpp:8,
+                 from ./boost/python/docstring_options.hpp:8,
+                 from libs/python/src/object/function.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/function.o" "libs/python/src/object/function.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/function.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/inheritance.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/type_id.hpp:8,
+                 from ./boost/python/object/inheritance.hpp:8,
+                 from libs/python/src/object/inheritance.cpp:5:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/inheritance.o" "libs/python/src/object/inheritance.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/inheritance.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/life_support.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/object/life_support.hpp:7,
+                 from libs/python/src/object/life_support.cpp:5:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/life_support.o" "libs/python/src/object/life_support.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/life_support.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/pickle_support.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/make_function.hpp:8,
+                 from libs/python/src/object/pickle_support.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/pickle_support.o" "libs/python/src/object/pickle_support.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/pickle_support.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/errors.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/errors.hpp:12,
+                 from libs/python/src/errors.cpp:10:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/errors.o" "libs/python/src/errors.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/errors.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/module.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/scope.hpp:8,
+                 from libs/python/src/module.cpp:9:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/module.o" "libs/python/src/module.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/module.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/converter/builtin_converters.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/handle.hpp:8,
+                 from libs/python/src/converter/builtin_converters.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/converter/builtin_converters.o" "libs/python/src/converter/builtin_converters.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/converter/builtin_converters.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/converter/arg_to_python_base.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/handle.hpp:8,
+                 from ./boost/python/converter/arg_to_python_base.hpp:7,
+                 from libs/python/src/converter/arg_to_python_base.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/converter/arg_to_python_base.o" "libs/python/src/converter/arg_to_python_base.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/converter/arg_to_python_base.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/iterator.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/object_fwd.hpp:8,
+                 from ./boost/python/object/iterator_core.hpp:8,
+                 from libs/python/src/object/iterator.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/iterator.o" "libs/python/src/object/iterator.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/iterator.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/stl_iterator.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/ssize_t.hpp:9,
+                 from ./boost/python/object.hpp:8,
+                 from libs/python/src/object/stl_iterator.cpp:10:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/stl_iterator.o" "libs/python/src/object/stl_iterator.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/stl_iterator.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object_protocol.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/object_protocol.hpp:8,
+                 from libs/python/src/object_protocol.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object_protocol.o" "libs/python/src/object_protocol.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object_protocol.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object_operators.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/object_operators.hpp:8,
+                 from libs/python/src/object_operators.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object_operators.o" "libs/python/src/object_operators.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object_operators.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/wrapper.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/detail/wrapper_base.hpp:7,
+                 from ./boost/python/wrapper.hpp:7,
+                 from libs/python/src/wrapper.cpp:5:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/wrapper.o" "libs/python/src/wrapper.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/wrapper.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/import.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/ssize_t.hpp:9,
+                 from ./boost/python/object.hpp:8,
+                 from ./boost/python/import.hpp:8,
+                 from libs/python/src/import.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/import.o" "libs/python/src/import.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/import.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/exec.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/ssize_t.hpp:9,
+                 from ./boost/python/object.hpp:8,
+                 from ./boost/python/exec.hpp:8,
+                 from libs/python/src/exec.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/exec.o" "libs/python/src/exec.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/exec.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/function_doc_signature.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/converter/registrations.hpp:8,
+                 from libs/python/src/object/function_doc_signature.cpp:9:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DBOOST_PYTHON_STATIC_LIB -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/function_doc_signature.o" "libs/python/src/object/function_doc_signature.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi/object/function_doc_signature.o...
+...skipped <pbin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi>libboost_python.a(clean) for lack of <pbin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi>numeric.o...
+...skipped <pbin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi>libboost_python.a for lack of <pbin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi>numeric.o...
+...skipped <p/usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib>libboost_python.a for lack of <pbin.v2/libs/python/build/gcc-4.9.4/release/link-static/threading-multi>libboost_python.a...
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_random.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_serialization.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_wserialization.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_signals.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_prg_exec_monitor.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_type_erasure.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_wave.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_atomic.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_atomic.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_system.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_system.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_chrono.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_chrono.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_container.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_container.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_thread.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_thread.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_context.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_context.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_coroutine.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_coroutine.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_date_time.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_date_time.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_filesystem.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_filesystem.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_regex.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_regex.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_graph.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_graph.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_iostreams.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_iostreams.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_locale.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_locale.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_log.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_log.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_log_setup.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_log_setup.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_math_tr1.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_math_tr1.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_math_tr1f.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_math_tr1f.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_math_tr1l.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_math_tr1l.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_math_c99.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_math_c99.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_math_c99f.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_math_c99f.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_math_c99l.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_math_c99l.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_program_options.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_program_options.so
+...on 100th target...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/numeric.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/numeric.hpp:8,
+                 from libs/python/src/numeric.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/numeric.o" "libs/python/src/numeric.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/numeric.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/list.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/list.hpp:8,
+                 from libs/python/src/list.cpp:5:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/list.o" "libs/python/src/list.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/list.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/long.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/long.hpp:8,
+                 from libs/python/src/long.cpp:5:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/long.o" "libs/python/src/long.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/long.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/dict.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/dict.hpp:8,
+                 from libs/python/src/dict.cpp:4:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/dict.o" "libs/python/src/dict.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/dict.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/tuple.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/tuple.hpp:8,
+                 from libs/python/src/tuple.cpp:5:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/tuple.o" "libs/python/src/tuple.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/tuple.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/str.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/str.hpp:8,
+                 from libs/python/src/str.cpp:4:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/str.o" "libs/python/src/str.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/str.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/slice.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/slice.hpp:9,
+                 from libs/python/src/slice.cpp:1:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/slice.o" "libs/python/src/slice.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/slice.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/converter/from_python.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/converter/from_python.hpp:8,
+                 from libs/python/src/converter/from_python.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/converter/from_python.o" "libs/python/src/converter/from_python.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/converter/from_python.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/converter/registry.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/type_id.hpp:8,
+                 from ./boost/python/converter/registry.hpp:7,
+                 from libs/python/src/converter/registry.cpp:5:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/converter/registry.o" "libs/python/src/converter/registry.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/converter/registry.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/converter/type_id.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/type_id.hpp:8,
+                 from libs/python/src/converter/type_id.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/converter/type_id.o" "libs/python/src/converter/type_id.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/converter/type_id.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/enum.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/object_core.hpp:10,
+                 from ./boost/python/object/enum_base.hpp:8,
+                 from libs/python/src/object/enum.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/enum.o" "libs/python/src/object/enum.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/enum.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/class.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from libs/python/src/object/class.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/class.o" "libs/python/src/object/class.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/class.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/function.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/object/function.hpp:8,
+                 from ./boost/python/docstring_options.hpp:8,
+                 from libs/python/src/object/function.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/function.o" "libs/python/src/object/function.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/function.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/inheritance.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/type_id.hpp:8,
+                 from ./boost/python/object/inheritance.hpp:8,
+                 from libs/python/src/object/inheritance.cpp:5:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/inheritance.o" "libs/python/src/object/inheritance.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/inheritance.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/life_support.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/object/life_support.hpp:7,
+                 from libs/python/src/object/life_support.cpp:5:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/life_support.o" "libs/python/src/object/life_support.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/life_support.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/pickle_support.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/make_function.hpp:8,
+                 from libs/python/src/object/pickle_support.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/pickle_support.o" "libs/python/src/object/pickle_support.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/pickle_support.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/errors.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/errors.hpp:12,
+                 from libs/python/src/errors.cpp:10:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/errors.o" "libs/python/src/errors.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/errors.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/module.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/scope.hpp:8,
+                 from libs/python/src/module.cpp:9:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/module.o" "libs/python/src/module.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/module.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/converter/builtin_converters.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/handle.hpp:8,
+                 from libs/python/src/converter/builtin_converters.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/converter/builtin_converters.o" "libs/python/src/converter/builtin_converters.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/converter/builtin_converters.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/converter/arg_to_python_base.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/handle.hpp:8,
+                 from ./boost/python/converter/arg_to_python_base.hpp:7,
+                 from libs/python/src/converter/arg_to_python_base.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/converter/arg_to_python_base.o" "libs/python/src/converter/arg_to_python_base.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/converter/arg_to_python_base.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/iterator.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/object_fwd.hpp:8,
+                 from ./boost/python/object/iterator_core.hpp:8,
+                 from libs/python/src/object/iterator.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/iterator.o" "libs/python/src/object/iterator.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/iterator.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/stl_iterator.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/ssize_t.hpp:9,
+                 from ./boost/python/object.hpp:8,
+                 from libs/python/src/object/stl_iterator.cpp:10:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/stl_iterator.o" "libs/python/src/object/stl_iterator.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/stl_iterator.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object_protocol.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/object_protocol.hpp:8,
+                 from libs/python/src/object_protocol.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object_protocol.o" "libs/python/src/object_protocol.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object_protocol.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object_operators.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/object_operators.hpp:8,
+                 from libs/python/src/object_operators.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object_operators.o" "libs/python/src/object_operators.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object_operators.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/wrapper.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/detail/wrapper_base.hpp:7,
+                 from ./boost/python/wrapper.hpp:7,
+                 from libs/python/src/wrapper.cpp:5:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/wrapper.o" "libs/python/src/wrapper.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/wrapper.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/import.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/ssize_t.hpp:9,
+                 from ./boost/python/object.hpp:8,
+                 from ./boost/python/import.hpp:8,
+                 from libs/python/src/import.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/import.o" "libs/python/src/import.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/import.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/exec.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/ssize_t.hpp:9,
+                 from ./boost/python/object.hpp:8,
+                 from ./boost/python/exec.hpp:8,
+                 from libs/python/src/exec.cpp:6:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/exec.o" "libs/python/src/exec.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/exec.o...
+gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/function_doc_signature.o
+In file included from ./boost/python/detail/prefix.hpp:13:0,
+                 from ./boost/python/converter/registrations.hpp:8,
+                 from libs/python/src/object/function_doc_signature.cpp:9:
+./boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+ # include <pyconfig.h>
+                       ^
+compilation terminated.
+
+    "g++"  -ftemplate-depth-128 -O3 -finline-functions -Wno-inline -Wall -pthread -fPIC -m64  -DBOOST_ALL_NO_LIB=1 -DBOOST_PYTHON_SOURCE -DNDEBUG  -I"." -I"/usr/include/python2.7" -c -o "bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/function_doc_signature.o" "libs/python/src/object/function_doc_signature.cpp"
+
+...failed gcc.compile.c++ bin.v2/libs/python/build/gcc-4.9.4/release/threading-multi/object/function_doc_signature.o...
+...skipped <pbin.v2/libs/python/build/gcc-4.9.4/release/threading-multi>libboost_python.so.1.62.0 for lack of <pbin.v2/libs/python/build/gcc-4.9.4/release/threading-multi>numeric.o...
+...skipped <p/usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib>libboost_python.so.1.62.0 for lack of <pbin.v2/libs/python/build/gcc-4.9.4/release/threading-multi>libboost_python.so.1.62.0...
+...skipped <p/usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib>libboost_python.so for lack of <p/usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib>libboost_python.so.1.62.0...
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_random.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_random.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_serialization.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_serialization.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_wserialization.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_wserialization.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_signals.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_signals.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_timer.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_timer.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_prg_exec_monitor.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_prg_exec_monitor.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_unit_test_framework.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_unit_test_framework.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_type_erasure.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_type_erasure.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_wave.so.1.62.0
+ln-UNIX /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_wave.so
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_exception.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_system.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_chrono.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_timer.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_unit_test_framework.a
+common.copy /usr/local/packages/libs/boost/1.62.0/gcc-4.9.4/lib/libboost_test_exec_monitor.a
+...failed updating 56 targets...
+...skipped 6 targets...
+...updated 95 targets...
+Error code: 
+Errored command:  echo ./b2 install
+Error on line: 51
