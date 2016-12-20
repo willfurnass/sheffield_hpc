@@ -1,9 +1,5 @@
 #!/bin/bash
 # Install CASTEP 16.11 on the ShARC cluster
-#$ -N castep_16_11_sharc_build
-#$ -m bea
-#$ -M w.furnass@sheffield.ac.uk
-#$ -j y
 
 ##############################################################################
 # Error handling
