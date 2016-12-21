@@ -150,8 +150,9 @@ The following script was submitted via ``qsub`` from the ``Test`` subdirectory o
         ../bin/testcode.py -q  --total-processors=1 -e castep.serial -c simple -v -v -v
 
 All 416 tests passed.  Results can be found in :download:`castep_16_11_serial_sharc_build_tests.log </sharc/software/install_scripts/apps/castep/16.11/intel-15.0.7/castep_16_11_serial_sharc_build_tests.log>`.  
+
 Version 16.11, parallel build
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following script was submitted via ``qsub`` from the ``Test`` subdirectory of the build directory: ::
 

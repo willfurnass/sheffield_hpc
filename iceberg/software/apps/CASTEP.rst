@@ -48,7 +48,7 @@ If, instead, you get: ::
         -bash: castep.serial: command not found
 
 It is probably because you are not a member of the ``castep`` group. 
-See `Licensing` for details on how to be added to this group.
+See Licensing_ for details on how to be added to this group.
 
 Interactive usage is fine for small CASTEP jobs such as the Silicon example given at http://www.castep.org/Tutorials/BasicsAndBonding
 
@@ -121,8 +121,8 @@ Installation Notes
 ------------------
 These are primarily for system administrators.
 
-Version 16.1
-^^^^^^^^^^^^
+Version 16.11
+^^^^^^^^^^^^^
 
 Serial (no MPI) and parallel (MPI) builds were compiled. 
 Both builds were compiled with Intel compiler 15.0.3 (including the Intel MKL 2015.3 for BLAS and FFT routines).  
@@ -130,7 +130,7 @@ The parallel build was compiled using OpenMPI 1.10.0.
 
 Both builds were installed using :download:`this script </iceberg/software/install_scripts/apps/intel/15/castep/16.11/install.sh>`
 **Note** that this compiles both builds in ``/data/$USER`` as the build directory must be availble to all cluster nodes 
-to allow for subsequent `Testing` of the parallel build.  
+to allow for subsequent Testing_ of the parallel build.  
 ~2.2 GB of free space is required.
 
 * :download:`The non-MPI build modulefile </iceberg/software/modulefiles/apps/intel/15/castep/16.11-serial>` was installed as 
@@ -147,115 +147,149 @@ Serial (1 CPU core) and Parallel versions of CASTEP were compiled. Both versions
 
 The Serial version was compiled and installed with ::
 
-  module load compilers/intel/15.0.3
-  install_dir=/usr/local/packages6/apps/intel/15/castep/16.1
-  mkdir -p $install_dir
+        module load compilers/intel/15.0.3
+        install_dir=/usr/local/packages6/apps/intel/15/castep/16.1
+        mkdir -p $install_dir
 
-  tar -xzf ./CASTEP-16.1.tar.gz
-  cd CASTEP-16.1
+        tar -xzf ./CASTEP-16.1.tar.gz
+        cd CASTEP-16.1
 
-  #Compile Serial version
-  make INSTALL_DIR=$install_dir  FFT=mkl MATHLIBS=mkl10
-  make INSTALL_DIR=$install_dir  FFT=mkl MATHLIBS=mkl10 install install-tools
+        # Compile Serial version
+        make INSTALL_DIR=$install_dir  FFT=mkl MATHLIBS=mkl10
+        make INSTALL_DIR=$install_dir  FFT=mkl MATHLIBS=mkl10 install install-tools
 
 The directory ``CASTEP-16.1`` was then deleted and the parallel version was installed with ::
 
-  #!/bin/bash
-  module load libs/intel/15/openmpi/1.8.8
-  #The above command also loads Intel Compilers 15.0.3
-  #It also places the MKL in LD_LIBRARY_PATH
+        #!/bin/bash
+        module load libs/intel/15/openmpi/1.8.8
+        # The above command also loads Intel Compilers 15.0.3
+        # It also places the MKL in LD_LIBRARY_PATH
 
-  install_dir=/usr/local/packages6/apps/intel/15/castep/16.1
+        install_dir=/usr/local/packages6/apps/intel/15/castep/16.1
 
-  tar -xzf ./CASTEP-16.1.tar.gz
-  cd CASTEP-16.1
+        tar -xzf ./CASTEP-16.1.tar.gz
+        cd CASTEP-16.1
 
-  #Workaround for bug described at http://www.cmth.ph.ic.ac.uk/computing/software/castep.html
-  sed 's/-static-intel/-shared-intel/' obj/platforms/linux_x86_64_ifort15.mk -i
+        #Workaround for bug described at http://www.cmth.ph.ic.ac.uk/computing/software/castep.html
+        sed 's/-static-intel/-shared-intel/' obj/platforms/linux_x86_64_ifort15.mk -i
 
-  #Compile parallel version
-  make COMMS_ARCH=mpi  FFT=mkl MATHLIBS=mkl10
-  mv ./obj/linux_x86_64_ifort15/castep.mpi $install_dir
+        # Compile parallel version
+        make COMMS_ARCH=mpi  FFT=mkl MATHLIBS=mkl10
+        mv ./obj/linux_x86_64_ifort15/castep.mpi $install_dir
+
+Modulefiles:
+
+* :download:`CASTEP 16.1-serial </iceberg/software/modulefiles/apps/intel/15/castep/16.1-serial>`
+* :download:`CASTEP 16.1-parallel </iceberg/software/modulefiles/apps/intel/15/castep/16.1-parallel>`
 
 **CASTEP Version 8**
 
 Serial (1 CPU core) and Parallel versions of CASTEP were compiled. Both versions were compiled with version 15.0.3 of the Intel Compiler Suite and the Intel MKL versions of BLAS and FFT were used. The parallel version made use of OpenMPI 1.8.8
 
-The Serial version was compiled and installed with ::
+The Serial version was compiled and installed with: ::
 
-  module load compilers/intel/15.0.3
-  install_dir=/usr/local/packages6/apps/intel/15/castep/8.0
+        module load compilers/intel/15.0.3
+        install_dir=/usr/local/packages6/apps/intel/15/castep/8.0
 
-  tar -xzf ./CASTEP-8.0.tar.gz
-  cd CASTEP-8.0
+        tar -xzf ./CASTEP-8.0.tar.gz
+        cd CASTEP-8.0
 
-  #Compile Serial version
-  make INSTALL_DIR=$install_dir  FFT=mkl MATHLIBS=mkl10
-  make INSTALL_DIR=$install_dir  FFT=mkl MATHLIBS=mkl10 install install-tools
+        # Compile Serial version
+        make INSTALL_DIR=$install_dir  FFT=mkl MATHLIBS=mkl10
+        make INSTALL_DIR=$install_dir  FFT=mkl MATHLIBS=mkl10 install install-tools
 
-The directory ``CASTEP-8.0`` was then deleted and the parallel version was installed with ::
+The directory ``CASTEP-8.0`` was then deleted and the parallel version was installed with: ::
 
-  #!/bin/bash
-  module load libs/intel/15/openmpi/1.8.8
-  #The above command also loads Intel Compilers 15.0.3
-  #It also places the MKL in LD_LIBRARY_PATH
+        #!/bin/bash
+        module load libs/intel/15/openmpi/1.8.8
+        # The above command also loads Intel Compilers 15.0.3
+        # It also places the MKL in LD_LIBRARY_PATH
 
-  install_dir=/usr/local/packages6/apps/intel/15/castep/8.0
-  mkdir -p $install_dir
+        install_dir=/usr/local/packages6/apps/intel/15/castep/8.0
+        mkdir -p $install_dir
 
-  tar -xzf ./CASTEP-8.0.tar.gz
-  cd CASTEP-8.0
+        tar -xzf ./CASTEP-8.0.tar.gz
+        cd CASTEP-8.0
 
-  #Compile parallel version
-  make COMMS_ARCH=mpi  FFT=mkl MATHLIBS=mkl10
-  mv ./obj/linux_x86_64_ifort15/castep.mpi $install_dir
+        # Compile parallel version
+        make COMMS_ARCH=mpi  FFT=mkl MATHLIBS=mkl10
+        mv ./obj/linux_x86_64_ifort15/castep.mpi $install_dir
 
-Modulefiles
------------
-* :download:`CASTEP 16.1-serial </iceberg/software/modulefiles/apps/intel/15/castep/16.1-serial>`
-* :download:`CASTEP 16.1-parallel </iceberg/software/modulefiles/apps/intel/15/castep/16.1-parallel>`
+Modulefiles:
+
 * :download:`CASTEP 8.0-serial </iceberg/software/modulefiles/apps/intel/15/castep/8.0-serial>`
 * :download:`CASTEP 8.0-parallel </iceberg/software/modulefiles/apps/intel/15/castep/16.1-parallel>`
 
 Testing
 -------
-**Version 16.1 Serial**
 
-The following script was submitted via ``qsub`` from inside the build directory::
+Version 16.11 Serial
+^^^^^^^^^^^^^^^^^^^^
 
-  #!/bin/bash
-  #$ -l mem=10G
-  #$ -l rmem=10G
-  module load compilers/intel/15.0.3
+The following script was submitted via ``qsub`` from inside the ``Test`` subdirectory of the build directory: ::
 
-  cd CASTEP-16.1/Test
-  ../bin/testcode.py -q  --total-processors=1 -e /home/fe1mpc/CASTEP/CASTEP-16.1/obj/linux_x86_64_ifort15/castep.serial -c simple -v -v -v
+        #!/bin/bash
+        #$ -l mem=10G
+        #$ -l rmem=10G
+        #$ -l mem=10G
+
+        module purge
+        module load apps/intel/15/castep/16.11-serial
+
+        ../bin/testcode.py -q  --total-processors=1 -e castep.serial -c simple -v -v -v
+
+One test failed (``test2``), another (possibly dependent) test was skipped and 414 tests passed.  The results can be seen in the file: 
+:download:`castep_16_11_serial_iceberg_build_tests.log </iceberg/software/install_scripts/apps/intel/15/castep/16.11/castep_16_11_serial_iceberg_build_tests.log>`
+
+However the test that failed generated the following plus a traceback in a separate file: ::
+
+        *** glibc detected *** /usr/local/packages6/apps/intel/15/castep/16.11/castep.serial: double free or corruption (!prev): 0x00000000074764f0 ***
+
+Version 16.11 Parallel
+^^^^^^^^^^^^^^^^^^^^^^
+
+**Note:** Not yet tested.
+
+Version 16.1 Serial
+^^^^^^^^^^^^^^^^^^^
+
+The following script was submitted via ``qsub`` from inside the build directory: ::
+
+        #!/bin/bash
+        #$ -l mem=10G
+        #$ -l rmem=10G
+        module load compilers/intel/15.0.3
+
+        cd CASTEP-16.1/Test
+        ../bin/testcode.py -q  --total-processors=1 -e /home/fe1mpc/CASTEP/CASTEP-16.1/obj/linux_x86_64_ifort15/castep.serial -c simple -v -v -v
 
 All but one of the tests passed. It seems that the failed test is one that fails for everyone for this version since there is a missing input file. The output from the test run is on the system at ``/usr/local/packages6/apps/intel/15/castep/16.1/CASTEP_SERIAL_tests_09022016.txt``
 
-**Version 16.1 Parallel**
+Version 16.1 Parallel
+^^^^^^^^^^^^^^^^^^^^^
 
 The following script was submitted via ``qsub`` from inside the build directory ::
 
-  #!/bin/bash
-  #$ -pe openmpi-ib 4
-  #$ -l mem=10G
-  #$ -l rmem=10G
-  module load libs/intel/15/openmpi/1.8.8
+        #!/bin/bash
+        #$ -pe openmpi-ib 4
+        #$ -l mem=10G
+        #$ -l rmem=10G
+        module load libs/intel/15/openmpi/1.8.8
 
-  cd CASTEP-16.1/Test
-  ../bin/testcode.py -q  --total-processors=4 --processors=4 -e /home/fe1mpc/CASTEP/CASTEP-16.1/obj/linux_x86_64_ifort15/castep.mpi -c simple -v -v -v
+        cd CASTEP-16.1/Test
+        ../bin/testcode.py -q  --total-processors=4 --processors=4 -e /home/fe1mpc/CASTEP/CASTEP-16.1/obj/linux_x86_64_ifort15/castep.mpi -c simple -v -v -v
 
 All but one of the tests passed. It seems that the failed test is one that fails for everyone for this version since there is a missing input file. The output from the test run is on the system at ``/usr/local/packages6/apps/intel/15/castep/16.1/CASTEP_Parallel_tests_09022016.txt``
 
-**Version 8 Parallel**
+Version 8 Parallel
+^^^^^^^^^^^^^^^^^^
 The following script was submitted via ``qsub`` ::
 
-   #!/bin/bash
-   #$ -pe openmpi-ib 4
-   module load libs/intel/15/openmpi/1.8.8
+        #!/bin/bash
+        #$ -pe openmpi-ib 4
+        module load libs/intel/15/openmpi/1.8.8
 
-   cd CASTEP-8.0
-   make check COMMS_ARCH=mpi  MAX_PROCS=4 PARALLEL="--total-processors=4 --processors=4"
+        cd CASTEP-8.0
+        make check COMMS_ARCH=mpi  MAX_PROCS=4 PARALLEL="--total-processors=4 --processors=4"
 
 All tests passed.
