@@ -36,7 +36,7 @@ The license restrictions are as follows:
  * The program is **not to be used for commercial research**. For any commercial use of the program a license must be obtained from Accelrys Inc, including contract research.
  * The program is supplied on an "as is" basis with no implied guarantee or support.
 
-To ensure that the software is not used for commercial purposes access to GULP is restricted to members of the `gulp` (UNIX) group.  
+To ensure that the software is not used for commercial purposes access to GULP is restricted to members of the ``gulp`` (UNIX) group.  
 To be added to this group, you will need to contact ``research-it@sheffield.ac.uk`` and state the nature of your work.
 
 Interactive Usage
@@ -61,7 +61,7 @@ If you get: ::
 
         -bash: gulp: command not found
 
-it is probably because you are not a member of the ``gulp`` group. See `Licensing`.
+it is probably because you are not a member of the ``gulp`` group. See Licensing_.
 
 Serial batch jobs
 -----------------
@@ -88,8 +88,8 @@ Multi-node batch jobs
 Create a batch job submission script like the following: ::
 
         #!/bin/bash
-        #$ -N gulp_ex_serial
-        #$ -N my_gulp_mpi_16_job
+        #$ -N my_gulp_mpi_16_slot_job
+        #$ -pe mpi 16
         #$ -j y
         #$ -m bea
         #$ -M YOUREMAIL@sheffield.ac.uk
@@ -191,4 +191,3 @@ Both versions were tested using the examples provided by GULP's authors.  Timing
 
 * **serial**: ``/usr/local/packages/apps/gulp/4.4/intel-17.0.0/Examples/timings_2016-11-25.txt``
 * **MPI**: ???
-
