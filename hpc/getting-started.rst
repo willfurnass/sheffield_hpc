@@ -64,7 +64,9 @@ Click *Start local terminal* and if you see something like the the following the
 Mac OS/X and Linux
 ``````````````````
 
-Linux and Mac OS/X both have a terminal emulator program pre-installed.
+Linux and macOS (OS X) both have a terminal emulator program pre-installed.  
+macOS users should however install the latest version of the `XQuartz <https://www.xquartz.org/>`_ X Windows server 
+if they want to be able to run graphical applications on the cluster.
 
 Open a terminal and then go to :ref:`ssh`.
 
@@ -73,21 +75,28 @@ Open a terminal and then go to :ref:`ssh`.
 Connect to iceberg
 ``````````````````
 
-Once you have a terminal open run the following command::
+Once you have a terminal open run the following command: ::
 
     ssh -X <username>@iceberg.shef.ac.uk
 
 where you replace `<username>` with your CICS username.
 
-This should give you a prompt resembling the one below::
+.. note::
 
-    [te1st@iceberg-login2 ~]$ 
+    **macOS users**: if this fails then:
+    
+    * Check that your `XQuartz <https://www.xquartz.org/>`_ is up to date then try again *or*
+    * Try again with ``-Y`` instead of ``-X``
 
-at this prompt type::
+This should give you a prompt resembling the one below: ::
+
+    [te1st@iceberg-login1 ~]$ 
+
+at this prompt type: ::
 
     qsh
 
-like this::
+like this: ::
 
     [te1st@iceberg-login2 ~]$ qsh
     Your job 135355 ("INTERACTIVE") has been submitted
