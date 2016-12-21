@@ -120,15 +120,26 @@ Next, create a batch job submission script like the following (for serial testin
         #$ -m bea
         #$ -M YOUREMAIL@sheffield.ac.uk
 
+        module purge
         module load apps/gulp/4.4/intel-17.0.0
+        export OMP_NUM_THREADS=1
 
-        for infile in example*.gin; do
-            echo "Running ${infile}:"
+        for infile in ./example*.gin; do
             outfile=${infile/gin/got}
-            time (gulp < $infile > $outfile)
+            echo "*******************************************"
+            echo "gulp < $infile | tee $outfile"
+            echo "*******************************************"
+
+            gulp < $infile | tee $outfile
         done
-        chmod +x ./diff.sh
-        ./diff.sh
+
+        # Determine the difference between each generated output file 
+        # and a corresponding example output file provided with GULP
+        sh ./diff.sh
+        # Collate these differences
+        for infile in example*.diff; do
+            (echo $infile; cat $infile) >> diffs_serial.log
+        done
 
 or like the following (for MPI testing using 16 cores): ::
 
@@ -139,15 +150,29 @@ or like the following (for MPI testing using 16 cores): ::
         #$ -m bea
         #$ -M YOUREMAIL@sheffield.ac.uk
 
+        module purge
         module load apps/gulp/4.4/intel-17.0.0-openmpi-2.0.1
 
-        for infile in example*.gin; do
-            echo "Running ${infile}:"
+        for infile in ./example*.gin; do
             outfile=${infile/gin/got}
-            time (mpirun -np $NSLOTS gulp < $infile > $outfile)
+            echo "*******************************************"
+            echo "mpirun -np 16 gulp < $infile | tee $outfile"
+            echo "*******************************************"
+
+            mpirun -np 16 gulp < $infile | tee $outfile
+
+            # Needed to avoid errors about not being able to 
+            # connect to 'orted' daemons on nodes
+            sleep 5
         done
-        chmod +x ./diff.sh
-        ./diff.sh
+         
+        # Determine the difference between each generated output file 
+        # and a corresponding example output file provided with GULP
+        sh ./diff.sh
+        # Collate these differences
+        for infile in example*.diff; do
+            (echo $infile; cat $infile) >> diffs_mpi16.log
+        done
 
 Finally, submit this job to the scheduler: ::
 
@@ -157,8 +182,9 @@ After receiving email notification that the job has finished, check in the ``gul
 
  - the names of the examples that were run;
  - timings per example;
- - details of any errors;
- - details of any differences between the generated outputs and the sample outputs provided by the software's authors.
+ - details of any errors
+
+There will also be a ``diffs*.log`` file containing details of differences between the generated outputs and the sample outputs provided by the software's authors.
 
 Documentation
 -------------
@@ -187,7 +213,24 @@ In addition:
 * :download:`The serial build modulefile </sharc/software/modulefiles/apps/gulp/4.4/intel-17.0.0>` was installed as ``/usr/local/modulefiles/apps/gulp/4.4/intel-17.0.0``
 * :download:`The parallel build modulefile </sharc/software/modulefiles/apps/gulp/4.4/intel-17.0.0-openmpi-2.0.1>` was installed as ``/usr/local/modulefiles/apps/gulp/4.4/intel-17.0.0-openmpi-2.0.1``
 
-Both versions were tested using the examples provided by GULP's authors.  Timings per example are saved here:
+Both versions were tested using the process outlined in the Examples_ section.  The results for the serial version:
 
-* **serial**: ``/usr/local/packages/apps/gulp/4.4/intel-17.0.0/Examples/timings_2016-11-25.txt``
-* **MPI**: ???
+* :download:`Timings and results file </sharc/software/install_scripts/apps/gulp/4.4/intel-17.0.0/timings_serial.log>`
+* :download:`Diffs file </sharc/software/install_scripts/apps/gulp/4.4/intel-17.0.0/diffs_serial.log>`
+
+A summary of the issues encountered during these 58 tests: ::
+
+        $ egrep '(WARNING|ERROR)' timings_serial.log | sort | uniq -c
+              1 !! WARNING : Ambiguous vacancy specifier used
+
+The results for the MPI version:
+
+* :download:`Timings and results file </sharc/software/install_scripts/apps/gulp/4.4/intel-17.0.0/timings_mpi_16.log>`
+* :download:`Diffs file </sharc/software/install_scripts/apps/gulp/4.4/intel-17.0.0/diffs_mpi_16.log>`
+
+A summary of the issues encountered during these 58 tests: ::
+
+    $ egrep '(WARNING|ERROR)' timings_mpi_16.log | sort | uniq -c
+          1 !! ERROR : RFO keyword cannot be used with conjugate gradients
+         31 !! ERROR : second derivatives unavailable in parallel
+          1 !! WARNING : Not all configurations optimised successfully in relaxed
