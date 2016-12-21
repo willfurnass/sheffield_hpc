@@ -1,0 +1,91 @@
+#! /bin/sh
+#
+# This shell script adapts the Makefile in dependence
+# of the machine and the operating system you use.
+# It is called from 'make' before the compiler
+# is invoked.
+#
+#  7/97 IRIX64 directory name modified to handle IRIX7
+#  2/99 Cray options added (IW)
+#
+#  DEFS:
+#
+#  -DMPI    => triggers MPI compilation
+#  -DNOFOX  => do not compile FoX related subroutines
+#  -DPLUMED => compile with calls to PLUMED added
+#  -DKIM    => compile with calls to OpenKIM (Note that environment variable KIM_DIR must be set)
+#  -DCTRLC  => compile with calls to csignal to trap Control C escape sequence
+#
+#  Initially written by J-R. Hill, modified by JDG
+#
+
+
+debug=
+if [ "$1" = "-debug" ]; then
+  debug="_DEBUG"
+  shift
+fi
+
+os=`uname -s`
+dir="${os}${debug}"
+mkdir -p $dir
+cd $dir
+if [ "$debug" = "" ]; then
+    echo 'OPT=-O3 -mp1 ' > makefile
+    echo 'OPT1=-O1 ' >> makefile
+    echo 'OPT2=-O3 -mp1 ' >> makefile
+else	
+    echo 'OPT=' > makefile
+fi
+target=${1}_
+
+echo 'RUNF90=ifort ' >> makefile
+echo 'RUNCC=icc ' >> makefile
+
+echo 'FFLAGS=-I.. ' >> makefile
+echo 'LIBS=-mkl -lpthread' >> makefile
+echo 'CFLAGS=-I.. ' >> makefile
+
+echo 'LDFLAGS=' >> makefile
+echo 'BLAS=' >> makefile
+echo 'LAPACK=' >> makefile
+echo 'GULPENV=' >> makefile
+echo 'CDABS=cdabs.o' >> makefile
+echo 'DEFS=' >> makefile
+
+# General options
+#
+# For Cray remove blas.o and lapack.o 
+#           echo 'BLAS=blas.o' >> makefile
+# for chemshell use, we should have lapack so comment the following line out
+#           echo 'LAPACK=lapack.o' >> makefile
+#           echo 'GULPENV=' >> makefile
+#	   echo 'CDABS=cdabs.o' >> makefile
+## If PLUMED is needed then set -DPLUMED
+##           echo 'DEFS=-DFLUSH -DPLUMED' >> makefile
+#           echo 'DEFS=-DFLUSH ' >> makefile
+#           echo 'PLUMEDDEFS=-DDL_POLY' >> makefile
+#           echo 'ARCHIVE = ar rcv' >> makefile
+#           echo 'RANLIB = ar ts' >> makefile
+
+cat ../Makefile >> makefile
+make $target
+rm -f makefile
+#if [ "$debug" = "" ]
+#then
+#  strip gulp
+#fi
+
+if [ "$target" = "lib_" ]
+then
+#
+# Move library to top of GULP tree
+#
+mv libgulp.a ../../libgulp.a
+elif [ "$target" = "gulp_" ]
+then
+#
+# Move executable back to level at which make command was issued
+#
+mv gulp ../gulp
+fi
