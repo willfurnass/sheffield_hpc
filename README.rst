@@ -14,7 +14,7 @@ Rendered Documentation
 ----------------------
 Two versions of the documentation are currently automatically built from this repository:
 
-* `A website <http://docs.iceberg.shef.ac.uk/en/latest/>`_.
+* `A website <http://docs.hpc.shef.ac.uk/en/latest/>`_.
 * `A .pdf document <http://readthedocs.org/projects/iceberg/downloads/pdf/latest/>`_.
 
 How to Contribute
