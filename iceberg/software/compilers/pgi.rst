@@ -9,6 +9,7 @@ Making the PGI Compilers available
 
 After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the :code:`qsh` or :code:`qrsh` command. To make one of the versions of the PGI Compiler Suite available, run one of the following module commands ::
 
+    module load compilers/pgi/16.10
     module load compilers/pgi/15.10
     module load compilers/pgi/15.7
     module load compilers/pgi/14.4
@@ -45,6 +46,10 @@ Additional resources
 
 Installation Notes
 ------------------
+*Version 16.10*
+
+The interactive installer was slightly different to that of 15.7 (below) but the questions and answers were essentially the same.
+
 *Version 15.10*
 
 The interactive installer was slightly different to that of 15.7 (below) but the questions and answers were essentially the same.
