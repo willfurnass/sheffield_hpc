@@ -1,0 +1,40 @@
+#%Module1.0#####################################################################
+##
+## Caffe rc3 module file Build 0.2
+##
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "	Adds `Caffe-$version' to your PATH environment variable 
+}
+
+set     version rc3
+
+
+
+
+module-whatis   "loads the necessary `Caffe-$version' library paths"
+
+# Loads the required modules
+module load apps/python/anaconda3-4.2.0
+module load dev/gcc/4.9.4 
+module load libs/cudnn/5.1/binary-cuda-8.0.44
+
+# Sets the paths
+set PREFIX /usr/local/packages/libs/caffe/r3/build-0.2
+
+#Caffe and dependencies
+prepend-path PATH $PREFIX/bin
+prepend-path CPATH $PREFIX/include
+prepend-path LIBRARY_PATH $PREFIX/lib
+prepend-path LIBRARY_PATH $PREFIX/lib64
+prepend-path LD_LIBRARY_PATH $PREFIX/lib
+prepend-path LD_LIBRARY_PATH $PREFIX/lib64
+prepend-path CAFFE_ROOT $PREFIX/caffe
+prepend-path PYTHONPATH $PREFIX/python
