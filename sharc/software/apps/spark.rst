@@ -62,13 +62,13 @@ The installation of Spark on Sharc is limited to jobs that make use of one node.
 As such, the maximum number of CPU cores you can request for a Spark job is limited to 16 cores.
 
 First, you must request cores from the scheduler.
-That is, you add the following line to your submission script to request 4 cores
+That is, you add the following line to your submission script to request 4 cores ::
 
-#$ -pe smp 4
+  #$ -pe smp 4
 
 You must also tell Spark to only use 4 cores by setting the `MASTER` environment variable ::
 
-export MASTER=local[4]
+  export MASTER=local[4]
 
 A full example is given at https://github.com/mikecroucher/HPC_Examples/tree/master/languages/Python/pyspark_pi
 
