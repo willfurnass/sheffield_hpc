@@ -5,8 +5,8 @@ module load dev/intel-compilers/17.0.0
 
 #Set up environment variables and create directories
 version=3.3.2
-install_dir=/usr/local/packages/apps/R/3.3.2/intel-17.0-parallel
-build_dir=~/R-intel_build_parallel_$version
+install_dir=/usr/local/packages/apps/R/3.3.2/intel-17.0-sequential
+build_dir=~/R-intel_build_$version
 mkdir -p $build_dir
 mkdir -p $install_dir
 
@@ -25,7 +25,7 @@ export FCFLAGS="-O3 -xHOST -axCORE-AVX-I,CORE-AVX2 -fp-model precise"
 export CXX=icpc
 export CXXFLAGS="-std=c++11 -O3 -xHOST -axCORE-AVX-I,CORE-AVX2 -fp-model precise"
  
-./configure --prefix=$install_dir --with-blas=-mkl=parallel --with-lapack=-mkl=parallel --enable-R-shlib | tee config-R-$version.log
+./configure --prefix=$install_dir --with-blas=-mkl=sequential --with-lapack=-mkl=sequential --enable-R-shlib | tee config-R-$version.log
 make 2>&1 | tee make-R-$version.log
 
 #Check
