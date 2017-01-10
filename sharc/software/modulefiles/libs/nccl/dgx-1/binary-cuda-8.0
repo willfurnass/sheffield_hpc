@@ -22,7 +22,8 @@ module load libs/CUDA/8.0.44/binary
 
 set PREFIX /usr/local/packages/libs/nccl/dgx-1
 
-prepend-path C_INCLUDE_PATH $PREFIX/include
-prepend-path CPLUS_INCLUDE_PATH $PREFIX/include
+
+prepend-path CPATH $PREFIX/include
+prepend-path LIBRARY_PATH $PREFIX/lib/x86_64-linux-gnu
 prepend-path LD_LIBRARY_PATH $PREFIX/lib/x86_64-linux-gnu
 
