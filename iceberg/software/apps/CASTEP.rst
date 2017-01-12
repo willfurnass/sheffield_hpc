@@ -5,6 +5,9 @@ CASTEP
 
    :Latest Version:  16.11
    :URL: http://www.castep.org/
+   :Categories:    
+    .. tag:: CASTEP
+        :tag: chemistry
 
 Licensing
 ---------

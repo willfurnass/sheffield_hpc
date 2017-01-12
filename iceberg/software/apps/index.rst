@@ -9,3 +9,5 @@ Applications on Iceberg
     
     ./*
 
+.. taglist::
+    :tags: chemistry
