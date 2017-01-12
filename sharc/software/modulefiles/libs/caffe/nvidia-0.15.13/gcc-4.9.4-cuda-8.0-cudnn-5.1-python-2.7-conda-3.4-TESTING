@@ -1,6 +1,6 @@
 #%Module1.0#####################################################################
 ##
-## Caffe rc3 module file
+## NV-Caffe 0.15.13 Build 0.1
 ##
 ################################################################################
 
@@ -14,7 +14,7 @@ proc ModulesHelp { } {
         puts stderr "	Adds `Caffe-$version' to your PATH environment variable 
 }
 
-set     version rc3
+set     version nv-0.15.13
 
 
 
@@ -25,14 +25,17 @@ module-whatis   "loads the necessary `Caffe-$version' library paths"
 module load apps/python/anaconda3-4.2.0
 module load dev/gcc/4.9.4 
 module load libs/cudnn/5.1/binary-cuda-8.0.44
+module load libs/intel-tbb/2017.0/binary
 
 # Sets the paths
-set PREFIX /usr/local/packages/libs/caffe/r3/testing-0.1
+set PREFIX /usr/local/packages/libs/caffe/nvidia-0.15.13/build-0.1
 
 #Caffe and dependencies
 prepend-path PATH $PREFIX/bin
 prepend-path CPATH $PREFIX/include
+prepend-path LIBRARY_PATH $PREFIX/lib
+prepend-path LIBRARY_PATH $PREFIX/lib64
 prepend-path LD_LIBRARY_PATH $PREFIX/lib
+prepend-path LD_LIBRARY_PATH $PREFIX/lib64
 prepend-path CAFFE_ROOT $PREFIX/caffe
-prepend-path PYTHONPATH $PREFIX/distribute/python
 prepend-path PYTHONPATH $PREFIX/python

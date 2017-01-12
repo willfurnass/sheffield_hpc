@@ -1,0 +1,30 @@
+#%Module1.0#####################################################################
+##
+## NCCL Library
+##
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "	Adds `NCCL-$version to your PATH environment variable"
+}
+
+set     version 1.2.3
+
+module-whatis   "loads the necessary `NCCL-$version' library paths"
+
+module load dev/gcc/4.9.4
+module load libs/CUDA/8.0.44/binary
+
+set PREFIX /usr/local/packages/libs/nccl/generic
+
+
+prepend-path CPATH $PREFIX/include
+prepend-path LIBRARY_PATH $PREFIX/lib
+prepend-path LD_LIBRARY_PATH $PREFIX/lib
+
