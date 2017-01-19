@@ -33,7 +33,7 @@ To check which version of CUDA you are using ::
 
 It is therefore recommended that you load the most recent 4.x version of GCC when building CUDA programs: ::
 
-        module load compilers/gcc/4.9.4
+        module load dev/gcc/4.9.4
 
 Compiling the sample programs
 -----------------------------
