@@ -22,7 +22,7 @@ trap handle_error ERR
 
 # Activate a compiler
 module purge
-module load compilers/${compiler}/${compiler_vers}
+module load dev/${compiler}/${compiler_vers}
 
 # Create build, install and modulefile dirs
 mkdir -m 0700 -p $build_dir
