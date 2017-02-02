@@ -31,6 +31,10 @@ Most of the time such problems arise due to due to Java version issues. As Java 
 Follow the trouble-shooting link from the `iceberg browser-access page <http://www.sheffield.ac.uk/cics/research/hpc/using/access/browser>`_ to resolve these problems. There is also a link on that page to test the functionality of your java plug-in. It can also help to try a different browser to see if it makes any difference.
 All failing, you may have to fall back to one of the `non-browser access methods <http://www.sheffield.ac.uk/cics/research/hpc/using/access>`_.
 
+I cannot see my folder in /data
+-------------------------------
+The directory ``/data/<your username>`` is made available **on-demand**: see :ref:`iceberg_data_dir` for information on what that means.
+
 My batch job terminates without any messages or warnings
 --------------------------------------------------------
 

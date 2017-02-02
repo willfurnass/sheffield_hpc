@@ -15,6 +15,8 @@ All users have a home directory in the location ``/home/yourusername``. The file
 
 The filesystem is NFS.
 
+.. _iceberg_data_dir:
+
 Data directory
 --------------
 Every user has access to a much larger data-storage area provided at the location ``/data/yourusername``.
