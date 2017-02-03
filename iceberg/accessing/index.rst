@@ -5,7 +5,6 @@ Accessing Iceberg
     If you have not connected to iceberg before the :ref:`getting-started`
     documentation will guide you through the process.
 
-
 Below is a list of the various ways to connect to or use iceberg:
 
 .. toctree::
@@ -13,7 +12,4 @@ Below is a list of the various ways to connect to or use iceberg:
 
     terminal
     jupyterhub
-    remote-vis
-
-
-
+    hw-accel-gfx
