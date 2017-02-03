@@ -65,10 +65,12 @@ Usage instructions
 Resources available to qsh-vis sessions
 ---------------------------------------
 
-* Sessions started using ``qsh-vis`` by default have allocated to them
-  * 1 CPU core
-  * 1 GPU
-  * 12GB of virtual memory 
+* Sessions started using ``qsh-vis`` by default have allocated to them:
+
+    * 1 CPU core
+    * 1 GPU
+    * 12GB of virtual memory 
+
 * You can request additional resources by passing the same parameters to ``qsh-vis`` that can be used with ``qrsh``/``qrshx``/``qsh``/``qsub`` (see :ref:`sge-queue`).
 * Research groups who have purchased their own GPU visualisation nodes may have different defaults.
 
