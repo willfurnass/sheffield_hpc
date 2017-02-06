@@ -78,6 +78,12 @@ To check your packages are up to date, and update them if necessary, run the fol
 
 The folder name after :code:`~/R/` will likely change, but this can be completed with tab autocompletion from the R session. Ensure `lib.loc` folder is specified, or R will attempt to update the wrong library.
 
+.. warning:: 
+    Notice that the personal package library path includes the version of R: 
+    if after installing some packages you switch to using a different `major or minor version <http://semver.org/>`_ of R 
+    then you will need then to install those package *for this new version*.
+
+
 Using the Rmath library in C Programs
 -------------------------------------
 The Rmath library allows you to access some of R's functionality from a C program. For example, consider the C-program below ::

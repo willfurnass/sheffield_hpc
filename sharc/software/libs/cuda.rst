@@ -11,12 +11,12 @@ There are several versions of the CUDA library available. As with many libraries
 
 The latest version CUDA is loaded with the command: ::
 
-        module load libs/cuda
+        module load libs/CUDA
 
 Alternatively, you can load a specific version with one of the following: ::
 
-        module load libs/cuda/8.0.44/binary
-        module load libs/cuda/7.5.18/binary
+        module load libs/CUDA/8.0.44/binary
+        module load libs/CUDA/7.5.18/binary
 
 To check which version of CUDA you are using ::
 
@@ -33,7 +33,7 @@ To check which version of CUDA you are using ::
 
 It is therefore recommended that you load the most recent 4.x version of GCC when building CUDA programs: ::
 
-        module load compilers/gcc/4.9.4
+        module load dev/gcc/4.9.4
 
 Compiling the sample programs
 -----------------------------
@@ -42,7 +42,7 @@ You do not need to be using a GPU-enabled node to compile the sample programs bu
 In a `qrsh` session ::
 
         # Load modules
-        module load libs/cuda/8.0.44/binary
+        module load libs/CUDA/8.0.44/binary
         module load dev/gcc/4.9.4
         
         # Copy CUDA samples to a local directory
