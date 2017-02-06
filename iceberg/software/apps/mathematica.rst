@@ -5,13 +5,13 @@ Mathematica
 
    :Dependancies: None
    :URL: http://www.wolfram.com/mathematica/
-   :Latest version: 10.3.1
+   :Latest version: 11.0.1
 
 Mathematica is a technical computing environment and programming language with strong symbolic and numerical abilities.
 
 Single Core Interactive Usage
 -----------------------------
-After connecting to iceberg (see :ref:`ssh`),  start an interactive session with ``qsh``.
+After connecting to iceberg (see :ref:`ssh`),  start an interactive session with ``qrshx``.
 
 The latest version of Mathematica can be loaded with ::
 
@@ -19,6 +19,7 @@ The latest version of Mathematica can be loaded with ::
 
 Alternatively, you can load a specific version of Mathematica using ::
 
+        module load apps/binapps/mathematica/11.0.1
         module load apps/binapps/mathematica/10.3.1
         module load apps/binapps/mathematica/10.2
 
@@ -30,7 +31,7 @@ Multicore Interactive Usage
 ---------------------------
 Mathematica has extensive parallel functionality. To use it, you should request a parallel interactive session. For example, to request 4 cores ::
 
-    qsh -pe openmp 4
+    qrshx -pe openmp 4
 
 Load and launch Mathematica ::
 
@@ -50,7 +51,7 @@ When I tried this, I got 78 seconds. Your results may vary greatly. Now, let's l
 
 When I tried this, I got 29 seconds -- around 2.7 times faster. This illustrates a couple of points:-
 
-* You should always request the same number of kernels as you requested in your ``qsh`` command (in this case, 4). If you request more, you will damage performance for yourself and other users of the system.
+* You should always request the same number of kernels as you requested in your ``qrshx`` command (in this case, 4). If you request more, you will damage performance for yourself and other users of the system.
 * N kernels doesn't always translate to N times faster.
 
 Batch Submission
@@ -96,6 +97,49 @@ Once the job has successfully completed, the output will be in a file named like
 Installation notes
 ------------------
 These are primarily for administrators of the system
+
+**For Version 11.0.1** ::
+
+    mkdir -p /usr/local/packages6/apps/binapps/mathematica/11.0.1
+    chmod +x ./Mathematica_11.0.1_LINUX.sh
+    ./Mathematica_11.0.1_LINUX.sh
+
+The installer is interactive. Here's the session output ::
+
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                       Wolfram Mathematica 11 Installer
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  Copyright (c) 1988-2016 Wolfram Research, Inc. All rights reserved.
+
+  WARNING: Wolfram Mathematica is protected by copyright law and international treaties. Unauthorized reproduction or distribution may result in severe civil and criminal penalties and will be
+  prosecuted to the maximum extent possible under law.
+
+  Enter the installation directory, or press ENTER to select /usr/local/Wolfram/Mathematica/11.0:
+  > /usr/local/packages6/apps/binapps/mathematica/11.0.1
+
+  Now installing...
+
+  [*********************************************************************************************************************************************************************************************************]
+
+  Type the directory path in which the Wolfram Mathematica script(s) will be created, or press ENTER to select /usr/local/bin:
+  > /usr/local/packages6/apps/binapps/mathematica/11.0.1/scripts
+
+  Create directory (y/n)?
+  > y
+
+
+  WARNING: No Avahi Daemon was detected so some Kernel Discovery features will not be available. You can install Avahi Daemon using your distribution's package management system.
+
+  For Red Hat based distributions, try running (as root):
+
+  yum install avahi
+
+  Installation complete.
+
+Copy the license from the previous version. It is a network license so you need to ensure that the network license server has been updated. ::
+
+    cp /usr/local/packages6/apps/binapps/mathematica/10.2/Configuration/Licensing/mathpass /usr/local/packages6/apps/binapps/mathematica/11.0.1/Configuration/Licensing/
 
 **For Version 10.3.1** ::
 
@@ -198,5 +242,6 @@ Install the University network ``mathpass`` file at ``/usr/local/packages6/apps/
 
 Modulefiles
 -----------
+* The :download:`11.0.1 module file </iceberg/software/modulefiles/apps/binapps/mathematica/11.0.1>`.
 * The :download:`10.3.1 module file </iceberg/software/modulefiles/apps/binapps/mathematica/10.3.1>`.
 * The :download:`10.2 module file  </iceberg/software/modulefiles/apps/binapps/mathematica/10.2>`.
