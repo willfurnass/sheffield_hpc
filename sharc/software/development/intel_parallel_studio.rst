@@ -66,6 +66,21 @@ Parallel Studio XE Composer Edition 2017.0
    <https://en.wikipedia.org/wiki/%22Hello,_World!%22_program>`_ using the
    ``icc`` compiler.
 
+Parallel Studio XE Composer Edition 2016.1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Download ``parallel_studio_xe_2016_composer_edition_update1.tar`` from the Intel
+   Portal, save in ``/usr/local/media/protected/intel/2016.1/`` then make it
+   only readable by the ``app-admins`` group.
+#. Ensure details of the Intel license server are in the file
+   ``/usr/local/packages/dev/intel-pe-xe-ce/license.lic``
+#. Run :download:`this script
+   </sharc/software/install_scripts/dev/intel-ps-xe-ce/2016.1/install.sh>`.
+   This installs Parallel Studio into
+   ``/usr/local/packages/dev/intel-pe-xe-ce/2016.1/binary/``.  Products are
+   activated using the aforementioned license file during the installation
+   process.
+
 Parallel Studio XE Composer Edition 2015.7
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
