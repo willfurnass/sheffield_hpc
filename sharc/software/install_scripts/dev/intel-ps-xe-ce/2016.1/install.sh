@@ -23,7 +23,7 @@ export LIC_FPATH="/usr/local/packages/dev/intel-ps-xe-ce/license.lic"
 # Mapping from modulefile sources to destinations
 declare -A modfile_dests_map
 MODFILE_DEST_ROOT="/usr/local/modulefiles/"
-modfile_dests_map["compilers"]="${MODFILE_DEST_ROOT}/dev/intel-compilers/${VERS}/binary"
+modfile_dests_map["compilers"]="${MODFILE_DEST_ROOT}/dev/intel-compilers/${COMP_VERS}"
 modfile_dests_map["daal"]="${MODFILE_DEST_ROOT}/libs/intel-daal/${VERS}/binary"
 modfile_dests_map["ipp"]="${MODFILE_DEST_ROOT}/libs/intel-ipp/${VERS}/binary"
 modfile_dests_map["mkl"]="${MODFILE_DEST_ROOT}/libs/intel-mkl/${VERS}/binary"
@@ -68,17 +68,17 @@ if [[ -e ./.untar_complete ]]; then
     echo "Directory already untarred. Moving on"
 else
     echo "Untarring Intel Parallel Studio"
-   tar xzf ${MEDIA_DIR}/${TARBALL_FNAME}
+   tar xf ${MEDIA_DIR}/${TARBALL_FNAME}
     touch ./.untar_complete
 fi
-extracted_dir=$(basename $TARBALL_FNAME .tgz)
+extracted_dir=$(basename $TARBALL_FNAME .tar)
 cd $extracted_dir
 
 ###########
 # Configure
 ###########
 sed -e "s:.*ACCEPT_EULA=.*:ACCEPT_EULA=accept:" \
-    -e "s:.*CONTINUE_WITH_OPTIONAL_ERROR=.*:CONTINUE_WITH_OPTIONAL_ERROR=no:" \
+    -e "s:.*CONTINUE_WITH_OPTIONAL_ERROR=.*:CONTINUE_WITH_OPTIONAL_ERROR=yes:" \
     -e "s:.*PSET_INSTALL_DIR=.*:PSET_INSTALL_DIR=${INSTALL_DIR}:" \
     -e "s:.*ACTIVATION_LICENSE_FILE=.*:ACTIVATION_LICENSE_FILE=${LIC_FPATH}:" \
     -e "s:.*PSET_MODE=.*:PSET_MODE=install:" \
@@ -89,16 +89,13 @@ sed -e "s:.*ACCEPT_EULA=.*:ACCEPT_EULA=accept:" \
 #########
 # Install
 #########
-# Try to install but if an install previously failed then
-# try to repair the install instead
-./install.sh --silent silent.cfg.custom --user-mode --tmp-dir ${TMPDIR} || \
-    sed -i -e "s:.*PSET_MODE=.*:PSET_MODE=repair:" silent.cfg.custom && \
-    ./install.sh --silent silent.cfg.custom --user-mode --tmp-dir ${TMPDIR} 
+./install.sh --silent silent.cfg.custom --user-mode --tmp-dir ${TMPDIR}
+
 #######################
 # Install code examples
 #######################
-samples_tarball="/usr/local/media/protected/intel/${VERS}/ipsxe${SHORT_VERS}_samples_lin_20161018.tgz"
-tar -C $INSTALL_DIR/samples_2016/en/ -zxf $samples_tarball
+#samples_tarball="/usr/local/media/protected/intel/${VERS}/ipsxe${SHORT_VERS}_samples_lin_20161018.tgz"
+#tar -C $INSTALL_DIR/samples_2016/en/ -zxf $samples_tarball
 
 #################
 # Set permissions
