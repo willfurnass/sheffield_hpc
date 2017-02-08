@@ -80,6 +80,24 @@ Parallel Studio XE Composer Edition 2016.1
    ``/usr/local/packages/dev/intel-pe-xe-ce/2016.1/binary/``.  Products are
    activated using the aforementioned license file during the installation
    process.
+#. Install several modulefiles to locations under ``/usr/local/modulefiles``.
+   These modulefiles set the ``INTEL_LICENSE_FILE`` environment variable to the
+   location of the aforementioned license file and set other environment
+   variables required by the different Parallel Studio products.  There is one
+   modulefile for all Parallel Studio software and other modulefiles for
+   specific products.  
+
+    * The :download:`Compilers modulefile </sharc/software/modulefiles/dev/intel-compilers/16.0.1>` should be installed as ``/usr/local/modulefiles/dev/intel-compilers/16.0.1``.
+    * The :download:`DAAL modulefile </sharc/software/modulefiles/libs/intel-daal/2016.1/binary>` should be installed as ``/usr/local/modulefiles/libs/intel-daal/2016.1/binary``.
+    * The :download:`IPP modulefile </sharc/software/modulefiles/libs/intel-ipp/2016.1/binary>` should be installed as ``/usr/local/modulefiles/libs/intel-ipp/2016.1/binary``.
+    * The :download:`MKL modulefile </sharc/software/modulefiles/libs/intel-mkl/2016.1/binary>` should be installed as ``/usr/local/modulefiles/libs/intel-mkl/2016.1/binary``.
+    * The :download:`TBB modulefile </sharc/software/modulefiles/libs/intel-tbb/2016.1/binary>` should be installed as ``/usr/local/modulefiles/libs/intel-tbb/2016.1/binary``.
+    * See the (TCL) modulefiles for details of how they were derived from Intel-supplied environment-manipulating shell scripts.
+
+#. Check that licensing is working by activating the Intel Compilers modulefile
+   then try compiling `a trivial C program
+   <https://en.wikipedia.org/wiki/%22Hello,_World!%22_program>`_ using the
+   ``icc`` compiler.
 
 Parallel Studio XE Composer Edition 2015.7
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
