@@ -9,25 +9,24 @@
 ##
 
 proc ModulesHelp { } {
-        global $compvers
-
-        puts stderr "   Makes `Intel C++ and Fortran compilers plus debugger version $compvers' available for use"
+    global $compvers
+    puts stderr "   Makes `Intel C++ and Fortran compilers plus debugger version $compvers' available for use"
 }
 
 module-whatis   "Makes Intel C++ and Fortran compilers (ifort and icc) and debugger available"
 
 conflict dev/intel-compilers
 
-# module variables
-set     compvers 16.0.1
+# Module variables
+set compvers    16.0.1
 set majvers     2016
 set minvers     1
 set patchvers   150
-set shortvers   join {majvers minvers} "."
-set fullvers    join {majvers minvers patchvers} "."
+set shortvers   [join [list $majvers $minvers] "."]
+set fullvers    [join [list $majvers $minvers $patchvers] "."]
 set intelpsroot /usr/local/packages/dev/intel-ps-xe-ce/$shortvers/binary/
  
-# load java  ( needed with debugging etc. ) 
+# Load Java (needed with debugging etc.) 
 module load apps/java
 
 # Compiler variables determined using

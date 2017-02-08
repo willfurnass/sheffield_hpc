@@ -18,8 +18,8 @@ module-whatis   "Makes the `Intel Data Analytics Accelleration Library (DAAL)' a
 set majvers     2016
 set minvers     1
 set patchvers   150
-set shortvers   join {majvers minvers} "."
-set fullvers    join {majvers minvers patchvers} "."
+set shortvers   [join [list $majvers $minvers] "."]
+set fullvers    [join [list $majvers $minvers $patchvers] "."]
 set intelpsroot /usr/local/packages/dev/intel-ps-xe-ce/$shortvers/binary/
 
 # Variables determined using
