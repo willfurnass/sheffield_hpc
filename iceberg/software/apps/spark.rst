@@ -26,6 +26,15 @@ Spark was built using the system gcc 4.4.7 ::
 
   mkdir /usr/local/packages6/apps/gcc/4.4.7/spark
   mv spark-2.0.0 /usr/local/packages6/apps/gcc/4.4.7/spark/
+  
+The default install of Spark is incredibly verbose. Even a 'Hello World' prohram results in many lines of 'INFO'. To make it a little quieter ::
+
+    cp /usr/local/packages6/apps/gcc/4.4.7/spark/spark-2.0.0/conf/log4j.properties.template /usr/local/packages6/apps/gcc/4.4.7/spark/spark-2.0.0/conf/log4j.properties
+    
+ Edit the file `log4j.properties` so that the line beginning `log4j.rootCategory` reads ::
+ 
+     log4j.rootCategory=WARN, console
+   
 
 Modulefile
 ----------
