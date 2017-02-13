@@ -42,7 +42,7 @@ Modulefile
 ----------
 **Version 2.0**
 
-* The module file is on the system at ``/usr/local/modulefiles/apps/gcc/4.4.7/spark/2.0``
+The module file is on the system at ``/usr/local/modulefiles/apps/gcc/4.4.7/spark/2.0``
 
 Its contents are ::
 
@@ -53,8 +53,10 @@ Its contents are ::
 
   ## Module file logging
   source /usr/local/etc/module_logging.tcl
-  ##
+
+  set sparkhome /usr/local/packages6/apps/gcc/4.4.7/spark/spark-2.0.0
 
   # Use only one core. User can override this if they want
   setenv MASTER local\[1\]
-  prepend-path PATH /usr/local/packages6/apps/gcc/4.4.7/spark/spark-2.0.0/bin
+  setenv SPARK_HOME $sparkhome
+  prepend-path PATH $sparkhome/bin
