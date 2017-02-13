@@ -112,8 +112,10 @@ The following module file is on the system at ``/usr/local/modulefiles/apps/spar
 
     ## Module file logging
     source /usr/local/etc/module_logging.tcl
-    ##
+
+    set sparkhome /usr/local/packages/apps/spark/2.1/spark-2.1.0
 
     # Use only one core. User can override this if they want
     setenv MASTER local\[1\]
-    prepend-path PATH /usr/local/packages/apps/spark/2.1/spark-2.1.0/bin/
+    setenv SPARK_HOME $sparkhome
+    prepend-path PATH $sparkhome/bin
