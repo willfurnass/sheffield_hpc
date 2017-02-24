@@ -174,6 +174,35 @@ In these instances, turning off ``Optimize Connection Buffer Size`` in WinSCP ca
 * The Advanced Site Settings dialog opens.
 * Click on connection
 * Untick the box which says ``Optimize Connection Buffer Size``
+  
+Strange fonts or errors re missing fonts when trying to start a graphical application
+-------------------------------------------------------------------------------------
+
+Certain programs require esoteric fonts to be installed on the machine running the X server (i.e. your local machine).  
+Example of such programs are ``qmon``, a graphical interface to the Grid Engine scheduling software, and :ref:`Ansys <ansys_iceberg>`.
+If you try to run ``qmon`` or Ansys **on a Linux machine** and see strange symbols instead of the latin alphabet or get an error message that includes: ::
+
+        X Error of failed request: BadName (named color or font does not exist)
+
+then you should try running the following **on your own machine**: ::
+
+        for i in 75dpi 100dpi; do 
+            sudo apt-get install xfonts-75dpi
+            pushd /usr/share/fonts/X11/$i/
+            sudo mkfontdir
+            popd
+            xset fp+ /usr/share/fonts/X11/$i
+        done
+
+Note that these instructions are Ubuntu/Debian-specific; on other systems package names and paths may differ.
+
+Next, try :ref:`connecting to a cluster <getting_started>` using ``ssh -X clustername``, start a graphical session then try running ``qmon``/Ansys again.  
+If you can now run ``qmon``/Ansys without problems 
+then you need to add two lines to the ``.xinitrc`` file in your home directory **on your own machine** 
+so this solution will continue to work following a reboot of your machine: ::
+
+        FontPath /usr/share/fonts/X11/100dpi
+        FontPath /usr/share/fonts/X11/75dpi
 
 Login Nodes RSA Fingerprint
 ---------------------------
