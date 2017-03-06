@@ -10,7 +10,11 @@ In particular, all of the CPUs on ShARC are '4th generation core' `Intel Haswell
 
 Most of the time, you can expect programs to run more quickly on ShARC than on Iceberg. How much more quickly depends on which type of processor you were using on Iceberg and the characteristics of your program.  One of the new features of Intel Haswell CPUs is `Fused Multiply-Add <https://en.wikipedia.org/wiki/FMA_instruction_set>`_ which can substantially increase the speed of floating point calculations such as `Matrix-Matrix Multiplications <https://en.wikipedia.org/wiki/Matrix_multiplication>`_. Only programs that have been compiled to make use of this feature, such as :ref:`Intel R (Sharc)`, will see a speed increase as a result.
 
-It is theoretically possible for some programs to run **more slowly** on ShARC since the typical clock speed of a ShARC CPU is 2.4Ghz compared to 2.6Ghz on the Ivy Bridge nodes on Iceberg. You are advised to conduct tests to see which system is best for your work.
+It is theoretically possible for some programs to run **more slowly** on ShARC since the typical clock speed of a ShARC CPU is 2.4Ghz compared to 2.6Ghz on the Ivy Bridge nodes on Iceberg. You are advised to conduct tests to see which system is best for your work. We are interested in any reproducible benchmarks you may run, please open an `issue on our GitHub page <https://github.com/rcgsheffield/sheffield_hpc/issues>`_ to discuss this.
+
+MPI Interconnect
+----------------
+Nodes on ShARC are connected together using `Intel Omnipath <http://www.intel.com/content/www/us/en/high-performance-computing-fabrics/omni-path-architecture-fabric-overview.html>`_ which should be faster than the interconnect used on Iceberg. We are interested in any reproducible benchmarks you may run, please open an issue on our GitHub page to discuss this.
 
 Off campus access
 -----------------
