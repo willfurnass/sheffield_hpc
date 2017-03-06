@@ -3,6 +3,15 @@
 ShARC and Iceberg comparison
 ============================
 
+CPUs
+----
+The hardware on Iceberg is older and **usually** slower than that on ShARC.
+In particular, all of the CPUs on ShARC are '4th generation core' `Intel Haswell <https://en.wikipedia.org/wiki/Haswell_(microarchitecture)>`_ compared to a combination of '3rd generation core' `Intel Ivy Bridge <https://en.wikipedia.org/wiki/Ivy_Bridge_(microarchitecture)>`_, '1st generation core' `Intel Westmere <https://en.wikipedia.org/wiki/Westmere_(microarchitecture)>`_ and `AMD Processors <https://en.wikipedia.org/wiki/List_of_AMD_microprocessors>`_ on Iceberg.
+
+Most of the time, you can expect programs to run more quickly on ShARC than on Iceberg. How much more quickly depends on which type of processor you were using on Iceberg and the characteristics of your program.  One of the new features of Intel Haswell CPUs is `Fused Multiply-Add <https://en.wikipedia.org/wiki/FMA_instruction_set>`_ which can substantially increase the speed of floating point calculations such as `Matrix-Matrix Multiplications <https://en.wikipedia.org/wiki/Matrix_multiplication>`_. Only programs that have been compiled to make use of this feature, such as :ref:`Intel R (Sharc)`, will see a speed increase as a result.
+
+It is theoretically possible for some programs to run **more slowly** on ShARC since the typical clock speed of a ShARC CPU is 2.4Ghz compared to 2.6Ghz on the Ivy Bridge nodes on Iceberg. You are advised to conduct tests to see which system is best for your work.
+
 Off campus access
 -----------------
 If you are off-campus, you will need to use a VPN connection to access ShARC.
