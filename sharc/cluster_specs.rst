@@ -41,7 +41,7 @@ General CPU node specifications
 Large memory node specifications
 --------------------------------
 
-Eight nodes are publicly available (not exclusive to research groups).  
+Four nodes are publicly available (not exclusive to research groups).  
 
 These are identical to the general `CPU nodes <General CPU node specifications>`_ but with 256 GiB RAM (16 GiB per core).
 
