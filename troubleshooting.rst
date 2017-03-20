@@ -43,7 +43,7 @@ If a job exceeds either of these memory or time limits it gets terminated immedi
 
 It is therefore important to estimate the amount of memory and time that is needed to run your job to completion and specify it at the time of submitting the job to the batch queue.
 
-Please refer to the section on `hitting-limits and estimating-resources <http://www.sheffield.ac.uk/cics/research/hpc/using/requirements>`_ for information on how to avoid these problems.
+Please refer to the section on `hitting-limits and estimating-resources <https://www.shef.ac.uk/cics/research/hpc/iceberg/requirements>`_ for information on how to avoid these problems.
 
 Exceeding your disk space quota
 -------------------------------
