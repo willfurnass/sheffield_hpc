@@ -1,0 +1,30 @@
+#%Module1.0#####################################################################
+##
+## GULP 4.4 (MPI) module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+
+set vers 4.4
+set compilervers 17.0.0
+set mpivers 2.0.1
+
+proc ModulesHelp { } {
+        global vers
+        puts stderr "	Adds GULP version $vers (MPI build) to your environment"
+}
+module-whatis "	Adds GULP version $vers (MPI build) to your environment"
+
+module load dev/intel-compilers/$compilervers
+module load libs/intel-mkl/2017.0/binary
+module load mpi/openmpi/$mpivers/intel-$compilervers
+
+set gulproot /usr/local/packages/apps/gulp/$vers/intel-$compilervers-openmpi-$mpivers
+
+setenv GULP_HOME $gulproot
+prepend-path PATH $gulproot/bin
+setenv GULP_LIB $gulproot/Libraries
+setenv GULP_DOC $gulproot/Docs
+setenv GULP_EXAMPLES $gulproot/Examples
+setenv TMPDIR /scratch/

@@ -78,6 +78,12 @@ To check your packages are up to date, and update them if necessary, run the fol
 
 The folder name after :code:`~/R/` will likely change, but this can be completed with tab autocompletion from the R session. Ensure `lib.loc` folder is specified, or R will attempt to update the wrong library.
 
+.. warning:: 
+    Notice that the personal package library path includes the version of R: 
+    if after installing some packages you switch to using a different `major or minor version <http://semver.org/>`_ of R 
+    then you will need then to install those package *for this new version*.
+
+
 Using the Rmath library in C Programs
 -------------------------------------
 The Rmath library allows you to access some of R's functionality from a C program. For example, consider the C-program below ::
@@ -119,5 +125,5 @@ These notes are primarily for administrators of the system.
 This was a scripted install. It was compiled from source with gcc 4.8.5 and with ``--enable-R-shlib`` enabled. It was run in batch mode.
 
 * :download:`install_r_3.3.2_gcc4.8.5.sh </sharc/software/install_scripts/apps/R/3.3.2/gcc-4.8.5/install_r_3.3.2_gcc4.8.5.sh>` Downloads, compiles, tests and installs R 3.3.2 and the ``Rmath`` library.
-* :download:`R 3.3.2 Modulefile </sharc/software/modulefiles/apps/R/gcc-4.8.5>` located on the system at ``/usr/local/modulefiles/apps/R/3.3.2/``
+* :download:`R 3.3.2 Modulefile </sharc/software/modulefiles/apps/R//3.3.2/gcc-4.8.5>` located on the system at ``/usr/local/modulefiles/apps/R/3.3.2/``
 * Install log-files, including the output of the `make check` tests are available on the system at `/usr/local/packages/apps/R/3.3.2/gcc-4.8.5/install_logs/`

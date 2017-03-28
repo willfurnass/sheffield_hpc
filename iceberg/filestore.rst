@@ -15,6 +15,8 @@ All users have a home directory in the location ``/home/yourusername``. The file
 
 The filesystem is NFS.
 
+.. _iceberg_data_dir:
+
 Data directory
 --------------
 Every user has access to a much larger data-storage area provided at the location ``/data/yourusername``.
@@ -68,6 +70,8 @@ You can use the ``lfs``  command to find out which files under /fastdata are old
 ``/fastdata`` uses the `Lustre <https://en.wikipedia.org/wiki/Lustre_(file_system)>`_ filesystem. This does not support POSIX locking which can cause issues for some applications (e.g. programs that create/use SQLite databases).
 
 ``/fastdata`` is optimised for large file operations and does not handle lots of small files very well. An example of how slow it can be for large numbers of small files is detailed at http://www.walkingrandomly.com/?p=6167
+
+**Backup policy:** ``/fastdata`` is **not backed up**.
 
 Shared directories
 --------------------

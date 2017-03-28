@@ -1,12 +1,10 @@
 .. image:: https://travis-ci.org/rcgsheffield/sheffield_hpc.svg?branch=master
     :target: https://travis-ci.org/rcgsheffield/sheffield_hpc
 
-Iceberg Documentation
-=====================
+Sheffield High Performance Computing Documentation
+==================================================
 
-Iceberg is The University of Sheffield's High Performance Computing cluster. The current official documentation for it is at `https://www.shef.ac.uk/cics/research <https://www.shef.ac.uk/cics/research>`_.
-
-This repository contains a proposed replacement for the page linked to above. It makes use of `Sphinx <http://sphinx-doc.org/>`_ to build the results and represents a move to a more open, collaborative way of working.
+This is the source code for the documentation of Sharc and Iceberg, The University of Sheffield's High Performance Computing clusters. It is written in the rst format.
 
 For a guide on the rst file format see `this <http://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html>`_ document.
 
@@ -14,7 +12,7 @@ Rendered Documentation
 ----------------------
 Two versions of the documentation are currently automatically built from this repository:
 
-* `A website <http://docs.iceberg.shef.ac.uk/en/latest/>`_.
+* `A website <http://docs.hpc.shef.ac.uk/en/latest/>`_.
 * `A .pdf document <http://readthedocs.org/projects/iceberg/downloads/pdf/latest/>`_.
 
 How to Contribute

@@ -46,7 +46,7 @@ If, instead, you get: ::
         -bash: castep.serial: command not found
 
 It is probably because you are not a member of the ``castep`` group. 
-See `Licensing` for details on how to be added to this group.
+See Licensing_ for details on how to be added to this group.
 
 Interactive usage is fine for small CASTEP jobs such as the Silicon example given at http://www.castep.org/Tutorials/BasicsAndBonding
 
@@ -125,7 +125,7 @@ The parallel build was compiled using OpenMPI 2.0.1.
 
 Both builds were installed using :download:`this script </sharc/software/install_scripts/apps/castep/16.11/intel-15.0.7/install.sh>`.  
 **Note** that this compiles both builds in ``/data/$USER`` as the build directory must be availble to all cluster nodes 
-to allow for subsequent `Testing` of the parallel build.  
+to allow for subsequent Testing_ of the parallel build.  
 ~2.2 GB of free space is required.
 
 * :download:`The serial build modulefile </sharc/software/modulefiles/apps/castep/16.11/intel-15.0.7>` was installed as 
@@ -151,7 +151,7 @@ The following script was submitted via ``qsub`` from the ``Test`` subdirectory o
 
 All 416 tests passed.  Results can be found in :download:`castep_16_11_serial_sharc_build_tests.log </sharc/software/install_scripts/apps/castep/16.11/intel-15.0.7/castep_16_11_serial_sharc_build_tests.log>`.  
 Version 16.11, parallel build
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following script was submitted via ``qsub`` from the ``Test`` subdirectory of the build directory: ::
 
@@ -163,4 +163,4 @@ The following script was submitted via ``qsub`` from the ``Test`` subdirectory o
 
         ../bin/testcode.py -q  --total-processors=4 --processors=4 -e castep.parallel -c simple -v -v -v
 
-All 416 tests passed.  Results can be found at ``/usr/local/packages/apps/castep/16.11/intel-15.0.7/castep-parallel-tests-2016-11-23.txt``
+All 416 tests passed.  Results can be found in :download:`castep_16_11_mpi4_sharc_build_tests.log </sharc/software/install_scripts/apps/castep/16.11/intel-15.0.7/castep_16_11_mpi4_sharc_build_tests.log>`.  

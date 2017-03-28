@@ -63,7 +63,7 @@ By default, graphical output from batch jobs is sent to a file called :code:`Rpl
 Installing additional packages
 ------------------------------
 
-As you will not have permissions to install packages to the default folder, additional R packages can be installed to your home folder :code:`~/`. To create the appropriate folder, install your first package in R in interactive mode. Load an interactive R session as described above, and install a package with ::
+As you will not have permissions to install packages to the default folder, additional R packages can be installed to your home folder :code:`~/`. To create the appropriate folder, install your first package in R in interactive mode. Load an interactive R session as described above, and install a package with: ::
 
         install.packages()
 
@@ -86,6 +86,11 @@ To check your packages are up to date, and update them if necessary, run the fol
 
 The folder name after :code:`~/R/` will likely change, but this can be completed with tab autocompletion from the R session. Ensure `lib.loc` folder is specified, or R will attempt to update the wrong library.
 
+.. warning:: 
+    Notice that the personal package library path includes the version of R: 
+    if after installing some packages you switch to using a different `major or minor version <http://semver.org/>`_ of R 
+    then you will need then to install those package *for this new version*.
+
 R Packages that require external libraries
 ------------------------------------------
 Some R packages require external libraries to be installed before you can install and use them. Since there are so many, we only install those libraries that have been explicitly requested by users of the system.
@@ -93,6 +98,7 @@ Some R packages require external libraries to be installed before you can instal
 The associated R packages are not included in the system install of R, so you will need to install them yourself to your home directory following the instructions linked to below.
 
 * :ref:`geos` This is the library required for the ``rgeos`` package.
+* :ref:`gdal_iceberg` and :ref:`proj_iceberg` These are the libraries required for the ``rgdal`` package.
 * :ref:`jags` This is the library required for the ``rjags`` and ``runjags`` packages
 
 Using the Rmath library in C Programs
