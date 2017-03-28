@@ -4,7 +4,7 @@
 Sheffield High Performance Computing Documentation
 ==================================================
 
-This is the source code for the documentation of Sharc and Iceberg, The University of Sheffield's High Performance Computing clusters. It is written in the rst format.
+This is the source code for the documentation of ShARC and Iceberg, The University of Sheffield's High Performance Computing clusters. It is written in the rst format.
 
 For a guide on the rst file format see `this <http://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html>`_ document.
 
@@ -39,8 +39,8 @@ Install the following modules ::
 To build the HTML documentation run::
 
     make html
-	
-Or if you don't have make then build with sphinx directly 
+
+Or if you don't have make then build with sphinx directly
 
 	sphinx-build . ./html
 
@@ -81,6 +81,18 @@ Then once installed, install the following module ::
 To build the HTML documentation run::
 
     make html
+
+Continuous build
+################
+
+The package `sphinx-autobuild <https://github.com/GaretJax/sphinx-autobuild>`_ provides a watcher that automatically rebuilds the site as files are modified. To use it install (in addition to the shpinx packages) ::
+
+    pip install sphinx-autobuild
+
+To start the autobuild process run ::
+  
+    make livehtml
+
 
 
 Making Changes to the Documentation

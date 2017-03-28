@@ -1,0 +1,156 @@
+.. _singularity_sharc:
+
+Singularity
+===========
+
+.. sidebar:: Singularity
+
+   :Version: 2.2.1
+   :URL: http://singularity.lbl.gov/
+
+Designed around the notion of extreme mobidddlity of compute and reproducible science, Singularity enables users to have full control of their operating system environment. This means that a non-privileged user can “swap out” the operating system on the host for one they control. So if the host system is running RHEL6 but your application runs in Ubuntu, you can create an Ubuntu image, install your applications into that image, copy the image to another host, and run your application on that host in it’s native Ubuntu environment!
+
+Singularity also allows you to leverage the resources of whatever host you are on. This includes HPC interconnects, resource managers, file systems, GPUs and/or accelerators, etc.
+
+About Singularity Containers/Images
+-----------------------------------
+
+Similar to Docker, a Singularity container (image) is a self-contained filesystem, operating system and software stack. As Singularity does not require a root-level daemon to run its images it is compatible for use with ShARC's scheduler inside your job scripts. The running images also uses the credentials of the person calling it.
+
+This in-practice means that an image created on your local machine with all your research software installed for local development is guaranteed to also run on the ShARC cluster.
+
+Pre-built images have been provided on the cluster and can also be download for use on your local machine (see :ref:`singularity_use_image`). Creating and modifying images however, requires root permission and so must be done on your machine (see :ref:`singularity_create_image`).
+
+
+
+.. _singularity_use_image:
+
+Using Pre-built Singularity Images on ShARC
+-------------------------------------------
+
+Singularity images are provided for the following applications,
+
+To get a shell in to the image: ::
+
+  singularity shell path/to/imgfile.img
+
+Or if you prefer bash: ::
+
+  singularity exec path/to/imgfile.img /bin/bash
+
+Note that the ``exec`` command can also be used to execute other applications/scripts inside the image: ::
+
+  singularity exec path/to/imgfile.img some_script_inside_image.sh
+
+ShARC Filesystem Inside Images
+------------------------------
+
+When running Singularity images on ShARC, the paths ``/fastdata``, ``/data``, ``/home``, ``/scratch``, ``/shared`` are automatically mounted to your ShARC directories.
+
+Images that uses the GPU requires driver files that matches the host system. In ShARC these files are located outside of the image and mounted to paths ``/nvbin`` and ``/nvlib`` within the image.
+
+
+Installing Singularity on Your Local Machine
+--------------------------------------------
+
+You will need Singularity installed on your machine in order to locally run, create and modify images. The following is the installation command for debian/ubuntu based systems: ::
+
+  sudo apt-get update
+  sudo apt-get -y install build-essential curl git sudo man vim autoconf libtool automake
+  git clone https://github.com/singularityware/singularity.git
+  cd singularity
+  ./autogen.sh
+  ./configure --prefix=/usr/local
+  make
+  sudo make install
+
+
+Manually mounting paths
+-----------------------
+
+When using ShARC's pre-built images on your local machine, it may be useful to mount the existing directories in the image to your own path. This can be done with the flag ``-B local/path:image/path`` with the path outside of the image left of the colon and the path in the image on the right side, e.g. ::
+
+  singularity shell -B local/datapath:/data,local/fastdatapath:/fastdata path/to/imgfile.img
+
+The command mounts the path ``local/datapath`` on your local machine to the ``/data`` path in the image. Multiple mount points can be joined with ``,`` as shown above where we additionally specify that ``local/fastdata`` mounts to ``/fastdata``. Note that the ``/home`` folder is automatically mounted.
+
+
+.. _singularity_create_image:
+
+
+Creating Your Own Singularity Images
+------------------------------------
+
+Root access is required for creating or modifying Singularity images so it must be done on your local machine.
+
+Firstly an empty image must be created. The following command creates an image named ``myimage.img`` of the size 1024 MB: ::
+
+  sudo singularity create -s 1024 myimage.img
+
+Singularity uses a definition file for bootstrapping an image. An example definition ``ShARC-Ubuntu-Base.def`` is shown below ::
+
+  Bootstrap: docker
+  From: ubuntu:latest
+
+  %setup
+  	#Runs on host. The path to the image is $SINGULARITY_ROOTFS
+
+  %post
+  	#Post setup, runs inside the image
+
+    #Default mount paths
+  	mkdir /scratch /data /shared /fastdata
+
+    #Nvidia driver mount paths, only needed if using GPU
+  	mkdir /nvlib /nvbin
+
+  %runscript
+    #Runs inside the image every time it starts up
+
+    #Add nvidia driver paths, only needed if using GPU
+  	export PATH=/nvbin:$PATH
+  	export LD_LIBRARY_PATH=/nvlib:$LD_LIBRARY_PATH
+
+  %test
+    #Test script to verify that the image is built and running correctly
+
+The definition file takes a base image from `docker hub <https://hub.docker.com/>`_, in this case the latest version of Ubuntu ``ubuntu:latest``. Other images on the hub can also be used as the base for the Singularity image, e.g. ``From: nvidia/cuda:8.0-cudnn5-devel-ubuntu16.04`` uses Nvidia's docker image with Ubuntu 16.04 that already has CUDA 8 installed.
+
+After creating a definition file, use the ``bootstrap`` command to build the image you've just created: ::
+
+  sudo singularity bootstrap myimage.img ShARC-Ubuntu-Base.def
+
+You can also modify the contents of an image after it's been created using the ``-w`` flag: ::
+
+  sudo singularity shell -w myimage.img
+
+The command above gives you a shell in to the image with root access that can then be used to modify its contents.
+
+Using Nvidia GPU with Singularity Images on Your Local Machine
+--------------------------------------------------------------
+
+Images that use the GPU requires driver files that matches the host system. Use the following command to find your current driver version: ::
+
+  nvidia-smi
+
+Where you will get something similar to the following: ::
+
+  Tue Mar 28 16:43:08 2017
+  +-----------------------------------------------------------------------------+
+  | NVIDIA-SMI 367.57                 Driver Version: 367.57                    |
+  |-------------------------------+----------------------+----------------------+
+  | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+  | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+  |===============================+======================+======================|
+  |   0  GeForce GTX TITAN   Off  | 0000:01:00.0      On |                  N/A |
+  | 30%   35C    P8    18W / 250W |    635MiB /  6078MiB |      1%      Default |
+  +-------------------------------+----------------------+----------------------+
+
+It can be seen that the driver version on our current machine is ``367.57``. Go to the `Nvidia website <http://nvidia.com>`_ and search for the correct Linux driver for your graphics card. Download the ``extract_driver_and_moveto.sh`` to the same folder directory and run it like so: ::
+
+  chmod +x extract_driver_and_moveto.sh
+  extract_driver_and_moveto.sh 367.57 ~/mynvdriver
+
+If you're using the image definition file as shown above, the ``/nvbin`` and ``/nvlib`` directories will have been created. They simply need to be correctly mounted when running the image using the command where our extracted driver files are located at ``~/mynvdriver``: ::
+
+  singularity shell -B ~/mynvdriver:/nvlib,~/mynvdriver:/nvbin myimage.img
