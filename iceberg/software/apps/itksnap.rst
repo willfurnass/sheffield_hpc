@@ -18,9 +18,9 @@ The lastest version of ITK-SNAP can be activated using the module file::
 
     module load apps/binapps/itksnap
 
-Alternatively, you can load a specific version of OpenFOAM::
+Alternatively, you can load a specific version of ITK-SNAP::
 
-	module load apps/binapps/itksnap/3.6.0
+	module load apps/binapps/itksnap/3.6
 
 Installation notes
 ------------------
@@ -28,4 +28,4 @@ Installation notes
 ITK-SNAP was compiled using the
 :download:`install_itksnap.sh </iceberg/software/install_scripts/apps/itksnap/install_itksnap.sh>` script, the module
 file is
-`3.6 </iceberg/software/install_scripts/apps/binapps/itksnap/3.6>`.
+:download:`3.6 </iceberg/software/modulefiles/apps/binapps/itksnap/3.6>`.
