@@ -82,8 +82,8 @@ To build the HTML documentation run::
 
     make html
 
-Continuous build
-################
+Continuous build and serve
+##########################
 
 The package `sphinx-autobuild <https://github.com/GaretJax/sphinx-autobuild>`_ provides a watcher that automatically rebuilds the site as files are modified. To use it, install (in addition to the shpinx packages) with the following: ::
 
@@ -93,6 +93,7 @@ To start the autobuild process, run: ::
 
     make livehtml
 
+The application also serves up the site at port ``8000`` by default at http://localhost:8000.
 
 
 Making Changes to the Documentation
