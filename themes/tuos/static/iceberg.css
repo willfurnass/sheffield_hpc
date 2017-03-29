@@ -213,7 +213,8 @@ div.bs-sidenav {
 
 .bs-sidenav .nav > li.toctree-l3.current > a {
     /*border-left: 3px solid #fff;*/
-    background-color: #3AC7AB;
+    color: #313131;
+    background-color: #46e4c5;
 }
 
 /* Screen width fixes */
