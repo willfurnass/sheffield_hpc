@@ -1,11 +1,11 @@
-.. _iceberg_cudnn:
+.. _cudnn_iceberg:
 
 cuDNN
 =====
 
 .. sidebar:: cudNN
 
-  
+
    :Dependencies: CUDA, gcc
    :URL: https://developer.nvidia.com/cudnn
    :Documentation: https://developer.nvidia.com/cudnn
@@ -21,7 +21,7 @@ Currently cuDNN 5.1 is available for CUDA versions 8.0.44 and 7.5.18. An appropr
 Load the appropriate cuDNN version with one of the following commands: ::
 
     module load libs/binlibs/cudnn/5.1-cuda-8.0.44
-    module load libs/binlibs/cudnn/5.1-cuda-7.5.18    
+    module load libs/binlibs/cudnn/5.1-cuda-7.5.18
 
 
 Installation notes
@@ -33,11 +33,6 @@ This section is primarily for administrators of the system.
 - Installation
 	- Install script: :download:`install_cudnn5.1_for_cuda7.5_cuda8.0.sh </iceberg/software/install_scripts/libs/binlibs/cudnn/install_5.1_for_cuda_7.5_cuda_8.0.sh>`
 	- Installation ``.tgz`` files are located in ``/usr/local/media/protected/cudnn``
-- Module file: 
+- Module file:
 	- :download:`cuDNN 5.1 for CUDA 7.5 </iceberg/software/modulefiles/libs/binlibs/cudnn/5.1-cuda-7.5.18>`
 	- :download:`cuDNN 5.1 for CUDA 8.0 </iceberg/software/modulefiles/libs/binlibs/cudnn/5.1-cuda-8.0.44>`
-
-
-
-
-

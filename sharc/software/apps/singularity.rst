@@ -13,7 +13,7 @@ Designed around the notion of extreme mobidddlity of compute and reproducible sc
 Singularity also allows you to leverage the resources of whatever host you are on. This includes HPC interconnects, resource managers, file systems, GPUs and/or accelerators, etc.
 
 About Singularity Containers (Images)
------------------------------------
+-------------------------------------
 
 Similar to Docker, a Singularity container (image) is a self-contained filesystem, operating system and software stack. As Singularity does not require a root-level daemon to run its images it is compatible for use with ShARC's scheduler inside your job scripts. The running images also uses the credentials of the person calling it.
 

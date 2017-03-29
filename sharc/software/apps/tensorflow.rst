@@ -22,7 +22,7 @@ First, request an interactive session with a sufficient amount of memory, e.g. :
 
 	qrshx -l gpu=1 -l gpu_arch=nvidia-k40m -l mem=13G
 
-Load the relevant modules (our example uses CUDA 8.0 with cuDNN 5.1 but :ref:`other versions are available <iceberg_cudnn>`) ::
+Load the relevant modules (our example uses CUDA 8.0 with cuDNN 5.1 but :ref:`other versions are available <cudnn_sharc>`) ::
 
 	module load apps/python/anaconda3-4.2.0
 	module load libs/cudnn/5.1/binary-cuda-8.0.44

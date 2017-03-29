@@ -1,11 +1,11 @@
-.. _sharc-cudnn:
+.. _cudnn_sharc:
 
 cuDNN
 =====
 
 .. sidebar:: cudNN
 
-  
+
    :Dependencies: CUDA, gcc
    :URL: https://developer.nvidia.com/cudnn
    :Documentation: https://developer.nvidia.com/cudnn
@@ -33,11 +33,6 @@ This section is primarily for administrators of the system.
 - Installation
 	- Install script: :download:`install_cudnn5.1_for_cuda7.5_cuda8.0.sh </sharc/software/install_scripts/libs/cudnn/install_5.1_for_cuda_7.5_cuda_8.0.sh>`
 	- Installation ``.tgz`` files are located in ``/usr/local/media/protected/cudnn``
-- Module file: 
+- Module file:
 	- :download:`cuDNN 5.1 for CUDA 7.5 </sharc/software/modulefiles/libs/cudnn/5.1/binary-cuda-7.5.18>`
 	- :download:`cuDNN 5.1 for CUDA 8.0 </sharc/software/modulefiles/libs/cudnn/5.1/binary-cuda-8.0.44>`
-
-
-
-
-
