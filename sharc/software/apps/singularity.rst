@@ -12,18 +12,18 @@ Designed around the notion of extreme mobidddlity of compute and reproducible sc
 
 Singularity also allows you to leverage the resources of whatever host you are on. This includes HPC interconnects, resource managers, file systems, GPUs and/or accelerators, etc.
 
-About Singularity Containers/Images
+About Singularity Containers (Images)
 -----------------------------------
 
 Similar to Docker, a Singularity container (image) is a self-contained filesystem, operating system and software stack. As Singularity does not require a root-level daemon to run its images it is compatible for use with ShARC's scheduler inside your job scripts. The running images also uses the credentials of the person calling it.
 
-This in-practice means that an image created on your local machine with all your research software installed for local development is guaranteed to also run on the ShARC cluster.
+This in-practice means that an image created on your local machine with all your research software installed for local development will also run on the ShARC cluster.
 
-Pre-built images have been provided on the cluster and can also be download for use on your local machine (see :ref:`singularity_use_image`). Creating and modifying images however, requires root permission and so must be done on your machine (see :ref:`singularity_create_image`).
+Pre-built images have been provided on the cluster and can also be download for use on your local machine (see :ref:`use_image_singularity_sharc`). Creating and modifying images however, requires root permission and so must be done on your machine (see :ref:`create_image_singularity_sharc`).
 
 
 
-.. _singularity_use_image:
+.. _use_image_singularity_sharc:
 
 Using Pre-built Singularity Images on ShARC
 -------------------------------------------
@@ -68,20 +68,22 @@ You will need Singularity installed on your machine in order to locally run, cre
 Manually mounting paths
 -----------------------
 
+
+
 When using ShARC's pre-built images on your local machine, it may be useful to mount the existing directories in the image to your own path. This can be done with the flag ``-B local/path:image/path`` with the path outside of the image left of the colon and the path in the image on the right side, e.g. ::
 
   singularity shell -B local/datapath:/data,local/fastdatapath:/fastdata path/to/imgfile.img
 
-The command mounts the path ``local/datapath`` on your local machine to the ``/data`` path in the image. Multiple mount points can be joined with ``,`` as shown above where we additionally specify that ``local/fastdata`` mounts to ``/fastdata``. Note that the ``/home`` folder is automatically mounted.
+The command mounts the path ``local/datapath`` on your local machine to the ``/data`` path in the image. Multiple mount points can be joined with ``,`` as shown above where we additionally specify that ``local/fastdata`` mounts to ``/fastdata``. The ``/home`` folder is automatically mounted by default.
 
+**Note: In order to mount a path, the directory must already exist within the image.**
 
-.. _singularity_create_image:
-
+.. _create_image_singularity_sharc:
 
 Creating Your Own Singularity Images
 ------------------------------------
 
-Root access is required for creating or modifying Singularity images so it must be done on your local machine.
+**Root access is required for creating or modifying Singularity images so it must be done on your local machine.**
 
 Firstly an empty image must be created. The following command creates an image named ``myimage.img`` of the size 1024 MB: ::
 
@@ -104,12 +106,13 @@ Singularity uses a definition file for bootstrapping an image. An example defini
     #Nvidia driver mount paths, only needed if using GPU
   	mkdir /nvlib /nvbin
 
+    #Add nvidia driver paths to the environment variables
+  	echo "\n #Nvidia driver paths \n" >> /environment
+  	echo 'export PATH="/nvbin:$PATH"' >> /environment
+  	echo 'export LD_LIBRARY_PATH="/nvlib:$LD_LIBRARY_PATH"' >> /environment
+
   %runscript
     #Runs inside the image every time it starts up
-
-    #Add nvidia driver paths, only needed if using GPU
-  	export PATH=/nvbin:$PATH
-  	export LD_LIBRARY_PATH=/nvlib:$LD_LIBRARY_PATH
 
   %test
     #Test script to verify that the image is built and running correctly
@@ -146,11 +149,13 @@ Where you will get something similar to the following: ::
   | 30%   35C    P8    18W / 250W |    635MiB /  6078MiB |      1%      Default |
   +-------------------------------+----------------------+----------------------+
 
-It can be seen that the driver version on our current machine is ``367.57``. Go to the `Nvidia website <http://nvidia.com>`_ and search for the correct Linux driver for your graphics card. Download the ``extract_driver_and_moveto.sh`` to the same folder directory and run it like so: ::
+It can be seen that the driver version on our current machine is ``367.57``. Go to the `Nvidia website <http://nvidia.com>`_ and search for the correct Linux driver for your graphics card. Download the ``extract_nvdriver_and_moveto.sh`` to the same folder directory and run it like so: ::
 
-  chmod +x extract_driver_and_moveto.sh
+  chmod +x extract_nvdriver_and_moveto.sh
   extract_driver_and_moveto.sh 367.57 ~/mynvdriver
 
-If you're using the image definition file as shown above, the ``/nvbin`` and ``/nvlib`` directories will have been created. They simply need to be correctly mounted when running the image using the command where our extracted driver files are located at ``~/mynvdriver``: ::
+If you're using the Singularity definition file as shown above, the ``/nvbin`` and ``/nvlib`` directories will have been created. They simply need to be correctly mounted when running the image using the command where our extracted driver files are located at ``~/mynvdriver``: ::
 
   singularity shell -B ~/mynvdriver:/nvlib,~/mynvdriver:/nvbin myimage.img
+
+**Note: When running an image on ShARC, if the** ``/nvlib`` **and** ``/nvbin`` **directories exist, they will automatically be mounted with the correct driver version.**

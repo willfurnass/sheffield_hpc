@@ -1,15 +1,24 @@
-.. _Tensorflow:
+.. _tensorflow_sharc:
 
-Deep Learning with Tensorflow on GPU nodes
-==========================================
+Tensorflow
+==========
 
-**Tensorflow is only available on the ShARC system due to libc version requirements**
+.. sidebar:: Tensorflow
+
+   :URL: https://www.tensorflow.org/
 
 TensorFlow is an open source software library for numerical computation using data flow graphs. Nodes in the graph represent mathematical operations, while the graph edges represent the multidimensional data arrays (tensors) communicated between them. The flexible architecture allows you to deploy computation to one or more CPUs or GPUs in a desktop, server, or mobile device with a single API. TensorFlow was originally developed by researchers and engineers working on the Google Brain Team within Google's Machine Intelligence research organization for the purposes of conducting machine learning and deep neural networks research, but the system is general enough to be applicable in a wide variety of other domains as well.
 
+About Tensorflow on ShARC
+-------------------------
+
+As Tensorflow and all its dependencies are written in Python, it can be installed locally in your home directory. The use of Anaconda (:ref:`sharc-python-conda`) is recommended as it is able to create a virtual environment in your home directory, allowing the installation of new Python packages without admin permission.
+
+Installation
+------------
 The following is an instruction on how to setup Tensorflow on your local user account.
 
-Request an interactive session with a sufficient amount of memory ::
+First, request an interactive session with a sufficient amount of memory, e.g. ::
 
 	qrshx -l gpu=1 -l gpu_arch=nvidia-k40m -l mem=13G
 
@@ -21,9 +30,9 @@ Load the relevant modules (our example uses CUDA 8.0 with cuDNN 5.1 but :ref:`ot
 
 Create a conda environment to load relevant modules on your local user account and activate it ::
 
-	conda create -n tensorflow python=3.5 anaconda3-2.5.0 
+	conda create -n tensorflow python=3.5 anaconda3-2.5.0
 	source activate tensorflow
-		
+
 Then install tensorflow with the following commands ::
 
 	export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.11.0-cp35-cp35m-linux_x86_64.whl
@@ -46,6 +55,15 @@ Which gives the following results ::
 
 	[[ 22.  28.]
 	 [ 49.  64.]]
+
+Running Tensorflow in Another Session or in the Job Script
+-------------------------------------------------
+
+The previous instuctions installs Tensorflow and its dependencies inside your home directory but every time you use a new session or within your job scripts, the modules must be loaded and conda must be activated again. Use the following command to activate the Conda environment with Tensorflow installed: ::
+
+	module load apps/python/anaconda3-4.2.0
+	module load libs/cudnn/5.1/binary-cuda-8.0.44
+	source activate tensorflow
 
 Using multiple GPUs
 -------------------
@@ -88,4 +106,3 @@ You will see the following output. ::
 	AddN: /job:localhost/replica:0/task:0/cpu:0
 	[[  44.   56.]
 	 [  98.  128.]]
-

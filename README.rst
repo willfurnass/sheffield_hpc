@@ -85,12 +85,12 @@ To build the HTML documentation run::
 Continuous build
 ################
 
-The package `sphinx-autobuild <https://github.com/GaretJax/sphinx-autobuild>`_ provides a watcher that automatically rebuilds the site as files are modified. To use it install (in addition to the shpinx packages) ::
+The package `sphinx-autobuild <https://github.com/GaretJax/sphinx-autobuild>`_ provides a watcher that automatically rebuilds the site as files are modified. To use it, install (in addition to the shpinx packages) with the following: ::
 
     pip install sphinx-autobuild
 
-To start the autobuild process run ::
-  
+To start the autobuild process, run: ::
+
     make livehtml
 
 
