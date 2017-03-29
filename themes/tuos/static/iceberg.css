@@ -142,6 +142,7 @@ cite {
 .navbar-form .form-group {
     margin-bottom: 0;
 }
+
 /* Side Nav */
 
 /* Top Level */
@@ -155,18 +156,20 @@ div.bs-sidenav {
 .bs-sidenav .nav > li > a {
     line-height: 2em;
     color: #fff;
-    border-left: 3px solid #000
+    /*border-left: 3px solid #000*/
 }
 
 .bs-sidenav .nav > li > a:hover,
 .bs-sidenav .nav > li > a:focus {
     background-color: inherit;
     border-right: inherit;
-    border-left: 3px solid #fff;
+    /*border-left: 3px solid #fff;*/
+    background-color: #007D65;
 }
 
 .bs-sidenav .nav > li.current > a {
-    border-left: 3px solid #fff;
+    /*border-left: 3px solid #fff;*/
+    background-color: #007D65;
 }
 
 /* all non-first level menus */
@@ -179,18 +182,18 @@ div.bs-sidenav {
 /* Second Level */
 
 .bs-sidenav .nav > li.toctree-l2 > a {
-    border-left: 3px solid #414042;
+    /*border-left: 3px solid #414042;*/
 }
 
 .bs-sidenav .nav > li.toctree-l2 > a:hover,
 .bs-sidenav .nav > li.toctree-l2 > a:focus {
-    border-left: 3px solid #fff;
+    /*border-left: 3px solid #fff;*/
 }
 
 .bs-sidenav .nav > li.current.toctree-l2 > a {
-    background-color: #fff;
-    color: #0066b3;
-    border-left: 3px solid #fff;
+    background-color: #00A685;
+    /*color: #0066b3;*/
+    /*border-left: 3px solid #fff;*/
 }
 
 /* Third Level */
@@ -200,12 +203,17 @@ div.bs-sidenav {
 }
 
 .bs-sidenav .nav > li.toctree-l3 > a {
-    border-left: 2px solid #414042;
+    /*border-left: 2px solid #414042;*/
 }
 
 .bs-sidenav .nav > li.toctree-l3 > a:hover,
 .bs-sidenav .nav > li.toctree-l3 > a:focus{
-    border-left: 2px solid #fff;
+    /*border-left: 2px solid #fff;*/
+}
+
+.bs-sidenav .nav > li.toctree-l3.current > a {
+    /*border-left: 3px solid #fff;*/
+    background-color: #3AC7AB;
 }
 
 /* Screen width fixes */
