@@ -1,7 +1,7 @@
 .. _sge-queue:
 
-Queue System
-============
+Iceberg's Queue System
+======================
 
 To manage use of the Iceberg cluster, there is a queue system
 (`SoGE <https://arc.liv.ac.uk/trac/SGE>`_, a derivative of the Sun Grid Engine).
@@ -17,13 +17,14 @@ Using Iceberg Interactively
 
 If you wish to use the cluster for interactive use, such as running applications
 such as MATLAB or Ansys, or compiling software, you will need to request that
-the scheduler gives you an interactive session. 
+the scheduler gives you an interactive session. For an introduction to this see
+:ref:`getting-started`.
 
 There are three commands which give you an interactive shell:
 
-* `qrsh` - Requests an interactive session on a worker node. No support for graphical applications.
-* `qrshx` - Requests an interactive session on a worker node. Supports graphical applications. Superior to `qsh`.
-* `qsh` - Requests an interactive session on a worker node. Supports graphical applications.
+* :ref:`qrsh` - Requests an interactive session on a worker node. No support for graphical applications.
+* :ref:`qrshx` - Requests an interactive session on a worker node. Supports graphical applications. Superior to :ref:`qsh`.
+* :ref:`qsh` - Requests an interactive session on a worker node. Supports graphical applications.
 
 You can configure the resources available to the interactive session by
 specifying them as command line options to the qsh or qrsh commands.
@@ -48,7 +49,7 @@ combined together to request more resources.
 .. _sge-interactive-options:
 
 Common Interactive Job Options
-------------------------------
+``````````````````````````````
 
 ====================== ========================================================
 Command                Description
@@ -133,3 +134,78 @@ Here is a more complex example that requests more resources ::
   #Run the program foo with input foo.dat
   #and output foo.res
   foo < foo.dat > foo.res
+
+Scheduler Options
+-----------------
+
+====================== ========================================================
+Command                Description
+====================== ========================================================
+-l h_rt=hh:mm:ss       Specify the total maximum execution time for the job.
+
+-l mem=xxG             Specify the maximum amount (xx) of memory to be used.
+
+-l hostname=           Target a node by name. Not recommended for normal use.
+
+-l arch=               Target a processor architecture. Options on Iceberg include
+                       `intel-e5-2650v2` and `intel-x5650`
+
+-N                     Job name, used to name output files and in the queue list.
+
+-j                     Join the error and normal output into one file rather
+                       than two.
+
+-M                     Email address to send notifications to.
+
+-m bea                 Type of notifications to send. Can be any combination of
+                       begin (b) end (e) or abort (a) i.e. `-m ea` for end and
+                       abortion messages.
+-a                     Specify the earliest time for a job to start, in the
+                       format MMDDhhmm. e.g. -a 01011130 will schedule the job
+                       to begin no sooner than 11:30 on 1st January.
+====================== ========================================================
+
+All scheduler commands
+----------------------
+All available scheduler commands are listed in the :ref:`scheduler` section.
+
+Frequently Asked SGE Questions
+------------------------------
+**How many jobs can I submit at any one time**
+
+You can submit up to 2000 jobs to the cluster, and the scheduler will allow up to 200 of your jobs to run simultaneously (we occasionally alter this value depending on the load on the cluster).
+
+**How do I specify the processor type on Iceberg?**
+
+Add the following line to your submission script ::
+
+    #$ -l arch=intel-e5-2650v2
+
+This specifies nodes that have the Ivybridge `E5-2650 CPU <http://ark.intel.com/products/75269/Intel-Xeon-Processor-E5-2650-v2-20M-Cache-2_60-GHz>`_.
+All such nodes on Iceberg have 16 cores.
+
+To only target the older, 12 core nodes that contain `X5650 CPUs <http://ark.intel.com/products/47922/Intel-Xeon-Processor-X5650-12M-Cache-2_66-GHz-6_40-GTs-Intel-QPI>`_ add the following line to your submission script ::
+
+    #$ -l arch=intel-x5650
+
+
+**How do I specify multiple email addresses for job notifications?**
+
+Specify each additional email with it's own `-M` option ::
+
+  #$ -M foo@example.com
+  #$ -M bar@example.com
+
+**How do you ensure that a job starts after a specified time?**
+
+Add the following line to your submission script ::
+
+    #$ -a time
+
+but replace ``time`` with a time in the format MMDDhhmm
+
+For example, for 22nd July at 14:10, you’d do ::
+
+    #$ -a 07221410
+
+This won’t guarantee that it will run precisely at this time since that depends on available resources. It will, however, ensure that the job runs *after* this time. If your resource requirements aren’t too heavy, it will be pretty soon after. When I tried it, it started about 10 seconds afterwards but this will vary.

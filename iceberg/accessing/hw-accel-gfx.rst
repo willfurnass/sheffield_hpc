@@ -19,7 +19,7 @@ Usage instructions
 ------------------
 
 #. Download and install `TigerVNC <http://sourceforge.net/projects/tigervnc/>`_ on your machine.  TigerVNC is a program that allows you to efficiently view graphical programs on one computer that are actually running on another computer.
-#. :ref:`Connect to Iceberg <connection>`
+#. :ref:`Connect to Iceberg <getting-started>`
 #. On the login node (**not** a worker node) run the command ``qsh-vis``.  The output should look something like the following: ::
 
     [cs1wf@iceberg-login1 ~]$ qsh-vis 

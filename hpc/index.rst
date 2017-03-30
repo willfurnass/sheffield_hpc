@@ -2,8 +2,5 @@ Using the HPC Systems
 =====================
 
 .. toctree::
-   account
-   connection
-   sge
-   sheduler
-   freq
+   getting-started
+   scheduler/index
