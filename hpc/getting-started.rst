@@ -3,17 +3,18 @@
 Getting Started
 ===============
 
-If you have not used a High Performance Computing (HPC) cluster, Linux or
+If you have not used a High Performance Computing (HPC) cluster, the Linux operating system (an alternative to Windows and macOS) or
 even a command line before this is the place to start. This guide will get you 
-set up using iceberg in the easiest way that fits your requirements.
+set up using the University's clusters in the easiest way that fits your
+requirements.
 
 Getting an Account
 ##################
 
-Before you can start using iceberg you need to register for an account.
+Before you can start the clusters you need to register for an account.
 Accounts are availible for staff by emailing `helpdesk@sheffield.ac.uk <helpdesk@sheffield.ac.uk>`_.
 
-The following categories of students can also have an account on iceberg with 
+The following categories of students can also have an account with 
 the permission of their supervisors:
 
 * Research Postgraduates
@@ -25,26 +26,40 @@ Student's supervisors can request an account for the student by emailing
 
 .. note::
 
-    Once you have obtained your iceberg username, you need to initialize your 
-    iceberg password to be the same as your normal password by using the CICS
+    Once you have obtained your username, you need to initialize your 
+    password to be the same as your normal password by using the CICS
     `synchronize passwords system <https://www.shef.ac.uk/cics/password>`_.
 
 .. _connecting:
 
-Connecting to iceberg (Terminal)
-################################
+Connecting to a cluster
+#######################
 
-Accessing iceberg through an ssh terminal is easy and the most flexible way of 
-using iceberg, as it is the native way of interfacing with the linux cluster. 
-It also allows you to access iceberg from any remote location without having to setup VPN
-connections.  
+The most versatile way to **run commands and submit jobs** on one of the clusters is to use a mechanism called `SSH <https://en.wikipedia.org/wiki/Secure_Shell>`__, 
+which is a common way of remotely logging in to computers running the Linux operating system.
 
-Rest of this page summarizes the recommended methods of accessing iceberg from commonly used platforms. 
-A more comprehensive guide to accessing iceberg and transfering files is located at 
+To connect to another machine using SSH you need to have a SSH *client* program installed on your machine.  
+macOS and Linux come with a command-line (text-only) SSH client pre-installed.  
+On Windows there are various graphical SSH clients you can used, including *MobaXTerm*.
+See below for more information on how to use these clients to connect to our clusters.
+
+To **transfer files to/from the clusters** you can either:
+
+* Use a program that supports one or both of the SCP and SFTP *protocols* to copy/move files to/from your own machine
+* Use a `Research Storage fileshare <http://www.sheffield.ac.uk/cics/research-storage/>`_ as common storage directly 
+  accessible from your own machine and from the clusters.
+
+A more comprehensive guide to accessing the clusters and transfering files is located at 
 `http://www.sheffield.ac.uk/cics/research/hpc/using/access <http://www.sheffield.ac.uk/cics/research/hpc/using/access>`_
 
-Windows
-```````
+.. note::
+
+    You can connect to **Iceberg** using SSH/SCP/SFTP from anywhere (on campus and off campus with/without a `VPN connection <https://www.sheffield.ac.uk/cics/vpn>`_)
+    but if you are using **ShARC** and you are **off-campus** then you need to set up a VPN connection first.
+    Instructions for setting up a VPN connection are `available for Windows, macOS and Linux <https://www.sheffield.ac.uk/cics/vpn>`_.
+
+Connecting from Windows
+```````````````````````
 
 Download and install the *Installer edition* of `mobaxterm <https://mobaxterm.mobatek.net/download-home-edition.html>`_.
 
@@ -65,8 +80,8 @@ Mac OS/X and Linux
 ``````````````````
 
 Linux and macOS (OS X) both have a terminal emulator program pre-installed.  
-macOS users should however install the latest version of the `XQuartz <https://www.xquartz.org/>`_ X Windows server 
-if they want to be able to run graphical applications on the cluster.
+If you are using macOS and want to be able to run graphical applications on the clusters then 
+you need to install the latest version of the `XQuartz <https://www.xquartz.org/>`_ *X Windows server*.
 
 Open a terminal and then go to :ref:`ssh`.
 
@@ -133,4 +148,4 @@ which will pop up another terminal window, which supports graphical applications
 What Next?
 ``````````
 
-Now you have connected to iceberg, you can look at how to submit jobs with :ref:`sge-queue` or look at :ref:`iceberg-software`.
+Now you have connected to a cluster, you can look at how to submit jobs with :ref:`sge-queue` or look at :ref:`sharc-software` and :ref:`iceberg-software`
