@@ -14,16 +14,14 @@ About Tensorflow on ShARC
 
 As Tensorflow and all its dependencies are written in Python, it can be installed locally in your home directory. The use of Anaconda (:ref:`sharc-python-conda`) is recommended as it is able to create a virtual environment in your home directory, allowing the installation of new Python packages without admin permission.
 
-**Additional permissions are needed to use GPUs on Iceberg/ShARC. See** :ref:`GPUIntro` **for more information.**
+**Additional permissions are needed to use GPUs on Iceberg/ShARC. See** :ref:`GPUComputing_sharc` **for more information.**
 
 Installation
 ------------
 
 The following is an instruction on how to setup Tensorflow on your local user account.
 
-First, request an interactive session with a sufficient amount of memory, e.g. ::
-
-	qrshx -l gpu=1 -l gpu_arch=nvidia-k40m -l mem=13G
+First request an interactive session, e.g. with :ref:`qrshx`. To use GPUs see :ref:`GPUInteractive_sharc`.
 
 Load the relevant modules (our example uses CUDA 8.0 with cuDNN 5.1 but :ref:`other versions are available <cudnn_sharc>`) ::
 
@@ -59,8 +57,8 @@ Which gives the following results ::
 	[[ 22.  28.]
 	 [ 49.  64.]]
 
-Running Tensorflow in Another Session or in the Job Script
--------------------------------------------------
+Every Session Afterwards and in Your Job Scripts
+------------------------------------------------
 
 The previous instuctions installs Tensorflow and its dependencies inside your home directory but every time you use a new session or within your job scripts, the modules must be loaded and conda must be activated again. Use the following command to activate the Conda environment with Tensorflow installed: ::
 

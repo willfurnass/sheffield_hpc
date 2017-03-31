@@ -3,9 +3,9 @@
 NVCC - Nvidia CUDA Compiler
 ===========================
 
-**Additional permissions are needed to use GPUs on Iceberg/ShARC. See** :ref:`GPUIntro` **for more information.**
+**Additional permissions are needed to use GPUs on Iceberg/ShARC. See** :ref:`GPUComputing_iceberg` **for more information.**
 
-To compile GPU code using the NVIDIA compiler, nvcc, first start an interactive session (see :ref:`GPUInteractive`).
+To compile GPU code using the NVIDIA compiler, nvcc, first start an interactive session (see :ref:`GPUInteractive_iceberg`).
 Next, you need to set up the compiler environment via one of the following module statements: ::
 
     module load libs/cuda/8.0.44

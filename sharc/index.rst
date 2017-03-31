@@ -12,6 +12,8 @@ This is the documentation for ShARC (Sheffield Advanced Research Computer), The 
 
   software/index
   differences
+  GPUComputingShARC
 
 * :ref:`sharc-software`
 * :ref:`sharc-differences`
+* :ref:`GPUComputing_sharc`

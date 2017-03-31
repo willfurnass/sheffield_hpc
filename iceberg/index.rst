@@ -8,3 +8,4 @@ Iceberg
    accessing/index
    filestore
    cluster_specs
+   GPUComputingIceberg
