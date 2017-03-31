@@ -1,3 +1,5 @@
+.. _maple_iceberg:
+
 Maple
 =====
 
