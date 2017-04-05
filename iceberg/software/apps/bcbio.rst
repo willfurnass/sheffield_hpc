@@ -199,7 +199,7 @@ The tests failed due to a lack of pandoc ::
 
   [2016-01-07T09:40Z] Error: pandoc version 1.12.3 or higher is required and was not found.
   [2016-01-07T09:40Z] Execution halted
-  [2016-01-07T09:40Z] Skipping generation of coverage report: Command 'set -o pipefail; /usr/local/packages6/apps/gcc/5.2/bcbio/0.9.6a/anaconda/bin/Rscript /data/fe1mpc/bcbio-nextgen/tests/test_automated_ou
+  [2016-01-07T09:40Z] Skipping generation of coverage report: Command 'set -o pipefail; /usr/local/packages6/apps/gcc/5.2/bcbio/0.9.6a/anaconda/bin/Rscript /data/te1st/bcbio-nextgen/tests/test_automated_ou
   tput/report/qc-coverage-report-run.R
   Error: pandoc version 1.12.3 or higher is required and was not found.
   Execution halted

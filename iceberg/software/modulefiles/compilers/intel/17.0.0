@@ -55,7 +55,6 @@ prepend-path CLASSPATH $intelroot/compilers_and_libraries_2017.0.098/linux/daal/
 prepend-path CLASSPATH $intelroot/compilers_and_libraries_2017.0.098/linux/mpi/intel64/lib/mpi.jar;
 append-path INTEL_LICENSE_FILE $intelroot/compilers_and_libraries_2017.0.098/linux/licenses;
 append-path INTEL_LICENSE_FILE /opt/intel/licenses;
-append-path INTEL_LICENSE_FILE /home/sa_cs1wf/intel/licenses;
 prepend-path CPATH $intelroot/compilers_and_libraries_2017.0.098/linux/daal/include;
 prepend-path CPATH $intelroot/compilers_and_libraries_2017.0.098/linux/tbb/include;
 prepend-path CPATH $intelroot/compilers_and_libraries_2017.0.098/linux/mkl/include;

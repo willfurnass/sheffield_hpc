@@ -8,9 +8,9 @@ version=4.4.3
 install_dir=/usr/local/packages6/libs/gcc/4.4.7/openmpi/1.10.1/netcdf-fortran/$version
 mkdir -p $install_dir
 
-rm -r /scratch/cs1sjm/netcdf
-mkdir -p /scratch/cs1sjm/netcdf
-cd /scratch/cs1sjm/netcdf
+rm -r /scratch/te1st/netcdf
+mkdir -p /scratch/te1st/netcdf
+cd /scratch/te1st/netcdf
 
 filename=netcdf-fortran-$version.tar.gz
 wget ftp://ftp.unidata.ucar.edu/pub/netcdf/$filename
