@@ -17,7 +17,7 @@ env:
     - BUILD_CMD='latexpdf'
             
 python:
-    - 2.7
+    - 3.6
 
 virtualenv:
      system_site_packages: false
