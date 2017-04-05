@@ -145,7 +145,7 @@ Just typing ``runansys`` will display information on how to use it: ::
             -parallel n   request an n-way parallel ansys job
             -gpu		use GPU
                           Note for GPU users: -mem= must be greater than 18G.
-            -usefastdata  Use /fastdata/sa_cs1wf as the working directory for temporary files
+            -usefastdata  Use /fastdata/te1st as the working directory for temporary files
             -project project_name : The job will use a project's allocation.
             -mail your_email_address  : Job progress report is emailed to you.
          

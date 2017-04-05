@@ -231,7 +231,7 @@ The following script was submitted via ``qsub`` from inside the build directory:
   module load compilers/intel/15.0.3
 
   cd CASTEP-16.1/Test
-  ../bin/testcode.py -q  --total-processors=1 -e /home/fe1mpc/CASTEP/CASTEP-16.1/obj/linux_x86_64_ifort15/castep.serial -c simple -v -v -v
+  ../bin/testcode.py -q  --total-processors=1 -e /home/te1st/CASTEP/CASTEP-16.1/obj/linux_x86_64_ifort15/castep.serial -c simple -v -v -v
 
 All but one of the tests passed. It seems that the failed test is one that fails for everyone for this version since there is a missing input file. The output from the test run is on the system at ``/usr/local/packages6/apps/intel/15/castep/16.1/CASTEP_SERIAL_tests_09022016.txt``
 
@@ -246,7 +246,7 @@ The following script was submitted via ``qsub`` from inside the build directory 
   module load libs/intel/15/openmpi/1.8.8
 
   cd CASTEP-16.1/Test
-  ../bin/testcode.py -q  --total-processors=4 --processors=4 -e /home/fe1mpc/CASTEP/CASTEP-16.1/obj/linux_x86_64_ifort15/castep.mpi -c simple -v -v -v
+  ../bin/testcode.py -q  --total-processors=4 --processors=4 -e /home/te1st/CASTEP/CASTEP-16.1/obj/linux_x86_64_ifort15/castep.mpi -c simple -v -v -v
 
 All but one of the tests passed. It seems that the failed test is one that fails for everyone for this version since there is a missing input file. The output from the test run is on the system at ``/usr/local/packages6/apps/intel/15/castep/16.1/CASTEP_Parallel_tests_09022016.txt``
 

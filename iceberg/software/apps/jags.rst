@@ -61,7 +61,7 @@ If you received an error message such as ::
 
     Error : .onLoad failed in loadNamespace() for 'rjags', details:
       call: dyn.load(file, DLLpath = DLLpath, ...)
-      error: unable to load shared object '/home/fe1mpc/R/x86_64-unknown-linux-gnu-library/3.2/rjags/libs/rjags.so':
+      error: unable to load shared object '/home/te1st/R/x86_64-unknown-linux-gnu-library/3.2/rjags/libs/rjags.so':
       libjags.so.3: cannot open shared object file: No such file or directory
     Error: package or namespace load failed for 'rjags'
 

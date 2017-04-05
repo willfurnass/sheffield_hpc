@@ -14,7 +14,7 @@ module load compilers/gcc/5.2
 ############################## Variable Setup ################################
 version=0.1.14
 prefix=/usr/local/packages6/apps/gcc/5.2/vcftools/$version
-build_dir=/scratch/cs1sjm/vcftools
+build_dir=/scratch/te1st/vcftools
 
 filename=vcftools-$version.tar.gz
 baseurl=https://github.com/vcftools/vcftools/releases/download/v$version/
