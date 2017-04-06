@@ -1,0 +1,38 @@
+Bootstrap: docker
+From: bvlc/caffe:gpu
+
+%setup
+	#Runs on host
+	#The path to the image is $SINGULARITY_ROOTFS
+
+
+%post
+	#Post setup script
+
+  #Default mount paths
+	mkdir /scratch /data /shared /fastdata
+
+  #Nvidia Library mount paths
+	mkdir /nvlib /nvbin
+
+	#Add nvidia driver paths
+	echo "\n #Nvidia driver paths \n" >> /environment
+	echo 'export PATH="/nvbin:$PATH"' >> /environment
+	echo 'export LD_LIBRARY_PATH="/nvlib:$LD_LIBRARY_PATH"' >> /environment
+
+	#Add Caffe paths
+	echo "\n #Caffe paths \n" >> /environment
+  echo 'export CAFFE_ROOT="/opt/caffe"' >> /environment
+  echo 'export PYCAFFE_ROOT="$CAFFE_ROOT/python"' >> /environment
+  echo 'export PYTHONPATH="$PYCAFFE_ROOT:$PYTHONPATH"' >> /environment
+  echo 'export PATH="$CAFFE_ROOT/build/tools:$PYCAFFE_ROOT:$PATH"' >> /environment
+
+
+%runscript
+	#Run every time image starts
+
+
+
+
+%test
+	#Test that script is a success

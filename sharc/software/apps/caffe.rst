@@ -11,6 +11,30 @@ Caffe
 
 **Additional permissions are needed to use GPUs on Iceberg/ShARC. See** :ref:`GPUComputing_sharc` **for more information.**
 
+Caffe Singularity Images
+------------------------
+
+Singularity images are self-contained virtual machines similar to Docker. For more information on Singularity and how to use the images, see :ref:`singularity_sharc`.
+
+The following Singularity images are available on ShARC and can also be downloaded for use on your local machine:
+
+* CPU Caffe rc5, Ubuntu 16.04, GCC 5.4.0
+    * Image path: ``/usr/local/packages/singularity/caffe/rc5-CPU-Ubuntu16.04.img``
+    * Def file: `Caffe CPU </sharc/software/apps/singularity/caffe_cpu.def>`
+* GPU Caffe rc5, Ubuntu 16.04, CUDA 8, cuDNN 5.0, GCC 5.4.0
+    * Image path: ``/usr/local/packages/singularity/caffe/rc5-GPU-Ubuntu16.04-CUDA8-cudNN5.0.img``
+    * Def file: `Caffe GPU </sharc/software/apps/singularity/caffe_gpu.def>`
+
+To get a bash terminal in to an image for example, use the command: ::
+
+  singularity exec /usr/local/packages/singularity/caffe/rc5-CPU-Ubuntu16.04.img /bin/bash
+
+The ``exec`` command can also be used to call any command/script inside the image e.g. ::
+
+  singularity exec /usr/local/packages/singularity/caffe/rc5-CPU-Ubuntu16.04.img "caffe train your_solver.prototxt"
+
+The paths ``/fastdata``, ``/data``, ``/home``, ``/scratch``, ``/shared`` are automatically mounted to your ShARC filestore directories. For GPU-enabled images the ``/nvlib`` and ``/nvbin`` is mounted to the correct Nvidia driver version for the node that you're using.
+
 Using the Caffe Module
 ----------------------
 

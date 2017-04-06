@@ -21,7 +21,11 @@ This in-practice means that an image created on your local machine with all your
 
 Pre-built images have been provided on the cluster and can also be download for use on your local machine (see :ref:`use_image_singularity_sharc`). Creating and modifying images however, requires root permission and so must be done on your machine (see :ref:`create_image_singularity_sharc`).
 
-Singularity images will be provided for :ref:`caffe_sharc`, :ref:`theano_sharc`, :ref:`torch_sharc` and :ref:`tensorflow_sharc`.
+Singularity images are currently provided for:
+* :ref:`caffe_sharc`
+* :ref:`theano_sharc`
+* :ref:`torch_sharc`
+* :ref:`tensorflow_sharc`.
 
 .. _use_image_singularity_sharc:
 
