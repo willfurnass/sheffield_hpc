@@ -3,7 +3,7 @@
 NVCC - Nvidia CUDA Compiler
 ===========================
 
-**Additional permissions are needed to use GPUs on Iceberg/ShARC. See** :ref:`GPUComputing_sharc` **for more information.**
+
 
 To compile GPU code using the NVIDIA compiler, nvcc, first start an interactive session (see :ref:`GPUInteractive_sharc`).
 Next, you need to set up the compiler environment via one of the following module statements: ::

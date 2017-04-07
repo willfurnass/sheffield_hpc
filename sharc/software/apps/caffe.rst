@@ -9,7 +9,7 @@ Caffe
 
 `Caffe <http://caffe.berkeleyvision.org/>`_ is a deep learning framework made with expression, speed, and modularity in mind. It is developed by the Berkeley Vision and Learning Center (`BVLC <http://bvlc.eecs.berkeley.edu/>`_) and by community contributors.
 
-**Additional permissions are needed to use GPUs on Iceberg/ShARC. See** :ref:`GPUComputing_sharc` **for more information.**
+
 
 Caffe Singularity Images
 ------------------------
@@ -63,7 +63,7 @@ Every Session Afterwards and in Your Job Scripts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you created a virtual python environment, you must activate it at every new session and within your job scripts: ::
 
-	module load module load apps/caffe/rc5/gcc-4.9.4-cuda-8.0-cudnn-5.1
+	module load apps/caffe/rc5/gcc-4.9.4-cuda-8.0-cudnn-5.1
 	source activate caffe
 
 Installation Notes

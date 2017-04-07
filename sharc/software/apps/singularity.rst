@@ -22,10 +22,11 @@ This in-practice means that an image created on your local machine with all your
 Pre-built images have been provided on the cluster and can also be download for use on your local machine (see :ref:`use_image_singularity_sharc`). Creating and modifying images however, requires root permission and so must be done on your machine (see :ref:`create_image_singularity_sharc`).
 
 Singularity images are currently provided for:
+
 * :ref:`caffe_sharc`
 * :ref:`theano_sharc`
 * :ref:`torch_sharc`
-* :ref:`tensorflow_sharc`.
+* :ref:`tensorflow_sharc`
 
 .. _use_image_singularity_sharc:
 
@@ -44,12 +45,12 @@ Note that the ``exec`` command can also be used to execute other applications/sc
 
   singularity exec path/to/imgfile.img some_script_inside_image.sh
 
-ShARC Filesystem Inside Images
-------------------------------
+Automatic Mounting of ShARC Filestore Inside Images
+----------------------------------------------------
 
 When running Singularity images on ShARC, the paths ``/fastdata``, ``/data``, ``/home``, ``/scratch``, ``/shared`` are automatically mounted to your ShARC directories.
 
-Images that uses the GPU requires driver files that matches the host system. In ShARC these files are located outside of the image and mounted to paths ``/nvbin`` and ``/nvlib`` within the image.
+Images that uses the GPU requires driver files that matches the host system. In ShARC these files are located outside of the image and automatically mounted to paths ``/nvbin`` and ``/nvlib`` within the image.
 
 
 Installing Singularity on Your Local Machine
@@ -69,8 +70,6 @@ You will need Singularity installed on your machine in order to locally run, cre
 
 Manually mounting paths
 -----------------------
-
-
 
 When using ShARC's pre-built images on your local machine, it may be useful to mount the existing directories in the image to your own path. This can be done with the flag ``-B local/path:image/path`` with the path outside of the image left of the colon and the path in the image on the right side, e.g. ::
 
@@ -134,7 +133,13 @@ The command above gives you a shell in to the image with root access that can th
 Using Nvidia GPU with Singularity Images on Your Local Machine
 --------------------------------------------------------------
 
-Images that use the GPU requires driver files that matches the host system. Use the following command to find your current driver version: ::
+**Support is only available for machines with Nvdia GPUs and will not work for other GPU manufacturers (e.g. AMD).**
+
+In order to use Nvidia GPUs within a singularity image, a copy of the driver files must be present in the image and must match the version of the host machine. `Previously <https://hpc.nih.gov/apps/singularity.html>`_, this is done by embedding the driver within the image itself which creates a non-portable image.
+
+On the ShARC cluster, these driver files are stored outside of the image and automatically mounted to the folders ``/nvbin`` and ``/nvlib`` at run-time. To use the images locally on your machine you simply need to provide the correct driver files for the machine you're using.
+
+Use the following command to find your current driver version: ::
 
   nvidia-smi
 
@@ -151,13 +156,11 @@ Where you will get something similar to the following: ::
   | 30%   35C    P8    18W / 250W |    635MiB /  6078MiB |      1%      Default |
   +-------------------------------+----------------------+----------------------+
 
-It can be seen that the driver version on our current machine is ``367.57``. Go to the `Nvidia website <http://nvidia.com>`_ and search for the correct Linux driver for your graphics card. Download the ``extract_nvdriver_and_moveto.sh`` to the same folder directory and run it like so: ::
+It can be seen that the driver version on our current machine is ``367.57``. Go to the `Nvidia website <http://nvidia.com>`_ and search for the correct Linux driver for your graphics card. Download the `extract_nvdriver_and_moveto.sh </sharc/software/apps/singularity/extract_nvdriver_and_moveto.sh>` to the same directory and run it like so: ::
 
   chmod +x extract_nvdriver_and_moveto.sh
   extract_driver_and_moveto.sh 367.57 ~/mynvdriver
 
-If you're using the Singularity definition file as shown above, the ``/nvbin`` and ``/nvlib`` directories will have been created. They simply need to be correctly mounted when running the image using the command where our extracted driver files are located at ``~/mynvdriver``: ::
+If you're using the Singularity definition file as shown above (see :ref:`create_image_singularity_sharc`), the ``/nvbin`` and ``/nvlib`` directories will have been created. They simply need to be correctly mounted when running the image using the command where our extracted driver files are located at ``~/mynvdriver``: ::
 
   singularity shell -B ~/mynvdriver:/nvlib,~/mynvdriver:/nvbin myimage.img
-
-**Note: When running an image on ShARC, if the** ``/nvlib`` **and** ``/nvbin`` **directories exist, they will automatically be mounted with the correct driver version.**

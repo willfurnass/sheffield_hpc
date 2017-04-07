@@ -24,9 +24,10 @@ The University of Sheffield has been officially affiliated with `NVIDIA
 Requesting access to GPU facilities
 -----------------------------------
 
-In order to ensure that the nodes hosting the GPUs run only GPU related tasks, we have defined a special project-group for accessing these nodes. If you wish to take advantage of the GPU processors, please contact research-it@sheffield.ac.uk asking to join the GPU project group.
+**Public GPU nodes have now been made available to Iceberg and ShARC users, these can be be used without acquiring extra permission.**
 
-Any Iceberg/ShARC user can apply to join this group. However, because our GPU resources are limited we will need to discuss the needs of the user and obtain consent from the project leader before allowing usage.
+Research groups also have an option to purchase and add nodes to the cluster to be managed by CiCs (contact research-it@sheffield.ac.uk for more information). For these nodes (e.g. :ref:`dgx1_com_groupnodes_sharc`), permission from the group leader is required for access.
+
 
 Using GPUs on Iceberg and ShARC
 -------------------------------

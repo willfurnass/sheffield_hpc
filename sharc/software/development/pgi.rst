@@ -38,8 +38,6 @@ To compile a Fortran hello world example into an executable called ``hello`` usi
 Compiling on the GPU using the PGI Compiler
 -------------------------------------------
 
-**Additional permissions are needed to use GPUs on Iceberg/ShARC. See** :ref:`GPUComputing_sharc` **for more information.**
-
 Start an interctive GPU session (:ref:`GPUInteractive_sharc`) and the following module command ::
 
         module load dev/PGI-compilers/16.10
