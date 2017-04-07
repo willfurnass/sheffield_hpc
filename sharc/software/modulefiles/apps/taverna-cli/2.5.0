@@ -1,0 +1,25 @@
+#%Module1.0#####################################################################
+##
+## taverna commandline module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global tavernaversion
+
+        puts stderr "	Adds `taverna-commandline-$tavernaversion' to your PATH environment variable"
+}
+
+set     tavernaversion 2.5.0
+
+module-whatis   "loads the necessary `taverna-commandline-$tavernaversion' paths"
+
+set localroot /usr/local/packages/apps/taverna/cli/2.5.0
+
+set TAVERNA_DIR /usr/local/packages/apps/taverna/cli
+
+prepend-path PATH $TAVERNA_DIR/2.5.0
+
