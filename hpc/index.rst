@@ -16,3 +16,4 @@ This guide will get you set up using the University's clusters
    transferring-files
    scheduler/index
    modules
+   jupyterhub
