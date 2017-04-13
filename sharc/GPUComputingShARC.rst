@@ -8,7 +8,9 @@ Requesting access to GPU facilities
 
 **Public GPU nodes have now been made available to Iceberg and ShARC users, these can be be used without acquiring extra permission.**
 
-Research groups also have an option to purchase and add nodes to the ShARC cluster to be managed by CiCs (contact research-it@sheffield.ac.uk for more information). For these nodes (e.g. :ref:`dgx1_com_groupnodes_sharc`), permission from the group leader is required for access.
+Research groups also have an option to purchase and add nodes to the cluster to be managed by CiCs. For these nodes (e.g. :ref:`dgx1_com_groupnodes_sharc`), permission from the group leader is required for access.
+
+The node owner always have highest priority on the job queue but as a condition for the management of additional nodes on the cluster, the nodes are expected to be used as a resource for running short jobs during idle time. If you would like more information about having CiCs add and manage custom nodes, please contact research-it@sheffield.ac.uk.
 
 .. _GPUInteractive_sharc:
 
@@ -73,3 +75,9 @@ GPU-enabled Software
 * Development Tools
     * :ref:`PGI Compilers_sharc`
     * :ref:`nvidia_compiler_sharc`
+
+Training materials
+^^^^^^^^^^^^^^^^^^
+
+* `Introduction to CUDA by GPUComputing@Sheffield <http://gpucomputing.shef.ac.uk/education/cuda/>`_
+* `Introducting to Deep Learning using Caffe on ShARC's DGX-1 by GPUComputing@Sheffield <http://gpucomputing.shef.ac.uk/education/cuda/>`_

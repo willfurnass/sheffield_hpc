@@ -19,19 +19,19 @@ Singularity images are self-contained virtual machines similar to Docker. For mo
 The following Singularity images are available on ShARC and can also be downloaded for use on your local machine:
 
 * CPU Caffe rc5, Ubuntu 16.04, GCC 5.4.0
-    * Image path: ``/usr/local/packages/singularity/caffe/rc5-CPU-Ubuntu16.04.img``
+    * Image path: ``/usr/local/packages/singularity/images/caffe/rc5-CPU-Ubuntu16.04.img``
     * Def file: `Caffe CPU </sharc/software/apps/singularity/caffe_cpu.def>`
 * GPU Caffe rc5, Ubuntu 16.04, CUDA 8, cuDNN 5.0, GCC 5.4.0
-    * Image path: ``/usr/local/packages/singularity/caffe/rc5-GPU-Ubuntu16.04-CUDA8-cudNN5.0.img``
+    * Image path: ``/usr/local/packages/singularity/images/caffe/rc5-GPU-Ubuntu16.04-CUDA8-cudNN5.0.img``
     * Def file: `Caffe GPU </sharc/software/apps/singularity/caffe_gpu.def>`
 
 To get a bash terminal in to an image for example, use the command: ::
 
-  singularity exec /usr/local/packages/singularity/caffe/rc5-CPU-Ubuntu16.04.img /bin/bash
+  singularity exec /usr/local/packages/singularity/images/caffe/rc5-CPU-Ubuntu16.04.img /bin/bash
 
 The ``exec`` command can also be used to call any command/script inside the image e.g. ::
 
-  singularity exec /usr/local/packages/singularity/caffe/rc5-CPU-Ubuntu16.04.img "caffe train your_solver.prototxt"
+  singularity exec /usr/local/packages/singularity/images/caffe/rc5-CPU-Ubuntu16.04.img "caffe train your_solver.prototxt"
 
 The paths ``/fastdata``, ``/data``, ``/home``, ``/scratch``, ``/shared`` are automatically mounted to your ShARC filestore directories. For GPU-enabled images the ``/nvlib`` and ``/nvbin`` is mounted to the correct Nvidia driver version for the node that you're using.
 
@@ -65,6 +65,11 @@ If you created a virtual python environment, you must activate it at every new s
 
 	module load apps/caffe/rc5/gcc-4.9.4-cuda-8.0-cudnn-5.1
 	source activate caffe
+
+Caffe Training
+--------------
+
+`GPUComputing@sheffield <http://gpucomputing.shef.ac.uk>`_ provides training materials on the `use of Caffe on the DGX-1 and ShARC cluster <http://gpucomputing.shef.ac.uk/education/intro_dl_sharc_dgx1/>`_.
 
 Installation Notes
 ------------------

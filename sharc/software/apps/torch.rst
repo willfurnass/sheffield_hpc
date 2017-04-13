@@ -19,16 +19,16 @@ Singularity images are self-contained virtual machines similar to Docker. For mo
 The following Singularity images are available on ShARC and can also be downloaded for use on your local machine:
 
 * GPU Torch 7, Ubuntu 16.04, CUDA 8, cuDNN 5.0, GCC 5.4.0
-    * Image path: ``/usr/local/packages/singularity/torch/v7-GPU-Ubuntu16.04-CUDA8-cudNN5.0.img``
+    * Image path: ``/usr/local/packages/singularity/images/torch/v7-GPU-Ubuntu16.04-CUDA8-cudNN5.0.img``
     * Def file: `Caffe GPU </sharc/software/apps/singularity/torch_gpu.def>`
 
 To get a bash terminal in to an image for example, use the command: ::
 
-  singularity exec /usr/local/packages/singularity/torch/v7-GPU-Ubuntu16.04-CUDA8-cudNN5.0.img /bin/bash
+  singularity exec /usr/local/packages/singularity/images/torch/v7-GPU-Ubuntu16.04-CUDA8-cudNN5.0.img /bin/bash
 
 The ``exec`` command can also be used to call any command/script inside the image e.g. ::
 
-  singularity exec /usr/local/packages/singularity/torch/v7-GPU-Ubuntu16.04-CUDA8-cudNN5.0.img th
+  singularity exec /usr/local/packages/singularity/images/torch/v7-GPU-Ubuntu16.04-CUDA8-cudNN5.0.img th
 
 The paths ``/fastdata``, ``/data``, ``/home``, ``/scratch``, ``/shared`` are automatically mounted to your ShARC filestore directories. For GPU-enabled images the ``/nvlib`` and ``/nvbin`` is mounted to the correct Nvidia driver version for the node that you're using.
 

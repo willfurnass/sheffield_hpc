@@ -65,6 +65,11 @@ Documentation
 * `CUDA Toolkit Documentation <http://docs.nvidia.com/cuda/index.html#axzz3uLoSltnh>`_
 * `The power of C++11 in CUDA 7 <http://devblogs.nvidia.com/parallelforall/power-cpp11-cuda-7/>`_
 
+CUDA Training
+-------------
+
+`GPUComputing@sheffield <http://gpucomputing.shef.ac.uk>`_ provides a self-paced `introduction to CUDA <http://gpucomputing.shef.ac.uk/education/cuda/>`_ training course.
+
 Determining the NVIDIA Driver version
 -------------------------------------
 Run the command: ::
