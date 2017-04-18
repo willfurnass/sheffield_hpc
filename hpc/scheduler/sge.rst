@@ -152,7 +152,7 @@ Command                Description
 
 -N                     Job name, used to name output files and in the queue list.
 
--j                     Join the error and normal output into one file rather
+-j y[es]|n[o]          Join the error and normal output into one file rather
                        than two.
 
 -M                     Email address to send notifications to.
