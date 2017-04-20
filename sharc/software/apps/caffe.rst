@@ -9,6 +9,12 @@ Caffe
 
 `Caffe <http://caffe.berkeleyvision.org/>`_ is a deep learning framework made with expression, speed, and modularity in mind. It is developed by the Berkeley Vision and Learning Center (`BVLC <http://bvlc.eecs.berkeley.edu/>`_) and by community contributors.
 
+About Caffe on ShARC
+--------------------
+
+Caffe is available on ShARC as both Singularity images and as a module.
+
+This software and documentation is maintained by the `RSES group <http://rse.shef.ac.uk/>`_ and `GPUComputing@Sheffield <http://gpucomputing.shef.ac.uk/>`_. For feature requests or if you encounter any problems, please raise an issue on the `GPU Computing repository <https://github.com/RSE-Sheffield/GPUComputing/issues>`_.
 
 
 Caffe Singularity Images
@@ -16,24 +22,43 @@ Caffe Singularity Images
 
 Singularity images are self-contained virtual machines similar to Docker. For more information on Singularity and how to use the images, see :ref:`singularity_sharc`.
 
-The following Singularity images are available on ShARC and can also be downloaded for use on your local machine:
+A symlinked file is provided that always point to the latest image: ::
 
-* CPU Caffe rc5, Ubuntu 16.04, GCC 5.4.0
-    * Image path: ``/usr/local/packages/singularity/images/caffe/rc5-CPU-Ubuntu16.04.img``
-    * Def file: `Caffe CPU </sharc/software/apps/singularity/caffe_cpu.def>`
-* GPU Caffe rc5, Ubuntu 16.04, CUDA 8, cuDNN 5.0, GCC 5.4.0
-    * Image path: ``/usr/local/packages/singularity/images/caffe/rc5-GPU-Ubuntu16.04-CUDA8-cudNN5.0.img``
-    * Def file: `Caffe GPU </sharc/software/apps/singularity/caffe_gpu.def>`
+  #CPU Caffe
+  /usr/local/packages/singularity/images/caffe/cpu.img
+
+  #GPU Caffe
+  /usr/local/packages/singularity/images/caffe/gpu.img
 
 To get a bash terminal in to an image for example, use the command: ::
 
-  singularity exec /usr/local/packages/singularity/images/caffe/rc5-CPU-Ubuntu16.04.img /bin/bash
+  singularity exec /usr/local/packages/singularity/images/caffe/gpu.img /bin/bash
 
 The ``exec`` command can also be used to call any command/script inside the image e.g. ::
 
-  singularity exec /usr/local/packages/singularity/images/caffe/rc5-CPU-Ubuntu16.04.img "caffe train your_solver.prototxt"
+  singularity exec /usr/local/packages/singularity/images/caffe/gpu.img "caffe train your_solver.prototxt"
 
 The paths ``/fastdata``, ``/data``, ``/home``, ``/scratch``, ``/shared`` are automatically mounted to your ShARC filestore directories. For GPU-enabled images the ``/nvlib`` and ``/nvbin`` is mounted to the correct Nvidia driver version for the node that you're using.
+
+Image Index
+^^^^^^^^^^^
+
+Paths to the actual images and definition files are provided below for downloading and building of custom images.
+
+* Shortcut to Latest Image
+    * CPU
+        * ``/usr/local/packages/singularity/images/caffe/cpu.img``
+    * GPU
+        * ``/usr/local/packages/singularity/images/caffe/gpu.img``
+* Images list
+    * CPU
+        * Latest: rc5-CPU-Ubuntu16.04 (Python 2.7)
+            * Path: ``/usr/local/packages/singularity/images/caffe/rc5-CPU-Ubuntu16.04.img``
+            * Def file: `/sharc/software/apps/singularity/caffe_cpu.def </sharc/software/apps/singularity/caffe_cpu.def>`
+    * GPU
+      * Latest: rc5-GPU-Ubuntu16.04-CUDA8-cudNN5.0 (Python 2.7)
+          * Path: ``/usr/local/packages/singularity/images/caffe/rc5-GPU-Ubuntu16.04-CUDA8-cudNN5.0.img``
+          * Def file: `/sharc/software/apps/singularity/caffe_gpu.def </sharc/software/apps/singularity/caffe_gpu.def>`
 
 Using the Caffe Module
 ----------------------

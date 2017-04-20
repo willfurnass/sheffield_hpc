@@ -9,29 +9,44 @@ Torch
 
 Torch is a scientific computing framework with wide support for machine learning algorithms that puts GPUs first. It is easy to use and efficient, thanks to an easy and fast scripting language, LuaJIT, and an underlying C/CUDA implementation.
 
-**Additional permissions are needed to use GPUs on Iceberg/ShARC. See** :ref:`GPUComputing_sharc` **for more information.**
+About Torch on ShARC
+--------------------
+
+Torch is available on ShARC as both Singularity images and as a module.
+
+This software and documentation is maintained by the `RSES group <http://rse.shef.ac.uk/>`_ and `GPUComputing@Sheffield <http://gpucomputing.shef.ac.uk/>`_. For feature requests or if you encounter any problems, please raise an issue on the `GPU Computing repository <https://github.com/RSE-Sheffield/GPUComputing/issues>`_.
+
 
 Torch Singularity Images
 ------------------------
 
 Singularity images are self-contained virtual machines similar to Docker. For more information on Singularity and how to use the images, see :ref:`singularity_sharc`.
 
-The following Singularity images are available on ShARC and can also be downloaded for use on your local machine:
+A symlinked file is provided that always point to the latest image: ::
 
-* GPU Torch 7, Ubuntu 16.04, CUDA 8, cuDNN 5.0, GCC 5.4.0
-    * Image path: ``/usr/local/packages/singularity/images/torch/v7-GPU-Ubuntu16.04-CUDA8-cudNN5.0.img``
-    * Def file: `Caffe GPU </sharc/software/apps/singularity/torch_gpu.def>`
+  /usr/local/packages/singularity/images/torch/gpu.img
 
 To get a bash terminal in to an image for example, use the command: ::
 
-  singularity exec /usr/local/packages/singularity/images/torch/v7-GPU-Ubuntu16.04-CUDA8-cudNN5.0.img /bin/bash
+  singularity exec /usr/local/packages/singularity/images/torch/gpu.img /bin/bash
 
 The ``exec`` command can also be used to call any command/script inside the image e.g. ::
 
-  singularity exec /usr/local/packages/singularity/images/torch/v7-GPU-Ubuntu16.04-CUDA8-cudNN5.0.img th
+  singularity exec /usr/local/packages/singularity/images/torch/gpu.img "th yourscript.lua"
 
 The paths ``/fastdata``, ``/data``, ``/home``, ``/scratch``, ``/shared`` are automatically mounted to your ShARC filestore directories. For GPU-enabled images the ``/nvlib`` and ``/nvbin`` is mounted to the correct Nvidia driver version for the node that you're using.
 
+Image Index
+^^^^^^^^^^^
+
+Paths to the actual images and definition files are provided below for downloading and building of custom images.
+
+* Shortcut to Latest Image
+    * ``/usr/local/packages/singularity/images/torch/gpu.img``
+* Images list
+    * Latest: v7-GPU-Ubuntu16.04-CUDA8-cudNN5.0 (GCC 5.4.0)
+        * Path: ``/usr/local/packages/singularity/images/torch/v7-GPU-Ubuntu16.04-CUDA8-cudNN5.0.img``
+        * Def file: `/sharc/software/apps/singularity/torch_gpu.def </sharc/software/apps/singularity/torch_gpu.def>`
 
 Using the Torch Module
 ----------------------
@@ -61,7 +76,7 @@ On any other node use a generic NCCL build: ::
 
 
 Every Session Afterwards and in Your Job Scripts
-------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the interactive session or your batch script, load the relevant modules and (optionally) activate your conda environment ::
 

@@ -9,6 +9,13 @@ From: bvlc/caffe:gpu
 %post
 	#Post setup script
 
+	#Use bash as default shell
+	echo "\n #Using bash as default shell \n" >> /environment
+	echo 'SHELL=/bin/bash' >> /environment
+
+	#Make environment file executable
+	chmod +x /environment
+
   #Default mount paths
 	mkdir /scratch /data /shared /fastdata
 

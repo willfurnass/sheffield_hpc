@@ -47,3 +47,8 @@ Run your script with the ``qsub`` command ::
 You can use ``qstat`` command to check the status of your current job. An output file is created in your home directory that captures your script's outputs.
 
 See :ref:`sge-queue` for more information on job submission and the Sun Grid Engine scheduler.
+
+Deep Learning on the DGX-1
+--------------------------
+
+Many popular Deep Learning packages are available to use on the DGX-1 and the ShARC cluster. Please see :ref:`DeepLearning_sharc` for more information.

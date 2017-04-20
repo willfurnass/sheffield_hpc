@@ -12,33 +12,55 @@ TensorFlow is an open source software library for numerical computation using da
 About Tensorflow on ShARC
 -------------------------
 
+Tensorlfow is available on ShARC as both Singularity images and by local installation.
+
 As Tensorflow and all its dependencies are written in Python, it can be installed locally in your home directory. The use of Anaconda (:ref:`sharc-python-conda`) is recommended as it is able to create a virtual environment in your home directory, allowing the installation of new Python packages without admin permission.
 
-**Additional permissions are needed to use GPUs on Iceberg/ShARC. See** :ref:`GPUComputing_sharc` **for more information.**
+This software and documentation is maintained by the `RSES group <http://rse.shef.ac.uk/>`_ and `GPUComputing@Sheffield <http://gpucomputing.shef.ac.uk/>`_. For feature requests or if you encounter any problems, please raise an issue on the `GPU Computing repository <https://github.com/RSE-Sheffield/GPUComputing/issues>`_.
 
 Tensorflow Singularity Images
-------------------------
+-----------------------------
 
 Singularity images are self-contained virtual machines similar to Docker. For more information on Singularity and how to use the images, see :ref:`singularity_sharc`.
 
-The following Singularity images are available on ShARC and can also be downloaded for use on your local machine:
+A symlinked file is provided that always point to the latest image: ::
 
-* CPU Tensorflow 1.0.1, Ubuntu 16.04, GCC 5.4.0, Anaconda3 4.2.0
-    * Image path: ``/usr/local/packages/singularity/tensorflow/images/1.0.1-CPU-Ubuntu16.04-Anaconda3.4.2.0.img``
-    * Def file: `Caffe CPU </sharc/software/apps/singularity/tensorflow_cpu.def>`
-* GPU Tensorflow, Ubuntu 16.04, CUDA 8, cuDNN 5.0, GCC 5.4.0, Anaconda3 4.2.0
-    * Image path: ``/usr/local/packages/singularity/tensorflow/images/1.0.1-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA8-cudNN5.0.img``
-    * Def file: `Caffe GPU </sharc/software/apps/singularity/tensorflow_gpu.def>`
+  #CPU Caffe
+  /usr/local/packages/singularity/images/tensorflow/cpu.img
+
+  #GPU Caffe
+  /usr/local/packages/singularity/images/tensorflow/gpu.img
 
 To get a bash terminal in to an image for example, use the command: ::
 
-  singularity exec /usr/local/packages/singularity/images/tensorflow/1.0.1-CPU-Ubuntu16.04-Anaconda3.4.2.0.img /bin/bash
+  singularity exec /usr/local/packages/singularity/images/tensorflow/gpu.img /bin/bash
 
 The ``exec`` command can also be used to call any command/script inside the image e.g. ::
 
-  singularity exec /usr/local/packages/singularity/images/tensorflow/1.0.1-CPU-Ubuntu16.04-Anaconda3.4.2.0.img "python your_tensorflow_script.py"
+  singularity exec /usr/local/packages/singularity/images/tensorflow/gpu.img "python your_tensorflow_script.py"
 
 The paths ``/fastdata``, ``/data``, ``/home``, ``/scratch``, ``/shared`` are automatically mounted to your ShARC filestore directories. For GPU-enabled images the ``/nvlib`` and ``/nvbin`` is mounted to the correct Nvidia driver version for the node that you're using.
+
+
+Image Index
+^^^^^^^^^^^
+
+Paths to the actual images and definition files are provided below for downloading and building of custom images.
+
+* Shortcut to Latest Image
+    * CPU
+        * ``/usr/local/packages/singularity/images/tensorflow/cpu.img``
+    * GPU
+        * ``usr/local/packages/singularity/images/tensorflow/gpu.img``
+* Images list
+    * CPU
+        * Latest: 1.0.1-CPU-Ubuntu16.04-Anaconda3.4.2.0.img (GCC 5.4.0, Python 3.5)
+            * Path: ``/usr/local/packages/singularity/images/tensorflow/1.0.1-CPU-Ubuntu16.04-Anaconda3.4.2.0.img``
+            * Def file: `/sharc/software/apps/singularity/tensorflow_cpu.def </sharc/software/apps/singularity/tensorflow_cpu.def>`
+    * GPU
+        * Latest: 1.0.1-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA8-cudNN5.0.img (GCC 5.4.0, Python 3.5)
+            * Path: ``/usr/local/packages/singularity/images/tensorflow/1.0.1-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA8-cudNN5.0.img``
+            * Def file: `/sharc/software/apps/singularity/tensorflow_gpu.def </sharc/software/apps/singularity/tensorflow_gpu.def>`
 
 Installation in Home Directory
 ------------------------------
@@ -82,7 +104,7 @@ Which gives the following results ::
 	 [ 49.  64.]]
 
 Every Session Afterwards and in Your Job Scripts
-------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The previous instuctions installs Tensorflow and its dependencies inside your home directory but every time you use a new session or within your job scripts, the modules must be loaded and conda must be activated again. Use the following command to activate the Conda environment with Tensorflow installed: ::
 

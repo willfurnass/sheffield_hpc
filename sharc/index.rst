@@ -20,4 +20,4 @@ This is the documentation for ShARC (Sheffield Advanced Research Computer), The 
 * :ref:`sharc-differences`
 * :ref:`GPUComputing_sharc`
 * :ref:`DeepLearning_sharc`
-* :ref:`group_nodes_sharc`
+* :ref:`groupnodes_sharc`
