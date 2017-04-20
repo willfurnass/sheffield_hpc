@@ -67,7 +67,7 @@ Now submit a job that runs this MATLAB script as a batch job.
 
 .. code-block:: none
 
-    runmatlab mymatlabwork.m -nq
+    runmatlab mymatlabwork.m
     
 That is all there is to it! 
 
