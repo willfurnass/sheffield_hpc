@@ -35,7 +35,8 @@ From: bvlc/caffe:cpu
   echo 'export PATH="$CAFFE_ROOT/build/tools:$PYCAFFE_ROOT:$PATH"' >> /environment
 
 %runscript
-	#Run every time image starts
+	#Executes with the singularity run command
+	#delete this section to use existing docker ENTRYPOINT command
 
 
 

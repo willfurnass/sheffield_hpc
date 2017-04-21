@@ -43,7 +43,7 @@ Or if you prefer bash: ::
 
 Note that the ``exec`` command can also be used to execute other applications/scripts inside the image: ::
 
-  singularity exec path/to/imgfile.img some_script_inside_image.sh
+  singularity exec path/to/imgfile.img my_script.sh
 
 Automatic Mounting of ShARC Filestore Inside Images
 ----------------------------------------------------

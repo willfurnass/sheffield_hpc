@@ -37,7 +37,7 @@ To get a bash terminal in to an image for example, use the command: ::
 
 The ``exec`` command can also be used to call any command/script inside the image e.g. ::
 
-  singularity exec /usr/local/packages/singularity/images/tensorflow/gpu.img "python your_tensorflow_script.py"
+  singularity exec /usr/local/packages/singularity/images/tensorflow/gpu.img python your_tensorflow_script.py
 
 The paths ``/fastdata``, ``/data``, ``/home``, ``/scratch``, ``/shared`` are automatically mounted to your ShARC filestore directories. For GPU-enabled images the ``/nvlib`` and ``/nvbin`` is mounted to the correct Nvidia driver version for the node that you're using.
 

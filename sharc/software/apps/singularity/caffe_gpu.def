@@ -36,7 +36,8 @@ From: bvlc/caffe:gpu
 
 
 %runscript
-	#Run every time image starts
+	#Executes with the singularity run command
+	#delete this section to use existing docker ENTRYPOINT command
 
 
 
