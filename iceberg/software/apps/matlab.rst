@@ -41,7 +41,7 @@ First, you need to write a batch submission file. We assume you'll call this ``m
         #!/bin/bash
         #$ -l rmem=4G                  # Request  4 GB of real memory
         #$ -l mem=16G                  # Request 16 GB of virtual memory
-        $ -cwd                         # Run job from current directory
+        #$ -cwd                        # Run job from current directory
         module load apps/matlab/2016a  # Make specific version of MATLAB available
 
         matlab -nodesktop -r 'hello'
@@ -69,7 +69,7 @@ Now submit a job that runs this MATLAB script as a batch job.
 
     runmatlab mymatlabwork.m
     
-That is all to it! 
+That is all there is to it! 
 
 The ``runmatlab`` command can take a number of parameters to refine the control of your MATLAB batch job, such as the maximum time and memory needs. 
 To get a full listing of these parameters simply type ``runmatlab`` on iceberg command line. 
