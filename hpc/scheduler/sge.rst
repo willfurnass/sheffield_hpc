@@ -20,21 +20,23 @@ such as MATLAB or Ansys, or compiling software, you will need to request that
 the scheduler gives you an interactive session. For an introduction to this see
 :ref:`getting-started`.
 
-There are three commands which give you an interactive shell:
+There are three commands which give you an interactive shell.
+`qsh` and `qrsh` are traditional SGE commands whereas `qrshx` is an enhanced version
+unique to Sheffield's systems. We recommend the use of `qrshx` over `qsh` or `qrsh`.
 
 * :ref:`qrsh` - Requests an interactive session on a worker node. No support for graphical applications.
 * :ref:`qrshx` - Requests an interactive session on a worker node. Supports graphical applications. Superior to :ref:`qsh`.
 * :ref:`qsh` - Requests an interactive session on a worker node. Supports graphical applications.
 
 You can configure the resources available to the interactive session by
-specifying them as command line options to the qsh or qrsh commands.
-For example to run a ``qrshx`` session with access to 16 GB of virtual RAM ::
+specifying them as command line options to the `qrshx`, `qsh` or `qrsh` commands.
+For example to run a ``qrshx`` session with access to 16 GB of RAM ::
 
-    [te1st@iceberg-login2 ~]$ qrshx -l mem=16G
+    [te1st@sharc-login2 ~]$ qrshx -l rmem=16G
 
 or a session with access to 8 cores::
 
-    [te1st@iceberg-login2 ~]$ qrshx -pe openmp 8
+    [te1st@sharc-login2 ~]$ qrshx -pe smp 8
 
 A table of :ref:`sge-interactive-options` is given below, any of these can be
 combined together to request more resources.
@@ -57,7 +59,7 @@ Command                Description
 -l h_rt=hh:mm:ss       Specify the total maximum execution time for the job.
 
 -l rmem=xxG            Specify the maximum amount (xx) of memory to be used
-                       (per process or core).
+                       (per process or core) in Gigabytes.s
 
 -pe <env> <nn>         Specify a parallel environment and number of processors.
 
