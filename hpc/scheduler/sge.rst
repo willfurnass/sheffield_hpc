@@ -61,7 +61,7 @@ Command                Description
 
 -pe <env> <nn>         Specify a parallel environment and number of processors.
 
--pe openmp <nn>        The openmp parallel environment provides multiple threads
+-pe smp <nn>           The smp parallel environment provides multiple threads
                        on one node. <nn> specifies the max number of
                        threads.
 ====================== ========================================================
