@@ -4,7 +4,7 @@ Getting Started
 ===============
 
 If you have not used a High Performance Computing (HPC) cluster, Linux or
-even a command line before this is the place to start. This guide will get you 
+even a command line before this is the place to start. This guide will get you
 set up using iceberg in the easiest way that fits your requirements.
 
 Getting an Account
@@ -13,7 +13,7 @@ Getting an Account
 Before you can start using iceberg you need to register for an account.
 Accounts are availible for staff by emailing `helpdesk@sheffield.ac.uk <helpdesk@sheffield.ac.uk>`_.
 
-The following categories of students can also have an account on iceberg with 
+The following categories of students can also have an account on iceberg with
 the permission of their supervisors:
 
 * Research Postgraduates
@@ -25,8 +25,8 @@ Student's supervisors can request an account for the student by emailing
 
 .. note::
 
-    Once you have obtained your iceberg username, you need to initialize your 
-    iceberg password to be the same as your normal password by using the CICS
+    Once you have obtained your Iceberg username, you need to initialize your
+    Iceberg password to be the same as your normal password by using the CICS
     `synchronize passwords system <https://www.shef.ac.uk/cics/password>`_.
 
 .. _connecting:
@@ -34,13 +34,13 @@ Student's supervisors can request an account for the student by emailing
 Connecting to iceberg (Terminal)
 ################################
 
-Accessing iceberg through an ssh terminal is easy and the most flexible way of 
-using iceberg, as it is the native way of interfacing with the linux cluster. 
+Accessing iceberg through an ssh terminal is easy and the most flexible way of
+using iceberg, as it is the native way of interfacing with the linux cluster.
 It also allows you to access iceberg from any remote location without having to setup VPN
-connections.  
+connections.
 
-Rest of this page summarizes the recommended methods of accessing iceberg from commonly used platforms. 
-A more comprehensive guide to accessing iceberg and transfering files is located at 
+Rest of this page summarizes the recommended methods of accessing iceberg from commonly used platforms.
+A more comprehensive guide to accessing iceberg and transfering files is located at
 `http://www.sheffield.ac.uk/cics/research/hpc/using/access <http://www.sheffield.ac.uk/cics/research/hpc/using/access>`_
 
 Windows
@@ -64,8 +64,8 @@ Click *Start local terminal* and if you see something like the the following the
 Mac OS/X and Linux
 ``````````````````
 
-Linux and macOS (OS X) both have a terminal emulator program pre-installed.  
-macOS users should however install the latest version of the `XQuartz <https://www.xquartz.org/>`_ X Windows server 
+Linux and macOS (OS X) both have a terminal emulator program pre-installed.
+macOS users should however install the latest version of the `XQuartz <https://www.xquartz.org/>`_ X Windows server
 if they want to be able to run graphical applications on the cluster.
 
 Open a terminal and then go to :ref:`ssh`.
@@ -84,13 +84,13 @@ where you replace `<username>` with your CICS username.
 .. note::
 
     **macOS users**: if this fails then:
-    
+
     * Check that your `XQuartz <https://www.xquartz.org/>`_ is up to date then try again *or*
     * Try again with ``-Y`` instead of ``-X``
 
 This should give you a prompt resembling the one below: ::
 
-    [te1st@iceberg-login1 ~]$ 
+    [te1st@iceberg-login1 ~]$
 
 at this prompt type: ::
 
@@ -107,7 +107,7 @@ which will pop up another terminal window, which supports graphical applications
 
 .. note::
 
-    Iceberg is a compute cluster. When you login to the cluster you reach one 
+    Iceberg is a compute cluster. When you login to the cluster you reach one
     of two login nodes. You **should not** run applications on the login nodes.
     Running qsh gives you an interactive terminal on one of the many worker nodes
     in the cluster.
@@ -120,7 +120,7 @@ which will pop up another terminal window, which supports graphical applications
 .. raw:: html
 
    <p>
-    This video shows the connection process using mobaxterm, and then connection 
+    This video shows the connection process using mobaxterm, and then connection
     and running matlab from a <cite>qsh</cite> terminal.
    </p>
 
