@@ -214,3 +214,15 @@ Login Nodes RSA Fingerprint
 The RSA key fingerprint for Iceberg's login nodes is: ::
 
     de:72:72:e5:5b:fa:0f:96:03:d8:72:9f:02:d6:1d:fd
+
+Issue when running multiple MPI jobs in sequence
+------------------------------------------------
+
+If you have multiple mpirun commands in a single batch job submission script, you may find that one or more of these may fail after complaining about not being able to communicate with the orted daemon on other nodes.
+This appears to be something to do with multiple `mpiruns` being called quickly in succession, and connections not being pulled down and new connections established quickly enough.
+
+Putting a sleep of e.g. 5s between mpirun commands seems to help here. i.e. ::
+
+  mpirun program1
+  sleep 5s
+  mpirun program2
