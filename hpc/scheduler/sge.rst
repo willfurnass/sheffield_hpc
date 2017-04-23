@@ -163,7 +163,8 @@ Command                Description
 -a                     Specify the earliest time for a job to start, in the
                        format MMDDhhmm. e.g. -a 01011130 will schedule the job
                        to begin no sooner than 11:30 on 1st January.
-====================== ========================================================
+-wd working_dir        Execute  the  job  from  the  directory  specified (i.e. working_dir)                    
+=============s========= ========================================================
 
 All scheduler commands
 ----------------------
