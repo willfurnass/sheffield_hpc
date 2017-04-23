@@ -70,10 +70,10 @@ Command                Description
 
 .. _sge-batch:
 
-Running Batch Jobs on iceberg
+Running Batch Jobs on Iceberg
 -----------------------------
 
-The power of iceberg really comes from the 'batch job' queue submission process.
+The power of Iceberg really comes from the 'batch job' queue submission process.
 Using this system, you write a script which requests various resources, initializes the computational environment and then executes your program(s).
 The scheduler will run your job when resources are available.
 As the task is running, the terminal output and any errors are captured and
