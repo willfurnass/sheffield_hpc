@@ -31,9 +31,13 @@ Most of the time such problems arise due to due to Java version issues. As Java 
 Follow the trouble-shooting link from the `iceberg browser-access page <http://www.sheffield.ac.uk/cics/research/hpc/using/access/browser>`_ to resolve these problems. There is also a link on that page to test the functionality of your java plug-in. It can also help to try a different browser to see if it makes any difference.
 All failing, you may have to fall back to one of the `non-browser access methods <http://www.sheffield.ac.uk/cics/research/hpc/using/access>`_.
 
-I cannot see my folder in /data
--------------------------------
-The directory ``/data/<your username>`` is made available **on-demand**: see :ref:`iceberg_data_dir` for information on what that means.
+I cannot see my folders in /data or /shared
+-------------------------------------------s
+Some directories such as ``/data/<your username>`` or ``/shared/<your project/`` are made available **on-demand**:.
+For example, if your username is `ab1def` and you look in `/data` straight after logging in, you may not see `/data/ab1def`.
+The directory is there, it has just not been made available (via a process called **mounting**) to you automatically.
+When you attempt to do something with the directory such as ``ls /data/ab1def`` or ``cd /data/ab1def``, the directory will be mounted automatically and will appear to you.
+The directory will be automatically unmounted after a period of inactivity.
 
 My batch job terminates without any messages or warnings
 --------------------------------------------------------
@@ -47,7 +51,7 @@ Please refer to the section on `hitting-limits and estimating-resources <https:/
 
 Exceeding your disk space quota
 -------------------------------
-Each user of the system has a fixed amount of disk space available in their home directory. 
+Each user of the system has a fixed amount of disk space available in their home directory.
 If you exceed this quota, various problems can emerge such as an inability to launch applications and run jobs.
 To see if you have exceeded your disk space quota, run the ``quota`` command:
 
@@ -59,11 +63,11 @@ To see if you have exceeded your disk space quota, run the ``quota`` command:
        10.1G  5.1G     0 100% /home/foo11b
        100G     0   100G   0% /data/foo11b
 
-In the above, you can see that the quota was set to 10.1 gigabytes and all of this is in use. 
-Any jobs submitted by this user will likely result in an ``Eqw`` status. 
+In the above, you can see that the quota was set to 10.1 gigabytes and all of this is in use.
+Any jobs submitted by this user will likely result in an ``Eqw`` status.
 The recommended action is for the user to delete enough files to allow normal work to continue.
 
-Sometimes, it is not possible to log in to the system because of a full quota, 
+Sometimes, it is not possible to log in to the system because of a full quota,
 in which case you need to contact ``research-it@sheffield.ac.uk`` and ask to the unfrozen.
 
 I am getting warning messages and warning emails from my batch jobs about insufficient memory
@@ -79,7 +83,7 @@ If a job exceeds its virtual memory resource it gets terminated. However if a jo
 What is rmem ( real memory) and mem ( virtual memory)
 -----------------------------------------------------
 
-Running a program always involves loading the program instructions and also its data i.e. all variables and arrays that it uses into the computer's memory. 
+Running a program always involves loading the program instructions and also its data i.e. all variables and arrays that it uses into the computer's memory.
 A program's entire instructions and its entire data, along with any dynamic link libraries it may use, defines the **virtual storage** requirements of that program.
 If we did not have clever operating systems we would need as much physical memory (RAM) as the virtual storage requirements of that program.
 However, operating systems are clever enough to deal with situations where we have insufficient **real memory** (physical memory, typically called RAM) to load all the program instructions and data into the available RAM. This technique works because hardly any program needs to access all its instructions and its data simultaneously. Therefore the operating system loads into RAM only those bits (**pages**) of the instructions and data that are needed by the program at a given instance. This is called **paging** and it involves copying bits of the programs instructions and data to/from hard-disk to RAM as they are needed.
@@ -90,14 +94,14 @@ On the other hand if the RAM allocated to a job is larger than the virtual memor
 
 It is therefore crucial to strike a fine balance between the virtual memory  and the physical memory allocated to a job:
 
-* The virtual memory limit defined by the ``-l mem`` cluster scheduler parameter defines the maximum amount of virtual memory your job will be allowed to use. If your job's virtual memory requirements exceed this limit during its execution your job will be killed immediately. 
+* The virtual memory limit defined by the ``-l mem`` cluster scheduler parameter defines the maximum amount of virtual memory your job will be allowed to use. If your job's virtual memory requirements exceed this limit during its execution your job will be killed immediately.
 * The real memory limit is defined by the ``-l rmem`` cluster scheduler parameter and defines the amount of RAM that will be allocated to your job.  The way we have configured SGE, if your job starts paging excessively your job is not killed but you receive warning messages to increase the RAM allocated to your job next time by means of the ``rmem`` parameter.
 
 It is important to make sure that your ``-l mem`` value is always greater than your ``-l rmem`` value so as not to waste the valuable RAM resources as mentioned earlier.
 
 Insufficient memory in an interactive session
 ---------------------------------------------
-By default, an interactive session provides you with 2 Gigabytes of RAM (sometimes called real memory) and 6 Gigabytes of Virtual Memory. 
+By default, an interactive session provides you with 2 Gigabytes of RAM (sometimes called real memory) and 6 Gigabytes of Virtual Memory.
 You can request more than this when running your ``qsh`` or ``qrsh`` command: ::
 
         qsh -l mem=64G   -l rmem=8G
@@ -114,8 +118,8 @@ If your program fails with an **Illegal Instruction** error then it may have bee
 
 If you get this error **after copying compiled programs onto Iceberg** then you may need to recompile them on Iceberg or recompile them elsewhere without agressively optimising for processor architecture.
 
-If however you get this error when **running programs on Iceberg that you have also compiled on the cluster** then you may have compiled on one processor type and be running on a different type.  
-You may not consistently get the *illegal instruction* error here as the scheduler may allocate you a different type of processor every time you run your program.  
+If however you get this error when **running programs on Iceberg that you have also compiled on the cluster** then you may have compiled on one processor type and be running on a different type.
+You may not consistently get the *illegal instruction* error here as the scheduler may allocate you a different type of processor every time you run your program.
 you can either recompile your program without optimisations for processor architecture or force your job to run on the type of processor it was compiled on using the ``-l arch=`` ``qsub``/``qrsh``/``qsh`` parameter e.g.
 
 * ``-l arch=intel*`` to avoid being allocated one of the few AMD-powered nodes
@@ -174,11 +178,11 @@ In these instances, turning off ``Optimize Connection Buffer Size`` in WinSCP ca
 * The Advanced Site Settings dialog opens.
 * Click on connection
 * Untick the box which says ``Optimize Connection Buffer Size``
-  
+
 Strange fonts or errors re missing fonts when trying to start a graphical application
 -------------------------------------------------------------------------------------
 
-Certain programs require esoteric fonts to be installed on the machine running the X server (i.e. your local machine).  
+Certain programs require esoteric fonts to be installed on the machine running the X server (i.e. your local machine).
 Example of such programs are ``qmon``, a graphical interface to the Grid Engine scheduling software, and :ref:`Ansys <ansys_iceberg>`.
 If you try to run ``qmon`` or Ansys **on a Linux machine** and see strange symbols instead of the latin alphabet or get an error message that includes: ::
 
@@ -186,7 +190,7 @@ If you try to run ``qmon`` or Ansys **on a Linux machine** and see strange symbo
 
 then you should try running the following **on your own machine**: ::
 
-        for i in 75dpi 100dpi; do 
+        for i in 75dpi 100dpi; do
             sudo apt-get install xfonts-75dpi
             pushd /usr/share/fonts/X11/$i/
             sudo mkfontdir
@@ -196,9 +200,9 @@ then you should try running the following **on your own machine**: ::
 
 Note that these instructions are Ubuntu/Debian-specific; on other systems package names and paths may differ.
 
-Next, try :ref:`connecting to a cluster <getting-started>` using ``ssh -X clustername``, start a graphical session then try running ``qmon``/Ansys again.  
-If you can now run ``qmon``/Ansys without problems 
-then you need to add two lines to the ``.xinitrc`` file in your home directory **on your own machine** 
+Next, try :ref:`connecting to a cluster <getting-started>` using ``ssh -X clustername``, start a graphical session then try running ``qmon``/Ansys again.
+If you can now run ``qmon``/Ansys without problems
+then you need to add two lines to the ``.xinitrc`` file in your home directory **on your own machine**
 so this solution will continue to work following a reboot of your machine: ::
 
         FontPath /usr/share/fonts/X11/100dpi
