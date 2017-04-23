@@ -56,7 +56,7 @@ Command                Description
 ====================== ========================================================
 -l h_rt=hh:mm:ss       Specify the total maximum execution time for the job.
 
--l mem=xxG             Specify the maximum amount (xx) of memory to be used
+-l rmem=xxG            Specify the maximum amount (xx) of memory to be used
                        (per process or core).
 
 -pe <env> <nn>         Specify a parallel environment and number of processors.
