@@ -1,42 +1,46 @@
 .. _sge-queue:
 
-Iceberg's Queue System
-======================
+Starting interactive jobs and submitting batch jobs
+===================================================
 
-To manage use of the Iceberg cluster, there is a queue system
-(`SoGE <https://arc.liv.ac.uk/trac/SGE>`_, a derivative of the Sun Grid Engine).
+All job (both interactive sessions and batch jobs) on the University's clusters
+are managed using the `Son of Grid Engine <https://arc.liv.ac.uk/trac/SGE>`_
+**job scheduling software**.  You will typically see this referred to as
+**SGE**, as it is one of several derivatives of `Sun Grid Engine
+<https://en.wikipedia.org/wiki/Oracle_Grid_Engine>`_, or sometimes as just the
+*scheduler*.
 
-The queue system works by a user requesting some task, either a script or an
-interactive session, be run on the cluster and then the scheduler will take
-tasks from the queue based on a set of rules and priorities.
+SGE works ass follows: a user requests that a *job* (task), either a script or an
+interactive session, be run on the cluster and then SGE will take jobs from
+the queue based on a set of rules and priorities.
 
 .. _sge-interactive:
 
-Using Iceberg Interactively
----------------------------
+Interactive sessions
+--------------------
 
-If you wish to use the cluster for interactive use, such as running applications
-such as MATLAB or Ansys, or compiling software, you will need to request that
-the scheduler gives you an interactive session. For an introduction to this see
-:ref:`getting-started`.
+If you wish to use a cluster for interactive work, such as running applications
+like MATLAB or Ansys, or compiling software, you will need to request
+interactive session from SGE.  The pre-requisites for this (including
+connecting to the clusters) are described in :ref:`getting-started`.
 
-There are three commands which give you an interactive shell:
+There are three commands for requesting an interactive shell on a cluster worker node:
 
-* :ref:`qrsh` - Requests an interactive session on a worker node. No support for graphical applications.  Traditional SGE command.
-* :ref:`qsh` - Requests an interactive session on a worker node. Supports graphical applications.  Traditional SGE command.
-* :ref:`qrshx` - Requests an interactive session on a worker node. Supports graphical applications. Superior to :ref:`qsh`.  Unique to Sheffield's clusters.  NB does not work reliably if you are wanting start an interactive session on the special *DGX-1* node using 1+ GPUs; here you should use :ref:`qsh` instead).
+* :ref:`qrsh` - No support for graphical applications.  Standard SGE command.
+* :ref:`qsh` - Supports graphical applications.  Standard SGE command.
+* :ref:`qrshx` - Supports graphical applications. Superior to :ref:`qsh`.  Unique to Sheffield's clusters.  (NB does not work reliably if you are wanting start an interactive session on the special *DGX-1* node using 1+ GPUs; here you should use :ref:`qsh` instead).
 
 You can configure the resources available to the interactive session by
 specifying them as command line options to the ``qrshx``, ``qsh`` or ``qrsh`` commands.
-For example to run a ``qrshx`` session with access to 16 GB of RAM ::
+For example to run a ``qrshx`` session with access to 16 GB of RAM: ::
 
     [te1st@sharc-login2 ~]$ qrshx -l rmem=16G
 
-or a session with access to 8 cores::
+or a session with access to 8 cores: ::
 
     [te1st@sharc-login2 ~]$ qrshx -pe smp 8
 
-A table of :ref:`sge-interactive-options` is given below, any of these can be
+A table of :ref:`sge-interactive-options` is given below; any of these can be
 combined together to request more resources.
 
 .. note::
@@ -57,9 +61,10 @@ Command                Description
 -l h_rt=hh:mm:ss       Specify the total maximum execution time for the job.
 
 -l rmem=xxG            Specify the maximum amount (xx) of memory to be used
-                       (per process or core) in Gigabytes.s
+                       (per process or core) in Gigabytes.
 
--pe <env> <nn>         Specify a parallel environment and number of processors.
+-pe <env> <nn>         Specify a *parallel environment* and a number of 
+                       processor cores.
 
 -pe smp <nn>           The smp parallel environment provides multiple threads
                        on one node. <nn> specifies the max number of
@@ -68,10 +73,10 @@ Command                Description
 
 .. _sge-batch:
 
-Running Batch Jobs on Iceberg
------------------------------
+Running batch jobs
+------------------
 
-The power of Iceberg really comes from the 'batch job' queue submission process.
+The power of the clusters really comes from the *batch job* queue submission process.
 Using this system, you write a script which requests various resources, initializes the computational environment and then executes your program(s).
 The scheduler will run your job when resources are available.
 As the task is running, the terminal output and any errors are captured and
@@ -79,7 +84,7 @@ saved to disk, so that you can see the output and verify the execution of the
 task.
 
 Any task that can be executed without any user intervention while it is running
-can be submitted as a batch job to Iceberg. This excludes jobs that require a
+can be submitted as a batch job. This excludes jobs that require a
 Graphical User Interface (GUI), however, many common GUI applications such as Ansys or MATLAB can also be
 used without their GUIs.
 
@@ -100,18 +105,21 @@ Here is an example batch submission script that runs a fictitious program called
     # load the module for the program we want to run
     module load apps/gcc/foo
 
-    #Run the program foo with input foo.dat
-    #and output foo.res
+    # Run the program foo with input foo.dat
+    # and output foo.res
     foo < foo.dat > foo.res
 
 Some things to note:
 
-* The first line always needs to be `#!/bin/bash` to tell the scheduler that this is a bash batch script.
+* The first line always needs to be `#!/bin/bash` (to tell the scheduler that this is a bash batch script).
 * Comments start with a `#`
 * Scheduler options, such as the amount of memory requested, start with `#$`
-* You will usually require one or more `module` commands in your submission file. These make programs and libraries available to your scripts.
+* You will often require one or more `module` commands in your submission file. 
+  These make programs and libraries available to your scripts.  
+  Many applications and libraries are available as modules on 
+  :ref:`ShARC <sharc-software>` and :ref:`iceberg <iceberg-software>`.
 
-Here is a more complex example that requests more resources ::
+Here is a more complex example that requests more resources: ::
 
   #!/bin/bash
   # Request 16 gigabytes of real memory (mem)
@@ -147,8 +155,9 @@ Command                Description
 
 -l hostname=           Target a node by name. Not recommended for normal use.
 
--l arch=               Target a processor architecture. Options on Iceberg include
-                       `intel-e5-2650v2` and `intel-x5650`
+-l arch=               Target a processor architecture. This is irrelevant on 
+                       ShARC as all processors are the same model.  Options 
+                       on Iceberg include `intel-e5-2650v2` and `intel-x5650`.
 
 -N                     Job name, used to name output files and in the queue list.
 
