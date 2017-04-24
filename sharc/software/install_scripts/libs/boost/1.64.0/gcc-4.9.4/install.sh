@@ -2,7 +2,7 @@
 #
 # Install the Boost library on ShARC 
 
-BOOST_VERS=1.62.0
+BOOST_VERS=1.64.0
 BOOST_TARBALL="boost_${BOOST_VERS//./_}.tar.gz"
 BOOST_TARBALL_URL="http://downloads.sourceforge.net/project/boost/boost/${BOOST_VERS}/${BOOST_TARBALL}"
 COMPILER=gcc
@@ -47,7 +47,7 @@ if [[ ! -f .unpacked ]]; then
 fi
 
 pushd boost_${BOOST_VERS//./_}
-./bootstrap.sh --prefix=${PREFIX}
+./bootstrap.sh --prefix=${PREFIX} --without-libraries=python
 ./b2 install 
 popd
 popd
