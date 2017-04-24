@@ -20,16 +20,14 @@ such as MATLAB or Ansys, or compiling software, you will need to request that
 the scheduler gives you an interactive session. For an introduction to this see
 :ref:`getting-started`.
 
-There are three commands which give you an interactive shell.
-`qsh` and `qrsh` are traditional SGE commands whereas `qrshx` is an enhanced version
-unique to Sheffield's systems. We recommend the use of `qrshx` over `qsh` or `qrsh`.
+There are three commands which give you an interactive shell:
 
-* :ref:`qrsh` - Requests an interactive session on a worker node. No support for graphical applications.
-* :ref:`qrshx` - Requests an interactive session on a worker node. Supports graphical applications. Superior to :ref:`qsh`.
-* :ref:`qsh` - Requests an interactive session on a worker node. Supports graphical applications.
+* :ref:`qrsh` - Requests an interactive session on a worker node. No support for graphical applications.  Traditional SGE command.
+* :ref:`qsh` - Requests an interactive session on a worker node. Supports graphical applications.  Traditional SGE command.
+* :ref:`qrshx` - Requests an interactive session on a worker node. Supports graphical applications. Superior to :ref:`qsh`.  Unique to Sheffield's clusters.  NB does not work reliably if you are wanting start an interactive session on the special *DGX-1* node using 1+ GPUs; here you should use :ref:`qsh` instead).
 
 You can configure the resources available to the interactive session by
-specifying them as command line options to the `qrshx`, `qsh` or `qrsh` commands.
+specifying them as command line options to the ``qrshx``, ``qsh`` or ``qrsh`` commands.
 For example to run a ``qrshx`` session with access to 16 GB of RAM ::
 
     [te1st@sharc-login2 ~]$ qrshx -l rmem=16G
