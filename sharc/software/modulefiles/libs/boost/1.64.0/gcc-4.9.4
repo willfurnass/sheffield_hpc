@@ -1,0 +1,29 @@
+#%Module1.0#####################################################################
+##
+## boost 1.64.0 module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+set vers 1.64.0
+set compiler gcc
+set compilervers 4.9.4
+
+module load dev/$compiler/$compilervers
+module load libs/libunistring/0.9.7/$compiler-$compilervers
+module load libs/icu/58.2/$compiler-$compilervers
+
+proc ModulesHelp { } {
+    global vers
+    global gccvers
+    puts stderr "Makes the Boost $vers library (plus $compiler $compilervers) available"
+}
+module-whatis puts stderr "Makes the Boost $vers library (plus $compiler $compilervers) available"
+
+set BOOST_DIR /usr/local/packages/libs/boost/$vers/$compiler-$compilervers
+
+prepend-path LD_LIBRARY_PATH $BOOST_DIR/lib
+prepend-path CPLUS_INCLUDE_PATH $BOOST_DIR/include
+prepend-path LIBRARY_PATH $BOOST_DIR/lib
