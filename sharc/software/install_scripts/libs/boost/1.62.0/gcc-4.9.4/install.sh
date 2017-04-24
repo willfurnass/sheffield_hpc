@@ -28,7 +28,7 @@ pushd $BUILD_DIR
 # Activate a compiler
 module purge
 module load dev/${COMPILER}/${COMPILER_VERS}
-module load libs/icu/58.2${COMPILER}-${COMPILER_VERS}
+module load libs/icu/58.2/${COMPILER}-${COMPILER_VERS}
 module load libs/libunistring/0.9.7/${COMPILER}-${COMPILER_VERS}
 
 # Create build, install and modulefile dirs
