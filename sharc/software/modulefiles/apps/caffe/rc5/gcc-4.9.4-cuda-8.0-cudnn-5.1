@@ -26,8 +26,11 @@ module load dev/gcc/4.9.4
 module load libs/cudnn/5.1/binary-cuda-8.0.44
 module load libs/intel-tbb/2017.0/binary
 
-set status [catch { exec /bin/bash -c "nvidia-smi nvlink --id 0 --status >& /dev/null" } result ]
-if {$status == 0} {
+
+# Import shared procedures
+source /usr/local/modulefiles/libs/nccl/.nvlink.tcl
+
+if { has_nvlink  } {
     module load libs/nccl/dgx-1/binary-cuda-8.0
 } else {
     module load libs/nccl/generic/gcc-4.9.4-cuda-8.0
