@@ -59,6 +59,8 @@ Common Interactive Job Options
 Command                Description
 ====================== ========================================================
 -l h_rt=hh:mm:ss       Specify the total maximum execution time for the job.
+                       The upper limit is 08:00:00.  NB these limits may
+                       differ for specific SGE Projects/Queues.
 
 -l rmem=xxG            Specify the maximum amount (xx) of memory to be used
                        (per process or core) in Gigabytes.
@@ -150,6 +152,11 @@ Scheduler Options
 Command                Description
 ====================== ========================================================
 -l h_rt=hh:mm:ss       Specify the total maximum execution time for the job.
+                       The upper limit is typically 96:00:00 (4 days) on ShARC
+                       and 168:00:00 (7 days) on Iceberg.  Note that these 
+                       limits may differ for specific SGE Projects/Queues.  
+                       Also note that requesting less execution time may 
+                       result in your job spending less time queuing.
 
 -l mem=xxG             Specify the maximum amount (xx) of memory to be used.
 
