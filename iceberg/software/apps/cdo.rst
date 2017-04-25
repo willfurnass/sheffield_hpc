@@ -29,7 +29,7 @@ Installation notes
 
          wget https://code.zmaw.de/attachments/download/12350/cdo-current.tar.gz
 
-     (2) Extract the files into a working directory  ( I have used /data/cs1ds/2016/cdo ) :
+     (2) Extract the files into a working directory  ( I have used /data/te1st/2016/cdo ) :
 
          gunzip cdo-current.tar.gz 
          tar -xvf cdo-current.tar

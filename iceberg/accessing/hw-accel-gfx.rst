@@ -22,15 +22,15 @@ Usage instructions
 #. :ref:`Connect to Iceberg <getting-started>`
 #. On the login node (**not** a worker node) run the command ``qsh-vis``.  The output should look something like the following: ::
 
-    [cs1wf@iceberg-login1 ~]$ qsh-vis 
+    [te1st@iceberg-login1 ~]$ qsh-vis 
 
     NOTE: you can only run 1 GPU acclerated session
 
 
-    New 'node000:1 (cs1wf)' desktop is node000:1
+    New 'node000:1 (te1st)' desktop is node000:1
 
-    Starting applications specified in /home/cs1wf/.vnc/xstartup
-    Log file is /home/cs1wf/.vnc/node000:1.log
+    Starting applications specified in /home/te1st/.vnc/xstartup
+    Log file is /home/te1st/.vnc/node000:1.log
 
 
     Accelerated VNC graphics session started

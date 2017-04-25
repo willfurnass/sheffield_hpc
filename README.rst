@@ -4,7 +4,7 @@
 Sheffield High Performance Computing Documentation
 ==================================================
 
-This is the source code for the documentation of ShARC and Iceberg, The University of Sheffield's High Performance Computing clusters. It is written in the rst format.
+This is the source code for the documentation of Sharc and Iceberg, The University of Sheffield's High Performance Computing clusters. It is written in the rst format.
 
 For a guide on the rst file format see `this <http://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html>`_ document.
 
@@ -28,57 +28,75 @@ All changes to the repository should be made through Pull Requests, including th
 Building the documentation on a local Windows machine
 #####################################################
 
-Install the following:-
+#. Install **Python 3.6** on your machine by downloading and running the `Miniconda for Python 3.6 <https://conda.io/miniconda.html>`_ installer: 
 
-* `Anaconda Python <https://store.continuum.io/cshop/anaconda>`_.
+    * Install for *just you*;
+    * Install to the default location (e.g. ``C:\Users\myusername\Miniconda3``);
+    * Do **not** *add Anaconda to your PATH environment variable*;
+    * Do **not** *register Anaconda as your default Python 3.6*.
 
-Install the following modules ::
+#. Click *Start* -> *Anaconda3 (64-bit)* -> *Anaconda Prompt* to open a terminal window.
 
-     pip install sphinx sphinx_bootstrap_theme
+#. Create a new *conda environment* for building the documentation by running the following from this window: ::
 
-To build the HTML documentation run::
+    conda create -n sheffield_hpc python=3.6 sphinx
+    pip install sphinx_bootstrap_theme
+
+#. To build the HTML documentation run: ::
 
     make html
+	
+   Or if you don't have the ``make`` utility installed on your machine then build with *sphinx* directly: ::
 
-Or if you don't have make then build with sphinx directly
+    sphinx-build . ./html
 
-	sphinx-build . ./html
+#. If you want to build the PDF documentation you will need:
 
-If you want to build the PDF documentation you will need:
+    * `GNU Make <http://gnuwin32.sourceforge.net/packages/make.htm>`_
+    * `MikTeX <http://miktex.org/download>`_
 
-* `GNU Make <http://gnuwin32.sourceforge.net/packages/make.htm>`_
-* `MikTeX <http://miktex.org/download>`_
-
-Then from the command line, the following will build the .pdf file ::
+   Then from the command line, the following will build the ``.pdf`` file: ::
 
     make latexpdf
 
-On first run, MikTeX will prompt you to install various extra LaTeX packages.
-
+   On first run, MikTeX will prompt you to install various extra LaTeX packages.
 
 Building the documentation on a local Linux machine
 ###################################################
 
+#. Ensure Python 3 (ideally Python 3.6) is installed.
+#. Create a `virtual environment <https://docs.python.org/3/tutorial/venv.html>`_ to install sphinx into: ::
 
-Install the following Python modules ::
+    mkdir -m 700 ~/.venvs
+    python3 -m venv ~/.venvs/sheffield_hpc_py3
+    source ~/.venvs/sheffield_hpc_py3/bin/activate
 
-     pip install sphinx sphinx_bootstrap_theme
+#. Install the Python packages needed to build the HTML documentation: ::
 
-Then run ::
+     pip3 install --requirement requirements.txt
+
+#. Build the documentation: ::
 
      make html
-
 
 Building the documentation on a local Mac machine
 #################################################
 
-For the HTML documentation you will need ``sphinx`` and ``sphinx_bootstrap_theme``. If you do not already have a python distribution installed, we recommend you install `Anaconda Python <https://store.continuum.io/cshop/anaconda>`_.
+#. Ensure Python 3 (ideally Python 3.6) is installed.  If you do not already have a python distribution installed, we recommend you install `Miniconda for Python 3.6 <https://conda.io/miniconda.html>`_.
+#. Install the Python packages needed to build the HTML documentation.  If you are using (mini)conda create a new *conda environment* for building the documentation by running: ::
 
-Then once installed, install the following module ::
+    export PATH=${HOME}/miniconda3/bin:$PATH
+    conda create -n sheffield_hpc python=3.6 sphinx
+    pip install sphinx_bootstrap_theme
 
-     pip install sphinx_bootstrap_theme
+   If you are *not* using (mini)conda to provide Python 3: ::
 
-To build the HTML documentation run::
+    mkdir -m 700 ~/.venvs
+    python3 -m venv ~/.venvs/sheffield_hpc_py3
+    source ~/.venvs/sheffield_hpc_py3/bin/activate
+    pip3 install --requirement requirements.txt
+
+#. To build the HTML documentation run::
 
     make html
 

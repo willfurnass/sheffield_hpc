@@ -18,6 +18,7 @@ The latest version of R can be loaded with ::
 
 Alternatively, you can load a specific version of R using one of the following ::
 
+        module load apps/R/3.3.3/gcc-4.8.5
         module load apps/R/3.3.2/gcc-4.8.5
 
 R can then be run with ::
@@ -26,7 +27,7 @@ R can then be run with ::
 
 Serial (one CPU) Batch usage
 ----------------------------
-Here, we assume that you wish to run the program `my_code.r` on the system. With batch usage it is recommended to load a specific version of R, for example `module load apps/R/3.3.2`, to ensure the expected output is achieved.
+Here, we assume that you wish to run the program `my_code.r` on the system. With batch usage it is recommended to load a specific version of R, for example `module load apps/R/3.3.3`, to ensure the expected output is achieved.
 
 First, you need to write a batch submission file. We assume you'll call this `my_job.sge` ::
 
@@ -34,7 +35,7 @@ First, you need to write a batch submission file. We assume you'll call this `my
   #$ -cwd                                # Run job from current directory
   #$ -l rmem=4G                          # Request 4 gigabytes of memory
 
-  module load apps/R/3.3.2/gcc-4.8.5     # Recommended to load a specific version of R
+  module load apps/R/3.3.3/gcc-4.8.5     # Recommended to load a specific version of R
 
   R CMD BATCH my_code.r my_code.r.o$JOB_ID
 
@@ -78,9 +79,9 @@ To check your packages are up to date, and update them if necessary, run the fol
 
 The folder name after :code:`~/R/` will likely change, but this can be completed with tab autocompletion from the R session. Ensure `lib.loc` folder is specified, or R will attempt to update the wrong library.
 
-.. warning:: 
-    Notice that the personal package library path includes the version of R: 
-    if after installing some packages you switch to using a different `major or minor version <http://semver.org/>`_ of R 
+.. warning::
+    Notice that the personal package library path includes the version of R:
+    if after installing some packages you switch to using a different `major or minor version <http://semver.org/>`_ of R
     then you will need then to install those package *for this new version*.
 
 
@@ -106,7 +107,7 @@ This makes use of R's ``qbeta`` function. You can compile and run this on a work
 
 Start a session on a worker node with ``qrsh`` or ``qsh`` and load the R module ::
 
-    module load apps/R/3.3.2/gcc-4.8.5
+    module load apps/R/3.3.3/gcc-4.8.5
 
 Assuming the program is called ``test_rmath.c``, compile with ::
 
@@ -117,6 +118,16 @@ For full details about the functions made available by the Rmath library, see se
 Installation Notes
 ------------------
 These notes are primarily for administrators of the system.
+
+**version 3.3.3**
+
+* `What's new in R version 3.3.3 <https://stat.ethz.ch/pipermail/r-help//2017-March/445277.html>`_
+
+This was a scripted install. It was compiled from source with gcc 4.8.5 and with ``--enable-R-shlib`` enabled. It was run in batch mode.
+
+* :download:`install_r_3.3.3_gcc4.8.5.sh </sharc/software/install_scripts/apps/R/3.3.2/gcc-4.8.5/install_r_3.3.2_gcc4.8.5.sh>` Downloads, compiles, tests and installs R 3.3.2 and the ``Rmath`` library.
+* :download:`R 3.3.3 Modulefile </sharc/software/modulefiles/apps/R/3.3.3/gcc-4.8.5>` located on the system at ``/usr/local/modulefiles/apps/R/3.3.3/``
+* Install log-files, including the output of the `make check` tests are available on the system at `/usr/local/packages/apps/R/3.3.3/gcc-4.8.5/install_logs/`
 
 **version 3.3.2**
 

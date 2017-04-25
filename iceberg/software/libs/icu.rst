@@ -77,8 +77,8 @@ Last few lines of output from `make check` were: ::
 
         ALL TESTS SUMMARY:
         All tests OK:  testdata intltest iotest cintltst
-        make[1]: Leaving directory `/home/sa_cs1wf/icu_gcc_4_9_2/icu/source/test'
-        make[1]: Entering directory `/home/sa_cs1wf/icu_gcc_4_9_2/icu/source'
+        make[1]: Leaving directory `/home/te1st/icu_gcc_4_9_2/icu/source/test'
+        make[1]: Entering directory `/home/te1st/icu_gcc_4_9_2/icu/source'
         verifying that icu-config --selfcheck can operate
         verifying that make -f Makefile.inc selfcheck can operate
         PASS: config selfcheck OK
@@ -90,12 +90,12 @@ Last few lines of output from `make check` were: ::
 
         [All tests passed successfully...]
         Elapsed Time: 00:00:00.086
-        make[2]: Leaving directory `/home/fe1mpc/icu/icu/source/test/letest'
+        make[2]: Leaving directory `/home/te1st/icu/icu/source/test/letest'
         ---------------
         ALL TESTS SUMMARY:
         All tests OK:  testdata intltest iotest cintltst letest
-        make[1]: Leaving directory `/home/fe1mpc/icu/icu/source/test'
-        make[1]: Entering directory `/home/fe1mpc/icu/icu/source'
+        make[1]: Leaving directory `/home/te1st/icu/icu/source/test'
+        make[1]: Entering directory `/home/te1st/icu/icu/source'
         verifying that icu-config --selfcheck can operate
         verifying that make -f Makefile.inc selfcheck can operate
         PASS: config selfcheck OK
@@ -108,13 +108,13 @@ Last few lines of output from `make check` were: ::
 
         All tests passed successfully...]
         Elapsed Time: 00:00:12.000
-        make[2]: Leaving directory `/home/fe1mpc/icu/source/test/cintltst'
+        make[2]: Leaving directory `/home/te1st/icu/source/test/cintltst'
         ---------------
         ALL TESTS SUMMARY:
         ok:  testdata iotest cintltst
         ===== ERRS:  intltest
         make[1]: *** [check-recursive] Error 1
-        make[1]: Leaving directory `/home/fe1mpc/icu/source/test'
+        make[1]: Leaving directory `/home/te1st/icu/source/test'
         make: *** [check-recursive] Error 2
 
 The error can be ignored since it is a `bug in the test itself <http://sourceforge.net/p/icu/mailman/message/32443311/>`__.

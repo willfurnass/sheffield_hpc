@@ -8,19 +8,19 @@
 # the source in to the build dir.
 
 ############################# Module Loads ###################################
-module load compilers/gcc/5.2
+module load dev/gcc/5.4
 
 
 ############################## Variable Setup ################################
 version=0.1.14
-prefix=/usr/local/packages6/apps/gcc/5.2/vcftools/$version
-build_dir=/scratch/te1st/vcftools
+prefix=/usr/local/packages/apps/vcftools/$version
+build_dir=/scratch/$USER/vcftools
 
 filename=vcftools-$version.tar.gz
 baseurl=https://github.com/vcftools/vcftools/releases/download/v$version/
 
 # Set this to 'sudo' if you want to create the install dir using sudo.
-sudo='sudo'
+#sudo='sudo'
 
 ##############################################################################
 # This should not need modifying
@@ -29,8 +29,11 @@ sudo='sudo'
 # Create the install directory
 if [ ! -d $prefix ]
 then
-   $sudo mkdir -p $prefix
-   $sudo chown -R $USER:cs $prefix
+   #$sudo mkdir -p $prefix
+   #$sudo chown -R $USER:cs $prefix
+   mkdir -p $prefix
+   chown -R $USER $prefix
+   chgrp -R app-admins $refix
 fi 
 
 if [ ! -d $build_dir ]; then
