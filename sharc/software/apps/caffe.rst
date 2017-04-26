@@ -68,19 +68,20 @@ The Caffe module can be loaded with the following command:   ::
 
   module load apps/caffe/rc5/gcc-4.9.4-cuda-8.0-cudnn-5.1
 
-Installing Additional Python Modules
-------------------------------------
+Installing Additional Python Modules (Optional)
+-----------------------------------------------
 
 The Caffe module is pre-installed with Anaconda version 3.4.2. You can install additional python packages by creating a virtual python environment in your home directory using conda. ::
 
   #Creates a conda environment named caffe
 	conda create -n caffe python=3.5
   #Activates the caffe python environment
-	source activate caffe
+  source activate caffe
+
 
 You will also need to install ``numpy`` which can be obtained from the conda repository. ::
 
-	conda install -c anaconda numpy=1.11.2
+	conda install numpy
 
 
 Every Session Afterwards and in Your Job Scripts
@@ -88,7 +89,10 @@ Every Session Afterwards and in Your Job Scripts
 If you created a virtual python environment, you must activate it at every new session and within your job scripts: ::
 
 	module load apps/caffe/rc5/gcc-4.9.4-cuda-8.0-cudnn-5.1
-	source activate caffe
+
+  #Activation below is only needed if you've installed your on python modules
+  source activate caffe
+
 
 Caffe Training
 --------------
