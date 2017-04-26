@@ -14,7 +14,7 @@ Next, you need to set up the compiler environment via one of the following modul
 
 depending on the version of CUDA you intend to use. This makes the ``nvcc`` CUDA compiler available.
 
-**Important** To compile CUDA programs you also need a compatible version of the `GCC compiler suite <gcc_iceberg>`_.  As of version 8.0.44, CUDA is compatible with GCC versions:
+**Important** To compile CUDA programs you also need a compatible version of the :ref:`gcc_iceberg`.  As of version 8.0.44, CUDA is compatible with GCC versions:
 
 * greater than or equal to 4.7.0 (to allow for the use of c++11 features) and
 * less than 5.0.0

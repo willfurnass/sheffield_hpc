@@ -29,7 +29,7 @@ To check which version of CUDA you are using ::
         Built on Sun_Sep__4_22:14:01_CDT_2016
         Cuda compilation tools, release 8.0, V8.0.44
 
-**Important** To compile CUDA programs you also need a compatible version of the `GCC compiler suite <gcc_iceberg>`_.  As of version 8.0.44, CUDA is compatible with GCC versions:
+**Important** To compile CUDA programs you also need a compatible version of the :ref:`<gcc_iceberg>`.  As of version 8.0.44, CUDA is compatible with GCC versions:
 
 * greater than or equal to 4.7.0 (to allow for the use of c++11 features) and
 * less than 5.0.0
