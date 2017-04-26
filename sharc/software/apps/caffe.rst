@@ -56,9 +56,9 @@ Paths to the actual images and definition files are provided below for downloadi
             * Path: ``/usr/local/packages/singularity/images/caffe/rc5-CPU-Ubuntu16.04.img``
             * Def file: `/sharc/software/apps/singularity/caffe_cpu.def </sharc/software/apps/singularity/caffe_cpu.def>`
     * GPU
-      * Latest: rc5-GPU-Ubuntu16.04-CUDA8-cudNN5.0 (Python 2.7)
-          * Path: ``/usr/local/packages/singularity/images/caffe/rc5-GPU-Ubuntu16.04-CUDA8-cudNN5.0.img``
-          * Def file: `/sharc/software/apps/singularity/caffe_gpu.def </sharc/software/apps/singularity/caffe_gpu.def>`
+        * Latest: rc5-GPU-Ubuntu16.04-CUDA8-cudNN5.0 (Python 2.7)
+            * Path: ``/usr/local/packages/singularity/images/caffe/rc5-GPU-Ubuntu16.04-CUDA8-cudNN5.0.img``
+            * Def file: `/sharc/software/apps/singularity/caffe_gpu.def </sharc/software/apps/singularity/caffe_gpu.def>`
 
 Using the Caffe Module
 ----------------------
