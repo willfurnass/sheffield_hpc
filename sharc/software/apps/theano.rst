@@ -45,7 +45,7 @@ Paths to the actual images and definition files are provided below for downloadi
 
 * Shortcut to Latest Image
     * ``/usr/local/packages/singularity/images/theano/gpu.img``
-* Images list
+* GPU Images
     * Latest: 0.9.0-GPU-Ubuntu16.04-CUDA8-cudNN5.0-Anaconda3.4.2.0
         * Path: ``/usr/local/packages/singularity/images/theano/0.9.0-GPU-Ubuntu16.04-CUDA8-cudNN5.0-Anaconda3.4.2.0.img``
         * Def file: `/sharc/software/apps/singularity/theano.def </sharc/software/apps/singularity/theano.def>`
