@@ -15,7 +15,7 @@ Singularity also allows you to leverage the resources of whatever host you are o
 About Singularity Containers (Images)
 -------------------------------------
 
-Similar to Docker, a Singularity container (image) is a self-contained filesystem and software stack. As Singularity does not require a root-level daemon to run its images it is compatible for use with ShARC's scheduler inside your job scripts. The running images also uses the credentials of the person calling it.
+Similar to Docker, a Singularity container (image) is a self-contained software stack. As Singularity does not require a root-level daemon to run its images it is compatible for use with ShARC's scheduler inside your job scripts. The running images also uses the credentials of the person calling it.
 
 This in-practice means that an image created on your local machine with all your research software installed for local development will also run on the ShARC cluster.
 
