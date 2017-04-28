@@ -28,7 +28,7 @@ There are three commands for requesting an interactive shell on a cluster worker
 
 * :ref:`qrsh` - No support for graphical applications.  Standard SGE command.
 * :ref:`qsh` - Supports graphical applications.  Standard SGE command.
-* :ref:`qrshx` - Supports graphical applications. Superior to :ref:`qsh`.  Unique to Sheffield's clusters.  (NB does not work reliably if you are wanting start an interactive session on the special *DGX-1* node using 1+ GPUs; here you should use :ref:`qsh` instead).
+* :ref:`qrshx` - Supports graphical applications. Superior to :ref:`qsh`.  Unique to Sheffield's clusters.  
 
 You can configure the resources available to the interactive session by
 specifying them as command line options to the ``qrshx``, ``qsh`` or ``qrsh`` commands.
