@@ -127,12 +127,9 @@ These notes are primarily for administrators of the system.
 This was a scripted install. It was compiled from source with gcc 4.8.5 and with ``--enable-R-shlib`` enabled. It was ru
 n in batch mode.
 
-* :download:`install_r_3.4.0_gcc4.8.5.sh </sharc/software/install_scripts/apps/R/3.4.0/gcc-4.8.5/install_r_3.4.0_gcc4.8.
-5.sh>` Downloads, compiles, tests and installs R 3.4.0 and the ``Rmath`` library.
-* :download:`R 3.4.0 Modulefile </sharc/software/modulefiles/apps/R/3.4.0/gcc-4.8.5>` located on the system at ``/usr/lo
-cal/modulefiles/apps/R/3.4.0/``
-* Install log-files, including the output of the `make check` tests are available on the system at `/usr/local/packages/
-apps/R/3.4.0/gcc-4.8.5/install_logs/`
+* :download:`install_r_3.4.0_gcc4.8.5.sh </sharc/software/install_scripts/apps/R/3.4.0/gcc-4.8.5/install_r_3.4.0_gcc4.8.5.sh>` Downloads, compiles, tests and installs R 3.4.0 and the ``Rmath`` library.
+* :download:`R 3.4.0 Modulefile </sharc/software/modulefiles/apps/R/3.4.0/gcc-4.8.5>` located on the system at ``/usr/local/modulefiles/apps/R/3.4.0/``
+* Install log-files, including the output of the `make check` tests are available on the system at `/usr/local/packages/apps/R/3.4.0/gcc-4.8.5/install_logs/`
 
 **version 3.3.3**
 
