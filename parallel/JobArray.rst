@@ -33,7 +33,7 @@ If you :ref:`enable email notifications <sge-queue>` in your batch job submissio
         #$ -M me@sheffield.ac.uk
         #$ -m a
 
-2. Then submit your job array like so:
+2. Then submit your job array like so: ::
 
         [te1st@sharc-login1 ~]$ qsub my_job_array.sge
         Your job-array 2035587.1-3:1 ("my_job_array.sge") has been submitted
