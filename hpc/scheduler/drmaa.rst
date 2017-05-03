@@ -81,22 +81,6 @@ If you want to submit a :ref:`job array <parallel_jobarray>` rather than a singl
 .. warning::
     Starting a single DRMAA session then attempting to submit jobs from different Python threads `currently does not work <https://github.com/pygridtools/drmaa-python/issues/44>`_.
 
-Waiting on jobs
-^^^^^^^^^^^^^^^
-
-Within a DRMAA Session you can wait indefinitely or forever for one, several or all submitted jobs to complete.  See the `documentation <http://drmaa-python.readthedocs.io/en/latest/tutorials.html#waiting-for-a-job>`__ for more information including an example.  Jobs are identified by (Grid Engine) job ID, so they do not need to have been submitted by DRMAA.
-
-Controlling jobs
-^^^^^^^^^^^^^^^^
-
-Within a DRMAA Session you can also terminate, suspend, resume, hold and release a job.  See the `documentation <http://drmaa-python.readthedocs.io/en/latest/tutorials.html#controlling-a-job>`__ for more information including an example.  Again, jobs are identified by (Grid Engine) job ID, so they do not need to have been submitted by DRMAA.
-
-
-Checking the status of a job
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Within a DRMAA Session you can check to see if any job is queuing, running, has completed successfully, has failed or is in some other state.  See the `documentation <http://drmaa-python.readthedocs.io/en/latest/tutorials.html#getting-job-status>`__ for more information including an example.  
-
 Email notifications
 ^^^^^^^^^^^^^^^^^^^
 
@@ -113,6 +97,45 @@ This is equivalent to having the following in a Grid Engine batch job submission
 
     #$ -m ea
     #$ -M somebody@sheffield.ac.uk
+
+Other useful job template attributes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+ * Requesting arbitrary resources from Grid Engine (virtual memory, real memory, parallel environments, run time, Projects): ::
+
+        jt.nativeSpecification = '-l gpu=1 -P gpu -l h_rt=00:30:00 -l rmem=2G -pe smp 2'
+
+ * Set the paths to the job standard output and error files: ::
+
+        jt.outputPath = os.path.join(os.getcwd(), 'output.log')
+        jt.errorPath = os.path.join(os.getcwd(), 'error.log')
+
+ * Send standard output and error to the same file: ::
+
+        jt.joinFiles = True
+
+ * Name your job (equivalent to ``-N my_job`` in a Grid Engine batch job submission script): ::
+
+        jt.jobName = 'my_job'
+
+ * Set one or more environment variables in your job using a Python `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_: ::
+
+        jt.jobEnvironment = {'SOMEKEY': 'somevalue', 'ANOTHERKEY', 'anothervalue'}
+
+Waiting on jobs
+^^^^^^^^^^^^^^^
+
+Within a DRMAA Session you can wait indefinitely or forever for one, several or all submitted jobs to complete.  See the `documentation <http://drmaa-python.readthedocs.io/en/latest/tutorials.html#waiting-for-a-job>`__ for more information including an example.  Jobs are identified by (Grid Engine) job ID, so they do not need to have been submitted by DRMAA.
+
+Controlling jobs
+^^^^^^^^^^^^^^^^
+
+Within a DRMAA Session you can also terminate, suspend, resume, hold and release a job.  See the `documentation <http://drmaa-python.readthedocs.io/en/latest/tutorials.html#controlling-a-job>`__ for more information including an example.  Again, jobs are identified by (Grid Engine) job ID, so they do not need to have been submitted by DRMAA.
+
+Checking the status of a job
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Within a DRMAA Session you can check to see if any job is queuing, running, has completed successfully, has failed or is in some other state.  See the `documentation <http://drmaa-python.readthedocs.io/en/latest/tutorials.html#getting-job-status>`__ for more information including an example.  
 
 Futher information
 ^^^^^^^^^^^^^^^^^^
