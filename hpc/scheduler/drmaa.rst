@@ -49,6 +49,8 @@ Submitting a job
 You can then submit a job using a script like this:
 
 .. literalinclude:: drmaa_submit_job.py
+   :caption: drmaa_submit_job.py
+   :caption: drmaa-example-py
    :language: python
    :linenos:
 
@@ -94,6 +96,23 @@ Checking the status of a job
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Within a DRMAA Session you can check to see if any job is queuing, running, has completed successfully, has failed or is in some other state.  See the `documentation <http://drmaa-python.readthedocs.io/en/latest/tutorials.html#getting-job-status>`__ for more information including an example.  
+
+Email notifications
+^^^^^^^^^^^^^^^^^^^
+
+You can enable email notifications for jobs finishing or aborting by setting two attributes of your `JobTemplate` object (`jt` in :ref:`this example <drmaa-example-py>`):
+
+.. code-block:: python
+
+     jt.blockEmail = False
+     jt.email = ['somebody@sheffield.ac.uk']
+
+This is equivalent to having the following in a Grid Engine batch job submission script:
+
+.. code-block:: bash
+
+    #$ -m ea
+    #$ -M somebody@sheffield.ac.uk
 
 Futher information
 ^^^^^^^^^^^^^^^^^^
