@@ -49,8 +49,8 @@ Submitting a job
 You can then submit a job using a script like this:
 
 .. literalinclude:: drmaa_submit_job.py
+   :name: drmaa-example-py
    :caption: drmaa_submit_job.py
-   :caption: drmaa-example-py
    :language: python
    :linenos:
 
@@ -117,7 +117,7 @@ This is equivalent to having the following in a Grid Engine batch job submission
 Futher information
 ^^^^^^^^^^^^^^^^^^
 
-See the `documentation <http://drmaa-python.readthedocs.io/en/latest/>`__ for the DRMAA Python bindings; you may find the enclosed `reference information <http://drmaa-python.readthedocs.io/en/latest/drmaa.html>`_ useful.
+See the `documentation <http://drmaa-python.readthedocs.io/en/latest/>`__ for the DRMAA Python bindings; you may find the enclosed `reference information <http://drmaa-python.readthedocs.io/en/latest/drmaa.html>`_ useful.  Note that not all features of these bindings are described in this documentation!
 
 Java bindings
 -------------
