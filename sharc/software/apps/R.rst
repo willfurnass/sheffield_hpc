@@ -10,7 +10,7 @@ R is a statistical computing language.
 
 Interactive Usage
 -----------------
-After connecting to ShARC, start an interactive session with the `qrshx` command.
+After connecting to ShARC, start an interactive session with the :ref:`qrshx` command.
 
 The latest version of R can be loaded with ::
 
@@ -115,6 +115,10 @@ Assuming the program is called ``test_rmath.c``, compile with ::
     gcc test_rmath.c -lRmath -lm -o test_rmath
 
 For full details about the functions made available by the Rmath library, see section 6.7 of the document `Writing R extensions <https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Numerical-analysis-subroutines>`_
+
+Versions of R with faster linear algebra
+----------------------------------------
+We have compiled versions of R using the Intel Compiler suite and the Intel MKL. These can be faster than this 'standard' version in some cases. For more details see :ref:`Intel R (Sharc)`
 
 Installation Notes
 ------------------
