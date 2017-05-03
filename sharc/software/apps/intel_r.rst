@@ -56,8 +56,7 @@ These notes are primarily for administrators of the system.
 This was a scripted install. It was compiled from source with Intel Compiler 17.0.0 and with `--enable-R-shlib` enabled. It was run in batch mode.
 
 * :download:`intel-17.0-parallel.sh </sharc/software/install_scripts/apps/R/3.4.0/intel-17.0-parallel.sh>` Downloads, compiles, tests and installs R 3.4.0 using Intel Compilers and the parallel MKL.
-* :download:`intel-17.0-sequential.sh </sharc/software/install_scripts/apps/R/3.4.0/intel-17.0-sequential.sh>` Downloads, compiles, tests and installs R 3.4.0 using Intel Compilers and the sequential
- MKL.
+* :download:`intel-17.0-sequential.sh </sharc/software/install_scripts/apps/R/3.4.0/intel-17.0-sequential.sh>` Downloads, compiles, tests and installs R 3.4.0 using Intel Compilers and the sequential MKL.
 * :download:`intel-17.0-parallel </sharc/software/modulefiles/apps/R/3.4.0/intel-17.0-parallel>` Parallel Module File
 * :download:`intel-17.0-sequential </sharc/software/modulefiles/apps/R/3.4.0/intel-17.0-sequential>` Sequential Module File
 
