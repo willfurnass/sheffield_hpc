@@ -10,7 +10,20 @@ Scheduler
 
     ./*
 
-This is a reference section for commands that allow you to interact with the scheduler.
+Getting started 
+---------------
+
+See our guide to :ref:`sge-queue`.
+
+Submitting and controlling jobs programmatically
+------------------------------------------------
+
+See our guide to the :ref:`drmaa` API.
+
+Reference information
+---------------------
+
+Commands that allow you to interact with the scheduler:
 
 * :ref:`qhost` - Show's the status of Sun Grid Engine hosts.
 * :ref:`qrsh` - Requests an interactive session on a worker node. No support for graphical applications.
