@@ -17,7 +17,7 @@ Why is it useful?
 
 Using DRMAA you may find it easier to automate the submission and control of jobs.  
 
-Also, you might want to use a Computational Pipeline manager such as `Ruffus <http://www.ruffus.org.uk/>`_) to run sets of related (possibly dependent) jobs on a cluster; these may use DRMAA beind the scenes to create and manage jobs.
+Also, you might want to use a Computational Pipeline manager (such as `Ruffus <http://www.ruffus.org.uk/>`_) to run sets of related (possibly dependent) jobs on a cluster; these may use DRMAA beind the scenes to create and manage jobs.
 
 Using DRMAA from Python
 -----------------------
@@ -35,7 +35,7 @@ The simplest way to install them is to use a :ref:`conda environment <sharc-pyth
         # Start an interactive session
         qrshx  
         # Ensure conda is available
-        module load apps/python conda  
+        module load apps/python/conda  
         # Create a conda environment
         conda create -n drmaa-test-sharc python=3.6  
         # Activate this environment
@@ -84,7 +84,7 @@ If you want to submit a :ref:`job array <parallel_jobarray>` rather than a singl
 Email notifications
 ^^^^^^^^^^^^^^^^^^^
 
-You can enable email notifications for jobs finishing or aborting by setting two attributes of your `JobTemplate` object (`jt` in :ref:`this example <drmaa-example-py>`):
+You can enable email notifications for jobs finishing or aborting by setting two attributes of your ``JobTemplate`` object (``jt`` in :ref:`this example <drmaa-example-py>`):
 
 .. code-block:: python
 
@@ -101,26 +101,32 @@ This is equivalent to having the following in a Grid Engine batch job submission
 Other useful job template attributes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
- * Requesting arbitrary resources from Grid Engine (virtual memory, real memory, parallel environments, run time, Projects): ::
+* Requesting arbitrary resources from Grid Engine such as virtual memory (``vmem``), real memory (``mem``), parallel environments (e.g. ``-pe mpi``), run time (``h_rt``), Grid Engine Projects e.g. ::
 
-        jt.nativeSpecification = '-l gpu=1 -P gpu -l h_rt=00:30:00 -l rmem=2G -pe smp 2'
+       jt.nativeSpecification = '-l h_rt=00:30:00 -l rmem=2G -pe smp 2'
 
- * Set the paths to the job standard output and error files: ::
+* Set the paths to the job standard output and error files: ::
 
-        jt.outputPath = os.path.join(os.getcwd(), 'output.log')
-        jt.errorPath = os.path.join(os.getcwd(), 'error.log')
+       jt.outputPath = os.path.join(os.getcwd(), 'output.log')
+       jt.errorPath = os.path.join(os.getcwd(), 'error.log')
 
- * Send standard output and error to the same file: ::
+* Send standard output and error to the same file: ::
 
-        jt.joinFiles = True
+       jt.joinFiles = True
 
- * Name your job (equivalent to ``-N my_job`` in a Grid Engine batch job submission script): ::
+* Name your job (equivalent to ``-N my_job`` in a Grid Engine batch job submission script): ::
 
-        jt.jobName = 'my_job'
+       jt.jobName = 'my_job'
 
- * Set one or more environment variables in your job using a Python `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_: ::
+* Set one or more environment variables in your job using a Python `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_: ::
 
-        jt.jobEnvironment = {'SOMEKEY': 'somevalue', 'ANOTHERKEY', 'anothervalue'}
+       jt.jobEnvironment = {'SOMEKEY': 'somevalue', 'ANOTHERKEY', 'anothervalue'}
+
+.. warning::
+    You cannot presently request one or more **GPUs** using DRMAA without explicitly using the ``gpu`` Grid Engine Project i.e. 
+    jobs created using a Job Template ``jt`` where ``jt.nativeSpecification = '-l gpu=1'`` will be rejected by the job scheduler 
+    but jobs with ``jt.nativeSpecification = '-P gpu -l gpu=1'`` will be accepted.
+    This is due to a `bug in the scheduler <https://arc.liv.ac.uk/trac/SGE/ticket/1342>`_.
 
 Waiting on jobs
 ^^^^^^^^^^^^^^^
