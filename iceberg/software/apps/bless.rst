@@ -1,7 +1,7 @@
 bless
 =====
 
-.. sidebar:: Bless
+.. sidebar:: BLESS
 
    :Version:  1.02
    :URL: http://sourceforge.net/p/bless-ec/wiki/Home/
@@ -10,61 +10,62 @@ BLESS: Bloom-filter-based Error Correction Solution for High-throughput Sequenci
 
 Interactive Usage
 -----------------
-Bless uses MPI and we currently have no interactive MPI environments available. As such, it is not possible to run Bless interactively on Iceberg.
+BLESS uses :ref:`MPI <parallel_mpi>` and we currently have no interactive MPI environments available. As such, it is not possible to run BLESS interactively on Iceberg.
 
 Batch Usage
 -----------
 The latest version of bless (currently 1.02) is made available with the command ::
 
-        module load apps/gcc/4.9.2/bless
-
-Alternatively, you can load a specific version with ::
-
         module load apps/gcc/4.9.2/bless/1.02
 
-The module create the environment variable BLESS_PATH which points to the Bless installation directory. It  also loads the dependent modules
+The module create the environment variable ``BLESS_PATH`` which points to the BLESS installation directory. It also loads the dependent modules
 
-* compilers/gcc/4.9.2
-* mpi/gcc/openmpi/1.8.3
+* ``compilers/gcc/4.9.2``
+* ``mpi/gcc/openmpi/1.8.3``
 
-Here is an example batch submission script that makes use of two example input files we have included in our installation of BLESS ::
+Here is an example batch submission script that makes use of two example input files we have included in our installation of BLESS:
 
-  #!/bin/bash
-  #Next line is memory per slot
-  #$ -l mem=5G -l rmem=5G
-  #Ask for 4 slots in an OpenMP/MPI Hybrid queue
-  #These 4 slots will all be on the same node
-  #$ -pe openmpi-hybrid-4 4
+.. code-block:: bash
+   :linenos:
 
-  #load the module
-  module load apps/gcc/4.9.2/bless/1.02
+    #!/bin/bash
+    # Next line is memory per slot
+    #$ -l mem=5G -l rmem=5G
+    # Ask for 4 slots in an OpenMP/MPI Hybrid queue
+    # These 4 slots will all be on the same node
+    #$ -pe openmpi-hybrid-4 4
 
-  #Output information about nodes where code is running
-  cat $PE_HOSTFILE  > nodes
+    # load the module
+    module load apps/gcc/4.9.2/bless/1.02
 
-  data_folder=$BLESS_PATH/test_data
-  file1=test_small_1.fq
-  file2=test_small_2.fq
+    # Output information about nodes where code is running
+    cat $PE_HOSTFILE > nodes
 
-  #Number of cores per node we are going to use.
-  cores=4
-  export OMP_NUM_THREADS=$cores
+    data_folder=$BLESS_PATH/test_data
+    file1=test_small_1.fq
+    file2=test_small_2.fq
 
-  #Run BLESS
-  mpirun $BLESS_PATH/bless -kmerlength 21 -smpthread $cores -prefix test_bless -read1 $data_folder/$file1 -read2 $data_folder/$file2
+    # Number of cores per node we are going to use.
+    cores=4
+    export OMP_NUM_THREADS=$cores
 
-BLESS makes use of both MPI and OpenMP parallelisation frameworks. As such, it is necessary to use the hybrid MPI/OpenMP queues. The current build of BLESS does not work on more than one node. This will limit you to the maximum number of cores available on one node.
+    # Run BLESS
+    mpirun $BLESS_PATH/bless -kmerlength 21 -smpthread $cores -prefix test_bless -read1 $data_folder/$file1 -read2 $data_folder/$file2
+
+BLESS makes use of both MPI and OpenMP parallelisation frameworks. As such, it is necessary to use a :ref:`Hybrid MPI/SMP Parallel environment <parallel_hybrid>`. 
+The current build of BLESS does not work on more than one node. 
+This will limit you to the maximum number of cores available on one node.
 
 For example, to use all 16 cores on a 16 core node you would request the following parallel environment ::
 
     #$ -pe openmpi-hybrid-16 16
 
-Remember that memory is allocated on a per-slot basis. You should ensure that you do not request more memory than is available on a single node or your job will be permanently stuck in a queue-waiting (`qw`) status.
+Remember that memory is allocated on a per-slot basis. You should ensure that you do not request more memory than is available on a single node or your job will be permanently stuck in a queue-waiting (``qw``) status.
 
 Installation notes
 ------------------
-Various issues were encountered while attempting to install bless. See https://github.com/rcgsheffield/sheffield_hpc/issues/143 for details.
-It was necessary to install gcc 4.9.2 in order to build bless. No other compiler worked!
+`Various issues <https://github.com/rcgsheffield/sheffield_hpc/issues/143>`_ were encountered while attempting to install BLESS. 
+It was necessary to install gcc 4.9.2 in order to build BLESS. No other compiler worked!
 
 Here are the install steps ::
 
