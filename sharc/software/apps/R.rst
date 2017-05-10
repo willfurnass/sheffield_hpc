@@ -10,14 +10,15 @@ R is a statistical computing language.
 
 Interactive Usage
 -----------------
-After connecting to ShARC, start an interactive session with the `qrshx` command.
+After connecting to ShARC, start an interactive session with the :ref:`qrshx` command.
 
 The latest version of R can be loaded with ::
 
         module load apps/R
 
 Alternatively, you can load a specific version of R using one of the following ::
-
+        
+        module load apps/R/3.4.0/gcc-4.8.5
         module load apps/R/3.3.3/gcc-4.8.5
         module load apps/R/3.3.2/gcc-4.8.5
 
@@ -27,7 +28,7 @@ R can then be run with ::
 
 Serial (one CPU) Batch usage
 ----------------------------
-Here, we assume that you wish to run the program `my_code.r` on the system. With batch usage it is recommended to load a specific version of R, for example `module load apps/R/3.3.3`, to ensure the expected output is achieved.
+Here, we assume that you wish to run the program `my_code.r` on the system. With batch usage it is recommended to load a specific version of R, for example `module load apps/R/3.4.0`, to ensure the expected output is achieved.
 
 First, you need to write a batch submission file. We assume you'll call this `my_job.sge` ::
 
@@ -35,7 +36,7 @@ First, you need to write a batch submission file. We assume you'll call this `my
   #$ -cwd                                # Run job from current directory
   #$ -l rmem=4G                          # Request 4 gigabytes of memory
 
-  module load apps/R/3.3.3/gcc-4.8.5     # Recommended to load a specific version of R
+  module load apps/R/3.4.0/gcc-4.8.5     # Recommended to load a specific version of R
 
   R CMD BATCH my_code.r my_code.r.o$JOB_ID
 
@@ -75,7 +76,7 @@ These additional packages will be installed without prompting to your personal p
 
 To check your packages are up to date, and update them if necessary, run the following line from an R interactive session ::
 
-        update.packages(lib.loc = "~/R/x86_64-unknown-linux-gnu-library/3.3/")
+        update.packages(lib.loc = "~/R/x86_64-unknown-linux-gnu-library/3.4/")
 
 The folder name after :code:`~/R/` will likely change, but this can be completed with tab autocompletion from the R session. Ensure `lib.loc` folder is specified, or R will attempt to update the wrong library.
 
@@ -107,7 +108,7 @@ This makes use of R's ``qbeta`` function. You can compile and run this on a work
 
 Start a session on a worker node with ``qrsh`` or ``qrshx`` and load the R module ::
 
-    module load apps/R/3.3.3/gcc-4.8.5
+    module load apps/R/3.4.0/gcc-4.8.5
 
 Assuming the program is called ``test_rmath.c``, compile with ::
 
@@ -115,9 +116,23 @@ Assuming the program is called ``test_rmath.c``, compile with ::
 
 For full details about the functions made available by the Rmath library, see section 6.7 of the document `Writing R extensions <https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Numerical-analysis-subroutines>`_
 
+Versions of R with faster linear algebra
+----------------------------------------
+We have compiled versions of R using the Intel Compiler suite and the Intel MKL. These can be faster than this 'standard' version in some cases. For more details see :ref:`Intel R (Sharc)`
+
 Installation Notes
 ------------------
 These notes are primarily for administrators of the system.
+
+**version 3.4.0**
+
+* `What's new in R version 3.4.0 <https://stat.ethz.ch/pipermail/r-announce/2017/000612.html>`_ 
+
+This was a scripted install. It was compiled from source with gcc 4.8.5 and with ``--enable-R-shlib`` enabled. It was run in batch mode.
+
+* :download:`install_r_3.4.0_gcc4.8.5.sh </sharc/software/install_scripts/apps/R/3.4.0/gcc-4.8.5/install_r_3.4.0_gcc4.8.5.sh>` Downloads, compiles, tests and installs R 3.4.0 and the ``Rmath`` library.
+* :download:`R 3.4.0 Modulefile </sharc/software/modulefiles/apps/R/3.4.0/gcc-4.8.5>` located on the system at ``/usr/local/modulefiles/apps/R/3.4.0/``
+* Install log-files, including the output of the `make check` tests are available on the system at `/usr/local/packages/apps/R/3.4.0/gcc-4.8.5/install_logs/`
 
 **version 3.3.3**
 
@@ -125,7 +140,7 @@ These notes are primarily for administrators of the system.
 
 This was a scripted install. It was compiled from source with gcc 4.8.5 and with ``--enable-R-shlib`` enabled. It was run in batch mode.
 
-* :download:`install_r_3.3.3_gcc4.8.5.sh </sharc/software/install_scripts/apps/R/3.3.2/gcc-4.8.5/install_r_3.3.2_gcc4.8.5.sh>` Downloads, compiles, tests and installs R 3.3.2 and the ``Rmath`` library.
+* :download:`install_r_3.3.3_gcc4.8.5.sh </sharc/software/install_scripts/apps/R/3.3.3/gcc-4.8.5/install_r_3.3.3_gcc4.8.5.sh>` Downloads, compiles, tests and installs R 3.3.3 and the ``Rmath`` library.
 * :download:`R 3.3.3 Modulefile </sharc/software/modulefiles/apps/R/3.3.3/gcc-4.8.5>` located on the system at ``/usr/local/modulefiles/apps/R/3.3.3/``
 * Install log-files, including the output of the `make check` tests are available on the system at `/usr/local/packages/apps/R/3.3.3/gcc-4.8.5/install_logs/`
 
