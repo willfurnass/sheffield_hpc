@@ -18,7 +18,7 @@ depending on the version of CUDA you intend to use. This makes the ``nvcc`` CUDA
 * greater than or equal to 4.7.0 (to allow for the use of c++11 features) and
 * less than 5.0.0
 
-It is therefore recommended that you load the most recent 4.x version of GCC when building CUDA programs on Iceberg: ::
+It is therefore recommended that you load the most recent 4.x version of GCC when building CUDA programs on ShARC: ::
 
     module load compilers/gcc/4.9.2
 
