@@ -20,20 +20,18 @@ module-whatis   "loads the necessary `Torch-$version' library paths"
 
 
 module load apps/python/anaconda3-4.2.0
-module load dev/gcc/4.9.4 
+module load dev/gcc/4.9.4
 module load libs/cudnn/5.1/binary-cuda-8.0.44
 
-set PREFIX /usr/local/packages/libs/torch/7/testing-0.1
+set PREFIX /usr/local/packages/apps/torch/7/build-0.1
 
 prepend-path PATH $PREFIX/bin
 prepend-path CPATH $PREFIX/include
 prepend-path LD_LIBRARY_PATH $PREFIX/lib
 prepend-path DYLD_LIBRARY_PATH $PREFIX/lib
-prepend-path LUA_CPATH $PREFIX/lib/?.so
 
 prepend-path LUA_PATH $PREFIX/share/lua/5.1/?.lua
 prepend-path LUA_PATH $PREFIX/share/lua/5.1/?/init.lua
 prepend-path LUA_PATH $PREFIX/share/luajit-2.1.0-beta1/?.lua
 prepend-path LUA_CPATH $PREFIX/lib/lua/5.1/?.so
 prepend-path LUA_CPATH $PREFIX/lib/?.so
-

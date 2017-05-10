@@ -34,7 +34,7 @@ This section is primarily for system administrators.
 
 :download:`This install script </iceberg/software/install_scripts/apps/samtools/install_samtools_1.3.1.sh>`:
 
-#. Built Samtools plus the bundled **HTSlib**, **HTSlib utilities** such as ``bgzip`` plus various useful plugins.  Compiled using `GCC <gcc_iceberg>`_ 6.2.
+#. Built Samtools plus the bundled **HTSlib**, **HTSlib utilities** such as ``bgzip`` plus various useful plugins.  Compiled using GCC 6.2 (:ref:`gcc_iceberg`).
 #. Ran all tests using ``make tests``; a summary of the results is shown below; for full results see ``/usr/local/packages6/apps/gcc/6.2/samtools/1.3.1/tests.log`` ::
 
         Number of tests:
@@ -73,7 +73,7 @@ Next, :download:`this modulefile </iceberg/software/modulefiles/apps/gcc/6.2/sam
 
 **Version 1.2**
 
-Installed using `gcc 5.2 <gcc_iceberg>`_ ::
+Installed using GCC 5.2 (:ref:`gcc_iceberg`) ::
 
     module load compilers/gcc/5.2
 

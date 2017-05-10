@@ -2,12 +2,12 @@
 
 CUDA
 ====
-CUDA, which stands for Compute Unified Device Architecture, is a parallel computing platform and application programming interface (API) model created by NVIDIA. 
+CUDA, which stands for Compute Unified Device Architecture, is a parallel computing platform and application programming interface (API) model created by NVIDIA.
 It allows software developers to use a CUDA-enabled graphics processing unit (GPU) for general purpose processing - an approach known as *General Purpose GPU* (GPGPU).
 
 Usage
 -----
-There are several versions of the CUDA library available. As with many libraries installed on the system, CUDA libraries are made available via ``module`` commands which are only available once you have started a ``qrsh`` or ``qsh`` session.
+There are several versions of the CUDA library available. As with many libraries installed on the system, CUDA libraries are made available via ``module`` commands which are only available once you have started a ``qrshx`` session.
 
 The latest version CUDA is loaded with the command: ::
 
@@ -26,9 +26,9 @@ To check which version of CUDA you are using ::
         Built on Sun_Sep__4_22:14:01_CDT_2016
         Cuda compilation tools, release 8.0, V8.0.44
 
-**Important** To compile CUDA programs you also need a compatible version of the `GCC compiler suite <gcc_sharc>`_.  As of version 8.0.44, CUDA is compatible with GCC versions:
+**Important** To compile CUDA programs you also need a compatible version of the :ref:`gcc_sharc`.  As of version 8.0.44, CUDA is compatible with GCC versions:
 
-* greater than or equal to 4.7.0 (to allow for the use of c++11 features) and 
+* greater than or equal to 4.7.0 (to allow for the use of c++11 features) and
 * less than 5.0.0
 
 It is therefore recommended that you load the most recent 4.x version of GCC when building CUDA programs: ::
@@ -44,13 +44,13 @@ In a `qrsh` session ::
         # Load modules
         module load libs/CUDA/8.0.44/binary
         module load dev/gcc/4.9.4
-        
+
         # Copy CUDA samples to a local directory
         # It will create a directory called NVIDIA_CUDA-8.0_Samples/
         mkdir cuda_samples
         cd cuda_samples
         cp -r $CUDA_SDK .
-        
+
         # Compile (this will take a while)
         cd NVIDIA_CUDA-8.0_Samples/
         make
@@ -62,6 +62,11 @@ Documentation
 * `CUDA Toolkit Documentation <http://docs.nvidia.com/cuda/index.html#axzz3uLoSltnh>`_
 * `The power of C++11 in CUDA 7 <http://devblogs.nvidia.com/parallelforall/power-cpp11-cuda-7/>`_
 
+CUDA Training
+-------------
+
+`GPUComputing@sheffield <http://gpucomputing.shef.ac.uk>`_ provides a self-paced `introduction to CUDA <http://gpucomputing.shef.ac.uk/education/cuda/>`_ training course.
+
 Determining the NVIDIA Driver version
 -------------------------------------
 Run the command: ::
@@ -71,7 +76,7 @@ Run the command: ::
 Example output is ::
 
         NVRM version: NVIDIA UNIX x86_64 Kernel Module  367.44  Wed Aug 17 22:24:07 PDT 2016
-        GCC version:  gcc version 4.8.5 20150623 (Red Hat 4.8.5-4) (GCC) 
+        GCC version:  gcc version 4.8.5 20150623 (Red Hat 4.8.5-4) (GCC)
 
 Installation notes
 ------------------

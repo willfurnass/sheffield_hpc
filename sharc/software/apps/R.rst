@@ -106,7 +106,7 @@ The Rmath library allows you to access some of R's functionality from a C progra
 
 This makes use of R's ``qbeta`` function. You can compile and run this on a worker node as follows.
 
-Start a session on a worker node with ``qrsh`` or ``qsh`` and load the R module ::
+Start a session on a worker node with ``qrsh`` or ``qrshx`` and load the R module ::
 
     module load apps/R/3.4.0/gcc-4.8.5
 

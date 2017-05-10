@@ -18,7 +18,7 @@ Run one of the following: ::
         module load libs/gcc/5.2/fltk/1.3.3
         module load libs/gcc/4.9.2/fltk/1.3.3
 
-If you are using :ref:`cuda` then you will want to use the version that was built with (and has a runtime dependency on) GCC 4.9.2 as GCC 5.0 and later are not supported by CUDA at this time. 
+If you are using :ref:`cuda_iceberg` then you will want to use the version that was built with (and has a runtime dependency on) GCC 4.9.2 as GCC 5.0 and later are not supported by CUDA at this time. 
 
 Installation notes
 ------------------

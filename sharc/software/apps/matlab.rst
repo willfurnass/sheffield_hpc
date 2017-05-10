@@ -15,7 +15,7 @@ Scientific computing and visualisation.
 
 Interactive Usage
 -----------------
-After connecting to ShARC (see :ref:`ssh`),  start an interactive session with the ``qsh`` command.
+After connecting to ShARC (see :ref:`ssh`),  start an interactive session with the ``qrshx`` command.
 
 The latest version of MATLAB (currently 2016b) is made available by running: ::
 

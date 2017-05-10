@@ -10,7 +10,7 @@ Versions
 
 The Intel compilers were installed as part of :ref:`Intel Parallel Studio <sharc-intel-parallel-studio>` but can be used with or without the other Parallel Studio components.
 
-After connecting to the ShARC cluster (see :ref:`ssh`),  start an interactive session with the :code:`qsh` or :code:`qrsh` command then activate a specific version of the compilers using one of: ::
+After connecting to the ShARC cluster (see :ref:`ssh`),  start an interactive session with the :code:`qrshx` or :code:`qrsh` command then activate a specific version of the compilers using one of: ::
 
         module load dev/intel-compilers/17.0.0/binary
         module load dev/intel-compilers/16.0.1/binary
@@ -43,7 +43,7 @@ To compile the Fortran hello world example into an executable called ``hello`` u
 
 Detailed Documentation
 ----------------------
-Once you have loaded the module on Iceberg, ``man`` pages are available for Intel compiler products: ::
+Once you have loaded the module on ShARC, ``man`` pages are available for Intel compiler products: ::
 
         man ifort
         man icc

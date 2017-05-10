@@ -22,7 +22,7 @@ need.
 Using conda Python
 ------------------
 After connecting to ShARC (see :ref:`ssh`),  start an interactive session
-with the ``qsh`` or ``qrsh`` command.
+with the ``qrshx`` or ``qrsh`` command.
 
 Conda Python can be loaded with::
 

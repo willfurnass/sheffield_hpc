@@ -23,4 +23,4 @@ If you need advice on how to parallelise your workflow, please contact the `Rese
    SMP
    MPI
    Hybrid
-   gpu/index
+   GPUComputing

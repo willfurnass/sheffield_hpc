@@ -1,0 +1,62 @@
+#%Module1.0#####################################################################
+##
+## Caffe rc3 module file Build 0.2
+##
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "	Adds `Caffe-$version' to your PATH environment variable
+}
+
+set     version rc5
+
+
+
+
+module-whatis   "loads the necessary `Caffe-$version' library paths"
+
+# Loads the required modules
+module load dev/gcc/4.9.4
+module load libs/cudnn/5.1/binary-cuda-8.0.44
+module load libs/intel-tbb/2017.0/binary
+
+
+# Import shared procedures
+source /usr/local/modulefiles/libs/nccl/.nvlink.tcl
+
+if { has_nvlink  } {
+    module load libs/nccl/dgx-1/binary-cuda-8.0
+} else {
+    module load libs/nccl/generic/gcc-4.9.4-cuda-8.0
+}
+
+# Sets the paths
+set PREFIX /usr/local/packages/apps/caffe/rc5/build-0.1
+
+
+#Caffe and other dependencies
+prepend-path PATH $PREFIX/install/bin
+prepend-path CPATH $PREFIX/install/include
+prepend-path LIBRARY_PATH $PREFIX/install/lib
+prepend-path LIBRARY_PATH $PREFIX/install/lib64
+prepend-path LD_LIBRARY_PATH $PREFIX/install/lib
+prepend-path LD_LIBRARY_PATH $PREFIX/install/lib64
+prepend-path CAFFE_ROOT $PREFIX/caffe
+prepend-path PYTHONPATH $PREFIX/install/python
+
+
+#Sets the alias
+set-alias "conda-activate" "source activate"
+set-alias "conda-deactivate" "source deactivate"
+set-alias "conda-envlist" "conda env list"
+set-alias "cac" "source activate"
+set-alias "cde" "source deactivate"
+
+# Anaconda dependency
+prepend-path PATH $PREFIX/anaconda3/bin
