@@ -44,7 +44,7 @@ Interactive Usage
 
 The serial build of GULP should be used for interactive usage. 
 After connecting to ShARC (see :ref:`ssh`),  
-start an interactive session with the ``qrsh`` or ``qsh`` command. 
+start an interactive session with the ``qrsh`` or ``qrshx`` command. 
 Make the serial version of GULP available using the following: ::
 
         module load apps/gulp/4.4/intel-17.0.0

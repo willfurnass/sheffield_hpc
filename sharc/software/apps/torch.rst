@@ -57,7 +57,7 @@ First request an interactive session, e.g. with :ref:`qrshx`. To use GPUs see :r
 
 Load the Torch module which also loads anaconda 3.4, CUDA 8.0, cuDNN 5.1 and GCC 4.9.4. ::
 
-	module load apps/torch/nvidia-7/gcc-4.9.4-cuda-8.0-cudnn-5.1-conda-3.4-TESTING
+	module load apps/torch/nvidia-7/gcc-4.9.4-cuda-8.0-cudnn-5.1-conda-3.4
 
 On the DGX-1, load the NCCL library optimised for the hardware: ::
 
@@ -80,7 +80,7 @@ Every Session Afterwards and in Your Job Scripts
 
 In the interactive session or your batch script, load the relevant modules and (optionally) activate your conda environment ::
 
-	module load apps/torch/nvidia-7/gcc-4.9.4-cuda-8.0-cudnn-5.1-conda-3.4-TESTING
+	module load apps/torch/nvidia-7/gcc-4.9.4-cuda-8.0-cudnn-5.1-conda-3.4
 
 	#Optional
 	source activate torch

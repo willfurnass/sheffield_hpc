@@ -7,7 +7,7 @@ It allows software developers to use a CUDA-enabled graphics processing unit (GP
 
 Usage
 -----
-There are several versions of the CUDA library available. As with many libraries installed on the system, CUDA libraries are made available via ``module`` commands which are only available once you have started a ``qrsh`` or ``qsh`` session.
+There are several versions of the CUDA library available. As with many libraries installed on the system, CUDA libraries are made available via ``module`` commands which are only available once you have started a ``qrshx`` session.
 
 The latest version CUDA is loaded with the command: ::
 

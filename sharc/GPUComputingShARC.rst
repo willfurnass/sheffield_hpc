@@ -19,14 +19,14 @@ Interactive use of the GPUs
 
 Once you are included in the GPU project group you may start using the GPU enabled nodes interactively by typing: ::
 
-        qsh -l gpu=1
+        qrshx -l gpu=1
 
-the ``-l gpu=`` parameter determines how many GPUs you are requesting. Currently, the maximum number of GPUs allowed per job is set to 4, i.e. you cannot exceed ``-l gpu=4``. Most jobs will only make use of one GPU.
+the ``-l gpu=`` parameter determines how many GPUs you are requesting. Currently, the maximum number of GPUs allowed per job is set to 8, i.e. you cannot exceed ``-l gpu=8``. Most jobs will only make use of one GPU.
 
 Interactive sessions provide you with 2 Gigabytes of CPU RAM by default which is significantly less than the amount of GPU RAM available. This can lead to issues where your session has insufficient CPU RAM to transfer data to and from the GPU. As such, it is recommended that you request enough CPU memory to communicate properly with the GPU ::
 
   #Nvidia K80 GPU has 24GB of RAM
-  qsh -l gpu=1 -l rmem=25G
+  qrshx -l gpu=1 -l rmem=25G
 
 The above will give you 1GB more CPU RAM than the 24GB of GPU RAM available on the Nvidia K80.
 
@@ -51,9 +51,9 @@ ShARC GPU Resources
 Hardware
 ^^^^^^^^
 
-**ShARC currently contains 8 publicly available GPU units:**
+**Pulicly available GPU nodes**
 
-* 8 Nvidia Tesla Kepler K80 GPU units. Each unit contains 4992 CUDA cores, 24GB of memory and is capable of up to 2.91 Teraflops of double precision compute power.
+* :ref:`gpu-sharc-specs`
 
 **Research group-specific GPU nodes:**
 

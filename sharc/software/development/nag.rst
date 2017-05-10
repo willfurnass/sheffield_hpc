@@ -6,7 +6,7 @@ The NAG Fortran Compiler is robust, highly tested, and valued by developers all 
 Making the NAG Compiler available
 ---------------------------------
 
-After connecting to ShARC (see :ref:`ssh`),  start an interactive sesssion with the :code:`qsh` or :code:`qrsh` command. 
+After connecting to ShARC (see :ref:`ssh`),  start an interactive sesssion with the :code:`qrshx` or :code:`qrsh` command. 
 To make a version of the NAG Fortran Compiler available, run one of following ``module`` commands: ::
 
         module load dev/NAG/6.1

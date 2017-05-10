@@ -55,7 +55,7 @@ then running ``make``: ::
         Resulting in a speedup of 4.77625
 
 Many of the sample directories contain HTML documentation.  
-To read this you need to start an :ref:`interactive graphical session <sge-queue>` (using ``qsh`` or ``qrshx``) then run: ::
+To read this you need to start an :ref:`interactive graphical session <sge-queue>` (using ``qrshx`` or ``qrshx``) then run: ::
 
         $ firefox ~/tbb_samples/index.html
  

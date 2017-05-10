@@ -18,7 +18,7 @@ and provide evidence of your eligibility to use CASTEP.
 Interactive Usage
 -----------------
 The serial version of CASTEP should be used for interactive usage. 
-After connecting to ShARC (see :ref:`ssh`),  start an interactive session with the ``qrsh`` or ``qsh`` command. 
+After connecting to ShARC (see :ref:`ssh`),  start an interactive session with the ``qrsh`` or ``qrshx`` command. 
 Make the serial version of CASTEP available using the following command: ::
 
         module load apps/castep/16.11/intel-15.0.7
@@ -85,7 +85,7 @@ To make the parallel environment available, use the following command: ::
 As an example of a parallel submission, we will calculate the bandstructure of graphite following the tutorial at http://www.castep.org/Tutorials/BandStructureAndDOS
 
 After connecting to ShARC (see :ref:`ssh`),  
-start an interactive session with the ``qrsh`` or ``qsh`` command. 
+start an interactive session with the ``qrsh`` or ``qrshx`` command. 
 Download and decompress the example input files with the commands ::
 
         wget http://www.castep.org/files/bandstructure.tgz

@@ -3,12 +3,12 @@
 ShARC specifications
 ======================
 
-Total capacity 
+Total capacity
 --------------
 
-* Worker nodes: 121 
-* CPU cores: 2024 
-* Total memory: 12160 GiB 
+* Worker nodes: 121
+* CPU cores: 2024
+* Total memory: 12160 GiB
 * GPUs: 40
 * Fast network filesystem (`Lustre <http://lustre.org/>`_): 669 TiB (``/home`` and ``/data`` are shared with Iceberg)
 
@@ -17,7 +17,7 @@ Note that some of these resources have been purchased by research groups who hav
 General CPU node specifications
 -------------------------------
 
-98 nodes are publicly available (not exclusive to research groups).  
+98 nodes are publicly available (not exclusive to research groups).
 
 * Machine: `Dell PowerEdge C6320`_
 * CPUs: 2 x `Intel Xeon E5-2630 v3`_
@@ -29,7 +29,7 @@ General CPU node specifications
   * `Hyperthreading <https://en.wikipedia.org/wiki/Hyper-threading>`_ is disabled on all nodes bar four that are reserved for interactive jobs.
 
 * RAM: 64 GB (i.e. 4 GiB / core)
-  
+
   * 1866 MHz;
   * DDR4.
 
@@ -41,9 +41,11 @@ General CPU node specifications
 Large memory node specifications
 --------------------------------
 
-Four nodes are publicly available (not exclusive to research groups).  
+Four nodes are publicly available (not exclusive to research groups).
 
 These are identical to the general `CPU nodes <General CPU node specifications>`_ but with 256 GiB RAM (16 GiB per core).
+
+.. _gpu-sharc-specs:
 
 GPU node specifications
 -----------------------
@@ -70,7 +72,7 @@ One node is publicly available:
 * RAM: 128 GiB (i.e. 8 GiB / core); 1866 MHz; DDR4
 * Local storage: 1 TiB
 * Graphics cards: 2x Quadro K4200
-  
+
   * Memory: 4 GiB GDDR5 SDRAM
 
 Networking
@@ -88,7 +90,7 @@ Operating System and software
 
 Non-worker nodes
 ----------------
- 
+
 * Two login nodes (for resilience)
 * Other nodes to provide:
 
@@ -110,4 +112,3 @@ Non-worker nodes
 .. totmem ``for node in $(qhost | awk '/sharc-/ {print $1}'); do qconf -se $node | egrep -o 'h_vmem=[0-9]*[^MGT]'; done | awk -F '=' '{sum += $2} END {print sum}'``
 .. ngpus ``for node in $(qhost -F gpu | grep 'gpu=' -B1 | awk '/sharc-/ {print $1}'); do qconf -se $node | egrep -o 'gpu=[0-9]*'; done | awk -F '=' '{sum += $2} END {print sum}'``
 .. lustresize ``df -h --output=size /mnt/fastdata/ | tail -1``
-

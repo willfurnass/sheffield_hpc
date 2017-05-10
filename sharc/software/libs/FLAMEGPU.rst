@@ -20,7 +20,7 @@ To install FLAME GPU you should checkout the latest master branch of the code wh
 
 To compile the FLAME GPU examples you will need to be on a GPU node. You can start an interactive session using ::
 
-    qsh -l gpu=1 -P gpu -l mem=13G
+    qrshx -l gpu=1 -P gpu -l mem=13G
 
 You will then need to load the relevant modules ::
 
