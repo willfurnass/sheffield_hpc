@@ -7,7 +7,7 @@ Caffe
 
    :URL: http://caffe.berkeleyvision.org/
 
-`Caffe <http://caffe.berkeleyvision.org/>`_ is a deep learning framework made with expression, speed, and modularity in mind. It is developed by the Berkeley Vision and Learning Center (`BVLC <http://bvlc.eecs.berkeley.edu/>`_) and by community contributors.
+`Caffe <http://caffe.berkeleyvision.org/>`_ is a Deep Learning framework made with expression, speed, and modularity in mind. It is developed by the Berkeley Vision and Learning Center (`BVLC <http://bvlc.eecs.berkeley.edu/>`_) and by community contributors.
 
 About Caffe on ShARC
 --------------------
@@ -53,11 +53,11 @@ Paths to the actual images and definition files are provided below for downloadi
 * CPU Images
     * Latest: rc5-CPU-Ubuntu16.04 (Python 2.7)
         * Path: ``/usr/local/packages/singularity/images/caffe/rc5-CPU-Ubuntu16.04.img``
-        * Def file: `/sharc/software/apps/singularity/caffe_cpu.def </sharc/software/apps/singularity/caffe_cpu.def>`
+        * Def file: :download:`/sharc/software/apps/singularity/caffe_cpu.def </sharc/software/apps/singularity/caffe_cpu.def>`
 * GPU Images
     * Latest: rc5-GPU-Ubuntu16.04-CUDA8-cudNN5.0 (Python 2.7)
         * Path: ``/usr/local/packages/singularity/images/caffe/rc5-GPU-Ubuntu16.04-CUDA8-cudNN5.0.img``
-        * Def file: `/sharc/software/apps/singularity/caffe_gpu.def </sharc/software/apps/singularity/caffe_gpu.def>`
+        * Def file: :download:`/sharc/software/apps/singularity/caffe_gpu.def </sharc/software/apps/singularity/caffe_gpu.def>`
 
 Using the Caffe Module
 ----------------------
