@@ -166,7 +166,7 @@ If you're using the Singularity definition file as shown above (see :ref:`create
   singularity shell -B ~/mynvdriver:/nvlib,~/mynvdriver:/nvbin myimage.img
 
 How Singularity is installed and 'versioned' on the cluster
----------------------------------------------------------
+-----------------------------------------------------------
 
 Singularity, unlike much of the other key software packages on ShARC, is not activated using module files.
 This is because module files are primarily for the purpose of being able to install multiple version of the same software
