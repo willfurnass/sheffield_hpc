@@ -33,7 +33,7 @@ Singularity images are currently provided for:
 Using Pre-built Singularity Images on ShARC
 -------------------------------------------
 
-To get a shell in to the image: ::
+To get a shell in to the image start an interactive session on a worker node then: ::
 
   singularity shell path/to/imgfile.img
 
@@ -164,3 +164,17 @@ It can be seen that the driver version on our current machine is ``367.57``. Go 
 If you're using the Singularity definition file as shown above (see :ref:`create_image_singularity_sharc`), the ``/nvbin`` and ``/nvlib`` directories will have been created. They simply need to be correctly mounted when running the image using the command where our extracted driver files are located at ``~/mynvdriver``: ::
 
   singularity shell -B ~/mynvdriver:/nvlib,~/mynvdriver:/nvbin myimage.img
+
+How Singularity is installed and 'versioned' on the cluster
+---------------------------------------------------------
+
+Singularity, unlike much of the other key software packages on ShARC, is not activated using module files.
+This is because module files are primarily for the purpose of being able to install multiple version of the same software
+and for security reasons only the most recent version of Singularity is installed.  
+The security risks associated with providing outdated builds of Singularity 
+are considered to outweigh the risk of upgrading to backwards incompatible versions.
+
+Singularity has been installed on all worker nodes using a RPM that was built in-house from the Singularity source.
+
+
+
