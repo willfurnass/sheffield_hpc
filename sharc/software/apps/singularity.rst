@@ -8,16 +8,16 @@ Singularity
    :Version: 2.2.1
    :URL: http://singularity.lbl.gov/
 
-Designed around the notion of extreme mobidddlity of compute and reproducible science, Singularity enables users to have full control of their operating system environment. This means that a non-privileged user can “swap out” the operating system on the host for one they control. So if the host system is running RHEL6 but your application runs in Ubuntu, you can create an Ubuntu image, install your applications into that image, copy the image to another host, and run your application on that host in it’s native Ubuntu environment!
+Designed around the notion of extreme mobility of compute and reproducible science, Singularity enables users to have full control of their operating system environment. This means that a non-privileged user can "swap out" the operating system on the host for one they control. So if the host system is running Centos Linux but your application runs in Ubuntu Linux, you can create an Ubuntu image, install your applications into that image, copy the image to another host, and run your application on that host in it’s native Ubuntu environment.
 
-Singularity also allows you to leverage the resources of whatever host you are on. This includes HPC interconnects, resource managers, file systems, GPUs and/or accelerators, etc.
+Singularity also allows you to leverage the resources of whatever host you are on. This includes high-speed cluster interconnects, resource managers, file systems, GPUs and/or accelerators, etc.
 
 About Singularity Containers (Images)
 -------------------------------------
 
 Similar to Docker, a Singularity container (image) is a self-contained software stack. As Singularity does not require a root-level daemon to run its images it is compatible for use with ShARC's scheduler inside your job scripts. The running images also uses the credentials of the person calling it.
 
-This in-practice means that an image created on your local machine with all your research software installed for local development will also run on the ShARC cluster.
+In practice, this means that an image created on your local machine with all your research software installed for local development will also run on the ShARC cluster.
 
 Pre-built images have been provided on the cluster and can also be download for use on your local machine (see :ref:`use_image_singularity_sharc`). Creating and modifying images however, requires root permission and so must be done on your machine (see :ref:`create_image_singularity_sharc`).
 
