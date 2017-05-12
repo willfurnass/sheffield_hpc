@@ -7,7 +7,7 @@ Theano
 
    :URL: http://deeplearning.net/software/theano/index.html
 
-Theano is a Python library that allows you to define, optimize, and evaluate mathematical expressions involving multi-dimensional arrays efficiently. Theano is most commonly used to perform deep learning and has excellent GPU support and integration through PyCUDA. The following steps can be used to setup and configure Theano on your own profile.
+Theano is a Python library that allows you to define, optimize, and evaluate mathematical expressions involving multi-dimensional arrays efficiently. Theano is most commonly used to perform Deep Learning and has excellent GPU support and integration through PyCUDA. The following steps can be used to setup and configure Theano on your own profile.
 
 About Theano on ShARC
 ---------------------
@@ -48,7 +48,7 @@ Paths to the actual images and definition files are provided below for downloadi
 * GPU Images
     * Latest: 0.9.0-GPU-Ubuntu16.04-CUDA8-cudNN5.0-Anaconda3.4.2.0
         * Path: ``/usr/local/packages/singularity/images/theano/0.9.0-GPU-Ubuntu16.04-CUDA8-cudNN5.0-Anaconda3.4.2.0.img``
-        * Def file: `/sharc/software/apps/singularity/theano.def </sharc/software/apps/singularity/theano.def>`
+        * Def file: :download:`/sharc/software/apps/singularity/theano.def </sharc/software/apps/singularity/theano.def>`
 
 Local Installation
 ------------------

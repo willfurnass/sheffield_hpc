@@ -55,11 +55,11 @@ Paths to the actual images and definition files are provided below for downloadi
 * CPU Images
     * Latest: 1.0.1-CPU-Ubuntu16.04-Anaconda3.4.2.0.img (GCC 5.4.0, Python 3.5)
         * Path: ``/usr/local/packages/singularity/images/tensorflow/1.0.1-CPU-Ubuntu16.04-Anaconda3.4.2.0.img``
-        * Def file: `/sharc/software/apps/singularity/tensorflow_cpu.def </sharc/software/apps/singularity/tensorflow_cpu.def>`
+        * Def file: :download:`/sharc/software/apps/singularity/tensorflow_cpu.def </sharc/software/apps/singularity/tensorflow_cpu.def>`
 * GPU Images
     * Latest: 1.0.1-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA8-cudNN5.0.img (GCC 5.4.0, Python 3.5)
         * Path: ``/usr/local/packages/singularity/images/tensorflow/1.0.1-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA8-cudNN5.0.img``
-        * Def file: `/sharc/software/apps/singularity/tensorflow_gpu.def </sharc/software/apps/singularity/tensorflow_gpu.def>`
+        * Def file: :download:`/sharc/software/apps/singularity/tensorflow_gpu.def </sharc/software/apps/singularity/tensorflow_gpu.def>`
 
 Installation in Home Directory
 ------------------------------

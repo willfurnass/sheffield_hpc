@@ -156,7 +156,7 @@ Where you will get something similar to the following: ::
   | 30%   35C    P8    18W / 250W |    635MiB /  6078MiB |      1%      Default |
   +-------------------------------+----------------------+----------------------+
 
-It can be seen that the driver version on our current machine is ``367.57``. Go to the `Nvidia website <http://nvidia.com>`_ and search for the correct Linux driver for your graphics card. Download the `extract_nvdriver_and_moveto.sh </sharc/software/apps/singularity/extract_nvdriver_and_moveto.sh>` to the same directory and run it like so: ::
+It can be seen that the driver version on our current machine is ``367.57``. Go to the `Nvidia website <http://nvidia.com>`_ and search for the correct Linux driver for your graphics card. Download the :download:`extract_nvdriver_and_moveto.sh </sharc/software/apps/singularity/extract_nvdriver_and_moveto.sh>` to the same directory and run it like so: ::
 
   chmod +x extract_nvdriver_and_moveto.sh
   extract_driver_and_moveto.sh 367.57 ~/mynvdriver

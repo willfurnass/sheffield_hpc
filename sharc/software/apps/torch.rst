@@ -46,7 +46,7 @@ Paths to the actual images and definition files are provided below for downloadi
 * GPU Images
     * Latest: v7-GPU-Ubuntu16.04-CUDA8-cudNN5.0 (GCC 5.4.0)
         * Path: ``/usr/local/packages/singularity/images/torch/v7-GPU-Ubuntu16.04-CUDA8-cudNN5.0.img``
-        * Def file: `/sharc/software/apps/singularity/torch_gpu.def </sharc/software/apps/singularity/torch_gpu.def>`
+        * Def file: :download:`/sharc/software/apps/singularity/torch_gpu.def </sharc/software/apps/singularity/torch_gpu.def>`
 
 Using the Torch Module
 ----------------------
