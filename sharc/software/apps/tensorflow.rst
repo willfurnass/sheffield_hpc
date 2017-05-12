@@ -12,6 +12,8 @@ TensorFlow is an open source software library for numerical computation using da
 About Tensorflow on ShARC
 -------------------------
 
+**A GPU-enabled worker node must be requested in order to use the GPU version of this software. See** :ref:`GPUComputing_sharc` **for more information.**
+
 Tensorlfow is available on ShARC as both Singularity images and by local installation.
 
 As Tensorflow and all its dependencies are written in Python, it can be installed locally in your home directory. The use of Anaconda (:ref:`sharc-python-conda`) is recommended as it is able to create a virtual environment in your home directory, allowing the installation of new Python packages without admin permission.
