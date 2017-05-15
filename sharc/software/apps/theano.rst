@@ -12,6 +12,8 @@ Theano is a Python library that allows you to define, optimize, and evaluate mat
 About Theano on ShARC
 ---------------------
 
+**A GPU-enabled worker node must be requested in order to use the GPU version of this software. See** :ref:`GPUComputing_sharc` **for more information.**
+
 Theano is available on ShARC as both Singularity images and by local installation.
 
 As Theano and all its dependencies are written in Python. A Singularity image is available for instant usage and it can also be installed locally in your home directory. For local installation, the use of Anaconda (:ref:`sharc-python-conda`) is recommended as it is able to create a virtual environment in your home directory, allowing the installation of new Python packages without admin permission.

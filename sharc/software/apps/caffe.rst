@@ -12,6 +12,8 @@ Caffe
 About Caffe on ShARC
 --------------------
 
+**A GPU-enabled worker node must be requested in order to use the GPU version of this software. See** :ref:`GPUComputing_sharc` **for more information.**
+
 Caffe is available on ShARC as both Singularity images and as a module.
 
 This software and documentation is maintained by the `RSES group <http://rse.shef.ac.uk/>`_ and GPUComputing@Sheffield_. For feature requests or if you encounter any problems, please raise an issue on the `GPU Computing repository <https://github.com/RSE-Sheffield/GPUComputing/issues>`_.

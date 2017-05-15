@@ -2,12 +2,18 @@
 
 CUDA
 ====
+
 CUDA, which stands for Compute Unified Device Architecture, is a parallel computing platform and application programming interface (API) model created by NVIDIA.
 It allows software developers to use a CUDA-enabled graphics processing unit (GPU) for general purpose processing - an approach known as *General Purpose GPU* (GPGPU).
 
 Usage
 -----
-There are several versions of the CUDA library available. As with many libraries installed on the system, CUDA libraries are made available via ``module`` commands which are only available once you have started a ``qrsh`` or ``qsh`` session.
+
+There are several versions of the CUDA library available. As with many libraries installed on the system, CUDA libraries are made available via ``module`` commands which are only available once you have started a ``qrshx`` with a GPU resource ``-l gpu=``. For example, to request a single GPU: ::
+
+  qrshx -l gpu=1
+
+**See** :ref:`GPUComputing_iceberg` **for more information on how to request a GPU-enabled node for an interactive session or job submission.** 
 
 The latest version CUDA is loaded with the command ::
 
