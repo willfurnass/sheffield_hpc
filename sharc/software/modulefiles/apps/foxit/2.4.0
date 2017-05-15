@@ -1,0 +1,24 @@
+#%Module1.0#####################################################################
+##
+## Foxit module file
+##
+#  By David M. Rogers D.Savas Des Ryan on May 2017
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes Foxit 2.4.0 available for use"
+}
+
+module-whatis   "Makes Foxit 2.4.0 available"
+
+# module variables
+#
+ set     selfpath /usr/local/packages/apps/foxit/2.4.0 
+ prepend-path PATH $selfpath 
+ prepend-path LD_LIBRARY_PATH $selfpath/lib:$selfpath/platforms:$selfpath/printsupport:$selfpath/rmssdk:$selfpath/sensors:$selfpath/imageformats:$selfpath/platforminputcontexts 
