@@ -42,6 +42,9 @@ The ``exec`` command can also be used to call any command/script inside the imag
 
 The paths ``/fastdata``, ``/data``, ``/home``, ``/scratch``, ``/shared`` are automatically mounted to your ShARC filestore directories. For GPU-enabled images the ``/nvlib`` and ``/nvbin`` is mounted to the correct Nvidia driver version for the node that you're using.
 
+**To submit jobs that uses a Singularity image, see** :ref:`use_image_batch_singularity_sharc` **for more detail.** 
+
+
 Image Index
 ^^^^^^^^^^^
 
