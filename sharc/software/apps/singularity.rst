@@ -30,10 +30,12 @@ Singularity images are currently provided for:
 
 .. _use_image_singularity_sharc:
 
-Using Pre-built Singularity Images on ShARC
--------------------------------------------
+Interactive Usage of Singularity Images
+---------------------------------------
 
-To get a shell in to the image start an interactive session on a worker node then: ::
+**To use Singularity interactively, an interactive session must first be requested using** :ref:`qrshx` **for example.**
+
+To get an interactive shell in to the image, use the following command: ::
 
   singularity shell path/to/imgfile.img
 
@@ -41,9 +43,43 @@ Or if you prefer bash: ::
 
   singularity exec path/to/imgfile.img /bin/bash
 
-Note that the ``exec`` command can also be used to execute other applications/scripts inside the image: ::
+Note that the ``exec`` command can also be used to execute other applications/scripts inside the image or from the mounted directories (See :ref:`auto_mounting_filestore_singularity_sharc`): ::
 
   singularity exec path/to/imgfile.img my_script.sh
+
+.. _use_image_batch_singularity_sharc:
+
+Submitting Batch Jobs That Uses Singularity Images
+--------------------------------------------------
+
+When submitting a job that uses a Singularity image, it is not possible to use the interactive shell (e.g. ``singularity shell`` or ``singularity exec path/to/imgfile.img /bin/bash``). You must use the ``exec`` command to call the desired application or script directly.
+
+For example, if we would like to use a command ``ls /`` to get the content of the root folder in the image, two approaches are shown in the following job script ``my_singularity_job.sh``: ::
+
+  #!/bin/bash
+  #$ -l rmem=8G
+  # We requested 8GB of memory in the line above, change this according to your
+  # needs e.g. add -l gpu=1 to reqest a single GPU
+
+  #Calling ls directly using the exec command
+  singularity exec path/to/imgfile.img ls /
+
+  #Have Singularity call a custom script from your home or other mounted directories
+  #Don't forget to make the script executable before running by using chmod
+  chmod +x ~/myscript.sh
+  singularity exec path/to/imgfile.img ~/myscript.sh
+
+Where the content of ``~/myscript.sh`` is shown below: ::
+
+  #!/bin/bash
+
+  ls /
+
+The job can then be submitted as normal with ``qsub``: ::
+
+  qsub my_singularity_job.sh
+
+.. _auto_mounting_filestore_singularity_sharc:
 
 Automatic Mounting of ShARC Filestore Inside Images
 ----------------------------------------------------
@@ -170,11 +206,8 @@ How Singularity is installed and 'versioned' on the cluster
 
 Singularity, unlike much of the other key software packages on ShARC, is not activated using module files.
 This is because module files are primarily for the purpose of being able to install multiple version of the same software
-and for security reasons only the most recent version of Singularity is installed.  
-The security risks associated with providing outdated builds of Singularity 
+and for security reasons only the most recent version of Singularity is installed.
+The security risks associated with providing outdated builds of Singularity
 are considered to outweigh the risk of upgrading to backwards incompatible versions.
 
 Singularity has been installed on all worker nodes using a RPM that was built in-house from the Singularity source.
-
-
-
