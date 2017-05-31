@@ -39,8 +39,8 @@ Building the documentation on a local Windows machine
 
 #. Create a new *conda environment* for building the documentation by running the following from this window: ::
 
-    conda create -n sheffield_hpc python=3.6 sphinx
-    pip install sphinx_bootstrap_theme
+    conda create -n sheffield_hpc python=3.6 
+    pip install -r requirements.txt
 
 #. To build the HTML documentation run: ::
 
@@ -73,7 +73,7 @@ Building the documentation on a local Linux machine
 
 #. Install the Python packages needed to build the HTML documentation: ::
 
-     pip3 install --requirement requirements.txt
+     pip3 install -r requirements.txt
 
 #. Build the documentation: ::
 
@@ -86,8 +86,8 @@ Building the documentation on a local Mac machine
 #. Install the Python packages needed to build the HTML documentation.  If you are using (mini)conda create a new *conda environment* for building the documentation by running: ::
 
     export PATH=${HOME}/miniconda3/bin:$PATH
-    conda create -n sheffield_hpc python=3.6 sphinx
-    pip install sphinx_bootstrap_theme
+    conda create -n sheffield_hpc python=3.6
+    pip install -r requirements.txt
 
    If you are *not* using (mini)conda to provide Python 3: ::
 
@@ -103,7 +103,7 @@ Building the documentation on a local Mac machine
 Continuous build and serve
 ##########################
 
-The package `sphinx-autobuild <https://github.com/GaretJax/sphinx-autobuild>`_ provides a watcher that automatically rebuilds the site as files are modified. To use it, install (in addition to the shpinx packages) with the following: ::
+The package `sphinx-autobuild <https://github.com/GaretJax/sphinx-autobuild>`_ provides a watcher that automatically rebuilds the site as files are modified. To use it, install (in addition to the Sphinx packages) with the following: ::
 
     pip install sphinx-autobuild
 
