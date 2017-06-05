@@ -10,8 +10,6 @@ prefix="/usr/local/packages/libs/geos/${geos_vers}/${compiler}-${compiler_vers}"
 
 modulefile="/usr/local/modulefiles/libs/geos/${geos_vers}/${compiler}-${compiler_vers}"
 
-workers=8
-
 # Signal handling for failure
 handle_error () {
     errcode=$? # save the exit code as the first thing done in the trap function 
@@ -41,7 +39,7 @@ module load dev/${compiler}/${compiler_vers}
 # Build and install
 pushd geos-${geos_vers}
 ./configure --prefix=${prefix}
-make -j${workers}
+make -j${OMP_NUM_THREADS-1}
 make install
 popd
 
