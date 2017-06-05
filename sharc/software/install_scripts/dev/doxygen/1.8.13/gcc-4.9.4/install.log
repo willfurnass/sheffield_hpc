@@ -1,0 +1,242 @@
+/scratch/te1st/doxygen-1.8.13 /scratch/te1st
+/scratch/te1st/doxygen-1.8.13/build /scratch/te1st/doxygen-1.8.13 /scratch/te1st
+-- The C compiler identification is GNU 4.9.4
+-- The CXX compiler identification is GNU 4.9.4
+-- Check for working C compiler: /usr/local/packages/dev/gcc/4.9.4/bin/gcc
+-- Check for working C compiler: /usr/local/packages/dev/gcc/4.9.4/bin/gcc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/local/packages/dev/gcc/4.9.4/bin/g++
+-- Check for working CXX compiler: /usr/local/packages/dev/gcc/4.9.4/bin/g++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found PythonInterp: /bin/python (found version "2.7.5") 
+-- Found FLEX: /bin/flex (found version "2.5.37") 
+-- Found BISON: /bin/bison (found version "2.7") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Looking for iconv_open
+-- Looking for iconv_open - found
+-- Performing Test ICONV_COMPILES
+-- Performing Test ICONV_COMPILES - Success
+-- Found ICONV: In glibc  
+-- One (and only one) of the ICONV_ACCEPTS_... tests must pass
+-- Performing Test ICONV_ACCEPTS_NONCONST_INPUT
+-- Performing Test ICONV_ACCEPTS_NONCONST_INPUT - Success
+-- Performing Test ICONV_ACCEPTS_CONST_INPUT
+-- Performing Test ICONV_ACCEPTS_CONST_INPUT - Failed
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /scratch/te1st/doxygen-1.8.13/build
+Scanning dependencies of target md5
+[  0%] [BISON][constexp] Building parser with bison 2.7
+[  0%] Generating ../generated_src/configvalues.h
+[  0%] Building C object libmd5/CMakeFiles/md5.dir/md5.c.o
+Scanning dependencies of target qtools
+[  0%] Generating /scratch/te1st/doxygen-1.8.13/build/generated_src/lang_cfg.h
+[  0%] Building CXX object qtools/CMakeFiles/qtools.dir/qbuffer.cpp.o
+Scanning dependencies of target vhdlparser
+[  1%] Generating ../generated_src/layout_default.xml.h
+[  2%] Building CXX object vhdlparser/CMakeFiles/vhdlparser.dir/CharStream.cc.o
+[  2%] Generating ../generated_src/ce_parse.h
+[  3%] Linking C static library ../lib/libmd5.a
+[  3%] Generating /scratch/te1st/doxygen-1.8.13/build/generated_src/resources.cpp
+[  3%] Built target md5
+[  4%] Building CXX object vhdlparser/CMakeFiles/vhdlparser.dir/ParseException.cc.o
+[  4%] Building CXX object qtools/CMakeFiles/qtools.dir/qcollection.cpp.o
+[  5%] Building CXX object qtools/CMakeFiles/qtools.dir/qcstring.cpp.o
+[  5%] Building CXX object qtools/CMakeFiles/qtools.dir/qdatastream.cpp.o
+[  6%] Building CXX object vhdlparser/CMakeFiles/vhdlparser.dir/Token.cc.o
+[  7%] Building CXX object qtools/CMakeFiles/qtools.dir/qdatetime.cpp.o
+[  8%] [FLEX][scanner] Building scanner with flex 2.5.37
+[  8%] Building CXX object vhdlparser/CMakeFiles/vhdlparser.dir/TokenMgrError.cc.o
+[  8%] Building CXX object qtools/CMakeFiles/qtools.dir/qdir.cpp.o
+[  9%] Building CXX object vhdlparser/CMakeFiles/vhdlparser.dir/VhdlParser.cc.o
+[  9%] [FLEX][code] Building scanner with flex 2.5.37
+[ 10%] [FLEX][pyscanner] Building scanner with flex 2.5.37
+[ 11%] Building CXX object qtools/CMakeFiles/qtools.dir/qfile.cpp.o
+[ 11%] Generating ../generated_src/configvalues.cpp
+[ 11%] [FLEX][pycode] Building scanner with flex 2.5.37
+[ 12%] [FLEX][fortranscanner] Building scanner with flex 2.5.37
+[ 12%] [FLEX][configimpl] Building scanner with flex 2.5.37
+[ 13%] Generating ../generated_src/configoptions.cpp
+[ 13%] Building CXX object qtools/CMakeFiles/qtools.dir/qfileinfo.cpp.o
+[ 14%] Building CXX object qtools/CMakeFiles/qtools.dir/qgarray.cpp.o
+Scanning dependencies of target doxycfg
+[ 15%] Building CXX object src/CMakeFiles/doxycfg.dir/__/generated_src/configimpl.cpp.o
+[ 15%] Building CXX object qtools/CMakeFiles/qtools.dir/qgcache.cpp.o
+[ 16%] Building CXX object qtools/CMakeFiles/qtools.dir/qgdict.cpp.o
+[ 16%] Building CXX object qtools/CMakeFiles/qtools.dir/qglist.cpp.o
+[ 16%] Building CXX object src/CMakeFiles/doxycfg.dir/__/generated_src/configoptions.cpp.o
+[ 17%] Building CXX object qtools/CMakeFiles/qtools.dir/qglobal.cpp.o
+[ 18%] Building CXX object qtools/CMakeFiles/qtools.dir/qgstring.cpp.o
+[ 19%] Building CXX object src/CMakeFiles/doxycfg.dir/__/generated_src/configvalues.cpp.o
+[ 19%] Building CXX object qtools/CMakeFiles/qtools.dir/qgvector.cpp.o
+[ 20%] Building CXX object qtools/CMakeFiles/qtools.dir/qiodevice.cpp.o
+[ 20%] Building CXX object qtools/CMakeFiles/qtools.dir/qregexp.cpp.o
+[ 21%] Building CXX object src/CMakeFiles/doxycfg.dir/portable.cpp.o
+[ 22%] Building CXX object qtools/CMakeFiles/qtools.dir/qstring.cpp.o
+[ 22%] Building C object src/CMakeFiles/doxycfg.dir/portable_c.c.o
+[ 23%] Linking CXX static library ../lib/libdoxycfg.a
+[ 24%] Built target doxycfg
+[ 24%] Building CXX object qtools/CMakeFiles/qtools.dir/qtextstream.cpp.o
+[ 24%] Building CXX object vhdlparser/CMakeFiles/vhdlparser.dir/VhdlParserTokenManager.cc.o
+[ 25%] Building CXX object vhdlparser/CMakeFiles/vhdlparser.dir/VhdlParserIF.cpp.o
+[ 26%] Building CXX object qtools/CMakeFiles/qtools.dir/qtextcodec.cpp.o
+[ 26%] Building CXX object qtools/CMakeFiles/qtools.dir/qstringlist.cpp.o
+[ 27%] Building CXX object qtools/CMakeFiles/qtools.dir/qxml.cpp.o
+[ 28%] Building CXX object qtools/CMakeFiles/qtools.dir/qmap.cpp.o
+[ 29%] Linking CXX static library ../lib/libvhdlparser.a
+[ 30%] [FLEX][fortrancode] Building scanner with flex 2.5.37
+[ 30%] Built target vhdlparser
+[ 30%] [FLEX][vhdlcode] Building scanner with flex 2.5.37
+[ 30%] Building CXX object qtools/CMakeFiles/qtools.dir/qthread.cpp.o
+[ 31%] Building CXX object qtools/CMakeFiles/qtools.dir/qmutex.cpp.o
+[ 31%] Building CXX object qtools/CMakeFiles/qtools.dir/qutfcodec.cpp.o
+[ 32%] [FLEX][tclscanner] Building scanner with flex 2.5.37
+[ 33%] Building CXX object qtools/CMakeFiles/qtools.dir/qfile_unix.cpp.o
+[ 33%] [FLEX][pre] Building scanner with flex 2.5.37
+[ 34%] [FLEX][declinfo] Building scanner with flex 2.5.37
+[ 34%] [FLEX][defargs] Building scanner with flex 2.5.37
+[ 34%] Building CXX object qtools/CMakeFiles/qtools.dir/qdir_unix.cpp.o
+[ 35%] [FLEX][doctokenizer] Building scanner with flex 2.5.37
+[ 35%] [FLEX][commentcnv] Building scanner with flex 2.5.37
+[ 36%] Building CXX object qtools/CMakeFiles/qtools.dir/qfileinfo_unix.cpp.o
+[ 37%] [FLEX][commentscan] Building scanner with flex 2.5.37
+[ 37%] [FLEX][constexp] Building scanner with flex 2.5.37
+[ 38%] [FLEX][xmlcode] Building scanner with flex 2.5.37
+[ 38%] Building CXX object qtools/CMakeFiles/qtools.dir/qthread_unix.cpp.o
+[ 39%] [FLEX][sqlcode] Building scanner with flex 2.5.37
+[ 40%] Building CXX object qtools/CMakeFiles/qtools.dir/qmutex_unix.cpp.o
+[ 40%] Building CXX object qtools/CMakeFiles/qtools.dir/qwaitcondition_unix.cpp.o
+[ 41%] Linking CXX static library ../lib/libqtools.a
+[ 41%] Built target qtools
+Scanning dependencies of target _doxygen
+[ 42%] Building CXX object src/CMakeFiles/_doxygen.dir/__/generated_src/scanner.cpp.o
+[ 43%] Building CXX object src/CMakeFiles/_doxygen.dir/__/generated_src/version.cpp.o
+[ 43%] Building CXX object src/CMakeFiles/_doxygen.dir/__/generated_src/code.cpp.o
+[ 43%] Building CXX object src/CMakeFiles/_doxygen.dir/__/generated_src/resources.cpp.o
+[ 44%] Building CXX object src/CMakeFiles/_doxygen.dir/__/generated_src/pyscanner.cpp.o
+[ 44%] Building CXX object src/CMakeFiles/_doxygen.dir/__/generated_src/pycode.cpp.o
+[ 45%] Building CXX object src/CMakeFiles/_doxygen.dir/__/generated_src/fortranscanner.cpp.o
+[ 46%] Building CXX object src/CMakeFiles/_doxygen.dir/__/generated_src/fortrancode.cpp.o
+[ 46%] Building CXX object src/CMakeFiles/_doxygen.dir/__/generated_src/vhdlcode.cpp.o
+[ 47%] Building CXX object src/CMakeFiles/_doxygen.dir/__/generated_src/tclscanner.cpp.o
+[ 47%] Building CXX object src/CMakeFiles/_doxygen.dir/__/generated_src/pre.cpp.o
+[ 48%] Building CXX object src/CMakeFiles/_doxygen.dir/__/generated_src/declinfo.cpp.o
+[ 48%] Building CXX object src/CMakeFiles/_doxygen.dir/__/generated_src/defargs.cpp.o
+[ 49%] Building CXX object src/CMakeFiles/_doxygen.dir/__/generated_src/doctokenizer.cpp.o
+[ 49%] Building CXX object src/CMakeFiles/_doxygen.dir/__/generated_src/commentcnv.cpp.o
+[ 50%] Building CXX object src/CMakeFiles/_doxygen.dir/__/generated_src/commentscan.cpp.o
+[ 50%] Building CXX object src/CMakeFiles/_doxygen.dir/__/generated_src/constexp.cpp.o
+[ 51%] Building CXX object src/CMakeFiles/_doxygen.dir/__/generated_src/xmlcode.cpp.o
+[ 52%] Building CXX object src/CMakeFiles/_doxygen.dir/__/generated_src/sqlcode.cpp.o
+[ 52%] Building CXX object src/CMakeFiles/_doxygen.dir/__/generated_src/ce_parse.cpp.o
+[ 53%] Building CXX object src/CMakeFiles/_doxygen.dir/plantuml.cpp.o
+[ 54%] Building CXX object src/CMakeFiles/_doxygen.dir/arguments.cpp.o
+[ 54%] Building CXX object src/CMakeFiles/_doxygen.dir/cite.cpp.o
+[ 54%] Building CXX object src/CMakeFiles/_doxygen.dir/clangparser.cpp.o
+[ 55%] Building CXX object src/CMakeFiles/_doxygen.dir/fileparser.cpp.o
+[ 56%] Building CXX object src/CMakeFiles/_doxygen.dir/classlist.cpp.o
+[ 56%] Building CXX object src/CMakeFiles/_doxygen.dir/classdef.cpp.o
+[ 57%] Building CXX object src/CMakeFiles/_doxygen.dir/cmdmapper.cpp.o
+[ 57%] Building CXX object src/CMakeFiles/_doxygen.dir/condparser.cpp.o
+[ 58%] Building CXX object src/CMakeFiles/_doxygen.dir/context.cpp.o
+[ 58%] Building CXX object src/CMakeFiles/_doxygen.dir/cppvalue.cpp.o
+[ 59%] Building CXX object src/CMakeFiles/_doxygen.dir/defgen.cpp.o
+[ 59%] Building CXX object src/CMakeFiles/_doxygen.dir/debug.cpp.o
+[ 60%] Building CXX object src/CMakeFiles/_doxygen.dir/define.cpp.o
+[ 61%] Building CXX object src/CMakeFiles/_doxygen.dir/diagram.cpp.o
+[ 61%] Building CXX object src/CMakeFiles/_doxygen.dir/definition.cpp.o
+[ 61%] Building CXX object src/CMakeFiles/_doxygen.dir/dirdef.cpp.o
+[ 62%] Building CXX object src/CMakeFiles/_doxygen.dir/docparser.cpp.o
+[ 63%] Building CXX object src/CMakeFiles/_doxygen.dir/docsets.cpp.o
+[ 63%] Building CXX object src/CMakeFiles/_doxygen.dir/dot.cpp.o
+[ 64%] Building CXX object src/CMakeFiles/_doxygen.dir/doxygen.cpp.o
+[ 64%] Building CXX object src/CMakeFiles/_doxygen.dir/eclipsehelp.cpp.o
+[ 65%] Building CXX object src/CMakeFiles/_doxygen.dir/entry.cpp.o
+[ 65%] Building CXX object src/CMakeFiles/_doxygen.dir/filedef.cpp.o
+[ 66%] Building CXX object src/CMakeFiles/_doxygen.dir/filename.cpp.o
+[ 66%] Building CXX object src/CMakeFiles/_doxygen.dir/formula.cpp.o
+[ 67%] Building CXX object src/CMakeFiles/_doxygen.dir/ftextstream.cpp.o
+[ 68%] Building CXX object src/CMakeFiles/_doxygen.dir/groupdef.cpp.o
+[ 68%] Building CXX object src/CMakeFiles/_doxygen.dir/ftvhelp.cpp.o
+[ 69%] Building CXX object src/CMakeFiles/_doxygen.dir/htags.cpp.o
+[ 69%] Building CXX object src/CMakeFiles/_doxygen.dir/htmldocvisitor.cpp.o
+[ 70%] Building CXX object src/CMakeFiles/_doxygen.dir/htmlentity.cpp.o
+[ 70%] Building CXX object src/CMakeFiles/_doxygen.dir/resourcemgr.cpp.o
+[ 71%] Building CXX object src/CMakeFiles/_doxygen.dir/htmlgen.cpp.o
+[ 71%] Building CXX object src/CMakeFiles/_doxygen.dir/htmlhelp.cpp.o
+[ 72%] Building CXX object src/CMakeFiles/_doxygen.dir/image.cpp.o
+[ 72%] Building CXX object src/CMakeFiles/_doxygen.dir/index.cpp.o
+[ 73%] Building CXX object src/CMakeFiles/_doxygen.dir/language.cpp.o
+[ 74%] Building CXX object src/CMakeFiles/_doxygen.dir/latexdocvisitor.cpp.o
+[ 74%] Building CXX object src/CMakeFiles/_doxygen.dir/latexgen.cpp.o
+[ 75%] Building CXX object src/CMakeFiles/_doxygen.dir/layout.cpp.o
+[ 75%] Building CXX object src/CMakeFiles/_doxygen.dir/lodepng.cpp.o
+[ 76%] Building CXX object src/CMakeFiles/_doxygen.dir/logos.cpp.o
+[ 76%] Building CXX object src/CMakeFiles/_doxygen.dir/mandocvisitor.cpp.o
+[ 77%] Building CXX object src/CMakeFiles/_doxygen.dir/mangen.cpp.o
+[ 77%] Building CXX object src/CMakeFiles/_doxygen.dir/sqlite3gen.cpp.o
+[ 78%] Building CXX object src/CMakeFiles/_doxygen.dir/markdown.cpp.o
+[ 79%] Building CXX object src/CMakeFiles/_doxygen.dir/marshal.cpp.o
+[ 79%] Building CXX object src/CMakeFiles/_doxygen.dir/memberdef.cpp.o
+[ 80%] Building CXX object src/CMakeFiles/_doxygen.dir/membergroup.cpp.o
+[ 80%] Building CXX object src/CMakeFiles/_doxygen.dir/memberlist.cpp.o
+[ 81%] Building CXX object src/CMakeFiles/_doxygen.dir/membername.cpp.o
+[ 81%] Building CXX object src/CMakeFiles/_doxygen.dir/message.cpp.o
+[ 82%] Building CXX object src/CMakeFiles/_doxygen.dir/msc.cpp.o
+[ 82%] Building CXX object src/CMakeFiles/_doxygen.dir/dia.cpp.o
+[ 83%] Building CXX object src/CMakeFiles/_doxygen.dir/namespacedef.cpp.o
+[ 83%] Building CXX object src/CMakeFiles/_doxygen.dir/objcache.cpp.o
+[ 84%] Building CXX object src/CMakeFiles/_doxygen.dir/outputgen.cpp.o
+[ 85%] Building CXX object src/CMakeFiles/_doxygen.dir/outputlist.cpp.o
+[ 85%] Building CXX object src/CMakeFiles/_doxygen.dir/pagedef.cpp.o
+[ 86%] Building CXX object src/CMakeFiles/_doxygen.dir/perlmodgen.cpp.o
+[ 86%] Building CXX object src/CMakeFiles/_doxygen.dir/qhp.cpp.o
+[ 87%] Building CXX object src/CMakeFiles/_doxygen.dir/qhpxmlwriter.cpp.o
+[ 87%] Building CXX object src/CMakeFiles/_doxygen.dir/reflist.cpp.o
+[ 88%] Building CXX object src/CMakeFiles/_doxygen.dir/rtfdocvisitor.cpp.o
+[ 88%] Building CXX object src/CMakeFiles/_doxygen.dir/rtfgen.cpp.o
+[ 89%] Building CXX object src/CMakeFiles/_doxygen.dir/rtfstyle.cpp.o
+[ 89%] Building CXX object src/CMakeFiles/_doxygen.dir/searchindex.cpp.o
+[ 90%] Building CXX object src/CMakeFiles/_doxygen.dir/store.cpp.o
+[ 91%] Building CXX object src/CMakeFiles/_doxygen.dir/tagreader.cpp.o
+[ 91%] Building CXX object src/CMakeFiles/_doxygen.dir/template.cpp.o
+[ 92%] Building CXX object src/CMakeFiles/_doxygen.dir/textdocvisitor.cpp.o
+[ 92%] Building CXX object src/CMakeFiles/_doxygen.dir/tooltip.cpp.o
+[ 93%] Building CXX object src/CMakeFiles/_doxygen.dir/util.cpp.o
+[ 93%] Building CXX object src/CMakeFiles/_doxygen.dir/vhdldocgen.cpp.o
+[ 94%] Building CXX object src/CMakeFiles/_doxygen.dir/vhdljjparser.cpp.o
+[ 94%] Building CXX object src/CMakeFiles/_doxygen.dir/xmldocvisitor.cpp.o
+[ 95%] Building CXX object src/CMakeFiles/_doxygen.dir/xmlgen.cpp.o
+[ 96%] Building CXX object src/CMakeFiles/_doxygen.dir/docbookvisitor.cpp.o
+[ 96%] Building CXX object src/CMakeFiles/_doxygen.dir/docbookgen.cpp.o
+[ 97%] Linking CXX static library ../lib/lib_doxygen.a
+[ 98%] Built target _doxygen
+Scanning dependencies of target doxygen
+[ 98%] Building CXX object src/CMakeFiles/doxygen.dir/main.cpp.o
+[100%] Linking CXX executable ../bin/doxygen
+[100%] Built target doxygen
+[  1%] Built target md5
+[ 19%] Built target qtools
+[ 24%] Built target vhdlparser
+[ 92%] Built target _doxygen
+[ 98%] Built target doxycfg
+[100%] Built target doxygen
+Install the project...
+-- Install configuration: ""
+-- Installing: /usr/local/packages/dev/doxygen/1.8.13/gcc-4.9.4/bin/doxygen
+/scratch/te1st/doxygen-1.8.13 /scratch/te1st
+/scratch/te1st
