@@ -1,0 +1,19 @@
+#%Module1.0#####################################################################
+##
+## geos 3.4.2 module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+    puts stderr "Makes the geos 3.4.2 library available"
+}
+
+set geosdir /usr/local/packages/libs/geos/3.4.2/gcc-4.9.4
+
+module-whatis "Makes the geos 3.4.2 library available"
+
+prepend-path LD_LIBRARY_PATH $geosdir/lib
+prepend-path PATH $geosdir/bin
