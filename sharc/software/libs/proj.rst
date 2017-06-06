@@ -46,8 +46,41 @@ This section is primarily for administrators of the system.
 PROJ.4 4.9.3 was compiled with v4.9.4 of the GCC compiler suite.
 
 #. ``cd`` to a scratch directory.
-#. Download, build and install PROJ.4 using `install_proj_4.9.3.sh <https://github.com/mikecroucher/HPC_Installers/blob/master/libs/proj/4.9.3/sheffield/iceberg/install_proj_4.9.3.sh>`_.  Files are installed into ``/usr/local/packages6/libs/gcc/6.2/proj/4.9.3/``
-#. Install `this modulefile <https://github.com/mikecroucher/HPC_Installers/blob/master/libs/proj/4.9.3/sheffield/iceberg/proj_4.9.3_modulefile>`_ as ``/usr/local/modulefiles/libs/gcc/6.2/proj/4.9.3``
-
 #. Download, build and install using :download:`this script </sharc/software/install_scripts/libs/proj/4.9.3/gcc-4.9.4/install.sh>`, ensuring that all stderr and stdout is redirected to :download:`a log file </sharc/software/install_scripts/libs/proj/4.9.3/gcc-4.9.4/install.log>`. 
 #. Install :download:`this modulefile </sharc/software/modulefiles/libs/proj/4.9.3/gcc-4.9.4>` as ``/usr/local/modulefiles/libs/proj/4.9.3/gcc-4.9.4``
+
+Test by running ``make check`` from the build directory.  For this build this yielded: ::
+
+    ============================================                                                             
+    Running ../nad/test27 using ../src/proj:            
+    ============================================                                                             
+    doing tests into file proj_out27, please wait       
+    diff proj_out27 with pj_out27.dist
+    TEST OK
+    test file proj_out27 removed
+
+    ../nad/test83 ../src/proj
+    ============================================
+    Running ../nad/test83 using ../src/proj:
+    ============================================
+    doing tests into file proj_out83, please wait
+    diff proj_out83 with pj_out83.dist
+    TEST OK
+    test file proj_out83 removed
+
+    PROJ_LIB=. ../nad/testvarious ../src/cs2cs
+    Using locale with comma as decimal separator
+    ============================================
+    Running ../nad/testvarious using ../src/cs2cs:
+    ============================================
+    doing tests into file tv_out, please wait
+    Rel. 4.9.3, 15 August 2016
+    <lt-cs2cs>: while processing file: <stdin>, line 1
+    pj_transform(): invalid x or y
+    Rel. 4.9.3, 15 August 2016
+    <lt-cs2cs>: while processing file: <stdin>, line 2
+    pj_transform(): acos/asin: |arg| >1.+1e-14
+    diff tv_out with tv_out.dist
+    TEST OK
+    test file tv_out removed
+

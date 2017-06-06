@@ -1,7 +1,7 @@
 #!/bin/bash
 
 geos_vers=3.6.1
-geos_tarball="geos-${geos_vers}.tar.gz"
+geos_tarball="geos-${geos_vers}.tar.bz2"
 geos_tarball_url="http://download.osgeo.org/geos/${geos_tarball}"
 compiler=gcc
 compiler_vers=4.9.4
@@ -23,7 +23,7 @@ trap handle_error ERR
 # Download and unpack tarball
 [[ -f $geos_tarball ]] || wget $geos_tarball_url
 if ! [[ -f .geos_tarball_unpacked ]]; then
-    tar -zxf ${geos_tarball}
+    tar -jxf ${geos_tarball}
     touch .geos_tarball_unpacked 
 fi
 

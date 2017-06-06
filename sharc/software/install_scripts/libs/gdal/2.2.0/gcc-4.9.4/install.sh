@@ -37,6 +37,7 @@ done
 # Activate a compiler
 module purge
 module load dev/${compiler}/${compiler_vers}
+module load apps/doxygen/1.8.13/${compiler}-${compiler_vers}
 
 # Build and install
 pushd gdal-${gdal_vers}

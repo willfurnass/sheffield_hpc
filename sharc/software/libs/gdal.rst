@@ -78,7 +78,8 @@ This section is primarily for administrators of the system.
 
 GDAL 2.2.0 was compiled with v4.9.4 of the GCC compiler suite.
 
-#. Download, configure, build, test and install using :download:`this script </sharc/software/install_scripts/libs/gdal/2.2.0/gcc-4.9.4/install.sh>`, ensuring that all stderr and stdout is redirected to :download:`a log file </sharc/software/install_scripts/libs/gdal/2.2.0/gcc-4.9.4/install.log>`. 
+#. Download, configure, build and install by switching to a scratch directory and running :download:`this script </sharc/software/install_scripts/libs/gdal/2.2.0/gcc-4.9.4/install.sh>`, ensuring that all stderr and stdout is redirected to :download:`a log file </sharc/software/install_scripts/libs/gdal/2.2.0/gcc-4.9.4/install.log>`. 
+#  Test by 
 #. Install :download:`this modulefile </sharc/software/modulefiles/libs/gdal/2.2.0/gcc-4.9.4>` as ``/usr/local/modulefiles/libs/gdal/2.2.0/gcc-4.9.4``
 
 The **file formats** supported by this build are listed in the compilation log file.

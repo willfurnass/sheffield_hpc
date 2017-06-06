@@ -1,6 +1,6 @@
 #%Module1.0#####################################################################
 ##
-## geos 3.4.2 module file
+## geos module file
 ##
 
 ## Module file logging
@@ -8,12 +8,22 @@ source /usr/local/etc/module_logging.tcl
 ##
 
 proc ModulesHelp { } {
-    puts stderr "Makes the geos 3.4.2 library available"
+    global $helpmsg
+    puts stderr "\t$helpmsg"
 }
 
-set geosdir /usr/local/packages/libs/geos/3.4.2/gcc-4.9.4
+set vers         3.6.1
+set compiler     gcc
+set compilervers 4.9.4
 
-module-whatis "Makes the geos 3.4.2 library available"
+set helpmsg      "Activate geos library version $vers (plus $compiler $compilervers)"
+module-whatis $helpmsg
+
+set geosdir /usr/local/packages/libs/geos/$vers/$compiler-$compilervers
+
+# Need a particular version of the C++ std lib
+module load dev/$compiler/$compilervers
 
 prepend-path LD_LIBRARY_PATH $geosdir/lib
+prepend-path CPATH $geosdir/include
 prepend-path PATH $geosdir/bin

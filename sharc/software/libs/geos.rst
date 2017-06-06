@@ -16,10 +16,9 @@ To make this library available, run the following module commands
 
 .. code-block:: none
 
-    module load compilers/gcc/4.8.2
-    module load libs/gcc/4.8.2/geos/3.6.1
+    module load libs/geos/3.6.1/gcc-4.9.4
 
-We load version 4.8.2 of gcc since gcc 4.8.2 was used to build this version of geos.
+This also activates version 4.9.4 of the GCC compiler suite (as its C++ standard library is required by GEOS)
 
 The rgeos interface in R
 ------------------------
@@ -59,12 +58,20 @@ Potentially useful output at the end of the configure run ::
     Swig: false
     Python bindings: false
     Ruby bindings: false
-    PHP bindings: false
+
+The build was tested by running ``make check`` from the build directory: ::
+
+    # TOTAL: 1
+    # PASS:  1
+    # SKIP:  0
+    # XFAIL: 0
+    # FAIL:  0
+    # XPASS: 0
 
 Testing
 -------
 
-Compile and run the test-suite with ::
+Compile and run the test suite from the build directory using: ::
 
   make check
 

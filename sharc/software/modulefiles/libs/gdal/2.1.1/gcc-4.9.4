@@ -19,10 +19,10 @@ set compilervers 4.9.4
 
 module-whatis   "Activate v$gdalversion of the GDAL translator library (plus $compiler $compilervers) for raster and vector geospatial data formats"
 
-set gdalroot /usr/local/packages/libs/gdal/$gdalversion/$compiler/$compilervers/
+set gdalroot /usr/local/packages/libs/gdal/$gdalversion/$compiler-$compilervers/
 
 # Need a particular version of the C++ std lib
-module load dev/$compiler/$compilervers
+module load dev/$compiler-$compilervers
 
 prepend-path CPATH $gdalroot/include
 prepend-path LIBRARY_PATH $gdalroot/lib/
