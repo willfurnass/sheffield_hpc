@@ -1,5 +1,5 @@
 OpenFOAM
-=====
+========
 
 .. sidebar:: OpenFOAM
    
