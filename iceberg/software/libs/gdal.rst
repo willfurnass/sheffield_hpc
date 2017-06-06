@@ -8,7 +8,7 @@ Geospatial Data Abstraction Library (GDAL)
    :Latest version: 2.1.1
    :URL: http://www.gdal.org/
 
-GDAL is a library used by many Geographic Information Systems (GIS) packages for converting between many different raster and vector GIS data formats.  It also includes command-line utilities for data translation and processing.  It is released under an an X/MIT style Open Source license by the [Open Source Geospatial Foundation](http://www.osgeo.org/).
+GDAL is a library used by many Geographic Information Systems (GIS) packages for converting between many different raster and vector GIS data formats.  It also includes command-line utilities for data translation and processing.  It is released under an an X/MIT style Open Source license by the `Open Source Geospatial Foundation <http://www.osgeo.org>`_.
 
 Usage
 -----
@@ -28,29 +28,30 @@ You can run ``gdal-config --version`` to test that you are running the required 
     2.1.1
 
 The command-line programs that GDAL provides are ::
-    $ gdaladdo
-    $ gdalbuildvrt
-    $ gdal-config
-    $ gdal_contour
-    $ gdaldem
-    $ gdalenhance
-    $ gdal_grid
-    $ gdalinfo
-    $ gdallocationinfo
-    $ gdalmanage
-    $ gdal_rasterize
-    $ gdalserver
-    $ gdalsrsinfo
-    $ gdaltindex
-    $ gdaltransform
-    $ gdal_translate
-    $ gdalwarp
-    $ nearblack
-    $ ogr2ogr
-    $ ogrinfo
-    $ ogrlineref
-    $ ogrtindex
-    $ testepsg
+
+* ``gdaladdo``
+* `gdalbuildvrt``
+* `gdal-config``
+* `gdal_contour``
+* `gdaldem``
+* `gdalenhance``
+* `gdal_grid``
+* `gdalinfo``
+* `gdallocationinfo``
+* `gdalmanage``
+* `gdal_rasterize``
+* `gdalserver``
+* `gdalsrsinfo``
+* `gdaltindex``
+* `gdaltransform``
+* `gdal_translate``
+* `gdalwarp``
+* `nearblack``
+* `ogr2ogr``
+* `ogrinfo``
+* `ogrlineref``
+* `ogrtindex``
+* `testepsg``
 
 The ``gdal...`` utilities are mostly for processing raster GIS data formats, whilst the ``ogr...`` utilities are for processing vector GIS data formats.
 
