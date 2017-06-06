@@ -67,12 +67,3 @@ The build was tested by running ``make check`` from the build directory: ::
     # XFAIL: 0
     # FAIL:  0
     # XPASS: 0
-
-Testing
--------
-
-Compile and run the test suite from the build directory using: ::
-
-  make check
-
-All tests passed.

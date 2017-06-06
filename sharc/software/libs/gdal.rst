@@ -8,7 +8,7 @@ Geospatial Data Abstraction Library (GDAL)
    :Latest version: 2.2.0
    :URL: http://www.gdal.org/
 
-GDAL is a library used by many Geographic Information Systems (GIS) packages for converting between many different raster and vector GIS data formats.  It also includes command-line utilities for data translation and processing.  It is released under an an X/MIT style Open Source license by the [Open Source Geospatial Foundation](http://www.osgeo.org/).
+GDAL is a library used by many Geographic Information Systems (GIS) packages for converting between many different raster and vector GIS data formats.  It also includes command-line utilities for data translation and processing.  It is released under an an X/MIT style Open Source license by the `Open Source Geospatial Foundation <http://www.osgeo.org/>`_.
 
 Usage
 -----
@@ -28,30 +28,31 @@ You can run ``gdal-config --version`` to test that you are running the required 
     $ gdal-config --version
     2.2.0
 
-The command-line programs that GDAL provides are ::
-    $ gdaladdo
-    $ gdalbuildvrt
-    $ gdal-config
-    $ gdal_contour
-    $ gdaldem
-    $ gdalenhance
-    $ gdal_grid
-    $ gdalinfo
-    $ gdallocationinfo
-    $ gdalmanage
-    $ gdal_rasterize
-    $ gdalserver
-    $ gdalsrsinfo
-    $ gdaltindex
-    $ gdaltransform
-    $ gdal_translate
-    $ gdalwarp
-    $ nearblack
-    $ ogr2ogr
-    $ ogrinfo
-    $ ogrlineref
-    $ ogrtindex
-    $ testepsg
+The command-line programs that GDAL provides are:
+
+* ``gdaladdo``
+* ``gdalbuildvrt``
+* ``gdal-config``
+* ``gdal_contour``
+* ``gdaldem``
+* ``gdalenhance``
+* ``gdal_grid``
+* ``gdalinfo``
+* ``gdallocationinfo``
+* ``gdalmanage``
+* ``gdal_rasterize``
+* ``gdalserver``
+* ``gdalsrsinfo``
+* ``gdaltindex``
+* ``gdaltransform``
+* ``gdal_translate``
+* ``gdalwarp``
+* ``nearblack``
+* ``ogr2ogr``
+* ``ogrinfo``
+* ``ogrlineref``
+* ``ogrtindex``
+* ``testepsg``
 
 The ``gdal...`` utilities are mostly for processing raster GIS data formats, whilst the ``ogr...`` utilities are for processing vector GIS data formats.
 
@@ -79,7 +80,6 @@ This section is primarily for administrators of the system.
 GDAL 2.2.0 was compiled with v4.9.4 of the GCC compiler suite.
 
 #. Download, configure, build and install by switching to a scratch directory and running :download:`this script </sharc/software/install_scripts/libs/gdal/2.2.0/gcc-4.9.4/install.sh>`, ensuring that all stderr and stdout is redirected to :download:`a log file </sharc/software/install_scripts/libs/gdal/2.2.0/gcc-4.9.4/install.log>`. 
-#  Test by 
 #. Install :download:`this modulefile </sharc/software/modulefiles/libs/gdal/2.2.0/gcc-4.9.4>` as ``/usr/local/modulefiles/libs/gdal/2.2.0/gcc-4.9.4``
 
 The **file formats** supported by this build are listed in the compilation log file.
