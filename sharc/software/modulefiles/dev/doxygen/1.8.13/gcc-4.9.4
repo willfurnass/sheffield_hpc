@@ -1,0 +1,21 @@
+#%Module10.2#####################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+    global helpmsg
+    puts stderr "\t$helpmsg\n"
+}
+
+set vers 1.8.13
+set compiler gcc
+set compilervers 4.9.4
+
+set doxygenroot /usr/local/packages/dev/doxygen/$vers/$compiler-$compilervers
+set helpmsg "Activate doxygen $vers (and $compiler $compilervers)"
+
+module-whatis $helpmsg
+
+prepend-path PATH $doxygenroot/bin
