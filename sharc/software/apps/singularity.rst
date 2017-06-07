@@ -210,4 +210,4 @@ and for security reasons only the most recent version of Singularity is installe
 The security risks associated with providing outdated builds of Singularity
 are considered to outweigh the risk of upgrading to backwards incompatible versions.
 
-Singularity has been installed on all worker nodes using a RPM that was built in-house from the Singularity source.
+Singularity has been installed on all worker nodes using the latest RPM package from the `EPEL <https://fedoraproject.org/wiki/EPEL>`_ repository.
