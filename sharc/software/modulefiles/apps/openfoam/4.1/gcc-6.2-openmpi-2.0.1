@@ -1,0 +1,57 @@
+#%Module1.0#####################################################################
+##
+## OpenFOAM 4.1 module file
+##
+#  By David M. Rogers June 2017
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes OpenFOAM Version 4.1 available for use"
+}
+
+set USER $::env(USER)
+
+module-whatis   "Makes OpenFOAM V4.1 available"
+
+# load modules
+ module load dev/gcc/6.2
+ module load mpi/openmpi/2.0.1/gcc-6.2
+
+# module variables
+#
+ set     version 4.1
+ set     openfoamroot /usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1
+
+# below edited from env after source /usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/etc/bashrc
+setenv FOAM_SOLVERS /usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/OpenFOAM-4.1/applications/solvers
+setenv FOAM_EXT_LIBBIN /usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/ThirdParty-4.1/platforms/linux64GccDPInt32/lib
+setenv FOAM_APPBIN /usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/OpenFOAM-4.1/platforms/linux64GccDPInt32Opt/bin
+setenv FOAM_TUTORIALS /usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/OpenFOAM-4.1/tutorials
+setenv FOAM_JOB_DIR /usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/jobControl
+setenv FOAM_SITE_APPBIN /usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/site/4.1/platforms/linux64GccDPInt32Opt/bin
+setenv FOAM_APP /usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/OpenFOAM-4.1/applications
+setenv FOAM_SITE_LIBBIN /usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/site/4.1/platforms/linux64GccDPInt32Opt/lib
+prepend-path LD_LIBRARY_PATH /usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/ThirdParty-4.1/platforms/linux64Gcc/gperftools-svn/lib:/usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/ThirdParty-4.1/platforms/linux64Gcc/ParaView-5.0.1/lib/paraview-5.0:/usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/OpenFOAM-4.1/platforms/linux64GccDPInt32Opt/lib/openmpi-system:/usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/ThirdParty-4.1/platforms/linux64GccDPInt32/lib/openmpi-system:/usr/local/packages/mpi/openmpi/2.0.1/gcc-6.2/lib:/home/$USER/OpenFOAM/$USER-4.1/platforms/linux64GccDPInt32Opt/lib:/usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/site/4.1/platforms/linux64GccDPInt32Opt/lib:/usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/OpenFOAM-4.1/platforms/linux64GccDPInt32Opt/lib:/usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/ThirdParty-4.1/platforms/linux64GccDPInt32/lib:/usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/OpenFOAM-4.1/platforms/linux64GccDPInt32Opt/lib/dummy:/usr/local/packages/dev/gcc/6.2.0/lib:/usr/local/packages/dev/gcc/6.2.0/lib64
+setenv FOAM_SRC /usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/OpenFOAM-4.1/src
+setenv FOAM_SIGFPE ""
+setenv FOAM_UTILITIES /usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/OpenFOAM-4.1/applications/utilities
+setenv WM_PROJECT_DIR /usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/OpenFOAM-4.1
+setenv WM_PROJECT OpenFOAM
+prepend-path PATH /usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/ThirdParty-4.1/platforms/linux64Gcc/gperftools-svn/bin:/usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/ThirdParty-4.1/platforms/linux64Gcc/ParaView-5.0.1/bin:/home/$USER/OpenFOAM/$USER-4.1/platforms/linux64GccDPInt32Opt/bin:/usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/site/4.1/platforms/linux64GccDPInt32Opt/bin:/usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/OpenFOAM-4.1/platforms/linux64GccDPInt32Opt/bin:/usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/OpenFOAM-4.1/bin:/usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/OpenFOAM-4.1/wmake:/usr/local/packages/mpi/openmpi/2.0.1/gcc-6.2/bin:/usr/local/packages/dev/gcc/6.2.0/bin:/usr/local/scripts/:/usr/lib64/qt-3.3/bin:/usr/local/sge/live/bin/lx-amd64:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/singularity/bin:/home/$USER/bin
+setenv FOAM_USER_LIBBIN /home/$USER/OpenFOAM/$USER-4.1/platforms/linux64GccDPInt32Opt/lib
+setenv FOAM_ETC /usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/OpenFOAM-4.1/etc
+setenv PV_PLUGIN_PATH /usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/OpenFOAM-4.1/platforms/linux64GccDPInt32Opt/lib/paraview-5.0
+setenv FOAM_INST_DIR /usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1
+setenv FOAM_MPI openmpi-system
+setenv FOAM_LIBBIN /usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/OpenFOAM-4.1/platforms/linux64GccDPInt32Opt/lib
+setenv WM_DIR /usr/local/packages/apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1/OpenFOAM-4.1/wmake
+setenv FOAM_SETTINGS ""
+setenv WM_PROJECT_USER_DIR /home/$USER/OpenFOAM/$USER-4.1
+setenv FOAM_RUN /home/$USER/OpenFOAM/$USER-4.1/run
+setenv FOAM_USER_APPBIN /home/$USER/OpenFOAM/$USER-4.1/platforms/linux64GccDPInt32Opt/bin
