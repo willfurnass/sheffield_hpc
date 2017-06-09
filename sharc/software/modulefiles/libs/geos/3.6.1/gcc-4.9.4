@@ -1,0 +1,29 @@
+#%Module1.0#####################################################################
+##
+## geos module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+    global $helpmsg
+    puts stderr "\t$helpmsg"
+}
+
+set vers         3.6.1
+set compiler     gcc
+set compilervers 4.9.4
+
+set helpmsg      "Activate geos library version $vers (plus $compiler $compilervers)"
+module-whatis $helpmsg
+
+set geosdir /usr/local/packages/libs/geos/$vers/$compiler-$compilervers
+
+# Need a particular version of the C++ std lib
+module load dev/$compiler/$compilervers
+
+prepend-path LD_LIBRARY_PATH $geosdir/lib
+prepend-path CPATH $geosdir/include
+prepend-path PATH $geosdir/bin

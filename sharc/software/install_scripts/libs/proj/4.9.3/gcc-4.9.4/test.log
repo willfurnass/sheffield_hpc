@@ -1,0 +1,74 @@
+Making check in src
+make[1]: Entering directory `/scratch/te1st/proj-4.9.3/src'
+make[1]: Leaving directory `/scratch/te1st/proj-4.9.3/src'
+Making check in man
+make[1]: Entering directory `/scratch/te1st/proj-4.9.3/man'
+Making check in man1
+make[2]: Entering directory `/scratch/te1st/proj-4.9.3/man/man1'
+make[2]: Nothing to be done for `check'.
+make[2]: Leaving directory `/scratch/te1st/proj-4.9.3/man/man1'
+Making check in man3
+make[2]: Entering directory `/scratch/te1st/proj-4.9.3/man/man3'
+make[2]: Nothing to be done for `check'.
+make[2]: Leaving directory `/scratch/te1st/proj-4.9.3/man/man3'
+make[2]: Entering directory `/scratch/te1st/proj-4.9.3/man'
+make[2]: Nothing to be done for `check-am'.
+make[2]: Leaving directory `/scratch/te1st/proj-4.9.3/man'
+make[1]: Leaving directory `/scratch/te1st/proj-4.9.3/man'
+Making check in nad
+make[1]: Entering directory `/scratch/te1st/proj-4.9.3/nad'
+make  check-local
+make[2]: Entering directory `/scratch/te1st/proj-4.9.3/nad'
+../nad/test27 ../src/proj
+============================================
+Running ../nad/test27 using ../src/proj:
+============================================
+doing tests into file proj_out27, please wait
+diff proj_out27 with pj_out27.dist
+TEST OK
+test file proj_out27 removed
+
+../nad/test83 ../src/proj
+============================================
+Running ../nad/test83 using ../src/proj:
+============================================
+doing tests into file proj_out83, please wait
+diff proj_out83 with pj_out83.dist
+TEST OK
+test file proj_out83 removed
+
+PROJ_LIB=. ../nad/testvarious ../src/cs2cs
+Using locale with comma as decimal separator
+============================================
+Running ../nad/testvarious using ../src/cs2cs:
+============================================
+doing tests into file tv_out, please wait
+diff tv_out with tv_out.dist
+TEST OK
+test file tv_out removed
+
+make[2]: Leaving directory `/scratch/te1st/proj-4.9.3/nad'
+make[1]: Leaving directory `/scratch/te1st/proj-4.9.3/nad'
+Making check in jniwrap
+make[1]: Entering directory `/scratch/te1st/proj-4.9.3/jniwrap'
+Making check in org
+make[2]: Entering directory `/scratch/te1st/proj-4.9.3/jniwrap/org'
+Making check in proj4
+make[3]: Entering directory `/scratch/te1st/proj-4.9.3/jniwrap/org/proj4'
+make[3]: Nothing to be done for `check'.
+make[3]: Leaving directory `/scratch/te1st/proj-4.9.3/jniwrap/org/proj4'
+make[3]: Entering directory `/scratch/te1st/proj-4.9.3/jniwrap/org'
+make[3]: Nothing to be done for `check-am'.
+make[3]: Leaving directory `/scratch/te1st/proj-4.9.3/jniwrap/org'
+make[2]: Leaving directory `/scratch/te1st/proj-4.9.3/jniwrap/org'
+make[2]: Entering directory `/scratch/te1st/proj-4.9.3/jniwrap'
+make[2]: Nothing to be done for `check-am'.
+make[2]: Leaving directory `/scratch/te1st/proj-4.9.3/jniwrap'
+make[1]: Leaving directory `/scratch/te1st/proj-4.9.3/jniwrap'
+Making check in cmake
+make[1]: Entering directory `/scratch/te1st/proj-4.9.3/cmake'
+make[1]: Nothing to be done for `check'.
+make[1]: Leaving directory `/scratch/te1st/proj-4.9.3/cmake'
+make[1]: Entering directory `/scratch/te1st/proj-4.9.3'
+make[1]: Nothing to be done for `check-am'.
+make[1]: Leaving directory `/scratch/te1st/proj-4.9.3'

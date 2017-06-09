@@ -27,10 +27,10 @@ Singularity images are self-contained virtual machines similar to Docker. For mo
 
 A symlinked file is provided that always point to the latest image: ::
 
-  #CPU Caffe
+  #CPU Tensorflow
   /usr/local/packages/singularity/images/tensorflow/cpu.img
 
-  #GPU Caffe
+  #GPU Tensorflow
   /usr/local/packages/singularity/images/tensorflow/gpu.img
 
 To get a bash terminal in to an image for example, use the command: ::

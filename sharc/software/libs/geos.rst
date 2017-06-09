@@ -1,15 +1,12 @@
-.. _geos:
+.. _geos_sharc:
 
 geos
 ====
 
 .. sidebar:: geos
 
-   :Version: 3.4.2
-   :Support Level: Bronze
-   :Dependancies: compilers/gcc/4.8.2
+   :Version: 3.6.1
    :URL: http://trac.osgeo.org/geos/
-   :Location: /usr/local/packages6/libs/gcc/4.8.2/geos/3.4.2
 
 GEOS (Geometry Engine, Open Source) is a C/C++ port of a subset of 
 the `Java Topology Suite <http://locationtech.github.io/jts/>`_ (JTS), 
@@ -26,20 +23,19 @@ To make this library available, run the following module commands
 
 .. code-block:: none
 
-    module load compilers/gcc/4.8.2
-    module load libs/gcc/4.8.2/geos/3.4.2
+    module load libs/geos/3.6.1/gcc-4.9.4
 
-We load version 4.8.2 of gcc since gcc 4.8.2 was used to build this version of geos.
+This also activates version 4.9.4 of the GCC compiler suite (as its C++ standard library is required by GEOS)
 
 The rgeos interface in R
 ------------------------
 rgeos is a CRAN package that provides an R interface to geos. It is not installed in R by default so you need to install a version in your home directory.
 
-After connecting to iceberg (see :ref:`ssh`), start an interactive session with the :code:`qrsh` or :code:`qsh` command. Run the following module commands ::
+After connecting to ShARC (see :ref:`ssh`), start an interactive session (e.g. using the :code:`qrshx` command). Run the following module commands ::
 
     module load apps/R/3.2.0
     module load compilers/gcc/4.8.2
-    module load libs/gcc/4.8.2/geos/3.4.2
+    module load libs/gcc/4.8.2/geos/3.6.1
 
 Launch R and run the command ::
 
@@ -57,59 +53,24 @@ Installation notes
 ------------------
 This section is primarily for administrators of the system.
 
-.. code-block:: none
+**Version 3.6.1**
 
-    qrsh
-    tar -xvjf ./geos-3.4.2.tar.bz2
-    cd geos-3.4.2
-    mkdir -p /usr/local/packages6/libs/gcc/4.8.2/geos/3.4.2
-    module load compilers/gcc/4.8.2
-    ./configure prefix=/usr/local/packages6/libs/gcc/4.8.2/geos/3.4.2
+GEOS 3.6.1 was compiled with v4.9.4 of the GCC compiler suite.
+
+#. Download, configure, build, test and install using :download:`this script </sharc/software/install_scripts/libs/geos/3.6.1/gcc-4.9.4/install.sh>`, ensuring that all stderr and stdout is redirected to :download:`a log file </sharc/software/install_scripts/libs/geos/3.6.1/gcc-4.9.4/install.log>`. 
+#. Install :download:`this modulefile </sharc/software/modulefiles/libs/geos/3.6.1/gcc-4.9.4>` as ``/usr/local/modulefiles/libs/geos/3.6.1/gcc-4.9.4``
 
 Potentially useful output at the end of the configure run ::
 
     Swig: false
     Python bindings: false
     Ruby bindings: false
-    PHP bindings: false
 
-Once the configuration was complete, I did ::
+The build was tested by running ``make check`` from the build directory: ::
 
-	make
-	make install
-
-Testing
--------
-
-Compile and run the test-suite with ::
-
-  make check
-
-All tests passed.
-
-Module File
------------
-Module File Location: ``/usr/local/modulefiles/libs/gcc/4.8.2/geos/3.4.2``
-
-.. code-block:: none
-
-    more /usr/local/modulefiles/libs/gcc/4.8.2/geos/3.4.2
-    #%Module1.0#####################################################################
-    ##
-    ## geos 3.4.2 module file
-    ##
-
-    ## Module file logging
-    source /usr/local/etc/module_logging.tcl
-    ##
-
-    proc ModulesHelp { } {
-            puts stderr "Makes the geos 3.4.2 library available"
-    }
-
-    set GEOS_DIR /usr/local/packages6/libs/gcc/4.8.2/geos/3.4.2
-
-    module-whatis   "Makes the geos 3.4.2 library available"
-
-    prepend-path LD_LIBRARY_PATH $GEOS_DIR/lib
-    prepend-path PATH $GEOS_DIR/bin
+    # TOTAL: 1
+    # PASS:  1
+    # SKIP:  0
+    # XFAIL: 0
+    # FAIL:  0
+    # XPASS: 0
