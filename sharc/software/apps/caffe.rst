@@ -40,9 +40,11 @@ The ``exec`` command can also be used to call any command/script inside the imag
 
   singularity exec /usr/local/packages/singularity/images/caffe/gpu.img caffe train -solver=your_solver.prototxt
 
+You may get a warning similar to ``groups: cannot find name for group ID ...``, this can be ignored and will not have an affect on running the image.
+
 The paths ``/fastdata``, ``/data``, ``/home``, ``/scratch``, ``/shared`` are automatically mounted to your ShARC filestore directories. For GPU-enabled images the ``/nvlib`` and ``/nvbin`` is mounted to the correct Nvidia driver version for the node that you're using.
 
-**To submit jobs that uses a Singularity image, see** :ref:`use_image_batch_singularity_sharc` **for more detail.** 
+**To submit jobs that uses a Singularity image, see** :ref:`use_image_batch_singularity_sharc` **for more detail.**
 
 
 Image Index
@@ -56,13 +58,17 @@ Paths to the actual images and definition files are provided below for downloadi
     * GPU
         * ``/usr/local/packages/singularity/images/caffe/gpu.img``
 * CPU Images
-    * Latest: rc5-CPU-Ubuntu16.04 (Python 2.7)
-        * Path: ``/usr/local/packages/singularity/images/caffe/rc5-CPU-Ubuntu16.04.img``
-        * Def file: :download:`/sharc/software/apps/singularity/caffe_cpu.def </sharc/software/apps/singularity/caffe_cpu.def>`
+    * Latest: 1.0.0-CPU-Ubuntu16.04 (Python 2.7)
+        * Path: ``/usr/local/packages/singularity/images/caffe/1.0.0-cpu-ubuntu16.04.img``
+    * rc3-CPU-Ubuntu16.04 (Python 2.7)
+        * Path: ``/usr/local/packages/singularity/images/caffe/rc3-CPU-Ubuntu16.04.img``
+    * Def file: :download:`/sharc/software/apps/singularity/caffe_cpu.def </sharc/software/apps/singularity/caffe_cpu.def>`
 * GPU Images
-    * Latest: rc5-GPU-Ubuntu16.04-CUDA8-cudNN5.0 (Python 2.7)
-        * Path: ``/usr/local/packages/singularity/images/caffe/rc5-GPU-Ubuntu16.04-CUDA8-cudNN5.0.img``
-        * Def file: :download:`/sharc/software/apps/singularity/caffe_gpu.def </sharc/software/apps/singularity/caffe_gpu.def>`
+    * Latest: 1.0.0-GPU-Ubuntu16.04-CUDA8-cudNN5.0 (Python 2.7)
+        * Path: ``/usr/local/packages/singularity/images/caffe/1.0.0-gpu-ubuntu16.04-cuda8-cudnn6.0.img``
+    * rc3-GPU-Ubuntu16.04-CUDA8-cudNN5.0 (Python 2.7)
+        * Path: ``/usr/local/packages/singularity/images/caffe/rc3-GPU-Ubuntu16.04-CUDA8-cudNN5.0.img``
+    * Def file: :download:`/sharc/software/apps/singularity/caffe_gpu.def </sharc/software/apps/singularity/caffe_gpu.def>`
 
 Using the Caffe Module
 ----------------------
