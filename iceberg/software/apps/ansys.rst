@@ -41,6 +41,7 @@ You can then issue one of the following commands to run an ANSYS product. The te
       fluentext: to run the line-mode version of Fluent
       Fluent and Fluentext : to run the teaching license version of the above two commands.
       icemcfx or icem: to run icemcfd outside the workbench.
+      lsdyna  : to run LS Dyna command line outside of the workbench (note: version required i.e. lsdyna161)
 
 Running Batch fluent and ansys jobs
 -----------------------------------
