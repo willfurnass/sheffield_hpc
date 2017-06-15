@@ -1,3 +1,4 @@
+.. _sharc_itksnap:
 
 ITK-SNAP
 ========
