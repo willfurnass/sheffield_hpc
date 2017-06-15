@@ -41,7 +41,7 @@ export OMP_NUM_THREADS=2
 #$ -l rmem=8G
 #$ -o Ants.out
 #$ -e Ants.err
-#$ -m eba -M des.ryan@sheffield.ac.uk
+#$ -m eba -M joe.bloggs@sheffield.ac.uk
 dim=3 # image dimensionality
 module load apps/ANTs
 ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=2  # controls multi-threading
