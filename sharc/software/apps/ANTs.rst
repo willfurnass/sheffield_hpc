@@ -4,7 +4,7 @@ ANTs
 
 .. sidebar:: ANTs
    
-   :Version: 2.1.0.a
+   :Version: 2.1.0-a
    :Dependancies: gcc/4.9.4
    :URL: https://github.com/stnava/ANTs.git
    :Documentation: http://stnava.github.io/ANTs/
@@ -22,12 +22,12 @@ ANTs can be activated using the module file::
     module load apps/ANTs
 
 
-Note: this ANTs version is 783 commits ahead of Release 2.1.0 (Commit 646459b build), which have named Version 2.1.0.a
+Note: this ANTs version is 783 commits ahead of Release 2.1.0 (Commit 646459b build), which we have named Version 2.1.0-a
 
 Installation notes
 ------------------
 
 ANTs was compiled using the
-:download:`install_ANTs.sh </sharc/software/install_scripts/apps/ANTs/2.1.0.a/gcc-4.9.4/install_ANTs.sh>` script, the module
+:download:`install_ANTs.sh </sharc/software/install_scripts/apps/ANTs/2.1.0-a/gcc-4.9.4/install_ANTs.sh>` script, the module
 file is
-:download:`gcc-4.9.4 </sharc/software/modulefiles/apps/ANTs/2.1.0.a/gcc-4.9.4>`.
+:download:`gcc-4.9.4 </sharc/software/modulefiles/apps/ANTs/2.1.0-a/gcc-4.9.4>`.

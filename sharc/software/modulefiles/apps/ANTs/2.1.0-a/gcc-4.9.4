@@ -8,11 +8,11 @@ source /usr/local/etc/module_logging.tcl
 ##
 
 proc ModulesHelp { } {
-        puts stderr "Adds ANTs 2.1.0.a to your environment"
+        puts stderr "Adds ANTs 2.1.0-a to your environment"
 	puts stderr "and loads compiler gcc/4.9.4"
 }
 
-module-whatis   "Makes ANTs 2.1.0.a available"
+module-whatis   "Makes ANTs 2.1.0-a available"
 
 if { [ module-info mode load ] } {
     puts stderr "NOTE: the ANTs module also loads the gcc-4.9.4 compiler"
@@ -20,6 +20,6 @@ if { [ module-info mode load ] } {
 
 module load dev/gcc/4.9.4
 
-prepend-path PATH /usr/local/packages/apps/ANTs/2.1.0.a/gcc-4.9.4/bin
+prepend-path PATH /usr/local/packages/apps/ANTs/2.1.0-a/gcc-4.9.4/bin
 
-setenv ANTSPATH /usr/local/packages/apps/ANTs/2.1.0.a/gcc-4.9.4/bin
+setenv ANTSPATH /usr/local/packages/apps/ANTs/2.1.0-a/gcc-4.9.4/bin

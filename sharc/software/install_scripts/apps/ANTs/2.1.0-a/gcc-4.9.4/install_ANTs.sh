@@ -11,7 +11,7 @@
 module load dev/cmake/3.7.1/gcc-4.9.4
 
 ############################## Variable Setup ################################
-version=2.1.0.a
+version=2.1.0-a
 compilervers=4.9.4
 prefix=/usr/local/packages/apps/ANTs/$version/gcc-$compilervers
 package_dir=/scratch/$USER/ANTs_package
