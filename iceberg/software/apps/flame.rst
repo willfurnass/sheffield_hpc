@@ -18,7 +18,7 @@ Usage
 
 Flame can be activated using the module file::
 
-    module load apps/flame/0.17.1
+    module load apps/gcc/4.8.2/flame/0.17.1
 
 
 Note: The module file also loads libtool, libmboard, and the compilers gcc/4.8.3 & openmpi/1.8.8. Libmboard is the communication library used by Flame simulation programs.
