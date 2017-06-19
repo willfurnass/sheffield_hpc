@@ -2,7 +2,8 @@
 
 Troubleshooting
 ===============
-In this section, we'll discuss some tips for solving problems with iceberg. It is suggested that you work through some of the ideas here before contacting the service desk for assistance.
+In this section, we'll discuss some tips for solving problems with ShARC and Iceberg. 
+It is suggested that you work through some of the ideas here before contacting the CiCS helpdesk for assistance.
 
 Frequently Asked Questions
 ``````````````````````````
@@ -207,6 +208,17 @@ so this solution will continue to work following a reboot of your machine: ::
 
         FontPath /usr/share/fonts/X11/100dpi
         FontPath /usr/share/fonts/X11/75dpi
+
+Can I run programs that need to be able to talk to an audio device?
+-------------------------------------------------------------------
+
+On ShARC all worker nodes have a dummy sound device installed 
+(which is provided by a kernel module called `snd_dummy <https://www.alsa-project.org/main/index.php/Matrix:Module-dummy>`__).
+
+This may be useful if you wish to run a program that expects to be able to output audio (and crashes if no sound device is found) 
+but you don't actually want to monitor that audio output.
+
+``snd_dummy`` is not (yet) set up on Iceberg's worker nodes.
 
 Login Nodes RSA Fingerprint
 ---------------------------
