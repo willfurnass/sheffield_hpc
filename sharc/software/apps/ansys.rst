@@ -52,7 +52,7 @@ Users are encouraged to write their own batch submission scripts. The following 
 
     fluent 2d -i flnt.inp -g -t8 -sge -mpi=intel -rsh -sgepe mpi-rsh
 	
-The script requests 8 cores using the MPI parallel environment ''mpi-rsh'' with a runtime of 30 mins and 1G of real memory per core. The Fluent input file is ''flnt.inp''. The ``mpi-rsh`` tight-integration parallel environment is required to run Ansys/Fluent using MPI.
+The script requests 8 cores using the MPI parallel environment ''mpi-rsh'' with a runtime of 30 mins and 1G of real memory per core. The Fluent input file is ''flnt.inp''.
 
 	
 Installation notes
@@ -65,4 +65,4 @@ file is
 Ansys 17.2 was installed using the
 :download:`install_ansys.sh </sharc/software/install_scripts/apps/ansys/17.2/install_ansys.sh>` script, the module
 file is
-:download:`17.2 </sharc/software/modulefiles/apps/ansys/17.2>`. The binary installations were tested by launching ``ansyswb`` and by using the above batch submission script.
+:download:`17.2 </sharc/software/modulefiles/apps/ansys/17.2>`. The binary installations were tested by launching ``ansyswb`` and by using the above batch submission script. The ``mpi-rsh`` tight-integration parallel environment is required to run Ansys/Fluent using MPI due to password-less ssh being disabled across nodes on ShARC.
