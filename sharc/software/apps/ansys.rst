@@ -40,7 +40,7 @@ Or the same for Fluent::
 The ``runfluent`` and ``runansys`` commands submit a Fluent journal or Ansys input file into the batch system and can take a number of different parameters, according to your requirements.
 Typing ``runansys`` or ``runfluent`` will display information about their usage.
 	
-Users are encouraged to write their own batch submission scripts. The following is an example batch submission script, ``my_job.sh``, to run ``fluent`` 16.1 and which is submitted to the queue by typing ``qsub my_job.sh``::
+Users are encouraged to write their own batch submission scripts. The following is an example batch submission script, ``my_job.sh``, to run ``fluent`` version 16.1 and which is submitted to the queue by typing ``qsub my_job.sh``::
 
     #!/bin/bash
     #$ -cwd
@@ -52,7 +52,7 @@ Users are encouraged to write their own batch submission scripts. The following 
 
     fluent 2d -i flnt.inp -g -t8 -sge -mpi=intel -rsh -sgepe mpi-rsh
 	
-The script requests 8 cores using the MPI parallel environment ''mpi-rsh'' with a runtime of 30 mins and 1G of real memory per core. The Fluent input file is ''flnt.inp''.
+The script requests 8 cores using the MPI parallel environment ``mpi-rsh`` with a runtime of 30 mins and 1G of real memory per core. The Fluent input file is ``lnt.inp``.
 
 	
 Installation notes
