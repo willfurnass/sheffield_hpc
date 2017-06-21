@@ -52,7 +52,7 @@ Users are encouraged to write their own batch submission scripts. The following 
 
     fluent 2d -i flnt.inp -g -t8 -sge -mpi=intel -rsh -sgepe mpi-rsh
 	
-The script requests 8 cores using the MPI parallel environment ``mpi-rsh`` with a runtime of 30 mins and 1G of real memory per core. The Fluent input file is ``lnt.inp``.
+The script requests 8 cores using the MPI parallel environment ``mpi-rsh`` with a runtime of 30 mins and 1G of real memory per core. The Fluent input file is ``flnt.inp``.
 
 	
 Installation notes
