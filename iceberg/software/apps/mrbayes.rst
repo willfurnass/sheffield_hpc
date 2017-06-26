@@ -34,7 +34,4 @@ MrBayes was installed with gcc 4.4.7 ::
   make
   make install
 
-Modulefile
-----------
-* The module file is on the system at `/usr/local/modulefiles/apps/gcc/4.4.7/mrbayes/3.2.6`
-* The module file is `on github <https://github.com/mikecroucher/HPC_Installers/blob/master/apps/mrbayes/3.2.6/sheffield/iceberg/3.2.6>`_.
+:download:`This modulefile </iceberg/software/modulefiles/apps/gcc/4.4.7/mrbayes/3.2.6>` was installed as ``/usr/local/modulefiles/apps/gcc/4.4.7/mrbayes/3.2.6``
