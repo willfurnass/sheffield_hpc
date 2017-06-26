@@ -62,13 +62,12 @@ Macaulay2 can perform an extensive series of self-tests at compile-time (by runn
 Installation notes and modulefile
 ---------------------------------
 
-
 Version 1.9.2
 #############
 
-* Built using `install_macaulay_1.9.2.sh` <https://github.com/mikecroucher/apps/macaulay2/1.9.2/sheffield/iceberg/install_macaulay2_1.9.2.sh>`_
+* Built using :download:`install.sh </iceberg/software/install_scripts/apps/gcc/5.3/macaulay2/1.9.2/install.sh>`
 * Built using a specific git commit (aedebfc1e6326416cb01598e09e8b4dbdc76c178) rather than the tagged 1.9.2 release as Macaulay2's self-tests failed for the latter.  There are few differences between this commit and the tagged 1.9.2 release.
-* Made available to users via the `Macaulay2 1.9.2 modulefile <https://github.com/mikecroucher/HPC_Installers/apps/macaulay2/1.9.2/sheffield/iceberg/1.9.2>`_ located on the system at ``/usr/local/modulefiles/apps/gcc/5.3/macaulay2/1.9.2``
+* Made available to users via :download:`this modulefile </iceberg/software/modulefiles/apps/gcc/5.3/macaulay2/1.9.2>` located on the system at ``/usr/local/modulefiles/apps/gcc/5.3/macaulay2/1.9.2``
 
 * The install script and modulefile enable several other following modulefiles to provide:
     * OpenMPI (:code:`mpi/intel/openmpi/1.10.0`)
