@@ -62,6 +62,6 @@ These are primarily for administrators of the system.
 
 **Version 2.0.1, PGI 17.5**
 
-1. Download, compile and install OpenMPI 2.0.1 using :download:`this script </sharc/software/install_scripts/mpi/openmpi/2.0.1/pgi-15.7>`
-3. Install :download:`this modulefile </sharc/software/modulefiles/mpi/openmpi/2.0.1/pgi-17.5>` as ``/usr/local/modulefiles/mpi/openmpi/2.0.1/pgi-17.5``
+1. Download, compile and install OpenMPI 2.0.1 using :download:`this script </sharc/software/install_scripts/mpi/openmpi/2.0.1/pgi-15.7/install_pgi_openmpi_2.0.1.sh>`
+2. Install :download:`this modulefile </sharc/software/modulefiles/mpi/openmpi/2.0.1/pgi-17.5>` as ``/usr/local/modulefiles/mpi/openmpi/2.0.1/pgi-17.5``
 
