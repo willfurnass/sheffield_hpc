@@ -62,9 +62,8 @@ Installation instructions
 
 **Version 5.24.0**
 
-`This script <https://github.com/mikecroucher/HPC_Installers/blob/master/apps/perl/5.24.0/sheffield/iceberg/install_perl_5.24.0.sh>`__:
-
-#. Downloads, unpacks, builds (using the system GCC (4.4.7)), tests then installs Perl (in ``/usr/local/packages6/apps/gcc/4.4.7/perl/5.24.0/``)
-#. Installs `this modulefile <https://github.com/mikecroucher/HPC_Installers/blob/master/apps/perl/5.24.0/sheffield/iceberg/perl_5.24.0_modulefile>`_ as ``/usr/local/modulefiles/apps/gcc/4.4.7/perl/5.24.0``
+#. Run :download:`this script </iceberg/software/install_scripts/apps/gcc/4.4.7/perl/5.24.0/install.sh>` to 
+   download, unpack, build (using the system GCC (4.4.7)), test then install Perl (in ``/usr/local/packages6/apps/gcc/4.4.7/perl/5.24.0/``)
+#. Install download:`this modulefile </iceberg/software/modulefiles/apps/gcc/4.4.7/perl/5.24.0>` as ``/usr/local/modulefiles/apps/gcc/4.4.7/perl/5.24.0/``.
 
 `PerlBrew <https://perlbrew.pl/>`_ *could* have been used to install and manage multiple versions of Perl but it offers relatively few advantages over Environment Modules and the latter are already used system-wide for package management.
