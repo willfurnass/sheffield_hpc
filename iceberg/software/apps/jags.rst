@@ -69,15 +69,17 @@ the most likely cause is that you forget to load the necessary modules before st
 
 Installation notes
 -------------------
+
 Version 4.2
+^^^^^^^^^^^
 
 JAGS 4.2 was built with gcc 4.8.2
 
-* Install script on github - https://github.com/mikecroucher/HPC_Installers/blob/master/apps/jags/4.2.0/sheffield/iceberg/install_jags4.2.0.sh
-* Module file on github - https://github.com/mikecroucher/HPC_Installers/blob/master/apps/jags/4.2.0/sheffield/iceberg/4.2
-
+* Installed using :download:`install.sh </iceberg/software/install_scripts/apps/gcc/4.8.2/JAGS/4.2/install.sh>`
+* :download:`This module file </iceberg/software/modulefiles/apps/gcc/4.8.2/JAGS/4.2>` was installed as ``/usr/local/modulefiles/apps/gcc/4.8.2/JAGS/4.2``
 
 Version 3.4
+^^^^^^^^^^^
 
 JAGS 3.4 was built with gcc 4.8.2 ::
 
@@ -90,6 +92,7 @@ JAGS 3.4 was built with gcc 4.8.2 ::
     make install
 
 Version 3.1
+^^^^^^^^^^^
 
 JAGS 3.1 was built with gcc 4.8.2 ::
 
