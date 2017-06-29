@@ -38,11 +38,6 @@ Now, the compiler ::
 
     javac 1.8.0_102
 
-Virtual Memory
---------------
-Those who have used Java on iceberg will be aware that Java's default settings regarding memory usage were changed to prevent it from requesting lots of *virtual memory* at startup (which often exceeded the user's virtual memory limit set by the scheduler, causing his/her job to fail).  
-
-On ShARC, Java's memory usage settings do not need to be changed from their defaults as ShARC's scheduler only monitors and manages *real memory* and not virtual memory, and Java's initial real memory requirements are more modest.  See :ref:`real-vs-virt-mem` for explanations of real and virtual memory.
 
 Installation notes
 ------------------

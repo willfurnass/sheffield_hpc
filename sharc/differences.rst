@@ -21,12 +21,6 @@ Off campus access
 If you are off-campus, you will need to use a VPN connection to access ShARC.
 Iceberg can be accessed without a VPN Connection.
 
-rmem and mem scheduler flags
-----------------------------
-On both systems `-l rmem` is used to request real memory.
-On Iceberg, it is also necessary to make a `-l mem` request to ask for virtual memory.
-`-l mem` is not required on ShARC and will be ignored.
-
 Software and Module names
 -------------------------
 The two systems have different suites of software installed and modules follow different naming schemes.

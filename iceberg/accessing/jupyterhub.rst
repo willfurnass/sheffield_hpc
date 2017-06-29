@@ -16,6 +16,8 @@ with access to both your data stores and the resources of iceberg.
     encounter a problem, please provide feedback to
     `research-it@sheffield.ac.uk <research-it@sheffield.ac.uk>`_.
 
+.. warning::
+    Iceberg's JupyterHub service is **offline for maintainance between 02:00-03:00 on the Monday immediately before the 2nd Tuesday of the month**.  
 
 Logging into the JupyterHub
 ---------------------------

@@ -42,23 +42,20 @@ Now, the compiler ::
 
 Virtual Memory
 --------------
-By default, Java requests a lot of *virtual memory* on startup. 
-This is usually a given fraction of the *physical memory* on a node, 
-which can be quite a lot on Iceberg. 
-This then exceeds a user's virtual memory limit set by the scheduler 
-and causes a job to fail.  
-See :ref:`real-vs-virt-mem` for explanations of the difference between virtual and real/physical memory.  
+By default, Java requests a lot of *virtual memory* on startup.
+This is usually a given fraction of the *physical memory* on a node,
+which can be quite a lot on Iceberg.
+See :ref:`real-vs-virt-mem` for explanations of the difference between virtual and real/physical memory.
 
-The ways in which this issue is addressed differ between the versions of Java available on Iceberg:
+The default amount of virtual memory that Java uses at startup is controlled in two different ways on Iceberg:
 
-For versions **prior to 1.8.0u112** we created a wrapper script to ``java`` that uses the ``-Xmx1G`` switch to force Java to restrict its *heap size* to a maximum of 1 GB of memory.  If this is amount is insufficient, you are free to allocate as much memory as you require by setting your own value for ``-Xmx`` but be sure to request enough from the scheduler as well. You'll typically need to request more virtual memory from the scheduler than you specify in the Java ``-Xmx`` switch.
+For versions **prior to 1.8.0u112** we created a wrapper script to ``java`` that uses the ``-Xmx1G`` switch to force Java to restrict its *heap size* to a maximum of 1 GB of memory.  If this is amount is insufficient, you are free to allocate as much memory as you require by setting your own value for ``-Xmx``.
 
-For example, consider the following submission script. Note that it was necessary to request 9 Gigabytes of memory from the scheduler even though we only allocated 5 Gigabytes heap size in Java. The requirement for 9 GB was determined empirically: ::
+For example, consider the following submission script: ::
 
   #!/bin/bash
   #Request 9 gigabytes of real memory from the scheduler (mem)
-  #and 9 gigabytes of virtual memory from the scheduler (mem)
-  #$ -l mem=9G -l rmem=9G
+  #$ -l rmem=9G
 
   # load the Java module
   module load apps/java/1.8u71
@@ -66,7 +63,7 @@ For example, consider the following submission script. Note that it was necessar
   #Run java program allocating 5 Gigabytes
   java -Xmx5G HelloWorld
 
-Note that **the above is not possible** if an appliation (e.g. a startup script for another software package on the cluster) starts ``java`` itself (instead of you explicitly starting it) 
+Note that **the above is not possible** if an appliation (e.g. a startup script for another software package on the cluster) starts ``java`` itself (instead of you explicitly starting it)
 and the above also will not help if an application uses an internally packaged version of Java (rather than one that can be *activated* using ``module load``).
 
 For **versions 1.8.0u112 onwards** the maximum heap size is instead to be restricted using an *environment variable*.  The following is set when you run ``module load ...``: ::
@@ -77,9 +74,9 @@ You can override this default value by running something like: ::
 
         export _JAVA_OPTIONS='-Xmx6G'
 
-before starting your application that depends on Java.  
-``_JAVA_OPTIONS`` can be interpretted by Java programs you start and Java programs started by other programs, 
-as well as by Java Virtual Machines (JVMs) that you activate using ``module load`` and JVMs that are packaged within applications. 
+before starting your application that depends on Java.
+``_JAVA_OPTIONS`` can be interpretted by Java programs you start and Java programs started by other programs,
+as well as by Java Virtual Machines (JVMs) that you activate using ``module load`` and JVMs that are packaged within applications.
 
 Installation notes
 ------------------
