@@ -79,7 +79,7 @@ This section is primarily for administrators of the system.
 GDAL 2.1.1 was compiled with v6.2.0 of the GCC compiler suite.
 
 #. ``cd`` to a scratch directory.
-#. Download, build and install GDAL using `install_gdal_2.1.1.sh <https://github.com/mikecroucher/HPC_Installers/blob/master/libs/gdal/2.1.1/sheffield/iceberg/install_gdal_2.1.1.sh>`_, ensuring that all output is redirected into a log file.  GDAL files are installed into ``/usr/local/packages6/libs/gcc/6.2/gdal/2.1.1/``
-#. Install `this modulefile <https://github.com/mikecroucher/HPC_Installers/blob/master/libs/gdal/2.1.1/sheffield/iceberg/gdal_2.1.1_modulefile>`_ as ``/usr/local/modulefiles/libs/gcc/6.2/gdal/2.1.1``
+#. Download, build and install GDAL using :download:`install.sh </iceberg/software/install_scripts/libs/gcc/6.2/gdal/2.1.1/install.sh>`, ensuring that all output is redirected into a log file.  GDAL files are installed into ``/usr/local/packages6/libs/gcc/6.2/gdal/2.1.1/``
+#. Install :download:`this modulefile </iceberg/software/modulefiles/libs/gcc/6.2/gdal/2.1.1>` as ``/usr/local/modulefiles/libs/gcc/6.2/gdal/2.1.1``
 
-The **file formats** supported by the build generated using ``install_gdal_2.1.1.sh`` are listed `here <https://github.com/mikecroucher/HPC_Installers/blob/master/libs/gdal/2.1.1/sheffield/iceberg/install_gdal_2.1.1_configure_output.log>`_.
+The **file formats** supported by the build generated using ``install.sh`` are listed :download:`here </iceberg/software/install_scripts/libs/gcc/6.2/gdal/2.1.1/configure_output.log>`.
