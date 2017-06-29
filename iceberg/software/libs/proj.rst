@@ -40,10 +40,15 @@ Installation notes
 ------------------
 This section is primarily for administrators of the system.
 
-**Version 4.9.3**
+Version 4.9.3
+^^^^^^^^^^^^^
 
 PROJ.4 4.9.3 was compiled with v6.2.0 of the GCC compiler suite.
 
 #. ``cd`` to a scratch directory.
-#. Download, build and install PROJ.4 using `install_proj_4.9.3.sh <https://github.com/mikecroucher/HPC_Installers/blob/master/libs/proj/4.9.3/sheffield/iceberg/install_proj_4.9.3.sh>`_.  Files are installed into ``/usr/local/packages6/libs/gcc/6.2/proj/4.9.3/``
-#. Install `this modulefile <https://github.com/mikecroucher/HPC_Installers/blob/master/libs/proj/4.9.3/sheffield/iceberg/proj_4.9.3_modulefile>`_ as ``/usr/local/modulefiles/libs/gcc/6.2/proj/4.9.3``
+#. Download, build and install PROJ.4 using :download`this script (install.sh) </iceberg/software/install_scripts/libs/gcc/6.2/proj/4.9.3/install.sh>`.  Files are installed into ``/usr/local/packages6/libs/gcc/6.2/proj/4.9.3/``
+#. Install :download:`this modulefile </iceberg/software/modulefiles/libs/gcc/6.2/proj/4.9.3>` as ``/usr/local/modulefiles/libs/gcc/6.2/proj/4.9.3``
+
+
+
+
