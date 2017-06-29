@@ -164,7 +164,7 @@ This build required several external modules including :ref:`xzutils`, :ref:`cur
 
 * :download:`install_R_3.3.0.sh </iceberg/software/install_scripts/apps/R/install_R_3.3.0.sh>` Downloads, compiles, tests and installs R 3.3.0 and the ``Rmath`` library.
 * :download:`R 3.3.0 Modulefile </iceberg/software/modulefiles/apps/R/3.3.0>` located on the system at ``/usr/local/modulefiles/apps/R/3.3.0``
-* Install log-files, including the output of the `make check` tests are available on the system at `/usr/local/packages6/R/3.3.0/install_logs`
+* Install log-files, including the output of the ``make check`` tests are available on the system at ``/usr/local/packages6/R/3.3.0/install_logs``
 
 Version 3.2.4
 ^^^^^^^^^^^^^
@@ -177,7 +177,7 @@ This build made use of new versions of :ref:`xzutils` and :ref:`curl`
 
 * :download:`install_R_3.2.4.sh </iceberg/software/install_scripts/apps/R/install_R_3.2.4.sh>` Downloads, compiles, tests and installs R 3.2.4 and the ``Rmath`` library.
 * :download:`R 3.2.4 Modulefile </iceberg/software/modulefiles/apps/R/3.2.4>` located on the system at ``/usr/local/modulefiles/apps/R/3.2.4``
-* Install log-files, including the output of the `make check` tests are available on the system at `/usr/local/packages6/R/3.2.4/install_logs`
+* Install log-files, including the output of the ``make check`` tests are available on the system at ``/usr/local/packages6/R/3.2.4/install_logs``
 
 Version 3.2.3
 ^^^^^^^^^^^^^
@@ -188,7 +188,7 @@ This was a scripted install. It was compiled from source with gcc 4.4.7 and with
 
 * :download:`install_R_3.2.3.sh </iceberg/software/install_scripts/apps/R/install_R_3.2.3.sh>` Downloads, compiles, tests and installs R 3.2.3 and the ``Rmath`` library.
 * :download:`R 3.2.3 Modulefile </iceberg/software/modulefiles/apps/R/3.2.3>` located on the system at ``/usr/local/modulefiles/apps/R/3.2.3``
-* Install log-files, including the output of the `make check` tests are available on the system at `/usr/local/packages6/R/3.2.3/install_logs`
+* Install log-files, including the output of the ``make check`` tests are available on the system at ``/usr/local/packages6/R/3.2.3/install_logs``
 
 Version 3.2.2
 ^^^^^^^^^^^^^

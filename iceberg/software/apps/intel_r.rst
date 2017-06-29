@@ -29,13 +29,13 @@ Loading the modules
 -------------------
 After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the :code:`qrshx` command.
 
-There are two types of the Intel builds of R, `sequential` and `parallel`. `sequential` makes use of one CPU core and can be used as a drop-in replacement for the standard version of R installed on Iceberg.
+There are two types of the Intel builds of R, ``sequential`` and ``parallel`.` ``sequential`` makes use of one CPU core and can be used as a drop-in replacement for the standard version of R installed on Iceberg.
 
 .. code-block:: bash
 
    module load apps/intel/15/R/3.3.1_sequential
 
-The `parallel` version makes use of multiple CPU cores for certain linear algebra routines since it is linked to the parallel version of the Intel MKL. Note that **only** linear algebra routines are automatically parallelised.
+The ``parallel`` version makes use of multiple CPU cores for certain linear algebra routines since it is linked to the parallel version of the Intel MKL. Note that **only** linear algebra routines are automatically parallelised.
 
 .. code-block:: bash
 
@@ -114,11 +114,11 @@ This build required several external modules including :ref:`xzutils`, :ref:`cur
 Sequential
 """"""""""
 
-#. Install using :download:`this script </iceberg/software/install_scripts/apps/intel/15/R/sequential-3.3.1/install.sh>`. Downloads, compiles, tests and installs R 3.3.1 using Intel Compilers and the sequential MKL. The install and test logs are at `/usr/local/packages6/apps/intel/15/R/sequential-3.3.1/install_logs/`
+#. Install using :download:`this script </iceberg/software/install_scripts/apps/intel/15/R/sequential-3.3.1/install.sh>`. Downloads, compiles, tests and installs R 3.3.1 using Intel Compilers and the sequential MKL. The install and test logs are at ``/usr/local/packages6/apps/intel/15/R/sequential-3.3.1/install_logs/``
 #. :download:`This module file </iceberg/software/modulefiles/apps/intel/15/R/3.3.1_sequential>` installed as ``apps/intel/15/R/3.3.1_sequential``
 
 Parallel
 """"""""
 
-#. Install using :download:`this script </iceberg/software/install_scripts/apps/intel/15/R/parallel-3.3.1/install.sh>`.  Downloads, compiles, tests and installs R 3.3.1 using Intel Compilers and the parallel MKL. The install and test logs are at `/usr/local/packages6/apps/intel/15/R/parallel-3.3.1/install_logs/` 
+#. Install using :download:`this script </iceberg/software/install_scripts/apps/intel/15/R/parallel-3.3.1/install.sh>`.  Downloads, compiles, tests and installs R 3.3.1 using Intel Compilers and the parallel MKL. The install and test logs are at ``/usr/local/packages6/apps/intel/15/R/parallel-3.3.1/install_logs/`` 
 #. :download:`This module file </iceberg/software/modulefiles/apps/intel/15/R/3.3.1_parallel>` installed as ``apps/intel/15/R/3.3.1_parallel``
