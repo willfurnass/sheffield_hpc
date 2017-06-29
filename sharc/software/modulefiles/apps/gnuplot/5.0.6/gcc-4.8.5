@@ -1,0 +1,30 @@
+#%Module1.0#####################################################################
+##
+## Gnuplot module file
+##
+#  By David M. Rogers June 2017
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes Gnuplot Version 5.0.6 available for use"
+}
+
+# set USER $::env(USER)
+
+module-whatis   "Makes Code Saturne Version 5.0.6 available"
+
+# load modules
+
+# module variables
+#
+ set     version 5.0.6
+ set     gnuplotroot /usr/local/packages/apps/gnuplot/5.0.6/gcc-4.8.5
+
+ prepend-path MANPATH $gnuplotroot/share/man
+ prepend-path PATH $gnuplotroot/bin
