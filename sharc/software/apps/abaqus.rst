@@ -6,7 +6,8 @@ Abaqus
    :Version: 6.14-2
    :Dependencies: Intel compiler 15.0.7 and Foxit modules loaded. User subroutines need Intel compiler 2011 or above, GCC 4.1.2 or above. 
    :URL: http://www.3ds.com/products-services/simulia/products/abaqus/ 
-   :Documentation: https://www.shef.ac.uk/wrgrid/software/abaqus
+   :Documentation: https://www.3ds.com/support/documentation/users-guides/
+   :Local URL: https://www.shef.ac.uk/wrgrid/software/abaqus
 
 
 Abaqus is a software suite for Finite Element Analysis (FEA) developed by Dassault Systèmes.
@@ -19,9 +20,9 @@ Abaqus 6.14-2 can be activated using the module file::
 
     module load apps/abaqus/614
 	
-Type ``abaqus cae`` to launch the Abaqus GUI during an interactive session with X Window support (e.g. an interactive ``qsh`` session).
+Type ``abaqus cae`` to launch the Abaqus GUI from an interactive session with X Window support (e.g. an interactive ``qsh`` session).
 Type ``abaqus`` for the command line interface. Typing ``abaqus -help`` will display a list of usage options.
-The PDF viewer ``foxit`` can be launched to view the PDF documentation located at "/usr/local/packages/apps/abaqus/Documentation/docs/v6.14/pdf_books".
+The PDF viewer ``foxit`` can be launched to view the PDF documentation located at ``/usr/local/packages/apps/abaqus/Documentation/docs/v6.14/pdf_books``.
 
 
 Abaqus example problems
@@ -63,7 +64,7 @@ Users are encouraged to write their own batch submission scripts. The following 
 	
 The above script requests 4 cores using the OpenMP parallel environment ``smp`` with a runtime of 30 mins and 2G of real memory per core. The Abaqus input file is ``s4d.inp``.
 
-*User subroutines:* The script below is an example of a batch submission script for a single core job with a runtime of 30 mins, 8G of real memory and with user subroutine ``umatmst3.f`` and input file ``umatmst3.inp``::
+**User subroutines:** The script below is an example of a batch submission script for a single core job with a runtime of 30 mins, 8G of real memory and with user subroutine ``umatmst3.f`` and input file ``umatmst3.inp``::
 
     #!/bin/bash
     #$ -cwd
