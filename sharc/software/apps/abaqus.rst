@@ -18,11 +18,11 @@ Usage
 
 Abaqus 6.14-2 can be activated using the module file::
 
-    module load apps/abaqus/614
+    module load apps/abaqus/6.14-2/binary
 	
 Type ``abaqus cae`` to launch the Abaqus GUI from an interactive session with X Window support (e.g. an interactive ``qsh`` session).
 Type ``abaqus`` for the command line interface. Typing ``abaqus -help`` will display a list of usage options.
-The PDF viewer ``foxit`` can be launched to view the PDF documentation located at ``/usr/local/packages/apps/abaqus/Documentation/docs/v6.14/pdf_books``.
+The PDF viewer ``foxit`` can be launched to view the PDF documentation located at ``/usr/local/packages/apps/abaqus/6.14-2/binary/Documentation/docs/v6.14/pdf_books``.
 
 
 Abaqus example problems
@@ -42,7 +42,7 @@ Batch jobs
 
 The easiest way of running a batch job for a particular version of Abaqus (e.g. 6.14-2) is::
     
-    module load apps/abaqus/614
+    module load apps/abaqus/6.14-2/binary
     runabaqus
 	
 The ``runabaqus`` command submits an Abaqus input file into the batch queuing system and can take a number of different parameters according to your requirements.
@@ -56,7 +56,7 @@ Users are encouraged to write their own batch submission scripts. The following 
     #$ -l rmem=2G
     #$ -pe smp 4
 
-    module load apps/abaqus/614
+    module load apps/abaqus/6.14-2/binary
 
     mkdir /scratch/$USER
 
@@ -71,7 +71,7 @@ The above script requests 4 cores using the OpenMP parallel environment ``smp`` 
     #$ -l h_rt=00:30:00
     #$ -l rmem=8G
 
-    module load apps/abaqus/614
+    module load apps/abaqus/6.14-2/binary
     
     mkdir /scratch/$USER
     
@@ -87,7 +87,7 @@ Installation notes
 ------------------
 
 Abaqus 6.14-2 was installed using the
-:download:`install_abaqus.sh </sharc/software/install_scripts/apps/abaqus/614/install_abaqus.sh>` script; the module
+:download:`install_abaqus.sh </sharc/software/install_scripts/apps/abaqus/6.14-2/binary/install_abaqus.sh>` script; the module
 file is
-:download:`614 </sharc/software/modulefiles/apps/abaqus/614>`. The binary installation was tested by launching ``abaqus cae`` and by using the above batch submission scripts.
+:download:`binary </sharc/software/modulefiles/apps/abaqus/6.14-2/binary>`. The binary installation was tested by launching ``abaqus cae`` and by using the above batch submission scripts.
 Abaqus at present does not run on more than one node when using MPI due to password-less ssh being disabled across nodes on ShARC.
