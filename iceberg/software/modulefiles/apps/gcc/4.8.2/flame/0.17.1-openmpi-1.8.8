@@ -21,6 +21,11 @@ module-whatis   "Makes Flame (xparser) Version 0.17.1 available"
 
 set     version 0.17.1
 
+if { [ module-info mode load] } {
+
+	puts stderr "NOTE: the Flame module also loads the gcc-4.8.2 compilerand OpenMPI-1.8.8 library"
+}
+
 #  dependencies
  prepend-path PATH /usr/local/packages6/apps/gcc/4.8.2/flame/0.17.1-openmpi-1.8.8/libtool/2.4.6/bin
  prepend-path PATH /usr/local/packages6/apps/gcc/4.8.2/flame/0.17.1-openmpi-1.8.8/libmboard/0.3.1/bin

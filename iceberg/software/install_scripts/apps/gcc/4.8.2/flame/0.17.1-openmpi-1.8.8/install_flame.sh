@@ -208,11 +208,7 @@ tar zxvf $filename
 
 cd $version
 
-#note in Makefile.tmpl
-#set LIBMBOARD_DIR=/usr/local/packages6/apps/gcc/4.8.2/flame/0.17.1-openmpi-1.8.8/libmboard/0.3.1
-make
-#make install prefix=$prefix
-cp -r * $prefix
+make install prefix=$prefix
 
 bash
 

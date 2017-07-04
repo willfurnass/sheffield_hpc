@@ -4,7 +4,7 @@ Flame
 
 .. sidebar:: Flame
    
-   :Version: 0.17.1
+   :Version: 0.17.1-openmpi-1.8.8
    :Dependancies: gcc/4.8.2 openmpi/1.8.8
    :URL: https://github.com/FLAME-HPC/xparser/archive/0.17.1.tar.gz
    :Documentation: http://flame.ac.uk/docs/
@@ -18,7 +18,7 @@ Usage
 
 Flame can be activated using the module file::
 
-    module load apps/gcc/4.8.2/flame/0.17.1
+    module load apps/gcc/4.8.2/flame/0.17.1-openmpi-1.8.8
 
 
 Note: The module file also loads libtool, libmboard, and the compilers gcc/4.8.3 & openmpi/1.8.8. Libmboard is the communication library used by Flame simulation programs.
@@ -59,6 +59,8 @@ Test
       unzip tutorial_models.zip
       cd tutorial_models/model_0x
 
+#. create the ``its`` folder within the model_0* folder, and move the 0.xml file to the ``its`` folder
+
 #. Create a batch job submission script called ``test.sge`` containing the 12 lines of code above. Replace model.xml (line 10) with the actual xml model name. The script should be in the model folder.
 
 #. Submit the job using ``qsub test.sge``
@@ -68,6 +70,6 @@ Installation notes
 ------------------
 
 Flame was compiled using the
-:download:`install_flame.sh </iceberg/software/install_scripts/apps/gcc/4.8.2/flame/0.17.1/install_flame.sh>` script, the module
+:download:`install_flame.sh </iceberg/software/install_scripts/apps/gcc/4.8.2/flame/0.17.1-openmpi-1.8.8/install_flame.sh>` script, the module
 file is
-:download:`0.17.1 </iceberg/software/modulefiles/apps/gcc/4.8.2/flame/0.17.1>`.
+:download:`0.17.1-openmpi-1.8.8 </iceberg/software/modulefiles/apps/gcc/4.8.2/flame/0.17.1-openmpi-1.8.8>`.
