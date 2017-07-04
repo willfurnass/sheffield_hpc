@@ -33,7 +33,7 @@ Running Flame in parallel on multiple cores requires the batch script to be plac
    #$ -j y
    #$ -m bea
    #$ -M email_address
-   module load apps/flame
+   module load apps/gcc/4.8.2/flame/0.17.1-openmpi-1.8.8
    make clean
    cp /usr/local/packages6/apps/gcc/4.8.2/flame/0.17.1-openmpi-1.8.8/xparser/0.17.1/*.tmpl .
    xparser model.xml -p
@@ -44,7 +44,7 @@ where
 
 no_cores = the number of computer cores required
 no_its = the number of time steps for the simulation
-0.xml = the initial state of the system/ages. This file is placed within the its folder within the model folder
+0.xml = the initial state of the system/agents. This file is placed within the its folder within the model folder
 
 
 Test
