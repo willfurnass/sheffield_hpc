@@ -54,10 +54,10 @@ In more detail ::
     # Once compiled, run an example program on all (or a subset) of your MPI nodes using the mpirun utility
      mpirun -np 4 hello_c
 
-    Hello, world, I am 0 of 4, (Open MPI v2.1.1, package: Open MPI sa_cs1ab@sharc-node003.shef.ac.uk Distribution, ident: 2.1.1, repo rev: v2.1.0-100-ga2fdb5b, May 10, 2017, 141)
-    Hello, world, I am 1 of 4, (Open MPI v2.1.1, package: Open MPI sa_cs1ab@sharc-node003.shef.ac.uk Distribution, ident: 2.1.1, repo rev: v2.1.0-100-ga2fdb5b, May 10, 2017, 141) 
-    Hello, world, I am 2 of 4, (Open MPI v2.1.1, package: Open MPI sa_cs1ab@sharc-node003.shef.ac.uk Distribution, ident: 2.1.1, repo rev: v2.1.0-100-ga2fdb5b, May 10, 2017, 141)
-    Hello, world, I am 3 of 4, (Open MPI v2.1.1, package: Open MPI sa_cs1ab@sharc-node003.shef.ac.uk Distribution, ident: 2.1.1, repo rev: v2.1.0-100-ga2fdb5b, May 10, 2017, 141)
+    Hello, world, I am 0 of 4, (Open MPI v2.1.1, package: Open MPI user@sharc-node003.shef.ac.uk Distribution, ident: 2.1.1, repo rev: v2.1.0-100-ga2fdb5b, May 10, 2017, 141)
+    Hello, world, I am 1 of 4, (Open MPI v2.1.1, package: Open MPI user@sharc-node003.shef.ac.uk Distribution, ident: 2.1.1, repo rev: v2.1.0-100-ga2fdb5b, May 10, 2017, 141) 
+    Hello, world, I am 2 of 4, (Open MPI v2.1.1, package: Open MPI user@sharc-node003.shef.ac.uk Distribution, ident: 2.1.1, repo rev: v2.1.0-100-ga2fdb5b, May 10, 2017, 141)
+    Hello, world, I am 3 of 4, (Open MPI v2.1.1, package: Open MPI user@sharc-node003.shef.ac.uk Distribution, ident: 2.1.1, repo rev: v2.1.0-100-ga2fdb5b, May 10, 2017, 141)
 
 
 Installation notes
