@@ -1,4 +1,4 @@
-OpenMPI (gcc version)
+OpenMPI (pgi version)
 =====================
 
 .. sidebar:: OpenMPI (PGI version)
