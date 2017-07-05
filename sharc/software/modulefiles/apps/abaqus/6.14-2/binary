@@ -1,0 +1,32 @@
+#%Module1.0#####################################################################
+##
+## ABAQUS 6.14-2 module file
+##
+#  By David M. Rogers on June 2017
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes ABAQUS Version 6.14-2 available for use"
+}
+
+module-whatis   "Makes ABAQUS V6.14-2 available"
+
+# load modules
+  module load dev/intel-compilers/15.0.7
+  module load apps/foxit
+
+# module variables
+#
+ set     version 6.14
+ set     localroot  /usr/local/packages/apps/shef/abaqus
+ set     abaqusroot     /usr/local/packages/apps/abaqus/6.14-2/binary
+ setenv     ABAQCOMPVER dev/intel-compilers/15.0.7
+ setenv     ABAQUSVER  614
+ setenv  ABAQUSCOMMAND  $abaqusroot/Commands/abq6142
+ prepend-path PATH $localroot:$abaqusroot/Commands

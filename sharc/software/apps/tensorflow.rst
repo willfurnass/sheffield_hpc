@@ -27,10 +27,10 @@ Singularity images are self-contained virtual machines similar to Docker. For mo
 
 A symlinked file is provided that always point to the latest image: ::
 
-  #CPU Caffe
+  #CPU Tensorflow
   /usr/local/packages/singularity/images/tensorflow/cpu.img
 
-  #GPU Caffe
+  #GPU Tensorflow
   /usr/local/packages/singularity/images/tensorflow/gpu.img
 
 To get a bash terminal in to an image for example, use the command: ::
@@ -41,7 +41,14 @@ The ``exec`` command can also be used to call any command/script inside the imag
 
   singularity exec /usr/local/packages/singularity/images/tensorflow/gpu.img python your_tensorflow_script.py
 
+You may get a warning similar to ``groups: cannot find name for group ID ...``, this can be ignored and will not have an affect on running the image.
+
 The paths ``/fastdata``, ``/data``, ``/home``, ``/scratch``, ``/shared`` are automatically mounted to your ShARC filestore directories. For GPU-enabled images the ``/nvlib`` and ``/nvbin`` is mounted to the correct Nvidia driver version for the node that you're using.
+
+Tensorflow is installed as part of Anaconda and can be found inside the image at: ::
+
+  /usr/local/anaconda3-4.2.0/lib/python3.5/site-packages/tensorflow
+
 
 **To submit jobs that uses a Singularity image, see** :ref:`use_image_batch_singularity_sharc` **for more detail.**
 
@@ -79,7 +86,7 @@ Load the relevant modules (our example uses CUDA 8.0 with cuDNN 5.1 but :ref:`ot
 
 Create a conda environment to load relevant modules on your local user account and activate it ::
 
-	conda create -n tensorflow python=3.5 anaconda3-2.5.0
+	conda create -n tensorflow python=3.5
 	source activate tensorflow
 
 Then install tensorflow with the following commands ::

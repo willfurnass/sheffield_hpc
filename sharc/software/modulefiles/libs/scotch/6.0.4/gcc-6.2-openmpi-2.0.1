@@ -1,0 +1,27 @@
+#%Module1.0#####################################################################
+##
+## Scotch and PT Scotch  6.0.4 module file
+##
+#  By David M. Rogers June 2017
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+# load dependent modules
+module load dev/gcc/6.2
+module load mpi/openmpi/2.0.1/gcc-6.2
+
+proc ModulesHelp { } {
+        puts stderr "Makes the Scotch and PT Scotch 6.0.4 library available"
+}
+
+set S_DIR /usr/local/packages/libs/scotch/6.0.4/gcc-6.2-openmpi-2.0.1
+
+module-whatis   "Makes the Scotch and PT Scotch 6.0.4 library available"
+
+# module variables
+prepend-path LD_LIBRARY_PATH $S_DIR/lib
+prepend-path LIBRARY_PATH $S_DIR/lib
+prepend-path MAN_PATH $S_DIR/man

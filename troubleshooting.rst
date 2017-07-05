@@ -2,7 +2,8 @@
 
 Troubleshooting
 ===============
-In this section, we'll discuss some tips for solving problems with iceberg. It is suggested that you work through some of the ideas here before contacting the service desk for assistance.
+In this section, we'll discuss some tips for solving problems with ShARC and Iceberg. 
+It is suggested that you work through some of the ideas here before contacting the CiCS helpdesk for assistance.
 
 Frequently Asked Questions
 ``````````````````````````
@@ -32,7 +33,7 @@ Follow the trouble-shooting link from the `iceberg browser-access page <http://w
 All failing, you may have to fall back to one of the `non-browser access methods <http://www.sheffield.ac.uk/cics/research/hpc/using/access>`_.
 
 I cannot see my folders in /data or /shared
--------------------------------------------s
+-------------------------------------------
 Some directories such as ``/data/<your username>`` or ``/shared/<your project/`` are made available **on-demand**:.
 For example, if your username is `ab1def` and you look in `/data` straight after logging in, you may not see `/data/ab1def`.
 The directory is there, it has just not been made available (via a process called **mounting**) to you automatically.
@@ -42,8 +43,8 @@ The directory will be automatically unmounted after a period of inactivity.
 My batch job terminates without any messages or warnings
 --------------------------------------------------------
 
-When a batch job that is initiated by using the ``qsub`` command or ``runfluent``, ``runansys`` or ``runabaqus`` commands, it gets allocated specific amount of virtual memory and real-time.
-If a job exceeds either of these memory or time limits it gets terminated immediately and usually without any warning messages.
+When a batch job that is initiated by using the ``qsub`` command or ``runfluent``, ``runansys`` or ``runabaqus`` commands, it gets allocated specific amount of real memory and run-time.
+If a job exceeds either the real memory or time limits it gets terminated immediately and usually without any warning messages.
 
 It is therefore important to estimate the amount of memory and time that is needed to run your job to completion and specify it at the time of submitting the job to the batch queue.
 
@@ -73,14 +74,11 @@ in which case you need to contact ``research-it@sheffield.ac.uk`` and ask to the
 I am getting warning messages and warning emails from my batch jobs about insufficient memory
 ---------------------------------------------------------------------------------------------
 
-There are two types of memory resources that can be requested when submitting batch jobs using the qsub command. These are, virtual memory (``-l mem=nnn``) and real memory (``-l rmem=nnn``).
-Virtual memory limit specified should always be greater than equal to the real memory limit specification.
-
-If a job exceeds its virtual memory resource it gets terminated. However if a job exceeds its real memory resource it does not get terminated but an email message is sent to the user asking him to specify a larger ``rmem=`` parameter the next time, so that the job can run more efficiently.
+If a job exceeds its real memory resource it gets terminated. You can use the ``rmem=`` parameter to increase the amount of real memory that your job requests.
 
 .. _real-vs-virt-mem:
 
-What is rmem ( real memory) and mem ( virtual memory)
+What is rmem (real memory) and mem (virtual memory)
 -----------------------------------------------------
 
 Running a program always involves loading the program instructions and also its data i.e. all variables and arrays that it uses into the computer's memory.
@@ -92,23 +90,19 @@ If the real memory (i.e. RAM) allocated to a job is much smaller than the entire
 
 On the other hand if the RAM allocated to a job is larger than the virtual memory requirement of that job then it will result in waste of RAM resources which will be idle duration of that job.
 
-It is therefore crucial to strike a fine balance between the virtual memory  and the physical memory allocated to a job:
+* The virtual memory limit defined by the ``-l mem`` cluster scheduler parameter defines the maximum amount of virtual memory your job will be allowed to use. **This option is now deprecated** - you can continue to submit jobs requesting virtual memory, however the scheduler **no longer applies any limits to this resource**.
+* The real memory limit is defined by the ``-l rmem`` cluster scheduler parameter and defines the amount of RAM that will be allocated to your job.  The job scheduler will terminate jobs which exceed their real memory resource request.
 
-* The virtual memory limit defined by the ``-l mem`` cluster scheduler parameter defines the maximum amount of virtual memory your job will be allowed to use. If your job's virtual memory requirements exceed this limit during its execution your job will be killed immediately.
-* The real memory limit is defined by the ``-l rmem`` cluster scheduler parameter and defines the amount of RAM that will be allocated to your job.  The way we have configured SGE, if your job starts paging excessively your job is not killed but you receive warning messages to increase the RAM allocated to your job next time by means of the ``rmem`` parameter.
-
-It is important to make sure that your ``-l mem`` value is always greater than your ``-l rmem`` value so as not to waste the valuable RAM resources as mentioned earlier.
 
 Insufficient memory in an interactive session
 ---------------------------------------------
-By default, an interactive session provides you with 2 Gigabytes of RAM (sometimes called real memory) and 6 Gigabytes of Virtual Memory.
+By default, an interactive session provides you with 2 Gigabytes of RAM (sometimes called real memory).
 You can request more than this when running your ``qsh`` or ``qrsh`` command: ::
 
-        qsh -l mem=64G   -l rmem=8G
+        qsh  -l rmem=8G
 
-This asks for 64 Gigabytes of Virtual Memory and 8 Gigabytes of RAM (real memory). Note that you should
+This asks for 8 Gigabytes of RAM (real memory). Note that you should
 
-* not specify more than 768 Gigabytes of virtual memory (``mem``)
 * not specify more than 256 GB of RAM (real memory) (``rmem``)
 
 'Illegal Instruction' errors
@@ -200,13 +194,24 @@ then you should try running the following **on your own machine**: ::
 
 Note that these instructions are Ubuntu/Debian-specific; on other systems package names and paths may differ.
 
-Next, try :ref:`connecting to a cluster <getting-started>` using ``ssh -X clustername``, start a graphical session then try running ``qmon``/Ansys again.
+Next, try :ref:`connecting to a cluster <connecting>` using ``ssh -X clustername``, start a graphical session then try running ``qmon``/Ansys again.
 If you can now run ``qmon``/Ansys without problems
 then you need to add two lines to the ``.xinitrc`` file in your home directory **on your own machine**
 so this solution will continue to work following a reboot of your machine: ::
 
         FontPath /usr/share/fonts/X11/100dpi
         FontPath /usr/share/fonts/X11/75dpi
+
+Can I run programs that need to be able to talk to an audio device?
+-------------------------------------------------------------------
+
+On ShARC all worker nodes have a dummy sound device installed 
+(which is provided by a kernel module called `snd_dummy <https://www.alsa-project.org/main/index.php/Matrix:Module-dummy>`__).
+
+This may be useful if you wish to run a program that expects to be able to output audio (and crashes if no sound device is found) 
+but you don't actually want to monitor that audio output.
+
+``snd_dummy`` is not (yet) set up on Iceberg's worker nodes.
 
 Login Nodes RSA Fingerprint
 ---------------------------

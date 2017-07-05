@@ -9,6 +9,7 @@ Making the PGI Compilers available
 
 After connecting to the ShARC cluster (see :ref:`ssh`),  start an interactive session with the :ref:`qrshx` or :ref:`qrsh` command then activate a specific version of the compiler suite using one of: ::
 
+    module load dev/PGI-compilers/17.5
     module load dev/PGI-compilers/16.10
 
 Once you've loaded the module, you can check the version with ::
@@ -73,6 +74,9 @@ The PGI CUDA C/C++ compiler for x86 platforms allows developers using CUDA to co
 
 Installation Notes
 ------------------
+*Version 17.5*
+The installer is interactive and the process was identical to that of version 16.10 below.
+
 *Version 16.10*
 
 The installer is interactive. Here is a log of the questions and answers. ::
@@ -98,7 +102,7 @@ The installer is interactive. Here is a log of the questions and answers. ::
   Do you wish to update/create links in the 2016 directory? (y/n) y
   Making symbolic links in /usr/local/packages/dev/pgi/linux86-64/2016
 
-  Installing PGI JAVA components into /usr/local/packages/dev/pgi
+  Installing PGI JAVA components into /usr/local/packages/dev/pgia
   Installing PGI CUDA components into /usr/local/packages/dev/pgi
   Installing AMD GPU components into /usr/local/packages/dev/pgi
   Installing PGI OpenACC Unified Memory components into /usr/local/packages/dev/pgi ...
@@ -121,6 +125,11 @@ The installer is interactive. Here is a log of the questions and answers. ::
 
 Modulefile
 ----------
-**Version 16.10**
+Version 17.5
+^^^^^^^^^^^^
+The PGI compiler installer creates a suitable modulefile that's configured to our system. It puts it at ``/usr/local/packages/dev/pgi/modulefiles/pgi64/17.5`` so all that is required is to copy this to where we keep the modulefiles at ``/usr/local/modulefiles/dev/PGI-compilers/17.5``
+
+Version 16.10
+^^^^^^^^^^^^^
 The PGI compiler installer creates a suitable modulefile that's configured to our system. It puts it at
 ``/usr/local/packages/dev/pgi/modulefiles/pgi64/16.10`` so all that is required is to copy this to where we keep modules at ``/usr/local/modulefiles/dev/PGI-compilers/16.10``

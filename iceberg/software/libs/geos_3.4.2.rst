@@ -11,7 +11,14 @@ geos
    :URL: http://trac.osgeo.org/geos/
    :Location: /usr/local/packages6/libs/gcc/4.8.2/geos/3.4.2
 
-GEOS - Geometry Engine, Open Source
+GEOS (Geometry Engine, Open Source) is a C/C++ port of a subset of 
+the `Java Topology Suite <http://locationtech.github.io/jts/>`_ (JTS), 
+which in turn is a library that:
+
+> provides an object model for planar geometry together with a set of fundamental geometric functions. 
+> JTS conforms to the `Simple Features Specification for SQL <http://www.opengeospatial.org/standards/sfs>`_ published by the Open GIS Consortium. 
+> JTS is designed to be used as a core component of vector-based geomatics software such as geographical information systems. 
+> It can also be used as a general-purpose library providing algorithms in computational geometry. 
 
 Usage
 -----

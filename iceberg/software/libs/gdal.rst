@@ -8,7 +8,7 @@ Geospatial Data Abstraction Library (GDAL)
    :Latest version: 2.1.1
    :URL: http://www.gdal.org/
 
-GDAL is a library used by many Geographic Information Systems (GIS) packages for converting between many different raster and vector GIS data formats.  It also includes command-line utilities for data translation and processing.  It is released under an an X/MIT style Open Source license by the [Open Source Geospatial Foundation](http://www.osgeo.org/).
+GDAL is a library used by many Geographic Information Systems (GIS) packages for converting between many different raster and vector GIS data formats.  It also includes command-line utilities for data translation and processing.  It is released under an an X/MIT style Open Source license by the `Open Source Geospatial Foundation <http://www.osgeo.org>`_.
 
 Usage
 -----
@@ -28,29 +28,30 @@ You can run ``gdal-config --version`` to test that you are running the required 
     2.1.1
 
 The command-line programs that GDAL provides are ::
-    $ gdaladdo
-    $ gdalbuildvrt
-    $ gdal-config
-    $ gdal_contour
-    $ gdaldem
-    $ gdalenhance
-    $ gdal_grid
-    $ gdalinfo
-    $ gdallocationinfo
-    $ gdalmanage
-    $ gdal_rasterize
-    $ gdalserver
-    $ gdalsrsinfo
-    $ gdaltindex
-    $ gdaltransform
-    $ gdal_translate
-    $ gdalwarp
-    $ nearblack
-    $ ogr2ogr
-    $ ogrinfo
-    $ ogrlineref
-    $ ogrtindex
-    $ testepsg
+
+* ``gdaladdo``
+* `gdalbuildvrt``
+* `gdal-config``
+* `gdal_contour``
+* `gdaldem``
+* `gdalenhance``
+* `gdal_grid``
+* `gdalinfo``
+* `gdallocationinfo``
+* `gdalmanage``
+* `gdal_rasterize``
+* `gdalserver``
+* `gdalsrsinfo``
+* `gdaltindex``
+* `gdaltransform``
+* `gdal_translate``
+* `gdalwarp``
+* `nearblack``
+* `ogr2ogr``
+* `ogrinfo``
+* `ogrlineref``
+* `ogrtindex``
+* `testepsg``
 
 The ``gdal...`` utilities are mostly for processing raster GIS data formats, whilst the ``ogr...`` utilities are for processing vector GIS data formats.
 
@@ -78,7 +79,7 @@ This section is primarily for administrators of the system.
 GDAL 2.1.1 was compiled with v6.2.0 of the GCC compiler suite.
 
 #. ``cd`` to a scratch directory.
-#. Download, build and install GDAL using `install_gdal_2.1.1.sh <https://github.com/mikecroucher/HPC_Installers/blob/master/libs/gdal/2.1.1/sheffield/iceberg/install_gdal_2.1.1.sh>`_, ensuring that all output is redirected into a log file.  GDAL files are installed into ``/usr/local/packages6/libs/gcc/6.2/gdal/2.1.1/``
-#. Install `this modulefile <https://github.com/mikecroucher/HPC_Installers/blob/master/libs/gdal/2.1.1/sheffield/iceberg/gdal_2.1.1_modulefile>`_ as ``/usr/local/modulefiles/libs/gcc/6.2/gdal/2.1.1``
+#. Download, build and install GDAL using :download:`install.sh </iceberg/software/install_scripts/libs/gcc/6.2/gdal/2.1.1/install.sh>`, ensuring that all output is redirected into a log file.  GDAL files are installed into ``/usr/local/packages6/libs/gcc/6.2/gdal/2.1.1/``
+#. Install :download:`this modulefile </iceberg/software/modulefiles/libs/gcc/6.2/gdal/2.1.1>` as ``/usr/local/modulefiles/libs/gcc/6.2/gdal/2.1.1``
 
-The **file formats** supported by the build generated using ``install_gdal_2.1.1.sh`` are listed `here <https://github.com/mikecroucher/HPC_Installers/blob/master/libs/gdal/2.1.1/sheffield/iceberg/install_gdal_2.1.1_configure_output.log>`_.
+The **file formats** supported by the build generated using ``install.sh`` are listed :download:`here </iceberg/software/install_scripts/libs/gcc/6.2/gdal/2.1.1/configure_output.log>`.

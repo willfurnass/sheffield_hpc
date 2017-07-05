@@ -1,0 +1,31 @@
+#%Module1.0#####################################################################
+##
+## geos module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+    global $helpmsg
+    puts stderr "\t$helpmsg"
+}
+
+set vers         7.950.1
+set compiler     gcc
+set compilervers 4.9.4
+
+set helpmsg      "Activate Armadillo library version $vers (plus $compiler $compilervers)"
+module-whatis $helpmsg
+
+set armdir  /usr/local/packages/libs/armadillo/7.950.1/gcc-4.9.4/mkl/usr
+
+# Need a particular version of the C++ std lib
+module load dev/$compiler/$compilervers
+# Need MKL
+module load libs/intel-mkl/2017.0/binary
+
+prepend-path LD_LIBRARY_PATH $armdir/lib64
+prepend-path LIBRARY_PATH $armdir/lib64
+prepend-path CPATH $armdir/include

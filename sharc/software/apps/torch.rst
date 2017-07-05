@@ -36,6 +36,8 @@ The ``exec`` command can also be used to call any command/script inside the imag
 
   singularity exec /usr/local/packages/singularity/images/torch/gpu.img th yourscript.lua
 
+You may get a warning similar to ``groups: cannot find name for group ID ...``, this can be ignored and will not have an affect on running the image.
+
 The paths ``/fastdata``, ``/data``, ``/home``, ``/scratch``, ``/shared`` are automatically mounted to your ShARC filestore directories. For GPU-enabled images the ``/nvlib`` and ``/nvbin`` is mounted to the correct Nvidia driver version for the node that you're using.
 
 **To submit jobs that uses a Singularity image, see** :ref:`use_image_batch_singularity_sharc` **for more detail.**

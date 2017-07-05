@@ -34,7 +34,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Sheffield HPC Documentation'
-copyright = u'2016, The University of Sheffield'
+copyright = u'2017, The University of Sheffield'
 author = u'The University of Sheffield'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -78,10 +78,12 @@ html_theme_options = {'navbar_sidebarrel':False,
                       'bootswatch_theme': 'flatly',
                       'navbar_site_name': "Sheffield HPC Documentation",
                       'navbar_title': ' ',
-                      'navbar_links': [("RCG Home", "http://www.shef.ac.uk/cics/research", True),
-                                       ("Documentation Home", "index"),
-                                       ("GitHub", "https://github.com/rcgsheffield/sheffield_hpc", True),
-                                       ],
+                      'navbar_links': [
+                          ("Home", "index"),
+                          ("Research Computing @ CiCS", "https://www.shef.ac.uk/cics/research", True),
+                          ("Research Software Engineering @ TUOS", "https://rse.shef.ac.uk", True),
+                          ("Source (GitHub)", "https://github.com/rcgsheffield/sheffield_hpc", True),
+                      ],
                       'globaltoc_depth': 1}
 
 #html_sidebars = {'software/**': ['softwaretoc.html'],
