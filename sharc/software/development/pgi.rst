@@ -41,7 +41,7 @@ Compiling on the GPU using the PGI Compiler
 
 Start an interctive GPU session (:ref:`GPUInteractive_sharc`) and the following module command ::
 
-        module load dev/PGI-compilers/17.5
+        module load dev/PGI-compilers/16.10
 
 The PGI compilers have several features that make them interesting to users of GPU hardware:-
 
@@ -72,14 +72,10 @@ The PGI CUDA C/C++ compiler for x86 platforms allows developers using CUDA to co
 
 * `PGI CUDA-x86 guide <http://www.pgroup.com/resources/cuda-x86.htm>`_.
 
-Release Notes
--------------
-PGI publish their compiler release notes at `https://www.pgroup.com/support/new_rel.htm <https://www.pgroup.com/support/new_rel.htm>`_
-
 Installation Notes
 ------------------
 *Version 17.5*
-The installer is interactive and the process was identical to that of version 16.10 below. Note that it comes with its own pre-built OpenMPI. We have tested this and it does not work on our system across multiple nodes.  As such, we needed to build our own.
+The installer is interactive and the process was identical to that of version 16.10 below.
 
 *Version 16.10*
 
@@ -106,7 +102,7 @@ The installer is interactive. Here is a log of the questions and answers. ::
   Do you wish to update/create links in the 2016 directory? (y/n) y
   Making symbolic links in /usr/local/packages/dev/pgi/linux86-64/2016
 
-  Installing PGI JAVA components into /usr/local/packages/dev/pgia
+  Installing PGI JAVA components into /usr/local/packages/dev/pgi
   Installing PGI CUDA components into /usr/local/packages/dev/pgi
   Installing AMD GPU components into /usr/local/packages/dev/pgi
   Installing PGI OpenACC Unified Memory components into /usr/local/packages/dev/pgi ...
@@ -129,8 +125,6 @@ The installer is interactive. Here is a log of the questions and answers. ::
 
 Modulefile
 ----------
-**Version 17.5**
-The PGI compiler installer creates a suitable modulefile that's configured to our system. It puts it at `/usr/local/packages/dev/pgi/modulefiles/pgi64/17.5` so all that is required is to copy this to where we keep the modulefiles at ``/usr/local/modulefiles/dev/PGI-compilers/17.5``
 
 **Version 16.10**
 The PGI compiler installer creates a suitable modulefile that's configured to our system. It puts it at
