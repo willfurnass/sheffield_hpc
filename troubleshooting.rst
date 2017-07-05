@@ -194,7 +194,7 @@ then you should try running the following **on your own machine**: ::
 
 Note that these instructions are Ubuntu/Debian-specific; on other systems package names and paths may differ.
 
-Next, try :ref:`connecting to a cluster <getting-started>` using ``ssh -X clustername``, start a graphical session then try running ``qmon``/Ansys again.
+Next, try :ref:`connecting to a cluster <connecting>` using ``ssh -X clustername``, start a graphical session then try running ``qmon``/Ansys again.
 If you can now run ``qmon``/Ansys without problems
 then you need to add two lines to the ``.xinitrc`` file in your home directory **on your own machine**
 so this solution will continue to work following a reboot of your machine: ::
