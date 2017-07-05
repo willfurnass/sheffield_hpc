@@ -5,9 +5,9 @@ Transferring files
 
 To transfer files to/from the clusters you can either:
 
-* Use a program that supports one or both of the SCP and SFTP *protocols* to copy/move files to/from your own machine
+* Use a program that supports one or both of the SCP and SFTP *protocols* to copy/move files to/from your own machine.
 * Use a `Research Storage fileshare <http://www.sheffield.ac.uk/cics/research-storage/>`_ as common storage directly 
   accessible from your own machine and from the clusters.
 
 A more comprehensive guide to accessing the clusters and transfering files is located at 
-`http://www.sheffield.ac.uk/cics/research/hpc/using/access <http://www.sheffield.ac.uk/cics/research/hpc/using/access>`_
+`http://www.sheffield.ac.uk/cics/research/hpc/using/access <http://www.sheffield.ac.uk/cics/research/hpc/using/access>`_.

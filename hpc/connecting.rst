@@ -13,7 +13,7 @@ running the Linux operating system.
 To connect to another machine using SSH you need to 
 have a SSH *client* program installed on your machine.  
 macOS and Linux come with a command-line (text-only) SSH client pre-installed.  
-On Windows there are various graphical SSH clients you can used, 
+On Windows there are various graphical SSH clients you can use, 
 including *MobaXTerm*.
 
 .. note::

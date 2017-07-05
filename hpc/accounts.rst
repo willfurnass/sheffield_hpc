@@ -14,7 +14,7 @@ the permission of their supervisors:
 * Taught Postgraduates - project work
 * Undergraduates 3rd & 4th year  - project work
 
-Student's supervisors can request an account for the student by emailing
+A student's supervisor can request an account for the student by emailing
 `helpdesk@sheffield.ac.uk <helpdesk@sheffield.ac.uk>`_.
 
 .. note::
