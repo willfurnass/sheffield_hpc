@@ -1,0 +1,32 @@
+#%Module1.0#####################################################################
+##
+## Code Saturne module file
+##
+#  By David M. Rogers June 2017
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes Code Saturne Version 4.0.7 available for use"
+}
+
+#set USER $::env(USER)
+
+module-whatis   "Makes Code Saturne Version 4.0.7 available"
+
+# load modules
+ module load mpi/openmpi/2.0.1/gcc-6.2
+
+# module variables
+#
+ set     version 4.0.7
+ set     codesaturneroot /usr/local/packages/apps/code_saturne/4.0.7/gcc-6.2-openmpi-2.0.1
+
+ prepend-path MANPATH $codesaturneroot/share/man
+ prepend-path PATH $codesaturneroot/bin
+ 
