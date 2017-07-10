@@ -191,7 +191,8 @@ Command                Description
                        have exclusive use of e.g. memory/IO buses.  Note that
                        you still need to request CPU cores and memory to avoid
                        being limited to just the default per job (one core
-                       and a set amount of RAM).
+                       and a set amount of RAM).  Also note that the use of
+                       this option will likely result in longer queuing times.
      
 ``-l hostname=``       Target a node by name. Not recommended for normal use.
 
