@@ -28,5 +28,5 @@ module-whatis   "Makes Code Saturne Version 4.0.7 available"
  set     codesaturneroot /usr/local/packages/apps/code_saturne/4.0.7/gcc-4.9.4-openmpi-1.10.4
 
  prepend-path MANPATH $codesaturneroot/share/man
- prepend-path PATH $codesaturneroot/bin
+ prepend-path PATH $codesaturneroot/bin:$codesaturneroot/libexec/code_saturne
  

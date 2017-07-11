@@ -33,7 +33,7 @@ Users are encouraged to write their own batch submission scripts. The following 
     module load apps/code_saturne/4.0.7/gcc-4.9.4-openmpi-1.10.4
 
     # Run solver.
-    mpiexec -n 4 /usr/local/packages/apps/code_saturne/4.0.7/gcc-4.9.4-openmpi-1.10.4/libexec/code_saturne/cs_solver --param case1.xml --mpi $@
+    mpiexec -n 4 cs_solver --param case1.xml --mpi $@
     export CS_RET=$?
 
     exit $CS_RET
