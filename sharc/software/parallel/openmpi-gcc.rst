@@ -15,6 +15,7 @@ Versions
 You can load a specific version using ::
 
    module load mpi/openmpi/2.1.1/gcc-6.2
+   module load mpi/openmpi/2.1.1/gcc-5.4
    module load mpi/openmpi/2.1.1/gcc-4.9.4
    module load mpi/openmpi/2.0.1/gcc-6.2
    module load mpi/openmpi/2.0.1/gcc-5.4
@@ -71,6 +72,12 @@ These are primarily for administrators of the system.
 1. Enable :ref:`GCC <gcc_sharc>` 6.2.0.
 2. Download, compile and install OpenMPI 2.1.1 using the :download:`this script </sharc/software/install_scripts/mpi/openmpi/2.1.1/gcc-6.2/install.sh>`.
 3. Install :download:`this modulefile </sharc/software/modulefiles/mpi/openmpi/2.1.1/gcc-6.2>` as ``/usr/local/modulefiles/mpi/openmpi/2.1.1/gcc-6.2``
+
+**Version 2.1.1, gcc 5.4**
+
+1. Enable :ref:`GCC <gcc_sharc>` 5.4.0.
+2. Download, compile and install OpenMPI 2.1.1 using the :download:`this script </sharc/software/install_scripts/mpi/openmpi/2.1.1/gcc-5.4/install.sh>`.
+3. Install :download:`this modulefile </sharc/software/modulefiles/mpi/openmpi/2.1.1/gcc-5.4>` as ``/usr/local/modulefiles/mpi/openmpi/2.1.1/gcc-5.4``
 
 **Version 2.1.1, gcc 4.8.5**
 
