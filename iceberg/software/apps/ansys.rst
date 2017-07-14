@@ -17,7 +17,7 @@ The Ansys suite of programs can be used to numerically simulate a large variety 
 
 Interactive usage
 -----------------
-After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the ``qsh`` command. Alternatively, if you require more memory, for example 16 GB, use the command ``qsh` -l rmem=16G,mem=16G``.
+After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the ``qsh`` command. Alternatively, if you require more memory, for example 16 GB, use the command ``qsh` -l rmem=16G``.
 
 To make the **default** version of ANSYS available (currently **version 16.1**), run the following: ::
 

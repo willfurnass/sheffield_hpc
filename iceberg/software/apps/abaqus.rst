@@ -15,7 +15,7 @@ Abaqus is a software suite for Finite Element Analysis (FEA) developed by Dassau
 
 Interactive usage
 -----------------
-After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the :code:`qsh` command. Alternatively, if you require more memory, for example 16 gigabytes, use the command :code:`qsh -l mem=16G` 
+After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the :code:`qsh` command. Alternatively, if you require more memory, for example 16 gigabytes, use the command :code:`qsh -l rmem=16G` 
 
 The latest version of Abaqus (currently version 6.13) is made available with the command
 
@@ -56,7 +56,6 @@ Now, you need to write a batch submission file. We assume you'll call this :code
     #$ -S /bin/bash
     #$ -cwd
     #$ -l rmem=8G
-    #$ -l mem=8G
 
     module load apps/abaqus
 
@@ -66,7 +65,7 @@ Submit the job with the command ``qsub my_job.sge``
 
 Important notes:
 
-* We have requested 8 gigabytes of memory in the above job. The ``memory="8gb"`` switch tells abaqus to use 8 gigabytes. The ``#$ -l rmem=8G`` and ``#$ -l mem=8G`` tells the system to reserve 8 gigabytes of real and virtual memory resptively. It is important that these numbers match.
+* We have requested 8 gigabytes of memory in the above job. The ``memory="8gb"`` switch tells abaqus to use 8 gigabytes. The ``#$ -l rmem=8G`` tells the system to reserve 8 gigabytes of real memory.
 * Note the word ``interactive`` at the end of the abaqus command. Your job will not run without it.
 
 Batch submission of a single core job with user subroutine
@@ -86,7 +85,6 @@ Now, you need to write a batch submission file. We assume you'll call this :code
     #$ -S /bin/bash
     #$ -cwd
     #$ -l rmem=8G
-    #$ -l mem=8G
 
     module load apps/abaqus/613
     module load compilers/intel/12.1.15

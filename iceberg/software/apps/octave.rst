@@ -36,8 +36,7 @@ Here is an example batch submission script that will run an Octave program calle
 
   #!/bin/bash
   # Request 5 gigabytes of real memory (mem)
-  # and 5 gigabytes of virtual memory (mem)
-  #$ -l mem=5G -l rmem=5G
+  #$ -l rmem=5G
   # Request 64 hours of run time
   #$ -l h_rt=64:00:00
 

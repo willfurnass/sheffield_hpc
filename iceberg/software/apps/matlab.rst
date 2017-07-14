@@ -40,7 +40,6 @@ First, you need to write a batch submission file. We assume you'll call this ``m
 
         #!/bin/bash
         #$ -l rmem=4G                  # Request  4 GB of real memory
-        #$ -l mem=16G                  # Request 16 GB of virtual memory
         #$ -cwd                        # Run job from current directory
         module load apps/matlab/2016a  # Make specific version of MATLAB available
 
@@ -149,7 +148,7 @@ However, each job will have the default resource requirements unless the followi
 For example, during your MATLAB session type: ::
 
     global sge_params
-    sge_params='-l mem=16G -l h_rt=36:00:00'
+    sge_params='-l rmem=16G -l h_rt=36:00:00'
 
 to make sure that all the MATLAB batch jobs will use up to 16GBytes of memory and will not be killed
 unless they exceed 36 hours of run time.

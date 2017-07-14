@@ -10,6 +10,6 @@ Request an interactive session that provides the default amount of memory resour
 
     qrsh
 
-Request an interactive session that provides 10 Gigabytes of real and virtual memory ::
+Request an interactive session that provides 10 Gigabytes of real memory ::
 
-    qrsh -l rmem=10G -l mem=10G
+    qrsh -l rmem=10G 

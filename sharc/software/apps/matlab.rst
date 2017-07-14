@@ -36,7 +36,6 @@ First, you need to write a batch submission file. We assume you'll call this ``m
 
         #!/bin/bash
         #$ -l rmem=4G                        # Request  4 GB of real memory
-        #$ -l mem=16G                        # Request 16 GB of virtual memory
         $ -cwd                               # Run job from current directory
         module load apps/matlab/2016b/binary # Make specific version of MATLAB available
 
