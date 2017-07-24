@@ -102,9 +102,11 @@ Just typing ``runfluent`` will display information on how to use it: ::
          You can startup an interactive fluent session in non-gui mode to 
           experiment. For example, by using the command: qrsh fluent 3d -g 
 
+**Note that the option** ``mem`` **has been deprecated and is no longer required**
+
 An example of its usage: ::
 
-        runfluent 3d nozzle.jou -time 00:30:00 -mem=10G
+        runfluent 3d nozzle.jou -time 00:30:00 -rmem=10G
 
 Fluent journal files are essentially a sequence of Fluent Commands you would have entered by starting fluent in non-GUI mode.
 
@@ -160,3 +162,5 @@ Just typing ``runansys`` will display information on how to use it: ::
            startup parameter you wish to pass to Ansys
         Example: 
            runansys test1.dat -time 00:30:00 -mem 8G -rmem=3G -mail j.bloggs@shef.ac.uk
+
+**Note that the option** ``mem`` **has been deprecated and is no longer required.**
