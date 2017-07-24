@@ -1,6 +1,5 @@
 #!/bin/bash
-# Install script used to install Java JDK 1.8.0_102 on ShARC
-# This does both the download and the install
+# Install script used to install the contents of the BLAS and BLAS development packages
 
 ###############
 # Set variables
