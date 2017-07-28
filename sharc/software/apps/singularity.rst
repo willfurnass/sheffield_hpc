@@ -47,7 +47,7 @@ Note that the ``exec`` command can also be used to execute other applications/sc
 
   singularity exec path/to/imgfile.img my_script.sh
 
-You may get a warning similar to ``groups: cannot find name for group ID ...``, this can be ignored and will not have an affect on running the image.
+You may get a warning similar to ``groups: cannot find name for group ID ...``; :ref:`this can be ignored <unnamed_groups>` and will not have an affect on running the image.
 
 .. _use_image_batch_singularity_sharc:
 

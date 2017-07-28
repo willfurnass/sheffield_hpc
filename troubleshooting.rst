@@ -223,10 +223,10 @@ The RSA key fingerprint for Iceberg's login nodes is: ::
 Issue when running multiple MPI jobs in sequence
 ------------------------------------------------
 
-If you have multiple ``mpirun`` commands in a single batch job submission script, 
+If you have multiple ``mpirun`` commands in a single batch job submission script,
 you may find that one or more of these may fail after 
 complaining about not being able to communicate with the ``orted`` daemon on other nodes.
-This appears to be something to do with multiple ``mpirun``s being called quickly in succession, 
+This appears to be something to do with multiple ``mpirun`` commands being called quickly in succession, 
 and connections not being pulled down and new connections established quickly enough.
 
 Putting a sleep of e.g. 5s between ``mpirun`` commands seems to help here. i.e. ::
@@ -234,6 +234,8 @@ Putting a sleep of e.g. 5s between ``mpirun`` commands seems to help here. i.e. 
   mpirun program1
   sleep 5s
   mpirun program2
+
+.. _unnamed_groups:
 
 Warning about 'groups: cannot find name for group ID xxxxx'
 -----------------------------------------------------------
