@@ -27,7 +27,11 @@ In shared high-performance computing environments such as ShARC and Iceberg:
 There is therefore a need to maintain multiple versions of the same applications on ShARC and Iceberg.
 Module files allow users to select and use the versions they need for their research.
 
-If you switch to using a cluster other than Iceberg or ShARC then you will likely find that environment modules are used there too. 
+If you switch to using a cluster other than Iceberg or ShARC then you will likely find that environment modules are used there too.  
+Modules are not the only way of managing software on clusters: increasingly common approaches include:
+
+* the :ref:`Conda <sharc-python-conda>` package manager (Python-centric but can manage software written in any language; can be used on ShARC and Iceberg);
+* :ref:`Singularity <singularity_sharc>`, a means for deploying software in `containers <https://en.wikipedia.org/wiki/Operating-system-level_virtualization>`__ (similar to `Docker <https://www.docker.com/>`__; can be used on ShARC).
 
 Basic guide
 -----------
@@ -75,6 +79,7 @@ Note that the module naming convention differs between ShARC and Iceberg.
 Some other things to be aware of:
 
 * You can load and unload modules in both interactive and batch jobs;
+* Modules may themselves load other modules.  If this is the case for a given module then it is typically noted in our documentation for the corresponding software;
 * Available applications and application versions may differ between ShARC and Iceberg;
 * The order in which you load modules may be significant (e.g. if module A sets ``SOME_ENV_VAR=apple`` and module B sets ``SOME_ENV_VAR=pear``);
 * Some related module files have been set up so that they are mutually exclusive e.g. on ShARC the modules ``dev/NAG/6.0`` and ``dev/NAG/6.1`` cannot be loaded simultaneously (as users should never want to have both loaded).
