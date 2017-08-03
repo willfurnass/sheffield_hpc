@@ -29,11 +29,8 @@ other users wishing to access Gaussian 09 will need to contact ``research-it@she
 Gaussian 09 utilities
 ---------------------
 
-The Gaussian 09 utilities can be accessed by loading the module file::
-
-    module load apps/gaussian_09/d.01/pgi-17.5
-	
-The utilities are executed by typing their name, e.g., ``formchk`` and ``cubegen``.
+The Gaussian 09 utilities can be accessed by loading the Gaussian 09 module file (see above).
+The utilities are executed by typing their name, e.g., ``formchk`` and ``cubegen``. The full list of utilities is described at http://gaussian.com/utils.
 
 
 Batch jobs
@@ -53,7 +50,7 @@ Users are encouraged to write their own batch submission scripts. The following 
 
     g09 my_input.gjf
 
-The script requests 2 cores using the shared memory parallel environment ``smp`` with a runtime of 30 mins and 2G of real memory per core. The Gaussian 09 input file is ``my_input.gjf``.
+The script requests 2 cores using the shared memory parallel environment ``smp`` with a runtime of 30 mins and 2GB of real memory per core. The Gaussian 09 input file is ``my_input.gjf``.
 
 **Please note:** The above script specifies that the scratch directory for Gaussian 09, ``GAUSS_SCRDIR``, is set to ``$TMPDIR`` on a compute node.
  
