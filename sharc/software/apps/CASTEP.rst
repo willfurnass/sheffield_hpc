@@ -52,7 +52,8 @@ If, instead, you get: ::
 It is probably because you are not a member of the ``castep`` group. 
 See Licensing_ for details on how to be added to this group.
 
-Interactive usage is fine for small CASTEP jobs such as the Silicon example given at http://www.castep.org/Tutorials/BasicsAndBonding
+Interactive usage is fine for small CASTEP jobs such as the Silicon example given in 
+the CASTEP `Basics and Bonding <http://www.castep.org/Tutorials/BasicsAndBonding>`_ tutorial. 
 
 To run this example, you can do:
 
@@ -66,7 +67,7 @@ To run this example, you can do:
    # Run the CASTEP job in serial
    castep.serial Si2
 
-   # Read the output using the more command
+   # Read the output using the less command
    less Si2.castep
 
 CASTEP has a built in help system. To get more information on using castep use:
@@ -96,11 +97,12 @@ To make the parallel environment available, use the following command:
 
    module load apps/castep/16.11/intel-15.0.7-openmpi-2.0.1
 
-As an example of a parallel submission, we will calculate the bandstructure of graphite following the tutorial at http://www.castep.org/Tutorials/BandStructureAndDOS
+As an example of a parallel submission, we will calculate the bandstructure of graphite following 
+the CASTEP `Band Structure and DOS <http://www.castep.org/Tutorials/BandStructureAndDOS>`_ tutorial.
 
 After connecting to ShARC (see :ref:`ssh`),  
 start an interactive session with the ``qrsh`` or ``qrshx`` command. 
-Download and decompress the example input files with the commands
+Download and decompress the example input files with the commands:
 
 .. code-block:: bash
 
