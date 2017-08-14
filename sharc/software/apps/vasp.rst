@@ -38,9 +38,9 @@ Users are encouraged to write their own batch submission scripts. The following 
 
     module load apps/vasp/5.4.1.05Feb16/intel-17.0.0-openmpi-2.0.1
     
-    mpiexec -np $NSLOTS vasp_std
+    mpirun vasp_std
 
-The script requests 4 cores using the Open MPI parallel environment ``mpi`` with a runtime of 30 mins and 2G of real memory per core.
+The script requests 4 cores using the Open MPI parallel environment ``mpi`` with a runtime of 30 mins and 2 GB of real memory per core.
 
 
 Installation notes
@@ -48,7 +48,7 @@ Installation notes
 
 VASP 5.4.1 (05Feb16) was installed using the
 :download:`install_vasp.sh </sharc/software/install_scripts/apps/vasp/5.4.1.05Feb16/intel-17.0.0-openmpi-2.0.1/install_vasp.sh>` script;
-the module file is
-:download:`intel-17.0.0-openmpi-2.0.1 </sharc/software/modulefiles/apps/vasp/5.4.1.05Feb16/intel-17.0.0-openmpi-2.0.1>`.
+the module file is 
+:download:`/usr/local/modulefiles/apps/vasp/5.4.1.05Feb16/intel-17.0.0-openmpi-2.0.1 </sharc/software/modulefiles/apps/vasp/5.4.1.05Feb16/intel-17.0.0-openmpi-2.0.1>`.
 
 The VASP 5.4.1 installation was tested by running a batch job using the ``my_job.sh`` batch script, above, and the input for the "O atom" example (https://cms.mpi.univie.ac.at/wiki/index.php/O_atom) from the online VASP tutorials (https://cms.mpi.univie.ac.at/wiki/index.php/VASP_tutorials). 

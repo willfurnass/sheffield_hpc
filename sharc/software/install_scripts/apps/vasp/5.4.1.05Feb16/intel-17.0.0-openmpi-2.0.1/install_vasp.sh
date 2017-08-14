@@ -16,7 +16,7 @@ module load libs/intel-mkl/2017.0/binary
 ############################## Variable Setup ################################
 version=5.4.1.05Feb16
 prefix=/usr/local/packages/apps/vasp/$version/intel-17.0.0-openmpi-2.0.1
-build_dir=
+build_dir=/scratch/$USER/vasp
 
 filename1=/usr/local/media/protected/vasp/5.4.1.05Feb16/vasp.5.4.1.05Feb16.tar.gz
 filename2=/usr/local/media/protected/vasp/5.4.1.05Feb16/patch.5.4.1.14032016.gz
