@@ -70,7 +70,7 @@ Version 2.0.1, Intel 17.0.0 compiler
 #. Ensure :ref:`Intel compilers 17.0.0 <sharc-intel-compilers>` are installed and licensed.
 #. Download, compile and install OpenMPI 2.0.1 using :download:`this script </sharc/software/install_scripts/mpi/openmpi/2.0.1/intel-17.0.0/install.sh>`.
 #. Install :download:`this modulefile </sharc/software/modulefiles/mpi/openmpi/2.0.1/intel-17.0.0>` as ``/usr/local/modulefiles/mpi/openmpi/2.0.1/intel-17.0.0``
-#. Test by running some <Examples>_.
+#. Test by running some Examples_.
 
 Version 2.0.1, Intel 15.0.7 compiler
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -78,7 +78,7 @@ Version 2.0.1, Intel 15.0.7 compiler
 #. Ensure :ref:`Intel compilers 15.0.7 <sharc-intel-compilers>` are installed and licensed.
 #. Download, compile and install OpenMPI 2.0.1 using :download:`this script </sharc/software/install_scripts/mpi/openmpi/2.0.1/intel-15.0.7/install.sh>`.
 #. Install :download:`this modulefile </sharc/software/modulefiles/mpi/openmpi/2.0.1/intel-15.0.7>` as ``/usr/local/modulefiles/mpi/openmpi/2.0.1/intel-15.0.7``
-#. Test by running some <Examples>_.
+#. Test by running some Examples_.
 
 Version 1.10.4, Intel 15.0.7 compiler
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -92,4 +92,4 @@ Version 1.10.4, Intel 15.0.7 compiler
    * the ``oob`` (MCA out of band messaging) to use the intra-cluster Ethernet fabric (specified using a network address in CIDR format rather than by specifying Ethernet interface name, which can vary between nodes).
 
 #. Install :download:`this modulefile </sharc/software/modulefiles/mpi/openmpi/1.10.4/intel-15.0.7>` as ``/usr/local/modulefiles/mpi/openmpi/1.10.4/intel-15.0.7``
-#. Test by running some <Examples>_.
+#. Test by running some Examples_.
