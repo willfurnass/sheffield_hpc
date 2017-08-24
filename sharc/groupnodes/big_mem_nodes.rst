@@ -9,8 +9,8 @@ much more than the standard amount of RAM per node.
 Specifications
 --------------
 
-* 2x Intel Xeon E5-2630 v3 processors (2.40GHz, 8 cores per processor i.e. 16 total)
-* 768 GB RAM (48GB / CPU core)
+* 2x Intel Xeon E5-2630 v3 processors (2.40 GHz, 8 cores per processor i.e. 16 total)
+* 768 GB RAM (48 GB / CPU core)
 
 Requesting Access
 -----------------
@@ -31,7 +31,7 @@ Once you have obtained permission to use the nodes you can request an interactiv
 	qrshx -P rse 
 
 Here ``-P rse`` specifies that you want to use the ``rse`` project for your session, 
-which gives you access these big memory nodes and 
+which gives you access to these big memory nodes and 
 ensures that your interactive session runs in the ``rse.q`` job queue 
 (as can be seen if you subsequently run ``qstat -u $USER`` from within your session).
 
@@ -53,6 +53,6 @@ Run your script with the ``qsub`` command ::
 
 	qsub my_job_script.sh
 
-You can use ``qstat`` command to check the status of your current job. An output file is created in your home directory that captures your script's outputs.
+You can use the ``qstat`` command to check the status of your current job. An output file is created in your home directory that captures your script's outputs.
 
 See :ref:`sge-queue` for more information on job submission and the Sun Grid Engine scheduler.
