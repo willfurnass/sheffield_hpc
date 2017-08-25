@@ -227,7 +227,7 @@ Specify each additional email with its own ``-M`` option ::
 
 **I want email notifications but don't want to have to include my email address in every job submission script**
 
-Create a file called ``.sge_request`` in your home directory on ShARC / Iceberg containing: ::
+Create a file called ``.sge_request`` in the directory you submit your jobs from containing: ::
 
     -M my.personal@email.com -M my.work@sheffield.ac.uk
 
