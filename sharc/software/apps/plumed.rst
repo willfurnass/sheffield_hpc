@@ -25,7 +25,7 @@ Installation notes
 PLUMED 2.3.2 was installed using the
 :download:`install_plumed.sh </sharc/software/install_scripts/apps/plumed/2.3.2/gcc-6.2-openmpi-2.1.1/install_plumed.sh>` script; the module
 file is
-:download:`gcc-6.2-openmpi-2.1.1 </sharc/software/modulefiles/apps/plumed/2.3.2/gcc-6.2-openmpi-2.1.1>`.
+:download:`/usr/local/modulefiles/apps/plumed/2.3.2/gcc-6.2-openmpi-2.1.1 </sharc/software/modulefiles/apps/plumed/2.3.2/gcc-6.2-openmpi-2.1.1>`.
 
 The installation of PLUMED 2.3.2 was tested using the ``make`` command as part of running the above installation script.
     
