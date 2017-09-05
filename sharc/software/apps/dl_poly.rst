@@ -32,10 +32,10 @@ Users are encouraged to write their own batch submission scripts. The following 
 
     module load apps/dl_poly/4.08/gcc-6.2-openmpi-2.1.1
     
-    mpirun -np $NSLOTS DLPOLY.Z
+    mpirun DLPOLY.Z
 
 The script requests 8 cores using the MPI parallel environment ``mpi`` with a runtime of 30 mins and 2 GB of real memory per core.
-*Note:* If your ``OUTPUT`` file appears truncated when running a DL_POLY job using MPI, add the ``l_scr`` keyword to your ``CONTROL`` file.
+*Note:* If your ``OUTPUT`` file appears truncated when running a DL_POLY job using MPI, then add the ``l_scr`` keyword to your ``CONTROL`` file to place the output in the standard output file (see section 5.2.5 Parallel I/O in the user manual).
 
 Installation notes
 ------------------
