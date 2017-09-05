@@ -1,4 +1,4 @@
-.. opensim:
+.. _opensim_iceberg:
 
 OpenSim
 =======

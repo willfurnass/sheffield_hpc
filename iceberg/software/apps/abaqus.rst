@@ -1,4 +1,4 @@
-.. abaqus:
+.. _abaqus_iceberg:
 
 Abaqus
 ======
