@@ -7,7 +7,9 @@ COMPILER=gcc
 COMPILER_VERS=6.2
 VERS=0.6.0
 MAKEFILE_FPATH=${PWD}/Make.inc
-PREFIX="/usr/local/packages/apps/julia/${VERS}/${COMPILER}-${COMPILER_VERS}"
+# Julia and dependencies get installed into the following directory, 
+# which isn't used in this script but is hardcoded in the Make.inc file
+#PREFIX="/usr/local/packages/apps/julia/${VERS}/${COMPILER}-${COMPILER_VERS}"
 
 # Error handling
 handle_error () {
@@ -37,16 +39,19 @@ pushd julia
 # Check out a specific version using a tag
 git checkout "v${VERS}"
 
-# Modify compilation settings so that use Intel compiler and Intel MKL
+# Customise compilation settings 
+#  - Use Intel MKL 
+#  - Set install prefix
 cp "${MAKEFILE_FPATH}" .
 
-# Compile
+# Compile and install
 make 
+make testall
+make install
 popd
 
 # Delete git history as no longer needed
-rm -rf julia/.git
-
+#rm -rf julia/.git
 # Copy to installation prefix
-mkdir -m 0775 -p "${PREFIX}"
-cp -rT --preserve=mode,timestamps julia "${PREFIX}"
+#mkdir -m 0775 -p "${PREFIX}"
+#cp -rT --preserve=mode,timestamps julia "${PREFIX}"

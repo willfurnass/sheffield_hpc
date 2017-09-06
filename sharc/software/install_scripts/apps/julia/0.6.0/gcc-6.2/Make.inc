@@ -177,7 +177,8 @@ endif
 USE_GPL_LIBS ?= 1
 
 # Directories where said libraries get installed to
-prefix ?= $(BUILDROOT)/julia-$(JULIA_COMMIT)
+#prefix ?= $(BUILDROOT)/julia-$(JULIA_COMMIT)
+prefix ?= /usr/local/packages/apps/julia/$(JULIA_VERSION)/gcc-6.2
 bindir := $(prefix)/bin
 libdir := $(prefix)/lib
 libexecdir := $(prefix)/libexec
