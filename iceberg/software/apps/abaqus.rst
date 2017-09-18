@@ -5,7 +5,7 @@ Abaqus
 
 .. sidebar:: Abaqus
 
-   :Versions:  6.13,6.12 and 6.11
+   :Versions:  6.14, 6.13, 6.12 and 6.11
    :Support Level: FULL
    :Dependancies: Intel Compiler
    :URL: http://www.3ds.com/products-services/simulia/products/abaqus/
@@ -17,7 +17,7 @@ Interactive usage
 -----------------
 After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the :code:`qsh` command. Alternatively, if you require more memory, for example 16 gigabytes, use the command :code:`qsh -l mem=16G` 
 
-The latest version of Abaqus (currently version 6.13) is made available with the command
+Abaqus version 6.13 is made available with the command
 
 .. code-block:: none
 
@@ -27,11 +27,14 @@ Alternatively, you can make a specific version available with one of the followi
 
 .. code-block:: none
 
+      module load apps/abaqus/614
       module load apps/abaqus/613
       module load apps/abaqus/612
       module load apps/abaqus/611
 
 After that, simply type :code:`abaqus` to get the command-line interface to abaqus or type :code:`abaqus cae` to get the GUI interface.
+
+**Note:** When using hardware-accelerated graphics rendering for Abaqus on Iceberg, i.e., during a ``qsh-vis`` interactive session, please run e.g. ``abq6133 cae`` to launch the GUI for version 6.13.
 
 Abaqus example problems
 -----------------------
