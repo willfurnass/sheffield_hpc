@@ -5,7 +5,7 @@ MATLAB
 
 .. sidebar:: MATLAB
 
-   :Versions:  2016a 2016b
+   :Versions:  2016a 2016b 2017a
    :Support Level: FULL
    :Dependancies: None
    :URL: http://uk.mathworks.com/products/matlab
@@ -17,7 +17,7 @@ Interactive Usage
 -----------------
 After connecting to ShARC (see :ref:`ssh`),  start an interactive session with the ``qrshx`` command.
 
-The latest version of MATLAB (currently 2016b) is made available by running: ::
+The latest version of MATLAB (currently 2017a) is made available by running: ::
 
         module load apps/matlab
 
@@ -25,30 +25,32 @@ Alternatively, you can load a specific version with one of of the following comm
 
         module load apps/matlab/2016a/binary
         module load apps/matlab/2016b/binary
+	module load apps/matlab/2017a/binary
 
 You can then run MATLAB by entering ``matlab``
 
 Serial (one CPU) Batch usage
 ----------------------------
-Here, we assume that you wish to run the program ``hello.m`` on the system.
+Here, we assume that you wish to run the program ``helloworld.m`` on the system: ::
+	
+	function helloworld
+		disp('Hello World!')
+	end	
 
 First, you need to write a batch submission file. We assume you'll call this ``my_job.sge``: ::
 
         #!/bin/bash
-        #$ -l rmem=4G                        # Request  4 GB of real memory
-        #$ -l mem=16G                        # Request 16 GB of virtual memory
-        $ -cwd                               # Run job from current directory
-        module load apps/matlab/2016b/binary # Make specific version of MATLAB available
+        #$ -l rmem=4G                  		# Request  4 GB of real memory
+        #$ -cwd                        		# Run job from current directory
+        module load apps/matlab/2017a/binary  	# Make specific version of MATLAB available
 
-        matlab -nodesktop -r 'hello'
+        matlab -nodesktop -nosplash -r helloworld
 
-Ensuring that ``hello.m`` and ``my_job.sge`` are both in your current working directory, submit your job to the batch system: ::
+Ensuring that ``helloworld.m`` and ``my_job.sge`` are both in your current working directory, submit your job to the batch system: ::
 
         qsub my_job.sge
 
-Note that we are running the script ``hello.m`` but we drop the ``.m`` in the call to MATLAB. That is, we do ``-r 'hello'`` rather than ``-r hello.m``.
-
-On the `:ref:iceberg cluster<matlab_iceberg>` MATLAB batch jobs can also be submitted using a script called ``runmatlab``; this script has been deprecated on this cluster.
+Note that we are running the script ``helloworld.m`` but we drop the ``.m`` in the call to MATLAB. That is, we do ``-r helloworld`` rather than ``-r helloworld.m``. The output will be written to the job ``.o`` file when the job finishes.
 
 MATLAB Compiler and running free-standing compiled MATLAB programs
 ------------------------------------------------------------------
@@ -91,7 +93,7 @@ Finally the environment variable ``$MCRROOT`` can be set to the directory contai
 Parallel MATLAB
 ---------------
 
-**Not yet configured on this cluster.**
+**Not yet configured on this cluster.** However task arrays are supported by all versions, however it is recommended that 2017a is used for task arrays requiring more than a few hours runtime.
 
 Training
 --------
