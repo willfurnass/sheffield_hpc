@@ -116,7 +116,7 @@ Run MATLAB in that session and select 5 workers: ::
         matlab
         parpool ('local' , 5 )
 
-The above example will use 5 MATLAB workers on a single iceberg node to run a parallel task.  Note that being granted a multi-core interactive session by the scheduler is dependent on Iceberg's loading at the time of request. It is not guaranteed however the user can reduce the number of cores requested, which will improve their chances of being granted a multi-core session.
+The above example will use 5 MATLAB workers on a single iceberg node to run a parallel task.  Note that being granted a multi-core interactive session by the scheduler is dependent on Iceberg's loading at the time of request. It is not guaranteed. However the user can reduce the number of cores requested, which will improve their chances of being granted a multi-core session.
 
 To take advantage of the multiple iceberg nodes, you will need to make use of a parallel cluster profile named ``sge``.
 This can be done by issuing a locally provided MATLAB command named ``iceberg`` that imports the
@@ -131,8 +131,8 @@ For example, during your MATLAB session type: ::
     global sge_params
     sge_params='-l rmem=8G -l h_rt=36:00:00'
 
-to make sure that all the MATLAB batch jobs will use up to 8GBytes of memory and will not be killed
-unless they exceed 36 hours of run time.
+to make sure that all the MATLAB batch jobs will use up to 8 GBytes of memory and will not be killed
+unless they exceed 36 hours of runtime.
 
 
 Training
