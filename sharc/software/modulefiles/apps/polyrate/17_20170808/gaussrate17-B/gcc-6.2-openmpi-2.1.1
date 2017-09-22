@@ -1,0 +1,39 @@
+#%Module1.0#####################################################################
+##
+## Polyrate module file
+##
+#  By David M. Rogers September 2017
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes Polyrate Version 17 and Gaussrate Version 17-B available for use"
+}
+
+ set USER $::env(USER)
+
+module-whatis   "Makes Polyrate Version 17 and Gaussrate Version 17-B available"
+
+# load modules
+ module load mpi/openmpi/2.1.1/gcc-6.2
+ module load apps/gaussian_09/d.01/pgi-17.5
+
+# module variables
+#
+ set     poly_ver 17
+ set     poly_path /usr/local/packages/apps/polyrate/17_20170808/gaussrate17-B/gcc-6.2-openmpi-2.1.1/polyrate17
+
+ prepend-path PATH $poly_path
+ setenv polydir $poly_path
+ 
+ set userid [ exec id -g -n $USER ]
+ if { $userid == "ch" } {
+ setenv  gausspath /usr/local/packages/apps/gaussian_09/d.01/pgi-17.5/chem/g09
+ } else {
+ setenv  gausspath /usr/local/packages/apps/gaussian_09/d.01/pgi-17.5/g09
+ }
