@@ -3,7 +3,7 @@ OpenMPI (gcc version)
 
 .. sidebar:: OpenMPI (gcc version)
 
-   :Latest Version: 2.0.1
+   :Latest Version: 2.1.1
    :Dependancies: gcc
    :URL: http://www.open-mpi.org/
 
@@ -14,6 +14,9 @@ Versions
 
 You can load a specific version using ::
 
+   module load mpi/openmpi/2.1.1/gcc-6.2
+   module load mpi/openmpi/2.1.1/gcc-5.4
+   module load mpi/openmpi/2.1.1/gcc-4.9.4
    module load mpi/openmpi/2.0.1/gcc-6.2
    module load mpi/openmpi/2.0.1/gcc-5.4
    module load mpi/openmpi/2.0.1/gcc-4.9.4
@@ -41,29 +44,45 @@ In more detail ::
     qrsh -pe mpi 4
 
     # Load an MPI implementation
-    module load mpi/openmpi/2.0.1/gcc-6.2
+    module load mpi/openmpi/2.1.1/gcc-6.2
 
     # Copy the examples to your home directory
-    cp -r $MPI_HOME/examples ~/openmpi_2.0.1_examples
+    cp -r $MPI_HOME/examples ~/openmpi_2.1.1_examples
 
     # Compile all programs in the examples directory
-    cd ~/openmpi_2.0.1_examples
+    cd ~/openmpi_2.1.1_examples
     make
 
     # Once compiled, run an example program on all (or a subset) of your MPI nodes using the mpirun utility
      mpirun -np 4 hello_c
 
-
-    Hello, world, I am 0 of 4, (Open MPI v2.0.1, package: Open MPI user@sharc-node002.shef.ac.uk Distribution, ident: 2.0.1, repo rev: v2.0.0-257-gee86e07, Sep 02, 2016, 141)
-    Hello, world, I am 1 of 4, (Open MPI v2.0.1, package: Open MPI user@sharc-node002.shef.ac.uk Distribution, ident: 2.0.1, repo rev: v2.0.0-257-gee86e07, Sep 02, 2016, 141)
-    Hello, world, I am 2 of 4, (Open MPI v2.0.1, package: Open MPI user@sharc-node002.shef.ac.uk Distribution, ident: 2.0.1, repo rev: v2.0.0-257-gee86e07, Sep 02, 2016, 141)
-    Hello, world, I am 3 of 4, (Open MPI v2.0.1, package: Open MPI user@sharc-node002.shef.ac.uk Distribution, ident: 2.0.1, repo rev: v2.0.0-257-gee86e07, Sep 02, 2016, 141)
+    Hello, world, I am 0 of 4, (Open MPI v2.1.1, package: Open MPI user@sharc-node003.shef.ac.uk Distribution, ident: 2.1.1, repo rev: v2.1.0-100-ga2fdb5b, May 10, 2017, 141)
+    Hello, world, I am 1 of 4, (Open MPI v2.1.1, package: Open MPI user@sharc-node003.shef.ac.uk Distribution, ident: 2.1.1, repo rev: v2.1.0-100-ga2fdb5b, May 10, 2017, 141) 
+    Hello, world, I am 2 of 4, (Open MPI v2.1.1, package: Open MPI user@sharc-node003.shef.ac.uk Distribution, ident: 2.1.1, repo rev: v2.1.0-100-ga2fdb5b, May 10, 2017, 141)
+    Hello, world, I am 3 of 4, (Open MPI v2.1.1, package: Open MPI user@sharc-node003.shef.ac.uk Distribution, ident: 2.1.1, repo rev: v2.1.0-100-ga2fdb5b, May 10, 2017, 141)
 
 
 Installation notes
 ------------------
 
 These are primarily for administrators of the system.
+
+**Version 2.1.1, gcc 6.2**
+
+1. Enable :ref:`GCC <gcc_sharc>` 6.2.0.
+2. Download, compile and install OpenMPI 2.1.1 using the :download:`this script </sharc/software/install_scripts/mpi/openmpi/2.1.1/gcc-6.2/install.sh>`.
+3. Install :download:`this modulefile </sharc/software/modulefiles/mpi/openmpi/2.1.1/gcc-6.2>` as ``/usr/local/modulefiles/mpi/openmpi/2.1.1/gcc-6.2``
+
+**Version 2.1.1, gcc 5.4**
+
+1. Enable :ref:`GCC <gcc_sharc>` 5.4.0.
+2. Download, compile and install OpenMPI 2.1.1 using the :download:`this script </sharc/software/install_scripts/mpi/openmpi/2.1.1/gcc-5.4/install.sh>`.
+3. Install :download:`this modulefile </sharc/software/modulefiles/mpi/openmpi/2.1.1/gcc-5.4>` as ``/usr/local/modulefiles/mpi/openmpi/2.1.1/gcc-5.4``
+
+**Version 2.1.1, gcc 4.8.5**
+
+1. Download, compile and install OpenMPI 2.1.1 using the :download:`this script </sharc/software/install_scripts/mpi/openmpi/2.1.1/gcc-4.8.5/install.sh>`.
+2. Install :download:`this modulefile </sharc/software/modulefiles/mpi/openmpi/2.1.1/gcc-4.8.5>` as ``/usr/local/modulefiles/mpi/openmpi/2.1.1/gcc-4.8.5``
 
 **Version 2.0.1, gcc 6.2**
 

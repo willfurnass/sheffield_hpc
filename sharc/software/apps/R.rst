@@ -1,3 +1,5 @@
+.. _sharc_r:
+
 R
 =
 
@@ -85,6 +87,26 @@ The folder name after :code:`~/R/` will likely change, but this can be completed
     if after installing some packages you switch to using a different `major or minor version <http://semver.org/>`_ of R
     then you will need then to install those package *for this new version*.
 
+R Packages that require external libraries
+------------------------------------------
+Some R packages require external libraries to be installed before you can install and use them. Since there are so many, we only install those libraries that have been explicitly requested by users of the system.
+
+The associated R packages are not included in the system install of R, so you will need to install them yourself to your home directory following the instructions linked to below.
+
+* :ref:`geos` This is the library required for the ``rgeos`` package.
+* :ref:`gdal_iceberg` and :ref:`proj_iceberg` These are the libraries required for the ``rgdal`` package.
+* :ref:`jags` This is the library required for the ``rjags`` and ``runjags`` packages
+
+.. warning::
+	To install r packages that require external libraries, the libraries need to be loaded prior to installing the r packages. 
+	E.g. to install package **rgeos** you would need to load ``geos``, enter an interactive R session and then install ``rgeos`` ::
+	
+		module load libs/geos/3.6.1/gcc-4.9.4
+		R
+		install.packages("rgeos")
+		
+	See :ref:`here <Libraries>` more information on the available external libraries
+				
 
 Using the Rmath library in C Programs
 -------------------------------------

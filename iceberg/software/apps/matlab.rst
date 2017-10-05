@@ -34,46 +34,26 @@ You can then run MATLAB by entering ``matlab``
 
 Serial (one CPU) Batch usage
 ----------------------------
-Here, we assume that you wish to run the program ``hello.m`` on the system.
+Here, we assume that you wish to run the program ``helloworld.m`` on the system: ::
+	
+	function helloworld
+		disp('Hello World!')
+	end	
 
 First, you need to write a batch submission file. We assume you'll call this ``my_job.sge``: ::
 
         #!/bin/bash
         #$ -l rmem=4G                  # Request  4 GB of real memory
-        #$ -l mem=16G                  # Request 16 GB of virtual memory
         #$ -cwd                        # Run job from current directory
         module load apps/matlab/2016a  # Make specific version of MATLAB available
 
-        matlab -nodesktop -r 'hello'
+        matlab -nodesktop -nosplash -r helloworld
 
-Ensuring that ``hello.m`` and ``my_job.sge`` are both in your current working directory, submit your job to the batch system: ::
+Ensuring that ``helloworld.m`` and ``my_job.sge`` are both in your current working directory, submit your job to the batch system: ::
 
         qsub my_job.sge
 
-Note that we are running the script ``hello.m`` but we drop the ``.m`` in the call to MATLAB. That is, we do ``-r 'hello'`` rather than ``-r hello.m``.
-
-Easy Way of Running MATLAB Jobs on the Batch Queue
---------------------------------------------------
-
-Firstly prepare a MATLAB script that contains all the commands for running a MATLAB task.  
-Let us assume that this script is called ``mymatlabwork.m``.
-Next select the version of MATLAB you wish to use by using the ``module load`` command, for example;
-
-.. code-block:: none
-
-    module load apps/matlab/2016a 
-
-Now submit a job that runs this MATLAB script as a batch job.  
-
-.. code-block:: none
-
-    runmatlab mymatlabwork.m
-    
-That is all there is to it! 
-
-The ``runmatlab`` command can take a number of parameters to refine the control of your MATLAB batch job, such as the maximum time and memory needs. 
-To get a full listing of these parameters simply type ``runmatlab`` on iceberg command line. 
- 
+Note that we are running the script ``helloworld.m`` but we drop the ``.m`` in the call to MATLAB. That is, we do ``-r helloworld`` rather than ``-r helloworld.m``. The output will be written to the job ``.o`` file when the job finishes.
 
 MATLAB Compiler and running free-standing compiled MATLAB programs
 ------------------------------------------------------------------
@@ -117,7 +97,7 @@ Finally the environment variable ``$MCRROOT`` can be set to the directory contai
 Parallel MATLAB on iceberg
 --------------------------
 
-Currently we recommend the 2015a version of MATLAB for parallel work.
+Currently we recommend the 2015a version of MATLAB for parallel work, and task arrays requiring more than a few hours runtime.
 
 The default cluster configuration named **local** provides parallel working environment by 
 using the CPUs of the worker node that is running the current MATLAB session.
@@ -136,7 +116,7 @@ Run MATLAB in that session and select 5 workers: ::
         matlab
         parpool ('local' , 5 )
 
-The above example will use 5 MATLAB workers on a single iceberg node to run a parallel task.
+The above example will use 5 MATLAB workers on a single iceberg node to run a parallel task.  Note that being granted a multi-core interactive session by the scheduler is dependent on Iceberg's loading at the time of request. It is not guaranteed. However the user can reduce the number of cores requested, which will improve their chances of being granted a multi-core session.
 
 To take advantage of the multiple iceberg nodes, you will need to make use of a parallel cluster profile named ``sge``.
 This can be done by issuing a locally provided MATLAB command named ``iceberg`` that imports the
@@ -149,10 +129,10 @@ However, each job will have the default resource requirements unless the followi
 For example, during your MATLAB session type: ::
 
     global sge_params
-    sge_params='-l mem=16G -l h_rt=36:00:00'
+    sge_params='-l rmem=8G -l h_rt=36:00:00'
 
-to make sure that all the MATLAB batch jobs will use up to 16GBytes of memory and will not be killed
-unless they exceed 36 hours of run time.
+to make sure that all the MATLAB batch jobs will use up to 8 GBytes of memory and will not be killed
+unless they exceed 36 hours of runtime.
 
 
 Training
