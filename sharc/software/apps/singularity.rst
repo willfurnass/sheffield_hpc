@@ -90,14 +90,17 @@ When running Singularity images on ShARC, the paths ``/fastdata``, ``/data``, ``
 
 Images that uses the GPU requires driver files that matches the host system. In ShARC these files are located outside of the image and automatically mounted to paths ``/nvbin`` and ``/nvlib`` within the image.
 
+Image Index on Github
+---------------------
+
+All Singularity container definitions available on ShARC can be found at `https://github.com/rses-singularity <https://github.com/rses-singularity>`_. The definition files can be used as a template for building your own images.
+
 
 Installing Singularity on Your Local Machine
 --------------------------------------------
 
 You will need Singularity installed on your machine in order to locally run, create and modify images. The following is the installation command for debian/ubuntu based systems: ::
 
-  sudo apt-get update
-  sudo apt-get -y install build-essential curl git sudo man vim autoconf libtool automake
   git clone https://github.com/singularityware/singularity.git
   cd singularity
   ./autogen.sh
