@@ -1,0 +1,20 @@
+#%Module1.0#####################################################################
+##
+## BLAS 3.4.2-5 module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+
+set blasver 3.4.2-5
+
+proc ModulesHelp { } {
+        global fftwvers
+        puts stderr "Makes BLAS version $blasver library available"
+}
+module-whatis   "Makes BLAS version $blasver library available"
+
+set BLAS_VER /usr/local/packages/libs/blas/3.4.2-5/binary/
+
+prepend-path LD_LIBRARY_PATH $BLAS_VER/lib64
+prepend-path LIBRARY_PATH $BLAS_VER/lib64
