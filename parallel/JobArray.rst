@@ -27,11 +27,11 @@ Advantages of Array Jobs:
 
 * You only need to submit one job to run a series of very similar tasks;
 * These tasks are independent and do not all need to run at once so 
-  the job scheduler can efficiently run one or more queued tasks as the requested computational resources become available.
-* They are particularly useful for `Embarrassingly Parallel <https://en.wikipedia.org/wiki/Embarrassingly_parallel>`_ problems such as 
+  the job scheduler can efficiently run one or more queued tasks as the requested computational resources become available;
+* They are particularly useful for `Embarrassingly Parallel <https://en.wikipedia.org/wiki/Embarrassingly_parallel>`_ problems such as:
 
-    * Monte Carlo simulations (where ``$SGE_TASK_ID`` might correspond to random number seed).
-    * Parameter sensitivity analysis.
+    * Monte Carlo simulations (where ``$SGE_TASK_ID`` might correspond to random number seed);
+    * Parameter sensitivity analysis;
     * Batch file processing (where ``$SGE_TASK_ID`` might refer to a file in a list of files to be processed).
 
 Array Jobs on ShARC and Iceberg can have a maximum of 75000 tasks.
@@ -48,7 +48,7 @@ By default, when you run a Job Array
 a separate output and error file will be written *per task* 
 to the directory the Job Array was submitted from.
 This may not be convenient: 
-you may not want to generate be generating tens, hundreds or thousands of log files 
+you may not want to be generating tens, hundreds or thousands of log files 
 in your project's directories on ShARC/Iceberg.
 
 A more sensible approach could be to 
@@ -133,5 +133,5 @@ Here's a sensible approach to managing email notifications:
 
 You will therefore receive:
 
-* An email for every failed task in the Array Job
-* An email shortly after the entire Array Job finishes
+* An email for every failed task in the Array Job;
+* An email shortly after the entire Array Job finishes.
