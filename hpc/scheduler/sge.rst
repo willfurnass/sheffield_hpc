@@ -225,6 +225,15 @@ Specify each additional email with its own ``-M`` option ::
   #$ -M foo@example.com
   #$ -M bar@example.com
 
+**I want email notifications but don't want to have to include my email address in every job submission script**
+
+Create a file called ``.sge_request`` in the directory you submit your jobs from containing: ::
+
+    -M my.personal@email.com -M my.work@sheffield.ac.uk
+
+The ``-M`` parameter will be automatically supplied for all future job submissions.
+Note that you still need to request email notifications using ``-m`` (see above).
+
 **How do you ensure that a job starts after a specified time?**
 
 Add the following line to your submission script ::
