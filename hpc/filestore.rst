@@ -103,11 +103,21 @@ An example of how slow it can be for large numbers of small files is detailed at
 Iceberg users: although ``/fastdata`` is available on all the worker nodes, 
 you need to run your jobs on the newer nodes with Intel CPUs for best performance (by specifying ``-l arch=intel*`` in your job submission script).
 
-**There are no quota controls on the** ``/fastdata`` **area** but **files older than 60 days will be automatically deleted without warning.** 
-We reserve the right to change this policy without warning in order to ensure efficient running of the service.
-**You must remember to copy important data on ``/fastdata`` to backed-up areas such as ``/home``, ``/data`` or ``/shared``**.
+.. warning::
 
-You can use the ``lfs``  command to find out which files under /fastdata are older than a certain number of days and hence approaching the time of deletion. For example, to find files 50 or more days old ::
+    **There are no quota controls on the** ``/fastdata`` **area** but 
+    **older files** on /fastdata are **automatically deleted**: 
+    a report of files older than 60 days is regularly generated, 
+    the owners of these files are then notified by email then 
+    a week after the email(s) are sent the identified files are deleted. 
+
+    We reserve the right to change this policy without warning in order to ensure efficient running of the service.
+
+    It is important to therefore not use /fastdata for long-term storage and 
+    **copy important data on ``/fastdata`` to backed-up areas such as ``/home``, ``/data`` or ``/shared``**.
+
+You can use the ``lfs``  command to find out which files under ``/fastdata`` are older than a certain number of days and hence approaching the time of deletion. 
+For example, to find files 50 or more days old ::
 
     lfs find -ctime +50 /fastdata/yourusername
 
