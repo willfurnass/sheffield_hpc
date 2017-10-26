@@ -22,8 +22,8 @@ They differ in terms of:
 
 Here are the current details of filestore available to each user.
 
-Home directory
---------------
+``/home`` directory
+-------------------
 All users have a home directory in the location ``/home/yourusername``. 
 
 The filestore quota is **10 GB** per user.
@@ -41,8 +41,8 @@ The filesystem is NFS.
 
 .. _data_dir:
 
-Data directory
---------------
+``/data`` directory
+-------------------
 Every user has access to a much larger data-storage area provided at the location ``/data/yourusername``.
 
 The quota for this area is **100 GB** per user.
@@ -65,8 +65,8 @@ Later on if you list the contents of ``/data`` again
 you may find that ``/data/yourusername`` has disappeared again, as 
 it is automatically *unmounted* following a period of inactivity.  
 
-Fastdata directory
-------------------
+``/fastdata`` directory
+-----------------------
 
 All users also have access to a large fast-access data storage area under ``/fastdata``.  
 This is **not** shared between ShARC and Iceberg.
@@ -96,7 +96,7 @@ The fastdata area provides **669 TeraBytes** of storage on SHARC and **260 Terab
 It takes advantage of the internal high-speed network infrastructure (OmniPath interconnects for ShARC; Infiniband for Iceberg) for fast access to data.
 
 ``/fastdata`` is **optimised for large file operations**.
-it is faster than ``/home/``, ``/data`` and '``/shared``' (see below) when dealing with larger files but 
+it is faster than ``/home/``, ``/data`` and ``/shared`` (see below) when dealing with larger files but 
 does **not handle lots of small files very well**:  it is less efficient than ``/scratch`` (see below) when dealing with smaller files.
 An example of how slow it can be for large numbers of small files is detailed at http://www.walkingrandomly.com/?p=6167
 
@@ -114,23 +114,21 @@ you need to run your jobs on the newer nodes with Intel CPUs for best performanc
     We reserve the right to change this policy without warning in order to ensure efficient running of the service.
 
     It is important to therefore not use /fastdata for long-term storage and 
-    **copy important data on ``/fastdata`` to backed-up areas such as ``/home``, ``/data`` or ``/shared``**.
+    **copy important data** on ``/fastdata`` to **backed-up areas** such as ``/home``, ``/data`` or ``/shared``.
 
 You can use the ``lfs``  command to find out which files under ``/fastdata`` are older than a certain number of days and hence approaching the time of deletion. 
 For example, to find files 50 or more days old ::
 
     lfs find -ctime +50 /fastdata/yourusername
 
-
 **Backup policy:** ``/fastdata`` is **not backed up**.
-The next best I/O performance that requires the minimum amount of work is achieved by 
-keeping your data in the ``/fastdata`` area and 
 
-``/fastdata`` uses the `Lustre <https://en.wikipedia.org/wiki/Lustre_(file_system)>`_ filesystem. 
-This does not support POSIX locking which can cause issues for some applications (e.g. programs that create/use SQLite databases).
+``/fastdata`` uses the `Lustre <https://en.wikipedia.org/wiki/Lustre_(file_system)>`__ filesystem. 
+This does not support POSIX locking which can cause issues for some applications 
+(e.g. programs that create/use SQLite databases).
 
-Shared directories
-------------------
+``/shared`` directories
+-----------------------
 
 CiCS now provide `10 terabytes of shared storage for free per research group <shef.ac.uk/cics/research-storage/using-research-storage>`__.
 After the storage has been requested/purchased by a group's PI and then provisioned by CiCS it can be accessed by name
@@ -145,7 +143,7 @@ will be accessible if you ``cd`` (change directory) into it e.g. ``cd /shared/my
 **Regarding permissions**: 
 behind the scenes, the file server that provides this shared storage manages permissions using 
 Windows-style `ACLs <https://en.wikipedia.org/wiki/Access_control_list>`_ 
-(which can be set by area owners via *Group Management* web interface).  
+(which can be set by area owners via the `Research Storage management web interface <sheffield.ac.uk/storage>`__.
 However, the filesystem is mounted on a Linux cluster using NFSv4 so the file server therefore requires 
 a means for mapping Windows-style permissions to Linux ones.  
 An effect of this is that the Linux `mode bits <https://en.wikipedia.org/wiki/Modes_(Unix)>`_ as seen on ShARC/Iceberg 
@@ -158,7 +156,7 @@ some applications can cause problems when accessing files/directories on ``/shar
 * `which <http://linux.die.net/man/1/which>`_: 
   a directory under ``/shared`` may be on your path and 
   you may be able to run a contained executable without prefixing it with a absolute/relative directory 
-  but `which` may fail to find that executable.
+  but ``which`` may fail to find that executable.
 * Perl: scripts that check for executability of files on ``/shared`` using ``-x`` may fail 
   unless Perl is explicitly told to test for file permissions in a more thorough way 
   (see the mention of ``use filetest 'access'`` `here <http://perldoc.perl.org/functions/-X.html>`_).
@@ -168,6 +166,11 @@ some applications can cause problems when accessing files/directories on ``/shar
   ``git config core.filemode false`` or 
   for all repositories using ``git config --global core.filemode false``.
 
+The documentation for the ``/shared`` storage serivce includes information on:
+
+* `how access/permissions are managed <https://www.sheffield.ac.uk/cics/research-storage/access-rights>`__
+* `how to create folders with associated permissions <https://www.sheffield.ac.uk/cics/research-storage/create-folders>`__ 
+  within ``/shared`` storage areas
 
 ``/scratch``: for reading/writing small files
 ---------------------------------------------
