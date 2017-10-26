@@ -22,3 +22,24 @@ This view shows you **files on the machine running your Jupyter session** (here,
   all Notebooks that are currently running, 
   all files or 
   all folders.
+
+.. _jh_automount_issue:
+
+.. warning:: 
+
+   Certain directories are may not be accessible via this interface:
+
+   * ``/home/username``
+   * ``/data/username``
+   * ``/shared/volname``
+
+   This set of directories are :ref:`automounted <filestore>` 
+   i.e. made available to the user on demand
+   but you cannot express that demand via this interface.
+   If you browse into ``/data`` and it is empty or does not contain your personal subdirectory 
+   then you need to briefly open a :ref:`Jupyter terminal <jh_terminal>` and 
+   run: ::
+
+      ls /data/username
+
+   then that directory should subsequently be visible/accessible in this file browser.

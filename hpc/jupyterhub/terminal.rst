@@ -16,13 +16,14 @@ You can use this terminal to perform any command-line-only operation on the clus
 
 * **Managing versions of Notebooks** / other code 
   using `version control software such as git <https://swcarpentry.github.io/git-novice/>`__
-  (as illustrated above).
+  (as illustrated above);
 * **Searching for files/directories**;
 * **Configuring Python or R environments** 
   (although there is an (enabled) plugin for 
   creating/selecting environments and 
   installing/upgrading/removing packages 
-  :ref:`using Jupyter's graphical interface <jh_conda>`)
+  :ref:`using Jupyter's graphical interface <jh_conda>`);
+* :ref:`Triggering the automounting of directories <jh_automount_issue>` not visible in JupyterHub's :ref:`file browser <jh_file_browse>`.
 
 Having a terminal interface available within the browser 
 negates the need to separately :ref:`log into the cluster via SSH <connecting>`
