@@ -1,7 +1,7 @@
 .. _jh_file_browse: 
 
-Jupyter file browser
-====================
+Jupyter's file browser
+======================
 
 After starting a Jupyter session you are presented with Jupyter's file browser view,
 which is the default tab in Jupyter's user interface.  

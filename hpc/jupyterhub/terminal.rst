@@ -1,18 +1,40 @@
 .. _jh_terminal:
 
-Jupyterhub: web terminal
-========================
+Jupyter's web terminal
+======================
 
-NOTES BELOW
------------
-WHY USEFUL
-LIMITATIONS
-
-In the "New" menu it is possible to start a terminal.
-This is a fully featured web terminal, 
-running on a worker node. 
-You can use this terminal to perform any command-line-only operation on the cluster, including 
-configuring new Python environments and 
-installing packages.
+You can start a terminal from 
+the **New** menu within 
+Jupyter's :ref:`Files <jh_file_browse>` tab.
+This is a fully-featured web terminal, 
+running on a worker node.  
+It opens a new browser tab.
 
 .. image:: /images/jupyterhub/jupyterhub-terminal.png
+
+You can use this terminal to perform any command-line-only operation on the cluster, including:
+
+* **Managing versions of Notebooks** / other code 
+  using `version control software such as git <https://swcarpentry.github.io/git-novice/>`__
+  (as illustrated above).
+* **Searching for files/directories**;
+* **Configuring Python or R environments** 
+  (although there is an (enabled) plugin for 
+  creating/selecting environments and 
+  installing/upgrading/removing packages 
+  :ref:`using Jupyter's graphical interface <jh_conda>`)
+
+Having a terminal interface available within the browser 
+negates the need to separately :ref:`log into the cluster via SSH <connecting>`
+to access the command-line.
+
+Limitations:
+
+* Not all keyboard shortcuts that typically work in terminal programs work within this web console:
+
+    * *tab* can be used for tab completion
+    * but *Ctrl-C* kills the program running in the terminal
+    * To copy text, select it, right-click and click *Copy*.
+    * To paste text, right-click and click *Paste*.
+
+* You cannot start graphical programs (e.g. ``xeyes``) from this terminal.
