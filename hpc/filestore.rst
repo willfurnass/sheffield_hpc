@@ -130,7 +130,7 @@ This does not support POSIX locking which can cause issues for some applications
 ``/shared`` directories
 -----------------------
 
-CiCS now provide `10 terabytes of shared storage for free per research group <shef.ac.uk/cics/research-storage/using-research-storage>`__.
+CiCS now provide `10 terabytes of shared storage for free per research group <https://sheffield.ac.uk/cics/research-storage/using-research-storage>`__.
 After the storage has been requested/purchased by a group's PI and then provisioned by CiCS it can be accessed by name
 
 * as a Windows-style (SMB) file share on machines other than ShARC/Iceberg using ``\\uosfstore.shef.ac.uk\shared\``;
@@ -143,7 +143,7 @@ will be accessible if you ``cd`` (change directory) into it e.g. ``cd /shared/my
 **Regarding permissions**: 
 behind the scenes, the file server that provides this shared storage manages permissions using 
 Windows-style `ACLs <https://en.wikipedia.org/wiki/Access_control_list>`_ 
-(which can be set by area owners via the `Research Storage management web interface <sheffield.ac.uk/storage>`__.
+(which can be set by area owners via the `Research Storage management web interface <https://sheffield.ac.uk/storage>`__.
 However, the filesystem is mounted on a Linux cluster using NFSv4 so the file server therefore requires 
 a means for mapping Windows-style permissions to Linux ones.  
 An effect of this is that the Linux `mode bits <https://en.wikipedia.org/wiki/Modes_(Unix)>`_ as seen on ShARC/Iceberg 
