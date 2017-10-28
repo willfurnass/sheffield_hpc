@@ -68,15 +68,17 @@ Using Jupyter on ShARC
 
 .. _jh_svc_status:
 
-Status of ShARC's JupyterHub service
-------------------------------------
+Status of and maintenance of ShARC's JupyterHub service
+-------------------------------------------------------
 
-.. warning::
-    This service is currenty **experimental**.
-    If you use this service and encounter a problem,
-    please provide feedback to
-    `w.furnass@sheffield.ac.uk <w.furnass@sheffield.ac.uk>`_.
+This service is currenty **experimental**.
+If you use this service and encounter a problem,
+**please provide feedback** to
+`w.furnass@sheffield.ac.uk <w.furnass@sheffield.ac.uk>`_.
 
+The server that provider the JupyterHub service is 
+typically **rebooted at 03:26 on the 2nd Tuesday of the month**
+to install security updates.
 
 .. _jh_workings:
 
