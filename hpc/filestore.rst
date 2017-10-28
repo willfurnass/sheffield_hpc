@@ -107,7 +107,7 @@ you need to run your jobs on the newer nodes with Intel CPUs for best performanc
 
     **There are no quota controls on the** ``/fastdata`` **area** but 
     **older files** on /fastdata are **automatically deleted**: 
-    a report of files older than 60 days is regularly generated, 
+    a report of files older than 60 days is regularly generated, 
     the owners of these files are then notified by email then 
     a week after the email(s) are sent the identified files are deleted. 
 
