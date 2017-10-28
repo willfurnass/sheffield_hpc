@@ -13,6 +13,7 @@ This guide will get you set up using the University's clusters
 .. toctree::
    accounts
    connecting
+   filestore
    transferring-files
    scheduler/index
    modules
