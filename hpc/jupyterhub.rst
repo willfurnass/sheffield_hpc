@@ -92,7 +92,7 @@ Credits
 
 The JupyterHub service on ShARC is currently developed and maintained by the University's `Research Software Engineering team`_.  This work has been funded by OpenDreamKit_, a Horizon2020_ European `Research Infrastructure`_ project (676541_) that aims to advance the open source computational mathematics ecosystem.
 
-.. image:: /images/jupyterhub/opendreamkit.svg
+.. image:: /images/jupyterhub/opendreamkit.png
    :width: 10%
    :alt: OpenDreamKit logo
    :align: center
