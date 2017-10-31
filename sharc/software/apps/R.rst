@@ -52,6 +52,9 @@ Ensuring that ``my_code.r`` and ``my_job.sge`` are both in your current working 
 
 Replace ``my_job.sge`` with the name of your submission script.
 
+.. warning::
+    By default, R will save variables in the workspace in the current directory (in a file called `.RData`) when a script exits and reload them when it starts from the same directory. To disable this, add the `--no-save` and `--no-restore` options to your command, e.g.  `R CMD BATCH --no-save --no-restore my_code.r my_code.r.o$JOB_ID`.
+
 Graphical output
 ----------------
 By default, graphical output from batch jobs is sent to a file called `Rplots.pdf`
