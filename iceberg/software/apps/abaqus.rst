@@ -5,7 +5,7 @@ Abaqus
 
 .. sidebar:: Abaqus
 
-   :Versions:  6.14, 6.13, 6.12 and 6.11
+   :Versions:  2017, 6.14, 6.13, 6.12 and 6.11
    :Support Level: FULL
    :Dependancies: Intel Compiler
    :URL: http://www.3ds.com/products-services/simulia/products/abaqus/
@@ -27,6 +27,7 @@ Alternatively, you can make a specific version available with one of the followi
 
 .. code-block:: none
 
+      module load apps/abaqus/2017/binary
       module load apps/abaqus/614
       module load apps/abaqus/613
       module load apps/abaqus/612
@@ -35,6 +36,8 @@ Alternatively, you can make a specific version available with one of the followi
 After that, simply type :code:`abaqus` to get the command-line interface to abaqus or type :code:`abaqus cae` to get the GUI interface.
 
 **Note:** When using hardware-accelerated graphics rendering for Abaqus on Iceberg, i.e., during a ``qsh-vis`` interactive session, please run e.g. ``abq6133 cae`` to launch the GUI for version 6.13.
+When using a general compute node for Abaqus 2017 on Iceberg, please run ``abaqus cae -mesa`` or ``abq2017 cae -mesa`` to launch the GUI without support for hardware-accelerated graphics rendering. The option ``-mesa`` disables hardware-accelerated graphics rendering within Abaqus's GUI.
+
 
 Abaqus example problems
 -----------------------
