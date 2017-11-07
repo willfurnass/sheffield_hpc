@@ -8,7 +8,7 @@ which is the default tab in Jupyter's user interface.
 This view shows you **files on the machine running your Jupyter session** (here, the cluster), 
 *not* your local machine.  This behaves much like a desktop file browser application:
 
-    .. image:: /images/jupyterhub/sharc-jh-main-nb-svr-interface.png
+.. image:: /images/jupyterhub/sharc-jh-main-nb-svr-interface.png
 
 * Click on a directory to browse into it.
 * Click on a text file (e.g. a R or Python script) to view/edit it in your browser.  

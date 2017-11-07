@@ -33,9 +33,9 @@ Limitations:
 
 * Not all keyboard shortcuts that typically work in terminal programs work within this web console:
 
-    * *tab* can be used for tab completion
-    * but *Ctrl-C* kills the program running in the terminal
-    * To copy text, select it, right-click and click *Copy*.
-    * To paste text, right-click and click *Paste*.
+  * *tab* can be used for tab completion
+  * but *Ctrl-C* kills the program running in the terminal
+  * To copy text, select it, right-click and click *Copy*.
+  * To paste text, right-click and click *Paste*.
 
 * You cannot start graphical programs (e.g. ``xeyes``) from this terminal.
