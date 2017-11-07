@@ -85,7 +85,30 @@ to install security updates.
 JupyterHub on a Grid Engine cluster: internal workings
 ------------------------------------------------------
 
-**TODO**
+The **hub** of JupyterHub has several components: 
+
+* an **authenticator** that allows users to log in, possibly using externally-stored identity information;
+* a **database** of user and state information;
+* a **spawner** that can start single-user Jupyter Notebook servers on demand.
+
+.. image:: https://jupyterhub.readthedocs.io/en/latest/_images/jhub-parts.png
+   :width: 50%
+   :align: center
+   :alt: JupyterHub architecture
+
+There is also a **web proxy** that first routes web connections from a given user to the hub for authentication and possibly choosing spawner options
+then, after a single-user Jupyter server has been spawned, certain web connections are forwarded to the Jupyter Notebook server.
+From the user's perspective it appears that they are interacting with a single web application, 
+even though at times they might be talking to a single-user Jupyter server that running on a different machine to the Hub.
+
+ShARC uses a custom spawner, `sgespawner <https://github.com/willfurnass/sgespawner>`__, that 
+spawns single-user Jupyter servers on one or more worker nodes on ShARC by submitting batch jobs to the Grid Engine job scheduler.
+
+The JupyterHub and ``sgespawner`` configuration allows the user to specify the Grid Engine resources required for the Jupyter session in advance
+via a web form then these resources are requested as part of the batch job submission.
+
+Further details of how JupyterHub and ``sgespawner`` are configured on ShARC 
+can be found in `this repository <https://github.com/RSE-Sheffield/jupyterhub-gridengine-sharc/>`__.
 
 .. _jh_svc_credits:
 
