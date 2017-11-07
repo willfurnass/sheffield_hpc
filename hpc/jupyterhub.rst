@@ -51,11 +51,14 @@ On the university's **ShARC cluster** a (:ref:`beta <jh_svc_status>`) JupyterHub
 Using Jupyter on ShARC
 ----------------------
 
+..
+   Ignore for now until complete (.rst file includes setting allowing it to be orphaned)
+   Quickstart <jupyterhub/quickstart>
+
 .. toctree::
    :numbered:
    :maxdepth: 1
 
-   Quickstart <jupyterhub/quickstart>
    Connecting to JupyterHub, requesting resources (RAM, processors, GPUs) for your Jupyter session, and starting your session <jupyterhub/conn_res_req_start>
    Jupyter file browser <jupyterhub/file_browse>
    Terminal in your browser <jupyterhub/terminal>
