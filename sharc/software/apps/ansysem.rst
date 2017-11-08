@@ -3,8 +3,8 @@ Ansys EM
 
 .. sidebar:: Ansys EM
    
-   :Versions: 16.1, 17.2, 18.0
-   :Dependencies: For integration with Ansys Workbench requires Ansys 16.1, 17.2, 18.0
+   :Versions: 16.1, 17.2, 18.0, 18.2
+   :Dependencies: For integration with Ansys Workbench requires Ansys 16.1, 17.2, 18.0, 18.2
    :URL: http://www.ansys.com 
    :Local URL: http://www.shef.ac.uk/cics/research/software/fluent
 
@@ -20,8 +20,9 @@ Ansys EM can be activated using the module files::
     module load apps/ansysem/16.1
     module load apps/ansysem/17.2
     module load apps/ansysem/18.0/binary
+    module load apps/ansysem/18.2/binary
 
-The Ansys EM exectuable is ``ansysedt``. The following is an example batch submission script which is submitted to the queue by typing ``qsub my_job.sh``::
+Ansys EM is integrated with the Ansys Workbench GUI (the ``ansyswb`` executable) for each version. The Ansys EM exectuable is ``ansysedt``. The following is an example batch submission script which is submitted to the queue by typing ``qsub my_job.sh``::
 
     #!/bin/bash
     #$ -cwd
@@ -39,18 +40,23 @@ Installation notes
 ------------------
 
 Ansys EM 16.1 was installed using the
-:download:`install_ansysem.sh </sharc/software/install_scripts/apps/ansysem/16.1/install_ansysem.sh>` script, the module
+:download:`install_ansysem.sh </sharc/software/install_scripts/apps/ansysem/16.1/install_ansysem.sh>` script; the module
 file is
 :download:`/usr/local/modulefiles/apps/ansysem/16.1 </sharc/software/modulefiles/apps/ansysem/16.1>`.
 
 Ansys EM 17.2 was installed using the
-:download:`install_ansysem.sh </sharc/software/install_scripts/apps/ansysem/17.2/install_ansysem.sh>` script, the module
+:download:`install_ansysem.sh </sharc/software/install_scripts/apps/ansysem/17.2/install_ansysem.sh>` script; the module
 file is
 :download:`/usr/local/modulefiles/apps/ansysem/17.2 </sharc/software/modulefiles/apps/ansysem/17.2>`.
 
 Ansys EM 18.0 was installed using the
-:download:`install_ansysem_180.sh </sharc/software/install_scripts/apps/ansysem/18.0/binary/install_ansysem_180.sh>` script, the module
+:download:`install_ansysem_180.sh </sharc/software/install_scripts/apps/ansysem/18.0/binary/install_ansysem_180.sh>` script; the module
 file is
 :download:`/usr/local/modulefiles/apps/ansysem/18.0/binary </sharc/software/modulefiles/apps/ansysem/18.0/binary>`.
 
-The binary installations were tested using the above batch submission script.
+Ansys EM 18.2 was installed using the
+:download:`install_ansysem_182.sh </sharc/software/install_scripts/apps/ansysem/18.2/binary/install_ansysem_182.sh>` script; the module
+file is
+:download:`/usr/local/modulefiles/apps/ansysem/18.2/binary </sharc/software/modulefiles/apps/ansysem/18.2/binary>`.
+
+The binary installations were tested using ``ansyswb`` and the above batch submission script.
