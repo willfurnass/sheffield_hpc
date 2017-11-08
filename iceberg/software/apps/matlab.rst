@@ -22,7 +22,7 @@ The latest version of MATLAB (currently 2017b) is made available with the comman
 
         module load apps/matlab
 
-Alternatively, you can load a specific version with one of of the following commands: ::
+Alternatively, you can load a specific version with one of the following commands: ::
 
         module load apps/matlab/2013a
         module load apps/matlab/2013b
@@ -61,7 +61,7 @@ MATLAB Compiler and running free-standing compiled MATLAB programs
 ------------------------------------------------------------------
 
 The MATLAB compiler **mcc** can be used to generate standalone executables.
-These executables can then be run on other computers that does not have MATLAB installed. 
+These executables can then be run on other computers that do not have MATLAB installed. 
 We strongly recommend you use R2016b or later versions to take advantage of this feature. 
 
 To compile a MATLAB function or script for example called ``myscript.m`` the following steps are required: ::
@@ -133,7 +133,7 @@ For example, during your MATLAB session type: ::
     global sge_params
     sge_params='-l rmem=8G -l h_rt=36:00:00'
 
-to make sure that all the MATLAB batch jobs will use up to 8GBytes of memory and will not be killed
+to make sure that all the MATLAB batch jobs will use up to 8 GBytes of memory and will not be killed
 unless they exceed 36 hours of run time.
 
 
