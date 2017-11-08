@@ -5,7 +5,7 @@ MATLAB
 
 .. sidebar:: MATLAB
 
-   :Versions:  2016a 2016b 2017a
+   :Versions:  2016a 2016b 2017a 2017b
    :Support Level: FULL
    :Dependancies: None
    :URL: http://uk.mathworks.com/products/matlab
@@ -17,15 +17,16 @@ Interactive Usage
 -----------------
 After connecting to ShARC (see :ref:`ssh`),  start an interactive session with the ``qrshx`` command.
 
-The latest version of MATLAB (currently 2017a) is made available by running: ::
+The latest version of MATLAB (currently 2017b) is made available by running: ::
 
         module load apps/matlab
 
-Alternatively, you can load a specific version with one of of the following commands: ::
+Alternatively, you can load a specific version with one of the following commands: ::
 
         module load apps/matlab/2016a/binary
         module load apps/matlab/2016b/binary
 	module load apps/matlab/2017a/binary
+	module load apps/matlab/2017b/binary
 
 You can then run MATLAB by entering ``matlab``
 
@@ -42,7 +43,7 @@ First, you need to write a batch submission file. We assume you'll call this ``m
         #!/bin/bash
         #$ -l rmem=4G                  		# Request  4 GB of real memory
         #$ -cwd                        		# Run job from current directory
-        module load apps/matlab/2017a/binary  	# Make specific version of MATLAB available
+        module load apps/matlab/2017b/binary  	# Make specific version of MATLAB available
 
         matlab -nodesktop -nosplash -r helloworld
 
@@ -57,12 +58,12 @@ MATLAB Compiler and running free-standing compiled MATLAB programs
 
 The MATLAB compiler **mcc** can be used to generate standalone executables.
 These executables can then be run on other computers that does not have MATLAB installed. 
-We strongly recommend you use R2016a or later versions to take advantage of this feature. 
+We strongly recommend you use R2016b or later versions to take advantage of this feature. 
 
 To compile a MATLAB function or script for example called ``myscript.m`` the following steps are required: ::
 
-        # Load the matlab 2016a module
-        module load apps/matlab/2016a/binary  
+        # Load the matlab 2017b module
+        module load apps/matlab/2017b/binary  
 
         # Compile your program to generate the executable myscript and 
         # also generate a shell script named run_myscript.sh 
@@ -93,7 +94,7 @@ Finally the environment variable ``$MCRROOT`` can be set to the directory contai
 Parallel MATLAB
 ---------------
 
-**Not yet configured on this cluster.** However task arrays are supported by all versions, however it is recommended that 2017a is used for task arrays requiring more than a few hours runtime.
+**Not yet configured on this cluster.** However task arrays are supported by all versions, however it is recommended that 2017a (or later) is used for task arrays requiring more than a few hours runtime.
 
 Training
 --------
@@ -117,9 +118,9 @@ Installation and configuration is a four-stage process:
 In more detail:
 
 #. If necessary, update the floating license keys on ``licserv4.shef.ac.uk`` to ensure that the licenses are served for the versions to install.
-#. Log on to Mathworks site to download the MATLAB installer package for 64-bit Linux ( for R2016a this was called ``matlab_R2016b_glnxa64.zip`` )
+#. Log on to Mathworks site to download the MATLAB installer package for 64-bit Linux ( for R2017b this was called ``matlab_R2017b_glnxa64.zip`` )
 
-#. ``unzip`` the installer package in a directory with ~10GB of space (needed as many MATLAB *archive* files will subsequently be downloaded here).  Using a directory on an NFS mount (e.g. ``/data/${USER}/MathWorks/R2016b``) allows the same downloaded archives to be used to install MATLAB on multiple clusters.
+#. ``unzip`` the installer package in a directory with ~10GB of space (needed as many MATLAB *archive* files will subsequently be downloaded here).  Using a directory on an NFS mount (e.g. ``/data/${USER}/MathWorks/R2017b``) allows the same downloaded archives to be used to install MATLAB on multiple clusters.
 #. ``./install`` to start the graphical installer (needed to download the MATLAB archive files).
 #. Select install choice of *Log in to Mathworks Account* and log in with a *License Administrator* account (not a *Licensed End User* (personal) account).
 #. Select *Download only*.
@@ -128,7 +129,7 @@ In more detail:
     
     fileInstallationKey=XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
     agreeToLicense=yes
-    outputFile=matlab_2016b_install.log
+    outputFile=matlab_2017b_install.log
     mode=silent
     licensePath=/usr/local/packages/matlab/network.lic
     lmgrFiles=false
@@ -136,17 +137,35 @@ In more detail:
 
 #. Create the installation directory e.g.: ::
 
-    mkdir -m 2755 -p /usr/local/packages/apps/matlab/R2016b/binary
-    chown ${USER}:app-admins /usr/local/packages/apps/matlab/R2016b/binary
+    mkdir -m 2755 -p /usr/local/packages/apps/matlab/R2017b/binary
+    chown ${USER}:app-admins /usr/local/packages/apps/matlab/R2017b/binary
 
 #. Run the installer using our customized ``installer_input.txt`` like so: ``./install -mode silent -inputFile ${PWD}/installer_input.txt`` ; installation should finish with exit status ``0`` if all has worked.
-#. Install a *modulefile* to prepend to to the ``PATH`` environment variable and set the ``MCRROOT`` environment variable (used by the ``mcc`` compiler):
+#. Install a modulefile with a name and path like /usr/local/modulefiles/apps/matlab/2017b/binary and contents like: ::
     
-    - :download:`This modulefile </sharc/software/modulefiles/apps/matlab/2016b/binary>` was installed as ``/usr/local/modulefiles/apps/matlab/2016b/binary``
-    - :download:`This modulefile </sharc/software/modulefiles/apps/matlab/2016a/binary>` was installed as ``/usr/local/modulefiles/apps/matlab/2016a/binary``
+	#%Module1.0#####################################################################
+
+	## Module file logging
+	source /usr/local/etc/module_logging.tcl
+
+	proc ModulesHelp { } {
+    	global version
+    	puts stderr "   Makes MATLAB $version available for use"
+	}
+	module-whatis   "Makes MATLAB 2017b available for use"
+
+	# Do not use other versions at the same time.
+	conflict apps/matlab
+
+	set  version    2017b
+	set  matlabroot /usr/local/packages/apps/matlab/$version/binary
+
+	prepend-path PATH	$matlabroot/bin
+	setenv	MCRROOT $matlabroot
+   
 
 #. Ensure the contents of the install directory and the modulefile are writable by those in ``app-admins`` group e.g.: ::
 
-    chmod -R g+w ${USER}:app-admins /usr/local/packages6/matlab/R2016b /usr//local/modulefiles/apps/matlab/2016b
+    chmod -R g+w ${USER}:app-admins /usr/local/packages/apps/matlab/R2017b /usr/local/modulefiles/apps/matlab/2017b
 
 **TODO**: Documentation for MATLAB parallel configuration.
