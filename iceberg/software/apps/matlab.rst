@@ -54,7 +54,7 @@ Ensuring that ``helloworld.m`` and ``my_job.sge`` are both in your current worki
 
         qsub my_job.sge
 
-Note that we are running the script ``helloworld.m`` but we drop the ``.m`` in the call to MATLAB. That is, we do ``-r helloworld`` rather than ``-r helloworld.m``.
+Note that we are running the script ``helloworld.m`` but we drop the ``.m`` in the call to MATLAB. That is, we do ``-r helloworld`` rather than ``-r helloworld.m``. The output will be written to the job ``.o`` file when the job finishes.
  
 
 MATLAB Compiler and running free-standing compiled MATLAB programs
@@ -118,7 +118,7 @@ Run MATLAB in that session and select 5 workers: ::
         matlab
         parpool ('local' , 5 )
 
-The above example will use 5 MATLAB workers on a single iceberg node to run a parallel task.
+The above example will use 5 MATLAB workers on a single iceberg node to run a parallel task. Note that being granted a multi-core interactive session by the scheduler is dependent on Iceberg’s loading at the time of request. It is not guaranteed. However the user can reduce the number of cores requested, which will improve their chances of being granted a multi-core session.
 
 To take advantage of the multiple iceberg nodes, you will need to make use of a parallel cluster profile named ``sge``.
 This can be done by issuing a locally provided MATLAB command named ``iceberg`` that imports the
