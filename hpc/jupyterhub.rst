@@ -94,7 +94,7 @@ The **hub** of JupyterHub has several components:
 * a **database** of user and state information;
 * a **spawner** that can start single-user Jupyter Notebook servers on demand.
 
-.. image:: https://jupyterhub.readthedocs.io/en/latest/_images/jhub-parts.png
+.. image:: /images/jupyterhub/jhub-parts.png
    :width: 50%
    :align: center
    :alt: JupyterHub architecture
