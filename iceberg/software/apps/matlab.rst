@@ -99,7 +99,7 @@ Finally the environment variable ``$MCRROOT`` can be set to the directory contai
 Parallel MATLAB on iceberg
 --------------------------
 
-Currently we recommend the 2015a version of MATLAB for parallel work.
+Currently we recommend the 2015a version of MATLAB for parallel work, and task arrays requiring more than a few hours runtime.
 
 The default cluster configuration named **local** provides parallel working environment by 
 using the CPUs of the worker node that is running the current MATLAB session.
@@ -111,7 +111,7 @@ For example, to use the local profile with 5 workers, do the following;
 
 Start a parallel OpenMP job with 6 workers: ::
 
-        qsh -pe openmp 6
+        qsh -pe smp 6
 
 Run MATLAB in that session and select 5 workers: ::
 
