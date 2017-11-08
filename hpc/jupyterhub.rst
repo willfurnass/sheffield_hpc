@@ -54,6 +54,7 @@ Using Jupyter on ShARC
 ..
    Ignore for now until complete (.rst file includes setting allowing it to be orphaned)
    Quickstart <jupyterhub/quickstart>
+   Using multiple CPU cores and GPUs <jupyterhub/cpus_gpus>
 
 .. toctree::
    :numbered:
@@ -64,7 +65,6 @@ Using Jupyter on ShARC
    Terminal in your browser <jupyterhub/terminal>
    Programming languages, software packages and execution environments <jupyterhub/conda>
    Creating, editing and running Jupyter Notebooks <jupyterhub/nb_usage>
-   Using multiple CPU cores and GPUs <jupyterhub/cpus_gpus>
    Monitoring and controlling your Jupyter session <jupyterhub/sess_monit>
    Errors and troubleshooting <jupyterhub/issues>
 
