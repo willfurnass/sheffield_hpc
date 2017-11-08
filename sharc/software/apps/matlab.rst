@@ -141,13 +141,31 @@ In more detail:
     chown ${USER}:app-admins /usr/local/packages/apps/matlab/R2017b/binary
 
 #. Run the installer using our customized ``installer_input.txt`` like so: ``./install -mode silent -inputFile ${PWD}/installer_input.txt`` ; installation should finish with exit status ``0`` if all has worked.
-#. Install a *modulefile* to prepend to to the ``PATH`` environment variable and set the ``MCRROOT`` environment variable (used by the ``mcc`` compiler):
+#. Install a modulefile with a name and path like /usr/local/modulefiles/apps/matlab/2017b/binary and contents like: ::
     
-    - :download:`This modulefile </sharc/software/modulefiles/apps/matlab/2016b/binary>` was installed as ``/usr/local/modulefiles/apps/matlab/2017b/binary``
-    - :download:`This modulefile </sharc/software/modulefiles/apps/matlab/2016a/binary>` was installed as ``/usr/local/modulefiles/apps/matlab/2017b/binary``
+	#%Module1.0#####################################################################
+
+	## Module file logging
+	source /usr/local/etc/module_logging.tcl
+
+	proc ModulesHelp { } {
+    	global version
+    	puts stderr "   Makes MATLAB $version available for use"
+	}
+	module-whatis   "Makes MATLAB 2017b available for use"
+
+	# Do not use other versions at the same time.
+	conflict apps/matlab
+
+	set  version    2017b
+	set  matlabroot /usr/local/packages/apps/matlab/$version/binary
+
+	prepend-path PATH	$matlabroot/bin
+	setenv	MCRROOT $matlabroot
+   
 
 #. Ensure the contents of the install directory and the modulefile are writable by those in ``app-admins`` group e.g.: ::
 
-    chmod -R g+w ${USER}:app-admins /usr/local/packages6/matlab/R2017b /usr/local/modulefiles/apps/matlab/2017b
+    chmod -R g+w ${USER}:app-admins /usr/local/packages/apps/matlab/R2017b /usr/local/modulefiles/apps/matlab/2017b
 
 **TODO**: Documentation for MATLAB parallel configuration.
