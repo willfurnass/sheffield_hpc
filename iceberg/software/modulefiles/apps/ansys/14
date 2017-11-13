@@ -1,0 +1,30 @@
+#%Module1.0#####################################################################
+##
+## ANSYS 14 module file
+## 
+#  By Deniz Savas on  February 2015
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "	Makes ANSYS Version 14 available for use"
+}
+
+module-whatis   "Makes ANSYS V14 available"
+
+# module variables
+#
+ set     localroot  /usr/local/packages6/shef/ansys/batch:/usr/local/packages6/shef/ansys
+ set     ansysroot     /usr/local/packages5/ansys/ansys_inc/v140
+
+ setenv  ANSYSROOT $ansysroot     
+ setenv  ANSYSVER 140
+ setenv  ANSWBCOMMAND $ansysroot/Framework/bin/Linux64/runwb2
+ prepend-path PATH $localroot:$ansysroot//Framework/bin/Linux64
+
+ 

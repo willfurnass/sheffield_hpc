@@ -1,0 +1,5 @@
+#%Module1.0
+## Set default matlab version to 2014a
+## Example of setting a version to be the default one
+## Uncomment the line below to do so
+set ModulesVersion "16.1"
