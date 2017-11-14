@@ -1,0 +1,35 @@
+#!/bin/bash
+# Deniz on 23.Feb.2015 
+# 
+# dirty-fix by using nvidia drivers
+export LD_LIBRARY_PATH=/usr/local/packages6/ansys/libs-nvidia-GL:$LD_LIBRARY_PATH
+ulimit -s 10240
+# below section is commented out as it is no longer necessary 
+# now that ansys picks up the academic licenses 
+#   mkdir -p $HOME/.ansys/v150/licensing
+# copy the research licenses XML file ( for license preferences) 
+#   cp /usr/local/packages6/ansys/sheffield/license.research.xml $HOME/.ansys/v150/licensing/license.preferences.xml
+
+if [ -z $ANSYSROOT ] ; then
+   echo " Please use 'module load apps/ansys' command first "
+   exit 1
+fi
+
+# test to make sure that the user has sufficient memory. 
+# initially we will assign  7GBytes to the workbench.
+# Below test was performed to fix a problem due to errors on older nodes. 
+
+ xvmem=`ulimit -v`
+
+ if [ $xvmem -lt 7340032 ] 
+   then
+  echo " Not enough resources to run Ansys Work Bench !!! "
+  echo " Please exit this session and start a new one by typing; qsh  -l mem=8G "
+  echo "  "
+ else
+  echo " Starting up ANSYS Workbench. Please wait ... " 
+  $ANSWBCOMMAND  $*
+fi
+
+
+

@@ -1,0 +1,12 @@
+#!/bin/bash
+# added a forced setting of the lm license file variable
+#
+if [ -z $ANSYSROOT ] ; then
+   echo " Please use 'module load apps/ansys' command first "
+   exit 1
+fi
+
+#
+export PATH=${ANSYSROOT}/CFX/bin:$PATH
+${ANSYSROOT}/CFX/bin/cfx5
+ 

@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# invoked by runfluent14 shell script.
+# If you move or modify this file you must make sure 
+# that runfluent14 command still works as it need this script
+# at the specified location. 
+#
+# Join error and default output channels ...
+#$  -j y
+#  D.S. 
+
+#  The below two lines fixes problems about academic vs commercial license issues.
+mkdir -p $HOME/.ansys/v140/licensing
+cp /usr/local/packages5/ansys/ansys_inc/sheffield/license.preferences.xml $HOME/.ansys/v140/licensing
+module load apps/ansys/14
+export TMPDIR=/scratch
+export FLUENT_INC=/usr/local/packages5/ansys/ansys_inc/v140/fluent
+export FLUENT_ARCH=lnamd64  
+export DISPLAY=NULL
+export TIMECOUNTER=0
+source timeused
+#
+$FLUENT_INC/bin/fluent $*
+#
+timeused
+

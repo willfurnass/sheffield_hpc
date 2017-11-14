@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# Deniz on23 Feb 2015
+
+if [ -z $ANSYSROOT ] ; then
+   echo " Please use 'module load apps/ansys' command first "
+   exit 1
+fi
+# ds new 
+export ANS${ANSYSVER}_DIR=${ANSYSROOT}/ansys
+export ANSBROWSER=mozilla
+
+ $ANSYSROOT/ansys/bin/ansys${ANSYSVER} -g  -p aa_t_a  $*

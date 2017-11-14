@@ -1,0 +1,4 @@
+#  ccc#!/bin/bash 
+export ANSYSLIC_DIR=/usr/local/packages6/ansys/ansys_inc/shared_files/licensing
+${ANSYSROOT}/icemcfd/linux64_amd/bin/icemcfd $*
+

@@ -1,0 +1,55 @@
+#!/bin/bash
+#  D.S.     June.09  
+#  Modified August.11
+#  Added parallel support  Nov.2012
+gethosts()
+{
+#  echo $*
+hostlist=''
+while [ $# -gt 0 ]
+ do
+    hostlist=${hostlist}':'${1/.iceberg.shef.ac.uk/}':'$2
+    shift
+    shift
+ done
+hostlist=${hostlist:1}
+
+}
+
+module load apps/ansys/14
+
+export DISPLAY=NULL
+# the below line is a temporary fix to avoid filestore
+# limitations on the /tmp area on workers ( only 3GB )
+export TMPDIR=/scratch
+#
+export TIMECOUNTER=0
+source timeused
+mkdir -p $HOME/.ansys/v140/licensing
+cp /usr/local/packages5/ansys/ansys_inc/sheffield/license.preferences.xml  $HOME/.ansys/v140/licensing
+
+ansysinp=$1
+shift
+echo "Parameters to Ansys are: Input file=" $ansysinp " Extra parameters: " $*  
+
+parparams=' '
+if test -r "$PE_HOSTFILE" ; then
+      export ANS_SEE_RUN_COMMAND=1 
+      export MPI_WORKDIR=/fastdata/$USER/$JOB_ID
+      export ANSWORKDIR=/fastdata/$USER/$JOB_ID
+      echo " Using directory $ANSWORKDIR as the temporary working directory." 
+      mkdir -p $ANSWORKDIR
+    if test "$1" != "-dis" ; then
+          echo " Assuming it to be an MPI parallel ansys job."
+            gethosts `cut  -f 1-2 -d \  $PE_HOSTFILE`
+            echo $hostlist
+#            parparams=" -dis -mpi usessh -machines "$hostlist
+             parparams=" -dis -usessh -machines "$hostlist
+
+
+   fi  
+fi
+
+
+/usr/local/packages5/ansys/ansys_inc/v140/ansys/bin/ansys140 -p aa_r  $parparams $* < $ansysinp 
+timeused

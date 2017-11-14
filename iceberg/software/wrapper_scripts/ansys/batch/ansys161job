@@ -1,0 +1,74 @@
+#!/bin/bash
+#  D.S.     June.09  
+#  Modified August.11
+#  Added parallel support  Nov.2012
+#  Modified Parallel support on May 2013 
+# passing two positional parameters : $1 is the input file
+#                                       $2 is a flag to see if /fastdata will be used
+#                                       $3 openmp or mpi?
+#  There is no need to pass a parameter to differentiate between openmp and MPI 
+#        as the existance of the PE_HOSTS file will determine that. 
+# Also note that by the time we come here a job is started with -pe set to mpi or openmp .                 
+gethosts()
+{
+#  echo $*
+hostlist=''
+while [ $# -gt 0 ]
+ do
+    hostlist=${hostlist}':'${1/.iceberg.shef.ac.uk/}':'$2
+    shift
+    shift
+ done
+hostlist=${hostlist:1}
+
+}
+# support for ansys  UPF user functions.
+#
+module load compilers/intel/11.0 
+module load apps/ansys/16.1
+
+export ansyscmd=$ANSYSROOT/ansys/bin/ansys${ANSYSVER}
+
+export DISPLAY=NULL
+# the below line is a temporary fix to avoid filestore
+# limitations on the /tmp area on workers ( only 3GB )
+export TMPDIR=/scratch
+#
+export TIMECOUNTER=0
+source timeused
+
+ansysinp=$1
+shift
+usefastdata=$1
+shift
+pmethod=$1
+shift
+echo "Parameters to Ansys are: Input file=" $ansysinp " Extra parameters: " $*  
+
+parparams=' '
+if test "$pmethod" = "MPI" ; then
+# This is an MPI job  
+       echo " Assuming it to be an MPI parallel job."
+       export ANS_SEE_RUN_COMMAND=1 
+#    
+  
+       gethosts `cut  -f 1-2 -d \  $PE_HOSTFILE`
+       echo $hostlist
+#            parparams=" -dis -mpi usessh -machines "$hostlist
+       parparams=" -dis -usessh -machines "$hostlist
+
+fi
+if test "$usefastdata" = "1" 
+    then
+       export MPI_WORKDIR=/fastdata/$USER/$JOB_ID
+       export ANSWORKDIR=/fastdata/$USER/$JOB_ID
+       export ANSYS150_WORKING_DIRECTORY=/fastdata/$USER/$JOB_ID
+       echo " Using directory $ANSWORKDIR as the temporary working directory." 
+       mkdir  $ANSWORKDIR
+fi
+
+# /usr/local/packages6/ansys/ansys_inc/v150/ansys/bin/ansys150 -p aa_r  $parparams $* < $ansysinp 
+$ansyscmd -p aa_r  $parparams $* < $ansysinp 
+
+timeused
+

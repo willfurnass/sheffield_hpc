@@ -1,0 +1,31 @@
+#!/bin/bash
+# added a forced setting of the lm license file variable
+#
+if [ -z $ANSYSROOT ] ; then
+   echo " Please use 'module load apps/ansys' command first "
+   exit 1
+fi
+
+#  The below two lines fixes problems about academic vs commercial license issues.
+   mkdir -p $HOME/.ansys/v${ANSYSVER}/licensing
+# copy the research licenses XML file ( for license preferences) 
+   cp /usr/local/packages6/ansys/sheffield/license.teaching.xml $HOME/.ansys/v${ANSYSVER}/licensing/license.preferences.xml
+# point to the license file.
+
+
+# point to the license file. Needed
+export FLUENTLM_LICENSE_FILE=1055@ansyslm.shef.ac.uk
+
+# Inherited from a working script from version v6.3 
+# particularly the last line about browser fixes help html viewing problems.
+
+export FLUENT_INC=${ANSYSROOT}/fluent
+export PATH=$FLUENT_INC/bin:$PATH
+export FLUENT_ARCH=lnamd64
+export FLUENT_HELP_BROWSER=mozilla
+
+$FLUENT_INC/bin/fluent  -g $*
+# copy back the research file XML..
+#
+cp /usr/local/packages6/ansys/sheffield/license.research.xml $HOME/.ansys/v${ANSYSVER}/licensing/license.preferences.xml
+ 

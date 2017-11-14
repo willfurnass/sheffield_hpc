@@ -1,0 +1,180 @@
+#!/bin/bash
+#
+#  Design using runmatlab script by D.Savas 
+#  Submits batch mode Abaqus jobs to the sun grid engine.
+#
+#  Initial work: March 2010 by DS      
+#
+help()
+{
+echo ' THIS COMMAND SUBMITS ABAQUS JOBS TO THE SUN GRID ENGINE '
+echo ' ------------------------------------------------------- '
+echo ' Usage: '
+echo 'runabaqus abaqus_inp_file [-time hh:mm:ss][-mem=mm] [-rmem=rr] [-parallel=nn]'
+echo '                          [-mail your_email_address] [-gpu]'
+echo '     Where; '
+echo '  abaqus_inp_file is the .inp file containing a series of Abaqus commands '
+echo '  hh:mm:ss is the maximum time needed for the job  (in hours:minutes:seconds)'
+echo '  -mem=mm  is the virtual memory needed to run the job (for example 12G for 12Gigabytes)'
+echo '  -rmem=rr is the physical memory needed to run the job (if specified, rr must be < mm)'
+echo '  -parallel=nn  specifies an nn-way parallel job (do not exceed 64)' 
+echo '  -gpu   requests abaqus to make use of the GPU accelerator.'
+echo '         Notes: you must be in the gpu users project to be able to access it'  
+echo '                currently only one gpu board can be utilised. '
+echo ' '
+echo ' All parameters except the  .inp file are optional.  '
+echo ' Any SGE limits parameter "those starting with -l" is also recognized.' 
+echo  ' '
+echo ' All output files created by Abaqus take their names from'
+echo '  the jobname specified by the user.'
+echo ' You will be prompted for a jobname as well as any other'  
+echo ' abaqus startup parameter you wish to pass to abaqus such as user='  
+echo  ' '
+echo ' Example: runabaqus test1.inp -time 00:30:00 -rmem 4G  -mem 10G'
+echo '   or     runabaqus test1.inp -time 00:30:00 -l rmem=4G -l mem=10G '
+echo '  '
+echo ' '
+}
+ 
+tolower() 
+{
+     echo "$1" | tr [:upper:] [:lower:]
+}
+
+if [ -z $ABAQUSVER ] ; then
+   echo " Please use 'module load apps/abaqus' command first "
+   echo "so as to indicate which version of abaqus to use. "
+   echo -e " Currently we have the following versions: \n"
+   module avail apps/abaqus
+   exit 1
+fi
+
+
+# check existance of the .inp file
+
+if test -z "$1" ; then
+	echo ' '
+	echo "**Input ( .inp) file containing Abaqus commands was not specified."
+	echo ' '
+        help
+	exit 1
+else 
+       if test -r "$1" ; then
+# debug           echo " Using file '$2' as Abaqus commands file"
+           abqscrpt="$1"
+       else
+           echo " Specified Abaqus input file '$1' does not exist or is not accesible."
+           exit 1
+       fi
+fi
+
+#
+# below is a template for accessing the keyword parameters.  
+#  
+# 
+time="notset"
+# subnow="0"
+limits=" "
+numcores=0
+mail=" "
+gpu=0 
+arch=" "
+while [ $# -gt 0 ]; do
+#  echo $1
+  case $1 in
+
+     -time|-TIME) time="$2";shift;;
+     -out|-OUT) output="$2";shift;;
+     "-mem="* ) limits=${limits}" -l mem=${1:5}";; 
+     -mem |-MEM|memory|MEMORY) limits=${limits}" -l mem=$2";shift;;
+     "-rmem="* ) limits=${limits}" -l rmem=${1:6}";; 
+     -rmem | -RMEM ) limits=${limits}" -l rmem=$2";shift;;
+     -l | -L) limits=${limits}" -l $2";shift;;
+     -P ) limits=${limits}" -P $2";shift;;
+    -parallel ) numcores=$2 ; shift ;; 
+     parallel ) numcores=$2 ; shift ;; 
+    "-parallel="* ) numcores=${1:10} ;;
+    -mail ) mail="-m bea -M $2";shift;;
+    -gpu | -GPU ) gpu="1";;
+#     -nq|-NQ) subnow="1";;
+  esac
+  shift
+done
+# debug echo $time
+
+   if [ $gpu -ne 0 ]; then
+      echo -e 'JOB Requested to use GPU'
+      arch="-l arch=intel* -l gpu=1 -P gpu"
+   fi
+
+
+if test "$time" = "notset" ; then
+   echo -e '\nTime parameter was not specified. Assuming it to be 8 hours.'
+
+   time="08:00:00"
+fi
+ 
+echo -e '\nMaximum cpu time for the job (hh:mm:ss) will be :' $time 
+
+
+if test "limits" = " " ; then 
+   echo " No other limits specified."
+else 
+   
+   echo "Other SGE related limits specified: $limits "
+fi
+echo -e '\nThis Abaqus job will execute the commands contained in <' $abqscrpt '>' 
+
+ echo -e ' Enter Job Name ( this will be used to name the output files): \c'
+     read jn 
+ echo -e ' Enter any other abaqus parameters ( e.g. double  or memory=6000 ):'
+     read others
+     if [ $numcores -ne 0 ] 
+      then
+        others="cpus=$numcores "$others
+     fi 
+     if [ $gpu -ne 0 ]
+      then
+        others="gpu=1 "$others 
+     fi
+#
+#
+echo -e ' \n\r The command used to submit this job is:'  
+#
+if test "$numcores" -eq "0" 
+ then   
+echo -e " qsub -j y -l h_rt=$time $limits $mail $arch /usr/local/packages6/shef/abaqustest${ABAQUSVER}job job=$jn input=$abqscrpt interactive $others \n"
+else
+ echo -e " qsub -pe openmpi-ib $numcores -j y -l h_rt=$time $limits $mail /usr/local/packages6/shef/abaqustest{ABAQUSVER}job job=$jn input=$abqscrpt interactive $others \n"
+fi
+#
+#if test "$subnow" = "0"
+# then
+    subnow="0"
+    echo -e '\n\r Do you wish to submit this job (Yes/No) ? \c' 
+    read answr
+    answ=`tolower "$answr"`
+
+    if test "$answ" = "y" -o "$answ" = "ye" -o "$answ" = "yes"   
+     then
+     subnow="1" 
+    fi
+#fi
+
+if test "$subnow" = "1" 
+ then
+
+if test "$numcores" -eq "0" 
+ then  
+   qsub -j y -l h_rt=$time $limits $mail $arch /usr/local/packages6/shef/abaqustest${ABAQUSVER}job job=$jn input=$abqscrpt interactive $others
+ else 
+   qsub -pe openmpi-ib $numcores -j y -l h_rt=$time $limits $mail $arch /usr/local/packages6/shef/abaqustest${ABAQUSVER}job job=$jn input=$abqscrpt interactive $others 
+fi
+# 
+  echo " SUBMISSION COMPLETED. "  
+  echo -e '\n Use the Qstat command to check the progress of the job.' 
+  else
+    echo 'Job NOT submitted.....'
+  fi
+
+
