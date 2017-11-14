@@ -1,32 +1,43 @@
 #%Module1.0#####################################################################
 ##
-## ANSYS 14.5 module file
-## 
-#  By Deniz Savas on  February 2015
+## ANSYS 15.0 module file
+##
+#  By Deniz Savas on February 2015
 ################################################################################
 
 ## Module file logging
 source /usr/local/etc/module_logging.tcl
-##
 
 proc ModulesHelp { } {
-        global version
-
-        puts stderr "	Makes ANSYS Version 15.0 available for use"
+    global vers
+    puts stderr "    Makes ANSYS Version $vers available for use"
 }
 
-module-whatis   "Makes ANSYS V15.0 available"
+# Module variables
+set vers      15.0
+set shortvers 150
+set prefix    /usr/local/packages6/ansys/ansys_inc/v$shortvers
 
-# module variables
-#
- set     localroot     /usr/local/packages6/shef/ansys/batch:/usr/local/packages6/shef/ansys
- set     ansysroot     /usr/local/packages6/ansys/ansys_inc/v150
+module-whatis   "Makes ANSYS v$vers available"
 
- setenv  ANSYSROOT $ansysroot     
- setenv  ANSYSVER 150
- setenv  ANSWBCOMMAND $ansysroot/Framework/bin/Linux64/runwb2
-# no longer needed setenv  FLUENTLM_LICENSE_FILE 1055@ansyslm.shef.ac.uk
- prepend-path PATH $localroot:$ansysroot/Framework/bin/Linux64:$ansysroot/ansys/bin:$ansysroot/cfx/bin:$ansysroot/fluent/bin:$ansysroot/icemcfd/linux64_amd/bin:$ansysroot/autodyn/bin
+setenv ANSYSROOT    $prefix
+setenv ANSYSVER     $shortvers
+setenv ANSWBCOMMAND $prefix/Framework/bin/Linux64/runwb2
 
+# Paths to Ansys executables
+prepend-path PATH $prefix/autodyn/bin
+prepend-path PATH $prefix/icemcfd/linux64_amd/bin
+prepend-path PATH $prefix/TurboGrid/bin/linux-amd64
+prepend-path PATH $prefix/TurboGrid/bin
+prepend-path PATH $prefix/Icepak/bin
+prepend-path PATH $prefix/CFX/bin/linux-amd64
+prepend-path PATH $prefix/CFX/bin
+prepend-path PATH $prefix/CFD-Post/bin/linux-amd64
+prepend-path PATH $prefix/CFD-Post/bin
+prepend-path PATH $prefix/fluent/bin
+prepend-path PATH $prefix/ansys/bin
+prepend-path PATH $prefix/Framework/bin/Linux64
 
- 
+# Paths to University of Sheffield wrapper scripts
+prepend-path PATH /usr/local/packages6/shef/ansys/
+prepend-path PATH /usr/local/packages6/shef/ansys/batch

@@ -1,32 +1,46 @@
 #%Module1.0#####################################################################
 ##
-## ANSYS 17.2 module file
+## ANSYS 18.2 module file
 ##
-#  By B.D Hughes on  November 2017
+#  By B.D Hughes on November 2017
 ################################################################################
 
 ## Module file logging
 source /usr/local/etc/module_logging.tcl
-##
 
 proc ModulesHelp { } {
-        global version
-
-        puts stderr "   Makes ANSYS Version 18.2 available for use"
+    global vers
+    puts stderr "    Makes ANSYS Version $vers available for use"
 }
 
-module-whatis   "Makes ANSYS V18.2 available"
+# Module variables
+set vers      18.2
+set shortvers 182
+set prefix    /usr/local/packages6/ansys$shortvers/ansys_inc/v$shortvers
 
-# module variables
-#
- set localroot     /usr/local/packages6/shef/ansys/batch:/usr/local/packages6/shef/ansys/
- set ANSYS_DIR     /usr/local/packages6/ansys182/ansys_inc/v182
+module-whatis   "Makes ANSYS v$vers available"
 
- setenv  ANSYSROOT $ANSYS_DIR
- setenv  ANSYSVER 182
- setenv  ANSWBCOMMAND $ANSYS_DIR/Framework/bin/Linux64/runwb2
- setenv  ICEM_ACN $ANSYS_DIR/icemcfd/linux64_amd
-# no longer needed setenv  FLUENTLM_LICENSE_FILE 1055@ansyslm.shef.ac.uk
-prepend-path PATH $localroot:$ANSYS_DIR/ansys/bin:$ANSYS_DIR/Framework/bin/Linux64/:$ANSYS_DIR/fluent/bin:$ANSYS_DIR/CFD-Post/bin:$ANSYS_DIR/CFX/bin:$ANSYS_DIR/Icepak/bin:$ANSYS_DIR/TurboGrid/bin:$ANSYS_DIR/polyflow/bin:$ANSYS_DIR/Electronics/Linux64
+setenv ANSYSROOT    $prefix
+setenv ANSYSVER     $shortvers
+setenv ANSWBCOMMAND $prefix/Framework/bin/Linux64/runwb2
+setenv ICEM_ACN     $prefix/icemcfd/linux64_amd
+
+# Paths to Ansys executables
+prepend-path PATH $prefix/Electronics/Linux64
+prepend-path PATH $prefix/polyflow/bin
+prepend-path PATH $prefix/TurboGrid/bin/linux-amd64
+prepend-path PATH $prefix/TurboGrid/bin
+prepend-path PATH $prefix/Icepak/bin
+prepend-path PATH $prefix/CFX/bin/linux-amd64
+prepend-path PATH $prefix/CFX/bin
+prepend-path PATH $prefix/CFD-Post/bin/linux-amd64
+prepend-path PATH $prefix/CFD-Post/bin
+prepend-path PATH $prefix/fluent/bin
+prepend-path PATH $prefix/Framework/bin/Linux64
+prepend-path PATH $prefix/ansys/bin
+
+# Paths to University of Sheffield wrapper scripts
+prepend-path PATH /usr/local/packages6/shef/ansys/
+prepend-path PATH /usr/local/packages6/shef/ansys/batch
 
 prepend-path LD_LIBRARY_PATH /usr/local/packages6/ansys/libs-nvidia-GL
