@@ -12,13 +12,16 @@ IDL is a data analysis language that first appeared in 1977.
 
 Usage
 -----
-If you wish to use the IDLDE then you may need to request more memory for the interactive session using something like ``qsh -l mem=8G``.
+If you wish to use the IDLDE then you may need to request more memory for the interactive session using something like ``qsh -l rmem=8G``.
 
-IDL can be activated using the module file::
+IDL versions can be activated using specific module files::
 
-    module load apps/idl/8.5/binary
+	module load apps/idl/8.5/binary
+	module load apps/sswidl/8.5/binary
 
-Then run using ``idl`` or ``idlde`` for the interactive development environment.
+Then run using ``idl`` or ``idlde`` for the interactive development environment. Note apps/sswidl/8.5 is the SolarSoft IDL environment. 
+
+The IDL licence is restricted - please contact us via helpdesk if you need to use this software.
 
 Installation notes
 ------------------
