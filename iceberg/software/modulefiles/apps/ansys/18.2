@@ -39,8 +39,8 @@ prepend-path PATH $prefix/fluent/bin
 prepend-path PATH $prefix/Framework/bin/Linux64
 prepend-path PATH $prefix/ansys/bin
 
-# Paths to University of Sheffield wrapper scripts
-prepend-path PATH /usr/local/packages6/shef/ansys/
-prepend-path PATH /usr/local/packages6/shef/ansys/batch
+# Directories containing University of Sheffield wrapper scripts 
+# (/usr/local/packages6/shef/ansys/ and /usr/local/packages6/shef/ansys/batch)
+# are not prepended to the path as these are not to be used with Ansys >= 18.2
 
 prepend-path LD_LIBRARY_PATH /usr/local/packages6/ansys/libs-nvidia-GL
