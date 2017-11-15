@@ -68,6 +68,14 @@ Documentation
 * `CUDA Toolkit Documentation <http://docs.nvidia.com/cuda/index.html#axzz3uLoSltnh>`_
 * `The power of C++11 in CUDA 7 <http://devblogs.nvidia.com/parallelforall/power-cpp11-cuda-7/>`_
 
+Profiling using nvprof
+----------------------
+
+Note that ``nvprof``, NVIDIA's CUDA profiler cannot write output to the ``/fastdata`` filesystem.
+
+This is because the profiler's output is a `SQLite <https://www.sqlite.org/>__` database and SQLite requires a filesystem that supports file locking
+but file locking is not enabled on the (`Lustre <http://lustre.org/>`__) filesystem mounted on ``/fastdata`` (for performance reasons). 
+
 CUDA Training
 -------------
 

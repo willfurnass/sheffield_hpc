@@ -30,9 +30,9 @@ R can then be run with ::
 
 Serial (one CPU) Batch usage
 ----------------------------
-Here, we assume that you wish to run the program `my_code.r` on the system. With batch usage it is recommended to load a specific version of R, for example `module load apps/R/3.4.0`, to ensure the expected output is achieved.
+Here, we assume that you wish to run the program ``my_code.r`` on the system. With batch usage it is recommended to load a specific version of R, for example ``module load apps/R/3.4.0``, to ensure the expected output is achieved.
 
-First, you need to write a batch submission file. We assume you'll call this `my_job.sge` ::
+First, you need to write a batch submission file. We assume you'll call this ``my_job.sge`` ::
 
   #!/bin/bash
   #$ -cwd                                # Run job from current directory
@@ -42,15 +42,15 @@ First, you need to write a batch submission file. We assume you'll call this `my
 
   R CMD BATCH my_code.r my_code.r.o$JOB_ID
 
-Note that R must be called with both the `CMD` and `BATCH` options which tell it to run an R program, in this case `my_code.r`. If you do not do this, R will attempt to open an interactive prompt.
+Note that R must be called with both the ``CMD`` and ``BATCH`` options which tell it to run an R program, in this case ``my_code.r``. If you do not do this, R will attempt to open an interactive prompt.
 
-The final argument, `my_code.r.o$JOBID`, tells R to send output to a file with this name. Since `$JOBID` will always be unique, this ensures that all of your output files are unique. Without this argument R sends all output to a file called `my_code.Rout`.
+The final argument, ``my_code.r.o$JOBID``, tells R to send output to a file with this name. Since ``$JOBID`` will always be unique, this ensures that all of your output files are unique. Without this argument R sends all output to a file called ``my_code.Rout``.
 
-Ensuring that `my_code.r` and `my_job.sge` are both in your current working directory, submit your job to the batch system ::
+Ensuring that ``my_code.r`` and ``my_job.sge`` are both in your current working directory, submit your job to the batch system ::
 
 	qsub my_job.sge
 
-Replace `my_job.sge` with the name of your submission script.
+Replace ``my_job.sge`` with the name of your submission script.
 
 Graphical output
 ----------------
@@ -80,7 +80,7 @@ To check your packages are up to date, and update them if necessary, run the fol
 
         update.packages(lib.loc = "~/R/x86_64-unknown-linux-gnu-library/3.4/")
 
-The folder name after :code:`~/R/` will likely change, but this can be completed with tab autocompletion from the R session. Ensure `lib.loc` folder is specified, or R will attempt to update the wrong library.
+The folder name after :code:`~/R/` will likely change, but this can be completed with tab autocompletion from the R session. Ensure ``lib.loc`` folder is specified, or R will attempt to update the wrong library.
 
 .. warning::
     Notice that the personal package library path includes the version of R:
@@ -93,9 +93,8 @@ Some R packages require external libraries to be installed before you can instal
 
 The associated R packages are not included in the system install of R, so you will need to install them yourself to your home directory following the instructions linked to below.
 
-* :ref:`geos` This is the library required for the ``rgeos`` package.
-* :ref:`gdal_iceberg` and :ref:`proj_iceberg` These are the libraries required for the ``rgdal`` package.
-* :ref:`jags` This is the library required for the ``rjags`` and ``runjags`` packages
+* :ref:`geos_sharc` This is the library required for the ``rgeos`` package.
+* :ref:`gdal_sharc` and :ref:`proj_sharc` These are the libraries required for the ``rgdal`` package.
 
 .. warning::
 	To install r packages that require external libraries, the libraries need to be loaded prior to installing the r packages. 

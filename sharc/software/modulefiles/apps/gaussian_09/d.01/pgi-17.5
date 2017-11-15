@@ -1,0 +1,56 @@
+#%Module1.0#####################################################################
+##
+## Gaussian 09 module file
+##
+#  By David M. Rogers July 2017
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes Gaussian 09 Revision D.01 available for use"
+}
+
+ set USER $::env(USER)
+#set TMPDIR $::env(TMPDIR)
+
+module-whatis   "Makes Gaussian 09 Revision D.01 available"
+
+# load modules
+ module load dev/PGI-compilers/17.5
+
+# module variables
+#
+ set     version d.01
+ set userid [ exec id -g -n $USER ]
+ if { $userid == "ch" } {
+ set     groot /usr/local/packages/apps/gaussian_09/d.01/pgi-17.5/chem
+ setenv  g09root /usr/local/packages/apps/gaussian_09/d.01/pgi-17.5/chem
+ } else {
+ set     groot /usr/local/packages/apps/gaussian_09/d.01/pgi-17.5
+ setenv  g09root /usr/local/packages/apps/gaussian_09/d.01/pgi-17.5
+ }
+#setenv  GAUSS_SCRDIR $TMPDIR
+ prepend-path PATH $groot/g09
+#variables from env command after . $g09root/g09/bsd/g09.profile
+ setenv GAUSS_ARCHDIR $groot/g09/arch
+ prepend-path LD_LIBRARY_PATH $groot/g09/bsd:$groot/g09/local:$groot/g09/extras:$groot/g09:$groot/gv/lib
+ setenv G09BASIS $groot/g09/basis
+ setenv GAUSS_BSDDIR $groot/g09/bsd
+ prepend-path PATH $groot/g09/bsd:$groot/g09/local:$groot/g09/extras:$groot/g09
+ setenv GAUSS_EXEDIR $groot/g09/bsd:$groot/g09/local:$groot/g09/extras:$groot/g09
+ setenv GV_DIR $groot/gv
+ setenv GAUSS_LEXEDIR $groot/g09/linda-exe
+#additional variables from ./g09/bsd/g09.profile
+ set-alias gv {\$GV_DIR/gview.exe}
+#set-alias gv {\$GV_DIR/gview.csh}
+ setenv _DSM_BARRIER  SHM
+ set-alias sl {\$g09root/g09/tests/searchlog.csh}
+ setenv PGI_TERM  trace,abort
+#for gaussview
+ prepend-path PATH $groot/gv
+ 

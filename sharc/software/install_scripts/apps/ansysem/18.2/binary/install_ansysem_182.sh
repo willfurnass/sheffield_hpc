@@ -11,11 +11,11 @@
 
 
 ############################## Variable Setup ################################
-version=614
-prefix=/usr/local/packages/apps/abaqus/$version
-package_dir=/scratch/$USER/abaqus_package
+version=18.2
+prefix=/usr/local/packages/apps/ansysem/$version/binary
+package_dir=/scratch/$USER/ansysem_package_$version
 
-filename=/usr/local/media/abaqus/ABAQUS-614-2/setup
+filename=/usr/local/media/ansys/Electronics_182_LINX64/install
 baseurl=
 
 # Set this to 'sudo' if you want to create the install dir using sudo.
@@ -62,10 +62,13 @@ fi
 
 $filename
 
-# follow the Abaqus GUI install instructions,
+# follow the Ansys EM GUI install instructions,
 # in GUI set install directory to
-# /usr/local/packages/apps/abaqus/614
-# the licence server is 27000@abaqus.lm.shef.ac.uk
+# /usr/local/packages/apps/ansysem/18.2/binary
+# the licence server is 1055@ansyslm.shef.ac.uk
 # this is a binary install
+#
+# To integrate with Ansys 18.2 Workbench run the following:
+$prefix/AnsysEM18.2/Linux64/scripts/IntegrateWithANSYS18.2.pl
 
 bash

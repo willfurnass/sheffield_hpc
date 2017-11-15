@@ -1,0 +1,33 @@
+#%Module1.0#####################################################################
+##
+## SU2 module file
+##
+#  By David M. Rogers October 2017
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes SU2 Version 5.0.0 available for use"
+}
+
+#set USER $::env(USER)
+
+module-whatis   "Makes SU2 Version 5.0.0 available"
+
+# load modules
+ module load mpi/openmpi/2.1.1/gcc-6.2
+
+# module variables
+#
+ set     version 5.0.0
+ set     su2root /usr/local/packages/apps/su2/5.0.0/gcc-6.2-openmpi-2.1.1
+
+ setenv  SU2_RUN /usr/local/packages/apps/su2/5.0.0/gcc-6.2-openmpi-2.1.1/bin
+
+ prepend-path PATH $su2root/bin
+ prepend-path PYTHONPATH $su2root/bin

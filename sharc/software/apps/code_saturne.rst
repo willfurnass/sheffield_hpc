@@ -3,8 +3,8 @@ Code Saturne
 
 .. sidebar:: Code Saturne
    
-   :Version: 4.0.7
-   :Dependencies: GCC compiler, Open MPI, Scotch/PT-Scotch and Libxml2. Modules loaded for GCC 4.9.4 and Open MPI 1.10.4 *or* GCC 6.2.0 and Open MPI 2.0.1
+   :Versions: 4.0.7, 5.0.4
+   :Dependencies: GCC compiler, Open MPI, Scotch/PT-Scotch and Libxml2. Modules loaded for GCC 4.9.4 and Open MPI 1.10.4 *or* GCC 6.2.0 and Open MPI 2.0.1 for version 4.0.7; Intel 17.0.0 and Open MPI 2.0.1 for version 5.0.4
    :URL: http://code-saturne.org/cms/ 
    :Documentation: http://code-saturne.org/cms/documentation
 
@@ -13,15 +13,16 @@ Code Saturne
 Usage
 -----
 
-Code Saturne 4.0.7 can be activated using the module files::
+Code Saturne 4.0.7 or 5.0.4 can be activated using the module files::
 
     module load apps/code_saturne/4.0.7/gcc-4.9.4-openmpi-1.10.4
     module load apps/code_saturne/4.0.7/gcc-6.2-openmpi-2.0.1
+    module load apps/code_saturne/5.0.4/intel-17.0.0-openmpi-2.0.1
 	
 Batch jobs
 ----------
 
-Users are encouraged to write their own batch submission scripts. The following is an example batch submission script, ``run_solver.sh``, to run Code Saturne and which is submitted to the queue by typing ``qsub run_solver.sh``.::
+Users are encouraged to write their own batch submission scripts. The following is an example batch submission script, ``run_solver.sh``, to run Code Saturne 4.0.7 and which is submitted to the queue by typing ``qsub run_solver.sh``.::
 
     #!/bin/bash
     #$ -cwd
@@ -47,14 +48,19 @@ Installation notes
 Code Saturne 4.0.7 was installed with GCC 4.9.4 and Open MPI 1.10.4 using the
 :download:`install_code_saturne.sh </sharc/software/install_scripts/apps/code_saturne/4.0.7/gcc-4.9.4-openmpi-1.10.4/install_code_saturne.sh>` script; the module
 file is
-:download:`gcc-4.9.4-openmpi-1.10.4 </sharc/software/modulefiles/apps/code_saturne/4.0.7/gcc-4.9.4-openmpi-1.10.4>`.
+:download:`/usr/local/modulefiles/apps/code_saturne/4.0.7/gcc-4.9.4-openmpi-1.10.4 </sharc/software/modulefiles/apps/code_saturne/4.0.7/gcc-4.9.4-openmpi-1.10.4>`.
 
 Code Saturne 4.0.7 was installed with GCC 6.2.0 and Open MPI 2.0.1 using the
 :download:`install_code_saturne.sh </sharc/software/install_scripts/apps/code_saturne/4.0.7/gcc-6.2-openmpi-2.0.1/install_code_saturne.sh>` script; the module
 file is
-:download:`gcc-6.2-openmpi-2.0.1 </sharc/software/modulefiles/apps/code_saturne/4.0.7/gcc-6.2-openmpi-2.0.1>`.
+:download:`/usr/local/modulefiles/apps/code_saturne/4.0.7/gcc-6.2-openmpi-2.0.1 </sharc/software/modulefiles/apps/code_saturne/4.0.7/gcc-6.2-openmpi-2.0.1>`.
 
-Both of the above installations used the libraries Scotch/PT-Scotch 6.0.4 and Libxml2 2.9.1. No additional, optional libraries were used during compilation.  
+Code Saturne 5.0.4 was installed with Intel 17.0.0 and Open MPI 2.0.1 using the
+:download:`install_code_saturne_5.0.4.sh </sharc/software/install_scripts/apps/code_saturne/5.0.4/intel-17.0.0-openmpi-2.0.1/install_code_saturne_5.0.4.sh>` script; the module
+file is
+:download:`/usr/local/modulefiles/apps/code_saturne/5.0.4/intel-17.0.0-openmpi-2.0.1 </sharc/software/modulefiles/apps/code_saturne/5.0.4/intel-17.0.0-openmpi-2.0.1>`.
+
+The above installations used the libraries Scotch/PT-Scotch 6.0.4 and Libxml2 2.9.1. No additional, optional libraries were used during compilation.  
 
 **Post-installation:** Please read the instructions at the end of the install script for the Code Saturne files to manually edit.
 
