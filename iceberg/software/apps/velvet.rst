@@ -23,17 +23,16 @@ This makes two programs available:-
 
 Example submission script
 -------------------------
-If the command you want to run is `velvetg /fastdata/foo1bar/velvet/assembly_31 -exp_cov auto -cov_cutoff auto`, here is an example submission script that requests 60Gig memory ::
+If the command you want to run is ``velvetg /fastdata/foo1bar/velvet/assembly_31 -exp_cov auto -cov_cutoff auto``, here is an example submission script that requests 60 GB of memory ::
 
   #!/bin/bash
-  #$ -l mem=60G
   #$ -l rmem=60G
 
   module load apps/gcc/4.4.7/velvet/1.2.10
 
   velvetg /fastdata/foo1bar/velvet/assembly_31 -exp_cov auto -cov_cutoff auto
 
-Put the above into a text file called `submit_velvet.sh` and submit it to the queue with the command `qsub submit_velvet.sh`
+Put the above into a text file called ``submit_velvet.sh`` and submit it to the queue with the command ``qsub submit_velvet.sh``
 
 Velvet Performance
 ------------------

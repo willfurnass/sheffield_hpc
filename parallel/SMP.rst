@@ -61,7 +61,7 @@ You can start an interactive SMP job on ShARC like so: ::
 
 Or like so on Iceberg: ::
 
-        qrsh -pe openmp 4 -l mem=3G,rmem=3G
+        qrsh -pe openmp 4 -l rmem=3G
 
 .. note:: 
     It may be difficult to start an interactive SMP session if the cluster(s) are busy. 

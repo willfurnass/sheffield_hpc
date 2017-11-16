@@ -60,7 +60,7 @@ Here is how to run the R script called ``linear_algebra_bench.r`` from the `HPC 
    #!/bin/bash
    #This script runs the linear algebra benchmark multiple times using the intel-compiled version of R
    #that's linked with the sequential MKL
-   #$ -l mem=8G -l rmem=8G
+   #$ -l rmem=8G
    # Target the Ivy Bridge Processors
    #$ -l arch=intel-e5-2650v2
  
@@ -74,7 +74,7 @@ Here is how to run the same code using 8 cores:
 .. code-block:: bash
 
    #!/bin/bash
-   #$ -l mem=3G -l rmem=3G      # Memory per core
+   #$ -l rmem=3G # Memory per core
    # Target the Ivy Bridge Processors
    #$ -l arch=intel-e5-2650v2
    #$ -pe openmp 8
