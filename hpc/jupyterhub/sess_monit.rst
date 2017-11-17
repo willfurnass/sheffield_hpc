@@ -12,7 +12,7 @@ If you want to see what Jupyter Notebooks and Terminals your Jupyter server is r
 #. Click the *Running* browser tab.
 
 Here you can **shut down (close) individual Notebooks**, which may be useful to free up 
-the memory and CPU cores that the cluster's job scheduler has alllocated for your JupyterHub session.
+the memory and CPU cores that the cluster's job scheduler has allocated for your JupyterHub session.
 
 .. image:: /images/jupyterhub/sharc-jh-show-running.png
 
