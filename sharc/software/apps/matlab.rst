@@ -44,7 +44,7 @@ First, you need to write a batch submission file. We assume you'll call this ``m
 	#$ -l rmem=4G                  		# Request  4 GB of real memory
 	#$ -cwd                        		# Run job from current directory
 	module load apps/matlab/2017b/binary  	# Make specific version of MATLAB available
-
+  
 	matlab -nodesktop -nosplash -r helloworld
 
 Ensuring that ``helloworld.m`` and ``my_job.sge`` are both in your current working directory, submit your job to the batch system: ::

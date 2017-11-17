@@ -33,8 +33,7 @@ An example Sun Grid Engine submission script that makes use of a .mpl file calle
 
     #!/bin/bash
     # Request 4 gigabytes of real memory (mem)
-    # and 4 gigabytes of virtual memory (mem)
-    #$ -l mem=4G -l rmem=4G
+    #$ -l rmem=4G
 
     module load apps/binapps/maple/2015
 

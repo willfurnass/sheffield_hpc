@@ -78,30 +78,49 @@ If a job exceeds its real memory resource it gets terminated. You can use the ``
 
 .. _real-vs-virt-mem:
 
-What is rmem (real memory) and mem (virtual memory)
------------------------------------------------------
+What are the rmem (real memory) and (deprecated) mem (virtual memory) options?
+------------------------------------------------------------------------------
 
-Running a program always involves loading the program instructions and also its data i.e. all variables and arrays that it uses into the computer's memory.
-A program's entire instructions and its entire data, along with any dynamic link libraries it may use, defines the **virtual storage** requirements of that program.
+.. warning::
+ 
+   The following is most likely only of interest when revisiting job submission scripts and documentation created before
+   26 June 2017 as now users only need to request real memory (``rmem``) and jobs are only killed if they exceed their ``rmem`` quota 
+   (whereas prior to that date jobs could request and be policed using virtual memory ``mem`` requests).
+
+Running a program always involves loading the program instructions and also its data (i.e. all variables and arrays that it uses) into the computer's memory.
+A program's entire instructions and its entire data, along with any dynamically-linked libraries it may use, defines the **virtual storage** requirements of that program.
 If we did not have clever operating systems we would need as much physical memory (RAM) as the virtual storage requirements of that program.
-However, operating systems are clever enough to deal with situations where we have insufficient **real memory** (physical memory, typically called RAM) to load all the program instructions and data into the available RAM. This technique works because hardly any program needs to access all its instructions and its data simultaneously. Therefore the operating system loads into RAM only those bits (**pages**) of the instructions and data that are needed by the program at a given instance. This is called **paging** and it involves copying bits of the programs instructions and data to/from hard-disk to RAM as they are needed.
+However, operating systems are clever enough to deal with situations where we have insufficient **real memory** (physical memory, typically called RAM) to 
+load all the program instructions and data into the available RAM. 
+This technique works because hardly any program needs to access all its instructions and its data simultaneously. 
+Therefore the operating system loads into RAM only those bits (**pages**) of the instructions and data that are needed by the program at a given instance. 
+This is called **paging** and it involves copying bits of the programs instructions and data to/from hard-disk to RAM as they are needed.
 
-If the real memory (i.e. RAM) allocated to a job is much smaller than the entire memory requirements of a job ( i.e. virtual memory) then there will be excessive need for paging that will slow the execution of the program considerably due to the relatively slow speeds of transferring information to/from the disk into RAM.
+If the real memory (i.e. RAM) allocated to a job is much smaller than the entire memory requirements of a job ( i.e. virtual memory) 
+then there will be excessive need for paging that will slow the execution of the program considerably due to 
+the relatively slow speeds of transferring information to/from the disk into RAM.
 
-On the other hand if the RAM allocated to a job is larger than the virtual memory requirement of that job then it will result in waste of RAM resources which will be idle duration of that job.
+On the other hand if the RAM allocated to a job is larger than the virtual memory requirement of that job then 
+it will result in waste of RAM resources which will be idle duration of that job.
 
 * The virtual memory limit defined by the ``-l mem`` cluster scheduler parameter defines the maximum amount of virtual memory your job will be allowed to use. **This option is now deprecated** - you can continue to submit jobs requesting virtual memory, however the scheduler **no longer applies any limits to this resource**.
 * The real memory limit is defined by the ``-l rmem`` cluster scheduler parameter and defines the amount of RAM that will be allocated to your job.  The job scheduler will terminate jobs which exceed their real memory resource request.
 
+.. note::
+ 
+   As mentioned above, jobs now need to just request real memory and are policed using real memory usage.  The reasons for this are:
+
+   * For best performance it is preferable to request as much real memory as the virtual memory storage requirements of a program as paging impacts on performance and memory is (relatively) cheap.
+   * Real memory is more tangible to newer users.
 
 Insufficient memory in an interactive session
 ---------------------------------------------
 By default, an interactive session provides you with 2 Gigabytes of RAM (sometimes called real memory).
-You can request more than this when running your ``qsh`` or ``qrsh`` command: ::
+You can request more than this when running your ``qrshx``/``qsh``/``qrsh`` command e.g.: ::
 
-        qsh  -l rmem=8G
+        qrshx -l rmem=8G
 
-This asks for 8 Gigabytes of RAM (real memory). Note that you should
+This asks for 8 Gigabytes of RAM (real memory). Note that you should:
 
 * not specify more than 256 GB of RAM (real memory) (``rmem``)
 
@@ -126,7 +145,9 @@ If you know the node that a program was compiled on but do not know the CPU arch
 
 Windows-style line endings
 --------------------------
-If you prepare text files such as your job submission script on a Windows machine, you may find that they do not work as intended on the system. A very common example is when a job immediately goes into ``Eqw`` status after you have submitted it.
+If you prepare text files such as your job submission script on a Windows machine, you may find that they do not work as intended on the system. A very common example is when a job immediately goes into ``Eqw`` status after you have submitted it and you are presented with an error message containing: ::
+
+        failed searching requested shell because:
 
 The reason for this behaviour is that Windows and Unix machines have different conventions for specifying 'end of line' in text files. Windows uses the control characters for 'carriage return' followed by 'linefeed', ``\r\n``, whereas Unix uses just 'linefeed' ``\n``.
 

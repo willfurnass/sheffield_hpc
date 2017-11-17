@@ -103,8 +103,7 @@ Here is an example batch submission script that runs a fictitious program called
 
     #!/bin/bash
     # Request 5 gigabytes of real memory (mem)
-    # and 5 gigabytes of virtual memory (mem)
-    #$ -l mem=5G -l rmem=5G
+    #$ -l rmem=5G
 
     # load the module for the program we want to run
     module load apps/gcc/foo
@@ -161,7 +160,7 @@ Command                Description
                        Also note that requesting less execution time may 
                        result in your job spending less time queuing.
 
-``-l mem=xxG``         Specify the maximum amount (``xx``) of memory to be used.
+``-l rmem=xxG``         Specify the maximum amount (``xx``) of real memory to be used.
 
 ``-l arch=``           Target a processor architecture. This is irrelevant on 
                        ShARC as all processors are the same model.  Options 

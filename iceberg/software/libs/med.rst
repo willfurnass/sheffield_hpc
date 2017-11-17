@@ -50,7 +50,7 @@ The following was submiited as an SGE job from the med-3.0.8 build directory
 	#!/bin/bash
 
 	#$ -pe openmpi-ib 8
-	#$ -l mem=6G
+	#$ -l rmem=6G
 
 	module load mpi/gcc/openmpi/1.8.3
 	make check
