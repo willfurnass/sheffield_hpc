@@ -170,7 +170,6 @@ The following script was submitted via ``qsub`` from the ``Test`` subdirectory o
 .. code-block:: bash
 
    #!/bin/bash
-   #$ -l mem=10G
    #$ -l rmem=10G
    module load apps/castep/16.11/intel-15.0.7
 
@@ -188,7 +187,6 @@ The following script was submitted via ``qsub`` from the ``Test`` subdirectory o
 
    #!/bin/bash
    #$ -pe mpi 4
-   #$ -l mem=10G
    #$ -l rmem=10G
    module load apps/castep/16.11/intel-15.0.7-openmpi-2.0.1
 
