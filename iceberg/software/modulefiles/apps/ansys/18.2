@@ -20,9 +20,11 @@ set prefix    /usr/local/packages6/ansys$shortvers/ansys_inc/v$shortvers
 
 module-whatis   "Makes ANSYS v$vers available"
 
+# Set env vars 
+setenv ANSWBCOMMAND $prefix/Framework/bin/Linux64/runwb2
 setenv ANSYSROOT    $prefix
 setenv ANSYSVER     $shortvers
-setenv ANSWBCOMMAND $prefix/Framework/bin/Linux64/runwb2
+setenv FLUENT_INC   $prefix/fluent
 setenv ICEM_ACN     $prefix/icemcfd/linux64_amd
 
 # Paths to Ansys executables
@@ -43,4 +45,8 @@ prepend-path PATH $prefix/ansys/bin
 # (/usr/local/packages6/shef/ansys/ and /usr/local/packages6/shef/ansys/batch)
 # are not prepended to the path as these are not to be used with Ansys >= 18.2
 
-prepend-path LD_LIBRARY_PATH /usr/local/packages6/ansys/libs-nvidia-GL
+# Possibly not needed any more; reintroduce if necessary
+#prepend-path LD_LIBRARY_PATH /usr/local/packages6/ansys/libs-nvidia-GL
+
+# UoS-specific alias for starting Ansys Workbench
+set-alias ansyswb {\$ANSYSROOT/Framework/bin/Linux64/runwb2}

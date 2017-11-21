@@ -1,30 +1,47 @@
 #%Module10.2#####################################################################
 ##
-## ANSYS 14.5 module file
+## ANSYS 16.1 module file
 ##
-#  By Deniz Savas on  February 2015; D.M.Rogers May 2017
+#  By Deniz Savas on February 2015; D.M.Rogers May 2017
 ################################################################################
 
 ## Module file logging
 source /usr/local/etc/module_logging.tcl
-##
 
 proc ModulesHelp { } {
-        global version
-
-        puts stderr "   Makes ANSYS Version 16.1 available for use"
+    global vers
+    puts stderr "    Makes ANSYS Version $vers available for use"
 }
 
-module-whatis   "Makes ANSYS V16.1 available"
+# Module variables
+set vers      16.1
+set shortvers 161
+set prefix    /usr/local/packages/apps/ansys/$vers/v$shortvers
+# Paths to local wrapper scripts
+set localroot /usr/local/packages/apps/shef/ansys/batch:/usr/local/packages/apps/shef/ansys/
 
-# module variables
-#
- set localroot     /usr/local/packages/apps/shef/ansys/batch:/usr/local/packages/apps/shef/ansys/
- set ANSYS_DIR     /usr/local/packages/apps/ansys/16.1/v161
+module-whatis   "Makes ANSYS v$vers available"
 
- setenv  ANSYSROOT $ANSYS_DIR
- setenv  ANSYSVER 161
- setenv  ANSWBCOMMAND $ANSYS_DIR/Framework/bin/Linux64/runwb2
- setenv  FLUENT_INC $ANSYS_DIR/fluent
+# Set env vars 
+setenv ANSWBCOMMAND $prefix/Framework/bin/Linux64/runwb2
+setenv ANSYSROOT    $prefix
+setenv ANSYSVER     $shortvers
+setenv FLUENT_INC   $prefix/fluent
+setenv ICEM_ACN     $prefix/icemcfd/linux64_amd
 
-prepend-path PATH $localroot:$ANSYS_DIR/ansys/bin:$ANSYS_DIR/Framework/bin/Linux64/:$ANSYS_DIR/fluent/bin:$ANSYS_DIR/CFD-Post/bin:$ANSYS_DIR/CFX/bin:$ANSYS_DIR/Icepak/bin:$ANSYS_DIR/TurboGrid/bin:$ANSYS_DIR/polyflow/bin:$ANSYS_DIR/ansys/bin
+# Paths to Ansys executables
+prepend-path PATH $prefix/Electronics/Linux64
+prepend-path PATH $prefix/polyflow/bin
+prepend-path PATH $prefix/TurboGrid/bin/linux-amd64
+prepend-path PATH $prefix/TurboGrid/bin
+prepend-path PATH $prefix/Icepak/bin
+prepend-path PATH $prefix/CFX/bin/linux-amd64
+prepend-path PATH $prefix/CFX/bin
+prepend-path PATH $prefix/CFD-Post/bin/linux-amd64
+prepend-path PATH $prefix/CFD-Post/bin
+prepend-path PATH $prefix/fluent/bin
+prepend-path PATH $prefix/Framework/bin/Linux64
+prepend-path PATH $prefix/ansys/bin
+
+# Paths to local wrapper scripts
+prepend-path PATH $localroot

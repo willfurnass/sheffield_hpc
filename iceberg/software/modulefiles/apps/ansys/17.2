@@ -20,9 +20,11 @@ set prefix    /usr/local/packages6/ansys$shortvers/v$shortvers
 
 module-whatis   "Makes ANSYS v$vers available"
 
+# Set env vars 
+setenv ANSWBCOMMAND $prefix/Framework/bin/Linux64/runwb2
 setenv ANSYSROOT    $prefix
 setenv ANSYSVER     $shortvers
-setenv ANSWBCOMMAND $prefix/Framework/bin/Linux64/runwb2
+setenv FLUENT_INC   $prefix/fluent
 setenv ICEM_ACN     $prefix/icemcfd/linux64_amd
 
 # Paths to Ansys executables
