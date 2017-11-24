@@ -3,6 +3,7 @@
 # Install Julia 0.6.0 on the ShARC cluster
 
 # Variables
+export OMP_NUM_THREADS="${NSLOTS}"
 COMPILER=gcc
 COMPILER_VERS=6.2
 VERS=0.6.0
