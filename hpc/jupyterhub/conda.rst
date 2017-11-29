@@ -97,11 +97,30 @@ the packages we are interested in
 plus a Jupyter kernel.
 
 See the general documentation for :ref:`using conda on ShARC <sharc-python-conda>` for 
-instructions on how to do this from the command-line.  
+generic instructions on how to create conda environments from the command-line.  
 Note that if you are using a :ref:`Jupyter Terminal <jh_terminal>` 
 then you do not need to load conda using ``module load ...``.
-
 Make sure you **install a package containing a Jupyter kernel** (e.g. ``ipykernel`` for Python work) into your environment.
+
+When following that documentation you might want to use the following as starting points for creating Jupyter(Hub)-compatible environments:
+
+Python 3:
+
+.. code-block:: sh
+
+   conda create -n example-python-env python=3.6 ipykernel jupyter_client
+
+R: 
+
+.. code-block:: sh
+
+   conda create -n example-r-env python=3.6 r-irkernel jupyter_client libiconf
+
+Python from the `Intel Python Distribution <https://software.intel.com/en-us/distribution-for-python>`:
+
+.. code-block:: sh
+
+   conda create -n example-intel-python-env -c intel intelpython3_core ipykernel jupyter_client
 
 .. comment:
    Omit the following until 
