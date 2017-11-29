@@ -11,5 +11,4 @@ Below is a list of the various ways to connect to or use iceberg:
     :maxdepth: 2
 
     terminal
-    jupyterhub
     hw-accel-gfx

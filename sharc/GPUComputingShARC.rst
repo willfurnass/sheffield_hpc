@@ -41,7 +41,27 @@ To run batch jobs on gpu nodes, edit your jobfile to include a request for GPUs,
   #!/bin/bash
   #$ -l gpu=1
 
+Requesting GPUs and multiple CPU cores from the scheduler
+---------------------------------------------------------
 
+You may want to request multiple CPU cores on a single node with a certain number of GPUs per CPU core.  
+Here is how to request four CPU cores on a node with two GPU *per CPU core*: ::
+
+  #!/bin/bash
+  #$ -pe smp 4
+  #$ -l gpu=2
+
+It is **not currently possible** to request:
+
+* more CPU cores than GPUs
+
+    * e.g. a heterogeneous application which could use all 40 CPU cores in a given node whilst using all 8 GPUs;
+
+* non-multiple ratios of GPUs to CPUs
+
+    * e.g. a heterogeneous application which uses 4 GPUs, with 1 CPU core per GPU and can additionally use CPU cores for asynchronous host work i.e. an extra 16 cores, totalling 20 CPUs.
+
+However, such scheduler requests may be supported in future.
 
 .. _GPUResources_sharc:
 
@@ -53,7 +73,7 @@ Hardware
 
 **Pulicly available GPU nodes**
 
-* :ref:`gpu-sharc-specs`
+* :ref:`sharc-gpu-specs`
 
 **Research group-specific GPU nodes:**
 

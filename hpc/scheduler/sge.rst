@@ -58,18 +58,18 @@ Common Interactive Job Options
 ====================== ========================================================
 Command                Description
 ====================== ========================================================
--l h_rt=hh:mm:ss       Specify the total maximum execution time for the job.
+``-l h_rt=hh:mm:ss``   Specify the total maximum execution time for the job.
                        The upper limit is 08:00:00.  NB these limits may
                        differ for specific SGE Projects/Queues.
 
--l rmem=xxG            Specify the maximum amount (xx) of memory to be used
-                       (per process or core) in Gigabytes.
+``-l rmem=xxG``        Specify the maximum amount (xx) of (real) memory to be
+                       used (per process or core) in Gigabytes.
 
--pe <env> <nn>         Specify a *parallel environment* and a number of 
+``-pe <env> <nn>``     Specify a *parallel environment* and a number of 
                        processor cores.
 
--pe smp <nn>           The smp parallel environment provides multiple threads
-                       on one node. <nn> specifies the max number of
+``-pe smp <nn>``       The smp parallel environment provides multiple threads
+                       on one node. ``<nn>`` specifies the max number of
                        threads.
 ====================== ========================================================
 
@@ -97,12 +97,13 @@ Once you have a script file, or other executable file, you can submit it to the 
 
     qsub myscript.sh
 
-Here is an example batch submission script that runs a fictitious program called `foo` ::
+Here is an example batch submission script that runs a fictitious program called ``foo``:
+
+   .. code-block:: bash
 
     #!/bin/bash
     # Request 5 gigabytes of real memory (mem)
-    # and 5 gigabytes of virtual memory (mem)
-    #$ -l mem=5G -l rmem=5G
+    #$ -l rmem=5G
 
     # load the module for the program we want to run
     module load apps/gcc/foo
@@ -113,37 +114,38 @@ Here is an example batch submission script that runs a fictitious program called
 
 Some things to note:
 
-* The first line always needs to be `#!/bin/bash` (to tell the scheduler that this is a bash batch script).
-* Comments start with a `#`
-* Scheduler options, such as the amount of memory requested, start with `#$`
-* You will often require one or more `module` commands in your submission file. 
+* The first line always needs to be ``#!/bin/bash`` (to tell the scheduler that this is a bash batch script).
+* Comments start with a ``#``
+* Scheduler options, such as the amount of memory requested, start with ``#$``
+* You will often require one or more ``module`` commands in your submission file. 
   These make programs and libraries available to your scripts.  
   Many applications and libraries are available as modules on 
   :ref:`ShARC <sharc-software>` and :ref:`iceberg <iceberg-software>`.
 
-Here is a more complex example that requests more resources: ::
+Here is a more complex example that requests more resources:
 
-  #!/bin/bash
-  # Request 16 gigabytes of real memory (mem)
-  # and 16 gigabytes of virtual memory (mem)
-  #$ -l mem=16G -l rmem=16G
-  # Request 4 cores in an OpenMP environment
-  #$ -pe openmp 4
-  # Email notifications to me@somedomain.com
-  #$ -M me@somedomain.com
-  # Email notifications if the job aborts
-  #$ -m a
+   .. code-block:: bash
 
-  # load the modules required by our program
-  module load compilers/gcc/5.2
-  module load apps/gcc/foo
+    #!/bin/bash
+    # Request 16 gigabytes of real memory (RAM)
+    #$ -l rmem=16G
+    # Request 4 cores in an OpenMP environment
+    #$ -pe openmp 4
+    # Email notifications to me@somedomain.com
+    #$ -M me@somedomain.com
+    # Email notifications if the job aborts
+    #$ -m a
 
-  #Set the OPENMP_NUM_THREADS environment variable to 4
-  export OMP_NUM_THREADS=4
+    # Load the modules required by our program
+    module load compilers/gcc/5.2
+    module load apps/gcc/foo
 
-  #Run the program foo with input foo.dat
-  #and output foo.res
-  foo < foo.dat > foo.res
+    # Set the OPENMP_NUM_THREADS environment variable to 4
+    export OMP_NUM_THREADS=4
+
+    # Run the program foo with input foo.dat
+    # and output foo.res
+    foo < foo.dat > foo.res
 
 Scheduler Options
 -----------------
@@ -151,35 +153,47 @@ Scheduler Options
 ====================== ========================================================
 Command                Description
 ====================== ========================================================
--l h_rt=hh:mm:ss       Specify the total maximum execution time for the job.
+``-l h_rt=hh:mm:ss``   Specify the total maximum execution time for the job.
                        The upper limit is typically 96:00:00 (4 days) on ShARC
                        and 168:00:00 (7 days) on Iceberg.  Note that these 
                        limits may differ for specific SGE Projects/Queues.  
                        Also note that requesting less execution time may 
                        result in your job spending less time queuing.
 
--l mem=xxG             Specify the maximum amount (xx) of memory to be used.
+``-l rmem=xxG``         Specify the maximum amount (``xx``) of real memory to be used.
 
--l hostname=           Target a node by name. Not recommended for normal use.
-
--l arch=               Target a processor architecture. This is irrelevant on 
+``-l arch=``           Target a processor architecture. This is irrelevant on 
                        ShARC as all processors are the same model.  Options 
-                       on Iceberg include `intel-e5-2650v2` and `intel-x5650`.
+                       on Iceberg include ``intel-e5-2650v2`` and ``intel-x5650``.
 
--N                     Job name, used to name output files and in the queue list.
+``-N``                 Job name, used to name output files and in the queue list.
 
--j y[es]|n[o]          Join the error and normal output into one file rather
+``-j y[es]|n[o]``      Join the error and normal output into one file rather
                        than two.
 
--M                     Email address to send notifications to.
+``-M``                 Email address to send notifications to.
 
--m bea                 Type of notifications to send. Can be any combination of
-                       begin (b) end (e) or abort (a) i.e. `-m ea` for end and
-                       abortion messages.
--a                     Specify the earliest time for a job to start, in the
-                       format MMDDhhmm. e.g. -a 01011130 will schedule the job
-                       to begin no sooner than 11:30 on 1st January.
--wd working_dir        Execute  the  job  from  the  directory  specified (i.e. working_dir)
+``-m bea``             Type of notifications to send. Can be any combination of
+                       begin (``b``) end (``e``) or abort (``a``) i.e. 
+                       ``-m ea`` for end and abortion messages.
+
+``-a``                 Specify the earliest time for a job to start, in the
+                       format MMDDhhmm. e.g. ``-a 01011130`` will schedule the
+                       job to begin no sooner than 11:30 on 1st January.
+
+``-wd working_dir``    Execute  the  job  from  the  directory  specified (i.e.
+                       ``working_dir``).
+
+``-l excl=true``       Request exclusive access to all nodes used by the job so
+                       no other jobs can run on them.  This can be useful for
+                       benchmarking purposes where you want to ensure that you
+                       have exclusive use of e.g. memory/IO buses.  Note that
+                       you still need to request CPU cores and memory to avoid
+                       being limited to just the default per job (one core
+                       and a set amount of RAM).  Also note that the use of
+                       this option will likely result in longer queuing times.
+     
+``-l hostname=``       Target a node by name. Not recommended for normal use.
 
 ====================== ========================================================
 
@@ -205,10 +219,19 @@ To only target the older, 12 core nodes that contain `X5650 CPUs <http://ark.int
 
 **How do I specify multiple email addresses for job notifications?**
 
-Specify each additional email with it's own `-M` option ::
+Specify each additional email with its own ``-M`` option ::
 
   #$ -M foo@example.com
   #$ -M bar@example.com
+
+**I want email notifications but don't want to have to include my email address in every job submission script**
+
+Create a file called ``.sge_request`` in the directory you submit your jobs from containing: ::
+
+    -M my.personal@email.com -M my.work@sheffield.ac.uk
+
+The ``-M`` parameter will be automatically supplied for all future job submissions.
+Note that you still need to request email notifications using ``-m`` (see above).
 
 **How do you ensure that a job starts after a specified time?**
 
@@ -216,10 +239,10 @@ Add the following line to your submission script ::
 
     #$ -a time
 
-but replace ``time`` with a time in the format MMDDhhmm
+but replace ``time`` with a time in the format ``MMDDhhmm``.
 
-For example, for 22nd July at 14:10, you’d do ::
+For example, for 22nd July at 14:10, you'd do ::
 
     #$ -a 07221410
 
-This won’t guarantee that it will run precisely at this time since that depends on available resources. It will, however, ensure that the job runs *after* this time. If your resource requirements aren’t too heavy, it will be pretty soon after. When I tried it, it started about 10 seconds afterwards but this will vary.
+This won't guarantee that it will run precisely at this time since that depends on available resources. It will, however, ensure that the job runs *after* this time. If your resource requirements aren't too heavy, it will be pretty soon after. When I tried it, it started about 10 seconds afterwards but this will vary.

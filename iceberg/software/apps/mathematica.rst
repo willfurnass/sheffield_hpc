@@ -73,9 +73,8 @@ Copy and paste the above into a text file called `very_simple_mathematica.m`
 An example batch submission script for this file is ::
 
   #!/bin/bash
-  # Request 4 gigabytes of real memory (mem)
-  # and 4 gigabytes of virtual memory (mem)
-  #$ -l mem=4G -l rmem=4G
+  # Request 4 gigabytes of real memory
+  #$ -l rmem=4G
 
   module load apps/binapps/mathematica/10.3.1
 

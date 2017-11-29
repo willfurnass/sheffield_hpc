@@ -104,7 +104,6 @@ Create a file called ``submit.sge`` that contains the following: ::
         #!/bin/bash
         #$ -pe openmpi-ib 4    # Run the calculation on 4 CPU cores
         #$ -l rmem=4G          # Request 4 GB of real memory per core
-        #$ -l mem=4G           # Request 4 GB of virtual memory per core
         module load apps/intel/15/castep/16.11-parallel
 
         mpirun castep.mpi graphite
@@ -226,7 +225,6 @@ Testing
 The following script was submitted via ``qsub`` from inside the build directory::
 
   #!/bin/bash
-  #$ -l mem=10G
   #$ -l rmem=10G
   module load compilers/intel/15.0.3
 
@@ -241,7 +239,6 @@ The following script was submitted via ``qsub`` from inside the build directory 
 
   #!/bin/bash
   #$ -pe openmpi-ib 4
-  #$ -l mem=10G
   #$ -l rmem=10G
   module load libs/intel/15/openmpi/1.8.8
 

@@ -14,6 +14,8 @@ Total capacity
 
 Note that some of these resources have been purchased by research groups who have exclusive access to them.
 
+.. _sharc-cpu-specs:
+
 General CPU node specifications
 -------------------------------
 
@@ -43,9 +45,9 @@ Large memory node specifications
 
 Four nodes are publicly available (not exclusive to research groups).
 
-These are identical to the general `CPU nodes <General CPU node specifications>`_ but with 256 GiB RAM (16 GiB per core).
+These are identical to the general :ref:`CPU nodes <sharc-cpu-specs>` but with 256 GiB RAM (16 GiB per core).
 
-.. _gpu-sharc-specs:
+.. _sharc-gpu-specs:
 
 GPU node specifications
 -----------------------

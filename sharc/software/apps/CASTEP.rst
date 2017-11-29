@@ -19,13 +19,17 @@ Interactive Usage
 -----------------
 The serial version of CASTEP should be used for interactive usage. 
 After connecting to ShARC (see :ref:`ssh`),  start an interactive session with the ``qrsh`` or ``qrshx`` command. 
-Make the serial version of CASTEP available using the following command: ::
+Make the serial version of CASTEP available using the following command:
 
-        module load apps/castep/16.11/intel-15.0.7
+.. code-block:: bash
 
-The CASTEP executable is called ``castep.serial`` so if you execute: ::
+   module load apps/castep/16.11/intel-15.0.7
 
-        castep.serial
+The CASTEP executable is called ``castep.serial`` so if you execute:
+
+.. code-block:: bash
+
+    castep.serial
 
 You should get the following: ::
 
@@ -48,69 +52,91 @@ If, instead, you get: ::
 It is probably because you are not a member of the ``castep`` group. 
 See Licensing_ for details on how to be added to this group.
 
-Interactive usage is fine for small CASTEP jobs such as the Silicon example given at http://www.castep.org/Tutorials/BasicsAndBonding
+Interactive usage is fine for small CASTEP jobs such as the Silicon example given in 
+the CASTEP `Basics and Bonding <http://www.castep.org/Tutorials/BasicsAndBonding>`_ tutorial. 
 
-To run this example, you can do: ::
+To run this example, you can do:
 
-        # Get the files, decompress them and enter the directory containing them
-        wget http://www.castep.org/files/Si2.tgz
-        tar -xvzf ./Si2.tgz
-        cd Si2
+.. code-block:: bash
 
-        # Run the CASTEP job in serial
-        castep.serial Si2
+   # Get the files, decompress them and enter the directory containing them
+   wget http://www.castep.org/files/Si2.tgz
+   tar -xvzf ./Si2.tgz
+   cd Si2
 
-        # Read the output using the more command
-        less Si2.castep
+   # Run the CASTEP job in serial
+   castep.serial Si2
 
-CASTEP has a built in help system. To get more information on using castep use: ::
+   # Read the output using the less command
+   less Si2.castep
 
-        castep.serial -help
+CASTEP has a built in help system. To get more information on using castep use:
 
-Alternatively you can search for help on a particular topic: ::
+.. code-block:: bash
 
-        castep.serial -help search keyword
+   castep.serial -help
 
-or list all of the input parameters: ::
+Alternatively you can search for help on a particular topic:
 
-        castep.serial -help search all
+.. code-block:: bash
+
+   castep.serial -help search keyword
+
+or list all of the input parameters:
+
+.. code-block:: bash
+
+   castep.serial -help search all
 
 Batch Submission - Parallel
 ---------------------------
 The parallel version of CASTEP is called ``castep.mpi``. 
-To make the parallel environment available, use the following command: ::
+To make the parallel environment available, use the following command:
 
-        module load apps/castep/16.11/intel-15.0.7-openmpi-2.0.1
+.. code-block:: bash
 
-As an example of a parallel submission, we will calculate the bandstructure of graphite following the tutorial at http://www.castep.org/Tutorials/BandStructureAndDOS
+   module load apps/castep/16.11/intel-15.0.7-openmpi-2.0.1
+
+As an example of a parallel submission, we will calculate the bandstructure of graphite following 
+the CASTEP `Band Structure and DOS <http://www.castep.org/Tutorials/BandStructureAndDOS>`_ tutorial.
 
 After connecting to ShARC (see :ref:`ssh`),  
 start an interactive session with the ``qrsh`` or ``qrshx`` command. 
-Download and decompress the example input files with the commands ::
+Download and decompress the example input files with the commands:
 
-        wget http://www.castep.org/files/bandstructure.tgz
-        tar -xvzf ./bandstructure.tgz
+.. code-block:: bash
 
-Enter the directory containing the input files for graphite: ::
+   wget http://www.castep.org/files/bandstructure.tgz
+   tar -xvzf ./bandstructure.tgz
 
-        cd bandstructure/graphite/
+Enter the directory containing the input files for graphite:
 
-Create a file called ``submit.sge`` that contains the following: ::
+.. code-block:: bash
 
-        #!/bin/bash
-        #$ -pe mpi 4    # Run the calculation on 4 CPU cores
-        #$ -l rmem=4G   # Request 4 GB of real memory per core
-        module load apps/castep/16.11/intel-15.0.7-openmpi-2.0.1
+   cd bandstructure/graphite/
 
-        mpirun castep.mpi graphite
+Create a file called ``submit.sge`` that contains the following:
 
-Submit it to the system with the command: ::
+.. code-block:: bash
 
-        qsub submit.sge
+   #!/bin/bash
+   #$ -pe mpi 4    # Run the calculation on 4 CPU cores
+   #$ -l rmem=4G   # Request 4 GB of real memory per core
+   module load apps/castep/16.11/intel-15.0.7-openmpi-2.0.1
+ 
+   mpirun castep.mpi graphite
 
-After the calculation has completed, get an overview of the calculation by looking at the file ``graphite.castep``: ::
+Submit it to the system with the command:
 
-        more graphite.castep
+.. code-block:: bash
+
+   qsub submit.sge
+
+After the calculation has completed, get an overview of the calculation by looking at the file ``graphite.castep``:
+
+.. code-block:: bash
+
+   more graphite.castep
 
 Installation Notes
 ------------------
@@ -139,28 +165,31 @@ Testing
 Version 16.11, serial build
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following script was submitted via ``qsub`` from the ``Test`` subdirectory of the build directory: ::
+The following script was submitted via ``qsub`` from the ``Test`` subdirectory of the build directory:
 
-        #!/bin/bash
-        #$ -l mem=10G
-        #$ -l rmem=10G
-        module load apps/castep/16.11/intel-15.0.7
+.. code-block:: bash
 
-        cd /scratch/$USER/castep/16.11/intel-15.0.7/serial/Test
-        ../bin/testcode.py -q  --total-processors=1 -e castep.serial -c simple -v -v -v
+   #!/bin/bash
+   #$ -l rmem=10G
+   module load apps/castep/16.11/intel-15.0.7
+
+   cd /scratch/$USER/castep/16.11/intel-15.0.7/serial/Test
+   ../bin/testcode.py -q  --total-processors=1 -e castep.serial -c simple -v -v -v
 
 All 416 tests passed.  Results can be found in :download:`castep_16_11_serial_sharc_build_tests.log </sharc/software/install_scripts/apps/castep/16.11/intel-15.0.7/castep_16_11_serial_sharc_build_tests.log>`.  
+
 Version 16.11, parallel build
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following script was submitted via ``qsub`` from the ``Test`` subdirectory of the build directory: ::
+The following script was submitted via ``qsub`` from the ``Test`` subdirectory of the build directory:
 
-        #!/bin/bash
-        #$ -pe mpi 4
-        #$ -l mem=10G
-        #$ -l rmem=10G
-        module load apps/castep/16.11/intel-15.0.7-openmpi-2.0.1
+.. code-block:: bash
 
-        ../bin/testcode.py -q  --total-processors=4 --processors=4 -e castep.parallel -c simple -v -v -v
+   #!/bin/bash
+   #$ -pe mpi 4
+   #$ -l rmem=10G
+   module load apps/castep/16.11/intel-15.0.7-openmpi-2.0.1
+
+   ../bin/testcode.py -q  --total-processors=4 --processors=4 -e castep.parallel -c simple -v -v -v
 
 All 416 tests passed.  Results can be found in :download:`castep_16_11_mpi4_sharc_build_tests.log </sharc/software/install_scripts/apps/castep/16.11/intel-15.0.7/castep_16_11_mpi4_sharc_build_tests.log>`.  

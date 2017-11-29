@@ -101,7 +101,7 @@ This is equivalent to having the following in a Grid Engine batch job submission
 Other useful job template attributes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Requesting arbitrary resources from Grid Engine such as virtual memory (``vmem``), real memory (``mem``), parallel environments (e.g. ``-pe mpi``), run time (``h_rt``), Grid Engine Projects e.g. ::
+* Requesting arbitrary resources from Grid Engine such as real memory (``rmem``), parallel environments (e.g. ``-pe mpi``), run time (``h_rt``), Grid Engine Projects e.g. ::
 
        jt.nativeSpecification = '-l h_rt=00:30:00 -l rmem=2G -pe smp 2'
 
