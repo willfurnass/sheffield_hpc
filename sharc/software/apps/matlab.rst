@@ -94,7 +94,43 @@ Finally the environment variable ``$MCRROOT`` can be set to the directory contai
 Parallel MATLAB
 ---------------
 
-**Not yet configured on this cluster.** Task arrays are supported by all versions, however it is recommended that 2017a (or later) is used for task arrays requiring more than a few hours runtime.
+Parallel Matlab is currently restricted to single node operation (16 cores). An example batch script ``my_parallel_job.sh`` is: ::
+
+	#!/bin/bash
+	#$ -l rmem=2G
+	#$ -pe smp 12
+	module load apps/matlab/2017b/binary
+	#Run parallel_example.m
+	matlab -nodisplay -r parallel_example
+
+where ``parallel_example.m`` is: ::
+
+	%create parallel pool of workers on the local node
+	%Ensure that this is the same number as what you requested from the scheduler
+	pool = parpool('local',12)
+	disp('serial time')
+	tic
+	n = 200;
+	A = 500;
+	a = zeros(n);
+	for i = 1:n
+		a(i) = max(abs(eig(rand(A))));
+	end
+	toc
+
+	disp('Parallel time')
+	tic
+	n = 200;
+	A = 500;
+	a = zeros(n);
+	parfor i = 1:n
+		a(i) = max(abs(eig(rand(A))));
+	end
+	toc
+
+	delete(pool)
+
+Note that multi-node parallel Matlab is **not yet configured on this cluster.** Task arrays are supported by all versions, however it is recommended that 2017a (or later) is used 
 
 Training
 --------
