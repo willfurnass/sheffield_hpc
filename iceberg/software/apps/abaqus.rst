@@ -23,7 +23,7 @@ Abaqus cannot write output (``.stt``) files to ``/fastdata``
 Interactive usage
 -----------------
 After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the :code:`qrshx` command. 
-Alternatively, if you require more memory, for example 16 gigabytes, use the command :code:`qrshx -l mem=16G` 
+Alternatively, if you require more memory, for example 16 gigabytes, use the command :code:`qrshx -l rmem=16G` 
 
 Make a specific version available with one of the following commands:
 
@@ -107,7 +107,7 @@ In this example, we will run the ``s4d.inp`` file on a single core using 8 Gigab
 After connecting to iceberg (see :ref:`ssh`), 
 start an interactive sesssion with the :code:`qrsh` command.
 
-Load version 2017 of Abaqus and fetch the ``s4d`` example by running the following commands
+Load version 2017 of Abaqus and fetch the ``s4d`` example by running the following commands:
 
 .. code-block:: sh
 
@@ -133,7 +133,7 @@ Submit the job with:
     qsub my_job.sge
 
 * Make sure that the ``memory=`` and ``rmem=`` values match.
-* Note the word ``interactive`` at the end of the abaqus command. Your job will not run without it.
+* Note the word ``interactive`` at the end of the ``abaqus`` command. Your job will not run without it.
 
 
 Single-core job with user subroutine
@@ -142,7 +142,7 @@ Single-core job with user subroutine
 In this example, we will fetch a simulation from Abaqus' built in set of problems that 
 makes use of user subroutines (UMATs) and run it in batch on a single core.  
 After connecting to iceberg (see :ref:`ssh`),  
-start an interactive sesssion with the :code:`qrsh` command.
+start an interactive session with the :code:`qrsh` command.
 
 Load version 2017 of Abaqus and fetch the ``umatmst3`` example by running the following commands:
 
@@ -177,7 +177,7 @@ Submit the job with:
 
 Important notes:
 
-* In order to use user subroutimes, it is necessary to load the module for a particular version of the :ref:`Intel compiler <iceberg_intel_compilers>`.
+* In order to use user subroutines, it is necessary to load the module for a particular version of the :ref:`Intel compiler <iceberg_intel_compilers>`.
   The name of the module file for the most appropriate Intel compiler is stored in the ``ABAQCOMPVER`` environment variable.
 * The user subroutine itself is passed to Abaqus with the switch ``user=umatmst3.f``.
 * The notes for the previous single-core batch job example still apply.
@@ -207,10 +207,10 @@ Again, submit the job with:
 
 Important notes:
 
-* We specify the **number of CPU cores** using ``-l openmp 4`` near the top of the script.
+* We specify the **number of CPU cores** using ``-pe openmp 4`` near the top of the script.
   We tell Abaqus to distribute the work using ``cpus=$NSLOTS`` where 
   ``NSLOTS`` is a variable automatically set by the job scheduler to be 
-  the same as the number at the end of the ``-l openmp`` line.
+  the same as the number at the end of the ``-pe openmp`` line.
 * Here we request a job with 8GB of real **memory per CPU core** (``-l rmem=8G``)
   but Abaqus itself needs to be told the **total amount of memory available** (``memory="32gb"``)
 * The notes for the previous single-core batch job example still apply.
