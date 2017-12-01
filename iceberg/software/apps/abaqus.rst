@@ -13,12 +13,6 @@ Abaqus
 
 Abaqus is a software suite for Finite Element Analysis (FEA) developed by Dassault Systèmes.
 
-Output files
-------------
-
-Abaqus cannot write output (``.stt``) files to ``/fastdata`` 
-(as the underlying Lustre filesystem does not support 
-`file locking <https://en.wikipedia.org/wiki/File_locking>`__ as mounted).
 
 Interactive usage
 -----------------
@@ -214,3 +208,25 @@ Important notes:
 * Here we request a job with 8GB of real **memory per CPU core** (``-l rmem=8G``)
   but Abaqus itself needs to be told the **total amount of memory available** (``memory="32gb"``)
 * The notes for the previous single-core batch job example still apply.
+
+Using /fastdata as your Abaqus working directory
+------------------------------------------------
+
+If you want to run Abaqus from a directory on :ref:`/fastdata <filestore>`
+then you need to have the following line in your batch job submission script
+just before the main ``abaqus`` command: ::
+
+   export BAS_DISABLE_FILE_LOCKING=1
+
+Otherwise your Abaqus job will fail and 
+you will see errors like the following
+in your ``my_job_name.dat`` output file: ::
+
+    ***ERROR: An error occurred during a write access to 
+              <rank=0,arg_name=outdir>my_user_job.stt file. Check the disk space 
+              on your system.
+
+This is a lie; Abaqus is failing to write the ``.stt`` file as it tries to use `file locking <https://en.wikipedia.org/wiki/File_locking>`__ 
+which is not enabled on the ``/fastdata`` filesystem at present for performance reasons.
+Setting the ``BAS_DISABLE_FILE_LOCKING`` environment variable to ``1`` is a Dassault Systems-approved workaround for this.
+
