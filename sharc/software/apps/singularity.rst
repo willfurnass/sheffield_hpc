@@ -5,7 +5,7 @@ Singularity
 
 .. sidebar:: Singularity
 
-   :Version: 2.2.1
+   :Version: 2.3.2
    :URL: http://singularity.lbl.gov/
 
 Designed around the notion of extreme mobility of compute and reproducible science, 
@@ -178,11 +178,11 @@ The ``/home`` folder is automatically mounted by default.
 Creating Your Own Singularity Images
 ------------------------------------
 
-**Root access is required for creating or modifying Singularity images so it must be done on your local machine.**
+**Root access is required for modifying Singularity images so if you need to edit an image it must be done on your local machine.  However you can create disk images and import docker images using normal user privileges on recent versions of Singularity**
 
 Firstly an empty image must be created. The following command creates an image named ``myimage.img`` of the size 1024 MB: ::
 
-  sudo singularity create -s 1024 myimage.img
+  singularity create -s 1024 myimage.img
 
 Singularity uses a definition file for bootstrapping an image. An example definition ``ShARC-Ubuntu-Base.def`` is shown below ::
 
@@ -226,6 +226,10 @@ You can also modify the contents of an image after it's been created using the `
   sudo singularity shell -w myimage.img
 
 The command above gives you a shell in to the image with root access that can then be used to modify its contents.
+
+If you just want to import a docker image directly without making any modifications to it you can run the following command without requiring sudo privileges: ::
+
+  singularity import myimage.img docker://ubuntu:latest
 
 Using Nvidia GPU with Singularity Images on Your Local Machine
 --------------------------------------------------------------

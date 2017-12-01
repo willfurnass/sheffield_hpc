@@ -12,7 +12,7 @@ Interactive Usage
 -----------------
 After connecting to Iceberg (see :ref:`ssh`),  start an interactive session with the :ref:`qrshx` or :ref:`qrsh` command, preferably requesting at least 8 Gigabytes of memory ::
 
-    qrsh -l mem=8G -l rmem=8G
+    qrsh -l rmem=8G
 
 The latest version of Picard (currently 1.129) is made available with the command ::
 

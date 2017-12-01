@@ -32,9 +32,8 @@ It is not possible to run Maple worksheets in batch mode. Instead, you must conv
 An example Sun Grid Engine submission script that makes use of a .mpl file called, for example, **mycode.mpl** is ::
 
     #!/bin/bash
-    # Request 4 gigabytes of real memory (mem)
-    # and 4 gigabytes of virtual memory (mem)
-    #$ -l mem=4G -l rmem=4G
+    # Request 4 gigabytes of real memory
+    #$ -l rmem=4G
 
     module load apps/binapps/maple/2015
 

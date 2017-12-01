@@ -16,8 +16,9 @@ Abaqus is a software suite for Finite Element Analysis (FEA) developed by Dassau
 
 Interactive usage
 -----------------
-After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the :code:`qrshx` command. 
-Alternatively, if you require more memory, for example 16 gigabytes, use the command :code:`qrshx -l rmem=16G` 
+
+After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the :code:`qsh` command. 
+Alternatively, if you require more memory, for example 16 gigabytes, use the command :code:`qsh -l rmem=16G` 
 
 Make a specific version available with one of the following commands:
 
@@ -126,9 +127,9 @@ Submit the job with:
 
     qsub my_job.sge
 
-* Make sure that the ``memory=`` and ``rmem=`` values match.
-* Note the word ``interactive`` at the end of the ``abaqus`` command. Your job will not run without it.
-
+* We have requested 8 gigabytes of memory in the above job. The ``memory="8gb"`` switch tells abaqus to use 8 gigabytes. 
+  The ``#$ -l rmem=8G`` tells the system to reserve 8 gigabytes of real memory.  Make sure that the ``memory=`` and ``rmem=`` values match.
+* Note the word ``interactive`` at the end of the abaqus command. Your job will not run without it.
 
 Single-core job with user subroutine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -229,4 +230,3 @@ in your ``my_job_name.dat`` output file: ::
 This is a lie; Abaqus is failing to write the ``.stt`` file as it tries to use `file locking <https://en.wikipedia.org/wiki/File_locking>`__ 
 which is not enabled on the ``/fastdata`` filesystem at present for performance reasons.
 Setting the ``BAS_DISABLE_FILE_LOCKING`` environment variable to ``1`` is a Dassault Systems-approved workaround for this.
-

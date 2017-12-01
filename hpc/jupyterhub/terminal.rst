@@ -19,7 +19,7 @@ You can use this terminal to perform any command-line-only operation on the clus
   (as illustrated above);
 * **Searching for files/directories**;
 * **Configuring Python or R environments** 
-  (although there is an (enabled) plugin for 
+  (although there is an (enabled) plug-in for 
   creating/selecting environments and 
   installing/upgrading/removing packages 
   :ref:`using Jupyter's graphical interface <jh_conda>`);

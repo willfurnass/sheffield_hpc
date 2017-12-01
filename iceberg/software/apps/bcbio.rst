@@ -79,7 +79,7 @@ The GATK .jar file was obtained from https://www.broadinstitute.org/gatk/downloa
 A further upgrade was performed on 13th January 2016. STAR had to be run directly because the bcbio upgrade command that made use of it kept stalling ( `bcbio_nextgen.py upgrade --data --genomes GRCh37 --aligners bwa --aligners star` ). We have no idea why this made a difference but at least the direct STAR run could make use of multiple cores whereas the bcbio installer only uses 1 ::
 
   #!/bin/bash
-  #$ -l rmem=3G -l mem=3G
+  #$ -l rmem=3G 
   #$ -P radiant
   #$ -pe openmp 16
 
@@ -185,7 +185,6 @@ The following test script was submitted to the system as an SGE batch script ::
 
   #!/bin/bash
   #$ -pe openmp 12
-  #$ -l mem=4G  #Per Core!
   #$ -l rmem=4G #Per Core!
 
   module add apps/gcc/5.2/bcbio/0.9.6a
@@ -215,7 +214,6 @@ The following test script was submitted to the system. All tests passed. The out
 
   #!/bin/bash
   #$ -pe openmp 12
-  #$ -l mem=4G  #Per Core!
   #$ -l rmem=4G #Per Core!
 
   module add apps/gcc/5.2/bcbio/0.9.6a
