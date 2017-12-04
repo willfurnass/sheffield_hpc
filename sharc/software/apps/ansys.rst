@@ -189,7 +189,7 @@ To run a batch job using **multiple processes that may be distributed between ma
    machines="$(cat $PE_HOSTFILE | awk '{print $1 ":" $2}' | paste -sd:)"
    echo $machines
 
-   module load apps/ansys/19.0
+   module load apps/ansys/19.1
 
    export PATH="${ANSYSROOT}/ansys/bin:${PATH}"
    mapdl -dis -dir $PWD -usersh -mpi intelmpi -machines $machines -b < simulation.txt > simulation.txt -j simulation
