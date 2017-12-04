@@ -1,0 +1,41 @@
+#%Module1.0#####################################################################
+##
+## GROMACS module file
+##
+#  By David M. Rogers September 2017
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+#
+ set version 2016.4
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes GROMACS Version $version with CUDA 8.0.44 available for use"
+}
+
+#set USER $::env(USER)
+
+module-whatis   "Makes GROMACS Version $version with CUDA 8.0.44 available"
+
+# load modules
+ module load dev/gcc/4.9.4
+ module load libs/CUDA/8.0.44/binary
+
+# module variables
+
+ set GROMACS_DIR /usr/local/packages/apps/gromacs/2016.4/gcc-4.9.4-cuda-8.0
+ 
+ setenv          GROMACS_DIR     $GROMACS_DIR
+ prepend-path    PATH            $GROMACS_DIR/bin
+ setenv          GMXBIN          $GROMACS_DIR/bin
+ prepend-path    LD_LIBRARY_PATH $GROMACS_DIR/lib64
+ setenv          GMXLDLIB        $GROMACS_DIR/lib
+ setenv          GMXMAN          $GROMACS_DIR/share/man
+ prepend-path    MANPATH         $GROMACS_DIR/share/man
+ setenv          GMXDATA         $GROMACS_DIR/share/gromacs
+ prepend-path    PKG_CONFIG_PATH $GROMACS_DIR/lib64/pkgconfig
+

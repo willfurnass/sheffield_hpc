@@ -10,9 +10,9 @@ The Integrative Genomics Viewer (IGV) is a high-performance visualization tool f
 
 Interactive Usage
 -----------------
-After connecting to Iceberg (see :ref:`ssh`),  start an graphical interactive session with the `qsh` command. In testing, we determined that you need to request at least 7 Gigabytes of memory to launch IGV ::
+After connecting to Iceberg (see :ref:`ssh`),  start an graphical interactive session with the `qsh` command. In testing, we determined that you need to request at least 7 Gigabytes of real memory to launch IGV ::
 
-       qsh -l mem=7G
+       qsh -l rmem=7G
 
 The latest version of IGV (currently 2.3.63) is made available with the command
 

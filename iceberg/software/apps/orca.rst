@@ -36,8 +36,6 @@ Create a file called **orca_serial.inp** that contains the following orca comman
 Create a Sun Grid Engine submission file called **submit_serial.sh** that looks like this ::
 
   #!/bin/bash
-  # Request 4 Gig of virtual memory per process
-  #$ -l mem=4G
   # Request 4 Gig of real memory per process
   #$ -l rmem=4G
 
@@ -56,8 +54,6 @@ An example Sun Grid Engine submission script is ::
   #Request 4 Processes
   #Ensure that this matches the number requested in your Orca input file
   #$ -pe openmpi-ib 4
-  # Request 4 Gig of virtual memory per process
-  #$ -l mem=4G
   # Request 4 Gig of real memory per process
   #$ -l rmem=4G
 

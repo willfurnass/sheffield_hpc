@@ -16,7 +16,7 @@ TBB can be used with and without :ref:`other Parallel Studio packages
 To make use of it you first need to start an :ref:`interactive session that has access to multiple cores <sge-queue>`.
 Here we request six cores from the clusters' scheduler: ::
 
-        $ qrsh -pe openmp 6
+        $ qrsh -pe smp 6
 
 Next, we need to *active* a specific version of TBB.  Run **one** of the following: ::
 

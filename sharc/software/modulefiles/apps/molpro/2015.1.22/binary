@@ -1,0 +1,29 @@
+#%Module1.0#####################################################################
+##
+## Molpro module file
+##
+#  By David M. Rogers August 2017
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes Molpro Version 2015.1.22 available for use"
+}
+
+#set USER $::env(USER)
+
+module-whatis   "Makes Molpro Version 2015.1.22 available"
+
+# load modules
+
+# module variables
+#
+ set     version 2015.1.22
+ set     molproroot /usr/local/packages/apps/molpro/$version/binary
+
+ prepend-path PATH $molproroot/bin

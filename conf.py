@@ -19,7 +19,9 @@ import shutil
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = []
+extensions = [
+    'sphinx.ext.intersphinx'
+]
 
 # Add any paths that contain templates here, relative to this directory.
 # templates_path = ['_templates']
@@ -81,8 +83,7 @@ html_theme_options = {'navbar_sidebarrel':False,
                       'navbar_links': [
                           ("Home", "index"),
                           ("Research Computing @ CiCS", "https://www.shef.ac.uk/cics/research", True),
-                          ("Research Software Engineering @ TUOS", "https://rse.shef.ac.uk", True),
-                          ("Source (GitHub)", "https://github.com/rcgsheffield/sheffield_hpc", True),
+                          ("Research Software Engineering @ TUOS", "https://rse.shef.ac.uk", True)
                       ],
                       'globaltoc_depth': 1}
 

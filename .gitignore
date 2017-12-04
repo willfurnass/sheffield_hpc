@@ -3,3 +3,4 @@ html/
 .doctrees
 get_docs.py
 *.*~
+*swp

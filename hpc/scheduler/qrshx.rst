@@ -11,15 +11,15 @@ Request an interactive X-Windows session that provides the default amount of mem
     qrshx
     gedit
 
-Request an interactive X-Windows session that provides 10 Gigabytes of real and virtual memory and launch the latest version of MATLAB: ::
+Request an interactive X-Windows session that provides 10 Gigabytes of real memory and launch the latest version of MATLAB: ::
 
-    qrshx -l mem=10G -l rmem=10G
+    qrshx -l rmem=10G
     module load apps/matlab
     matlab
 
-Request an interactive X-Windows session that provides 10 Gigabytes of real and virtual memory and 4 CPU cores: ::
+Request an interactive X-Windows session that provides 10 Gigabytes of real memory and 4 CPU cores: ::
 
-    qrshx -l rmem=10G -l mem=10G -pe openmp 4
+    qrshx -l rmem=10G -pe openmp 4
 
 Sysadmin notes
 --------------

@@ -1,0 +1,31 @@
+#%Module1.0#####################################################################
+##
+## ORCA module file
+##
+#  By David M. Rogers July 2017
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes ORCA Version 4.0.1 available for use"
+}
+
+#set USER $::env(USER)
+
+module-whatis   "Makes ORCA Version 4.0.1 available"
+
+# load modules
+module load mpi/openmpi/2.1.1/gcc-6.2
+
+# module variables
+#
+ set     version 4.0.1
+ set     orcaroot /usr/local/packages/apps/orca/$version/binary/orca_4_0_1_linux_x86-64_openmpi202
+
+ prepend-path PATH $orcaroot
+ prepend-path ORCAHOME $orcaroot

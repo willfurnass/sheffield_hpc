@@ -30,7 +30,7 @@ Here is an example batch submission script that makes use of two example input f
 
     #!/bin/bash
     # Next line is memory per slot
-    #$ -l mem=5G -l rmem=5G
+    #$ -l rmem=5G
     # Ask for 4 slots in an OpenMP/MPI Hybrid queue
     # These 4 slots will all be on the same node
     #$ -pe openmpi-hybrid-4 4
