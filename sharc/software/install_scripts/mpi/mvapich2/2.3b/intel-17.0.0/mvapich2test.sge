@@ -1,0 +1,32 @@
+#!/bin/bash
+#$ -pe mpi 3
+#$ -l rmem=300G
+#$ -m bea
+
+module purge
+module load mpi/mvapich2/2.3b/intel-17.0.0
+
+cd $MPI_HOME/libexec/osu-micro-benchmarks/mpi/ 
+echo ********************
+echo HOSTFILE
+echo
+cat $PE_HOSTFILE
+echo ********************
+echo OSU MICRO BENCHMARKS
+echo ********************
+
+echo
+echo Running startup benchmarks
+find startup -type f -executable -print0 | xargs -0 -n 1 mpirun 2>&1 
+
+echo
+echo Running point to point benchmarks
+find pt2pt -type f -executable -print0 | xargs -0 -n 1 mpirun -np 2 2>&1 
+
+echo
+echo Running collective benchmarks
+find collective -type f -executable -print0 | xargs -0 -n 1 mpirun 2>&1 
+
+echo
+echo Running one-sided benchmarks
+find one-sided -type f -executable -print0 | xargs -0 -n 1 mpirun -np 2 2>&1 

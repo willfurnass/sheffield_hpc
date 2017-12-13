@@ -29,11 +29,25 @@ prepend-path LD_LIBRARY_PATH $prefix/lib
 prepend-path LIBRARY_PATH $prefix/lib
 prepend-path MANPATH $prefix/share/man
 
-# CPU binding policy = bunch (default) | scatter
-#MV2_CPU_BINDING_POLICY=scatter
-# CPU binding level = core | socket | numa
-#MV2_CPU_BINDING_LEVEL=core
+# $MVAPICH_ENV should be passed as an argument to mpirun etc
+setenv MVAPICH_ENV "-env MV2_CPU_BINDING_POLICY scatter -env MV2_CPU_BINDING_LEVEL core"
+# 
+# For info: 
 #
-# Found in this thread:
+# CPU binding policy = bunch (default) | scatter
+# CPU binding level = core | socket | numa
+#
+# Without passing the above to mpirun etc you get the following errors:
+# 
+# Warning! : Core id 10953 does not exist on this architecture! 
+# CPU Affinity is undefined 
+# Error parsing CPU mapping string
+# INTERNAL ERROR: invalid error code ffffffff (Ring Index out of range) in MPIDI_CH3I_set_affinity:2761
+# [cli_0]: aborting job:
+# Fatal error in MPI_Init: Other MPI error, error stack:
+# MPIR_Init_thread(490): 
+# MPID_Init(386).......:
+#
+# See this thread:
 #
 # http://mailman.cse.ohio-state.edu/pipermail/mvapich-discuss/2017-June/006414.html
