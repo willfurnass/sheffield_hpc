@@ -14,7 +14,7 @@ proc ModulesHelp { } {
     puts stderr "   Adds mvapich2 $vers (+ Intel $compilervers compiler) to your PATH environment variable and necessary libraries"
 }
 
-set vers         2.3a
+set vers         2.3b
 set compilervers 17.0.0
 set prefix  /usr/local/packages/mpi/mvapich2/$vers/intel-$compilervers
 
