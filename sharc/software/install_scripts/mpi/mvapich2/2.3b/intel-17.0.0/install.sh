@@ -1,5 +1,5 @@
 #!/bin/bash
-# Install MVAPICH2 2.3a built with Intel 17.0.0 compilers on the ShARC cluster
+# Install MVAPICH2 2.3b built with Intel 17.0.0 compilers on the ShARC cluster
 
 ##############################################################################
 # Error handling
@@ -30,7 +30,7 @@ done
 # Variable setup
 ##############################################################################
 
-vers=2.3a
+vers=2.3b
 compiler=intel-17.0.0
 build_dir="${TMPDIR-/tmp}/${USER}/mvapich2-${vers}"
 prefix="/usr/local/packages/mpi/mvapich2/${vers}/${compiler}"
@@ -38,7 +38,6 @@ modulefile="/usr/local/modulefiles/mpi/mvapich2/${vers}/${compiler}"
 filename="mvapich2-${vers}.tar.gz"
 baseurl="http://mvapich.cse.ohio-state.edu/download/mvapich/mv2/"
 file_md5="87c3fbf8a755b53806fa9ecb21453445"
-workers=16  # for building in parallel
 
 ##############################################################################
 # Create build, install and modulefile dirs
@@ -71,34 +70,18 @@ if ! [[ -f mvapich2-${vers}/.unpacked ]]; then
 fi
 cd mvapich2-${vers}
 
-# Enable OmniPath support with --with-device=ch3:psm
-# Optional: can specify paths to OmniPath PSM2 headers and libs
-# if installed in non-std locations (see --with-psm2-include=path and
-# --with-psm2-lib=path 'configure' options)
 ./configure \
     --prefix=${prefix} \
     --enable-fortran=yes \
     --enable-cxx \
     --with-device=ch3:psm \
+    --with-psm2 \
+    --enable-rsh \
     CC=icc CXX=icpc FC=ifort
 
-# SCRAPPY NOTES TO DELETE
-#--with-ibverbs-include=??? \
-#--with-ibverbs-lib=/usr/lib64/
-# FOR OPENMPI: --prefix=${prefix} --with-psm2 CC=icc CXX=icpc FC=ifort
-
-make -j${workers}
+make clean
+make 
 make check
 make install
-
-###############################################################################
-## Download and install examples - DELETE ME
-###############################################################################
-#
-#pushd ${prefix}
-#curl -L https://github.com/open-mpi/ompi/archive/v${short_version}.x.tar.gz | tar -zx
-#mv ompi-${short_version}.x/examples .
-#rm -r ompi-${short_version}.x 
-#popd
 
 echo "Next, install modulefile as $modulefile."
