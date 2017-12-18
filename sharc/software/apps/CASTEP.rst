@@ -3,8 +3,10 @@ CASTEP
 
 .. sidebar:: CASTEP
 
-   :Latest Version:  16.11
+   :Versions: 16.11 and 18.1
+   :Dependencies: Intel compilers, Intel MKL libraries and Open MPI
    :URL: http://www.castep.org/
+   :Documentation: http://www.castep.org/CASTEP/Documentation
 
 Licensing
 ---------
@@ -19,11 +21,12 @@ Interactive Usage
 -----------------
 The serial version of CASTEP should be used for interactive usage. 
 After connecting to ShARC (see :ref:`ssh`),  start an interactive session with the ``qrsh`` or ``qrshx`` command. 
-Make the serial version of CASTEP available using the following command:
+Make the serial version of CASTEP available using one of the following commands:
 
 .. code-block:: bash
 
    module load apps/castep/16.11/intel-15.0.7
+   module load apps/castep/18.1/intel-17.0.0
 
 The CASTEP executable is called ``castep.serial`` so if you execute:
 
@@ -91,11 +94,12 @@ or list all of the input parameters:
 Batch Submission - Parallel
 ---------------------------
 The parallel version of CASTEP is called ``castep.mpi``. 
-To make the parallel environment available, use the following command:
+To make the parallel environment available, use one of the following commands:
 
 .. code-block:: bash
 
    module load apps/castep/16.11/intel-15.0.7-openmpi-2.0.1
+   module load apps/castep/18.1/intel-17.0.0-openmpi-2.0.1
 
 As an example of a parallel submission, we will calculate the bandstructure of graphite following 
 the CASTEP `Band Structure and DOS <http://www.castep.org/Tutorials/BandStructureAndDOS>`_ tutorial.
@@ -159,6 +163,20 @@ to allow for subsequent Testing_ of the parallel build.
 * :download:`The parallel build modulefile </sharc/software/modulefiles/apps/castep/16.11/intel-15.0.7-openmpi-2.0.1>` was installed as 
   ``/usr/local/modulefiles/apps/castep/16.11/intel-15.0.7-openmpi-2.0.1``
 
+Version 18.1
+^^^^^^^^^^^^^
+
+Serial (no MPI) and parallel (MPI) builds were compiled. 
+Both builds were compiled with Intel compiler 17.0.0 (including the Intel MKL 2017.0 for BLAS and FFT routines).  
+The parallel build was compiled using OpenMPI 2.0.1.
+
+Both builds were installed using :download:`this script </sharc/software/install_scripts/apps/castep/18.1/intel-17.0.0-openmpi-2.0.1/install_castep_18.1.sh>`.  
+
+* :download:`The serial build modulefile </sharc/software/modulefiles/apps/castep/18.1/intel-17.0.0>` was installed as 
+  ``/usr/local/modulefiles/apps/castep/18.1/intel-17.0.0``
+* :download:`The parallel build modulefile </sharc/software/modulefiles/apps/castep/18.1/intel-17.0.0-openmpi-2.0.1>` was installed as 
+  ``/usr/local/modulefiles/apps/castep/18.1/intel-17.0.0-openmpi-2.0.1``
+
 Testing
 -------
 
@@ -193,3 +211,32 @@ The following script was submitted via ``qsub`` from the ``Test`` subdirectory o
    ../bin/testcode.py -q  --total-processors=4 --processors=4 -e castep.parallel -c simple -v -v -v
 
 All 416 tests passed.  Results can be found in :download:`castep_16_11_mpi4_sharc_build_tests.log </sharc/software/install_scripts/apps/castep/16.11/intel-15.0.7/castep_16_11_mpi4_sharc_build_tests.log>`.  
+
+Version 18.1, serial build
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following command was issued in the ``CASTEP-18.1`` build directory during an interactive session with 16 GB of memory (``qrsh -l rmem=16G``):
+
+.. code-block:: bash
+
+   make check
+
+All 455 tests passed.
+
+Version 18.1, parallel build
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following script was submitted via ``qsub`` from the ``Test`` subdirectory of the build directory:
+
+.. code-block:: bash
+
+   #!/bin/bash
+   #$ -pe mpi 4
+   #$ -l rmem=4G
+   #$ -l h_rt=48:00:00
+
+   module load apps/castep/18.1/intel-17.0.0-openmpi-2.0.1
+
+   ../bin/testcode.py -q  --total-processors=4 --processors=4 -e castep.mpi -c simple -v -v -v
+
+All 455 tests passed. 
+
