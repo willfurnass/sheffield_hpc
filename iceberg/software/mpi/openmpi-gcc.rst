@@ -1,3 +1,5 @@
+.. _openmpi_gcc_iceberg:
+
 OpenMPI (gcc version)
 =====================
 

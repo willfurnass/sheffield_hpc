@@ -103,8 +103,7 @@ Here is an example batch submission script that runs a fictitious program called
 
     #!/bin/bash
     # Request 5 gigabytes of real memory (mem)
-    # and 5 gigabytes of virtual memory (mem)
-    #$ -l mem=5G -l rmem=5G
+    #$ -l rmem=5G
 
     # load the module for the program we want to run
     module load apps/gcc/foo
@@ -161,7 +160,7 @@ Command                Description
                        Also note that requesting less execution time may 
                        result in your job spending less time queuing.
 
-``-l mem=xxG``         Specify the maximum amount (``xx``) of memory to be used.
+``-l rmem=xxG``         Specify the maximum amount (``xx``) of real memory to be used.
 
 ``-l arch=``           Target a processor architecture. This is irrelevant on 
                        ShARC as all processors are the same model.  Options 
@@ -225,6 +224,15 @@ Specify each additional email with its own ``-M`` option ::
   #$ -M foo@example.com
   #$ -M bar@example.com
 
+**I want email notifications but don't want to have to include my email address in every job submission script**
+
+Create a file called ``.sge_request`` in the directory you submit your jobs from containing: ::
+
+    -M my.personal@email.com -M my.work@sheffield.ac.uk
+
+The ``-M`` parameter will be automatically supplied for all future job submissions.
+Note that you still need to request email notifications using ``-m`` (see above).
+
 **How do you ensure that a job starts after a specified time?**
 
 Add the following line to your submission script ::
@@ -233,8 +241,8 @@ Add the following line to your submission script ::
 
 but replace ``time`` with a time in the format ``MMDDhhmm``.
 
-For example, for 22nd July at 14:10, you’d do ::
+For example, for 22nd July at 14:10, you'd do ::
 
     #$ -a 07221410
 
-This won’t guarantee that it will run precisely at this time since that depends on available resources. It will, however, ensure that the job runs *after* this time. If your resource requirements aren’t too heavy, it will be pretty soon after. When I tried it, it started about 10 seconds afterwards but this will vary.
+This won't guarantee that it will run precisely at this time since that depends on available resources. It will, however, ensure that the job runs *after* this time. If your resource requirements aren't too heavy, it will be pretty soon after. When I tried it, it started about 10 seconds afterwards but this will vary.

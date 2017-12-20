@@ -89,7 +89,7 @@ Run the command: ::
 
 Example output is ::
 
-        NVRM version: NVIDIA UNIX x86_64 Kernel Module  367.44  Wed Aug 17 22:24:07 PDT 2016
+        NVRM version: NVIDIA UNIX x86_64 Kernel Module  384.81  Wed Aug 17 22:24:07 PDT 2016
         GCC version:  gcc version 4.8.5 20150623 (Red Hat 4.8.5-4) (GCC)
 
 Installation notes
@@ -106,7 +106,7 @@ This service runs ``/usr/local/scripts/gpu-nvidia-driver.sh`` at boot time to:
 - Load the ``nvidia`` kernel module;
 - Create several *device nodes* in ``/dev/``.
 
-The NVIDIA device driver is currently version 367.44.
+The NVIDIA device driver is currently version 384.81.
 
 CUDA 8.0.44
 ^^^^^^^^^^^

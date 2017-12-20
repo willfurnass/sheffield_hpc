@@ -65,9 +65,7 @@ Users are encouraged to write their own batch submission scripts. The following 
 
     module load apps/abaqus/6.14-2/binary
 
-    mkdir /scratch/$USER
-
-    abq6142 job=my_job input=s4d.inp scratch=/scratch/$USER memory="2gb" interactive mp_mode=threads cpus=$NSLOTS
+    abq6142 job=my_job input=s4d.inp scratch=$TMPDIR memory="2gb" interactive mp_mode=threads cpus=$NSLOTS
 	
 The above script requests 4 cores using the OpenMP parallel environment ``smp`` with a runtime of 30 mins and 2 GB of real memory per core. The Abaqus input file is ``s4d.inp``.
 
@@ -80,9 +78,7 @@ The above script requests 4 cores using the OpenMP parallel environment ``smp`` 
 
     module load apps/abaqus/6.14-2/binary
     
-    mkdir /scratch/$USER
-    
-    abq6142 job=my_user_job input=umatmst3.inp user=umatmst3.f scratch=/scratch/$USER memory="8gb" interactive
+    abq6142 job=my_user_job input=umatmst3.inp user=umatmst3.f scratch=$TMPDIR memory="8gb" interactive
 
 The input file ``umatmst3.inp`` and the Fortran user subroutine ``umatmst3.f`` are obtained by typing ``abaqus fetch job=umatmst3*``.
 Note that the module ``dev/intel-compilers/15.0.7``, required for user subroutines, is automatically loaded when the module for Abaqus is loaded.  

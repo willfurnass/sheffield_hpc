@@ -1,0 +1,73 @@
+.. _jupyterhub: 
+
+Jupyter and JupyterHub
+======================
+
+.. contents::
+   :local:
+
+What are Jupyter Notebooks and JupyterHub?
+------------------------------------------
+
+The `Jupyter Notebook <http://jupyter.org/>`_ is a web application that 
+allows you to create and share documents (Notebooks) 
+that contain live code, equations, visualizations and explanatory text.
+It is an excellent interface to explore your data and share your research.
+
+Here's a (trivial) example Notebook (written in Python):
+
+.. _jupyterhub-example-nb:
+
+.. image:: /images/sharc-jh-example-nb.png
+
+**JupyterHub** allows many people to run Notebook server applications on the same machine(s).  
+JupyterHub has been configured on the ShARC and Iceberg clusters so that 
+if you log into JupyterHub using your web browser, then 
+JupyterHub will start a Notebook server for you on one of the cluster's worker nodes.
+
+Once the Notebook server is running, 
+you can run Notebooks on your assigned node without needing to use the command-line!
+You have access to your (shared and personal) data stores on the cluster.
+
+
+
+
+
+**xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx**
+
+
+
+
+
+
+Using the Notebook on iceberg
+-----------------------------
+
+ONLY DESCRIBE KEY DIFFERENCES
+* Iceberg: browse to `https://jupyter.shef.ac.uk <https://jupyter.shef.ac.uk>`_
+
+To create a new notebook session, select the "New" menu on the right hand side
+of the top menu.
+
+.. image:: /images/jupyterhub-kernels.png
+
+You will be presented with a menu showing all available conda environments that
+have Jupyter available. To learn more about installing custom Python
+WHY USEFUL
+LIMITATIONS
+
+
+Using the Notebook on iceberg
+-----------------------------
+
+ONLY DESCRIBE KEY DIFFERENCES
+* Iceberg: browse to `https://jupyter.shef.ac.uk <https://jupyter.shef.ac.uk>`_
+
+To create a new notebook session, select the "New" menu on the right hand side
+of the top menu.
+
+.. image:: /images/jupyterhub-kernels.png
+
+You will be presented with a menu showing all available conda environments that
+have Jupyter available. To learn more about installing custom Python
+environments with conda see :ref:`python-conda`.

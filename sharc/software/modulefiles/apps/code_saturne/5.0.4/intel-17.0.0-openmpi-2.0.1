@@ -1,0 +1,31 @@
+#%Module1.0#####################################################################
+##
+## Code Saturne module file
+##
+#  By David M. Rogers October 2017
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes Code Saturne Version 5.0.4 available for use"
+}
+
+#set USER $::env(USER)
+
+module-whatis   "Makes Code Saturne Version 5.0.4 available"
+
+# load modules
+ module load mpi/openmpi/2.0.1/intel-17.0.0
+
+# module variables
+#
+ set     version 5.0.4
+ set     codesaturneroot /usr/local/packages/apps/code_saturne/5.0.4/intel-17.0.0-openmpi-2.0.1
+
+ prepend-path MANPATH $codesaturneroot/share/man
+ prepend-path PATH $codesaturneroot/bin:$codesaturneroot/libexec/code_saturne

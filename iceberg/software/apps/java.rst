@@ -42,6 +42,12 @@ Now, the compiler ::
 
 Virtual Memory
 --------------
+
+.. note::
+
+   The following is only relevant when revisiting older job submission scripts and documentation 
+   as the job scheduler :ref:`now polices jobs using real memory, not virtual memory <real-vs-virt-mem>`.
+
 By default, Java requests a lot of *virtual memory* on startup.
 This is usually a given fraction of the *physical memory* on a node,
 which can be quite a lot on Iceberg.

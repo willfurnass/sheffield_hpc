@@ -34,7 +34,6 @@ Using BehaviourSpace is the easiest way to exploit parallel processors in Netlog
 
   #!/bin/bash
   # Request 3 Gigabytes of RAM per core
-  #$ -l mem=3G
   #$ -l rmem=3G
   #Combine stderr and stdout into one file
   #$ -j y
@@ -77,19 +76,6 @@ This could be because you have not requested an X session properly. Ensure that 
 
 Also ensure that you have requested a :ref:`qrshx` session rather than a :ref:`qrsh` session.
 
-**Java memory issues**
-
-You get the following error message ::
-
-  Error occurred during initialization of VM
-  Could not reserve enough space for object heap
-  Error: Could not create the Java Virtual Machine.
-  Error: A fatal exception has occurred. Program will exit.
-
-This is the 'Virtual Memory' problem described in the :ref:`Java-iceberg` section. You need to request more memory for your session.
-For example, request an interactive session like this ::
-
-    qrshx -l mem=8G -l rmem=8G
 
 Installation notes
 ------------------

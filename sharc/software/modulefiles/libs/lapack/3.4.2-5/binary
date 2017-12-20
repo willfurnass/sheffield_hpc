@@ -1,0 +1,20 @@
+#%Module1.0#####################################################################
+##
+## LAPACK 3.4.2-5 module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+
+set lapackver 3.4.2-5
+
+proc ModulesHelp { } {
+        global fftwvers
+        puts stderr "Makes LAPACK version $lapackver library available"
+}
+module-whatis   "Makes LAPACK version $lapackver library available"
+
+set LAPACK_VER /usr/local/packages/libs/lapack/3.4.2-5/binary/
+
+prepend-path LD_LIBRARY_PATH $LAPACK_VER/lib64
+prepend-path LIBRARY_PATH $LAPACK_VER/lib64

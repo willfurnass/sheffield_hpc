@@ -10,10 +10,10 @@ Request an interactive X-Windows session that provides the default amount of mem
 
     qsh
 
-Request an interactive X-Windows session that provides 10 Gigabytes of real and virtual memory ::
+Request an interactive X-Windows session that provides 10 Gigabytes of real memory ::
 
-    qsh -l rmem=10G -l mem=10G
+    qsh -l rmem=10G 
 
-Request an interactive X-Windows session that provides 10 Gigabytes of real and virtual memory and 4 CPU cores ::
+Request an interactive X-Windows session that provides 10 Gigabytes of real memory and 4 CPU cores ::
 
-   qsh -l rmem=10G -l mem=10G -pe openmp 4
+   qsh -l rmem=10G  -pe openmp 4

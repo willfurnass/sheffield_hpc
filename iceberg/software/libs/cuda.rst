@@ -84,7 +84,7 @@ Run the command: ::
 
 Example output is ::
 
-        NVRM version: NVIDIA UNIX x86_64 Kernel Module  367.44  Wed Aug 17 22:24:07 PDT 2016
+        NVRM version: NVIDIA UNIX x86_64 Kernel Module  384.81  Wed Aug 17 22:24:07 PDT 2016
         GCC version:  gcc version 4.4.7 20120313 (Red Hat 4.4.7-17) (GCC)
 
 Installation notes
@@ -102,7 +102,7 @@ This service does the following at boot time:
 - Load the ``nvidia`` kernel module;
 - Create several *device nodes* in ``/dev/``.
 
-The NVIDIA device driver is currently version 367.44.  The driver installer provides OpenGL libraries.
+The NVIDIA device driver is currently version 384.81.  The driver installer provides OpenGL libraries.
 
 CUDA 8.0.44
 ^^^^^^^^^^^

@@ -73,7 +73,7 @@ Hardware
 
 **Pulicly available GPU nodes**
 
-* :ref:`gpu-sharc-specs`
+* :ref:`sharc-gpu-specs`
 
 **Research group-specific GPU nodes:**
 
