@@ -15,12 +15,9 @@ There are several versions of the CUDA library available. As with many libraries
 
 **See** :ref:`GPUComputing_sharc` **for more information on how to request a GPU-enabled node for an interactive session or job submission.** 
 
-The latest version CUDA is loaded with the command: ::
+Load a specific version with one of the following: ::
 
-        module load libs/CUDA
-
-Alternatively, you can load a specific version with one of the following: ::
-
+        module load libs/CUDA/9.1.85/binary
         module load libs/CUDA/8.0.44/binary
         module load libs/CUDA/7.5.18/binary
 
@@ -48,17 +45,17 @@ You do not need to be using a GPU-enabled node to compile the sample programs bu
 In a `qrsh` session ::
 
         # Load modules
-        module load libs/CUDA/8.0.44/binary
+        module load libs/CUDA/9.1.85/binary
         module load dev/gcc/4.9.4
 
         # Copy CUDA samples to a local directory
-        # It will create a directory called NVIDIA_CUDA-8.0_Samples/
+        # It will create a directory called NVIDIA_CUDA-9.1_Samples/
         mkdir cuda_samples
         cd cuda_samples
         cp -r $CUDA_SDK .
 
         # Compile (this will take a while)
-        cd NVIDIA_CUDA-8.0_Samples/
+        cd NVIDIA_CUDA-9.1_Samples/
         make
 
 A basic test is to run one of the resulting binaries, ``deviceQuery``.
@@ -108,25 +105,20 @@ This service runs ``/usr/local/scripts/gpu-nvidia-driver.sh`` at boot time to:
 
 The NVIDIA device driver is currently version 384.81.
 
+CUDA 9.1.85
+^^^^^^^^^^^
+
+#. Installed with :download:`install.sh </sharc/software/install_scripts/libs/CUDA/install.sh>` with 8. with ``9.1.85_387.26`` as the sole argument.
+#. :download:`Modulefile </sharc/software/modulefiles/libs/CUDA/9.1.85/binary>` was installed as ``/usr/local/modulefiles/libs/CUDA/9.1.85/binary``
+
 CUDA 8.0.44
 ^^^^^^^^^^^
 
-#. The CUDA toolkit binaries and samples were installed using a binary ``.run`` file: ::
-
-        cuda_vers="8.0.44"
-        prefix="/usr/local/packages/libs/CUDA/${cuda_vers}/binary"
-        mkdir -m 2775 -p $prefix
-        chown ${USER}:app-admins $prefix
-        cd /usr/local/media/nvidia/
-        chmod +x cuda_${cuda_vers}_linux.run
-        ./cuda_${cuda_vers}_linux.run --toolkit --toolkitpath=${prefix}/cuda \
-                                      --samples --samplespath=${prefix}/samples \
-                                      --no-opengl-libs -silent
-
+#. Installed with :download:`install.sh </sharc/software/install_scripts/libs/CUDA/install.sh>` with 8. with ``8.0.44`` as the sole argument.
 #. :download:`This modulefile </sharc/software/modulefiles/libs/CUDA/8.0.44/binary>` was installed as ``/usr/local/modulefiles/libs/CUDA/8.0.44/binary``
 
 CUDA 7.5.18
 ^^^^^^^^^^^
 
-#. The CUDA toolkit binaries and samples were installed using a binary ``.run`` file as per version 8.0.44.
+#. Installed with :download:`install.sh </sharc/software/install_scripts/libs/CUDA/install.sh>` with 8. with ``7.5.18`` as the sole argument.
 #. :download:`This modulefile </sharc/software/modulefiles/libs/CUDA/7.5.18/binary>` was installed as ``/usr/local/modulefiles/libs/CUDA/7.5.18/binary``
