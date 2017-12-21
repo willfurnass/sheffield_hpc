@@ -7,14 +7,18 @@ Overview and rationale
 ----------------------
 
 'Environment Modules' are the mechanism by which much software is made available to the users of the ShARC and Iceberg clusters.
+
 To make a particular piece of software available a user will *load* a module e.g. 
 on ShARC, you can load a particular version of the '``scotch``' library (version 6.0.4, built using the GCC 6.2 compiler and with support for parallel execution using OpenMPI 2.0.1) with: ::
 
     module load libs/scotch/6.0.4/gcc-6.2-openmpi-2.0.1
 
 This command manipulates `environment variables <https://en.wikipedia.org/wiki/Environment_variable>`_ to make this piece of software available.  
-If you then want to switch to using a different version of ``scotch`` (should another be installed on the cluster you are using) then you can
-unload ``libs/scotch/6.0.4/gcc-6.2-openmpi-2.0.1`` and load the other.  
+If you then want to switch to using a different version of ``scotch`` (should another be installed on the cluster you are using) then you can run: ::
+
+    module unload libs/scotch/6.0.4/gcc-6.2-openmpi-2.0.1
+    
+then load the other.  
 
 You may wonder why modules are necessary: why not just install packages provided by the vender of the operating system installed on the cluster?
 In shared high-performance computing environments such as ShARC and Iceberg:
@@ -44,11 +48,16 @@ You can then load a module using e.g.: ::
 
     module load libs/geos/3.6.1/gcc-4.9.4
 
-This will only work on worker nodes and will not have an effect on login nodes as software provided using module files is not installed on the login nodes.
+.. note::
+    Modules are not available on login nodes. You must start an interactive job on a worker node using ``qrshx``, ``qsh`` or ``qrsh`` (see :ref:`getting-started`) before any of the following commands will work.
 
 You can then load further modules e.g.::
 
     module load libs/gdal/2.2.0/gcc/gcc-4.9.4
+
+Confirm which modules you have loaded using: ::
+
+   module list
 
 If you want to stop using a module (by undoing the changes that loading that module made to your environment): ::
 
@@ -179,3 +188,19 @@ The next time you run ``module avail`` you will see that your modules are listed
 If you no longer want to to have access to your own module files then you can run: ::
 
     module unuse /the/path/to/my/modules
+
+Module Command Reference
+------------------------
+Here is a list of the most useful module commands. For full details, type ``man module`` at command prompt on one of the clusters.
+
+* ``module list`` – lists currently loaded modules
+* ``module avail`` – lists all available modules
+* ``module load modulename`` – loads module ``modulename``
+* ``module unload modulename`` – unloads module ``modulename``
+* ``module switch oldmodulename newmodulename`` – switches between two modules
+* ``module show modulename`` - Shows how loading ``modulename`` will affect your environment
+* ``module purge`` – unload all modules
+* ``module help modulename`` – may show longer description of the module if present in the modulefile
+* ``man module`` – detailed explanation of the above commands and others
+
+More information on the Environment Modules software can be found on the `project's site <http://modules.sourceforge.net/>`.
