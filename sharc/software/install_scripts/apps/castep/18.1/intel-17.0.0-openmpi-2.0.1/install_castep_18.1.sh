@@ -73,7 +73,5 @@ mv ./obj/linux_x86_64_*/castep.mpi $prefix
 # Set permissions
 ##############################################################################
 
-chmod -R g-w $prefix
-chmod -R o-rwx $prefix
 chgrp -R castep $prefix
 

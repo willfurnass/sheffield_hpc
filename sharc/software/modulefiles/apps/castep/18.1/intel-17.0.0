@@ -20,4 +20,3 @@ module load libs/intel-mkl/2017.0/binary
 
 set casteppath /usr/local/packages/apps/castep/$vers/intel-17.0.0-openmpi-2.0.1/bin
 prepend-path PATH $casteppath
-setenv TMPDIR /scratch/
