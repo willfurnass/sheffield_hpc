@@ -40,7 +40,9 @@ The script requests 8 cores using the MPI parallel environment ``mpi`` with a ru
 Installation notes
 ------------------
 
-DL_POLY_CLASSIC 1.9 was compiled from source using fortran and default options. 
+DL_POLY_CLASSIC 1.9 was compiled from source using the -O3 Fortran compiler options. 
+
+During compilation DL_POLY_CLASSIC has been optionally interfaced with the PLUMED 2.3.2 library.
 
 The installation of DL_POLY_CLASSIC was tested using TEST01 for DL_POLY_CLASSIC (See https://ccpforge.cse.rl.ac.uk/gf/download/frsrelease/145/8489/TEST1.tar.gz for details).
     
