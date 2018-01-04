@@ -40,8 +40,6 @@ The script requests 8 cores using the MPI parallel environment ``mpi`` with a ru
 Installation notes
 ------------------
 
-DL_POLY_CLASSIC 1.9 was compiled and installed from source using the fortran compiler on ShARC and default options.
-
 DL_POLY_CLASSIC 1.9 can be installed using the
 :download:`install_dl_poly_classic.sh </sharc/software/install_scripts/apps/dl_poly_classic/1.9/gcc-6.2-openmpi-2.1.1/install_dl_poly_classic.sh>` script; the module
 file is
