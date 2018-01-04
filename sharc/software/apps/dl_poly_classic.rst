@@ -4,7 +4,7 @@ DL_POLY_CLASSIC
 .. sidebar:: DL_POLY_CLASSIC
    
    :Version: 1.9
-   :Dependencies: GCC compiler and Open MPI. Modules loaded for GCC 6.2.0, Open MPI 2.1.1 and PLUMED 2.3.2. 
+   :Dependencies: GCC compiler and Open MPI. Modules loaded for GCC 6.2.0, Open MPI 2.1.1 
    :URL: https://ccpforge.cse.rl.ac.uk/gf/project/dl_poly_classic/ 
    :Documentation: https://www.ccp5.ac.uk/sites/www.ccp5.ac.uk/files/dl_poly_classic/USRMAN.pdf
 
