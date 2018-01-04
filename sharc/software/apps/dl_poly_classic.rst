@@ -48,5 +48,6 @@ file is
 :download:`gcc-6.2-openmpi-2.1.1 </sharc/software/modulefiles/apps/dl_poly_classic/1.9/gcc-6.2-openmpi-2.1.1>`.
 
 
-The installation of DL_POLY_CLASSIC was tested using TEST01 for DL_POLY_CLASSIC (See https://ccpforge.cse.rl.ac.uk/gf/download/frsrelease/145/8489/TEST1.tar.gz)
+The installation of DL_POLY_CLASSIC was tested using TEST01 for DL_POLY_CLASSIC
+(See https://ccpforge.cse.rl.ac.uk/gf/download/frsrelease/145/8489/TEST1.tar.gz)
     
