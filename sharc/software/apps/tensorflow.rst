@@ -25,7 +25,7 @@ Tensorflow Singularity Images
 
 Singularity images are self-contained virtual machines similar to Docker. For more information on Singularity and how to use the images, see :ref:`singularity_sharc`.
 
-A symlinked file is provided that always point to the latest image: ::
+A symlinked file is provided that always point to the latest image:  ::
 
   #CPU Tensorflow
   /usr/local/packages/singularity/images/tensorflow/cpu.img
