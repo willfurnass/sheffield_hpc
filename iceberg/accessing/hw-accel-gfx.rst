@@ -56,7 +56,7 @@ Usage instructions
 
 #. Enter the connection details for TigerVNC that were issued by the ``qsh-vis`` command e.g. ``iceberg-gateway.shef.ac.uk:5901`` (NB the last four digits may differ when you run ``qsh-vis``).
 #. Click *Connect*
-#. You should now see a desktop within a window.  This desktop is running on a worker node (in the case of the presented example this is ``node000```; see the ``qsh-vis`` output) that is equipped with a graphics card (Optional: run ``nvidia-smi`` to see what type of graphics card).  A terminal window is automatically started from which you can :ref:`load modules <modules_usage>` and start applications that require hardware-accelerated graphics.
+#. You should now see a desktop within a window.  This desktop is running on a worker node (in the case of the presented example this is ``node000```; see the ``qsh-vis`` output) that is equipped with a graphics card (Optional: run ``nvidia-smi`` to see what type of graphics card).  A terminal window is automatically started from which you can :ref:`load modules <env_modules>` and start applications that require hardware-accelerated graphics.
 
     .. image:: /images/vncviewer_session.png
 
