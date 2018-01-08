@@ -1,5 +1,5 @@
 DL_POLY_CLASSIC
-=======
+===============
 
 .. sidebar:: DL_POLY_CLASSIC
    
