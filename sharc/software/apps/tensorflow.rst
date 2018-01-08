@@ -25,7 +25,7 @@ Tensorflow Singularity Images
 
 Singularity images are self-contained virtual machines similar to Docker. For more information on Singularity and how to use the images, see :ref:`singularity_sharc`.
 
-A symlinked file is provided that always point to the latest image: ::
+A symlinked file is provided that always point to the latest image:  ::
 
   #CPU Tensorflow
   /usr/local/packages/singularity/images/tensorflow/cpu.img
@@ -81,7 +81,7 @@ First request an interactive session, e.g. with :ref:`qrshx`. To use GPUs see :r
 Load the relevant modules (our example uses CUDA 8.0 with cuDNN 5.1 but :ref:`other versions are available <cudnn_sharc>`) ::
 
 	module load apps/python/anaconda3-4.2.0
-	module load libs/cudnn/5.1/binary-cuda-8.0.44
+	module load libs/cudnn/6.0/binary-cuda-8.0.44
 
 
 Create a conda environment to load relevant modules on your local user account and activate it ::
@@ -89,10 +89,11 @@ Create a conda environment to load relevant modules on your local user account a
 	conda create -n tensorflow python=3.5
 	source activate tensorflow
 
-Then install tensorflow with the following commands ::
+Then install tensorflow 1.4 for GPU with the following commands ::
 
-	export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.11.0-cp35-cp35m-linux_x86_64.whl
-	pip install $TF_BINARY_URL
+	pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.4.0-cp35-cp35m-linux_x86_64.whl
+
+For CPU-only or other python versions, see the `offical installation page <https://www.tensorflow.org/install/install_linux>`_ to get the correct binaries.
 
 You can test that Tensorflow is running on the GPU with the following python code ::
 
