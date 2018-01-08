@@ -6,7 +6,7 @@ Activating software using Environment Modules
 Overview and rationale
 ----------------------
 
-'Environment Modules' are the mechanism by which much software is made available to the users of the ShARC and Iceberg clusters.
+'Environment Modules' are the mechanism by which much of the software is made available to the users of the ShARC and Iceberg clusters.
 
 To make a particular piece of software available a user will *load* a module e.g. 
 on ShARC, you can load a particular version of the '``scotch``' library (version 6.0.4, built using the GCC 6.2 compiler and with support for parallel execution using OpenMPI 2.0.1) with: ::
@@ -191,7 +191,7 @@ If you no longer want to to have access to your own module files then you can ru
 
 Module Command Reference
 ------------------------
-Here is a list of the most useful module commands. For full details, type ``man module`` at command prompt on one of the clusters.
+Here is a list of the most useful ``module`` commands. For full details, type ``man module`` at the command prompt on one of the clusters.
 
 * ``module list`` – lists currently loaded modules
 * ``module avail`` – lists all available modules
