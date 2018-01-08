@@ -142,6 +142,8 @@ All available Abaqus licenses can be viewed using ``abaqus licensing r`` e.g. ::
    tfluid_int_ccmp                 61.9         250         31-dec-2018  ABAQUSLM
    tfluid_int_fluent               61.9         250         31-dec-2018  ABAQUSLM
 
+Run ``abaqus licensing`` for usage info for the Abaqus licensing sub-command.
+
 Installation notes
 ------------------
 
