@@ -16,7 +16,7 @@ Versions
 
 You can load MVAPICH2 using ::
 
-   module load mpi/mvapich/2.3b/intel-17.0.0
+   module load mpi/mvapich2/2.3b/intel-17.0.0
 
 This version was build with the Intel compiler suite version 17.0.0.
 
@@ -57,9 +57,9 @@ An example batch job that runs a benchmark program using 4 CPU cores: ::
 
 .. note::
 
-   You should always specify the absolute or relative path to the MPI program you want to run; otherwise you will see errors like: ::
+   You should always specify the absolute or relative path to the MPI program you want to run; otherwise you will see errors like:
 
-   .. code_block:: none
+   .. code-block:: none
       
       [proxy:0:0@sharc-node129.shef.ac.uk] HYDU_create_process (utils/launch/launch.c:75): execvp error on file mpi_hello_world (No such file or directory)
       [proxy:0:0@sharc-node129.shef.ac.uk] HYDU_create_process (utils/launch/launch.c:75): execvp error on file mpi_hello_world (No such file or directory)
