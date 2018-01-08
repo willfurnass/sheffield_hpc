@@ -22,7 +22,15 @@ Ansys EM can be activated using the module files::
     module load apps/ansysem/18.0/binary
     module load apps/ansysem/18.2/binary
 
-Ansys EM is integrated with the Ansys Workbench GUI (the ``ansyswb`` executable) for each version. The Ansys EM exectuable is ``ansysedt``. The following is an example batch submission script which is submitted to the queue by typing ``qsub my_job.sh``::
+Ansys EM is integrated with the Ansys Workbench GUI (the ``ansyswb`` executable) for each version. The Ansys EM exectuable is ``ansysedt``.
+
+**Note:** An accelerated-graphics interactive session with X Window support (i.e. a :ref:`iceberg-hw-accel-gfx` interactive session on ShARC) is required to run the ``ansysedt`` executable as a GUI. On the login node, the command ``qsh-vis`` will initiate an accelerated-graphics interactive session.
+
+
+Batch jobs
+----------
+
+The following is an example batch submission script which is submitted to the queue by typing ``qsub my_job.sh``::
 
     #!/bin/bash
     #$ -cwd

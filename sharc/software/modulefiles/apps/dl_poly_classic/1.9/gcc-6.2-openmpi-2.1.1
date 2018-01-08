@@ -1,0 +1,31 @@
+#%Module1.0#####################################################################
+##
+## DL_POLY module file
+##
+#  By Benjamin D. Hughes November 2017
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes DL_POLY_CLASSIC Version 1.9 available for use"
+}
+
+#set USER $::env(USER)
+
+module-whatis   "Makes DL_POLY_CLASSIC Version 1.9 available"
+
+# load modules
+ module load mpi/openmpi/2.1.1/gcc-6.2
+ module load apps/plumed/2.3.2/gcc-6.2-openmpi-2.1.1
+
+# module variables
+#
+ set     version 1.9
+ set     dl_polyroot /usr/local/packages/apps/dl_poly_classic/1.9
+
+ prepend-path PATH $dl_polyroot/execute
