@@ -119,7 +119,7 @@ Every Session Afterwards and in Your Job Scripts
 The previous instuctions installs Tensorflow and its dependencies inside your home directory but every time you use a new session or within your job scripts, the modules must be loaded and conda must be activated again. Use the following command to activate the Conda environment with Tensorflow installed: ::
 
 	module load apps/python/anaconda3-4.2.0
-	module load libs/cudnn/5.1/binary-cuda-8.0.44
+	module load libs/cudnn/6.0/binary-cuda-8.0.44
 	source activate tensorflow
 
 Using multiple GPUs
