@@ -10,5 +10,4 @@ Below is a list of the various ways to connect to or use iceberg:
 .. toctree::
     :maxdepth: 2
 
-    terminal
     hw-accel-gfx
