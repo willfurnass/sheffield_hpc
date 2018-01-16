@@ -1,7 +1,7 @@
 .. _scheduler:
 
-Scheduler
-=========
+Using interactive sessions / submitting batch jobs
+==================================================
 
 .. toctree::
     :hidden:
