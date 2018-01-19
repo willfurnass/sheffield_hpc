@@ -20,7 +20,7 @@ The default version of Java (which is also the most recent version; currently 1.
 
 Alternatively, you can explicitly load this version using::
 
-       module load apps/java/1.8.0_102/binary
+       module load apps/java/jdk1.8.0_102/binary
 
 Explicitly loading a version will become more useful once multiple versions of Java are installed on this system.
 
