@@ -91,7 +91,7 @@ Create a conda environment to load relevant modules on your local user account a
 
 Then install tensorflow 1.4 for GPU with the following commands ::
 
-	pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.4.0-cp35-cp35m-linux_x86_64.whl
+	pip install tensorflow-gpu
 
 For CPU-only or other python versions, see the `offical installation page <https://www.tensorflow.org/install/install_linux>`_ to get the correct binaries.
 
