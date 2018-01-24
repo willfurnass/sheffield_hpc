@@ -39,7 +39,7 @@ Array Jobs on ShARC and Iceberg can have a maximum of 75000 tasks.
 Limiting number of concurrent tasks
 -----------------------------------
 
-While unnecessary for CPU jobs, with the limited number of GPU nodes and how SGE has trouble accounting for fair use of GPUs, you may be asked to limit the number of jobs that will run concurrently.
+While unnecessary for CPU jobs, with the limited number of GPU nodes and how SGE has trouble accounting for fair use of GPUs, you may be asked to limit the number of GPU jobs that will run concurrently.
 
 Use the flag ``-tc 5`` to specify the maximum number of concurrent tasks (five tasks in this example). Same as the ``-t`` flag it can either be included on the command line: ::
 
