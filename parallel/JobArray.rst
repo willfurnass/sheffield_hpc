@@ -36,17 +36,19 @@ Advantages of Array Jobs:
 
 Array Jobs on ShARC and Iceberg can have a maximum of 75000 tasks.
 
-Limiting number of concurrent tasks
------------------------------------
+Limiting number of concurrent tasks for GPU array jobs
+------------------------------------------------------
 
-While unnecessary for CPU jobs, with the limited number of GPU nodes and how SGE has trouble accounting for fair use of GPUs, you may be asked to limit the number of GPU jobs that will run concurrently.
+The job scheduler has means for ensuring fair use of the cluster if a user submits an array comprised of many CPU-only tasks. However, if a user submits an array of GPU jobs then this could result in unfair usage as at present the job scheduler has mechanisms for lowering the priorities of pending tasks based on the user's recent CPU and memory usage but does not penalise for recent GPU usage.
 
-Use the flag ``-tc 5`` to specify the maximum number of concurrent tasks (five tasks in this example). Same as the ``-t`` flag it can either be included on the command line: ::
+Therefore, if you want to submit GPU array jobs you may want (or be asked) to explicitly limit the number of GPU tasks that can run concurrently.
+
+Use the flag ``-tc 5`` to specify the maximum number of concurrent tasks (five tasks in this example). As per the ``-t`` flag, it can either be included on the command line: ::
 
   #Running 100 jobs with maximum of 5 running concurrently
-  qsub -t 1-100 -tc 5
+  qsub -t 1-100 -tc 5 my_array_job.sh
 
-or in the batch file: ::
+or in the batch file itself: ::
 
   #$ -t 1-100
   #$ -tc 5
