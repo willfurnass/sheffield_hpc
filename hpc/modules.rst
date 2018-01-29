@@ -69,8 +69,8 @@ or to unload all loaded modules: ::
 
 To learn more about what software is available on the system and discover the names of module files, you can view the online documentation for 
 
-    * :ref:`software on ShARC <sharc-software>`
-    * :ref:`software on Iceberg <iceberg-software>`
+* :ref:`software on ShARC <sharc-software>`
+* :ref:`software on Iceberg <iceberg-software>`
 
 You can search for a module using: ::
 
@@ -111,12 +111,12 @@ You can run the following example on ShARC (regardless of whether the ``dev/NAG/
 
 Here we see:
 
- * The full path to the file that contains the definition of this module;
- * A line briefly describing the purpose of the module (which could have been viewed separately using ``module whatis dev/NAG/6.1``);
- * An instruction not to load any other module files that start with ``dev/NAG`` as they will cause a conflict;
- * A directory is prepended to the standard ``PATH`` variable: this ensures that executables relating to ``dev/NAG/6.1`` are preferentially used unrelated executables in ``PATH`` directories that share the same filenames.  **Note that this directory is specific to this version (6.1) of the application we want to use**;
- * A directory is prepended to the standard ``MANPATH`` variable to ensure that the documentation (`man pages <https://en.wikipedia.org/wiki/Man_page>`__) that the vendor bundled with the application can be found;
- * An application-specific environment variable, ``NAG_KUSARI_FILE``, is set (here to ensure that the application can find a license file).
+* The full path to the file that contains the definition of this module;
+* A line briefly describing the purpose of the module (which could have been viewed separately using ``module whatis dev/NAG/6.1``);
+* An instruction not to load any other module files that start with ``dev/NAG`` as they will cause a conflict;
+* A directory is prepended to the standard ``PATH`` variable: this ensures that executables relating to ``dev/NAG/6.1`` are preferentially used unrelated executables in ``PATH`` directories that share the same filenames.  **Note that this directory is specific to this version (6.1) of the application we want to use**;
+* A directory is prepended to the standard ``MANPATH`` variable to ensure that the documentation (`man pages <https://en.wikipedia.org/wiki/Man_page>`__) that the vendor bundled with the application can be found;
+* An application-specific environment variable, ``NAG_KUSARI_FILE``, is set (here to ensure that the application can find a license file).
 
 If you run the '``env``' command before and after loading a module you can see the effect of these changes.
 
@@ -203,4 +203,4 @@ Here is a list of the most useful ``module`` commands. For full details, type ``
 * ``module help modulename`` – may show longer description of the module if present in the modulefile
 * ``man module`` – detailed explanation of the above commands and others
 
-More information on the Environment Modules software can be found on the `project's site <http://modules.sourceforge.net/>`.
+More information on the Environment Modules software can be found on the `project's site <http://modules.sourceforge.net/>`_.
