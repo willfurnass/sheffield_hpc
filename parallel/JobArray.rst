@@ -30,9 +30,9 @@ Advantages of Array Jobs:
   the job scheduler can efficiently run one or more queued tasks as the requested computational resources become available;
 * They are particularly useful for `Embarrassingly Parallel <https://en.wikipedia.org/wiki/Embarrassingly_parallel>`_ problems such as:
 
-    * Monte Carlo simulations (where ``$SGE_TASK_ID`` might correspond to random number seed);
-    * Parameter sensitivity analysis;
-    * Batch file processing (where ``$SGE_TASK_ID`` might refer to a file in a list of files to be processed).
+  * Monte Carlo simulations (where ``$SGE_TASK_ID`` might correspond to random number seed);
+  * Parameter sensitivity analysis;
+  * Batch file processing (where ``$SGE_TASK_ID`` might refer to a file in a list of files to be processed).
 
 Array Jobs on ShARC and Iceberg can have a maximum of 75000 tasks.
 
