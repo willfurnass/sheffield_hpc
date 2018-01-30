@@ -35,11 +35,13 @@ A symlinked file is provided that always point to the latest image:  ::
 
 To get a bash terminal in to an image for example, use the command: ::
 
-  singularity exec /usr/local/packages/singularity/images/tensorflow/gpu.img /bin/bash
+  singularity exec --nv /usr/local/packages/singularity/images/tensorflow/gpu.img /bin/bash
 
 The ``exec`` command can also be used to call any command/script inside the image e.g. ::
 
-  singularity exec /usr/local/packages/singularity/images/tensorflow/gpu.img python your_tensorflow_script.py
+  singularity exec --nv /usr/local/packages/singularity/images/tensorflow/gpu.img python your_tensorflow_script.py
+
+**The** ``--nv`` **flag enables the use of GPUs within the image and can be removed if the software you're using does not use the GPU.**
 
 You may get a warning similar to ``groups: cannot find name for group ID ...``, this can be ignored and will not have an affect on running the image.
 
