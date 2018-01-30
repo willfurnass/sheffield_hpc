@@ -163,10 +163,6 @@ When running Singularity images on ShARC,
 the paths ``/fastdata``, ``/data``, ``/home``, ``/scratch``, ``/shared`` are
 automatically mounted to your ShARC directories.
 
-Images that uses the GPU requires driver files that matches the host system.
-In ShARC these files are located outside of the image and
-automatically mounted to paths ``/nvbin`` and ``/nvlib`` within the image.
-
 Image Index on Github
 ---------------------
 
