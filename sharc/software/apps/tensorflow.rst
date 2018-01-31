@@ -64,12 +64,12 @@ Paths to the actual images and definition files are provided below for downloadi
         * ``/usr/local/packages/singularity/images/tensorflow/cpu.img``
     * GPU
         * ``usr/local/packages/singularity/images/tensorflow/gpu.img``
-* CPU Images `Defition repository <https://github.com/rses-singularity/tensorflow-cpu>`_
+* CPU Images (`Definition repository <https://github.com/rses-singularity/tensorflow-cpu>`_)
     * Latest: 1.5.0-CPU-Ubuntu16.04-Anaconda3.4.2.0.img (GCC 5.4.0, Python 3.5)
         * Path: ``/usr/local/packages/singularity/images/tensorflow/1.5.0-CPU-Ubuntu16.04-Anaconda3.4.2.0.img``
     * 1.0.1-CPU-Ubuntu16.04-Anaconda3.4.2.0.img (GCC 5.4.0, Python 3.5)
         * Path: ``/usr/local/packages/singularity/images/tensorflow/1.0.1-CPU-Ubuntu16.04-Anaconda3.4.2.0.img``
-* GPU Images `Definition `
+* GPU Images (`Definition repository <https://github.com/rses-singularity/tensorflow-gpu>`_)
     * Latest: 1.5.0-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA9-cudNN7.img (GCC 5.4.0, Python 3.5)
         * Path: ``/usr/local/packages/singularity/images/tensorflow/1.5.0-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA9-cudNN7.img``
     * 1.0.1-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA8-cudNN5.0.img (GCC 5.4.0, Python 3.5)
