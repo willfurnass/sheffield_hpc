@@ -1,0 +1,30 @@
+#%Module1.0#####################################################################
+##
+## BWA module file
+##
+#  By David M. Rogers Feb 2018
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes BWA Version 0.7.17 available for use"
+}
+
+# set USER $::env(USER)
+
+module-whatis   "Makes BWA Version 0.7.17 available"
+
+# load modules
+module load dev/gcc/6.2
+
+# module variables
+#
+ set     version 0.7.17
+ set     bwaroot /usr/local/packages/apps/bwa/$version/gcc-6.2
+
+ prepend-path PATH $bwaroot/bin
