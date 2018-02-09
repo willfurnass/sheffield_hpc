@@ -21,7 +21,7 @@ SIESTA 4.0.1 can be activated using the module files::
     module load apps/siesta/4.0.1/intel-17.0.0
     module load apps/siesta/4.0.1/intel-17.0.0-openmpi-2.0.1
 
-Where the latter module file ``apps/siesta/4.0.1/intel-17.0.0-openmpi-2.0.1`` loads the version compiled to run in parallel using Open MPI.
+Where the latter module file ``apps/siesta/4.0.1/intel-17.0.0-openmpi-2.0.1`` loads the version compiled to run in parallel using Open MPI and the loads the module for Open MPI 2.0.1.
 The SIESTA executable is ``siesta``.
 
 
