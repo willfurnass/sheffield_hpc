@@ -4,7 +4,7 @@ FastQC
 .. sidebar:: FastQC
 
    :Version: 0.11.7
-   :Dependencies: Java for GUI. Module loaded for Java 1.8.0_102.
+   :Dependency: Java for GUI. Module loaded for Java 1.8.0_102.
    :URL: https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
    :Documentation: https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/
 
@@ -13,11 +13,11 @@ FastQC aims to provide a simple way to do some quality control checks on raw seq
 Usage
 -----
 
-FastQC version can be activated using the module files::
+FastQC version can be activated using the module file::
 
 	module load apps/FastQC/0.11.7/binary
 
-Then run using ``fastqc``.
+Then run using the command ``fastqc``.
 
 Installation notes
 ------------------
