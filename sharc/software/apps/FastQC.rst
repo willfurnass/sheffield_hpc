@@ -22,11 +22,7 @@ Then run using ``fastqc``.
 Installation notes
 ------------------
 
-Installation of FastQC 0.11.7 on Sharc was a binary installation. Actually installing FastQC is as simple as unzipping the zip file it comes in into a suitable location. The file is downloaded by the command::
-
-	wget http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.7.zip
-
-There is a wrapper script, called 'fastqc' which is the easiest way to  start the program. The wrapper is in the top level of the FastQC installation.  You may need to make this file executable::
-
-	chmod 755 fastqc
-
+FastQC was installed using the
+:download:`install_fastqc.sh </sharc/software/install_scripts/apps/FastQC/0.11.7/install_fastqc.sh>` script, the module
+file is
+:download:`0.11.7 </sharc/software/modulefiles/apps/FastQC/0.11.7>`.

@@ -1,0 +1,15 @@
+#%Module1.0#####################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+
+proc ModulesHelp { } {
+    global version
+    puts stderr "   Makes FastQC $version available for use"
+}
+module-whatis   "Makes FastQC available for use"
+
+# For GUI
+module load apps/java/jdk1.8.0_102/binary
+
+prepend-path PATH $/usr/local/packages/apps/FastQC/0.11.7/binary
