@@ -4,7 +4,7 @@ BWA
 .. sidebar:: BWA
    
    :Version: 0.7.17
-   :Dependencies: Module loaded for GCC compiler 6.2.0
+   :Dependency: Module loaded for GCC compiler 6.2.0
    :URL: http://bio-bwa.sourceforge.net
    :Documentation: http://bio-bwa.sourceforge.net/bwa.shtml
 
