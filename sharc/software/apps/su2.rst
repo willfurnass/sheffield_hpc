@@ -18,6 +18,8 @@ SU2 5.0.0 or 6.0.0 can be activated using the module files::
     module load apps/su2/5.0.0/gcc-6.2-openmpi-2.1.1
     module load apps/su2/6.0.0/gcc-6.2-openmpi-2.1.1
 
+Note that the above module files also load GCC 6.2.0 and Open MPI 2.1.1.
+
 Installation notes
 ------------------
 
