@@ -39,7 +39,7 @@ PETSc examples are saved in a particular location on SHARC: ::
 
    $PETSC_DIR/share/petsc/examples
 
-and you want to copy them to a writeable location (e.g. :ref:`your /home or /data directory or $TMPDIR <fastdata>`) before compiling and running them. 
+and you want to copy them to a writeable location (e.g. :ref:`your /home or /data directory or $TMPDIR <filestore>`) before compiling and running them. 
 For example: ::
 
    cp -r $PETSC_DIR/share/petsc/examples /data/$USER/
