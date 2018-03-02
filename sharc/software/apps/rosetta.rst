@@ -17,7 +17,7 @@ Rosetta 3.8 can be activated using the module file::
 
     module load apps/rosetta/3.8/binary
 
-The above module file adds the Rosetta ``$prefix/main/source/bin`` executables to a user's path.
+The above module file adds the Rosetta ``/usr/local/packages/apps/rosetta/3.8/binary/main/source/bin`` executables to a user's path.
 
 Installation notes
 ------------------
