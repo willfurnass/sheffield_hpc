@@ -7,7 +7,7 @@ Abaqus
    :Dependencies: Module loaded for Intel compiler 15.0.7 (and Foxit for Abaqus version 6.14-2). User subroutines need Intel compiler 2011 or above, GCC 4.1.2 or above. 
    :URL: http://www.3ds.com/products-services/simulia/products/abaqus/ 
    :Documentation: https://www.3ds.com/support/documentation/users-guides/
-   :Local URL: https://www.shef.ac.uk/wrgrid/software/abaqus
+   :Local URL: https://www.sheffield.ac.uk/cics/research/software/abaqus
 
 
 Abaqus is a software suite for Finite Element Analysis (FEA) developed by Dassault Systèmes.
@@ -23,10 +23,10 @@ Abaqus versions 2018, 2017-ga, 2017 or 6.14-2 can be activated using the module 
     module load apps/abaqus/2017/binary
     module load apps/abaqus/6.14-2/binary
 	
-Type ``abaqus cae`` to launch the Abaqus GUI from an interactive session with X Window support (e.g. an interactive ``qsh`` session). Please see usage notes below.
+Type ``abaqus cae`` to launch the Abaqus GUI from an interactive session with X Window support (e.g. an interactive ``qsh`` session). Please see usage note below for graphics support options.
 Type ``abaqus`` for the command line interface. Typing ``abaqus -help`` will display a list of usage options.
 
-Abaqus 2017-ga (module ``apps/abaqus/2017-ga/binary``) has the Tosca component installed and is equivalent to Abaqus 2017 ("ga" is an accronym for "general availabilty").
+Abaqus 2017-ga (module ``apps/abaqus/2017-ga/binary``) has the Tosca component installed and is equivalent to Abaqus 2017 ('ga' is an accronym for 'general availabilty').
 
 The PDF viewer ``foxit`` can be launched to view the PDF documentation for Abaqus 6.14-2 located at ``/usr/local/packages/apps/abaqus/6.14-2/binary/Documentation/docs/v6.14/pdf_books``.
 
