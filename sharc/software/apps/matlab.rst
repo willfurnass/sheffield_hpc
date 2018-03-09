@@ -91,10 +91,12 @@ by copying the installer file from the cluster itself which resides in: ::
 This file can be unzipped in a temporary area and run the setup script that unzipping yields to install the MATLAB runtime environment.
 Finally the environment variable ``$MCRROOT`` can be set to the directory containing the runtime environment.  
  
-Parallel MATLAB
----------------
+Parallel MATLAB - Single node
+-----------------------------
 
-Parallel Matlab is currently restricted to single node operation (16 cores). An example batch script ``my_parallel_job.sh`` is: ::
+Parallel Matlab can be run exclusively on a single node (using a maximum of 16 cores). 
+
+An example batch script ``my_parallel_job.sh`` is: ::
 
 	#!/bin/bash
 	#$ -l rmem=2G
@@ -130,7 +132,67 @@ where ``parallel_example.m`` is: ::
 
 	delete(pool)
 
-Note that multi-node parallel Matlab is **not yet configured on this cluster.** Task arrays are supported by all versions, however it is recommended that 2017a (or later) is used 
+Parallel MATLAB - Multiple-nodes
+--------------------------------
+
+Parallel Matlab using multiple nodes is restricted to 32 cores. 
+
+The user must configure Matlab first by running Matlab interactively and configuring for cluster usage.
+
+This is done by logging into ShARC, launching a qrshx session, module load apps/matlab/2017b & launching matlab. The following command is typed into the command line in the GUI: ::
+
+	configCluster;
+
+Matlab GUI can now be closed.
+
+An example batch script ``submit_Matlab_mpi.sh`` is: ::
+
+	#!/bin/bash
+	#$ -M user@sheffield.ac.uk
+	#$ -m bea
+	#$ -V
+	#$ -cwd
+	module load apps/matlab/2017b/binary
+	#Run parallel_example.m
+	matlab -nodisplay -nosplash -r submit_matlab_fnc
+
+where ``submit_matlab_fnc.m`` is: ::
+
+	function submit_matlab_fnc
+
+	cd path_working_directory;
+	c=parcluster;
+	c.AdditionalProperties.EmailAddress = 'user@sheffield.ac.uk';
+	%configure runtime e.g. 40 minutes
+	c.AdditionalProperties.WallTime = '00:40:00';
+	%configure rmem per process e.g. 4 Gb
+	c.AdditionalProperties.AdditionalSubmitArgs = ' -l rmem=4G';
+	%parallel_example.m contains the parfor loop, no_of_cores < 31
+	j=c.batch(@parallel_example,1,{},'Pool',no_of_cores);
+
+where ``parallel_example.m`` is: ::
+
+	disp('serial time')
+	tic
+	n = 200;
+	A = 500;
+	a = zeros(n);
+	for i = 1:n
+		a(i) = max(abs(eig(rand(A))));
+	end
+	toc
+
+	disp('Parallel time')
+	tic
+	n = 200;
+	A = 500;
+	a = zeros(n);
+	parfor i = 1:n
+		a(i) = max(abs(eig(rand(A))));
+	end
+	toc
+
+Note that for multi-node parallel Matlab the maximum number of workers allowed is 31 since the master process requires a parallel licence. Task arrays are supported by all versions, however it is recommended that 2017a (or later) is used 
 
 Training
 --------
