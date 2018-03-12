@@ -152,6 +152,7 @@ An example batch script ``submit_Matlab_mpi.sh`` is: ::
 	#$ -m bea
 	#$ -V
 	#$ -cwd
+	#$ -j y
 	module load apps/matlab/2017b/binary
 	#Run parallel_example.m
 	matlab -nodisplay -nosplash -r submit_matlab_fnc
@@ -171,18 +172,12 @@ where ``submit_matlab_fnc.m`` is: ::
 	j=c.batch(@parallel_example,1,{},'Pool',no_of_cores);
 
 where ``parallel_example.m`` is: ::
-
-	disp('serial time')
-	tic
-	n = 200;
-	A = 500;
-	a = zeros(n);
-	for i = 1:n
-		a(i) = max(abs(eig(rand(A))));
-	end
-	toc
-
-	disp('Parallel time')
+	
+	function time = parallel_example
+	cd path_working_directory;
+	outfile = ['output.txt'];
+	fileID = fopen(outfile,'w');
+	%disp('Parallel time')
 	tic
 	n = 200;
 	A = 500;
@@ -190,9 +185,11 @@ where ``parallel_example.m`` is: ::
 	parfor i = 1:n
 		a(i) = max(abs(eig(rand(A))));
 	end
-	toc
+	time=toc;
+	fprintf(fileID, %d, time);
+	fclose(fileID);
 
-Note that for multi-node parallel Matlab the maximum number of workers allowed is 31 since the master process requires a parallel licence. Task arrays are supported by all versions, however it is recommended that 2017a (or later) is used 
+Note that for multi-node parallel Matlab the maximum number of workers allowed is 31 since the master process requires a parallel licence. Task arrays are supported by all versions, however it is recommended that 2017a (or later) is used. 
 
 Training
 --------
