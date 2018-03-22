@@ -3,7 +3,7 @@ ANSYS
 
 .. sidebar:: ANSYS
    
-   :Versions: 16.1, 17.2, 18.0, 18.2
+   :Versions: 16.1, 17.2, 18.0, 18.2, 19.0
    :Dependencies: No prerequsite modules loaded. However, If using the User Defined Functions (UDF) will also need the following: For ANSYS Mechanical, Workbench, CFX and AutoDYN: Intel 14.0 or above; Compiler For Fluent: GCC 4.6.1 or above
    :URL: http://www.ansys.com 
    :Local URL: http://www.shef.ac.uk/cics/research/software/fluent
@@ -21,6 +21,7 @@ Ansys can be activated using the module files::
     module load apps/ansys/17.2
     module load apps/ansys/18.0/binary
     module load apps/ansys/18.2/binary
+	module load apps/ansys/19.0/binary
 
 The Ansys Workbench GUI executable is ``ansyswb``. ``ansyswb`` can be launched during an interactive session with X Window support (e.g. an interactive ``qsh`` session).
 The Ansys exectuable is ``ansys`` and ``fluent`` is the executable for Fluent. Typing ``ansys -g`` or ``fluent -g -help`` will display a list of usage options.
@@ -40,7 +41,7 @@ Or the same for Fluent::
     runfluent
 	
 The ``runfluent`` and ``runansys`` commands submit a Fluent journal or Ansys input file into the batch system and can take a number of different parameters, according to your requirements.
-Typing ``runansys`` or ``runfluent`` will display information about their usage. **Note:** ``runansys`` and ``runfluent`` are not setup for use with Ansys 18.0 and 18.2.
+Typing ``runansys`` or ``runfluent`` will display information about their usage. **Note:** ``runansys`` and ``runfluent`` are not setup for use with Ansys 18.0, 18.2 or 19.0.
 	
 Users are encouraged to write their own batch submission scripts. The following is an example batch submission script, ``my_job.sh``, to run ``fluent`` version 16.1 and which is submitted to the queue by typing ``qsub my_job.sh``::
 
@@ -79,5 +80,10 @@ Ansys 18.2 was installed using the
 :download:`install_ansys_182.sh </sharc/software/install_scripts/apps/ansys/18.2/binary/install_ansys_182.sh>` script; the module
 file is
 :download:`/usr/local/modulefiles/apps/ansys/18.2/binary </sharc/software/modulefiles/apps/ansys/18.2/binary>`. 
+
+Ansys 19.0 was installed using the
+:download:`install_ansys_190.sh </sharc/software/install_scripts/apps/ansys/19.0/binary/install_ansys_190.sh>` script; the module
+file is
+:download:`/usr/local/modulefiles/apps/ansys/19.0/binary </sharc/software/modulefiles/apps/ansys/19.0/binary>`.
 
 The binary installations were tested by launching ``ansyswb`` and by using the above batch submission script. The ``mpi-rsh`` tight-integration parallel environment is required to run Ansys/Fluent using MPI due to password-less ssh being disabled across nodes on ShARC.
