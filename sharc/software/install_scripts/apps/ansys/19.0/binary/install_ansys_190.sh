@@ -64,7 +64,7 @@ $filename
 
 # follow the Ansys GUI install instructions,
 # in GUI set install directory to
-# /usr/local/packages/apps/ansys/19.0/binary
+# /usr/local/packages/apps/ansys/19.0.0/binary
 # the licence server is 1055@ansyslm.shef.ac.uk
 # "ANSYS Chemkin" and "ANSYS Geometry Interfaces" not installed
 # this is a binary install
