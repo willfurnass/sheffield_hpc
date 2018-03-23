@@ -108,17 +108,17 @@ The NVIDIA device driver is currently version 384.81.
 CUDA 9.1.85
 ^^^^^^^^^^^
 
-#. Installed with :download:`install.sh </sharc/software/install_scripts/libs/CUDA/install.sh>` with 8. with ``9.1.85_387.26`` as the sole argument.
+#. Installed with :download:`install.sh </sharc/software/install_scripts/libs/CUDA/install.sh>` with ``9.1.85_387.26`` as the sole argument.
 #. :download:`Modulefile </sharc/software/modulefiles/libs/CUDA/9.1.85/binary>` was installed as ``/usr/local/modulefiles/libs/CUDA/9.1.85/binary``
 
 CUDA 8.0.44
 ^^^^^^^^^^^
 
-#. Installed with :download:`install.sh </sharc/software/install_scripts/libs/CUDA/install.sh>` with 8. with ``8.0.44`` as the sole argument.
+#. Installed with :download:`install.sh </sharc/software/install_scripts/libs/CUDA/install.sh>` with ``8.0.44`` as the sole argument.
 #. :download:`This modulefile </sharc/software/modulefiles/libs/CUDA/8.0.44/binary>` was installed as ``/usr/local/modulefiles/libs/CUDA/8.0.44/binary``
 
 CUDA 7.5.18
 ^^^^^^^^^^^
 
-#. Installed with :download:`install.sh </sharc/software/install_scripts/libs/CUDA/install.sh>` with 8. with ``7.5.18`` as the sole argument.
+#. Installed with :download:`install.sh </sharc/software/install_scripts/libs/CUDA/install.sh>` with ``7.5.18`` as the sole argument.
 #. :download:`This modulefile </sharc/software/modulefiles/libs/CUDA/7.5.18/binary>` was installed as ``/usr/local/modulefiles/libs/CUDA/7.5.18/binary``
