@@ -21,6 +21,7 @@ Ansys EM can be activated using the module files::
     module load apps/ansysem/17.2
     module load apps/ansysem/18.0/binary
     module load apps/ansysem/18.2/binary
+    module load apps/ansysem/19.0/binary
 
 Ansys EM is integrated with the Ansys Workbench GUI (the ``ansyswb`` executable) for each version. The Ansys EM exectuable is ``ansysedt``.
 
@@ -66,5 +67,10 @@ Ansys EM 18.2 was installed using the
 :download:`install_ansysem_182.sh </sharc/software/install_scripts/apps/ansysem/18.2/binary/install_ansysem_182.sh>` script; the module
 file is
 :download:`/usr/local/modulefiles/apps/ansysem/18.2/binary </sharc/software/modulefiles/apps/ansysem/18.2/binary>`.
+
+Ansys EM 19.0 was installed using the
+:download:`install_ansysem_190.sh </sharc/software/install_scripts/apps/ansysem/19.0/binary/install_ansysem_190.sh>` script; the module
+file is
+:download:`/usr/local/modulefiles/apps/ansysem/19.0/binary </sharc/software/modulefiles/apps/ansysem/19.0/binary>`.
 
 The binary installations were tested using ``ansyswb`` and the above batch submission script.
