@@ -21,7 +21,7 @@ Ansys EM can be activated using the module files::
     module load apps/ansysem/17.2
     module load apps/ansysem/18.0/binary
     module load apps/ansysem/18.2/binary
-	module load apps/ansysem/19.0/binary
+    module load apps/ansysem/19.0/binary
 
 Ansys EM is integrated with the Ansys Workbench GUI (the ``ansyswb`` executable) for each version. The Ansys EM exectuable is ``ansysedt``.
 
