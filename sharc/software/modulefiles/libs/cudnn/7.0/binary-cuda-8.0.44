@@ -9,19 +9,21 @@ source /usr/local/etc/module_logging.tcl
 ##
 
 proc ModulesHelp { } {
-        global version
+        global cudnnvers
+        global cudavers
 
         puts stderr "	Adds `Nvidia cuDNN-$cudnnvers and CUDA $cudavers' to your PATH environment variable 
 }
 
 set cudnnvers 7.0
 set cudavers  8.0.44
+set cudashortvers  8.0
 
 module-whatis   "loads the necessary `cuDNN-$cudnnvers and CUDA $cudavers' library paths"
 
 module load libs/CUDA/$cudavers/binary
 
-set CUDNN_DIR /usr/local/packages/libs/cudnn/$cudnnvers/binary-cuda-$cudavers/cuda
+set CUDNN_DIR /usr/local/packages/libs/cudnn/$cudnnvers/binary-cuda-$cudashortvers/cuda
 
 prepend-path C_INCLUDE_PATH $CUDNN_DIR/include/
 prepend-path CPLUS_INCLUDE_PATH $CUDNN_DIR/include/
