@@ -1,0 +1,29 @@
+#%Module1.0#####################################################################
+#
+# xparser 0.17.1 (used by FLAME) module file
+#
+# Will Furnass 2018
+################################################################################
+
+# Module file logging
+source /usr/local/etc/module_logging.tcl
+
+proc ModulesHelp { } {
+    global vers
+
+    puts stderr "   Makes xparser $vers (used by FLAME) available."
+}
+
+set vers 0.17.1
+set compiler gcc
+set compilervers 6.2
+set prefix /usr/local/packages/apps/xparser/$vers/$compiler-$compilervers
+
+module-whatis "Makes xparser $vers (used by FLAME) available."
+
+if { [ module-info mode load] } {
+    puts stderr "Note: you most likely also want to load a serial or MPI build of libmboard"
+}
+
+prepend-path PATH $prefix
+setenv FLAME_XPARSER_DIR $prefix

@@ -1,0 +1,28 @@
+#%Module1.0#####################################################################
+#
+# GNU Scientific Linux (GSL) 2.4 module file
+#
+# Will Furnass 2018
+################################################################################
+
+# Module file logging
+source /usr/local/etc/module_logging.tcl
+
+proc ModulesHelp { } {
+    global vers
+    puts stderr "   Makes GNU Scientific Linux (GSL) $vers available."
+}
+
+set vers 2.4
+set compiler gcc
+set compilervers 6.2
+set prefix /usr/local/packages/libs/gsl/$vers/$compiler-$compilervers
+
+module-whatis "Makes GNU Scientific Linux (GSL) $vers available."
+
+prepend-path PATH $prefix/bin
+prepend-path CPATH $prefix/include
+prepend-path LD_LIBRARY_PATH $prefix/lib
+prepend-path LIBRARY_PATH $prefix/lib
+prepend-path INFOPATH $prefix/share/info
+prepend-path MANPATH $prefix/share/man
