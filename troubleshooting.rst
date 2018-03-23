@@ -234,12 +234,18 @@ but you don't actually want to monitor that audio output.
 
 ``snd_dummy`` is not (yet) set up on Iceberg's worker nodes.
 
-Login Nodes RSA Fingerprint
----------------------------
+Login node RSA/ECDSA/ED25519 fingerprints
+-----------------------------------------
 
 The RSA key fingerprint for Iceberg's login nodes is: ::
 
-    de:72:72:e5:5b:fa:0f:96:03:d8:72:9f:02:d6:1d:fd
+   de:72:72:e5:5b:fa:0f:96:03:d8:72:9f:02:d6:1d:fd
+
+The RSA, ECDSA and ED25519 fingerprints for ShARC's login nodes are: ::
+
+   SHA256:NVb+eAG6sMFQEbVXeF5a+x5ALHhTqtYqdV6g31Kn6vE (RSA)
+   SHA256:WJYHPbMKrWud4flwhIbrfTB1SR4pprGhx4Vu88LhP58 (ECDSA)
+   SHA256:l8imoZMnO+fHGle6zWi/pf4eyiVsEYYscKsl1ellrnE (ED25519)
 
 Issue when running multiple MPI jobs in sequence
 ------------------------------------------------
