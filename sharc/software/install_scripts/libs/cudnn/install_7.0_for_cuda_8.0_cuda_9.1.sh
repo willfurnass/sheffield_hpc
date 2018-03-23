@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# The script installs cuDNN 5.1 for CUDA 8.0 and CUDA 9.1 in to the correct ShARC directory
+# The script installs cuDNN 7.0 for CUDA 8.0 and CUDA 9.1 in to the correct ShARC directory
 # The binaries can be downloaded from NVIDIA at https://developer.nvidia.com/cudnn
 # and need to be saved in $MEDIA_DIR (see below)
 
