@@ -22,6 +22,7 @@ Load the appropriate cuDNN version (**and implicitly load a specific CUDA versio
 
     module load libs/cudnn/7.0/binary-cuda-9.1.85
     module load libs/cudnn/7.0/binary-cuda-8.0.44
+    module load libs/cudnn/6.0/binary-cuda-8.0.44
     module load libs/cudnn/5.1/binary-cuda-8.0.44
     module load libs/cudnn/5.1/binary-cuda-7.5.18
 

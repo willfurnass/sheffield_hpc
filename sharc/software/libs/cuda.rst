@@ -25,9 +25,9 @@ To check which version of CUDA you are using ::
 
         $ nvcc --version
         nvcc: NVIDIA (R) Cuda compiler driver
-        Copyright (c) 2005-2016 NVIDIA Corporation
-        Built on Sun_Sep__4_22:14:01_CDT_2016
-        Cuda compilation tools, release 8.0, V8.0.44
+        Copyright (c) 2005-2017 NVIDIA Corporation
+        Built on Fri_Nov__3_21:07:56_CDT_2017
+        Cuda compilation tools, release 9.1, V9.1.85
 
 **Important** To compile CUDA programs you also need a compatible version of the :ref:`gcc_sharc`.  As of version 8.0.44, CUDA is compatible with GCC versions:
 
@@ -42,7 +42,7 @@ Compiling the sample programs
 -----------------------------
 You do not need to be using a GPU-enabled node to compile the sample programs but you do need a GPU to run them.
 
-In a `qrsh` session ::
+In a ``qrsh`` session ::
 
         # Load modules
         module load libs/CUDA/9.1.85/binary
@@ -70,7 +70,7 @@ Profiling using nvprof
 
 Note that ``nvprof``, NVIDIA's CUDA profiler cannot write output to the ``/fastdata`` filesystem.
 
-This is because the profiler's output is a `SQLite <https://www.sqlite.org/>__` database and SQLite requires a filesystem that supports file locking
+This is because the profiler's output is a `SQLite <https://www.sqlite.org/>`__ database and SQLite requires a filesystem that supports file locking
 but file locking is not enabled on the (`Lustre <http://lustre.org/>`__) filesystem mounted on ``/fastdata`` (for performance reasons). 
 
 CUDA Training
@@ -86,8 +86,8 @@ Run the command: ::
 
 Example output is ::
 
-        NVRM version: NVIDIA UNIX x86_64 Kernel Module  384.81  Wed Aug 17 22:24:07 PDT 2016
-        GCC version:  gcc version 4.8.5 20150623 (Red Hat 4.8.5-4) (GCC)
+        NVRM version: NVIDIA UNIX x86_64 Kernel Module  390.30  Wed Jan 31 22:08:49 PST 2018
+        GCC version:  gcc version 4.8.5 20150623 (Red Hat 4.8.5-16) (GCC) 
 
 Installation notes
 ------------------
@@ -103,12 +103,13 @@ This service runs ``/usr/local/scripts/gpu-nvidia-driver.sh`` at boot time to:
 - Load the ``nvidia`` kernel module;
 - Create several *device nodes* in ``/dev/``.
 
-The NVIDIA device driver is currently version 384.81.
+The NVIDIA device driver is currently version 390.30.
 
 CUDA 9.1.85
 ^^^^^^^^^^^
 
-#. Installed with :download:`install.sh </sharc/software/install_scripts/libs/CUDA/install.sh>` with ``9.1.85_387.26`` as the sole argument.
+#. Installed with :download:`install.sh </sharc/software/install_scripts/libs/CUDA/install.sh>` with ``9.1.85_387.26`` as the sole argument. 
+   This installs the toolkit and three NVIDIA-recommended patches.
 #. :download:`Modulefile </sharc/software/modulefiles/libs/CUDA/9.1.85/binary>` was installed as ``/usr/local/modulefiles/libs/CUDA/9.1.85/binary``
 
 CUDA 8.0.44
