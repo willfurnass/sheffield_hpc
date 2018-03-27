@@ -1,3 +1,5 @@
+.. _gsl_sharc:
+
 GSL
 ===
 
@@ -14,35 +16,39 @@ See `here <https://www.gnu.org/software/gsl/doc/html/intro.html>`__ for the type
 Usage
 -----
 
-The GSL library can be loaded using
+The GSL library can be loaded using: ::
 
-    module load libs/gsl/2.4/gcc-6.2
+   module load libs/gsl/2.4/gcc-6.2
 
 Example
 -------
 
 A example program that uses the GSL (taken from the GSL documentation):
 
- .. code_block:: c
+.. code-block:: c
 
-    #include <stdio.h>
-    #include <stdlib.h>
-    #include <gsl/gsl_sf_bessel.h>
+   #include <stdio.h>
+   #include <stdlib.h>
+   #include <gsl/gsl_sf_bessel.h>
 
-    int main (void) {
-      double x = 5.0;
-      double y = gsl_sf_bessel_J0(x);
+   int main (void) {
+     double x = 5.0;
+     double y = gsl_sf_bessel_J0(x);
 
-      printf("J0(%g) = %.18e\n", x, y);
+     printf("J0(%g) = %.18e\n", x, y);
 
-      return EXIT_SUCCESS;
-    }
+     return EXIT_SUCCESS;
+   }
 
-Build this using: ::
+Build this using:
 
-    gcc -Wall -lgsl -lgslcblas -o test test.c
+.. code-block:: sh
 
-Then run using: ::
+   gcc -Wall -lgsl -lgslcblas -o test test.c
+
+Then run using:
+
+.. code-block:: sh
 
     ./test
 
