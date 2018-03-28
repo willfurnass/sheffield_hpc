@@ -203,12 +203,13 @@ Installation notes
 
 These notes are primarily for system administrators.
 
-Installation and configuration is a four-stage process:
+Installation and configuration is a five-stage process:
 
 * Set up the floating license server (the license server for earlier MATLAB versions can be used), ensuring that it can serve licenses for any new versions of MATLAB that you want to install
 * Run a graphical installer to download MATLAB *archive* files used by the main (automated) installation process
 * Run the same installer in 'silent' command-line mode to perform the installation using those archive files and a text config file.
 * Install a relevant modulefile
+* Configure MATLAB parallel (multi-node)
 
 In more detail:
 
@@ -239,5 +240,9 @@ In more detail:
 
     chmod -R g+w ${USER}:app-admins /usr/local/packages/apps/matlab/R2017b /usr/local/modulefiles/apps/matlab/2017b
 
-The modulefile is
-:download:`/usr/local/modulefiles/apps/matlab/2017b/binary </sharc/software/modulefiles/apps/matlab/2017b/binary>`.
+#. The modulefile is :download:`/usr/local/modulefiles/apps/matlab/2017b/binary </sharc/software/modulefiles/apps/matlab/2017b/binary>`.
+
+#. Copy integration scripts to MATLAB local directory (required for MATLAB parallel (multi-node)): ::
+
+    cd /usr/local/packages/apps/matlab/2017b/binary/toolbox/local
+    cp -r /usr/local/packages/apps/matlab/parallel_mpi_integration_scripts/* .
