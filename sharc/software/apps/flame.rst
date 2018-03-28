@@ -51,7 +51,7 @@ To use FLAME on ShARC you typically need to:
    This generates code that can be compiled to provide a FLAME simulation program.
    Here we passed the ``-p`` argument to ``xparser``, which tells it to generate simulation source code that can be run in parallel using MPI.
    Alternatively you can specify ``-s`` if you want a serial simulation program instead.
-   In addition, you can specify a ``-f`` flag if you want to generate an optimise (*final*) build of your FLAME simulation program.
+   In addition, you can specify a ``-f`` flag if you want to generate an optimised (*final*) build of your FLAME simulation program.
 
 #. Compile the FLAME simulation program: ::
 
@@ -75,7 +75,7 @@ To use FLAME on ShARC you typically need to:
 Example using MPI
 -----------------
 
-#. Download and unpack the some example FLAME models using: ::
+#. Download and unpack some example FLAME models using: ::
 
       cd some_directory
       wget http://flame.ac.uk/docs/zip/tutorial_models.zip
@@ -91,6 +91,7 @@ Example using MPI
    
       #!/bin/bash
       #$ -pe mpi 4
+      #$ -l h_rt=00:15:00
 
       module load libs/libmboard/0.3.1/gcc-6.2-openmpi-2.1.1
       module load apps/xparser/0.17.1/gcc-6.2
