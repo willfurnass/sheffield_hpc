@@ -116,11 +116,12 @@ R:
 
    conda create -n example-r-env python=3.6 r-irkernel jupyter_client libiconf
 
-Python from the `Intel Python Distribution <https://software.intel.com/en-us/distribution-for-python>`:
+Python from the `Intel Python Distribution <https://software.intel.com/en-us/distribution-for-python>`__:
 
 .. code-block:: sh
 
-   conda create -n example-intel-python-env -c intel intelpython3_core ipykernel jupyter_client
+   conda create -n example-intel-python-env -c intel intelpython3_core 
+   ipykernel jupyter_client
 
 .. comment:
    Omit the following until 
