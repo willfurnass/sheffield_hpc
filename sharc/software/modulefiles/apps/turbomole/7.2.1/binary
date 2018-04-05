@@ -1,0 +1,38 @@
+#%Module1.0#####################################################################
+##
+## TURBOMOLE module file
+##
+#  By David M. Rogers April 2018
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes Turbomole Version $version SMP available for use"
+}
+
+#set USER $::env(USER)
+ set     version 7.2.1
+
+module-whatis   "Makes Turbomole Version $version SMP available"
+
+# load modules
+
+# module variables
+#
+ set     turbomoleroot /usr/local/packages/apps/turbomole/$version/binary
+ set     sysname em64t-unknown-linux-gnu
+
+ setenv TURBODIR $turbomoleroot/TURBOMOLE
+ prepend-path PATH $turbomoleroot/TURBOMOLE/scripts
+#prepend-path PATH $turbomoleroot/TURBOMOLE/bin/$sysname
+
+ set    tm_para_arch smp
+ setenv PARA_ARCH SMP
+ setenv TURBOMOLE_SYSNAME $sysname\_$tm_para_arch
+ setenv MOLE_CONTROL $turbomoleroot/TURBOMOLE/MoleControl_2.5
+ prepend-path PATH $turbomoleroot/TURBOMOLE/bin/$sysname\_$tm_para_arch
