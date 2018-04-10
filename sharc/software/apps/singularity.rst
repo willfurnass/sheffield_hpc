@@ -5,7 +5,7 @@ Singularity
 
 .. sidebar:: Singularity
 
-   :Version: 2.3.2
+   :Version: 2.4.6
    :URL: http://singularity.lbl.gov/
 
 Designed around the notion of extreme mobility of compute and reproducible science,
