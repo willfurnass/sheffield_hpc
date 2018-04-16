@@ -1,0 +1,14 @@
+#%Module1.0#####################################################################
+##
+## Spark module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+
+set sparkhome /usr/local/packages/apps/spark/2.3.0/jdk-1.8.0_102
+
+# Use only one core. User can override this if they want
+setenv MASTER local\[1\]
+setenv SPARK_HOME $sparkhome
+prepend-path PATH $sparkhome/bin
