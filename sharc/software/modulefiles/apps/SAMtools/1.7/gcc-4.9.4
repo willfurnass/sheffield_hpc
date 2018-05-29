@@ -1,0 +1,22 @@
+#%Module1.0#####################################################################
+##
+## SAMtools module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        puts stderr "Adds SAMtools 1.7 to your environment"
+}
+
+module-whatis   "Makes SAMtools 1.7 available"
+
+if { [ module-info mode load ] } {
+    puts stderr "NOTE: the SAMtools module also loads the gcc-4.9.4 compiler"
+}
+
+module load dev/gcc/4.9.4
+
+prepend-path PATH /usr/local/packages/apps/SAMtools/1.7/gcc-4.9.4/bin

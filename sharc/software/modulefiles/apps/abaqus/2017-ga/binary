@@ -1,0 +1,31 @@
+#%Module1.0#####################################################################
+##
+## ABAQUS 2017 module file
+##
+#  By David M. Rogers on January 2018
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes ABAQUS Version 2017 w/ Tosca available for use"
+}
+
+module-whatis   "Makes ABAQUS V2017 w/ Tosca available"
+
+# load modules
+  module load dev/intel-compilers/15.0.7
+
+# module variables
+#
+ set     version 2017
+ set     abaqusroot     /usr/local/packages/apps/abaqus/2017-ga/binary
+ setenv     ABAQCOMPVER dev/intel-compilers/15.0.7
+ setenv     ABAQUSVER  2017
+ setenv  ABAQUSCOMMAND  $abaqusroot/Commands/abq2017
+ prepend-path PATH $abaqusroot/Commands
+ prepend-path PATH $abaqusroot/Tosca/2017/linux_a64/code/command

@@ -1,0 +1,28 @@
+#%Module1.0#####################################################################
+##
+## Rosetta module file
+##
+#  By David M. Rogers Feb 2018
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+ 
+ set     version 3.8
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes Rosetta Version $version available for use"
+}
+
+module-whatis   "Makes Rosetta Version $version available"
+
+# load modules
+
+# module variables
+#
+ set     rosettaroot /usr/local/packages/apps/rosetta/$version/binary
+
+ prepend-path PATH $rosettaroot/main/source/bin

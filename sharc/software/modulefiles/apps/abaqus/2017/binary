@@ -19,7 +19,6 @@ module-whatis   "Makes ABAQUS V2017 available"
 
 # load modules
   module load dev/intel-compilers/15.0.7
-  module load apps/foxit
 
 # module variables
 #

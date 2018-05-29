@@ -91,10 +91,12 @@ by copying the installer file from the cluster itself which resides in: ::
 This file can be unzipped in a temporary area and run the setup script that unzipping yields to install the MATLAB runtime environment.
 Finally the environment variable ``$MCRROOT`` can be set to the directory containing the runtime environment.  
  
-Parallel MATLAB
----------------
+Parallel MATLAB - Single node
+-----------------------------
 
-Parallel Matlab is currently restricted to single node operation (16 cores). An example batch script ``my_parallel_job.sh`` is: ::
+Parallel Matlab can be run exclusively on a single node (using a maximum of 16 cores). 
+
+An example batch script ``my_parallel_job.sh`` is: ::
 
 	#!/bin/bash
 	#$ -l rmem=2G
@@ -130,7 +132,64 @@ where ``parallel_example.m`` is: ::
 
 	delete(pool)
 
-Note that multi-node parallel Matlab is **not yet configured on this cluster.** Task arrays are supported by all versions, however it is recommended that 2017a (or later) is used 
+Parallel MATLAB - Multiple-nodes
+--------------------------------
+
+Parallel Matlab using multiple nodes is restricted to 32 cores. 
+
+The user must configure Matlab first by running Matlab interactively and configuring for cluster usage.
+
+This is done by logging into ShARC, launching a qrshx session, module load apps/matlab/2017b & launching matlab. The following command is typed into the command line in the GUI: ::
+
+	configCluster;
+
+Matlab GUI can now be closed.
+
+An example batch script ``submit_Matlab_mpi.sh`` is: ::
+
+	#!/bin/bash
+	#$ -M user@sheffield.ac.uk
+	#$ -m bea
+	#$ -V
+	#$ -cwd
+	#$ -j y
+	module load apps/matlab/2017b/binary
+	#Run parallel_example.m
+	matlab -nodisplay -nosplash -r submit_matlab_fnc
+
+where ``submit_matlab_fnc.m`` is: ::
+
+	function submit_matlab_fnc
+
+	cd path_working_directory;
+	c=parcluster;
+	c.AdditionalProperties.EmailAddress = 'user@sheffield.ac.uk';
+	%configure runtime e.g. 40 minutes
+	c.AdditionalProperties.WallTime = '00:40:00';
+	%configure rmem per process e.g. 4 Gb
+	c.AdditionalProperties.AdditionalSubmitArgs = ' -l rmem=4G';
+	%parallel_example.m contains the parfor loop, no_of_cores < 31
+	j=c.batch(@parallel_example,1,{},'Pool',no_of_cores);
+
+where ``parallel_example.m`` is: ::
+	
+	function time = parallel_example
+	cd path_working_directory;
+	outfile = ['output.txt'];
+	fileID = fopen(outfile,'w');
+	%disp('Parallel time')
+	tic
+	n = 200;
+	A = 500;
+	a = zeros(n);
+	parfor i = 1:n
+		a(i) = max(abs(eig(rand(A))));
+	end
+	time=toc;
+	fprintf(fileID, %d, time);
+	fclose(fileID);
+
+Note that for multi-node parallel Matlab the maximum number of workers allowed is 31 since the master process requires a parallel licence. Task arrays are supported by all versions, however it is recommended that 2017a (or later) is used. 
 
 Training
 --------
@@ -144,12 +203,13 @@ Installation notes
 
 These notes are primarily for system administrators.
 
-Installation and configuration is a four-stage process:
+Installation and configuration is a five-stage process:
 
 * Set up the floating license server (the license server for earlier MATLAB versions can be used), ensuring that it can serve licenses for any new versions of MATLAB that you want to install
 * Run a graphical installer to download MATLAB *archive* files used by the main (automated) installation process
 * Run the same installer in 'silent' command-line mode to perform the installation using those archive files and a text config file.
 * Install a relevant modulefile
+* Configure MATLAB parallel (multi-node)
 
 In more detail:
 
@@ -180,5 +240,9 @@ In more detail:
 
     chmod -R g+w ${USER}:app-admins /usr/local/packages/apps/matlab/R2017b /usr/local/modulefiles/apps/matlab/2017b
 
-The modulefile is
-:download:`/usr/local/modulefiles/apps/matlab/2017b/binary </sharc/software/modulefiles/apps/matlab/2017b/binary>`.
+#. The modulefile is :download:`/usr/local/modulefiles/apps/matlab/2017b/binary </sharc/software/modulefiles/apps/matlab/2017b/binary>`.
+
+#. Copy integration scripts to MATLAB local directory (required for MATLAB parallel (multi-node)): ::
+
+    cd /usr/local/packages/apps/matlab/2017b/binary/toolbox/local
+    cp -r /usr/local/packages/apps/matlab/parallel_mpi_integration_scripts/* .

@@ -3,11 +3,11 @@ Abaqus
 
 .. sidebar:: Abaqus
    
-   :Versions: 2017, 6.14-2
-   :Dependencies: Intel compiler 15.0.7 and Foxit modules loaded. User subroutines need Intel compiler 2011 or above, GCC 4.1.2 or above. 
+   :Versions: 2018, 2017-ga, 2017, 6.14-2
+   :Dependencies: Module loaded for Intel compiler 15.0.7 (and Foxit for Abaqus version 6.14-2). User subroutines need Intel compiler 2011 or above, GCC 4.1.2 or above. 
    :URL: http://www.3ds.com/products-services/simulia/products/abaqus/ 
    :Documentation: https://www.3ds.com/support/documentation/users-guides/
-   :Local URL: https://www.shef.ac.uk/wrgrid/software/abaqus
+   :Local URL: https://www.sheffield.ac.uk/cics/research/software/abaqus
 
 
 Abaqus is a software suite for Finite Element Analysis (FEA) developed by Dassault Systèmes.
@@ -16,20 +16,28 @@ Abaqus is a software suite for Finite Element Analysis (FEA) developed by Dassau
 Usage
 -----
 
-Abaqus version 2017 or version 6.14-2 can be activated using the module files::
+Abaqus versions 2018, 2017-ga, 2017 or 6.14-2 can be activated using the module files::
 
+    module load apps/abaqus/2018/binary
+    module load apps/abaqus/2017-ga/binary
     module load apps/abaqus/2017/binary
     module load apps/abaqus/6.14-2/binary
 	
-Type ``abaqus cae`` to launch the Abaqus GUI from an interactive session with X Window support (e.g. an interactive ``qsh`` session).
+Type ``abaqus cae`` to launch the Abaqus GUI from an interactive session with X Window support (e.g. an interactive ``qsh`` session). Please see usage note below for graphics support options.
 Type ``abaqus`` for the command line interface. Typing ``abaqus -help`` will display a list of usage options.
+
+Abaqus 2017-ga (module ``apps/abaqus/2017-ga/binary``) has the Tosca component installed and is equivalent to Abaqus 2017 ('ga' is an accronym for 'general availabilty').
 
 The PDF viewer ``foxit`` can be launched to view the PDF documentation for Abaqus 6.14-2 located at ``/usr/local/packages/apps/abaqus/6.14-2/binary/Documentation/docs/v6.14/pdf_books``.
 
 Abaqus 2017 documentation in HTML format is located at ``/usr/local/packages/apps/abaqus/2017/binary/Documentation/DSSIMULIA_Established_homepage_English.htm``.
 
+Abaqus 2017-ga documentation in HTML format is located at ``/usr/local/packages/apps/abaqus/2017-ga/binary/SIMULIA2017doc/DSSIMULIA_Established_homepage_English.htm``.
 
-**Note:** When using hardware-accelerated graphics rendering for Abaqus 6.14-2 on Sharc, i.e., during a ``qsh-vis`` interactive session, please run ``abq6142 cae`` to launch the GUI. When using a general compute node for Abaqus 2017 on Sharc, please run ``abaqus cae -mesa`` or ``abq2017 cae -mesa`` to launch the GUI without support for hardware-accelerated graphics rendering. The option ``-mesa`` disables hardware-accelerated graphics rendering within Abaqus's GUI.
+Abaqus 2018 documentation in HTML format is located at ``/usr/local/packages/apps/abaqus/2018/binary/SIMULIA2018doc/DSSIMULIA_Established_homepage_English.htm``.
+
+
+**Note:** When using hardware-accelerated graphics rendering for Abaqus 6.14-2 on ShARC, i.e., during a ``qsh-vis`` interactive session, please run ``abq6142 cae`` to launch the GUI. When using a general compute node for Abaqus 2017, 2017-ga or 2018 on ShARC, please run ``abaqus cae -mesa`` or ``abq2017 cae -mesa`` (or ``abq2018 cae -mesa``) to launch the GUI without support for hardware-accelerated graphics rendering. The option ``-mesa`` disables hardware-accelerated graphics rendering within Abaqus's GUI.
 
 
 Abaqus example problems
@@ -53,7 +61,7 @@ The easiest way of running a batch job for a particular version of Abaqus (e.g. 
     runabaqus
 	
 The ``runabaqus`` command submits an Abaqus input file into the batch queuing system and can take a number of different parameters according to your requirements.
-Typing ``runabaqus`` will display information about its usage. **Note:** ``runabaqus`` is not setup for use with Abaqus 2017.
+Typing ``runabaqus`` will display information about its usage. **Note:** ``runabaqus`` is not setup for use with Abaqus 2017, 2017-ga and 2018.
 
 Users are encouraged to write their own batch submission scripts. The following is an example batch submission script, ``my_job.sh``, to run the executable ``abq6142`` and which is submitted to the queue by typing ``qsub my_job.sh``::
 
@@ -83,7 +91,7 @@ The above script requests 4 cores using the OpenMP parallel environment ``smp`` 
 The input file ``umatmst3.inp`` and the Fortran user subroutine ``umatmst3.f`` are obtained by typing ``abaqus fetch job=umatmst3*``.
 Note that the module ``dev/intel-compilers/15.0.7``, required for user subroutines, is automatically loaded when the module for Abaqus is loaded.  
 
-**Important information:** Please note that at present Abaqus will not run on more than one node when using MPI on ShARC. The SGE option ``-l excl=true`` can be used to request that an MPI job runs on one compute node only.
+**Important information:** Please note that at present Abaqus will not run on more than one node when using MPI on ShARC. The SGE option ``-l excl=true`` can be used to request that an MPI job runs on one compute node only. The recommended way to run Abaqus in parallel on ShARC is to use OpenMP.
 
 Licensed options
 ----------------
@@ -142,10 +150,20 @@ All available Abaqus licenses can be viewed using ``abaqus licensing r`` e.g. ::
    tfluid_int_ccmp                 61.9         250         31-dec-2018  ABAQUSLM
    tfluid_int_fluent               61.9         250         31-dec-2018  ABAQUSLM
 
-Run ``abaqus licensing`` for usage info for the Abaqus licensing sub-command.
+Run ``abaqus licensing`` for usage info for the Abaqus licensing sub-command. Run ``abaqus licensing ru`` to see current licence usage.
 
 Installation notes
 ------------------
+
+Abaqus 2018 was installed using the
+:download:`install_abaqus_2018.sh </sharc/software/install_scripts/apps/abaqus/2018/binary/install_abaqus_2018.sh>` script; the module
+file is
+:download:`/usr/local/modulefiles/apps/abaqus/2018/binary </sharc/software/modulefiles/apps/abaqus/2018/binary>`. 
+
+Abaqus 2017-ga was installed using the
+:download:`install_abaqus_2017-ga.sh </sharc/software/install_scripts/apps/abaqus/2017-ga/binary/install_abaqus_2017-ga.sh>` script; the module
+file is
+:download:`/usr/local/modulefiles/apps/abaqus/2017-ga/binary </sharc/software/modulefiles/apps/abaqus/2017-ga/binary>`. 
 
 Abaqus 2017 was installed using the
 :download:`install_abaqus_2017.sh </sharc/software/install_scripts/apps/abaqus/2017/binary/install_abaqus_2017.sh>` script; the module

@@ -38,12 +38,12 @@ a number of options:
 Project
 ^^^^^^^
 
-Users on the cluster are members of one or more *User Groups*, 
+As a user on the cluster you are a member of one or more *User Groups*, 
 which in turn give access to *Projects*.  By submitting a job 
-using a Project a user can:
+using a Project you can:
 
-* Use restricted-access worker nodes (possibly bought by his/her research group);
-* Have his/her job's CPU and memory usage logged in a way that 
+* Use restricted-access worker nodes (possibly bought by your research group);
+* Have your job's CPU and memory usage logged in a way that 
   ensures all users of the cluster get fair usage.
 
 **Most users do not need to select a specific Project and 

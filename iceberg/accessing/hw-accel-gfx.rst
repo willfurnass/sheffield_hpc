@@ -19,7 +19,7 @@ Usage instructions
 ------------------
 
 #. Download and install `TigerVNC <http://sourceforge.net/projects/tigervnc/>`_ on your machine.  TigerVNC is a program that allows you to efficiently view graphical programs on one computer that are actually running on another computer.
-#. :ref:`Connect to Iceberg <connecting>`
+#. :ref:`Connect to Iceberg <connecting>`.  Note that if you are using a VPN connection from off-campus then at present the following instructions will not work for you if your home network uses IP addresses in the range 192.168.0.0 - 192.168.3.255: you should instead a) connect from on-campus or b) use the ShARC cluster's visualisation nodes or c) change your home network IP range to something different e.g. 192.168.100.0-255.
 #. On the login node (**not** a worker node) run the command ``qsh-vis``.  The output should look something like the following: ::
 
     [te1st@iceberg-login1 ~]$ qsh-vis 
@@ -38,12 +38,12 @@ Usage instructions
     *******To connect: *******
 
     Either startup a web-browser and enter the address:
-    http://iceberg-gateway.shef.ac.uk:5801
+    http://node000.sheffield.ac.uk:5800
 
-                  or 
+                  or
 
     use the TigerVNC application to connect to:
-    iceberg-gateway.shef.ac.uk:5901
+    node000.sheffield.ac.uk:5900
 
     Make sure to enter your normal Iceberg username/password when prompted.
 
@@ -54,7 +54,7 @@ Usage instructions
 
     .. image:: /images/vncviewer_dialog.png
 
-#. Enter the connection details for TigerVNC that were issued by the ``qsh-vis`` command e.g. ``iceberg-gateway.shef.ac.uk:5901`` (NB the last four digits may differ when you run ``qsh-vis``).
+#. Enter the connection details for TigerVNC that were issued by the ``qsh-vis`` command e.g. ``node000.shef.ac.uk:5901`` (NB the node name and last four digits may differ when you run ``qsh-vis``).
 #. Click *Connect*
 #. You should now see a desktop within a window.  This desktop is running on a worker node (in the case of the presented example this is ``node000```; see the ``qsh-vis`` output) that is equipped with a graphics card (Optional: run ``nvidia-smi`` to see what type of graphics card).  A terminal window is automatically started from which you can :ref:`load modules <env_modules>` and start applications that require hardware-accelerated graphics.
 

@@ -71,6 +71,12 @@ it is automatically *unmounted* following a period of inactivity.
 All users also have access to a large fast-access data storage area under ``/fastdata``.  
 This is **not** shared between ShARC and Iceberg.
 
+.. warning::
+
+    Iceberg's ``/fastdata`` is due to be decommissioned on 25th June 2018.
+
+    You will be able to access ShARC's ``/fastdasta`` storage on Iceberg, under the new directory path ``/fastdata-sharc`` from 9th May 2018.
+
 In order to avoid interference from other users' files 
 it is **vitally important** that you store your files in a directory created and named the same as your username. e.g. ::
 

@@ -13,7 +13,7 @@ Once you have a Jupyter Notebook server running
 you typically want to consider your **execution environment**,
 which is your choice of 
 
-* **kernel** (code cell language)
+* **Kernel** (code cell language)
 * **software packages/libraries** 
 
 Kernels
@@ -22,13 +22,13 @@ Kernels
 Jupyter Notebooks were originally known as IPython Notebooks
 but now Jupyter supports Notebook code cells written in `many different languages <https://github.com/jupyter/jupyter/wiki/Jupyter-kernels>`__.
 This is achieved by the (per-user) Jupyter Notebook server 
-sending the contents of code cells to a **kernel** for evaluation.
-The most widely used kernels are:
+sending the contents of code cells to a **Kernel** for evaluation.
+The most widely used Kernels are:
 
-* the `IPython kernel`_, 
-  the default kernel, 
+* the `IPython Kernel`_, 
+  the default Kernel, 
   which can run code cells containing Python >= 3.3 and Python 2.7;
-* IRKernel_, a kernel for R_ >= 3.2.
+* IRKernel_, a Kernel for R_ >= 3.2.
 
 Packages
 ^^^^^^^^
@@ -48,9 +48,9 @@ conda_ packages are installed into **environments**.
 An environment is an isolated collection of packages.  
 You might create:
 
-* One environment for one project containing Python 3, the IPython kernel and the ``pandas`` and ``matplotlib`` Python packages (plus dependencies) for data analysis.
+* One environment for one project containing Python 3, the IPython Kernel and the ``pandas`` and ``matplotlib`` Python packages (plus dependencies) for data analysis.
 * Another environment for a second project containing R, the IRKernel and the ``dplyr`` and ``gplot2`` R packages.
-* A third environment containing Python 2.7 plus ``pandas`` but no kernel for work that doesn't involve Jupyter Notebooks.
+* A third environment containing Python 2.7 plus ``pandas`` but no Kernel for work that doesn't involve Jupyter Notebooks.
 
 conda_ allows users to 
 
@@ -94,13 +94,13 @@ Creating a new conda environment
 Before we run a Notebook we typically want to 
 create a new conda_ **environment** containing
 the packages we are interested in 
-plus a Jupyter kernel.
+plus a Jupyter Kernel.
 
 See the general documentation for :ref:`using conda on ShARC <sharc-python-conda>` for 
 generic instructions on how to create conda environments from the command-line.  
 Note that if you are using a :ref:`Jupyter Terminal <jh_terminal>` 
 then you do not need to load conda using ``module load ...``.
-Make sure you **install a package containing a Jupyter kernel** (e.g. ``ipykernel`` for Python work) into your environment.
+Make sure you **install a package containing a Jupyter Kernel** (e.g. ``ipykernel`` for Python work) into your environment.
 
 When following that documentation you might want to use the following as starting points for creating Jupyter(Hub)-compatible environments:
 
@@ -116,11 +116,12 @@ R:
 
    conda create -n example-r-env python=3.6 r-irkernel jupyter_client libiconf
 
-Python from the `Intel Python Distribution <https://software.intel.com/en-us/distribution-for-python>`:
+Python from the `Intel Python Distribution <https://software.intel.com/en-us/distribution-for-python>`__:
 
 .. code-block:: sh
 
-   conda create -n example-intel-python-env -c intel intelpython3_core ipykernel jupyter_client
+   conda create -n example-intel-python-env -c intel intelpython3_core 
+   ipykernel jupyter_client
 
 .. comment:
    Omit the following until 
@@ -156,7 +157,7 @@ Python from the `Intel Python Distribution <https://software.intel.com/en-us/dis
    
    #. Click the **+** above the upper most pane.
    #. Enter a name for your environment.
-   #. Select a language/kernel (currently only Python 2, Python 3 and R are supported)
+   #. Select a language/Kernel (currently only Python 2, Python 3 and R are supported)
 
 Capturing the state of an environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -203,7 +204,7 @@ After you have assessed what environments you have available,
 you can start :ref:`creating, editing and running Jupyter Notebooks <jh_nb_usage>`.
 
 .. _conda: https://conda.io/docs/using/envs.html
-.. _IPython kernel: https://github.com/ipython/ipykernel
+.. _IPython Kernel: https://github.com/ipython/ipykernel
 .. _IRKernel: https://irkernel.github.io/
 .. _R: https://www.r-project.org/
 .. _continuous integration: https://en.wikipedia.org/wiki/Continuous_integration

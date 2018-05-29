@@ -1,0 +1,30 @@
+#%Module1.0#####################################################################
+##
+## ABAQUS 2018 module file
+##
+#  By David M. Rogers on March 2018
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes ABAQUS Version 2018 available for use"
+}
+
+module-whatis   "Makes ABAQUS V2018 available"
+
+# load modules
+  module load dev/intel-compilers/15.0.7
+
+# module variables
+#
+ set     version 2018
+ set     abaqusroot     /usr/local/packages/apps/abaqus/$version/binary
+ setenv  ABAQCOMPVER    dev/intel-compilers/15.0.7
+ setenv  ABAQUSVER      2018
+ setenv  ABAQUSCOMMAND  $abaqusroot/Commands/abq2018
+ prepend-path PATH $abaqusroot/Commands
