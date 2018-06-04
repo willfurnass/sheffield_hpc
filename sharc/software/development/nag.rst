@@ -7,10 +7,11 @@ Making the NAG Compiler available
 ---------------------------------
 
 After connecting to ShARC (see :ref:`ssh`),  start an interactive sesssion with the :code:`qrshx` or :code:`qrsh` command. 
-To make a version of the NAG Fortran Compiler available, run one of following ``module`` commands: ::
+To make a version of the NAG Fortran Compiler available: ::
 
-        module load dev/NAG/6.1
-        module load dev/NAG/6.0
+        module load dev/NAG/6.2
+
+Older versions (6.0 and 6.1) are deprecated)
 
 Compilation examples
 --------------------
@@ -26,8 +27,7 @@ Once you've run one of the NAG Compiler module command, ``man`` documentation is
 
 Online documentation:
 
-* `PDF version of the NAG Fortran Compiler Manual <http://www.nag.co.uk/nagware/np/r60_doc/np60_manual.pdf>`_
-* `NAG Fortran Compiler Documentation Index (NAG's Website) <http://www.nag.co.uk/nagware/np.asp>`_
+* `NAG Fortran Compiler Documentation <https://www.nag.co.uk/nag-compiler>`_
 * Differences between different versions can be found in the `Release Notes <https://www.nag.co.uk/nag-compiler>`_.
 
 Installation Notes
@@ -42,6 +42,16 @@ Add the license key(s) to ``/usr/local/packages/dev/NAG/license.lic``.
 The license key needs to be updated annually before 31st July.
 
 The NAG compiler environment modules (see below) set the environment variable ``$NAG_KUSARI_FILE`` to the path to this file.
+
+**Version 6.2**
+
+#. Perform an unattended install using :download:`this script </sharc/software/install_scripts/dev/NAG/6.2/install.sh>`.  The software will be installed into ``/usr/local/packages/dev/NAG/6.2``.
+#. Install :download:`this modulefile </sharc/software/modulefiles/dev/NAG/6.2>` as ``/usr/local/modulefiles/dev/NAG/6.2``
+#. Test the installation by compiling and building a sample Fortran 90 program ::
+
+        module load dev/NAG/6.2
+        nagfor -o /tmp/f90_util /usr/local/packages/dev/NAG/6.2/lib/NAG_Fortran/f90_util.f90
+        /tmp/f90_util
 
 **Version 6.1**
 
