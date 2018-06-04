@@ -191,6 +191,24 @@ where ``parallel_example.m`` is: ::
 
 Note that for multi-node parallel Matlab the maximum number of workers allowed is 31 since the master process requires a parallel licence. Task arrays are supported by all versions, however it is recommended that 2017a (or later) is used. 
 
+MATLAB Engine for Python
+------------------------
+
+This is a MathWorks-developed way of running MATLAB from Python.
+On ShARC the recommended way of installing this is into a :ref:`conda environment <sharc-python-conda>`.
+Here's how you can install the R2017b version into a new conda environment called ``my-environment-name``: ::
+
+    module load apps/python/conda
+    conda create -n my-environment-name python=2.7
+    source activate my-environment-name 
+
+    pushd /usr/local/packages/apps/matlab/2017b/binary/extern/engines/python
+    python setup.py build -b $TMPDIR install
+    popd
+
+`More information <https://uk.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html>`__ on the MATLAB Engine for Python,
+including basic usage.
+
 Training
 --------
 
