@@ -8,8 +8,10 @@ source /usr/local/etc/module_logging.tcl
 
 proc ModulesHelp { } {
         global nagvers
-        puts stderr "Makes the NAG Fortran Compiler vnagvers available"
+        puts stderr "Makes the NAG Fortran Compiler $nagvers available"
 }
+
+conflict dev/NAG
 
 set nagvers 6.2
 set nagroot /usr/local/packages/dev/NAG/$nagvers
