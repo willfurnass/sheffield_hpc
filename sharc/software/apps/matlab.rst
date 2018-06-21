@@ -5,7 +5,7 @@ MATLAB
 
 .. sidebar:: MATLAB
 
-   :Versions:  2016a, 2016b, 2017a, 2017b
+   :Versions:  2016a, 2016b, 2017a, 2017b, 2018a
    :Support Level: FULL
    :Dependancies: None
    :URL: http://uk.mathworks.com/products/matlab
@@ -17,7 +17,7 @@ Interactive Usage
 -----------------
 After connecting to ShARC (see :ref:`ssh`),  start an interactive session with the ``qrshx`` command.
 
-The latest version of MATLAB (currently 2017b) is made available by running: ::
+The latest version of MATLAB (currently 2018a) is made available by running: ::
 
 	module load apps/matlab
 
@@ -27,6 +27,7 @@ Alternatively, you can load a specific version with one of the following command
 	module load apps/matlab/2016b/binary
 	module load apps/matlab/2017a/binary
 	module load apps/matlab/2017b/binary
+	module load apps/matlab/2018a/binary
 
 You can then run MATLAB by entering ``matlab``
 
@@ -43,7 +44,7 @@ First, you need to write a batch submission file. We assume you'll call this ``m
 	#!/bin/bash
 	#$ -l rmem=4G                  		# Request  4 GB of real memory
 	#$ -cwd                        		# Run job from current directory
-	module load apps/matlab/2017b/binary  	# Make specific version of MATLAB available
+	module load apps/matlab/2018a/binary  	# Make specific version of MATLAB available
   
 	matlab -nodesktop -nosplash -r helloworld
 
@@ -62,8 +63,8 @@ We strongly recommend you use R2016b or later versions to take advantage of this
 
 To compile a MATLAB function or script for example called ``myscript.m`` the following steps are required: ::
 
-	# Load the matlab 2017b module
-	module load apps/matlab/2017b/binary  
+	# Load the matlab 2018a module
+	module load apps/matlab/2018a/binary  
 
 	# Compile your program to generate the executable myscript and 
 	# also generate a shell script named run_myscript.sh 
@@ -101,7 +102,7 @@ An example batch script ``my_parallel_job.sh`` is: ::
 	#!/bin/bash
 	#$ -l rmem=2G
 	#$ -pe smp 12
-	module load apps/matlab/2017b/binary
+	module load apps/matlab/2018a/binary
 	#Run parallel_example.m
 	matlab -nodisplay -r parallel_example
 
@@ -139,7 +140,7 @@ Parallel Matlab using multiple nodes is restricted to 32 cores.
 
 The user must configure Matlab first by running Matlab interactively and configuring for cluster usage.
 
-This is done by logging into ShARC, launching a qrshx session, module load apps/matlab/2017b & launching matlab. The following command is typed into the command line in the GUI: ::
+This is done by logging into ShARC, launching a qrshx session, module load apps/matlab/2018a & launching matlab. The following command is typed into the command line in the GUI: ::
 
 	configCluster;
 
@@ -153,7 +154,7 @@ An example batch script ``submit_Matlab_mpi.sh`` is: ::
 	#$ -V
 	#$ -cwd
 	#$ -j y
-	module load apps/matlab/2017b/binary
+	module load apps/matlab/2018a/binary
 	#Run parallel_example.m
 	matlab -nodisplay -nosplash -r submit_matlab_fnc
 
@@ -232,8 +233,8 @@ Installation and configuration is a five-stage process:
 In more detail:
 
 #. If necessary, update the floating license keys on ``licserv4.shef.ac.uk`` to ensure that the licenses are served for the versions to install.
-#. Log on to Mathworks site to download the MATLAB installer package for 64-bit Linux ( for R2017b this was called ``matlab_R2017b_glnxa64.zip`` )
-#. ``unzip`` the installer package in a directory with ~10GB of space (needed as many MATLAB *archive* files will subsequently be downloaded here).  Using a directory on an NFS mount (e.g. ``/data/${USER}/MathWorks/R2017b``) allows the same downloaded archives to be used to install MATLAB on multiple clusters.
+#. Log on to Mathworks site to download the MATLAB installer package for 64-bit Linux ( for R2018a this was called ``matlab_R2018a_glnxa64.zip`` )
+#. ``unzip`` the installer package in a directory with ~10GB of space (needed as many MATLAB *archive* files will subsequently be downloaded here).  Using a directory on an NFS mount (e.g. ``/data/${USER}/MathWorks/R2018a``) allows the same downloaded archives to be used to install MATLAB on multiple clusters.
 #. ``./install`` to start the graphical installer (needed to download the MATLAB archive files).
 #. Select install choice of *Log in to Mathworks Account* and log in with a *License Administrator* account (not a *Licensed End User* (personal) account).
 #. Select *Download only*.
@@ -242,7 +243,7 @@ In more detail:
     
     fileInstallationKey=XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
     agreeToLicense=yes
-    outputFile=matlab_2017b_install.log
+    outputFile=matlab_2018a_install.log
     mode=silent
     licensePath=/usr/local/packages/matlab/network.lic
     lmgrFiles=false
@@ -250,17 +251,17 @@ In more detail:
 
 #. Create the installation directory e.g.: ::
 
-    mkdir -m 2755 -p /usr/local/packages/apps/matlab/R2017b/binary
-    chown ${USER}:app-admins /usr/local/packages/apps/matlab/R2017b/binary
+    mkdir -m 2755 -p /usr/local/packages/apps/matlab/R2018a/binary
+    chown ${USER}:app-admins /usr/local/packages/apps/matlab/R2018a/binary
 
 #. Run the installer using our customized ``installer_input.txt`` like so: ``./install -mode silent -inputFile ${PWD}/installer_input.txt`` ; installation should finish with exit status ``0`` if all has worked.
 #. Ensure the contents of the install directory and the modulefile are writable by those in ``app-admins`` group e.g.: ::
 
-    chmod -R g+w ${USER}:app-admins /usr/local/packages/apps/matlab/R2017b /usr/local/modulefiles/apps/matlab/2017b
+    chmod -R g+w ${USER}:app-admins /usr/local/packages/apps/matlab/R2018a /usr/local/modulefiles/apps/matlab/2018a
 
-#. The modulefile is :download:`/usr/local/modulefiles/apps/matlab/2017b/binary </sharc/software/modulefiles/apps/matlab/2017b/binary>`.
+#. The modulefile is :download:`/usr/local/modulefiles/apps/matlab/2018a/binary </sharc/software/modulefiles/apps/matlab/2018a/binary>`.
 
 #. Copy integration scripts to MATLAB local directory (required for MATLAB parallel (multi-node)): ::
 
-    cd /usr/local/packages/apps/matlab/2017b/binary/toolbox/local
+    cd /usr/local/packages/apps/matlab/2018a/binary/toolbox/local
     cp -r /usr/local/packages/apps/matlab/parallel_mpi_integration_scripts/* .
