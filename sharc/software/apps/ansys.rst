@@ -9,7 +9,9 @@ ANSYS
    :Local URL: http://www.shef.ac.uk/cics/research/software/fluent
 
 
-The Ansys suite of programs can be used to numerically simulate a large variety of structural and fluid dynamics problems found in many engineering, physics, medical, aeronautics and automotive industry applications.
+The Ansys suite of programs can be used to numerically simulate 
+a large variety of structural and fluid dynamics problems found in 
+many engineering, physics, medical, aeronautics and automotive industry applications.
 
 
 Usage
@@ -17,14 +19,17 @@ Usage
 
 Ansys can be activated using the module files::
 
+    module load apps/ansys/19.1/binary
     module load apps/ansys/19.0/binary
     module load apps/ansys/18.2/binary
     module load apps/ansys/18.0/binary
     module load apps/ansys/17.2
     module load apps/ansys/16.1
 
-The Ansys Workbench GUI executable is ``ansyswb``. ``ansyswb`` can be launched during an interactive session with X Window support (e.g. an interactive ``qrshx`` session).
-The Ansys executable is ``mapdl`` and ``fluent`` is the executable for Fluent. Typing ``mapdl -g`` or ``fluent -g -help`` will display a list of usage options.
+The Ansys Workbench GUI executable is ``ansyswb``. 
+``ansyswb`` can be launched during an interactive session with X Window support (e.g. an interactive ``qrshx`` session).
+The Ansys executable is ``mapdl`` and ``fluent`` is the executable for Fluent. 
+Typing ``mapdl -g`` or ``fluent -g -help`` will display a list of usage options.
 
 Batch jobs
 ----------
@@ -53,15 +58,17 @@ Legacy information
 """"""""""""""""""
 
 For older versions of Fluent (<18.0) there is a University-of-Sheffield-specific helper script, ``runfluent``, that simplified the processed of submitting Fluent jobs using a Fluent journal.
-This is deprecated.  If you do want to use ``runfluent``, then you can learn about its usage by running e.g.
+This is deprecated.  If you do want to use ``runfluent``, then you can learn about its usage by running e.g.:
 
-    module load apps/ansys/17.2
-    runfluent
+.. code-block:: bash
+
+   module load apps/ansys/17.2
+   runfluent
 
 interactively from a worker node.
 
-Ansys Mechanical
-^^^^^^^^^^^^^^^^
+Ansys Mechanical (APDL)
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Overview of execution modes
 """""""""""""""""""""""""""
@@ -91,8 +98,10 @@ increases or reduces run-times.
 Single-core batch jobs
 """"""""""""""""""""""
 
-To run a batch job using just **one CPU core** and 6 GB of RAM you need a submission script similar to the following: ::
+To run a batch job using just **one CPU core** and 6 GB of RAM you need a submission script similar to the following:
 
+.. code-block:: bash
+ 
    #!/bin/bash
    #$ -l rmem=6G
    #$ -l h_rt=03:00:00
@@ -113,7 +122,9 @@ Here:
 Batch jobs with distributed memory parallelism on one node
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-To run a batch job using **multiple processes on one node** (with multiple CPU cores; here 4 cores with 3GB RAM each): ::
+To run a batch job using **multiple processes on one node** (with multiple CPU cores; here 4 cores with 3GB RAM each):
+
+.. code-block:: bash
 
    #!/bin/bash
    #$ -pe smp 4
@@ -130,11 +141,13 @@ Here:
 * ``-dis`` says we want to use Distributed Ansys
 * ``-np`` is the number of threads Ansys is to use.
   By specifying ``$NSLOTS`` we can use the number of CPU cores specified to the scheduler (in the ``-pe smp`` line).
-
+  
 Batch jobs with shared memory parallelism
 """""""""""""""""""""""""""""""""""""""""
 
-To run a batch job using **one process but multiple threads** (with multiple CPU cores **on one node**; here 4 cores with 3GB RAM each): ::
+To run a batch job using **one process but multiple threads** (with multiple CPU cores **on one node**; here 4 cores with 3GB RAM each):
+
+.. code-block:: bash
 
    #!/bin/bash
    #$ -pe smp 4
@@ -151,13 +164,15 @@ Here:
 * ``-np`` is the number of threads Ansys is to use.
   By specifying ``$NSLOTS`` we can use the number of CPU cores specified to the scheduler (in the ``-pe smp`` line).
 
-Note that shared-memory parallelism often results in worse performance than distributed-memory parallelism, 
-even when the allocated CPU cores are all on the same machine.
+.. warning:: 
+   Note that shared-memory parallelism often results in worse performance than distributed-memory parallelism (when all allocated cores are on the same machine).
 
 Batch jobs that use GPUs to accelerate computation
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-To run a batch job using **one CPU core and one GPU**: ::
+To run a batch job using **one CPU core and one GPU**:
+
+.. code-block:: bash
 
    #!/bin/bash
    #$ -l rmem=6G
