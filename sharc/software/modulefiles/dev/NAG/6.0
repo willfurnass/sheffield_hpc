@@ -1,20 +1,27 @@
 #%Module1.0#####################################################################
-##
-## NAG Fortran Compiler module file
-##
+#
+# NAG Fortran Compiler module file
+#
 
 # Module file logging
 source /usr/local/etc/module_logging.tcl
 
 proc ModulesHelp { } {
         global nagvers
-        puts stderr "Makes the NAG Fortran Compiler vnagvers available"
+        puts stderr "Makes the NAG Fortran Compiler $nagvers available"
 }
+
+conflict dev/NAG
 
 set nagvers 6.0
 set nagroot /usr/local/packages/dev/NAG/$nagvers
 
 module-whatis   "Makes the NAG Fortran Compiler v$nagvers available"
+
+set curMod [module-info name]
+if { [ module-info mode load ] } {
+     puts stderr "Note: '$curMod' is deprecated on this system."
+}
 
 prepend-path PATH $nagroot/bin
 prepend-path MANPATH $nagroot/man

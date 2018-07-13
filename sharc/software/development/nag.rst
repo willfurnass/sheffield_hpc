@@ -1,20 +1,21 @@
 NAG Fortran Compiler
 ====================
 
-The NAG Fortran Compiler is robust, highly tested, and valued by developers all over the globe for its checking capabilities and detailed error reporting. The Compiler is available on Unix platforms as well as for Microsoft Windows and Apple Mac platforms. Release 6.0 has extensive support for both legacy and modern Fortran features, and also supports parallel programming with OpenMP.
+The NAG Fortran Compiler is robust, highly tested, and valued by developers all over the globe for its checking capabilities and detailed error reporting. The Compiler is available on Unix platforms as well as for Microsoft Windows and Apple Mac platforms. It has extensive support for both legacy and modern Fortran features, and also supports parallel programming with OpenMP.
 
 Making the NAG Compiler available
 ---------------------------------
 
-After connecting to ShARC (see :ref:`ssh`),  start an interactive sesssion with the :code:`qrshx` or :code:`qrsh` command. 
-To make a version of the NAG Fortran Compiler available, run one of following ``module`` commands: ::
+After connecting to ShARC (see :ref:`ssh`),  start an interactive sesssion with the :code:`qrshx` command. 
+To make a version of the NAG Fortran Compiler available: ::
 
-        module load dev/NAG/6.1
-        module load dev/NAG/6.0
+        module load dev/NAG/6.2
+
+Older versions (6.0 and 6.1) are deprecated.
 
 Compilation examples
 --------------------
-To compile the Fortran hello world example into an executable called ``hello`` using the NAG compiler ::
+To compile the Fortran hello world example into an executable called ``hello`` using the NAG compiler: ::
 
         nagfor hello.f90 -o hello
 
@@ -24,18 +25,15 @@ Once you've run one of the NAG Compiler module command, ``man`` documentation is
 
         man nagfor
 
-Online documentation:
-
-* `PDF version of the NAG Fortran Compiler Manual <http://www.nag.co.uk/nagware/np/r60_doc/np60_manual.pdf>`_
-* `NAG Fortran Compiler Documentation Index (NAG's Website) <http://www.nag.co.uk/nagware/np.asp>`_
-* Differences between different versions can be found in the `Release Notes <https://www.nag.co.uk/nag-compiler>`_.
+Extensive documentation including the differences between versions can be `found on NAG's website <https://www.nag.co.uk/nag-compiler>`__.
 
 Installation Notes
 ------------------
 
 The following notes are primarily for system administrators:
 
-**Licensing**
+Licensing
+^^^^^^^^^
 
 Add the license key(s) to ``/usr/local/packages/dev/NAG/license.lic``.
 
@@ -43,7 +41,19 @@ The license key needs to be updated annually before 31st July.
 
 The NAG compiler environment modules (see below) set the environment variable ``$NAG_KUSARI_FILE`` to the path to this file.
 
-**Version 6.1**
+Version 6.2
+^^^^^^^^^^^
+
+#. Perform an unattended install using :download:`this script </sharc/software/install_scripts/dev/NAG/6.2/install.sh>`.  The software will be installed into ``/usr/local/packages/dev/NAG/6.2``.
+#. Install :download:`this modulefile </sharc/software/modulefiles/dev/NAG/6.2>` as ``/usr/local/modulefiles/dev/NAG/6.2``
+#. Test the installation by compiling and building a sample Fortran 90 program ::
+
+        module load dev/NAG/6.2
+        nagfor -o /tmp/f90_util /usr/local/packages/dev/NAG/6.2/lib/NAG_Fortran/f90_util.f90
+        /tmp/f90_util
+
+Version 6.1
+^^^^^^^^^^^
 
 #. Perform an unattended install using :download:`this script </sharc/software/install_scripts/dev/NAG/6.1/install.sh>`.  The software will be installed into ``/usr/local/packages/dev/NAG/6.1``.
 #. Install :download:`this modulefile </sharc/software/modulefiles/dev/NAG/6.1>` as ``/usr/local/modulefiles/dev/NAG/6.1``
@@ -53,7 +63,8 @@ The NAG compiler environment modules (see below) set the environment variable ``
         nagfor -o /tmp/f90_util /usr/local/packages/dev/NAG/6.1/lib/NAG_Fortran/f90_util.f90
         /tmp/f90_util
 
-**Version 6.0**
+Version 6.0
+^^^^^^^^^^^
 
 First, run the following ::
 
