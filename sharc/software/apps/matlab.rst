@@ -151,7 +151,6 @@ An example batch script ``submit_Matlab_mpi.sh`` is: ::
 	#$ -M user@sheffield.ac.uk
 	#$ -m bea
 	#$ -V
-	#$ -cwd
 	#$ -j y
 	module load apps/matlab/2017b/binary
 	#Run parallel_example.m
@@ -186,7 +185,7 @@ where ``parallel_example.m`` is: ::
 		a(i) = max(abs(eig(rand(A))));
 	end
 	time=toc;
-	fprintf(fileID, %d, time);
+	fprintf(fileID, '%d', time);
 	fclose(fileID);
 
 Note that for multi-node parallel Matlab the maximum number of workers allowed is 31 since the master process requires a parallel licence. Task arrays are supported by all versions, however it is recommended that 2017a (or later) is used. 
@@ -264,3 +263,5 @@ In more detail:
 
     cd /usr/local/packages/apps/matlab/2017b/binary/toolbox/local
     cp -r /usr/local/packages/apps/matlab/parallel_mpi_integration_scripts/* .
+
+#. R2018a Update 4 to mitigate Matlab crashes on Centos 7.5. Download R2018a Update 4 installer. Copy to ShARC, and run using ./R2018a_Update_4_glnxa64.sh, and specify install directory /usr/local/packages/matlab/2018a/binary
