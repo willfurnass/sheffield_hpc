@@ -63,7 +63,7 @@ Command                Description
                        differ for specific SGE Projects/Queues.
 
 ``-l rmem=xxG``        Specify the maximum amount (xx) of (real) memory to be
-                       used (per process or core) in Gigabytes.
+                       used (**per CPU core**) in Gigabytes.
 
 ``-pe <env> <nn>``     Specify a *parallel environment* and a number of 
                        processor cores.
@@ -160,7 +160,18 @@ Command                Description
                        Also note that requesting less execution time may 
                        result in your job spending less time queuing.
 
-``-l rmem=xxG``         Specify the maximum amount (``xx``) of real memory to be used.
+``-pe <env> <nn>``     Specify a *parallel environment* and a number of 
+                       processor cores.
+
+``-pe smp <nn>``       The smp parallel environment provides multiple threads
+                       on one node. ``<nn>`` specifies the max number of
+                       threads.
+
+``-l rmem=xxG``        Specify the maximum amount (``xx``) of real memory to be 
+                       requested **per CPU core** (where CPU cores are requested 
+                       using the ``-pe`` option).  If the real memory usage of your 
+                       job exceeds this ``rmem`` value multiplied by the number of
+                       cores you requested then your job will be killed.
 
 ``-l arch=``           Target a processor architecture. This is irrelevant on 
                        ShARC as all processors are the same model.  Options 
