@@ -89,7 +89,7 @@ First request an interactive session, e.g. with :ref:`qrshx`.
 Then Tensorflow can be installed by the following ::
 
   #Load the Anaconda module
-  module load apps/python/anaconda3-4.2.0
+  module load apps/python/conda
 
   #Create an Anaconda virtual environment called 'tensorflow'
   conda create -n tensorflow python=3.5
@@ -104,7 +104,7 @@ Every Session Afterwards and in Your Job Scripts
 
 The previous instuctions installs Tensorflow and its dependencies inside your home directory but every time you use a new session or within your job scripts, the modules must be loaded and conda must be activated again. Use the following command to activate the Conda environment with Tensorflow installed: ::
 
-	module load apps/python/anaconda3-4.2.0
+	module load apps/python/conda
 	source activate tensorflow
 
 
