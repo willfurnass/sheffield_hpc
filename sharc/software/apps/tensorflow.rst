@@ -63,7 +63,7 @@ Paths to the actual images and definition files are provided below for downloadi
     * CPU
         * ``/usr/local/packages/singularity/images/tensorflow/cpu.img``
     * GPU
-        * ``usr/local/packages/singularity/images/tensorflow/gpu.img``
+        * ``/usr/local/packages/singularity/images/tensorflow/gpu.img``
 * CPU Images
     * Latest: 1.9.0-CPU-Ubuntu16.04-Anaconda3.4.2.0.simg (GCC 5.4.0, Python 3.5)
         * Path: ``/usr/local/packages/singularity/images/tensorflow/1.9.0-CPU-Ubuntu16.04-Anaconda3.4.2.0.simg``
@@ -79,34 +79,101 @@ Paths to the actual images and definition files are provided below for downloadi
     * 1.0.1-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA8-cudNN5.0.img (GCC 5.4.0, Python 3.5)
         * Path: ``/usr/local/packages/singularity/images/tensorflow/1.0.1-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA8-cudNN5.0.img``
 
-Installation in Home Directory
-------------------------------
+Installation in Home Directory (CPU)
+------------------------------------
 
-The following is an instruction on how to setup Tensorflow on your user account.
+Tensorflow can also be installed in your home directory, this may be useful if bleeding edge or specific version is required. In this case, Anaconda is used to create a virtual python enviroment.
 
-First request an interactive session, e.g. with :ref:`qrshx`. To use GPUs see :ref:`GPUInteractive_sharc`.
+First request an interactive session, e.g. with :ref:`qrshx`.
 
-Load the relevant modules (our example uses CUDA 8.0 with cuDNN 5.1 but :ref:`other versions are available <cudnn_sharc>`) ::
+Then Tensorflow can be installed by the following ::
+
+  #Load the Anaconda module
+  module load apps/python/anaconda3-4.2.0
+
+  #Create an Anaconda virtual environment called 'tensorflow'
+  conda create -n tensorflow python=3.5
+
+  #Activate the 'tensorflow' environment
+	source activate tensorflow
+
+  pip install tensorflow
+
+Every Session Afterwards and in Your Job Scripts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The previous instuctions installs Tensorflow and its dependencies inside your home directory but every time you use a new session or within your job scripts, the modules must be loaded and conda must be activated again. Use the following command to activate the Conda environment with Tensorflow installed: ::
 
 	module load apps/python/anaconda3-4.2.0
-	module load libs/cudnn/6.0/binary-cuda-8.0.44
+	source activate tensorflow
 
 
-Create a conda environment to load relevant modules on your local user account and activate it ::
+
+Installation in Home Directory (GPU)
+------------------------------------
+
+Tensorflow for GPU version 1.9 and 1.10 uses CUDA 9 which is not installed on ShARC. You can however use the CUDA 9.0 library along with Anaconda that is pre-installed inside the available Singularity images for ease of installation.
+
+First request an interactive session, e.g. see :ref:`GPUInteractive_sharc`.
+
+Then get a terminal inside the image  ::
+
+  TFIMG=/usr/local/packages/singularity/images/tensorflow/1.9.0-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA9-cudNN7.simg
+  singularity exec --nv $TFIMG /bin/bash
+
+Once you're inside the Singularity image, create a conda environment to load relevant modules on your local user account and activate it ::
 
 	conda create -n tensorflow python=3.5
 	source activate tensorflow
 
-Then install tensorflow 1.4 for GPU with the following commands ::
+Then install tensorflow for GPU with the following commands ::
 
 	pip install tensorflow-gpu
 
-For CPU-only or other python versions, see the `offical installation page <https://www.tensorflow.org/install/install_linux>`_ to get the correct binaries.
+Every Session Afterwards and in Your Job Scripts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To use Tensorflow interactively ::
+
+  #Get a bash terminal inside the Singularity image
+  TFIMG=/usr/local/packages/singularity/images/tensorflow/1.9.0-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA9-cudNN7.simg
+  singularity exec --nv $TFIMG /bin/bash
+
+  #Activate the tensorflow environment from inside the image
+  source activate tensorflow
+
+  #Then run your script as normal
+  python myscript.py
+
+
+When submitting a batch job, it is necessary to create a run script in addition to a batch script due to the fact taht a virtual Anaconda environment must be activated. For example, you would submit the following batch script with ``qsub`` ::
+
+  #!/bin/bash
+  #$ -l rmem=8G
+  #$ -l gpu=1
+
+  #Load a Singularity image and runs a script
+  TFIMG=/usr/local/packages/singularity/images/tensorflow/1.9.0-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA9-cudNN7.simg
+  chmod +x ~/myscript.sh
+  singularity exec --nv $TFIMG ~/myscript.sh
+
+The ``~/myscript.sh`` contains the code for activating the ``tensorflow`` Anaconda environment and calling the ``myscript.py`` python script  ::
+
+  #Activate the tensorflow environment from inside the image
+  source activate tensorflow
+
+  #Then run your script as normal
+  python myscript.py
+
+
+Testing your Tensorflow installation
+------------------------------------
 
 You can test that Tensorflow is running on the GPU with the following python code ::
 
 	import tensorflow as tf
-	# Creates a graph.
+	# Creates a graph
+  #If using CPU, replace /gpu:0 with /cpu:0
 	with tf.device('/gpu:0'):
 	  a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
 	  b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
@@ -121,14 +188,7 @@ Which gives the following results ::
 	[[ 22.  28.]
 	 [ 49.  64.]]
 
-Every Session Afterwards and in Your Job Scripts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The previous instuctions installs Tensorflow and its dependencies inside your home directory but every time you use a new session or within your job scripts, the modules must be loaded and conda must be activated again. Use the following command to activate the Conda environment with Tensorflow installed: ::
-
-	module load apps/python/anaconda3-4.2.0
-	module load libs/cudnn/6.0/binary-cuda-8.0.44
-	source activate tensorflow
 
 Using multiple GPUs
 -------------------
