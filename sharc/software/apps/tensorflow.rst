@@ -171,10 +171,10 @@ Testing your Tensorflow installation
 
 You can test that Tensorflow is running on the GPU with the following python code ::
 
-	import tensorflow as tf
-	# Creates a graph
+  import tensorflow as tf
+  # Creates a graph
   #If using CPU, replace /gpu:0 with /cpu:0
-	with tf.device('/gpu:0'):
+  with tf.device('/gpu:0'):
 	  a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
 	  b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
 	  c = tf.matmul(a, b)
