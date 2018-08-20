@@ -23,7 +23,7 @@ To install FLAME GPU you should checkout the latest master branch of the code wh
 
     git clone https://github.com/FLAMEGPU/FLAMEGPU.git
 
-To compile the FLAME GPU examples you will need to be on a GPU node. You can start an interactive session using ::
+To run the FLAME GPU examples you will need to be on a GPU node. You can start an interactive session using ::
 
     qrshx -l gpu=1 -P gpu -l rmem=15G
 
@@ -38,7 +38,7 @@ You can now navigate to the FLAME GPU examples folder and build the examples. e.
     cd FLAMEGPU/examples
     make console
 
-or to build a single example in console mode ::
+Building the full suite of examples can take a while, instead you may wish to build individual examples. eg. to build a single example in console mode ::
 
     cd FLAMEGPU/examples/GameOfLife
     make console
