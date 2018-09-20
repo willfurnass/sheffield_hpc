@@ -5,8 +5,8 @@ Macaulay2
 
 .. sidebar:: Macaulay2
 
-   :Latest version: 1.9.2
-   :Dependancies: mpi/intel/openmpi/1.10.0 compilers/gcc/5.3 libs/gcc/5.2/boost/1.59 libs/gcc/lapack/3.3.0 apps/gcc/4.4.7/xzutils/5.2.2
+   :Latest version: 1.12.0.1
+   :Dependancies: compilers/gcc/5.3 libs/gcc/5.2/boost/1.59 libs/gcc/lapack/3.3.0 apps/gcc/4.4.7/xzutils/5.2.4
    :URL: http://www.math.uiuc.edu/Macaulay2/
 
 *Macaulay2* is a software system devoted to supporting research in
@@ -47,6 +47,8 @@ To make Macaulay2 available in this session, run one of the following command:
 .. code-block:: none
 
       module load apps/gcc/5.3/macaulay2/1.9.2
+      module load apps/gcc/5.3/macaulay2/1.10
+      module load apps/gcc/5.3/macaulay2/1.12.0.1
 
 You should then be able to start an interactive Macaulay2 session using
 
@@ -61,6 +63,18 @@ Macaulay2 can perform an extensive series of self-tests at compile-time (by runn
 
 Installation notes and modulefile
 ---------------------------------
+
+Version 1.12.0.1
+################
+
+* Built using :download:`install.sh </iceberg/software/install_scripts/apps/gcc/5.3/macaulay2/1.12.0.1/install.sh>`
+* Made available to users via :download:`this modulefile </iceberg/software/modulefiles/apps/gcc/5.3/macaulay2/1.12.0.1>` located on the system at ``/usr/local/modulefiles/apps/gcc/5.3/macaulay2/1.12.0.1``
+
+* The install script and module file enable several other module files to provide:
+    * GCC's compiler and Fortran library (:code:`compilers/gcc/5.3`)
+    * the Boost C++ libraries (:code:`libs/gcc/5.2/boost/1.59`)
+    * LAPACK linear algebra routines (:code:`libs/gcc/lapack/3.3.0`)
+    * LZMA (xz) (de)compression (:code:`apps/gcc/4.4.7/xzutils/5.2.4`)
 
 Version 1.9.2
 #############
