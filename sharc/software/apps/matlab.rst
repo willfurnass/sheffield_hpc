@@ -263,7 +263,7 @@ In more detail:
 
 #. Copy integration scripts to MATLAB local directory (required for MATLAB parallel (multi-node)): ::
 
-    cd /usr/local/packages/apps/matlab/2018a/binary/toolbox/local
+    cd /usr/local/packages/apps/matlab/2018b/binary/toolbox/local
     cp -r /usr/local/packages/apps/matlab/parallel_mpi_integration_scripts/* .
 
 #. R2018a Update 4 to mitigate Matlab crashes on Centos 7.5. Download R2018a Update 4 installer. Copy to ShARC, and run using ./R2018a_Update_4_glnxa64.sh, and specify install directory /usr/local/packages/matlab/2018a/binary
