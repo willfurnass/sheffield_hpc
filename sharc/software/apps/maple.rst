@@ -1,4 +1,4 @@
-.. _maple_iceberg:
+.. _maple_sharc:
 
 Maple
 =====
