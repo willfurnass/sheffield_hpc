@@ -1,0 +1,19 @@
+#%Module10.2#####################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global ver
+
+        puts stderr " Makes Plink $ver available to the system."
+}
+
+# Plink version (not in the user's environment)
+set     ver     1.90b6.5
+
+module-whatis   "sets the necessary Plink $ver paths"
+
+prepend-path PATH /usr/local/packages/apps/plink/binary/1.90b6.5/
+
