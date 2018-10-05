@@ -20,7 +20,7 @@ The latest version of Plink is made available with the command
 
         module load apps/plink
 
-Alternatively, you can load a specific version.  To access the latest version (build date 20 Sep 2016) ::
+Alternatively, you can load a specific version.  To access the latest version ::
 
        module load apps/plink/1.90b6.5/binary
 
@@ -41,5 +41,5 @@ Both versions of Plink were installed like so ::
   mkdir -p /usr/local/packages/apps/plink/$ver/binary
   mv * /usr/local/packages/apps/plink/$ver/binary
 
-The modulefiles is at :download:`/usr/local/modulefiles/apps/plink/190b6.5/binary </sharc/software/modulefiles/apps/plink/190b6.5/binary>`.
+The modulefiles is at :download:`/usr/local/modulefiles/apps/plink/1.90b6.5/binary </sharc/software/modulefiles/apps/plink/1.90b6.5/binary>`.
 
