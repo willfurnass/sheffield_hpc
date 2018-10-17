@@ -20,6 +20,22 @@ As Tensorflow and all its dependencies are written in Python, it can be installe
 
 This software and documentation is maintained by the `RSES group <http://rse.shef.ac.uk/>`_ and `GPUComputing@Sheffield <http://gpucomputing.shef.ac.uk/>`_. For feature requests or if you encounter any problems, please raise an issue on the `GPU Computing repository <https://github.com/RSE-Sheffield/GPUComputing/issues>`_.
 
+Tensorflow on public GPU Nodes
+------------------------------
+
+When running the GPU version of Tensorflow on the public node (e.g. a session where you didn't specify -q or -P flags), Tensorflow attempts to block out memory on **ALL** GPUs on the system. Please download and use the :download:`deviceSelect.sh <gpu/deviceSelect.sh>` script to avoid this from occuring:
+
+  #On your console or inside your batch script
+
+  #Load the modules you need first
+
+  #Run the device select script
+  source deviceSelect.sh
+
+  #Run your tensorflow code
+  singularity exec --nv /usr/local/packages/singularity/images/tensorflow/gpu.img python myscript.py
+
+
 Tensorflow Singularity Images
 -----------------------------
 
