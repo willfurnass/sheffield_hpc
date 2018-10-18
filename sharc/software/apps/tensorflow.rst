@@ -32,7 +32,7 @@ Please download and use the :download:`selectCUDADevices.sh <gpu/selectCUDADevic
 
   #Run the device select script which sets the CUDA_VISIBLE_DEVICES flag
   #targeting the least utilised GPU on the node
-  source selectCUDADevices.sh
+  source ./selectCUDADevices.sh
 
   #Run your tensorflow code e.g.
   singularity exec --nv /usr/local/packages/singularity/images/tensorflow/gpu.img python myscript.py
