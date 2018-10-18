@@ -25,21 +25,19 @@ Tensorflow on public GPU Nodes
 
 .. warning:: When running the GPU version of Tensorflow on the public node (e.g. in a session where you didn't specify -q or -P flags), Tensorflow attempts to reserve memory on **ALL** GPUs on the system even if it will not be used.
 
-Please download and use the :download:`deviceSelect.sh <gpu/deviceSelect.sh>` script to avoid this from occuring. It can be used as follows: ::
+Please download and use the :download:`selectCUDADevices.sh <gpu/selectCUDADevices.sh>` script to avoid this from occuring. It can be used as follows: ::
 
 
   #On your console or inside your batch script
 
-  #Load the modules you need...
-
   #Run the device select script which sets the CUDA_VISIBLE_DEVICES flag
   #targeting the least utilised GPU on the node
-  source deviceSelect.sh
+  source selectCUDADevices.sh
 
-  #Run your tensorflow code
+  #Run your tensorflow code e.g.
   singularity exec --nv /usr/local/packages/singularity/images/tensorflow/gpu.img python myscript.py
 
-The :download:`deviceSelect.sh <gpu/deviceSelect.sh>` script checks for existing ``CUDA_VISIBLE_DEVICES`` flag, if none is set then the least utilised GPU is assigned. Please do not set the ``CUDA_VISIBLE_DEVICES`` flag manually as it will interfere with GPU allocation when running on other queues.
+The :download:`selectCUDADevices.sh <gpu/selectCUDADevices.sh>` script checks for existing ``CUDA_VISIBLE_DEVICES`` flag, if none is set then the least utilised GPU is assigned. Please do not set the ``CUDA_VISIBLE_DEVICES`` flag manually as it will interfere with GPU allocation when running on other queues.
 
 Tensorflow Singularity Images
 -----------------------------
