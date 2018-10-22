@@ -1,0 +1,25 @@
+#%Module10.2#####################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+
+proc ModulesHelp { } {
+    global helpmsg
+    puts stderr "\t$helpmsg\n"
+}
+
+
+set version 6.2.10
+set installpath /usr/local/packages6/cctools/$version/binary
+set user $::env(USER)
+
+module-whatis "Provides cctools version $version"
+set helpmsg "cctools version $version"
+prepend-path PATH $installpath/bin
+prepend-path MANPATH $installpath/share/man
+
+if {![info exists ::env(PARROT_CVMFS_ALIEN_CACHE)] } {
+setenv PARROT_CVMFS_ALIEN_CACHE /data/$user/cvmfs_cache
+}
