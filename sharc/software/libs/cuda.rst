@@ -18,6 +18,7 @@ There are several versions of the CUDA library available. As with many libraries
 Load a specific version with one of the following: ::
 
         module load libs/CUDA/9.1.85/binary
+        module load libs/CUDA/9.0.176/binary
         module load libs/CUDA/8.0.44/binary
         module load libs/CUDA/7.5.18/binary
 
@@ -111,6 +112,13 @@ CUDA 9.1.85
 #. Installed with :download:`install.sh </sharc/software/install_scripts/libs/CUDA/install.sh>` with ``9.1.85_387.26`` as the sole argument. 
    This installs the toolkit and three NVIDIA-recommended patches.
 #. :download:`Modulefile </sharc/software/modulefiles/libs/CUDA/9.1.85/binary>` was installed as ``/usr/local/modulefiles/libs/CUDA/9.1.85/binary``
+
+CUDA 9.0.176
+^^^^^^^^^^^^
+
+#. Installed with :download:`install.sh </sharc/software/install_scripts/libs/CUDA/install.sh>` with ``9.0.176_384.81`` as the sole argument. 
+   This installs the toolkit and four NVIDIA-recommended patches.
+#. :download:`Modulefile </sharc/software/modulefiles/libs/CUDA/9.0.176/binary>` was installed as ``/usr/local/modulefiles/libs/CUDA/9.0.176/binary``
 
 CUDA 8.0.44
 ^^^^^^^^^^^
