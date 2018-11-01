@@ -6,7 +6,7 @@ Using GPUs on ShARC
 Requesting access to GPU facilities
 -----------------------------------
 
-.. note::Public GPU nodes have now been made available to Iceberg and ShARC users, these can be be used without acquiring extra permission.
+.. note:: Public GPU nodes have now been made available to Iceberg and ShARC users, these can be be used without acquiring extra permission.
 
 Research groups also have an option to purchase and add nodes to the cluster to be managed by CiCS. 
 For these nodes (e.g. :ref:`dgx1_com_groupnodes_sharc`), 
