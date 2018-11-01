@@ -110,45 +110,35 @@ i.e. ``-gencode=arch=compute_60,code=sm_60``.
 
 The minimum specified virtual architecture must be less than or equal to the `Compute Capability <https://developer.nvidia.com/cuda-gpus>`_ of the GPU used to execute the code.
 
-ShARC contains Tesla K80 GPUs and Tesla P100 GPUs, 
-which are compute capability 37 and 60 respectively.
-To build a CUDA application which targets any GPU on ShARC, 
-use the following ``-gencode`` arguments:
+Public GPU nodes in ShARC contain Tesla K80 GPUs, which are compute capability 37.
+To build a CUDA application which targets the public GPUS nodes, use the following ``-gencode`` arguments: 
+
+.. code-block:: sh
+
+   nvcc filename.cu \
+      -gencode=arch=compute_37,code=sm_37 \
+      -gencode=arch=compute_37,code=compute_37
+
+ShARC also contains Tesla P100 GPUs and Tesla V100 GPUs in private nodes,
+which are compute capability 60 and 70 respectively.
+To build a CUDA application which targets any GPU on ShARC (either public or private), 
+use the following ``-gencode`` arguments (for CUDA 9.0 and above):
 
 .. code-block:: sh
 
    nvcc filename.cu \
       -gencode=arch=compute_37,code=sm_37 \
       -gencode=arch=compute_60,code=sm_60 \
-      -gencode=arch=compute_60,code=compute_60
+      -gencode=arch=compute_70,code=sm_70 \
+      -gencode=arch=compute_70,code=compute_70
 
-Iceberg contains Tesla M2070 and Tesla K40m GPUs, 
-which are compute capability 20 and 35 respectively.
-To build a CUDA application which targets any GPU on Iceberg or ShARC, use the following ``-gencode`` arguments:
-
-.. code-block:: sh
-
-   nvcc filename.cu \
-      -gencode=arch=compute_20,code=sm_20 \
-      -gencode=arch=compute_35,code=sm_35 \
-      -gencode=arch=compute_37,code=sm_37 \
-      -gencode=arch=compute_60,code=sm_60 \
-      -gencode=arch=compute_60,code=compute_60
 
 Further details of these compiler flags can be found in the `NVCC Documentation <http://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#options-for-steering-gpu-code-generation>`_, 
 along with details of the supported `virtual architectures <http://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#virtual-architecture-feature-list>`_ and `real architectures <http://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-feature-list>`_.
 
-.. note:: SM 20 and SM 21 are deprecated in CUDA 8.0.
+.. note:: SM 60 for Pascal GPUs is only available for CUDA 8.0 and above.
 
-  If you attempt to build SM 20 or SM 21 code using CUDA 8.0, a warning will be raised at compile time. 
-
-.. warning:: SM 20 and SM 21 are removed in CUDA 9.0.
-
-  It is **not possible** to build SM 20 or SM 21 code using CUDA 9.0 or above. 
-  
-  If you are using CUDA 9.0 or greater remove ``-gencode`` arguments containing ``compute`` or ``sm`` values of 20 and 21 from the above examples.
-  
-  It is also not possible to execute code generated using CUDA 9.0 or above on the Tesla M2070s in Iceberg. 
+.. note:: SM 70 for Volta GPUs is only available for CUDA 9.0 and above.
 
 Documentation
 -------------
