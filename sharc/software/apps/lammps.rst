@@ -33,11 +33,13 @@ You can then run LAMMPS by entering ``lmp``
 
    .. code-block:: bash
 
-cp /usr/local/packages/apps/lammps/22_08_2018/gcc-4.9.4/examples.tar.gz .
-tar -xvzf examples.tar.gz
-cd examples/indent
+      cp /usr/local/packages/apps/lammps/22_08_2018/gcc-4.9.4/examples.tar.gz .
+      tar -xvzf examples.tar.gz
+      cd examples/indent # select indent example
+      lmp -in in.indent # run indent example
+      
 
-Serial (one CPU) Batch usage
+Serial (one core) Batch usage
 ----------------------------
 Here, we assume that you wish to run the program ``helloworld.m`` on the system: ::
 	
