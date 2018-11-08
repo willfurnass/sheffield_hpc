@@ -1,4 +1,4 @@
-.. _flamegpu_sharc:
+.. _flamegpu_iceberg:
 
 .. highlight:: bash
 
