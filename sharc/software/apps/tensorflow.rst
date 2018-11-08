@@ -20,78 +20,21 @@ As Tensorflow and all its dependencies are written in Python, it can be installe
 
 This software and documentation is maintained by the `RSES group <http://rse.shef.ac.uk/>`_ and `GPUComputing@Sheffield <http://gpucomputing.shef.ac.uk/>`_. For feature requests or if you encounter any problems, please raise an issue on the `GPU Computing repository <https://github.com/RSE-Sheffield/GPUComputing/issues>`_.
 
-Tensorflow Singularity Images
------------------------------
-
-Singularity images are self-contained virtual machines similar to Docker. For more information on Singularity and how to use the images, see :ref:`singularity_sharc`.
-
-A symlinked file is provided that always point to the latest image:  ::
-
-  #CPU Tensorflow
-  /usr/local/packages/singularity/images/tensorflow/cpu.img
-
-  #GPU Tensorflow
-  /usr/local/packages/singularity/images/tensorflow/gpu.img
-
-To get a bash terminal in to an image for example, use the command: ::
-
-  singularity exec --nv /usr/local/packages/singularity/images/tensorflow/gpu.img /bin/bash
-
-The ``exec`` command can also be used to call any command/script inside the image e.g. ::
-
-  singularity exec --nv /usr/local/packages/singularity/images/tensorflow/gpu.img python your_tensorflow_script.py
-
-**The** ``--nv`` **flag enables the use of GPUs within the image and can be removed if the software you're using does not use the GPU.**
-
-You may get a warning similar to ``groups: cannot find name for group ID ...``, this can be ignored and will not have an affect on running the image.
-
-The paths ``/fastdata``, ``/data``, ``/home``, ``/scratch``, ``/shared`` are automatically mounted to your ShARC filestore directories. For GPU-enabled images the ``/nvlib`` and ``/nvbin`` is mounted to the correct Nvidia driver version for the node that you're using.
-
-Tensorflow is installed as part of Anaconda and can be found inside the image at: ::
-
-  /usr/local/anaconda3-4.2.0/lib/python3.5/site-packages/tensorflow
 
 
-**To submit jobs that uses a Singularity image, see** :ref:`use_image_batch_singularity_sharc` **for more detail.**
+Installation in Home Directory - CPU Version
+--------------------------------------------
 
-Image Index
-^^^^^^^^^^^
-
-Paths to the actual images and definition files are provided below for downloading and building of custom images.
-
-* Shortcut to Latest Image
-    * CPU
-        * ``/usr/local/packages/singularity/images/tensorflow/cpu.img``
-    * GPU
-        * ``/usr/local/packages/singularity/images/tensorflow/gpu.img``
-* CPU Images
-    * Latest: 1.9.0-CPU-Ubuntu16.04-Anaconda3.4.2.0.simg (GCC 5.4.0, Python 3.5)
-        * Path: ``/usr/local/packages/singularity/images/tensorflow/1.9.0-CPU-Ubuntu16.04-Anaconda3.4.2.0.simg``
-    * 1.5.0-CPU-Ubuntu16.04-Anaconda3.4.2.0.img (GCC 5.4.0, Python 3.5)
-        * Path: ``/usr/local/packages/singularity/images/tensorflow/1.5.0-CPU-Ubuntu16.04-Anaconda3.4.2.0.img``
-    * 1.0.1-CPU-Ubuntu16.04-Anaconda3.4.2.0.img (GCC 5.4.0, Python 3.5)
-        * Path: ``/usr/local/packages/singularity/images/tensorflow/1.0.1-CPU-Ubuntu16.04-Anaconda3.4.2.0.img``
-* GPU Images
-    * Latest: 1.9.0-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA9-cudNN7.simg (GCC 5.4.0, Python 3.5)
-        * Path: ``/usr/local/packages/singularity/images/tensorflow/1.9.0-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA9-cudNN7.simg``
-    * 1.5.0-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA9-cudNN7.img (GCC 5.4.0, Python 3.5)
-        * Path: ``/usr/local/packages/singularity/images/tensorflow/1.5.0-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA9-cudNN7.img``
-    * 1.0.1-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA8-cudNN5.0.img (GCC 5.4.0, Python 3.5)
-        * Path: ``/usr/local/packages/singularity/images/tensorflow/1.0.1-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA8-cudNN5.0.img``
-
-Installation in Home Directory (CPU)
-------------------------------------
-
-Tensorflow can also be installed in your home directory, this may be useful if bleeding edge or specific version is required. In this case, Anaconda is used to create a virtual python enviroment.
+In order to to install to your home directory, Conda is used to create a virtual python enviroment for installing your local version of Tensorflow.
 
 First request an interactive session, e.g. with :ref:`qrshx`.
 
 Then Tensorflow can be installed by the following ::
 
-  #Load the Anaconda module
+  #Load the conda module
   module load apps/python/conda
 
-  #Create an Anaconda virtual environment called 'tensorflow'
+  #Create an conda virtual environment called 'tensorflow'
   conda create -n tensorflow python=3.5
 
   #Activate the 'tensorflow' environment
@@ -99,71 +42,47 @@ Then Tensorflow can be installed by the following ::
 
   pip install tensorflow
 
-Every Session Afterwards and in Your Job Scripts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The previous instuctions installs Tensorflow and its dependencies inside your home directory but every time you use a new session or within your job scripts, the modules must be loaded and conda must be activated again. Use the following command to activate the Conda environment with Tensorflow installed: ::
+**Every Session Afterwards and in Your Job Scripts**
+
+Every time you use a new session or within your job scripts, the modules must be loaded and conda must be activated again. Use the following command to activate the Conda environment with Tensorflow installed: ::
 
 	module load apps/python/conda
 	source activate tensorflow
 
 
+Installation in Home Directory - GPU Version
+--------------------------------------------
 
-Installation in Home Directory (GPU)
-------------------------------------
-
-Tensorflow for GPU version 1.9 and 1.10 uses CUDA 9 which is not installed on ShARC. You can however use the CUDA 9.0 library along with Anaconda that is pre-installed inside the available Singularity images for ease of installation.
+The GPU version of Tensorflow comes in a different PIP package and is also dependent on CUDA and cuDNN libraries making the installation procedure slightly different.
 
 First request an interactive session, e.g. see :ref:`GPUInteractive_sharc`.
 
-Then get a terminal inside the image  ::
+Then GPU version of Tensorflow can be installed by the following ::
 
-  TFIMG=/usr/local/packages/singularity/images/tensorflow/1.9.0-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA9-cudNN7.simg
-  singularity exec --nv $TFIMG /bin/bash
+  #Load the conda module
+  module load apps/python/conda
 
-Once you're inside the Singularity image, create a conda environment to load relevant modules on your local user account and activate it ::
+  #Load the CUDA and cuDNN module
+  module load libs/cudnn/7.3.1.20/binary-cuda-9.0.176
 
-	conda create -n tensorflow python=3.5
+  #Create an conda virtual environment called 'tensorflow'
+  conda create -n tensorflow python=3.5
+
+  #Activate the 'tensorflow' environment
 	source activate tensorflow
 
-Then install tensorflow for GPU with the following commands ::
+  #Install GPU version of Tensorflow
+  pip install tensorflow-gpu
 
-	pip install tensorflow-gpu
 
-Every Session Afterwards and in Your Job Scripts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Every Session Afterwards and in Your Job Scripts**
 
-To use Tensorflow interactively ::
+Every time you use a new session or within your job scripts, the modules must be loaded and conda must be activated again. Use the following command to activate the Conda environment with Tensorflow installed: ::
 
-  #Get a bash terminal inside the Singularity image
-  TFIMG=/usr/local/packages/singularity/images/tensorflow/1.9.0-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA9-cudNN7.simg
-  singularity exec --nv $TFIMG /bin/bash
-
-  #Activate the tensorflow environment from inside the image
+  module load apps/python/conda
+  module load libs/cudnn/7.3.1.20/binary-cuda-9.0.176
   source activate tensorflow
-
-  #Then run your script as normal
-  python myscript.py
-
-
-When submitting a batch job, it is necessary to create a run script in addition to a batch script due to the fact taht a virtual Anaconda environment must be activated. For example, you would submit the following batch script with ``qsub`` ::
-
-  #!/bin/bash
-  #$ -l rmem=8G
-  #$ -l gpu=1
-
-  #Load a Singularity image and runs a script
-  TFIMG=/usr/local/packages/singularity/images/tensorflow/1.9.0-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA9-cudNN7.simg
-  chmod +x ~/myscript.sh
-  singularity exec --nv $TFIMG ~/myscript.sh
-
-The ``~/myscript.sh`` contains the code for activating the ``tensorflow`` Anaconda environment and calling the ``myscript.py`` python script  ::
-
-  #Activate the tensorflow environment from inside the image
-  source activate tensorflow
-
-  #Then run your script as normal
-  python myscript.py
 
 
 Testing your Tensorflow installation
@@ -187,7 +106,6 @@ Which gives the following results ::
 
 	[[ 22.  28.]
 	 [ 49.  64.]]
-
 
 
 Using multiple GPUs
@@ -231,3 +149,65 @@ You will see the following output. ::
 	AddN: /job:localhost/replica:0/task:0/cpu:0
 	[[  44.   56.]
 	 [  98.  128.]]
+
+Tensorflow Singularity Images
+-----------------------------
+
+.. note::
+ Tensorflow singularity images support is now discontinued but existing images are still usable.
+
+Singularity images are self-contained virtual machines similar to Docker. For more information on Singularity and how to use the images, see :ref:`singularity_sharc`.
+
+A symlinked file is provided that always point to the latest image:  ::
+
+ #CPU Tensorflow
+ /usr/local/packages/singularity/images/tensorflow/cpu.img
+
+ #GPU Tensorflow
+ /usr/local/packages/singularity/images/tensorflow/gpu.img
+
+To get a bash terminal in to an image for example, use the command: ::
+
+ singularity exec --nv /usr/local/packages/singularity/images/tensorflow/gpu.img /bin/bash
+
+The ``exec`` command can also be used to call any command/script inside the image e.g. ::
+
+ singularity exec --nv /usr/local/packages/singularity/images/tensorflow/gpu.img python your_tensorflow_script.py
+
+**The** ``--nv`` **flag enables the use of GPUs within the image and can be removed if the software you're using does not use the GPU.**
+
+You may get a warning similar to ``groups: cannot find name for group ID ...``, this can be ignored and will not have an affect on running the image.
+
+The paths ``/fastdata``, ``/data``, ``/home``, ``/scratch``, ``/shared`` are automatically mounted to your ShARC filestore directories. For GPU-enabled images the ``/nvlib`` and ``/nvbin`` is mounted to the correct Nvidia driver version for the node that you're using.
+
+Tensorflow is installed as part of Anaconda and can be found inside the image at: ::
+
+ /usr/local/anaconda3-4.2.0/lib/python3.5/site-packages/tensorflow
+
+
+**To submit jobs that uses a Singularity image, see** :ref:`use_image_batch_singularity_sharc` **for more detail.**
+
+Image Index
+^^^^^^^^^^^
+
+Paths to the actual images and definition files are provided below for downloading and building of custom images.
+
+* Shortcut to Latest Image
+   * CPU
+       * ``/usr/local/packages/singularity/images/tensorflow/cpu.img``
+   * GPU
+       * ``/usr/local/packages/singularity/images/tensorflow/gpu.img``
+* CPU Images
+   * Latest: 1.9.0-CPU-Ubuntu16.04-Anaconda3.4.2.0.simg (GCC 5.4.0, Python 3.5)
+       * Path: ``/usr/local/packages/singularity/images/tensorflow/1.9.0-CPU-Ubuntu16.04-Anaconda3.4.2.0.simg``
+   * 1.5.0-CPU-Ubuntu16.04-Anaconda3.4.2.0.img (GCC 5.4.0, Python 3.5)
+       * Path: ``/usr/local/packages/singularity/images/tensorflow/1.5.0-CPU-Ubuntu16.04-Anaconda3.4.2.0.img``
+   * 1.0.1-CPU-Ubuntu16.04-Anaconda3.4.2.0.img (GCC 5.4.0, Python 3.5)
+       * Path: ``/usr/local/packages/singularity/images/tensorflow/1.0.1-CPU-Ubuntu16.04-Anaconda3.4.2.0.img``
+* GPU Images
+   * Latest: 1.9.0-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA9-cudNN7.simg (GCC 5.4.0, Python 3.5)
+       * Path: ``/usr/local/packages/singularity/images/tensorflow/1.9.0-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA9-cudNN7.simg``
+   * 1.5.0-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA9-cudNN7.img (GCC 5.4.0, Python 3.5)
+       * Path: ``/usr/local/packages/singularity/images/tensorflow/1.5.0-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA9-cudNN7.img``
+   * 1.0.1-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA8-cudNN5.0.img (GCC 5.4.0, Python 3.5)
+       * Path: ``/usr/local/packages/singularity/images/tensorflow/1.0.1-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA8-cudNN5.0.img``
