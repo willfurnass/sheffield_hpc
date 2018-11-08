@@ -40,7 +40,7 @@ You can then run LAMMPS by entering ``lmp``
       
 
 Serial (one core) Batch usage
-----------------------------
+-----------------------------
 Here, we assume that you wish to run the program ``helloworld.m`` on the system: ::
 	
 	function helloworld
