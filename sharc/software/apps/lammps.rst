@@ -23,11 +23,15 @@ After connecting to ShARC (see :ref:`ssh`),  start an interactive session with t
 
 The latest version of LAMMPS (currently 22_08_2018) is made available by running: ::
 
-	module load apps/lammps
+   .. code-block:: bash
 
-Alternatively, you can load a specific version with the following command: ::
+      module load apps/lammps
 
-	module load apps/lammps/22_08_2018/gcc-4.9.4
+Alternatively, you can load a specific version with the following command:
+
+   .. code-block:: bash
+
+      module load apps/lammps/22_08_2018/gcc-4.9.4
 
 You can then run LAMMPS by entering ``lmp``
 
