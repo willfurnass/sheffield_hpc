@@ -118,6 +118,8 @@ Installation notes
 
 LAMMPS was compiled using the
 :download:`install_lammps.sh </sharc/software/install_scripts/apps/lammps/22_08_2018/install_lammps.sh>` script; the module file is
-:download:`lammps_gcc-4.9.4 </sharc/software/modulefiles/apps/lammps/22_08_2018/gcc-4.9.4>`.
+:download:`/usr/local/modulefiles/apps/lammps/22_08_2018/gcc-4.9.4 </sharc/software/modulefiles/apps/lammps/22_08_2018/gcc-4.9.4>`.
 
-
+LAMMPS was compiled using the: 
+  :download:`install_lammps.sh </sharc/software/install_scripts/apps/lammps/22_08_2018/install_lammps.sh>` script; 
+  :download:`/usr/local/modulefiles/apps/lammps/22_08_2018/gcc-4.9.4 </sharc/software/modulefiles/apps/lammps/22_08_2018/gcc-4.9.4>`.
