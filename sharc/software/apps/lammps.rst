@@ -71,7 +71,7 @@ Ensure your batch script (script.sh) has unix style line endings, & is executabl
       dos2unix script.sh
       chmod +x script.sh
 
-Submit your job to the batch system: ::
+Submit your job to the batch system:
 
    .. code-block:: bash
 
@@ -104,7 +104,7 @@ Your batch script (mpi_script.sh) should contain the following commands:
 
 Ensure the mpi_script.sh has unix style line endings, and is executable using commands for serial batch (above).
 
-Submit your job to the batch system: ::
+Submit your job to the batch system:
 
    .. code-block:: bash
 
