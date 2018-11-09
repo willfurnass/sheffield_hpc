@@ -26,7 +26,16 @@ Installation in Home Directory
 
 Conda is used to create a virtual python enviroment for installing your local version of PyTorch.
 
-First request an interactive session, e.g. with :ref:`qrshx`. or optionally with GPU :ref:`GPUInteractive_sharc`.
+.. warn::
+  Torch requires more than 2GB of RAM for installation so you **must** use the ``-l rmem=8G`` flag to request more memory, ``8G`` means 8 GB of RAM.
+
+First request an interactive session, e.g. with :ref:`qrshx`. or optionally with GPU :ref:`GPUInteractive_sharc`. ::
+
+    #To request 8GB of ram for the session
+    qrshx -l rmem=8G
+
+    #OR To request a GPU node with 8GB RAM
+    qrshx -l rmem=8G -l gpu=1
 
 Then PyTorch can be installed by the following ::
 
@@ -37,12 +46,13 @@ Then PyTorch can be installed by the following ::
   module load libs/cudnn/7.3.1.20/binary-cuda-9.0.176
 
   #Create an conda virtual environment called 'pytorch'
-  conda create -n pytorch python=3.5
+  conda create -n pytorch python=3.6
 
   #Activate the 'pytorch' environment
   source activate pytorch
 
-  conda install pytorch torchvision -c pytorch
+  #Install PyTorch
+  pip install torch torchvision
 
 
 **Every Session Afterwards and in Your Job Scripts**
