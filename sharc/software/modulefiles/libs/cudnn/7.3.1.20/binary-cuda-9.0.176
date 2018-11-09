@@ -16,7 +16,7 @@ proc ModulesHelp { } {
 }
 
 set cudnnvers 7.3.1.20
-set cudavers  9.0..176
+set cudavers  9.0.176
 set cudashortvers  9.0
 
 module-whatis   "loads the necessary `cuDNN-$cudnnvers and CUDA $cudavers' library paths"
