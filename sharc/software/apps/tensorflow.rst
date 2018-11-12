@@ -38,7 +38,7 @@ Then Tensorflow can be installed by the following ::
   conda create -n tensorflow python=3.6
 
   #Activate the 'tensorflow' environment
-	source activate tensorflow
+  source activate tensorflow
 
   pip install tensorflow
 
@@ -47,8 +47,8 @@ Then Tensorflow can be installed by the following ::
 
 Every time you use a new session or within your job scripts, the modules must be loaded and conda must be activated again. Use the following command to activate the Conda environment with Tensorflow installed: ::
 
-	module load apps/python/conda
-	source activate tensorflow
+  module load apps/python/conda
+  source activate tensorflow
 
 
 Installation in Home Directory - GPU Version
@@ -70,7 +70,7 @@ Then GPU version of Tensorflow can be installed by the following ::
   conda create -n tensorflow-gpu python=3.6
 
   #Activate the 'tensorflow-gpu' environment
-	source activate tensorflow-gpu
+  source activate tensorflow-gpu
 
   #Install GPU version of Tensorflow
   pip install tensorflow-gpu

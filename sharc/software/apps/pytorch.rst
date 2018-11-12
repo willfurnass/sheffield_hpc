@@ -26,16 +26,16 @@ Installation in Home Directory
 
 Conda is used to create a virtual python enviroment for installing your local version of PyTorch.
 
-.. warn::
+.. warning::
   Torch requires more than 2GB of RAM for installation so you **must** use the ``-l rmem=8G`` flag to request more memory, ``8G`` means 8 GB of RAM.
 
 First request an interactive session, e.g. with :ref:`qrshx`. or optionally with GPU :ref:`GPUInteractive_sharc`. ::
 
-    #To request 8GB of ram for the session
-    qrshx -l rmem=8G
+  #To request 8GB of ram for the session
+  qrshx -l rmem=8G
 
-    #OR To request a GPU node with 8GB RAM
-    qrshx -l rmem=8G -l gpu=1
+  #OR To request a GPU node with 8GB RAM
+  qrshx -l rmem=8G -l gpu=1
 
 Then PyTorch can be installed by the following ::
 
