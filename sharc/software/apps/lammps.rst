@@ -122,7 +122,3 @@ LAMMPS was compiled using the
 The module file is
 :download:`/usr/local/modulefiles/apps/lammps/22_08_2018/gcc-4.9.4 </sharc/software/modulefiles/apps/lammps/22_08_2018/gcc-4.9.4>`.
 
-The alternate module file is
-:download:`/usr/local/modulefiles/apps/lammps/22_08_2018/test </sharc/software/modulefiles/apps/lammps/22_08_2018/test>`.
-
-
