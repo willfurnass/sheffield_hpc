@@ -31,13 +31,13 @@ Alternatively, you can load a specific version with the following command:
 
    .. code-block:: bash
 
-      module load apps/lammps/22_08_2018/gcc-4.9.4
+      module load apps/lammps/22_08_2018/gcc-4.9.4-openmpi-2.0.1
 
 You can then run LAMMPS by entering ``lmp``
 
    .. code-block:: bash
 
-      cp /usr/local/packages/apps/lammps/22_08_2018/gcc-4.9.4/examples.tar.gz .
+      cp /usr/local/packages/apps/lammps/22_08_2018/gcc-4.9.4-openmpi-2.0.1/examples.tar.gz .
       tar -xvzf examples.tar.gz
       cd examples/indent # select indent example
       lmp -in in.indent # run indent example
@@ -61,7 +61,7 @@ Your batch script (script.sh) should contain the following commands:
       #$ -V
       #$ -cwd
       #$ -j y
-      module load apps/lammps/22_08_2018/gcc-4.9.4
+      module load apps/lammps/22_08_2018/gcc-4.9.4-openmpi-2.0.1
       lmp -in in.indent
 
 Ensure your batch script (script.sh) has unix style line endings, & is executable:
@@ -99,7 +99,7 @@ Your batch script (mpi_script.sh) should contain the following commands:
       #$ -V
       #$ -cwd
       #$ -j y
-      module load apps/lammps/22_08_2018/gcc-4.9.4 
+      module load apps/lammps/22_08_2018/gcc-4.9.4-openmpi-2.0.1 
       mpirun -np $NSLOTS lmp -in in.indent
 
 Ensure the mpi_script.sh has unix style line endings, and is executable using commands for serial batch (above).
@@ -117,8 +117,8 @@ Installation notes
 ------------------
 
 LAMMPS was compiled using the
-:download:`install_lammps.sh </sharc/software/install_scripts/apps/lammps/22_08_2018/install_lammps.sh>` script.
+:download:`install_lammps.sh </sharc/software/install_scripts/apps/lammps/22_08_2018/gcc-4.9.4-openmpi-2.0.1/install_lammps.sh>` script.
 
 The module file is
-:download:`/usr/local/modulefiles/apps/lammps/22_08_2018/gcc-4.9.4 </sharc/software/modulefiles/apps/lammps/22_08_2018/gcc-4.9.4>`.
+:download:`/usr/local/modulefiles/apps/lammps/22_08_2018/gcc-4.9.4-openmpi-2.0.1 </sharc/software/modulefiles/apps/lammps/22_08_2018/gcc-4.9.4-openmpi-2.0.1>`.
 
