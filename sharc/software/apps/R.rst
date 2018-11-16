@@ -20,6 +20,7 @@ The latest version of R can be loaded with: ::
 
 Alternatively, you can load a specific version of R using one of the following: ::
         
+   module load apps/R/3.5.1/gcc-4.8.5
    module load apps/R/3.4.0/gcc-4.8.5
    module load apps/R/3.3.3/gcc-4.8.5
    module load apps/R/3.3.2/gcc-4.8.5
@@ -32,7 +33,7 @@ Serial (one CPU) Batch usage
 ----------------------------
 Here, we assume that you wish to run the program ``my_code.r`` on the system. 
 With batch usage it is recommended to load a specific version of R, 
-for example ``module load apps/R/3.4.0``, 
+for example ``module load apps/R/3.5.1``, 
 to ensure the expected output is achieved.
 
 First, you need to write a batch submission file. 
@@ -44,7 +45,7 @@ We assume you'll call this ``my_job.sge``:
    #$ -cwd                                # Run job from current directory
    #$ -l rmem=4G                          # Request 4 gigabytes of memory
 
-   module load apps/R/3.4.0/gcc-4.8.5     # Recommended to load a specific version of R
+   module load apps/R/3.5.1/gcc-4.8.5     # Recommended to load a specific version of R
 
    R CMD BATCH my_code.r my_code.r.o$JOB_ID
 
@@ -111,7 +112,7 @@ These additional packages will be installed without prompting to your personal p
 To check your packages are up to date, and update them if necessary, 
 run the following line from an R interactive session ::
 
-   update.packages(lib.loc = "~/R/x86_64-unknown-linux-gnu-library/3.4/")
+   update.packages(lib.loc = "~/R/x86_64-unknown-linux-gnu-library/3.5/")
 
 The folder name after ``~/R/`` will likely change, 
 but this can be completed with tab autocompletion from the R session. 
@@ -171,7 +172,7 @@ You can compile and run this on a worker node as follows.
 
 Start a session on a worker node with ``qrshx`` and load a version of R: ::
 
-   module load apps/R/3.4.0/gcc-4.8.5
+   module load apps/R/3.5.1/gcc-4.8.5
 
 Assuming the program is called ``test_rmath.c``, compile with ::
 
@@ -189,6 +190,18 @@ For more details see :ref:`Intel R (Sharc)`
 Installation Notes
 ------------------
 These notes are primarily for administrators of the system.
+
+Version 3.5.1
+^^^^^^^^^^^^^
+
+* `What's new in R version 3.5.1 <https://stat.ethz.ch/pipermail/r-announce/2018/000630.html>`_ 
+
+This was a scripted install. It was compiled from source with gcc 4.8.5 and with ``--enable-R-shlib`` enabled. It was run in batch mode.
+
+* :download:`install_r_3.5.1_gcc4.8.5.sh </sharc/software/install_scripts/apps/R/3.5.1/gcc-4.8.5/install_r_3.5.1_gcc4.8.5.sh>` Downloads, compiles, tests and installs R 3.5.1 and the ``Rmath`` library.
+* :download:`R 3.5.1 Modulefile </sharc/software/modulefiles/apps/R/3.5.1/gcc-4.8.5>` located on the system at ``/usr/local/modulefiles/apps/R/3.5.1/``
+* Install log-files, including the output of the ``make check`` tests are available on the system at ``/usr/local/packages/apps/R/3.5.1/gcc-4.8.5/install_logs/``
+
 
 Version 3.4.0
 ^^^^^^^^^^^^^
