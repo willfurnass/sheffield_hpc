@@ -29,6 +29,7 @@ There are two types of the Intel builds of R, ``sequential`` and ``parallel``.
 ``sequential`` makes use of one CPU core and 
 can be used as a drop-in replacement for the standard version of R installed on ShARC: ::
 
+   module load apps/R/3.5.1/intel-17.0-sequential
    module load apps/R/3.4.0/intel-17.0-sequential
    module load apps/R/3.3.2/intel-17.0-sequential
 
@@ -36,6 +37,7 @@ The ``parallel`` version makes use of multiple CPU cores for certain linear alge
 since it is linked to the Intel MKL. 
 Note that **only** linear algebra routines are automatically parallelised. ::
 
+   module load apps/R/3.5.1/intel-17.0-parallel
    module load apps/R/3.4.0/intel-17.0-parallel
    module load apps/R/3.3.2/intel-17.0-parallel
 
@@ -49,14 +51,14 @@ E.g. add the following to your submission script: ::
     # Set OMP_NUM_THREADS to the number of cores requested using '-pe smp'
     export OMP_NUM_THREADS=$NSLOTS
 
-    module load apps/R/3.4.0/intel-17.0-parallel
+    module load apps/R/3.5.1/intel-17.0-parallel
 
 Installing additional packages
 ------------------------------
 To ensure that the Intel builds do not contaminate the standard gcc builds, 
 the Intel R module files set the environment variable ``R_LIBS_USER`` to point to 
-``~/R/intel_R/parallel-3.4.0/`` or ``~/R/intel_R/sequential-3.4.0/`` respectively 
-for version 3.4.0 with similar paths for other versions.
+``~/R/intel_R/parallel-3.5.1/`` or ``~/R/intel_R/sequential-3.5.1/`` respectively 
+for version 3.5.1 with similar paths for other versions.
 
 As a user, you should not need to worry about this detail and just install packages as you usually would from within R e.g. ::
 
@@ -70,6 +72,19 @@ for the standard version of R and vice versa.
 Installation Notes
 ------------------
 These notes are primarily for administrators of the system.
+
+Version 3.5.1
+^^^^^^^^^^^^^
+
+This was a scripted install. 
+It was compiled from source with Intel Compiler 17.0.0 
+and with ``--enable-R-shlib`` enabled. 
+It was run in batch mode.
+
+* :download:`intel-17.0-parallel.sh </sharc/software/install_scripts/apps/R/3.5.1/intel-17.0-parallel.sh>` Downloads, compiles, tests and installs R 3.4.0 using Intel Compilers and the parallel MKL.
+* :download:`intel-17.0-sequential.sh </sharc/software/install_scripts/apps/R/3.5.1/intel-17.0-sequential.sh>` Downloads, compiles, tests and installs R 3.5.1 using Intel Compilers and the sequential MKL.
+* :download:`intel-17.0-parallel </sharc/software/modulefiles/apps/R/3.5.1/intel-17.0-parallel>` Parallel Module File
+* :download:`intel-17.0-sequential </sharc/software/modulefiles/apps/R/3.5.1/intel-17.0-sequential>` Sequential Module File
 
 Version 3.4.0
 ^^^^^^^^^^^^^
