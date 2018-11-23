@@ -35,7 +35,7 @@ man pages are available on the system. Once you have loaded the required version
 
     man gcc
 
-* `What's new in the gcc version 6 series? <https://gcc.gnu.org/gcc-8/changes.html>`_
+* `What's new in the gcc version 8 series? <https://gcc.gnu.org/gcc-8/changes.html>`_
 * `What's new in the gcc version 6 series? <https://gcc.gnu.org/gcc-6/changes.html>`_
 * `What's new in the gcc version 5 series? <https://gcc.gnu.org/gcc-5/changes.html>`_
 
