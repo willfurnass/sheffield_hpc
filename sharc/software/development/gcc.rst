@@ -16,6 +16,8 @@ The GNU Compiler Collection (gcc) is a widely used, free collection of compilers
 
 It is possible to switch to other versions of the gcc compiler suite using modules. After connecting to ShARC (see :ref:`ssh`),  start an interactive sesssion with the :code:`qrshx` command. Choose the version of the compiler you wish to use using one of the following commands ::
 
+    module load dev/gcc/8.2
+    module load dev/gcc/6.3
     module load dev/gcc/6.2
     module load dev/gcc/5.4
 
@@ -33,12 +35,23 @@ man pages are available on the system. Once you have loaded the required version
 
     man gcc
 
+* `What's new in the gcc version 6 series? <https://gcc.gnu.org/gcc-8/changes.html>`_
 * `What's new in the gcc version 6 series? <https://gcc.gnu.org/gcc-6/changes.html>`_
 * `What's new in the gcc version 5 series? <https://gcc.gnu.org/gcc-5/changes.html>`_
 
 Installation Notes
 ------------------
 These notes are primarily for system administrators:
+
+Version 8.2
+^^^^^^^^^^^
+* :download:`Installation script </sharc/software/install_scripts/dev/gcc/8.2/install_82.sh>`
+* :download:`gcc 8.2 modulefile </sharc/software/modulefiles/dev/gcc/8.2>` saved as ``/usr/local/modulefiles/dev/gcc/8.2``
+
+Version 6.3
+^^^^^^^^^^^
+* :download:`Installation script </sharc/software/install_scripts/dev/gcc/6.3/install_63.sh>`
+* :download:`gcc 6.3 modulefile </sharc/software/modulefiles/dev/gcc/6.3>` saved as ``/usr/local/modulefiles/dev/gcc/6.3``
 
 Version 6.2
 ^^^^^^^^^^^
