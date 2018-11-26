@@ -41,7 +41,7 @@ Once you have made ffmpeg available to the system using the `module` command abo
 Installation notes
 ------------------
 
-LAMMPS was compiled using the
+ffmpeg was compiled using the
 :download:`install_ffmpeg.sh </sharc/software/install_scripts/apps/ffmpeg/4.1/gcc-4.9.4/install_ffmpeg.sh>` script.
 
 The module file is
