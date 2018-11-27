@@ -23,7 +23,7 @@ Ansys can be activated using the module files::
     module load apps/ansys/18.2/binary
     module load apps/ansys/19.0/binary
 
-The Ansys Workbench GUI executable is ``ansyswb``. ``ansyswb`` can be launched during an interactive session with X Window support (e.g. an interactive ``qsh`` session).
+The Ansys Workbench GUI executable is ``ansyswb``. ``ansyswb`` can be launched during an interactive session with X Window support (e.g. an interactive ``qrshx`` session).
 The Ansys exectuable is ``ansys`` and ``fluent`` is the executable for Fluent. Typing ``ansys -g`` or ``fluent -g -help`` will display a list of usage options.
 
 
