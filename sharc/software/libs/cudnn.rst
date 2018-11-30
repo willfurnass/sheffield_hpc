@@ -28,11 +28,13 @@ Load the appropriate cuDNN version (**and implicitly load a specific CUDA versio
    module load libs/cudnn/6.0/binary-cuda-8.0.44
    module load libs/cudnn/5.1/binary-cuda-8.0.44
    module load libs/cudnn/5.1/binary-cuda-7.5.18
+   module load libs/cudnn/4.0/binary-cuda-7.5.18
 
 Examples
 --------
 
-Examples are provided with ``libs/cudnn/7.3.1.20/binary-cuda-9.0.176``: 
+Examples are provided with ``libs/cudnn/7.3.1.20/binary-cuda-9.0.176`` and ``libs/cudnn/4.0/binary-cuda-7.5.18``.
+Usage with ``libs/cudnn/7.3.1.20/binary-cuda-9.0.176``:
 
 .. code-block:: bash
 
@@ -140,7 +142,10 @@ Version 5.1
 - :download:`Module file for CUDA 8.0 </sharc/software/modulefiles/libs/cudnn/5.1/binary-cuda-8.0.44>`
 - :download:`Module file for CUDA 7.5 </sharc/software/modulefiles/libs/cudnn/5.1/binary-cuda-7.5.18>`
 
+Version 4.0
+^^^^^^^^^^^
 
-
-
-
+- Install script: :download:`install_4.0_for_cuda_7.0.sh </sharc/software/install_scripts/libs/cudnn/install_4.0_for_cuda_7.0.sh>`
+- :download:`Module file for CUDA 7.5 </sharc/software/modulefiles/libs/cudnn/4.0/binary-cuda-7.5.18>` 
+  (this cuDNN was built for CUDA 7.0 but should be compatible with CUDA 7.5)
+- Testing: ran the ``mnistCUDNN`` example (see *Examples* above) with CUDA 7.5 on a V100 GPU.

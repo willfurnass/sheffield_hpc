@@ -1,0 +1,33 @@
+#%Module1.0#####################################################################
+##
+## cuDNN 4.0 module file for CUDA 7.0, which also works with CUDA 7.5
+##
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+
+proc ModulesHelp { } {
+    global cudnnvers
+    global cudaloadvers
+
+    puts stderr "       Loads NVIDIA cuDNN $cudnnvers and CUDA $cudaloadvers"
+}
+
+set cudnnvers       4.0
+set cudaloadvers    7.5.18
+set cudacompatshortvers  7.0
+
+module-whatis   "Loads NVIDIA cuDNN $cudnnvers and CUDA $cudaloadvers"
+
+module load libs/CUDA/$cudaloadvers/binary
+
+set CUDNN_HOME /usr/local/packages/libs/cudnn/$cudnnvers/binary-cuda-$cudacompatshortvers/cuda
+setenv CUDNN_HOME $CUDNN_HOME
+
+prepend-path C_INCLUDE_PATH $CUDNN_HOME/include/
+prepend-path CPLUS_INCLUDE_PATH $CUDNN_HOME/include/
+prepend-path LD_LIBRARY_PATH $CUDNN_HOME/lib64/
+prepend-path CPATH $CUDNN_HOME/include/
+prepend-path LIBRARY_PATH $CUDNN_HOME/lib64/
+
