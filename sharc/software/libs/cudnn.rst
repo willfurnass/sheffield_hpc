@@ -28,11 +28,15 @@ Load the appropriate cuDNN version (**and implicitly load a specific CUDA versio
    module load libs/cudnn/6.0/binary-cuda-8.0.44
    module load libs/cudnn/5.1/binary-cuda-8.0.44
    module load libs/cudnn/5.1/binary-cuda-7.5.18
+   module load libs/cudnn/4.0/binary-cuda-7.5.18
+
+Note that for ``libs/cudnn/4.0/binary-cuda-7.5.18`` the ``mnistCUDNN`` test program succeeds on K80 GPUs but fails on P100 and V100 GPUs.
 
 Examples
 --------
 
-Examples are provided with ``libs/cudnn/7.3.1.20/binary-cuda-9.0.176``: 
+Examples are provided with ``libs/cudnn/7.3.1.20/binary-cuda-9.0.176`` and ``libs/cudnn/4.0/binary-cuda-7.5.18``.
+Usage with ``libs/cudnn/7.3.1.20/binary-cuda-9.0.176``:
 
 .. code-block:: bash
 
@@ -140,7 +144,81 @@ Version 5.1
 - :download:`Module file for CUDA 8.0 </sharc/software/modulefiles/libs/cudnn/5.1/binary-cuda-8.0.44>`
 - :download:`Module file for CUDA 7.5 </sharc/software/modulefiles/libs/cudnn/5.1/binary-cuda-7.5.18>`
 
+Version 4.0
+^^^^^^^^^^^
 
+- Install script: :download:`install_4.0_for_cuda_7.0.sh </sharc/software/install_scripts/libs/cudnn/install_4.0_for_cuda_7.0.sh>`
+- :download:`Module file for CUDA 7.5 </sharc/software/modulefiles/libs/cudnn/4.0/binary-cuda-7.5.18>` 
+  (this cuDNN was built for CUDA 7.0 but should be compatible with CUDA 7.5)
+- Testing: ran the ``mnistCUDNN`` example (see *Examples* above) with CUDA 7.5 on a K80 GPU (NB tests failed on P100 and V100 GPUs): ::
 
+   $ make
+   /usr/local/packages/libs/CUDA/7.5.18/binary/cuda/bin/nvcc -ccbin g++ -I/usr/local/packages/libs/CUDA/7.5.18/binary/cuda/include -IFreeImage/include -IUtilNPP  -m64    -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=sm_35 -gencode arch=compute_37,code=sm_37 -gencode arch=compute_50,code=sm_50 -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o fp16_dev.o -c fp16_dev.cu
+   g++ -I/usr/local/packages/libs/CUDA/7.5.18/binary/cuda/include -IFreeImage/include -IUtilNPP   -o fp16_emu.o -c fp16_emu.cpp
+   g++ -I/usr/local/packages/libs/CUDA/7.5.18/binary/cuda/include -IFreeImage/include -IUtilNPP   -o mnistCUDNN.o -c mnistCUDNN.cpp
+   /usr/local/packages/libs/CUDA/7.5.18/binary/cuda/bin/nvcc -ccbin g++   -m64      -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=sm_35 -gencode arch=compute_37,code=sm_37 -gencode arch=compute_50,code=sm_50 -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o mnistCUDNN fp16_dev.o fp16_emu.o mnistCUDNN.o  -LFreeImage/lib/linux/x86_64 -LFreeImage/lib/linux -lcudart -lnppi -lnppc -lcublas -lcudnn -lfreeimage -lstdc++ -lm
+   $ ./mnistCUDNN
+   cudnnGetVersion() : 4007 , CUDNN_VERSION from cudnn.h : 4007 (4.0.7)
+   Host compiler version : GCC 4.8.5
+   There are 8 CUDA capable devices on your machine :
+   device 0 : sms 13  Capabilities 3.7, SmClock 823.5 Mhz, MemSize (Mb) 11441, MemClock 2505.0 Mhz, Ecc=1, boardGroupID=0
+   device 1 : sms 13  Capabilities 3.7, SmClock 823.5 Mhz, MemSize (Mb) 11441, MemClock 2505.0 Mhz, Ecc=1, boardGroupID=0
+   device 2 : sms 13  Capabilities 3.7, SmClock 823.5 Mhz, MemSize (Mb) 11441, MemClock 2505.0 Mhz, Ecc=1, boardGroupID=2
+   device 3 : sms 13  Capabilities 3.7, SmClock 823.5 Mhz, MemSize (Mb) 11441, MemClock 2505.0 Mhz, Ecc=1, boardGroupID=2
+   device 4 : sms 13  Capabilities 3.7, SmClock 823.5 Mhz, MemSize (Mb) 11441, MemClock 2505.0 Mhz, Ecc=1, boardGroupID=4
+   device 5 : sms 13  Capabilities 3.7, SmClock 823.5 Mhz, MemSize (Mb) 11441, MemClock 2505.0 Mhz, Ecc=1, boardGroupID=4
+   device 6 : sms 13  Capabilities 3.7, SmClock 823.5 Mhz, MemSize (Mb) 11441, MemClock 2505.0 Mhz, Ecc=1, boardGroupID=6
+   device 7 : sms 13  Capabilities 3.7, SmClock 823.5 Mhz, MemSize (Mb) 11441, MemClock 2505.0 Mhz, Ecc=1, boardGroupID=6
+   Using device 0
 
+   Testing single precision
+   Loading image data/one_28x28.pgm
+   Performing forward propagation ...
+   Testing cudnnGetConvolutionForwardAlgorithm ...
+   Fastest algorithm is Algo 1
+   Testing cudnnFindConvolutionForwardAlgorithm ...
+   ^^^^ CUDNN_STATUS_SUCCESS for Algo 0: 0.024928 time requiring 0 memory
+   ^^^^ CUDNN_STATUS_SUCCESS for Algo 1: 0.033504 time requiring 100 memory
+   ^^^^ CUDNN_STATUS_SUCCESS for Algo 2: 0.046816 time requiring 57600 memory
+   ^^^^ CUDNN_STATUS_SUCCESS for Algo 4: 0.128416 time requiring 207360 memory
+   ^^^^ CUDNN_STATUS_SUCCESS for Algo 5: 0.143424 time requiring 209360 memory
+   Resulting weights from Softmax:
+   0.0000000 0.9999399 0.0000000 0.0000000 0.0000561 0.0000000 0.0000012 0.0000017 0.0000010 0.0000000 
+   Loading image data/three_28x28.pgm
+   Performing forward propagation ...
+   Resulting weights from Softmax:
+   0.0000000 0.0000000 0.0000000 0.9999288 0.0000000 0.0000711 0.0000000 0.0000000 0.0000000 0.0000000 
+   Loading image data/five_28x28.pgm
+   Performing forward propagation ...
+   Resulting weights from Softmax:
+   0.0000000 0.0000008 0.0000000 0.0000002 0.0000000 0.9999820 0.0000154 0.0000000 0.0000012 0.0000006 
 
+   Result of classification: 1 3 5
+
+   Test passed!
+
+   Testing half precision (math in single precision)
+   Loading image data/one_28x28.pgm
+   Performing forward propagation ...
+   Testing cudnnGetConvolutionForwardAlgorithm ...
+   Fastest algorithm is Algo 1
+   Testing cudnnFindConvolutionForwardAlgorithm ...
+   ^^^^ CUDNN_STATUS_SUCCESS for Algo 0: 0.026144 time requiring 0 memory
+   ^^^^ CUDNN_STATUS_SUCCESS for Algo 1: 0.033696 time requiring 100 memory
+   ^^^^ CUDNN_STATUS_SUCCESS for Algo 2: 0.047136 time requiring 28800 memory
+   ^^^^ CUDNN_STATUS_SUCCESS for Algo 4: 0.133760 time requiring 207360 memory
+   ^^^^ CUDNN_STATUS_SUCCESS for Algo 5: 0.144096 time requiring 209360 memory
+   Resulting weights from Softmax:
+   0.0000001 1.0000000 0.0000001 0.0000000 0.0000563 0.0000001 0.0000012 0.0000017 0.0000010 0.0000001 
+   Loading image data/three_28x28.pgm
+   Performing forward propagation ...
+   Resulting weights from Softmax:
+   0.0000000 0.0000000 0.0000000 1.0000000 0.0000000 0.0000714 0.0000000 0.0000000 0.0000000 0.0000000 
+   Loading image data/five_28x28.pgm
+   Performing forward propagation ...
+   Resulting weights from Softmax:
+   0.0000000 0.0000008 0.0000000 0.0000002 0.0000000 1.0000000 0.0000154 0.0000000 0.0000012 0.0000006 
+
+   Result of classification: 1 3 5
+
+   Test passed!
