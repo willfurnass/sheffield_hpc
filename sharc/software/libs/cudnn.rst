@@ -30,6 +30,8 @@ Load the appropriate cuDNN version (**and implicitly load a specific CUDA versio
    module load libs/cudnn/5.1/binary-cuda-7.5.18
    module load libs/cudnn/4.0/binary-cuda-7.5.18
 
+Note that for ``libs/cudnn/4.0/binary-cuda-7.5.18`` the ``mnistCUDNN`` test program succeeds on K80 GPUs but fails on P100 and V100 GPUs.
+
 Examples
 --------
 
@@ -148,7 +150,7 @@ Version 4.0
 - Install script: :download:`install_4.0_for_cuda_7.0.sh </sharc/software/install_scripts/libs/cudnn/install_4.0_for_cuda_7.0.sh>`
 - :download:`Module file for CUDA 7.5 </sharc/software/modulefiles/libs/cudnn/4.0/binary-cuda-7.5.18>` 
   (this cuDNN was built for CUDA 7.0 but should be compatible with CUDA 7.5)
-- Testing: ran the ``mnistCUDNN`` example (see *Examples* above) with CUDA 7.5 on a K80 GPU (would not run on a V100 GPU): ::
+- Testing: ran the ``mnistCUDNN`` example (see *Examples* above) with CUDA 7.5 on a K80 GPU (NB tests failed on P100 and V100 GPUs): ::
 
    $ make
    /usr/local/packages/libs/CUDA/7.5.18/binary/cuda/bin/nvcc -ccbin g++ -I/usr/local/packages/libs/CUDA/7.5.18/binary/cuda/include -IFreeImage/include -IUtilNPP  -m64    -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=sm_35 -gencode arch=compute_37,code=sm_37 -gencode arch=compute_50,code=sm_50 -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o fp16_dev.o -c fp16_dev.cu
