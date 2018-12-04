@@ -18,12 +18,12 @@ Usage
 Ansys can be activated using the module files::
 
     module load apps/ansys/15.0
-	module load apps/ansys/16.1
+    module load apps/ansys/16.1
     module load apps/ansys/17.2
     module load apps/ansys/18.0/binary
     module load apps/ansys/18.2/binary
     module load apps/ansys/19.0/binary
-	module load apps/ansys/19.1/binary
+    module load apps/ansys/19.1/binary
 	
 
 The Ansys Workbench GUI executable is ``ansyswb``. ``ansyswb`` can be launched during an interactive session with X Window support (e.g. an interactive ``qrshx`` session).
