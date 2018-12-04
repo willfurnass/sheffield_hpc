@@ -26,5 +26,5 @@ module-whatis   "Makes ANSYS EM V19.0 available"
 
 
 prepend-path PATH $ANSYSEM_DIR/Linux64
-
 prepend-path LD_LIBRARY_PATH $ANSYSEM_DIR/Linux64
+
