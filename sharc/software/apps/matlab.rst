@@ -13,47 +13,63 @@ MATLAB
 
 Scientific computing and visualisation.
 
-Interactive Usage
+Interactive usage
 -----------------
 After connecting to ShARC (see :ref:`ssh`),  start an interactive session with the ``qrshx`` command.
 
-The latest version of MATLAB (currently 2018b) is made available by running: ::
+The latest version of MATLAB (currently 2018b) is made available by running:
 
-	module load apps/matlab
+.. code-block:: bash
 
-Alternatively, you can load a specific version with one of the following commands: ::
+   module load apps/matlab
 
-	module load apps/matlab/2016a/binary
-	module load apps/matlab/2016b/binary
-	module load apps/matlab/2017a/binary
-	module load apps/matlab/2017b/binary
-	module load apps/matlab/2018a/binary
-	module load apps/matlab/2018b/binary
+Alternatively, you can load a specific version with one of the following commands:
 
-You can then run MATLAB by entering ``matlab``
+.. code-block:: bash
 
-Serial (one CPU) Batch usage
+   module load apps/matlab/2016a/binary
+   module load apps/matlab/2016b/binary
+   module load apps/matlab/2017a/binary
+   module load apps/matlab/2017b/binary
+   module load apps/matlab/2018a/binary
+   module load apps/matlab/2018b/binary
+
+You can then run MATLAB by entering ``matlab``.
+
+Serial (one CPU) batch usage
 ----------------------------
-Here, we assume that you wish to run the program ``helloworld.m`` on the system: ::
+Here, we assume that you wish to run the program ``helloworld.m`` on the system:
 	
-	function helloworld
-		disp('Hello World!')
-	end	
+.. code-block:: matlab
 
-First, you need to write a batch submission file. We assume you'll call this ``my_job.sge``: ::
+   function helloworld
+       disp('Hello World!')
+   end	
 
-	#!/bin/bash
-	#$ -l rmem=4G                  		# Request  4 GB of real memory
-	#$ -cwd                        		# Run job from current directory
-	module load apps/matlab/2018b/binary  	# Make specific version of MATLAB available
-  
-	matlab -nodesktop -nosplash -r helloworld
+First, you need to write a batch submission file.
+We assume you'll call this ``my_job.sge``:
 
-Ensuring that ``helloworld.m`` and ``my_job.sge`` are both in your current working directory, submit your job to the batch system: ::
+.. code-block:: bash
 
-	qsub my_job.sge
+   #!/bin/bash
+   #$ -l rmem=4G                  		# Request  4 GB of real memory
+   #$ -cwd                        		# Run job from current directory
+   module load apps/matlab/2018b/binary  	# Make specific version of MATLAB available
 
-Note that we are running the script ``helloworld.m`` but we drop the ``.m`` in the call to MATLAB. That is, we do ``-r helloworld`` rather than ``-r helloworld.m``. The output will be written to the job ``.o`` file when the job finishes.
+   matlab -nodesktop -nosplash -r helloworld
+
+Ensure that ``helloworld.m`` and ``my_job.sge`` are both in your current working directory, 
+then submit your job to the batch system:
+
+.. code-block:: bash
+
+   qsub my_job.sge
+
+Note that we are running the script ``helloworld.m`` 
+but we drop the ``.m`` in the call to MATLAB. 
+That is, we do ``-r helloworld`` 
+rather than ``-r helloworld.m``. 
+The output will be written to the job ``.o`` file when the job finishes.
 
 MATLAB Compiler and running free-standing compiled MATLAB programs
 ------------------------------------------------------------------
@@ -62,150 +78,184 @@ The MATLAB compiler **mcc** can be used to generate standalone executables.
 These executables can then be run on other computers that does not have MATLAB installed. 
 We strongly recommend you use R2016b or later versions to take advantage of this feature. 
 
-To compile a MATLAB function or script for example called ``myscript.m`` the following steps are required: ::
+To compile a MATLAB function or script for example called ``myscript.m`` the following steps are required:
 
-	# Load the matlab 2018b module
-	module load apps/matlab/2018b/binary  
+.. code-block:: bash
 
-	# Compile your program to generate the executable myscript and 
-	# also generate a shell script named run_myscript.sh 
-	mcc -m myscript.m
+   # Load the matlab 2018b module
+   module load apps/matlab/2018b/binary  
 
-	# Finally run your program
-	./run_myscript.sh $MCRROOT
+   # Compile your program to generate the executable myscript and 
+   # also generate a shell script named run_myscript.sh 
+   mcc -m myscript.m
 
-If ``myscript.m`` is a MATLAB function that require inputs these can be suplied on the command line. 
-For example if the first line of ``myscript.m`` reads: ::
+   # Finally run your program
+   ./run_myscript.sh $MCRROOT
 
-	function out = myscript ( a , b , c )
+If ``myscript.m`` is a MATLAB function that require inputs then 
+these can be suplied on the command line. 
+For example if the first line of ``myscript.m`` reads:
 
-then to run it with 1.0, 2.0, 3.0 as its parameters you will need to type: ::
+.. code-block:: matlab
 
-	./run_myscript.sh $MCRROOT 1.0 2.0  3.0 
+   function out = myscript ( a , b , c )
+
+then to run it with 1.0, 2.0, 3.0 as its parameters you will need to type:
+
+.. code-block:: bash
+
+   ./run_myscript.sh $MCRROOT 1.0 2.0  3.0 
 
 After a successful compilation and running you can transfer your executable and the runscript to another computer.
 That computer does not have to have MATLAB installed or licensed on it but it will have to have the MATLAB runtime system installed. 
 This can be done by either downloading the MATLAB runtime environment from Mathworks web site or 
-by copying the installer file from the cluster itself which resides in: ::
+by copying the installer file from the cluster itself which resides in the ``.zip`` file: ::
 
-	$MCRROOT/toolbox/compiler/deploy/glnxa64/MCRInstaller.zip
+   $MCRROOT/toolbox/compiler/deploy/glnxa64/MCRInstaller.zip
 
 This file can be unzipped in a temporary area and run the setup script that unzipping yields to install the MATLAB runtime environment.
 Finally the environment variable ``$MCRROOT`` can be set to the directory containing the runtime environment.  
  
-Parallel MATLAB - Single node
------------------------------
+Parallel MATLAB: single node
+----------------------------
 
-Parallel Matlab can be run exclusively on a single node (using a maximum of 16 cores). 
+Parallel MATLAB can be run exclusively on a single node. 
 
-An example batch script ``my_parallel_job.sh`` is: ::
+An example batch script ``my_parallel_job.sh`` is:
 
-	#!/bin/bash
-	#$ -l rmem=2G
-	#$ -pe smp 12
-	module load apps/matlab/2018b/binary
-	#Run parallel_example.m
-	matlab -nodisplay -r parallel_example
+.. code-block:: bash
 
-where ``parallel_example.m`` is: ::
+   #!/bin/bash
+   #$ -l rmem=2G
+   #$ -pe smp 12
+   #$ -M someuser@sheffield.ac.uk
+   #$ -m bea
+   #$ -j y
 
-	%create parallel pool of workers on the local node
-	%Ensure that this is the same number as what you requested from the scheduler
-	pool = parpool('local',12)
-	disp('serial time')
-	tic
-	n = 200;
-	A = 500;
-	a = zeros(n);
-	for i = 1:n
-		a(i) = max(abs(eig(rand(A))));
-	end
-	toc
+   module load apps/matlab/2018b/binary
 
-	disp('Parallel time')
-	tic
-	n = 200;
-	A = 500;
-	a = zeros(n);
-	parfor i = 1:n
-		a(i) = max(abs(eig(rand(A))));
-	end
-	toc
+   # Run parallel_example.m
+   matlab -nodisplay -r parallel_example
 
-	delete(pool)
+where ``parallel_example.m`` is:
 
-Parallel MATLAB - Multiple-nodes
---------------------------------
+.. code-block:: matlab
 
-Parallel Matlab using multiple nodes is restricted to 32 cores. 
+   % Create parallel pool of workers on the local node.
+   % Ensure that this is the same number as what you requested from the scheduler
+   pool = parpool('local',12)
+   disp('serial time')
+   tic
+   n = 200;
+   A = 500;
+   a = zeros(n);
+   for i = 1:n
+   	a(i) = max(abs(eig(rand(A))));
+   end
+   toc
 
-The user must configure Matlab first by running Matlab interactively and configuring for cluster usage.
+   disp('Parallel time')
+   tic
+   n = 200;
+   A = 500;
+   a = zeros(n);
+   parfor i = 1:n
+   	a(i) = max(abs(eig(rand(A))));
+   end
+   toc
 
-This is done by logging into ShARC, launching a qrshx session, module load apps/matlab/2018a & launching matlab. The following command is typed into the command line in the GUI: ::
+   delete(pool)
 
-	configCluster;
+Parallel MATLAB: multiple nodes
+-------------------------------
 
-Matlab GUI can now be closed.
+Parallel MATLAB using multiple nodes is restricted to 32 cores. 
 
-An example batch script ``submit_Matlab_mpi.sh`` is: ::
+The user must first configure MATLAB for cluster usage by starting MATLAB interactively.
+This is done by logging into ShARC, 
+launching a ``qrshx`` session, 
+loading a version of MATLAB (e.g. using ``module load apps/matlab/2018b``) and 
+launching MATLAB with ``matlab``. 
+You then need to type the following at the prompt within the MATLAB GUI:
 
-	#!/bin/bash
-	#$ -M user@sheffield.ac.uk
-	#$ -m bea
-	#$ -V
-	#$ -j y
-	module load apps/matlab/2018b/binary
-	#Run parallel_example.m
-	matlab -nodisplay -nosplash -r submit_matlab_fnc
+.. code-block:: matlab
 
-where ``submit_matlab_fnc.m`` is: ::
+   configCluster;
 
-	function submit_matlab_fnc
+The MATLAB GUI can then be closed.
 
-	cd path_working_directory;
-	c=parcluster;
-	c.AdditionalProperties.EmailAddress = 'user@sheffield.ac.uk';
-	%configure runtime e.g. 40 minutes
-	c.AdditionalProperties.WallTime = '00:40:00';
-	%configure rmem per process e.g. 4 Gb
-	c.AdditionalProperties.AdditionalSubmitArgs = ' -l rmem=4G';
-	%parallel_example.m contains the parfor loop, no_of_cores < 31
-	j=c.batch(@parallel_example,1,{},'Pool',no_of_cores);
+An example batch script ``submit_Matlab_mpi.sh`` is:
 
-where ``parallel_example.m`` is: ::
-	
-	function time = parallel_example
-	cd path_working_directory;
-	outfile = ['output.txt'];
-	fileID = fopen(outfile,'w');
-	%disp('Parallel time')
-	tic
-	n = 200;
-	A = 500;
-	a = zeros(n);
-	parfor i = 1:n
-		a(i) = max(abs(eig(rand(A))));
-	end
-	time=toc;
-	fprintf(fileID, '%d', time);
-	fclose(fileID);
+.. code-block:: bash
 
-Note that for multi-node parallel Matlab the maximum number of workers allowed is 31 since the master process requires a parallel licence. Task arrays are supported by all versions, however it is recommended that 2017a (or later) is used. 
+   #!/bin/bash
+   #$ -M someuser@sheffield.ac.uk
+   #$ -m bea
+   #$ -j y
+
+   module load apps/matlab/2018b/binary
+
+   # Run parallel_example.m
+   matlab -nodisplay -nosplash -r submit_matlab_fnc
+
+where ``submit_matlab_fnc.m`` is:
+
+.. code-block:: matlab
+
+   function submit_matlab_fnc
+
+   cd path_working_directory;
+   c = parcluster;
+   c.AdditionalProperties.EmailAddress = 'someuser@sheffield.ac.uk';
+   % Configure runtime e.g. 40 minutes
+   c.AdditionalProperties.WallTime = '00:40:00';
+   % Configure rmem per process e.g. 4 Gb
+   c.AdditionalProperties.AdditionalSubmitArgs = ' -l rmem=4G';
+   % Parallel_example.m contains the parfor loop, no_of_cores < 31
+   j = c.batch(@parallel_example, 1, {}, 'Pool', no_of_cores);
+
+and ``parallel_example.m`` is:
+
+.. code-block:: matlab
+
+   function time = parallel_example
+   cd path_working_directory;
+   outfile = ['output.txt'];
+   fileID = fopen(outfile, 'w');
+   %disp('Parallel time')
+   tic
+   n = 200;
+   A = 500;
+   a = zeros(n);
+   parfor i = 1:n
+       a(i) = max(abs(eig(rand(A))));
+   end
+   time = toc;
+   fprintf(fileID, '%d', time);
+   fclose(fileID);
+
+Note that for multi-node parallel MATLAB 
+the maximum number of workers allowed is 31 
+since the master process requires a parallel licence. 
+Task arrays are supported by all versions, 
+however it is recommended that 2017a (or later) is used. 
 
 MATLAB Engine for Python
 ------------------------
 
 This is a MathWorks-developed way of running MATLAB from Python.
 On ShARC the recommended way of installing this is into a :ref:`conda environment <sharc-python-conda>`.
-Here's how you can install the R2017b version into a new conda environment called ``my-environment-name``: ::
+Here's how you can install the R2017b version into a new conda environment called ``my-environment-name``:
 
-    module load apps/python/conda
-    conda create -n my-environment-name python=2.7
-    source activate my-environment-name 
+.. code-block:: bash
 
-    pushd /usr/local/packages/apps/matlab/2017b/binary/extern/engines/python
-    python setup.py build -b $TMPDIR install
-    popd
+   module load apps/python/conda
+   conda create -n my-environment-name python=2.7
+   source activate my-environment-name 
+
+   pushd /usr/local/packages/apps/matlab/2017b/binary/extern/engines/python
+   python setup.py build -b $TMPDIR install
+   popd
 
 `More information <https://uk.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html>`__ on the MATLAB Engine for Python,
 including basic usage.
