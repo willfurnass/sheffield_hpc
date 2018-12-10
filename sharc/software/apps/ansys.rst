@@ -67,7 +67,7 @@ Installation notes
 Ansys 15.0 was installed using the
 :download:`install_ansys.sh </sharc/software/install_scripts/apps/ansys/15.0/install_ansys.sh>` script; the module
 file is
-:download:`/usr/local/modulefiles/apps/ansys/15.0 </sharc/software/modulefiles/apps/ansys/15.0>`.
+:download:`/usr/local/modulefiles/apps/ansys/15.0/binary </sharc/software/modulefiles/apps/ansys/15.0/binary>`.
 
 Ansys 16.1 was installed using the
 :download:`install_ansys.sh </sharc/software/install_scripts/apps/ansys/16.1/install_ansys.sh>` script; the module
@@ -95,8 +95,10 @@ file is
 :download:`/usr/local/modulefiles/apps/ansys/19.0/binary </sharc/software/modulefiles/apps/ansys/19.0/binary>`.
 
 Ansys 19.1 was installed using the
-:download:`install_ansys_190.sh </sharc/software/install_scripts/apps/ansys/19.1/binary/install_ansys_190.sh>` script; the module
+:download:`install_ansys_191.sh </sharc/software/install_scripts/apps/ansys/19.1/binary/install_ansys_191.sh>` script; the module
 file is
 :download:`/usr/local/modulefiles/apps/ansys/19.1/binary </sharc/software/modulefiles/apps/ansys/19.1/binary>`.
 
-The binary installations were tested by launching ``ansyswb`` and by using the above batch submission script. The ``mpi-rsh`` tight-integration parallel environment is required to run Ansys/Fluent using MPI due to password-less ssh being disabled across nodes on ShARC.
+The binary installations were tested by launching ``ansyswb`` and by using the above batch submission script. 
+The ``mpi-rsh`` tight-integration parallel environment is required to run Ansys/Fluent using MPI due to 
+SSH access to worker nodes being prohibited for most users.
