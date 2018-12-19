@@ -24,7 +24,7 @@ You can load a specific version using ::
    module load mpi/openmpi/1.10.4/gcc-6.2
    module load mpi/openmpi/1.10.4/gcc-4.9.4
 
-See `here <https://mail-archive.com/announce@lists.open-mpi.org/msg00118.html>`__ for a brief guide to the new features in OpenMPI 3.x and `here <https://www.open-mpi.org/software/ompi/v3.1/srpm.php>`__ for a detailed view of the changes between OpenMPI versions.
+See `here <https://mail-archive.com/announce@lists.open-mpi.org/msg00118.html>`__ for a brief guide to the new features in OpenMPI 3.x and `here <https://raw.githubusercontent.com/open-mpi/ompi/v3.1.x/NEWS>`__ for a detailed view of the changes between OpenMPI versions.
 
 **CUDA**: Note that if you are using :ref:`CUDA <cuda_sharc>` with OpenMPI then you currently need to use a version of CUDA built with GCC < 5.0.
 **C++ bindings** If you are using the C++ bindings then you should use OpenMPI 1.10.4 as the bindings have been deprecated in OpenMPI 2.0.1.
