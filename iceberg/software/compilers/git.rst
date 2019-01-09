@@ -11,12 +11,12 @@ Git is a free and open source distributed version control system designed to han
 
 Usage
 -----
-An old version of git is installed as part of the system's opertaing system. As such, it is available everywhere, including on the log-in nodes  ::
+An old version of git is installed as part of the system's opertaing system. As such, it is available everywhere, including on the log-in nodes: ::
 
     $ git --version
     git version 1.7.1
 
-This was released in April 2010. We recommend that you load the most up to date version using modules - something that can only be done after starting an interactive ``qrsh`` or ``qsh`` session ::
+This was released in April 2010. We recommend that you load the most up to date version using modules - something that can only be done after starting an interactive ``qrshx`` or ``qsh`` session: ::
 
     module load apps/gcc/5.2/git/2.5
 
