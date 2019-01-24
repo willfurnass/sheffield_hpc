@@ -93,6 +93,29 @@ Note that the module ``dev/intel-compilers/15.0.7``, required for user subroutin
 
 **Important information:** Please note that at present Abaqus will not run on more than one node when using MPI on ShARC. The SGE option ``-l excl=true`` can be used to request that an MPI job runs on one compute node only. The recommended way to run Abaqus in parallel on ShARC is to use OpenMP.
 
+Using /fastdata as your Abaqus working directory
+------------------------------------------------
+
+If you want to run Abaqus from a directory on :ref:`/fastdata <filestore>`
+then you need to have the following line in your batch job submission script
+just before the main ``abaqus`` command: ::
+
+   export BAS_DISABLE_FILE_LOCKING=1
+
+Otherwise your Abaqus job will fail and 
+you will see errors like the following
+in your ``my_job_name.dat`` output file: ::
+
+    ***ERROR: An error occurred during a write access to 
+              <rank=0,arg_name=outdir>my_user_job.stt file. Check the disk space 
+              on your system.
+
+This is a lie; Abaqus is failing to write the ``.stt`` file as it tries to use `file locking <https://en.wikipedia.org/wiki/File_locking>`__ 
+which is not enabled on the ``/fastdata`` filesystem at present for performance reasons.
+Setting the ``BAS_DISABLE_FILE_LOCKING`` environment variable to ``1`` is a Dassault Systems-approved workaround for this.
+
+
+
 Licensed options
 ----------------
 
