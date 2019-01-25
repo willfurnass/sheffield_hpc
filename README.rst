@@ -39,7 +39,8 @@ Building the documentation on a local Windows machine
 
 #. Create a new *conda environment* for building the documentation by running the following from this window: ::
 
-    conda create -n sheffield_hpc python=3.6 
+    conda create --name sheffield_hpc python=3.6
+    conda activate sheffield_hpc	# . activate sheffield_hpc on older versions of conda
     pip install -r requirements.txt
 
 #. To build the HTML documentation run: ::
