@@ -63,9 +63,8 @@ The main Go website: https://golang.org/
 
 An interactive tour: https://tour.golang.org/welcome/1
 
-Effective Go https://golang.org/doc/effective_go.html
+Effective Go: https://golang.org/doc/effective_go.html
 
-An interactive web page for small Go snippets
-https://play.golang.org/
+An interactive web page for small Go snippets: https://play.golang.org/
 
 END
