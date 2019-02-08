@@ -38,7 +38,7 @@ activate it. ::
 
 (On newer versions of conda, it's ``conda activate go``)
 
-Per https://anaconda.org/conda-forge/go install Go. ::
+Following `the conda-forge page <https://anaconda.org/conda-forge/go>`_ install Go. ::
 
    conda install --channel conda-forge go
 
