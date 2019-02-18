@@ -3,7 +3,7 @@ GROMACS
 
 .. sidebar:: GROMACS
 
-   :Version: 2016.4
+   :Version: 2016.4, 2018.1
    :Dependencies: Modules loaded for GCC 4.9.4 and, for GPU support, CUDA 8.0.44.
    :URL: http://www.gromacs.org/
    :Documentation: http://manual.gromacs.org/documentation/
@@ -20,9 +20,11 @@ Usage
 GROMACS 2016.4 can be activated using the module files::
 
     module load apps/gromacs/2016.4/gcc-4.9.4
+    module load apps/gromacs/2018.1/gcc-4.9.4
     module load apps/gromacs/2016.4/gcc-4.9.4-cuda-8.0
+    module load apps/gromacs/2018.1/gcc-4.9.4-cuda-8.0
 
-Where the latter module file ``apps/gromacs/2016.4/gcc-4.9.4-cuda-8.0`` is for the installation compiled to run on GPUs.
+Where the latter module file ``apps/gromacs/201*/gcc-4.9.4-cuda-8.0`` is for the installation compiled to run on GPUs.
 The GROMACS executable is ``gmx``. Typing ``gmx help commands`` will display a list of commands for ``gmx`` and their function.
 
 
@@ -57,9 +59,19 @@ GROMACS 2016.4 without GPU support was installed using the
 the module file is
 :download:`/usr/local/modulefiles/apps/gromacs/2016.4/gcc-4.9.4 </sharc/software/modulefiles/apps/gromacs/2016.4/gcc-4.9.4>`.
 
+GROMACS 2018.1 without GPU support was installed using the
+:download:`install_gromacs.sh </sharc/software/install_scripts/apps/gromacs/2018.1/gcc-4.9.4/install_gromacs.sh>` script;
+the module file is
+:download:`/usr/local/modulefiles/apps/gromacs/2018.1/gcc-4.9.4 </sharc/software/modulefiles/apps/gromacs/2018.1/gcc-4.9.4>`.
+
 GROMACS 2016.4 with GPU support was installed using the
 :download:`install_gromacs_gpu.sh </sharc/software/install_scripts/apps/gromacs/2016.4/gcc-4.9.4-cuda-8.0/install_gromacs_gpu.sh>` script;
 the module file is
 :download:`/usr/local/modulefiles/apps/gromacs/2016.4/gcc-4.9.4-cuda-8.0 </sharc/software/modulefiles/apps/gromacs/2016.4/gcc-4.9.4-cuda-8.0>`.
 
-The GROMACS 2016.4 installations were tested by using ``make check`` to run regression tests as part of the installation process.
+GROMACS 2018.1 with GPU support was installed using the
+:download:`install_gromacs_gpu.sh </sharc/software/install_scripts/apps/gromacs/2018.1/gcc-4.9.4-cuda-8.0/install_gromacs_gpu.sh>` script;
+the module file is
+:download:`/usr/local/modulefiles/apps/gromacs/2018.1/gcc-4.9.4-cuda-8.0 </sharc/software/modulefiles/apps/gromacs/2018.1/gcc-4.9.4-cuda-8.0>`.
+
+The GROMACS 2016.4 & 2018.1 installations were tested by using ``make check`` to run regression tests as part of the installation process.
