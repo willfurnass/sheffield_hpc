@@ -1,0 +1,40 @@
+#%Module1.0#####################################################################
+##
+## GROMACS module file
+##
+#  By Des Ryan February 2019
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+#
+ set version 2018.1
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes GROMACS Version $version available for use"
+}
+
+#set USER $::env(USER)
+
+module-whatis   "Makes GROMACS Version $version available"
+
+# load modules
+ module load dev/gcc/4.9.4
+
+# module variables
+
+ set GROMACS_DIR /usr/local/packages/apps/gromacs/2018.1/gcc-4.9.4
+ 
+ setenv          GROMACS_DIR     $GROMACS_DIR
+ prepend-path    PATH            $GROMACS_DIR/bin
+ setenv          GMXBIN          $GROMACS_DIR/bin
+ prepend-path    LD_LIBRARY_PATH $GROMACS_DIR/lib64
+ setenv          GMXLDLIB        $GROMACS_DIR/lib
+ setenv          GMXMAN          $GROMACS_DIR/share/man
+ prepend-path    MANPATH         $GROMACS_DIR/share/man
+ setenv          GMXDATA         $GROMACS_DIR/share/gromacs
+ prepend-path    PKG_CONFIG_PATH $GROMACS_DIR/lib64/pkgconfig
+
