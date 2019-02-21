@@ -48,7 +48,7 @@ Users are encouraged to write their own batch submission scripts. The following 
     gmx mdrun -s topol.tpr
 
 The script requests one CPU core using the OpenMP parallel environment ``smp``, with 2 GB of real memory per CPU core, and one GPU per one CPU core. The requested runtime is 6 hours.
-The GROMACS input line beginning with ``gmx grompp`` is to make a run input file; ``gmx mdrun`` is to perform a simulation, do a normal mode analysis or an energy minimization.
+The GROMACS input line beginning with ``gmx grompp`` is to make a run input file; ``gmx mdrun`` is to perform a simulation, do a normal mode analysis or an energy minimization. Note ``gmx_mpi`` is used when using OPENMPI functionality.
 
 
 Installation notes
@@ -77,7 +77,7 @@ the module file is
 :download:`/usr/local/modulefiles/apps/gromacs/2018.1/gcc-4.9.4-cuda-8.0 </sharc/software/modulefiles/apps/gromacs/2018.1/gcc-4.9.4-cuda-8.0>`.
 
 GROMACS 2018.1 with OPENMPI support was installed using the
-:download:`install_gromacs_gpu.sh </sharc/software/install_scripts/apps/gromacs/2018.1/gcc-4.9.4-openmpi-2.0.1/install_gromacs_mpi.sh>` script;
+:download:`install_gromacs_mpi.sh </sharc/software/install_scripts/apps/gromacs/2018.1/gcc-4.9.4-openmpi-2.0.1/install_gromacs_mpi.sh>` script;
 the module file is
 :download:`/usr/local/modulefiles/apps/gromacs/2018.1/gcc-4.9.4-openmpi-2.0.1 </sharc/software/modulefiles/apps/gromacs/2018.1/gcc-4.9.4-openmpi-2.0.1>`.
 The GROMACS 2016.4 & 2018.1 installations were tested by using ``make check`` to run regression tests as part of the installation process.
