@@ -31,7 +31,7 @@ Computations running on cores on the same node can share memory.
 Code that runs on multiple cores may require that the cores are
 all on the same node or may not;
 additionally it may require that the code runs simultaneously on
-cores, or not.
+multiple cores, or not.
 This gives rise to a number of ways to use multiple cores:
 
 - all cores on same node: this is called `Shared Memory Parallelism <SMP.html>`_;
