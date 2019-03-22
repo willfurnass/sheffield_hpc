@@ -3,7 +3,7 @@
 Parallel Computing
 ==================
 
-Parallel Computing uses more than one *core*.
+Parallel Computing uses more than one core.
 A *core* (also called *processor*) is capable of executing one
 thread of computation.
 
