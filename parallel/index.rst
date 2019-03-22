@@ -8,12 +8,12 @@ A *core* (also called *processor*) is capable of executing one
 thread of computation.
 
 Modern computers contain more than one core;
-a typical laptop usually containing either 2 or 4.
-`Hyperthreading <https://en.wikipedia.org/wiki/Hyper-threading>`_
-is a way of excuting 2 (typically) threads on one
-core, it is enabled on most laptop-class cores,
-but is disabled on most HPC clusters
-(it is disabled on most nodes on ShARC).
+a typical laptop usually contains either 2 or 4.
+`Hyper-threading <https://en.wikipedia.org/wiki/Hyper-threading>`_
+is a way of excuting 2 (typically) threads on one core,
+it is enabled on most laptop-class cores,
+but is disabled on most HPC clusters.
+Hyper-threading is disabled on most nodes on ShARC.
 
 Computer clusters such as ShARC or Iceberg contain many hundreds of cores and
 the key to making your research code faster is to distribute your work across them.
