@@ -24,8 +24,9 @@ Learning how to use parallelisation technologies is vital.
 This section explains how to use the most common parallelisation technologies on our systems.
 
 A CPU contains 1 or more cores.
-On ShARC the CPUs have 8 cores each.
-A *node* on ShARC has 2 CPUs and so 16 cores.
+A *node* is what most people think of as "a computer".
+The `public nodes on ShARC have 2 CPUs and each CPU has 8 cores <../sharc/cluster_specs.html#general-cpu-node-specifications>`_;
+and so a (public) node has 16 cores.
 Computations running on cores on the same node can share memory.
 
 Code that runs on multiple cores may require that the cores are
