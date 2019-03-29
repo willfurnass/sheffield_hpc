@@ -12,7 +12,7 @@ handle_error () {
 trap handle_error ERR
 set -u
 
-VERSIONS='9.1.85_387.26 9.0.176_384.81 8.0.44 7.5.18'
+VERSIONS='10.0.130_410.48 9.1.85_387.26 9.0.176_384.81 8.0.44 7.5.18'
 MEDIA_DIR='/usr/local/media/nvidia/'
 
 usage () {
@@ -53,7 +53,7 @@ chmod +x "$installer"
 
 prefix="/usr/local/packages/libs/CUDA/${short_vers}/binary"
 mkdir -m 2775 -p "$prefix"
-chown -R ${USER}:app-admins "$prefix"
+chown -R ${USER}:hpc_app-admins "$prefix"
 chmod -R g+w "$prefix"
 
 echo "Installing CUDA using $installer"

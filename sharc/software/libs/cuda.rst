@@ -27,6 +27,7 @@ versions of CUDA are activated via the :ref:`'module load' command<env_modules>`
 
 .. code-block:: sh
 
+   module load libs/CUDA/10.0.130/binary
    module load libs/CUDA/9.1.85/binary
    module load libs/CUDA/9.0.176/binary
    module load libs/CUDA/8.0.44/binary
@@ -191,6 +192,13 @@ This service runs ``/usr/local/scripts/gpu-nvidia-driver.sh`` at boot time to:
 - Check the device driver version and uninstall it then reinstall the target version if required;
 - Load the ``nvidia`` kernel module;
 - Create several *device nodes* in ``/dev/``.
+
+CUDA 10.0.130
+^^^^^^^^^^^^^
+
+#. Installed with :download:`install.sh </sharc/software/install_scripts/libs/CUDA/install.sh>` with ``10.0.130_410.48`` as the sole argument. 
+   This installs the toolkit and three NVIDIA-recommended patches.
+#. :download:`Modulefile </sharc/software/modulefiles/libs/CUDA/10.0.130/binary>` was installed as ``/usr/local/modulefiles/libs/CUDA/10.0.130/binary``
 
 CUDA 9.1.85
 ^^^^^^^^^^^
