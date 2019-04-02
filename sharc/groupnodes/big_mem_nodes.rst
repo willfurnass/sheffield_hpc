@@ -3,14 +3,19 @@
 Big memory nodes [COM]
 ======================
 
-The Department of Computer Science have purchased three nodes in ShARC that each have 
+The Department of Computer Science have purchased 8 nodes in ShARC that each have 
 much more than the standard amount of RAM per node. 
 
 Specifications
 --------------
 
-* 2x Intel Xeon E5-2630 v3 processors (2.40 GHz, 8 cores per processor i.e. 16 total)
-* 768 GB RAM (48 GB / CPU core)
+* 3x nodes with
+   * 2x Intel Xeon E5-2630 v3 processors (2.40 GHz, 8 cores per socket i.e. 16 total)
+   * 768 GB RAM (48 GB / CPU core)
+* 5x nodes with
+   * 2x Intel Xeon Gold 6138 processors (2.00GHz, 20 cores per socket i.e. 40 total)
+   * 768 GB RAM (19.2 GB / CPU core)
+   * 1TB SSD
 
 Requesting Access
 -----------------
