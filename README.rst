@@ -1,5 +1,7 @@
 .. image:: https://travis-ci.org/rcgsheffield/sheffield_hpc.svg?branch=master
     :target: https://travis-ci.org/rcgsheffield/sheffield_hpc
+.. image:: https://readthedocs.org/projects/iceberg/badge/?version=latest
+    :target: https://readthedocs.org/projects/iceberg/builds/
 
 Sheffield High Performance Computing Documentation
 ==================================================
