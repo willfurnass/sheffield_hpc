@@ -22,6 +22,8 @@ Load the appropriate cuDNN version (**and implicitly load a specific CUDA versio
 
 .. code-block:: bash
 
+   module load libs/cudnn/7.5.0.56/binary-cuda-10.0.130
+   module load libs/cudnn/7.5.0.56/binary-cuda-9.0.176
    module load libs/cudnn/7.3.1.20/binary-cuda-9.0.176
    module load libs/cudnn/7.0/binary-cuda-9.1.85
    module load libs/cudnn/7.0/binary-cuda-8.0.44
@@ -35,7 +37,13 @@ Note that for ``libs/cudnn/4.0/binary-cuda-7.5.18`` the ``mnistCUDNN`` test prog
 Examples
 --------
 
-Examples are provided with ``libs/cudnn/7.3.1.20/binary-cuda-9.0.176`` and ``libs/cudnn/4.0/binary-cuda-7.5.18``.
+Examples are provided for the following versions 
+
+ * ``libs/cudnn/7.5.0.56/binary-cuda-10.0.130``
+ * ``libs/cudnn/7.5.0.56/binary-cuda-9.0.176``
+ * ``libs/cudnn/7.3.1.20/binary-cuda-9.0.176``
+ * ``libs/cudnn/4.0/binary-cuda-7.5.18``
+
 Usage with ``libs/cudnn/7.3.1.20/binary-cuda-9.0.176``:
 
 .. code-block:: bash
@@ -43,9 +51,11 @@ Usage with ``libs/cudnn/7.3.1.20/binary-cuda-9.0.176``:
    # start an interactive session on a GPU node
    qrshx -l gpu=1  
    # Copy the cuDNN 7 examples to a temporary directory
-   cp -r $CUDNN_HOME/src/cudnn_samples_v7 $TMPDIR
+   cp -r "$CUDNN_HOME/src/cudnn_samples_v7" "${TMPDIR-/tmp}"
    # Compile an example
-   cd mnistCUDNN
+   cd "${TMPDIR-/tmp}/cudnn_samples_v7/mnistCUDNN"
+   if [ -z ${CUDA_PATH+x} ]; then
+      export CUDA_PATH="${CUDA_HOME}"
    make
    # Run the example
    ./mnistCUDNN
@@ -56,6 +66,74 @@ Installation notes
 This section is primarily for administrators of the system.
 
 The cuDNN library is only available to download through the `developer portal <https://developer.nvidia.com/cudnn>`_.  Installation ``.tgz`` files are located in ``/usr/local/media/protected/cudnn``.
+
+Version 7.5.0.56
+^^^^^^^^^^^^^^^^
+
+- Install script: :download:`install_cudnn7.5.0.56_for_cuda_10.0_and_9.0.sh </sharc/software/install_scripts/libs/cudnn/install_7.5.0.56_for_cuda_10.0_and_9.0.sh>`
+- :download:`Module file for CUDA 10.0 </sharc/software/modulefiles/libs/cudnn/7.5.0.56/binary-cuda-10.0.130>`
+- :download:`Module file for CUDA 9.0 </sharc/software/modulefiles/libs/cudnn/7.5.0.56/binary-cuda-9.0.176>`
+- Testing: ran the ``mnistCUDNN`` example (see *Examples* above) with CUDA 10.0 on a V100 GPU; results: ::
+
+   [te1st@sharc-node168 mnistCUDNN]$ ./mnistCUDNN 
+   cudnnGetVersion() : 7500 , CUDNN_VERSION from cudnn.h : 7500 (7.5.0)
+   Host compiler version : GCC 4.8.5
+   There are 1 CUDA capable devices on your machine :
+   device 0 : sms 80  Capabilities 7.0, SmClock 1380.0 Mhz, MemSize (Mb) 16130, MemClock 877.0 Mhz, Ecc=1, boardGroupID=0
+   Using device 0
+
+   Testing single precision
+   Loading image data/one_28x28.pgm
+   Performing forward propagation ...
+   Testing cudnnGetConvolutionForwardAlgorithm ...
+   Fastest algorithm is Algo 0
+   Testing cudnnFindConvolutionForwardAlgorithm ...
+   ^^^^ CUDNN_STATUS_SUCCESS for Algo 0: 0.019424 time requiring 0 memory
+   ^^^^ CUDNN_STATUS_SUCCESS for Algo 2: 0.053248 time requiring 57600 memory
+   ^^^^ CUDNN_STATUS_SUCCESS for Algo 1: 0.078848 time requiring 3464 memory
+   ^^^^ CUDNN_STATUS_SUCCESS for Algo 7: 0.086016 time requiring 2057744 memory
+   ^^^^ CUDNN_STATUS_SUCCESS for Algo 5: 0.094208 time requiring 203008 memory
+   Resulting weights from Softmax:
+   0.0000000 0.9999399 0.0000000 0.0000000 0.0000561 0.0000000 0.0000012 0.0000017 0.0000010 0.0000000 
+   Loading image data/three_28x28.pgm
+   Performing forward propagation ...
+   Resulting weights from Softmax:
+   0.0000000 0.0000000 0.0000000 0.9999288 0.0000000 0.0000711 0.0000000 0.0000000 0.0000000 0.0000000 
+   Loading image data/five_28x28.pgm
+   Performing forward propagation ...
+   Resulting weights from Softmax:
+   0.0000000 0.0000008 0.0000000 0.0000002 0.0000000 0.9999820 0.0000154 0.0000000 0.0000012 0.0000006 
+
+   Result of classification: 1 3 5
+
+   Test passed!
+
+   Testing half precision (math in single precision)
+   Loading image data/one_28x28.pgm
+   Performing forward propagation ...
+   Testing cudnnGetConvolutionForwardAlgorithm ...
+   Fastest algorithm is Algo 0
+   Testing cudnnFindConvolutionForwardAlgorithm ...
+   ^^^^ CUDNN_STATUS_SUCCESS for Algo 0: 0.016384 time requiring 0 memory
+   ^^^^ CUDNN_STATUS_SUCCESS for Algo 2: 0.051200 time requiring 28800 memory
+   ^^^^ CUDNN_STATUS_SUCCESS for Algo 1: 0.052224 time requiring 3464 memory
+   ^^^^ CUDNN_STATUS_SUCCESS for Algo 7: 0.065568 time requiring 2057744 memory
+   ^^^^ CUDNN_STATUS_SUCCESS for Algo 4: 0.068608 time requiring 207360 memory
+   Resulting weights from Softmax:
+   0.0000001 1.0000000 0.0000001 0.0000000 0.0000563 0.0000001 0.0000012 0.0000017 0.0000010 0.0000001 
+   Loading image data/three_28x28.pgm
+   Performing forward propagation ...
+   Resulting weights from Softmax:
+   0.0000000 0.0000000 0.0000000 1.0000000 0.0000000 0.0000720 0.0000000 0.0000000 0.0000000 0.0000000 
+   Loading image data/five_28x28.pgm
+   Performing forward propagation ...
+   Resulting weights from Softmax:
+   0.0000000 0.0000008 0.0000000 0.0000002 0.0000000 1.0000000 0.0000154 0.0000000 0.0000012 0.0000006 
+
+   Result of classification: 1 3 5
+
+   Test passed!
+
 
 Version 7.3.1.20
 ^^^^^^^^^^^^^^^^
