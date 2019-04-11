@@ -14,7 +14,7 @@ About Tensorflow on ShARC
 
 **A GPU-enabled worker node must be requested in order to use the GPU version of this software. See** :ref:`GPUComputing_sharc` **for more information.**
 
-Tensorlfow is available on ShARC as both Singularity images and by local installation.
+Tensorflow is available on ShARC as both Singularity images and by local installation.
 
 As Tensorflow and all its dependencies are written in Python, it can be installed locally in your home directory. The use of Anaconda (:ref:`sharc-python-conda`) is recommended as it is able to create a virtual environment in your home directory, allowing the installation of new Python packages without admin permission.
 
@@ -25,7 +25,7 @@ This software and documentation is maintained by the `RSES group <http://rse.she
 Installation in Home Directory - CPU Version
 --------------------------------------------
 
-In order to to install to your home directory, Conda is used to create a virtual python enviroment for installing your local version of Tensorflow.
+In order to to install to your home directory, Conda is used to create a virtual python environment for installing your local version of Tensorflow.
 
 First request an interactive session, e.g. with :ref:`qrshx`.
 
@@ -111,14 +111,14 @@ Which gives the following results ::
 CUDA and CUDNN Import Errors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Tensorflow releases depend on specific versions of both CUDA and CUDNN. If the wrong CUDNN module is loaded, you may recieve an :code:`ImportError` runtime errors such as: 
+Tensorflow releases depend on specific versions of both CUDA and CUDNN. If the wrong CUDNN module is loaded, you may receive an :code:`ImportError` runtime errors such as: 
 
 .. code-block :: python
 
    ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory
 
 
-This indicates that Tensorflow was expecting to find CUDA 10.0 (and an appropraite version of CUDNN) but was unable to do so.
+This indicates that Tensorflow was expecting to find CUDA 10.0 (and an appropriate version of CUDNN) but was unable to do so.
 
 The following table shows the which module to load for the various versions of Tensorflow, based on the `tested build configurations <https://www.tensorflow.org/install/source#linux>`_. Newer versions may require more recent CUDA and CUDNN releases. 
 
