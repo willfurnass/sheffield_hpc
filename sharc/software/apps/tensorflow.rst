@@ -64,7 +64,7 @@ Then GPU version of Tensorflow can be installed by the following ::
   module load apps/python/conda
 
   #Load the CUDA and cuDNN module
-  module load libs/cudnn/7.3.1.20/binary-cuda-9.0.176
+  module load libs/cudnn/7.5.0.56/binary-cuda-10.0.130
 
   #Create an conda virtual environment called 'tensorflow-gpu'
   conda create -n tensorflow-gpu python=3.6
@@ -75,6 +75,7 @@ Then GPU version of Tensorflow can be installed by the following ::
   #Install GPU version of Tensorflow
   pip install tensorflow-gpu
 
+If you wish to use an older version of tensorflow-gpu, you can do so using :code:`pip install tensorflow-gpu==<version_number>`
 
 **Every Session Afterwards and in Your Job Scripts**
 
@@ -107,6 +108,31 @@ Which gives the following results ::
 	[[ 22.  28.]
 	 [ 49.  64.]]
 
+CUDA and CUDNN Import Errors
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Tensorflow releases depend on specific versions of both CUDA and CUDNN. If the wrong CUDNN module is loaded, you may recieve an :code:`ImportError` runtime errors such as: 
+
+.. code-block :: python
+
+   ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory
+
+
+This indicates that Tensorflow was expecting to find CUDA 10.0 (and an appropraite version of CUDNN) but was unable to do so.
+
+The following table shows the which module to load for the various versions of Tensorflow, based on the `tested build configurations <https://www.tensorflow.org/install/source#linux>`_. Newer versions may require more recent CUDA and CUDNN releases. 
+
++------------+------+--------+--------------------------------------------+
+| Tensorflow | CUDA | CUDNN  | Module                                     | 
++============+======+========+============================================+
+| >= 1.13.1  | 10.0 | >= 7.4 | `libs/cudnn/7.5.0.56/binary-cuda-10.0.130` |
++------------+------+--------+--------------------------------------------+
+| >= 1.5.0   |  9.0 | 7      | `libs/cudnn/7.3.1.20/binary-cuda-9.0.176`  |
++------------+------+--------+--------------------------------------------+
+| >= 1.3.0   |  8.0 | 6      | `libs/cudnn/6.0/binary-cuda-8.0.44`        |
++------------+------+--------+--------------------------------------------+
+| >= 1.0.0   |  8.0 | 5.1    | `libs/cudnn/5.1/binary-cuda-8.0.44`        |
++------------+------+--------+--------------------------------------------+
 
 
 
