@@ -13,15 +13,15 @@ set vers 15.0.7
 set shortvers 150
 module-whatis   "Makes ANSYS $vers available"
 
-set localroot     /usr/local/packages/apps/shef/ansys/batch:/usr/local/packages/apps/shef/ansys/
-set ANSYS_DIR     /usr/local/packages/apps/ansys/$vers/ansys_inc/v$shortvers/
+
+set ANSYS_DIR     /usr/local/packages/apps/ansys/15.0.7/ansys_inc/v150/
 
 setenv  ANSYSROOT $ANSYS_DIR
 setenv  ANSYSVER $shortvers
 setenv  ANSWBCOMMAND $ANSYS_DIR/Framework/bin/Linux64/runwb2
 setenv  FLUENT_INC $ANSYS_DIR/fluent
 
-prepend-path PATH $localroot:$ANSYS_DIR/ansys/bin:$ANSYS_DIR/Framework/bin/Linux64/:$ANSYS_DIR/fluent/bin:$ANSYS_DIR/CFD-Post/bin:$ANSYS_DIR/CFX/bin:$ANSYS_DIR/Icepak/bin:$ANSYS_DIR/TurboGrid/bin:$ANSYS_DIR/polyflow/bin:$ANSYS_DIR/CFX/bin
+prepend-path PATH $ANSYS_DIR/ansys/bin:$ANSYS_DIR/Framework/bin/Linux64/:$ANSYS_DIR/fluent/bin:$ANSYS_DIR/CFD-Post/bin:$ANSYS_DIR/CFX/bin:$ANSYS_DIR/Icepak/bin:$ANSYS_DIR/TurboGrid/bin:$ANSYS_DIR/polyflow/bin:$ANSYS_DIR/CFX/bin
  set-alias  ansyswb {\$ANSYSROOT/Framework/bin/Linux64/runwb2}
  set-alias  ansys-mechanical {\$ANSYSROOT/ansys/bin/mapdl}
 
