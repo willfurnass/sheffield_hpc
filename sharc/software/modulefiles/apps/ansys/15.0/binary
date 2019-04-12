@@ -14,7 +14,7 @@ set shortvers 150
 module-whatis   "Makes ANSYS $vers available"
 
 
-set ANSYS_DIR     /usr/local/packages/apps/ansys/15.0.7/ansys_inc/v150/
+set ANSYS_DIR     /usr/local/packages/apps/ansys/$vers/ansys_inc/v150/
 
 setenv  ANSYSROOT $ANSYS_DIR
 setenv  ANSYSVER $shortvers
