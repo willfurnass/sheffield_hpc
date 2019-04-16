@@ -34,8 +34,6 @@ prepend-path LIBRARY_PATH $intelpsroot/compilers_and_libraries_2019.3.199/linux/
 setenv MKLROOT $intelpsroot/compilers_and_libraries_2019.3.199/linux/mkl;
 setenv NLSPATH $intelpsroot/compilers_and_libraries_2019.3.199/linux/mkl/lib/intel64_lin/locale/%l_%t/%N;
 
-setenv MKLROOT $intelpsroot/compilers_and_libraries_2017.0.098/linux/mkl
-
 # License file (points at license server)
 setenv INTEL_LICENSE_FILE /usr/local/packages/dev/intel-ps-xe-ce/license.lic
 
