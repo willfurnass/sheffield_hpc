@@ -1,0 +1,36 @@
+#%Module1.0#####################################################################
+#
+# Intel Data Analytics Accelleration Library (DAAL) 2019.3 module file
+# 
+################################################################################
+
+## Module file logging
+#source /usr/local/etc/module_logging.tcl
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes the `Intel Data Analytics Accelleration Library (DAAL) $version' available for use"
+}
+
+module-whatis   "Makes the `Intel Data Analytics Accelleration Library (DAAL)' available for use"
+
+# module variables
+#
+set     version      2019.3
+set     intelpsroot     /usr/local/packages/dev/intel-ps-xe-ce/$version/binary/
+
+# Variables determined using
+# env2 -from bash -to modulecmd "/usr/local/packages/dev/intel-ps-xe-ce/2019.3/binary/compilers_and_libraries_2019.3.199/linux/daal/bin/daalvars.sh intel64" | sed -e "s#/usr/local/packages/dev/intel-ps-xe-ce/2019.3/binary#\$intelpsroot#g" -e 's/[{}]//g'
+
+setenv DAALROOT $intelpsroot/compilers_and_libraries_2019.3.199/linux/daal;
+setenv CPATH $intelpsroot/compilers_and_libraries_2019.3.199/linux/daal/include;
+setenv LD_LIBRARY_PATH $intelpsroot/compilers_and_libraries_2019.3.199/linux/daal/lib/intel64_lin:$intelpsroot/compilers_and_libraries_2019.3.199/linux/daal/../tbb/lib/intel64_lin/gcc4.4;
+setenv LIBRARY_PATH $intelpsroot/compilers_and_libraries_2019.3.199/linux/daal/lib/intel64_lin:$intelpsroot/compilers_and_libraries_2019.3.199/linux/daal/../tbb/lib/intel64_lin/gcc4.4;
+setenv CLASSPATH $intelpsroot/compilers_and_libraries_2019.3.199/linux/daal/lib/daal.jar;
+
+# License file (points at license server)
+setenv INTEL_LICENSE_FILE /usr/local/packages/dev/intel-ps-xe-ce/license.lic
+
+# Sample code
+setenv DAAL_SAMPLES $intelpsroot/samples_2019/en/daal/

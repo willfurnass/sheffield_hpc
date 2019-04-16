@@ -33,6 +33,39 @@ Installation Notes
 
 The following notes are primarily for system administrators.
 
+Parallel Studio XE Composer Edition 2019.3
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Download ``parallel_studio_xe_2019_update3_composer_edition.tgz`` from the Intel
+   Portal, save in ``/usr/local/media/protected/intel/2019.3/`` then make it
+   only readable by the ``hpc_app-admins`` group.
+#. Ensure details of the Intel license server are in the file
+   ``/usr/local/packages/dev/intel-pe-xe-ce/license.lic``
+#. Run :download:`this script
+   </sharc/software/install_scripts/dev/intel-ps-xe-ce/2019.3/install.sh>`.
+   This installs Parallel Studio into
+   ``/usr/local/packages/dev/intel-pe-xe-ce/2019.3/binary/``.  Products are
+   activated using the aforementioned license file during the installation
+   process.
+#. Install several modulefiles to locations under ``/usr/local/modulefiles``.
+   These modulefiles set the ``INTEL_LICENSE_FILE`` environment variable to the
+   location of the aforementioned license file and set other environment
+   variables required by the different Parallel Studio products.  There is one
+   modulefile for all Parallel Studio software and other modulefiles for
+   specific products.  
+
+    * The :download:`Compilers modulefile </sharc/software/modulefiles/dev/intel-compilers/19.0.3>` should be installed as ``/usr/local/modulefiles/dev/intel-compilers/19.0.3``.
+    * The :download:`DAAL modulefile </sharc/software/modulefiles/libs/intel-daal/2019.3/binary>` should be installed as ``/usr/local/modulefiles/libs/intel-daal/2019.3/binary``.
+    * The :download:`IPP modulefile </sharc/software/modulefiles/libs/intel-ipp/2019.3/binary>` should be installed as ``/usr/local/modulefiles/libs/intel-ipp/2019.3/binary``.
+    * The :download:`MKL modulefile </sharc/software/modulefiles/libs/intel-mkl/2019.3/binary>` should be installed as ``/usr/local/modulefiles/libs/intel-mkl/2019.3/binary``.
+    * The :download:`TBB modulefile </sharc/software/modulefiles/libs/intel-tbb/2019.3/binary>` should be installed as ``/usr/local/modulefiles/libs/intel-tbb/2019.3/binary``.
+    * See the (TCL) modulefiles for details of how they were derived from Intel-supplied environment-manipulating shell scripts.
+
+#. Check that licensing is working by activating the Intel Compilers modulefile
+   then try compiling `a trivial C program
+   <https://en.wikipedia.org/wiki/%22Hello,_World!%22_program>`_ using the
+   ``icc`` compiler.
+
 Parallel Studio XE Composer Edition 2017.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
