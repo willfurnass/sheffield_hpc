@@ -6,18 +6,16 @@ source /usr/local/etc/module_logging.tcl
 
 proc ModulesHelp { } {
     global vers
-    puts stderr "   Makes ANSYS Version $vers available"
+    puts stderr "   Makes ANSYS Version 15.0.7 available"
 }
 
-set vers 15.0.7
-set shortvers 150
-module-whatis   "Makes ANSYS $vers available"
+
+module-whatis   "Makes ANSYS 15.0.7 available"
 
 
-set ANSYS_DIR     /usr/local/packages/apps/ansys/$vers/ansys_inc/v150/
+set ANSYS_DIR     /usr/local/packages/apps/ansys/15.0.7/ansys_inc/v150/
 
 setenv  ANSYSROOT $ANSYS_DIR
-setenv  ANSYSVER $shortvers
 setenv  ANSWBCOMMAND $ANSYS_DIR/Framework/bin/Linux64/runwb2
 setenv  FLUENT_INC $ANSYS_DIR/fluent
 
