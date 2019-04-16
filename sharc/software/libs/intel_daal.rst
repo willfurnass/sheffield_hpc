@@ -11,6 +11,7 @@ Parallel Studio Composer Edition version
 DAAL can be used with and without :ref:`other Parallel Studio packages <sharc-intel-parallel-studio>`.
 To access it use one of: ::
 
+        module load libs/intel-daal/2019.3/binary
         module load libs/intel-daal/2017.0/binary
         module load libs/intel-daal/2016.1/binary
 
@@ -23,6 +24,12 @@ Installation Notes
 ------------------
 
 The following notes are primarily for system administrators.
+
+**Intel DAAL 2019.3**
+
+Installed as part of :ref:`Parallel Studio Composer Edition 2019 <sharc-intel-parallel-studio>`.
+
+:download:`This modulefile </sharc/software/modulefiles/libs/intel-daal/2019.3/binary>` was installed as ``/usr/local/modulefiles/libs/intel-daal/2019.3/binary``.
 
 **Intel DAAL 2017.0**
 

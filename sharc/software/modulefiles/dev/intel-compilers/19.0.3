@@ -1,0 +1,95 @@
+#%Module1.0#####################################################################
+##
+## Intel compilers 19.0.3 module file
+## 
+################################################################################
+
+## Module file logging
+#source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global $compilerversion
+
+        puts stderr "   Makes `Intel C++ and Fortran compilers plus debugger version $compilerversion' available for use"
+}
+
+module-whatis   "Makes Intel C++ and Fortran compilers (ifort and icc) and debugger available"
+
+conflict dev/intel-compilers
+
+set     compilerversion 19.0.3
+set     parallelstudioversion 2019.3
+set     intelroot    /usr/local/packages/dev/intel-ps-xe-ce/$parallelstudioversion/binary
+ 
+# load java  ( needed with debugging etc. ) 
+module load apps/java
+
+# Compiler variables determined using
+#    env2 -from bash -to modulecmd "/usr/local/packages/dev/intel-ps-xe-ce/2019.3/binary/bin/compilervars.sh intel64" | sed -e "s#/usr/local/packages/dev/intel-ps-xe-ce/2019.3/binary#\$intelroot#g" -e 's/[{}]//g'
+# Then comment-out any lines containing '/mpi'
+
+#prepend-path PATH $intelroot/compilers_and_libraries_2019.3.199/linux/mpi/intel64/bin;
+#prepend-path PATH $intelroot/compilers_and_libraries_2019.3.199/linux/mpi/intel64/libfabric/bin;
+prepend-path PATH $intelroot/compilers_and_libraries_2019.3.199/linux/bin/intel64;
+#prepend-path MANPATH $intelroot/compilers_and_libraries_2019.3.199/linux/mpi/man;
+prepend-path MANPATH $intelroot/man/common;
+prepend-path LIBRARY_PATH $intelroot/compilers_and_libraries_2019.3.199/linux/daal/lib/intel64_lin;
+prepend-path LIBRARY_PATH $intelroot/compilers_and_libraries_2019.3.199/linux/tbb/lib/intel64/gcc4.7;
+prepend-path LIBRARY_PATH $intelroot/compilers_and_libraries_2019.3.199/linux/tbb/lib/intel64/gcc4.7;
+prepend-path LIBRARY_PATH $intelroot/compilers_and_libraries_2019.3.199/linux/mkl/lib/intel64_lin;
+prepend-path LIBRARY_PATH $intelroot/compilers_and_libraries_2019.3.199/linux/compiler/lib/intel64_lin;
+prepend-path LIBRARY_PATH $intelroot/compilers_and_libraries_2019.3.199/linux/ipp/lib/intel64;
+#prepend-path LIBRARY_PATH $intelroot/compilers_and_libraries_2019.3.199/linux/mpi/intel64/libfabric/lib;
+#append-path CLASSPATH $intelroot/compilers_and_libraries_2019.3.199/linux/mpi/intel64/lib/mpi.jar;
+append-path CLASSPATH $intelroot/compilers_and_libraries_2019.3.199/linux/daal/lib/daal.jar;
+append-path INTEL_LICENSE_FILE $intelroot/compilers_and_libraries_2019.3.199/linux/licenses;
+append-path INTEL_LICENSE_FILE /opt/intel/licenses;
+append-path INTEL_LICENSE_FILE /home/sa_cs1ngg/intel/licenses;
+append-path CPATH $intelroot/compilers_and_libraries_2019.3.199/linux/ipp/include;
+append-path CPATH $intelroot/compilers_and_libraries_2019.3.199/linux/mkl/include;
+append-path CPATH $intelroot/compilers_and_libraries_2019.3.199/linux/pstl/include;
+append-path CPATH $intelroot/compilers_and_libraries_2019.3.199/linux/tbb/include;
+append-path CPATH $intelroot/compilers_and_libraries_2019.3.199/linux/tbb/include;
+append-path CPATH $intelroot/compilers_and_libraries_2019.3.199/linux/daal/include;
+prepend-path LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2019.3.199/linux/daal/lib/intel64_lin;
+prepend-path LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2019.3.199/linux/tbb/lib/intel64/gcc4.7;
+prepend-path LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2019.3.199/linux/tbb/lib/intel64/gcc4.7;
+prepend-path LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2019.3.199/linux/mkl/lib/intel64_lin;
+prepend-path LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2019.3.199/linux/compiler/lib/intel64_lin;
+prepend-path LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2019.3.199/linux/ipp/lib/intel64;
+#prepend-path LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2019.3.199/linux/mpi/intel64/lib;
+#prepend-path LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2019.3.199/linux/mpi/intel64/lib/release;
+#prepend-path LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2019.3.199/linux/mpi/intel64/libfabric/lib;
+prepend-path LD_LIBRARY_PATH $intelroot/compilers_and_libraries_2019.3.199/linux/compiler/lib/intel64_lin;
+append-path PKG_CONFIG_PATH $intelroot/compilers_and_libraries_2019.3.199/linux/mkl/bin/pkgconfig;
+prepend-path NLSPATH $intelroot/compilers_and_libraries_2019.3.199/linux/mkl/lib/intel64_lin/locale/%l_%t/%N;
+prepend-path NLSPATH $intelroot/compilers_and_libraries_2019.3.199/linux/compiler/lib/intel64/locale/%l_%t/%N;
+
+# Debugger variables determined using
+# env2 -from bash -to modulecmd "/usr/local/packages/dev/intel-ps-xe-ce/2019.0/binary/debugger_2019/bin/debuggervars.sh intel64" | sed -e "s#/usr/local/packages/dev/intel-pe-xe-ce/2019.3/binary#\$intelroot#g" -e 's/[{}]//g'
+#
+setenv INTEL_PYTHONHOME $intelroot/debugger_2019/python/intel64/;
+prepend-path PATH $intelroot/debugger_2019/gdb/intel64/bin;
+prepend-path MANPATH $intelroot/documentation_2019/en/debugger/gdb-ia/man/;
+setenv LD_LIBRARY_PATH $intelroot/debugger_2019/libipt/intel64/lib;
+setenv INFOPATH $intelroot/documentation_2019/en/debugger/gdb-ia/info/;
+setenv NLSPATH $intelroot/debugger_2019/gdb/intel64/share/locale/%l_%t/%N;
+
+# Shorthand variables for compilers
+
+set     cc              icc
+set     cxx             icpc
+set     f77             ifort
+set     f90             ifort
+set     f95             ifort
+set     fc              ifort
+setenv          CC              $cc
+setenv          CXX             $cxx
+setenv          F77             $f77
+setenv          FC              $fc
+setenv          F90             $f90
+setenv          F95             $f95
+
+# License file (points at license server)
+setenv INTEL_LICENSE_FILE /usr/local/packages/dev/intel-ps-xe-ce/license.lic

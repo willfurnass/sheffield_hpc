@@ -9,7 +9,7 @@ Its core components are compilers and libraries for fast linear algebra, data tr
 The suite includes:
 
 * :ref:`Intel C++ and Fortran compilers <sharc-intel-compilers>`: these help create C, C++ and Fortran applications that "can take full advantage of the advanced hardware capabilities available in Intel processors and co-processors. They also simplify that development by providing high level parallel models and built-in features like explicit vectorization and optimization reports".
-* :ref:`Data Analytics Acceleration Library (DAAL) <sharc-intel-daal>`: functions for data analysis (characterization, summarization, and transformation) and Machine Learning (regression, classification, and more). Only available in the 2017 version of Parallel Studio.
+* :ref:`Data Analytics Acceleration Library (DAAL) <sharc-intel-daal>`: functions for data analysis (characterization, summarization, and transformation) and Machine Learning (regression, classification, and more). Only available in >=2017 version of Parallel Studio.
 * :ref:`Math Kernel Library (MKL) <sharc-intel-mkl>`: This library provides highly optimized, threaded and vectorized functions to maximize performance on each processor family. Utilizes de facto standard C and Fortran APIs for compatibility with BLAS, LAPACK and FFTW functions from other math libraries.
 * :ref:`Integrated Performance Primitives (IPP) <sharc-intel-ipp>`: "high-quality, production-ready, low-level building blocks for image processing, signal processing, and data processing (data compression/decompression and cryptography) applications."
 * :ref:`Threading Building Blocks (TBB) <sharc-intel-tbb>`: lets you write "parallel C++ programs that take full advantage of multicore performance, that are portable and composable, and that have future-proof scalability."
@@ -32,6 +32,39 @@ Installation Notes
 ------------------
 
 The following notes are primarily for system administrators.
+
+Parallel Studio XE Composer Edition 2019.3
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Download ``parallel_studio_xe_2019_update3_composer_edition.tgz`` from the Intel
+   Portal, save in ``/usr/local/media/protected/intel/2019.3/`` then make it
+   only readable by the ``hpc_app-admins`` group.
+#. Ensure details of the Intel license server are in the file
+   ``/usr/local/packages/dev/intel-pe-xe-ce/license.lic``
+#. Run :download:`this script
+   </sharc/software/install_scripts/dev/intel-ps-xe-ce/2019.3/install.sh>`.
+   This installs Parallel Studio into
+   ``/usr/local/packages/dev/intel-pe-xe-ce/2019.3/binary/``.  Products are
+   activated using the aforementioned license file during the installation
+   process.
+#. Install several modulefiles to locations under ``/usr/local/modulefiles``.
+   These modulefiles set the ``INTEL_LICENSE_FILE`` environment variable to the
+   location of the aforementioned license file and set other environment
+   variables required by the different Parallel Studio products.  There is one
+   modulefile for all Parallel Studio software and other modulefiles for
+   specific products.  
+
+    * The :download:`Compilers modulefile </sharc/software/modulefiles/dev/intel-compilers/19.0.3>` should be installed as ``/usr/local/modulefiles/dev/intel-compilers/19.0.3``.
+    * The :download:`DAAL modulefile </sharc/software/modulefiles/libs/intel-daal/2019.3/binary>` should be installed as ``/usr/local/modulefiles/libs/intel-daal/2019.3/binary``.
+    * The :download:`IPP modulefile </sharc/software/modulefiles/libs/intel-ipp/2019.3/binary>` should be installed as ``/usr/local/modulefiles/libs/intel-ipp/2019.3/binary``.
+    * The :download:`MKL modulefile </sharc/software/modulefiles/libs/intel-mkl/2019.3/binary>` should be installed as ``/usr/local/modulefiles/libs/intel-mkl/2019.3/binary``.
+    * The :download:`TBB modulefile </sharc/software/modulefiles/libs/intel-tbb/2019.3/binary>` should be installed as ``/usr/local/modulefiles/libs/intel-tbb/2019.3/binary``.
+    * See the (TCL) modulefiles for details of how they were derived from Intel-supplied environment-manipulating shell scripts.
+
+#. Check that licensing is working by activating the Intel Compilers modulefile
+   then try compiling `a trivial C program
+   <https://en.wikipedia.org/wiki/%22Hello,_World!%22_program>`_ using the
+   ``icc`` compiler.
 
 Parallel Studio XE Composer Edition 2017.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
