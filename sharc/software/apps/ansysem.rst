@@ -79,7 +79,7 @@ file is
 Ansys EM 19.1 was installed using the
 :download:`install_ansysem_191.sh </sharc/software/install_scripts/apps/ansysem/19.1/binary/install_ansysem_191.sh>` script; the module
 file is
-:download:`/usr/local/modulefiles/apps/ansysem/19.1/binary </sharc/software/modulefiles/apps/ansysem/19.0/binary>`.
+:download:`/usr/local/modulefiles/apps/ansysem/19.1/binary </sharc/software/modulefiles/apps/ansysem/19.1/binary>`.
 
 Ansys EM 19.2 was installed using the
 :download:`install_ansysem_192.sh </sharc/software/install_scripts/apps/ansysem/19.2/binary/install_ansysem_192.sh>` script; the module
