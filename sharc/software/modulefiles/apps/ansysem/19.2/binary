@@ -7,7 +7,6 @@
 
 ## Module file logging
 source /usr/local/etc/module_logging.tcl
-###
 #
 proc ModulesHelp { } {
         global version
@@ -16,17 +15,17 @@ proc ModulesHelp { } {
                }
 
                module-whatis   "Makes ANSYS EM V19.2 available"
-#
+
 #load modules
 module load apps/ansys/19.2/binary
 #
 #
-## module variables
-#
+# module variables
+
 set ANSYSEM_DIR     /usr/local/packages/apps/ansysem/19.2/binary/AnsysEM19.2
-#
-#
+
+
 prepend-path PATH $ANSYSEM_DIR/Linux64
-#
+
 prepend-path LD_LIBRARY_PATH /usr/local/packages/apps/ansysem/19.2/binary/AnsysEM19.2/Linux64
-#
+
