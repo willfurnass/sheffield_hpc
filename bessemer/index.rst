@@ -7,7 +7,7 @@ This is the documentation for Bessemer, The University of Sheffield's new High P
 
 .. warning::
 
-    Bessemer is currently being installed and tested and is yet available for use
+    Bessemer is currently being installed and tested and is not yet available for use
 
 .. toctree::
   :hidden:
