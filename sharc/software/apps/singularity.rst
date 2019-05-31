@@ -5,8 +5,8 @@ Singularity
 
 .. sidebar:: Singularity
 
-   :Version: 2.5.1
-   :URL: http://singularity.lbl.gov/
+   :Version: 3.1.1
+   :URL: https://www.sylabs.io/docs/
 
 Designed around the notion of extreme mobility of compute and reproducible science,
 Singularity enables users to have full control of their operating system environment.
