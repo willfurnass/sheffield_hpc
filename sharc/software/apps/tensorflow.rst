@@ -82,7 +82,7 @@ If you wish to use an older version of tensorflow-gpu, you can do so using :code
 Every time you use a new session or within your job scripts, the modules must be loaded and conda must be activated again. Use the following command to activate the Conda environment with Tensorflow installed: ::
 
   module load apps/python/conda
-  module load libs/cudnn/7.3.1.20/binary-cuda-9.0.176
+  module load libs/cudnn/7.5.0.56/binary-cuda-10.0.130
   source activate tensorflow-gpu
 
 
