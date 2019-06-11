@@ -1,4 +1,29 @@
+[tool.poetry]
+name = "sheffield_hpc"
+version = "0.1.1"
+description = "University of Sheffield HPC docs"
+authors = ["Will Furnass <w.furnass@sheffield.ac.uk>"]
+license = "CC-BY-4.0"
+readme = 'README.md'
+repository = "https://github.com/rcgsheffield/sheffield_hpc/"
+homepage = "http://docs.hpc.sheffield.ac.uk"
+
+[tool.poetry.dependencies]
+python = "^3.7 || ^3.8 || ^3.9"
+sphinx = "^4.2"
+sphinx-bootstrap-theme = "^0.8"
+
+[tool.poetry.extras]
+docs = ["sphinx", "sphinx-bootstrap-theme"]
+
+[tool.poetry.dev-dependencies]
+sphinx-autobuild = "~2021.3"
+
 [build-system]
 # Pin setuptools because of https://github.com/ryan-roemer/sphinx-bootstrap-theme/issues/216
-requires = ["setuptools<58", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = [
+    "poetry>=1.0",
+    "setuptools<58",
+    "wheel"
+]
+build-backend = "poetry.masonry.api"
