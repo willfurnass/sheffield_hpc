@@ -93,9 +93,8 @@ Ansys EM 19.3 was installed using the
 file is
 :download:`/usr/local/modulefiles/apps/ansysem/19.3/binary </sharc/software/modulefiles/apps/ansysem/19.3/binary>`.
 
-Ansys EM 19.4 was installed using the
-:download:`install_ansysem_194.sh </sharc/software/install_scripts/apps/ansysem/19.4/binary/install_ansysem_194.sh>` script; the module
-file is
+Ansys EM 19.4: there is no install script; 
+the module file is
 :download:`/usr/local/modulefiles/apps/ansysem/19.4/binary </sharc/software/modulefiles/apps/ansysem/19.4/binary>`.
 
 The binary installations were tested using ``ansyswb`` and the above batch submission script.
