@@ -108,7 +108,7 @@ Python 3:
 
 .. code-block:: sh
 
-   conda create -n example-python-env python=3.6 ipykernel jupyter_client
+   conda create -n example-python-env python=3.6 ipykernel
 
 R: 
 
