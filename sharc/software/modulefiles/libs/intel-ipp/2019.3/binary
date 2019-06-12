@@ -4,8 +4,8 @@
 # 
 ################################################################################
 
-## Module file logging
-#source /usr/local/etc/module_logging.tcl
+# Module file logging
+source /usr/local/etc/module_logging.tcl
 
 proc ModulesHelp { } {
         global version
