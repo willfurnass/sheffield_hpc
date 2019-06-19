@@ -1,0 +1,30 @@
+#%Module1.0#####################################################################
+##
+## openmpi module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global openmpiversion
+
+        puts stderr "	Adds `openmpi-$openmpiversion' to your PATH environment variable and necessary libraries"
+}
+
+module load dev/PGI-compilers/19.5
+
+set     openmpiversion 4.0.1
+
+module-whatis   "loads the necessary `openmpi-$openmpiversion' library paths"
+
+set MPI_DIR /usr/local/packages/mpi/openmpi/4.0.1/pgi-19.5/
+
+setenv MPI_HOME $MPI_DIR
+
+prepend-path PATH $MPI_DIR/bin/
+prepend-path LD_LIBRARY_PATH $MPI_DIR/lib/
+prepend-path MANPATH $MPI_DIR/share/man/
+prepend-path CPLUS_INCLUDE_PATH $MPI_DIR/include
+prepend-path C_INCLUDE_PATH $MPI_DIR/include

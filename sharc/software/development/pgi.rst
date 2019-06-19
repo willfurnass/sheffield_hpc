@@ -11,6 +11,7 @@ After connecting to the ShARC cluster (see :ref:`ssh`),  start an interactive se
 
     module load dev/PGI-compilers/17.5
     module load dev/PGI-compilers/16.10
+    module load dev/PGI-compilers/19.5
 
 Once you've loaded the module, you can check the version with ::
 
@@ -41,7 +42,7 @@ Compiling on the GPU using the PGI Compiler
 
 Start an interctive GPU session (:ref:`GPUInteractive_sharc`) and the following module command ::
 
-        module load dev/PGI-compilers/16.10
+        module load dev/PGI-compilers/19.5
 
 The PGI compilers have several features that make them interesting to users of GPU hardware:-
 
@@ -74,6 +75,9 @@ The PGI CUDA C/C++ compiler for x86 platforms allows developers using CUDA to co
 
 Installation Notes
 ------------------
+*Version 19.5*
+The installer is interactive and the process was identical to that of version 17.5 below.
+
 *Version 17.5*
 The installer is interactive and the process was identical to that of version 16.10 below.
 
@@ -125,6 +129,10 @@ The installer is interactive. Here is a log of the questions and answers. ::
 
 Modulefile
 ----------
+Version 19.5
+^^^^^^^^^^^^
+The PGI compiler installer creates a suitable modulefile that's configured to our system. It puts it at ``/usr/local/packages/dev/pgi/modulefiles/pgi64/19.5`` so all that is required is to copy this to where we keep the modulefiles at ``/usr/local/modulefiles/dev/PGI-compilers/19.5``
+
 Version 17.5
 ^^^^^^^^^^^^
 The PGI compiler installer creates a suitable modulefile that's configured to our system. It puts it at ``/usr/local/packages/dev/pgi/modulefiles/pgi64/17.5`` so all that is required is to copy this to where we keep the modulefiles at ``/usr/local/modulefiles/dev/PGI-compilers/17.5``

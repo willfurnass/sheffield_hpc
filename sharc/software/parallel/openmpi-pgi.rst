@@ -3,7 +3,7 @@ OpenMPI (pgi version)
 
 .. sidebar:: OpenMPI (PGI version)
 
-   :Latest Version: 2.0.1
+   :Latest Version: 4.0.1
    :Dependancies: PGI Compiler
    :URL: http://www.open-mpi.org/
 
@@ -14,11 +14,11 @@ Versions
 
 You can load a specific version using ::
 
-    module load mpi/openmpi/2.0.1/pgi-17.5
+    module load mpi/openmpi/4.0.1/pgi-19.5
 
 This also loads the relevant version of the PGI compiler (17.5 in this case).
 
-See `here <https://mail-archive.com/announce@lists.open-mpi.org/msg00085.html>`__ for a brief guide to the new features in OpenMPI 2.x and `here <https://raw.githubusercontent.com/open-mpi/ompi/v2.x/NEWS>`__ for a detailed view of the changes between OpenMPI versions.
+See `here <https://www.mail-archive.com/announce@lists.open-mpi.org/msg00122.html>`__ for a brief guide to the new features in OpenMPI 4.x and `here <https://raw.githubusercontent.com/open-mpi/ompi/v4.0.x/NEWS>`__ for a detailed view of the changes between OpenMPI versions.
 
 Examples
 --------
@@ -59,6 +59,11 @@ Installation notes
 ------------------
 
 These are primarily for administrators of the system.
+
+**Version 4.0.1, PGI 19.5**
+
+1. Download, compile and install OpenMPI 4.0.1 using :download:`this script </sharc/software/install_scripts/mpi/openmpi/4.0.1/pgi-19.5/install.sh>`
+2. Install :download:`this modulefile </sharc/software/modulefiles/mpi/openmpi/4.0.1/pgi-19.5>` as ``/usr/local/modulefiles/mpi/openmpi/4.0.1/pgi-19.5``
 
 **Version 2.0.1, PGI 17.5**
 
