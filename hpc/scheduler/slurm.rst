@@ -1,20 +1,15 @@
-.. _sge-queue:
+.. _slurm-queue:
 
-Starting interactive jobs and submitting batch jobs using SGE
-=============================================================
+Starting interactive jobs and submitting batch jobs using Slurm
+===============================================================
 
-Jobs (both interactive sessions and batch jobs) on Iceberg and ShARC 
-are managed using the `Son of Grid Engine <https://arc.liv.ac.uk/trac/SGE>`_
-**job scheduling software**.  You will typically see this referred to as
-**SGE**, as it is one of several derivatives of `Sun Grid Engine
-<https://en.wikipedia.org/wiki/Oracle_Grid_Engine>`_, or sometimes as just the
-*scheduler*.
+Jobs on Bessemer are managed using `Slurm <https://slurm.schedmd.com>`_ 
 
 SGE works as follows: a user requests that a *job* (task), either a script or an
 interactive session, be run on the cluster and then SGE will take jobs from
 the queue based on a set of rules and priorities.
 
-.. _sge-interactive:
+.. _slurm-interactive:
 
 Interactive sessions
 --------------------
@@ -50,7 +45,7 @@ combined together to request more resources.
     lead to better cluster performance for all users.
 
 
-.. _sge-interactive-options:
+.. _slurm-interactive-options:
 
 Common Interactive Job Options
 ``````````````````````````````
@@ -73,7 +68,7 @@ Command                Description
                        threads.
 ====================== ========================================================
 
-.. _sge-batch:
+.. _slurm-batch:
 
 Running batch jobs
 ------------------

@@ -13,7 +13,11 @@ Using interactive sessions / submitting batch jobs
 Getting started 
 ---------------
 
-See our guide to :ref:`sge-queue`.
+To submit jobs on Iceberg or ShARC using SGE see our guide to :ref:`sge-queue`.
+
+To submit jobs on Bessemer using SLURM see our guide to :ref:`slurm-queue`.
+
+Stanford Research Computing Center provide a `SGE to SLURM conversion guide <https://srcc.stanford.edu/sge-slurm-conversion>`_.
 
 Submitting and controlling jobs programmatically
 ------------------------------------------------
