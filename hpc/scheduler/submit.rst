@@ -1,35 +1,65 @@
-.. _slurm-queue:
+.. _submit-queue:
 
-Starting interactive jobs and submitting batch jobs using Slurm
-===============================================================
+Starting interactive jobs and submitting batch jobs
+===================================================
+
+Jobs (both interactive sessions and batch jobs) on Iceberg and ShARC 
+are managed using the `Son of Grid Engine <https://arc.liv.ac.uk/trac/SGE>`_
+**job scheduling software**.  You will typically see this referred to as
+**SGE**, as it is one of several derivatives of `Sun Grid Engine
+<https://en.wikipedia.org/wiki/Oracle_Grid_Engine>`_.
 
 Jobs on Bessemer are managed using `Slurm <https://slurm.schedmd.com>`_ .
 
-.. _slurm-interactive:
+We typically refer to **SGE** and **Slurm** as the *scheduler*.
+
+Both schedulers work as follows: a user requests that a *job* (task), either a script or an
+interactive session, be run on the cluster and then the scheduler will take jobs from
+the queue based on a set of rules and priorities.
+
+.. _submit-interactive:
 
 Interactive sessions
 --------------------
 
 If you wish to use a cluster for interactive work, such as running applications
 like MATLAB or Ansys, or compiling software, you will need to request
-interactive session from Slurm.  The pre-requisites for this (including
+interactive session from the scheduler.  The pre-requisites for this (including
 connecting to the clusters) are described in :ref:`getting-started`.
 
-To request an interactive shell on a cluster worker node: ::
+There are three commands for requesting an interactive shell using SGE: 
+
+* :ref:`qrsh` - No support for graphical applications.  Standard SGE command.
+* :ref:`qsh` - Supports graphical applications.  Standard SGE command.
+* :ref:`qrshx` - Supports graphical applications. Superior to :ref:`qsh`.  Unique to Sheffield's clusters.  
+
+Slurm uses the `srun --pty bash -i <https://slurm.schedmd.com/srun.html>`_  command to launch interactive jobs: ::
 
     [te1st@bessemer-login1 ~]$ srun --pty bash -i
 
 You can configure the resources available to the interactive session by
-specifying them as command line options to the ``srun`` command.
-For example to run an interactive session with access to 16 GB of RAM: ::
+adding command line options.
+For example to stat an interactive session with access to 16 GB of RAM:
+
+* **SGE:** ::
+
+    [te1st@sharc-login1 ~]$ qrshx -l rmem=16G
+
+* **Slurm:** ::
 
     [te1st@bessemer-login1 ~]$ srun --mem=6G --pty bash -i
 
-or a session with access to 2 cores: ::
+To start a session with access to 8 cores: 
+
+* **SGE:** ::
+
+    [te1st@sharc-login1 ~]$ qrshx -pe smp 8
+
+* **Slurm:** ::
 
     [te1st@bessemer-login1 ~]$ srun -c 2 --pty bash -i
 
-A table of :ref:`slurm-interactive-options` is given below; any of these can be
+A table of :ref:`submit-interactive-options` is given below; any of these can be
 combined together to request more resources.
 
 .. note::
@@ -39,30 +69,30 @@ combined together to request more resources.
     lead to better cluster performance for all users.
 
 
-.. _slurm-interactive-options:
+.. _submit-interactive-options:
 
 Common Interactive Job Options
 ``````````````````````````````
 
-====================================== ========================================================
-Command                                Description
-====================================== ========================================================
-``-t [min]`` or ``-t [days-hh:mm:ss]`` Specify the total maximum execution time for the job.
-                                       The upper limit for interactive jobs is 8 hours.  NB these limits may
-                                       differ for specific Projects/Queues.
+====================== ======================== ================================================================
+SGE Command            Slurm Command            Description
+====================== ======================== ================================================================
+``-l h_rt=hh:mm:ss``   | ``-t [min]``           Specify the total maximum execution time for the job.
+                       | ``-t [days-hh:mm:ss]`` The upper limit is 08:00:00.  NB these limits may
+                                                differ for reservations/projects.
 
-``--mem=xxG``                          Specify the maximum amount (xx) of (real) memory to be
-                                       used (**per CPU core**) in Gigabytes or Megabytes.
+``-l rmem=xxG``        ``--mem=xxG``            Specify the maximum amount (xx) of (real) memory to be
+                                                used (**per CPU core**) in Gigabytes.
 
-``-pe <env> <nn>``                     Specify a *parallel environment* and a number of 
-                                       processor cores.
+``-pe <env> <nn>``                              Specify an MPI *parallel environment* and a number of 
+                                                processor cores.
 
-``-pe smp <nn>``                       The smp parallel environment provides multiple threads
-                                       on one node. ``<nn>`` specifies the max number of
-                                       threads.
-====================================== ========================================================
+``-pe smp <nn>``        ``-c <nn>``             The smp parallel environment provides multiple threads
+                                                on one node. ``<nn>`` specifies the max number of
+                                                threads.
+====================== ======================== ================================================================
 
-.. _slurm-batch:
+.. _submit-batch:
 
 Running batch jobs
 ------------------
@@ -82,11 +112,17 @@ used without their GUIs.
 When you submit a batch job, you provide an executable file that will be run by
 the scheduler. This is normally a bash script file which provides commands and
 options to the program you are using.
-Once you have a script file, or other executable file, you can submit it to the queue by running::
+Once you have a script file, or other executable file, you can submit it to the queue by running:
+
+* **SGE** ::
 
     qsub myscript.sh
 
-Here is an example batch submission script that runs a fictitious program called ``foo``:
+* **Slurm** ::
+
+    sbatch myscript.sh
+
+Here is an example SGE batch submission script that runs a fictitious program called ``foo``:
 
    .. code-block:: bash
 
@@ -101,17 +137,36 @@ Here is an example batch submission script that runs a fictitious program called
     # and output foo.res
     foo < foo.dat > foo.res
 
+To use Slurm the equivalent batch submission script would be:
+
+   .. code-block:: bash
+
+    #!/bin/bash
+    # Request 5 gigabytes of real memory (mem)
+    #SBATCH --mem=5G
+
+    # load the module for the program we want to run
+    module load apps/gcc/foo
+
+    # Run the program foo with input foo.dat
+    # and output foo.res
+    foo < foo.dat > foo.res
+
+
 Some things to note:
 
 * The first line always needs to be ``#!/bin/bash`` (to tell the scheduler that this is a bash batch script).
 * Comments start with a ``#``
-* Scheduler options, such as the amount of memory requested, start with ``#$``
+* **SGE** Scheduler options, such as the amount of memory requested, start with ``#$``
+* **Slurm** Scheduler options start with ``#SBATCH``
 * You will often require one or more ``module`` commands in your submission file. 
   These make programs and libraries available to your scripts.  
   Many applications and libraries are available as modules on 
-  :ref:`ShARC <sharc-software>` and :ref:`iceberg <iceberg-software>`.
+  :ref:`ShARC <sharc-software>`, :ref:`Bessemer <bessemer-software>` and :ref:`iceberg <iceberg-software>`.
 
 Here is a more complex example that requests more resources:
+
+Using **SGE:**
 
    .. code-block:: bash
 
@@ -135,6 +190,32 @@ Here is a more complex example that requests more resources:
     # Run the program foo with input foo.dat
     # and output foo.res
     foo < foo.dat > foo.res
+
+Using **Slurm:**
+
+   .. code-block:: bash
+
+    #!/bin/bash
+    # Request 16 gigabytes of real memory (RAM)
+    #SBATCH --mem=16G
+    # Request 4 cores 
+    #SBATCH -c 4
+    # Email notifications to me@somedomain.com
+    #SBATCH --mail-user=me@somedomain.com
+    # Email notifications if the job fails
+    #SBATCH --mail-type=FAIL
+
+    # Load the modules required by our program
+    module load compilers/gcc/5.2
+    module load apps/gcc/foo
+
+    # Set the OPENMP_NUM_THREADS environment variable to 4
+    export OMP_NUM_THREADS=4
+
+    # Run the program foo with input foo.dat
+    # and output foo.res
+    foo < foo.dat > foo.res
+
 
 Scheduler Options
 -----------------
@@ -197,6 +278,8 @@ Command                Description
 
 ====================== ============================================================
 
+The `Slurm docs <https://slurm.schedmd.com/sbatch.html>`_ have a complete list of available ``sbatch`` options.
+
 Frequently Asked SGE Questions
 ------------------------------
 **How many jobs can I submit at any one time**
@@ -217,7 +300,7 @@ To only target the older, 12 core nodes that contain `X5650 CPUs <http://ark.int
     #$ -l arch=intel-x5650
 
 
-**How do I specify multiple email addresses for job notifications?**
+**How do I specify multiple email addresses for SGE job notifications?**
 
 Specify each additional email with its own ``-M`` option ::
 
@@ -233,7 +316,7 @@ Create a file called ``.sge_request`` in the directory you submit your jobs from
 The ``-M`` parameter will be automatically supplied for all future job submissions.
 Note that you still need to request email notifications using ``-m`` (see above).
 
-**How do you ensure that a job starts after a specified time?**
+**How do you ensure that an SGE job starts after a specified time?**
 
 Add the following line to your submission script ::
 

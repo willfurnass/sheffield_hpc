@@ -13,9 +13,7 @@ Using interactive sessions / submitting batch jobs
 Getting started 
 ---------------
 
-To submit jobs on Iceberg or ShARC using SGE see our guide to :ref:`sge-queue`.
-
-To submit jobs on Bessemer using SLURM see our guide to :ref:`slurm-queue`.
+To submit jobs to one of our HPC systems see our guide to :ref:`submit-queue`.
 
 Stanford Research Computing Center provide a `SGE to SLURM conversion guide <https://srcc.stanford.edu/sge-slurm-conversion>`_.
 
