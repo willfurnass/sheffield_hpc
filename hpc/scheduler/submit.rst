@@ -220,63 +220,61 @@ Using **Slurm:**
 Scheduler Options
 -----------------
 
-====================== ============================================================
-Command                Description
-====================== ============================================================
-``-l h_rt=hh:mm:ss``   Specify the total maximum execution time for the job.
-                       The upper limit is typically 96:00:00 (4 days) on ShARC
-                       and 168:00:00 (7 days) on Iceberg.  Note that these 
-                       limits may differ for specific SGE Projects/Queues.  
-                       Also note that requesting less execution time may 
-                       result in your job spending less time queuing.
+====================== ======================== ====================================================================
+SGE Command            Slurm Command            Description
+====================== ======================== ====================================================================
+``-l h_rt=hh:mm:ss``   | ``-t [min]``           Specify the total maximum execution time for the job.
+                       | ``-t [days-hh:mm:ss]`` The upper limit is typically 96:00:00 (4 days) on ShARC
+                                                and 168:00:00 (7 days) on Iceberg and Bessemer.  Note that these 
+                                                limits may differ for specific Projects/Queues.  
+                                                Also note that requesting less execution time may 
+                                                result in your job spending less time queuing.
 
-``-pe <env> <nn>``     Specify a *parallel environment* and a number of 
-                       processor cores.
+``-pe <env> <nn>``     n/a                      Specify a *parallel environment* and a number of 
+                                                processor cores.
 
-``-pe smp <nn>``       The smp parallel environment provides multiple threads
-                       on one node. ``<nn>`` specifies the max number of
-                       threads.
+``-pe smp <nn>``       ``-c <nn>``              For parallel jobs requesting ``<<nn>>`` CPU cores on a single node
 
-``-l rmem=xxG``        Specify the maximum amount (``xx``) of real memory to be 
-                       requested **per CPU core** (where CPU cores are requested 
-                       using the ``-pe`` option).  If the real memory usage of your 
-                       job exceeds this ``rmem`` value multiplied by the number of
-                       cores you requested then your job will be killed.
+``-l rmem=xxG``        ``--mem=xxG``            Specify the maximum amount (``xx``) of real memory to be 
+                                                requested **per CPU core**.
+                                                If the real memory usage of your 
+                                                job exceeds this value multiplied by the number of
+                                                cores you requested then your job will be killed.
 
-``-l arch=``           Target a processor architecture. This is irrelevant on 
-                       ShARC as all processors are the same model.  Options 
-                       on Iceberg include ``intel-e5-2650v2`` and ``intel-x5650``.
+``-l arch=``           n/a                      Target a processor architecture. This is irrelevant on 
+                                                ShARC as all processors are the same model.  Options 
+                                                on Iceberg include ``intel-e5-2650v2`` and ``intel-x5650``.
 
-``-N``                 Job name, used to name output files and in the queue list.
+``-N``                 ``--job-name=``          Job name, used to name output files and in the queue list.
 
-``-j y[es]|n[o]``      Join the error and normal output into one file rather
-                       than two.
+``-j y[es]|n[o]``      ``-o [filename]``        Join the error and normal output into one file rather
+                                                than two.
 
-``-M``                 Email address to send notifications to.
+``-M``                 ``--mail-user=``         Email address to send notifications to.
 
-``-m bea``             Type of notifications to send. Can be any combination of
-                       begin (``b``) end (``e``) or abort (``a``) i.e. 
-                       ``-m ea`` for end and abortion messages.
+``-m bea``             ``--mail-type=``         Type of notifications to send. 
+                                                For SGE can be any combination of
+                                                begin (``b``) end (``e``) or abort (``a``) i.e. 
+                                                ``-m ea`` for end and abortion messages.
 
-``-a``                 Specify the earliest time for a job to start, in the
-                       format MMDDhhmm. e.g. ``-a 01011130`` will schedule the
-                       job to begin no sooner than 11:30 on 1st January.
+``-a``                 ``--begin=``             | Specify the earliest time for a job to start
+                                                | SGE format:  ``[YYMMDDhhmm]``
+                                                | Slurm format: ``YYYY-MM-DD[HH:MM[:SS]]``
 
-``-wd working_dir``    Execute  the  job  from  the  directory  specified (i.e.
-                       ``working_dir``).
+``-wd working_dir``    ``--workdir=``           Execute  the  job  from  the  directory  specified
 
-``-l excl=true``       Request exclusive access to all nodes used by the job so
-                       no other jobs can run on them.  This can be useful for
-                       benchmarking purposes where you want to ensure that you
-                       have exclusive use of e.g. memory/IO buses.  Note that
-                       you still need to request CPU cores and memory to avoid
-                       being limited to just the default per job (one core
-                       and a set amount of RAM).  Also note that the use of
-                       this option will likely result in longer queuing times.
+``-l excl=true``       ``--exclusive``          Request exclusive access to all nodes used by the job so
+                                                no other jobs can run on them.  This can be useful for
+                                                benchmarking purposes where you want to ensure that you
+                                                have exclusive use of e.g. memory/IO buses.  Note that
+                                                you still need to request CPU cores and memory to avoid
+                                                being limited to just the default per job (one core
+                                                and a set amount of RAM).  Also note that the use of
+                                                this option will likely result in longer queuing times.
      
-``-l hostname=``       Target a node by name. Not recommended for normal use.
+``-l hostname=``       ``--nodelist=``          Target a node by name. Not recommended for normal use.
 
-====================== ============================================================
+====================== ======================== ====================================================================
 
 The `Slurm docs <https://slurm.schedmd.com/sbatch.html>`_ have a complete list of available ``sbatch`` options.
 
