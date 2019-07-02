@@ -6,7 +6,7 @@
 Sheffield High Performance Computing Documentation
 ==================================================
 
-This is the source code for the documentation of Sharc and Iceberg, The University of Sheffield's High Performance Computing clusters. It is written in the rst format.
+This is the source code for the documentation of Sharc, Bessemer and Iceberg, The University of Sheffield's High Performance Computing clusters. It is written in the rst format.
 
 For a guide on the rst file format see `this <http://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html>`_ document.
 

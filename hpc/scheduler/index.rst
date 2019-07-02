@@ -13,7 +13,9 @@ Using interactive sessions / submitting batch jobs
 Getting started 
 ---------------
 
-See our guide to :ref:`sge-queue`.
+To submit jobs to one of our HPC systems see our guide to :ref:`submit-queue`.
+
+Stanford Research Computing Center provide a `SGE to SLURM conversion guide <https://srcc.stanford.edu/sge-slurm-conversion>`_.
 
 Submitting and controlling jobs programmatically
 ------------------------------------------------

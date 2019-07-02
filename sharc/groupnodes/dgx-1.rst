@@ -51,7 +51,7 @@ You can use ``qstat`` command to check the status of your current job. An output
 
 Note that the maximum run-time for jobs submitted to the (batch job only) ``rse.q`` is four days, as is standard for batch jobs on ShARC.
 
-See :ref:`sge-queue` for more information on job submission and the Sun Grid Engine scheduler.
+See :ref:`submit-queue` for more information on job submission and the Sun Grid Engine scheduler.
 
 Deep Learning on the DGX-1
 --------------------------

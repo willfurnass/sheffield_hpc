@@ -124,7 +124,7 @@ What Next?
 ----------
 
 Now you have connected to a cluster, 
-you can look at how to submit jobs with :ref:`sge-queue` or 
+you can look at how to submit jobs with :ref:`submit-queue` or 
 look at the software installed on 
 :ref:`ShARC <sharc-software>`, :ref:`Iceberg <iceberg-software>`
 and :ref:`Bessemer <bessemer-software>`.

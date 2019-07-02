@@ -2,16 +2,11 @@
 
 Troubleshooting
 ===============
-In this section, we'll discuss some tips for solving problems with ShARC and Iceberg. 
+In this section, we'll discuss some tips for solving problems with ShARC, Bessemer and Iceberg. 
 It is suggested that you work through some of the ideas here before contacting the CiCS helpdesk for assistance.
 
 Frequently Asked Questions
 ``````````````````````````
-
-I'm a new user and my password is not recognised
-------------------------------------------------
-When you get a username on the system, the first thing you need to do is to `syncronise your passwords
-<https://www.shef.ac.uk/cics/password>`_ which will set your password to be the same as your network password.
 
 Strange things are happening with my terminal
 ---------------------------------------------
@@ -19,8 +14,8 @@ Symptoms include many of the commands not working and just ``bash-4.1$`` being d
 
 This may be because you've deleted your ``.bashrc`` and ``.bash_profile`` files - these are 'hidden' files which live in your home directory and are used to correctly set up your environment.  If you hit this problem you can run the command ``resetenv`` which will restore the default files.
 
-I can no longer log onto iceberg
---------------------------------
+I can no longer log in
+----------------------
 If you are confident that you have no password or remote-access-client related issues but you still can not log onto iceberg you may be having problems due to exceeding your iceberg filestore quota.
 If you exceed your filestore quota in your ``/home`` area it is sometimes possible that crucial system files in your home directory gets truncated that effect the subsequent login process.
 
@@ -246,6 +241,12 @@ The RSA, ECDSA and ED25519 fingerprints for ShARC's login nodes are: ::
    SHA256:NVb+eAG6sMFQEbVXeF5a+x5ALHhTqtYqdV6g31Kn6vE (RSA)
    SHA256:WJYHPbMKrWud4flwhIbrfTB1SR4pprGhx4Vu88LhP58 (ECDSA)
    SHA256:l8imoZMnO+fHGle6zWi/pf4eyiVsEYYscKsl1ellrnE (ED25519)
+
+The RSA, ECDSA and ED25519 fingerprints for Bessemer's login nodes are: ::
+
+   SHA256:AqxYHUlW3r+vrmwS0g0Eru9u4ZujcFCRJajkTRdcAfA (RSA)
+   SHA256:eG/eFhOXyKS77WCsMmkDwZSV4t7y/D8zBFHt1mFP280 (ECDSA)
+   SHA256:TVzevzGC2uz8r1Z16MB9C9xEQpm7DAJC4tcSvYSD36k (ED25519)
 
 Issue when running multiple MPI jobs in sequence
 ------------------------------------------------
