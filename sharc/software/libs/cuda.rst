@@ -11,7 +11,7 @@ an approach known as *General Purpose GPU* (GPGPU) computing.
 Usage
 -----
 
-You need to first request one or more GPUs within an :ref:`interactive session or batch job on a worker node <sge-queue>`.  
+You need to first request one or more GPUs within an :ref:`interactive session or batch job on a worker node <submit-queue>`.  
 For example, to request a single GPU for an interactive session on a worker node:
 
 .. code-block:: sh
