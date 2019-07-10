@@ -15,6 +15,7 @@ Versions
 You can load a specific version using ::
 
     module load mpi/openmpi/4.0.1/pgi-19.5
+    module load mpi/openmpi/2.0.1/pgi-17.5
 
 This also loads the relevant version of the PGI compiler (17.5 in this case).
 

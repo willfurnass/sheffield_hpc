@@ -9,9 +9,9 @@ Making the PGI Compilers available
 
 After connecting to the ShARC cluster (see :ref:`ssh`),  start an interactive session with the :ref:`qrshx` or :ref:`qrsh` command then activate a specific version of the compiler suite using one of: ::
 
+    module load dev/PGI-compilers/19.5
     module load dev/PGI-compilers/17.5
     module load dev/PGI-compilers/16.10
-    module load dev/PGI-compilers/19.5
 
 Once you've loaded the module, you can check the version with ::
 
@@ -40,7 +40,7 @@ To compile a Fortran hello world example into an executable called ``hello`` usi
 Compiling on the GPU using the PGI Compiler
 -------------------------------------------
 
-Start an interctive GPU session (:ref:`GPUInteractive_sharc`) and the following module command ::
+Start an interactive GPU session (:ref:`GPUInteractive_sharc`) and the following module command ::
 
         module load dev/PGI-compilers/19.5
 

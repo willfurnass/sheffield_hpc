@@ -14,6 +14,7 @@ Versions
 
 You can load a specific version using ::
 
+   module load mpi/openmpi/4.0.1/gcc-8.2
    module load mpi/openmpi/3.1.1/gcc-8.2
    module load mpi/openmpi/2.1.1/gcc-6.2
    module load mpi/openmpi/2.1.1/gcc-5.4
@@ -23,7 +24,7 @@ You can load a specific version using ::
    module load mpi/openmpi/2.0.1/gcc-4.9.4
    module load mpi/openmpi/1.10.4/gcc-6.2
    module load mpi/openmpi/1.10.4/gcc-4.9.4
-   module load mpi/openmpi/4.0.1/gcc-8.2
+
 
 See `here <https://www.mail-archive.com/announce@lists.open-mpi.org/msg00122.html>`__ for a brief guide to the new features in OpenMPI 4.x and `here <https://raw.githubusercontent.com/open-mpi/ompi/v4.0.x/NEWS>`__ for a detailed view of the changes between OpenMPI versions.
 
