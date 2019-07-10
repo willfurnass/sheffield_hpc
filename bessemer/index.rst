@@ -16,6 +16,8 @@ This is the documentation for Bessemer, The University of Sheffield's new High P
 
   software/index
   cluster_specs
+  slurm
 
 * :ref:`bessemer-software`
 * :ref:`bessemer-specs`
+* :ref:`slurm_info`
