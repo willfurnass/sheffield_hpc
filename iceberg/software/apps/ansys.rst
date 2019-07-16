@@ -17,7 +17,8 @@ The Ansys suite of programs can be used to numerically simulate a large variety 
 
 Interactive usage
 -----------------
-After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the ``qsh`` command. Alternatively, if you require more memory, for example 16 GB, use the command ``qsh -l rmem=16G``.
+
+After connecting to iceberg (see :ref:`ssh`),  start an interactive sesssion with the ``qrshx`` command. Alternatively, if you require more memory, for example 16 GB, use the command ``qrshx -l rmem=16G``.
 
 To make the **default** version of ANSYS available (currently **version 16.1**), run the following: ::
 
@@ -59,7 +60,7 @@ Or the same for Fluent: ::
 The ``runfluent`` and ``runansys`` commands submit a Fluent journal or ANSYS input file into the batch system and can take a number of different parameters, according to your requirements. 
 
 runfluent command
-#################
+^^^^^^^^^^^^^^^^^
 
 Just typing ``runfluent`` will display information on how to use it: ::
 
@@ -164,3 +165,14 @@ Just typing ``runansys`` will display information on how to use it: ::
            runansys test1.dat -time 00:30:00 -mem 8G -rmem=3G -mail j.bloggs@shef.ac.uk
 
 **Note that the option** ``mem`` **has been deprecated and is no longer required.**
+
+Installation notes
+------------------
+
+None available.
+
+Module files
+^^^^^^^^^^^^
+
+* :download:`/usr/local/modulefiles/apps/ansys/17.2 </iceberg/software/modulefiles/apps/ansys/17.2>`.
+* :download:`/usr/local/modulefiles/apps/ansys/16.1 </iceberg/software/modulefiles/apps/ansys/16.1>`.

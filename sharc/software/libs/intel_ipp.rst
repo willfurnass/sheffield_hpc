@@ -11,6 +11,7 @@ Parallel Studio Composer Edition version
 IPP can be used with and without :ref:`other Parallel Studio packages <sharc-intel-parallel-studio>`.
 To access it, use one of the following: ::
 
+        module load libs/intel-ipp/2019.3/binary
         module load libs/intel-ipp/2017.0/binary
         module load libs/intel-ipp/2016.1/binary
         module load libs/intel-ipp/2015.7/binary
@@ -24,6 +25,12 @@ Installation Notes
 ------------------
 
 The following notes are primarily for system administrators.
+
+**Intel IPP 2019.3**
+
+Installed as part of :ref:`Parallel Studio Composer Edition 2019 <sharc-intel-parallel-studio>`.
+
+:download:`This modulefile </sharc/software/modulefiles/libs/intel-ipp/2019.3/binary>` was installed as ``/usr/local/modulefiles/libs/intel-ipp/2019.3/binary``.
 
 **Intel IPP 2017.0**
 

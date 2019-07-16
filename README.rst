@@ -1,5 +1,7 @@
 .. image:: https://travis-ci.org/rcgsheffield/sheffield_hpc.svg?branch=master
     :target: https://travis-ci.org/rcgsheffield/sheffield_hpc
+.. image:: https://readthedocs.org/projects/iceberg/badge/?version=latest
+    :target: https://readthedocs.org/projects/iceberg/builds/
 
 Sheffield High Performance Computing Documentation
 ==================================================
@@ -39,7 +41,8 @@ Building the documentation on a local Windows machine
 
 #. Create a new *conda environment* for building the documentation by running the following from this window: ::
 
-    conda create -n sheffield_hpc python=3.6 
+    conda create --name sheffield_hpc python=3.6
+    conda activate sheffield_hpc	# . activate sheffield_hpc on older versions of conda
     pip install -r requirements.txt
 
 #. To build the HTML documentation run: ::
@@ -118,7 +121,7 @@ Making Changes to the Documentation
 -----------------------------------
 
 The documentation consists of a series of `reStructured Text <http://sphinx-doc.org/rest.html>`_ files which have the ``.rst`` extension.
-These files are then automatically converted to HTMl and combined into the web version of the documentation by sphinx.
+These files are then automatically converted to HTML and combined into the web version of the documentation by sphinx.
 It is important that when editing the files the syntax of the rst files is followed.
 If there are any errors in your changes the build will fail and the documentaion  will not update, you can test your build locally by running ``make html``.
 The easiest way to learn what files should look like is to read the ``rst`` files already in the repository.

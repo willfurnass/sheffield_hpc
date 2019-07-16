@@ -111,7 +111,7 @@ For example, to use the local profile with 5 workers, do the following;
 
 Start a parallel OpenMP job with 6 workers: ::
 
-        qsh -pe smp 6
+        qsh -pe openmp 6
 
 Run MATLAB in that session and select 5 workers: ::
 

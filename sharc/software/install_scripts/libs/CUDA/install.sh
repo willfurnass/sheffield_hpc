@@ -12,7 +12,7 @@ handle_error () {
 trap handle_error ERR
 set -u
 
-VERSIONS='9.1.85_387.26 8.0.44 7.5.18'
+VERSIONS='10.0.130_410.48 9.1.85_387.26 9.0.176_384.81 8.0.44 7.5.18'
 MEDIA_DIR='/usr/local/media/nvidia/'
 
 usage () {
@@ -29,26 +29,31 @@ if [[ ! "$VERSIONS" =~ "$1" ]]; then
 fi
 
 vers="$1"
-short_vers="$(echo $1 | cut -d_ -f1)"
+# The short version is everything up to but not including the first underscore
+short_vers="${vers%%_*}"
 
 pushd $MEDIA_DIR
 
-if [[ $short_vers =~ '9.1' ]]; then
-    echo "Checking validity of installers using checksums from https://developer.download.nvidia.com/compute/cuda/9.1/Prod/docs/sidebar/md5sum-3.txt"
-    md5sum --check $MEDIA_DIR/cuda-9.1-md5sums.txt
+if [[ $short_vers =~ '^9\.' ]]; then
+    echo "Checking validity of installers using checksums from NVIDIA site"
+    md5sum --check $MEDIA_DIR/cuda-${short_vers}-md5sums.txt
     rc=$?
     if [[ $rc != 0 ]]; then 
-        echo 1>&2 'Could not validate MD5 checksums of CUDA 9.1 installer or patches; exiting.'
+        echo 1>&2 "Could not validate MD5 checksums of CUDA ${short_vers} installer or patches; exiting."
         exit $rc;
     fi
 fi
 
 installer="$MEDIA_DIR/cuda_${vers}_linux.run"
+echo $short_vers
+if [[ $short_vers =~ ^9.0[^0-9] ]]; then
+    installer="$MEDIA_DIR/cuda_${vers}_linux-run"
+fi
 chmod +x "$installer"
 
 prefix="/usr/local/packages/libs/CUDA/${short_vers}/binary"
 mkdir -m 2775 -p "$prefix"
-chown -R ${USER}:app-admins "$prefix"
+chown -R ${USER}:hpc_app-admins "$prefix"
 chmod -R g+w "$prefix"
 
 echo "Installing CUDA using $installer"
@@ -59,19 +64,19 @@ $installer \
     --silent
 
 # Apply patches:
-# * cuBLAS Patch Update: This update to CUDA 9.1 includes new GEMM kernels
-#   optimized for the Volta architecture and improved heuristics to select GEMM
-#   kernels for given input sizes.
-# * Patch 2 (Released Feb 27, 2018)     CUDA Compiler Patch Update: This update
-#   to CUDA 9.1 includes a bug fix to the PTX assembler (ptxas). The fix resolves
-#   an issue when compiling code that performs address calculations using large
-#   immediate operands.  
-# * Patch 3 (Released Mar 5, 2018)  cuBLAS Patch: This CUDA 9.1 patch includes
-#   fixes to GEMM optimizations for convolutional sequence to sequence (seq2seq)
-#   models.
-if [[ $short_vers =~ '9.1' ]]; then
+if [[ $short_vers =~ ^9.1[^0-9] ]]; then
     for p in 1 2 3; do 
         patch_file="$MEDIA_DIR/cuda_${short_vers}.${p}_linux.run"
+        echo "Applying CUDA_related patch $patch_file"
+        chmod +x $patch_file
+        $patch_file \
+           --silent \
+           --accept-eula \
+           --installdir=${prefix}/cuda
+    done 
+elif [[ $short_vers =~ ^9.0[^0-9] ]]; then
+    for p in 1 2 3; do 
+        patch_file="$MEDIA_DIR/cuda_${short_vers}.${p}_linux-run"
         echo "Applying CUDA_related patch $patch_file"
         chmod +x $patch_file
         $patch_file \

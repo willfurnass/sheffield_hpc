@@ -1,0 +1,35 @@
+#%Module1.0#####################################################################
+#
+# Intel Integrated Performance Primitives (IPP) 2019.3 module file
+# 
+################################################################################
+
+# Module file logging
+source /usr/local/etc/module_logging.tcl
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes the `Intel Integrated Performance Primitives (IPP) $version' available for use"
+}
+
+module-whatis   "Makes the `Intel Integrated Performance Primitives (IPP)' available for use"
+
+# module variables
+#
+set     version      2019.3
+set     intelpsroot     /usr/local/packages/dev/intel-ps-xe-ce/$version/binary/
+
+# Variables determined using
+# env2 -from bash -to modulecmd "/usr/local/packages/dev/intel-ps-xe-ce/2019.3/binary/compilers_and_libraries_2019.3.199/linux/ipp/bin/ippvars.sh intel64" | sed -e "s#/usr/local/packages/dev/intel-ps-xe-ce/2019.3/binary#\$intelpsroot#g" -e 's/[{}]//g'
+
+setenv IPPROOT $intelpsroot/compilers_and_libraries_2019.3.199/linux/ipp;
+prepend-path CPATH $intelpsroot/compilers_and_libraries_2019.3.199/linux/ipp/include;
+prepend-path LD_LIBRARY_PATH $intelpsroot/compilers_and_libraries_2019.3.199/linux/ipp/lib/intel64;
+prepend-path LIBRARY_PATH $intelpsroot/compilers_and_libraries_2019.3.199/linux/ipp/lib/intel64;
+
+# License file (points at license server)
+setenv INTEL_LICENSE_FILE /usr/local/packages/dev/intel-ps-xe-ce/license.lic
+
+# Sample code
+setenv IPP_SAMPLES $intelpsroot/samples_2019/en/ipp/

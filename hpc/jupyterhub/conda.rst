@@ -108,13 +108,13 @@ Python 3:
 
 .. code-block:: sh
 
-   conda create -n example-python-env python=3.6 ipykernel jupyter_client
+   conda create -n example-python-env python=3.6 ipykernel
 
 R: 
 
 .. code-block:: sh
 
-   conda create -n example-r-env python=3.6 r-irkernel jupyter_client libiconf
+   conda create -n example-r-env python=3.6 r-irkernel jupyter_client libiconv
 
 Python from the `Intel Python Distribution <https://software.intel.com/en-us/distribution-for-python>`__:
 

@@ -34,6 +34,10 @@ cite {
     background-color: #ecf0f1;
     font-family: monospace;
 }
+/* Do not change the background colour of citations / code snippets within admonitions which change backround and text colour. There are many of these (note, warning etc) so this is the simplest fix */
+.admonition cite {
+    background: inherit;
+}
 
 .note {
     background-color: #333132;

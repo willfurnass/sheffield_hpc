@@ -3,8 +3,8 @@ Ansys EM
 
 .. sidebar:: Ansys EM
    
-   :Versions: 16.1, 17.2, 18.0, 18.2
-   :Dependencies: For integration with Ansys Workbench requires Ansys 16.1, 17.2, 18.0, 18.2
+   :Versions: 16.1, 17.2, 18.0, 18.2, 19.0, 19.1, 19.2, 19.3 & 19.4
+   :Dependencies: For integration with Ansys Workbench requires Ansys 16.1, 17.2, 18.0, 18.2, 19.0, 19.1, 19.2, 19.3 & 19.4
    :URL: http://www.ansys.com 
    :Local URL: http://www.shef.ac.uk/cics/research/software/fluent
 
@@ -22,6 +22,11 @@ Ansys EM can be activated using the module files::
     module load apps/ansysem/18.0/binary
     module load apps/ansysem/18.2/binary
     module load apps/ansysem/19.0/binary
+    module load apps/ansysem/19.1/binary
+    module load apps/ansysem/19.2/binary
+    module load apps/ansysem/19.3/binary
+    module load apps/ansysem/19.4/binary
+
 
 Ansys EM is integrated with the Ansys Workbench GUI (the ``ansyswb`` executable) for each version. The Ansys EM exectuable is ``ansysedt``.
 
@@ -72,5 +77,24 @@ Ansys EM 19.0 was installed using the
 :download:`install_ansysem_190.sh </sharc/software/install_scripts/apps/ansysem/19.0/binary/install_ansysem_190.sh>` script; the module
 file is
 :download:`/usr/local/modulefiles/apps/ansysem/19.0/binary </sharc/software/modulefiles/apps/ansysem/19.0/binary>`.
+
+Ansys EM 19.1 was installed using the
+:download:`install_ansysem_191.sh </sharc/software/install_scripts/apps/ansysem/19.1/binary/install_ansysem_191.sh>` script; the module
+file is
+:download:`/usr/local/modulefiles/apps/ansysem/19.1/binary </sharc/software/modulefiles/apps/ansysem/19.1/binary>`.
+
+Ansys EM 19.2 was installed using the
+:download:`install_ansysem_192.sh </sharc/software/install_scripts/apps/ansysem/19.2/binary/install_ansysem_192.sh>` script; the module
+file is
+:download:`/usr/local/modulefiles/apps/ansysem/19.2/binary </sharc/software/modulefiles/apps/ansysem/19.2/binary>`.
+
+Ansys EM 19.3 was installed using the
+:download:`install_ansysem_193.sh </sharc/software/install_scripts/apps/ansysem/19.3/binary/install_ansysem_193.sh>` script; the module
+file is
+:download:`/usr/local/modulefiles/apps/ansysem/19.3/binary </sharc/software/modulefiles/apps/ansysem/19.3/binary>`.
+
+Ansys EM 19.4: there is no install script; 
+the module file is
+:download:`/usr/local/modulefiles/apps/ansysem/19.4/binary </sharc/software/modulefiles/apps/ansysem/19.4/binary>`.
 
 The binary installations were tested using ``ansyswb`` and the above batch submission script.

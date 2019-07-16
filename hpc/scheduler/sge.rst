@@ -150,9 +150,9 @@ Here is a more complex example that requests more resources:
 Scheduler Options
 -----------------
 
-====================== ========================================================
+====================== ============================================================
 Command                Description
-====================== ========================================================
+====================== ============================================================
 ``-l h_rt=hh:mm:ss``   Specify the total maximum execution time for the job.
                        The upper limit is typically 96:00:00 (4 days) on ShARC
                        and 168:00:00 (7 days) on Iceberg.  Note that these 
@@ -206,7 +206,7 @@ Command                Description
      
 ``-l hostname=``       Target a node by name. Not recommended for normal use.
 
-====================== ========================================================
+====================== ============================================================
 
 Frequently Asked SGE Questions
 ------------------------------

@@ -127,19 +127,14 @@ The JupyterHub service on ShARC is currently developed and maintained by the Uni
    :target: OpenDreamKit_
 
 
-Using Jupyter on Iceberg
-------------------------
+Jupyter on Iceberg
+------------------
 
-From a web browser navigate to: ::
-
-    https://jupyter.shef.ac.uk
-
-The JupyterHub service for Iceberg predates that of ShARC and is **much more basic**.
-There is currently no way you can request specific resources
-(multiple CPU cores, GPU(s), more RAM etc)
-from the cluster's job scheduler when using JupyterHub.
-Your Notebook session will therefore get
-one CPU core and the default amount of RAM per job for the cluster you've connected to.
+Until 24 Oct 2018 there was a JupyterHub service running on the Iceberg cluster;
+this was much more limited than the service on ShARC and 
+has been decommissioned.  
+All users interested in running Jupyter Notebooks on local HPC facilities 
+should use JupyterHub on ShARC instead.
 
 
 .. _676541: http://cordis.europa.eu/project/rcn/198334_en.html

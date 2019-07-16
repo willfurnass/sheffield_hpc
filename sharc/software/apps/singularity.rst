@@ -5,8 +5,8 @@ Singularity
 
 .. sidebar:: Singularity
 
-   :Version: 2.5.1
-   :URL: http://singularity.lbl.gov/
+   :Version: 3.1.1
+   :URL: https://www.sylabs.io/docs/
 
 Designed around the notion of extreme mobility of compute and reproducible science,
 Singularity enables users to have full control of their operating system environment.
@@ -157,11 +157,15 @@ Where you will get something similar to the following:
 .. _auto_mounting_filestore_singularity_sharc:
 
 Automatic Mounting of ShARC Filestore Inside Images
-----------------------------------------------------
+---------------------------------------------------
 
-When running Singularity images on ShARC,
-the paths ``/fastdata``, ``/data``, ``/home``, ``/scratch``, ``/shared`` are
-automatically mounted to your ShARC directories.
+When running Singularity containers on the cluster,
+the paths ``/fastdata``, ``/data``, ``/home``, ``/scratch``, ``/shared`` and ``/tmp`` are
+automatically *bind-mounted* (exposed) from the *host* operating system to your container 
+e.g. the cluster's ``/fastdata`` directory will be automatically visible within a container started on the cluster 
+without that directory being explicitly created when the corresponding Singularity image was built.
+
+If 
 
 Image Index on Github
 ---------------------

@@ -1,0 +1,25 @@
+#%Module1.0#####################################################################
+##
+## ffmpeg 4.1 modulefile
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+module load dev/gcc/4.9.4
+
+
+proc ModulesHelp { } {
+        puts stderr "Makes ffmpeg 4.1 available"
+}
+
+set FFMPEG_DIR /usr/local/packages/apps/ffmpeg/4.1/gcc-4.9.4
+
+module-whatis   "Makes ffmpeg 4.1 available"
+
+prepend-path PATH $FFMPEG_DIR/bin
+prepend-path LD_LIBRARY_PATH $FFMPEG_DIR/lib
+prepend-path LIBRARY_PATH $FFMPEG_DIR/lib
+prepend-path CPATH $FFMPEG_DIR/include
+prepend-path MANPATH $FFMPEG_DIR/share/man

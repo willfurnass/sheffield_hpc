@@ -3,7 +3,7 @@ OpenMPI (gcc version)
 
 .. sidebar:: OpenMPI (gcc version)
 
-   :Latest Version: 2.1.1
+   :Latest Version: 4.0.1
    :Dependancies: gcc
    :URL: http://www.open-mpi.org/
 
@@ -14,6 +14,8 @@ Versions
 
 You can load a specific version using ::
 
+   module load mpi/openmpi/4.0.1/gcc-8.2
+   module load mpi/openmpi/3.1.1/gcc-8.2
    module load mpi/openmpi/2.1.1/gcc-6.2
    module load mpi/openmpi/2.1.1/gcc-5.4
    module load mpi/openmpi/2.1.1/gcc-4.9.4
@@ -23,7 +25,8 @@ You can load a specific version using ::
    module load mpi/openmpi/1.10.4/gcc-6.2
    module load mpi/openmpi/1.10.4/gcc-4.9.4
 
-See `here <https://mail-archive.com/announce@lists.open-mpi.org/msg00085.html>`__ for a brief guide to the new features in OpenMPI 2.x and `here <https://raw.githubusercontent.com/open-mpi/ompi/v2.x/NEWS>`__ for a detailed view of the changes between OpenMPI versions.
+
+See `here <https://www.mail-archive.com/announce@lists.open-mpi.org/msg00122.html>`__ for a brief guide to the new features in OpenMPI 4.x and `here <https://raw.githubusercontent.com/open-mpi/ompi/v4.0.x/NEWS>`__ for a detailed view of the changes between OpenMPI versions.
 
 **CUDA**: Note that if you are using :ref:`CUDA <cuda_sharc>` with OpenMPI then you currently need to use a version of CUDA built with GCC < 5.0.
 **C++ bindings** If you are using the C++ bindings then you should use OpenMPI 1.10.4 as the bindings have been deprecated in OpenMPI 2.0.1.
@@ -44,28 +47,40 @@ In more detail ::
     qrsh -pe mpi 4
 
     # Load an MPI implementation
-    module load mpi/openmpi/2.1.1/gcc-6.2
+    module load mpi/openmpi/3.1.1/gcc-8.2
 
     # Copy the examples to your home directory
-    cp -r $MPI_HOME/examples ~/openmpi_2.1.1_examples
+    cp -r $MPI_HOME/examples ~/openmpi_3.1.1_examples
 
     # Compile all programs in the examples directory
-    cd ~/openmpi_2.1.1_examples
+    cd ~/openmpi_3.1.1_examples
     make
 
     # Once compiled, run an example program on all (or a subset) of your MPI nodes using the mpirun utility
      mpirun -np 4 hello_c
 
-    Hello, world, I am 0 of 4, (Open MPI v2.1.1, package: Open MPI user@sharc-node003.shef.ac.uk Distribution, ident: 2.1.1, repo rev: v2.1.0-100-ga2fdb5b, May 10, 2017, 141)
-    Hello, world, I am 1 of 4, (Open MPI v2.1.1, package: Open MPI user@sharc-node003.shef.ac.uk Distribution, ident: 2.1.1, repo rev: v2.1.0-100-ga2fdb5b, May 10, 2017, 141) 
-    Hello, world, I am 2 of 4, (Open MPI v2.1.1, package: Open MPI user@sharc-node003.shef.ac.uk Distribution, ident: 2.1.1, repo rev: v2.1.0-100-ga2fdb5b, May 10, 2017, 141)
-    Hello, world, I am 3 of 4, (Open MPI v2.1.1, package: Open MPI user@sharc-node003.shef.ac.uk Distribution, ident: 2.1.1, repo rev: v2.1.0-100-ga2fdb5b, May 10, 2017, 141)
+    Hello, world, I am 0 of 4, (Open MPI v3.1.1, package: Open MPI user@sharc-node002.shef.ac.uk Distribution, ident: 3.1.1, repo rev: v3.1.1, June 29, 2018, 129)
+    Hello, world, I am 1 of 4, (Open MPI v3.1.1, package: Open MPI user@sharc-node002.shef.ac.uk Distribution, ident: 3.1.1, repo rev: v3.1.1, June 29, 2018, 129) 
+    Hello, world, I am 2 of 4, (Open MPI v3.1.1, package: Open MPI user@sharc-node002.shef.ac.uk Distribution, ident: 3.1.1, repo rev: v3.1.1, June 29, 2018, 129)
+    Hello, world, I am 3 of 4, (Open MPI v3.1.1, package: Open MPI user@sharc-node002.shef.ac.uk Distribution, ident: 3.1.1, repo rev: v3.1.1, June 29, 2018, 129)
 
 
 Installation notes
 ------------------
 
 These are primarily for administrators of the system.
+
+**Version 4.0.1, gcc 8.2**
+
+1. Enable :ref:`GCC <gcc_sharc>` 8.2.0.
+2. Download, compile and install OpenMPI 4.0.1 using the :download:`this script </sharc/software/install_scripts/mpi/openmpi/4.0.1/gcc-8.2/install.sh>`.
+3. Install :download:`this modulefile </sharc/software/modulefiles/mpi/openmpi/4.0.1/gcc-8.2>` as ``/usr/local/modulefiles/mpi/openmpi/4.0.1/gcc-8.2``
+
+**Version 3.1.1, gcc 8.2**
+
+1. Enable :ref:`GCC <gcc_sharc>` 8.2.0.
+2. Download, compile and install OpenMPI 3.1.1 using the :download:`this script </sharc/software/install_scripts/mpi/openmpi/3.1.1/gcc-8.2/install.sh>`.
+3. Install :download:`this modulefile </sharc/software/modulefiles/mpi/openmpi/3.1.1/gcc-8.2>` as ``/usr/local/modulefiles/mpi/openmpi/3.1.1/gcc-8.2``
 
 **Version 2.1.1, gcc 6.2**
 

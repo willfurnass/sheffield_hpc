@@ -1,0 +1,25 @@
+#%Module1.0#####################################################################
+#
+# libsndfile (used by Matlab audioread/write fncs)  module file
+#
+# Des Ryan 2018
+################################################################################
+
+# Module file logging
+source /usr/local/etc/module_logging.tcl
+
+proc ModulesHelp { } {
+        global vers
+
+        puts stderr "   Makes libsndfile library files available."
+}
+
+set vers 1.0.28
+set prefix /usr/local/packages/libs/libsndfile/$vers/gcc-4.9.4
+
+module-whatis "Makes libsndfile $vers available."
+
+prepend-path PATH $prefix/bin
+prepend-path CPATH $prefix/include
+prepend-path LD_LIBRARY_PATH $prefix/lib
+prepend-path LIBRARY_PATH $prefix/lib
