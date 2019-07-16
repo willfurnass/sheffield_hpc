@@ -21,8 +21,9 @@ need.
 
 Using conda Python
 ------------------
-After connecting to Bessemer (see :ref:`ssh`),  start an interactive session
-with the ``srun --pty bash –i command.
+
+After connecting to Bessemer, start an interactive session
+with the ``srun --pty bash –i command``.
 
 Anaconda Python can be loaded with::
 
