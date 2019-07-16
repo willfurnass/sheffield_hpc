@@ -32,6 +32,7 @@ Take a look at the `Research Software Engineering <http://rse.shef.ac.uk/>`_ web
    hpc/index
    iceberg/index
    sharc/index
+   jade
    parallel/index
    troubleshooting
    glossary
