@@ -66,14 +66,15 @@ prepend-path NLSPATH $intelroot/compilers_and_libraries_2019.3.199/linux/mkl/lib
 prepend-path NLSPATH $intelroot/compilers_and_libraries_2019.3.199/linux/compiler/lib/intel64/locale/%l_%t/%N;
 
 # Debugger variables determined using
-# env2 -from bash -to modulecmd "/usr/local/packages/dev/intel-ps-xe-ce/2019.0/binary/debugger_2019/bin/debuggervars.sh intel64" | sed -e "s#/usr/local/packages/dev/intel-pe-xe-ce/2019.3/binary#\$intelroot#g" -e 's/[{}]//g'
+# env2 -from bash -to modulecmd "/usr/local/packages/dev/intel-ps-xe-ce/2019.3/binary/debugger_2019/bin/debuggervars.sh intel64" | sed -e "s#/usr/local/packages/dev/intel-pe-xe-ce/2019.3/binary#\$intelroot#g" -e 's/[{}]//g'
+# then replacing 'setenv' with 'prepend-path' for PATH, MANPATH, LD_LIBRARY_PATH, INFOPATH, NLSPATH
 #
 setenv INTEL_PYTHONHOME $intelroot/debugger_2019/python/intel64/;
 prepend-path PATH $intelroot/debugger_2019/gdb/intel64/bin;
 prepend-path MANPATH $intelroot/documentation_2019/en/debugger/gdb-ia/man/;
-setenv LD_LIBRARY_PATH $intelroot/debugger_2019/libipt/intel64/lib;
-setenv INFOPATH $intelroot/documentation_2019/en/debugger/gdb-ia/info/;
-setenv NLSPATH $intelroot/debugger_2019/gdb/intel64/share/locale/%l_%t/%N;
+prepend-path LD_LIBRARY_PATH $intelroot/debugger_2019/libipt/intel64/lib;
+prepend-path INFOPATH $intelroot/documentation_2019/en/debugger/gdb-ia/info/;
+prepend-path NLSPATH $intelroot/debugger_2019/gdb/intel64/share/locale/%l_%t/%N;
 
 # Shorthand variables for compilers
 
