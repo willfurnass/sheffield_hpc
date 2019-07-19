@@ -10,3 +10,5 @@ an omission, or wish to request new software please create an issue on our `gith
     :maxdepth: 2
 
     apps/index
+    development/index
+    parallel/index
