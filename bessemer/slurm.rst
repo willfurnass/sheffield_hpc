@@ -22,9 +22,9 @@ You can request an interactive node with multiple CPU cores by using the command
 
 .. code-block:: sh
 
-    srun --ntasks="N" --pty bash -i
+    srun -c="N" --pty bash -i
 
-The parameter "N" represents the number of CPU cores upto 40. Please note that requesting multiple cores in an interactive node depends on the availability. During peak times, it is unlikely that you can successfully request a large number of cpu cores interactively.  Therefore, it may be a better approach to submit your job non-interactively. 
+The parameter "N" represents the number of CPU cores upto 4 per interactive job. Please note that requesting multiple cores in an interactive node depends on the availability. During peak times, it is unlikely that you can successfully request a large number of cpu cores interactively.  Therefore, it may be a better approach to submit your job non-interactively. 
 
 You can request additional memory (parameter "nn" represents the amount of memory):
 
@@ -63,12 +63,12 @@ Finally, run your program by using the Slurm "srun" command.
 
     srun "PROGRAM"
 
-The next example script requests 80 CPU cores in total and 64Gb memory. Notifications will be sent to an email address.
+The next example script requests 40 CPU cores in total and 64Gb memory. Notifications will be sent to an email address.
 
 .. code-block:: sh
 
     #!/bin/bash
-    #SBATCH --nodes=2
+    #SBATCH --nodes=1
     #SBATCH --ntasks-per-node=40
     #SBATCH --mem=64000
     #SBATCH --mail-user=username@sheffield.ac.uk
@@ -78,7 +78,7 @@ The next example script requests 80 CPU cores in total and 64Gb memory. Notifica
 
     srun program
 
-Maximum 40 cores can be requested per node. If you would like to use more CPU cores, you need to reqeust more nodes by using the command "--nodes=N". The above example uses 80 CPU cores in total.
+Maximum 40 cores can be requested per node in the general use queues.
 
 
 Job Submission
@@ -111,7 +111,7 @@ Name your submission:
 
     #SBATCH --comment=test_job
 
-Specify nodes and tasks:
+Specify nodes and tasks for MPI jobs:
 
 .. code-block:: sh
 
