@@ -20,9 +20,9 @@ including *MobaXTerm*.
 
     You can connect to **Iceberg** using SSH (or the related protocols SCP and SFTP) from 
     anywhere (on campus and off campus with/without a `VPN connection <https://www.sheffield.ac.uk/cics/vpn>`_)
-    but if you are using **ShARC** and you are **off-campus** then 
+    but if you are using **ShARC** or **Bessemer** and you are **off-campus** then 
     you need to `set up a VPN connection first <https://www.sheffield.ac.uk/cics/vpn>`_ 
-    (or establish one SSH connection to Iceberg then a second from Iceberg to ShARC).
+    (or establish one SSH connection to Iceberg then a second from Iceberg to ShARC or Bessemer).
 
 SSH client software on Windows
 ------------------------------
@@ -69,7 +69,7 @@ log in to a cluster: ::
 Here you need to:
 
 * replace ``$USER`` with your CiCS username (e.g. ``te1st``)
-* replace ``$SGE_CLUSTER_NAME`` with ``sharc`` or ``iceberg``.
+* replace ``$SGE_CLUSTER_NAME`` with ``sharc``, ``bessemer`` or ``iceberg``.
 
 .. note::
 
@@ -124,6 +124,7 @@ What Next?
 ----------
 
 Now you have connected to a cluster, 
-you can look at how to submit jobs with :ref:`sge-queue` or 
+you can look at how to submit jobs with :ref:`submit-queue` or 
 look at the software installed on 
-:ref:`ShARC <sharc-software>` and :ref:`Iceberg <iceberg-software>`
+:ref:`ShARC <sharc-software>`, :ref:`Iceberg <iceberg-software>`
+and :ref:`Bessemer <bessemer-software>`.

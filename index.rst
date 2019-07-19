@@ -30,6 +30,7 @@ Take a look at the `Research Software Engineering <http://rse.shef.ac.uk/>`_ web
    :hidden:
 
    hpc/index
+   bessemer/index
    iceberg/index
    sharc/index
    parallel/index

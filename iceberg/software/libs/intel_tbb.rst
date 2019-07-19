@@ -13,7 +13,7 @@ Interactive usage
 TBB can be used with and without :ref:`other Parallel Studio packages
 <iceberg_intel_parallel_studio>`.
 
-To make use of it you first need to start an :ref:`interactive session that has access to multiple cores <sge-queue>`.
+To make use of it you first need to start an :ref:`interactive session that has access to multiple cores <submit-queue>`.
 Here we request six cores from the clusters' scheduler: ::
 
         $ qrsh -pe openmp 6
@@ -52,7 +52,7 @@ then running ``make``: ::
         Parallel version ran in 1.51716 seconds
 
 Many of the sample directories contain HTML documentation.  
-To read this you need to start an :ref:`interactive graphical session <sge-queue>` (using ``qsh`` or ``qrshx``) then run: ::
+To read this you need to start an :ref:`interactive graphical session <submit-queue>` (using ``qsh`` or ``qrshx``) then run: ::
 
         $ firefox ~/tbb_samples/index.html
  

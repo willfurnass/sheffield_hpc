@@ -8,7 +8,7 @@ the Linux operating system
 or even a command line before 
 this is the place to start. 
 This guide will get you set up using the University's clusters 
-(ShARC and Iceberg) fairly quickly.
+(ShARC, Bessemer and Iceberg) fairly quickly.
 
 .. toctree::
    :maxdepth: 2

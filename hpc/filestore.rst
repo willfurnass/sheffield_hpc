@@ -11,7 +11,20 @@ Every user on ShARC/Iceberg has access to five different types of filestore:
 * ``/shared/volumename``
 * ``/scratch``
 
-They differ in terms of:
+On Bessemer users have access to four types of filestore:
+
+* ``/home/yourusername``
+* ``/fastdata``
+* ``/shared/volumename``
+* ``/scratch``
+
+.. note::
+
+     * ShARC and Iceberg share the same ``/home`` and ``/data`` areas.  
+     * Iceberg can access ShARC's ``/fastdata`` storage.
+     * Bessemer has a separate ``/home`` and ``/fastdata`` filestore. 
+
+The storage areas differ in terms of:
 
 * the amount of space available;
 * whether they are available from multiple nodes;
@@ -26,10 +39,15 @@ Here are the current details of filestore available to each user.
 -------------------
 All users have a home directory in the location ``/home/yourusername``. 
 
-The filestore quota is **10 GB** per user.
+.. note::
 
-This area is shared between ShARC and Iceberg
+     * ShARC/Iceberg ``/home`` filestore quota is **10GB** per user. 
+     * Bessemer ``/home`` filestore quota is **100GB** per user.
+
+ShARC and Iceberg share the same ``/home`` directory.
 and is accessible to all worker and login nodes.
+
+Bessemer has a separate ``/home`` directory``, which is accessible to all worker and login nodes on Bessemer.
 
 **Backup policy:** ``/home`` has backup snapshots taken every 4 hours and 
 we keep the 10 most recent. 
@@ -41,9 +59,9 @@ The filesystem is NFS.
 
 .. _data_dir:
 
-``/data`` directory
--------------------
-Every user has access to a much larger data-storage area provided at the location ``/data/yourusername``.
+``/data`` directory (Iceberg and ShARC only)
+--------------------------------------------
+Every user on Iceberg and ShARC has access to a much larger data-storage area provided at the location ``/data/yourusername``.
 
 The quota for this area is **100 GB** per user.
 
@@ -68,14 +86,12 @@ it is automatically *unmounted* following a period of inactivity.
 ``/fastdata`` directory
 -----------------------
 
-All users also have access to a large fast-access data storage area under ``/fastdata``.  
-This is **not** shared between ShARC and Iceberg.
+Users on ShARC and Bessemer can access a large fast-access data storage area under ``/fastdata``.  
 
-.. warning::
+You can access ShARC's ``/fastdasta`` storage on Iceberg, under the directory path ``/fastdata-sharc``.
 
-    Iceberg's ``/fastdata`` is due to be decommissioned on 25th June 2018.
-
-    You will be able to access ShARC's ``/fastdasta`` storage on Iceberg, under the new directory path ``/fastdata-sharc`` from 9th May 2018.
+ShARC's ``/fastdata`` area provides **669 TeraBytes** of storage.
+Bessemer's ``/fastdata`` area provides **460 TeraBytes** of storage.
 
 In order to avoid interference from other users' files 
 it is **vitally important** that you store your files in a directory created and named the same as your username. e.g. ::
@@ -98,16 +114,15 @@ A more sophisticated sharing scheme would have private and public directories ::
     chmod 755 /fastdata/yourusername/public
     chmod 700 /fastdata/yourusername/private
 
-The fastdata area provides **669 TeraBytes** of storage on SHARC and **260 Terabytes** of storage on Iceberg.
-It takes advantage of the internal high-speed network infrastructure (OmniPath interconnects for ShARC; Infiniband for Iceberg) for fast access to data.
+ShARC nodes access ``/fastdata`` using the high-performance Onnipath network interconnect.
+Access to Bessemer's ``/fastdata`` storage is via 25GbE ethernet networking.
+Iceberg nodes access ShARC's ``/fastdata`` storage using 1GbE ethernet network.
 
 ``/fastdata`` is **optimised for large file operations**.
 it is faster than ``/home/``, ``/data`` and ``/shared`` (see below) when dealing with larger files but 
 does **not handle lots of small files very well**:  it is less efficient than ``/scratch`` (see below) when dealing with smaller files.
 An example of how slow it can be for large numbers of small files is detailed at http://www.walkingrandomly.com/?p=6167
 
-Iceberg users: although ``/fastdata`` is available on all the worker nodes, 
-you need to run your jobs on the newer nodes with Intel CPUs for best performance (by specifying ``-l arch=intel*`` in your job submission script).
 
 .. warning::
 
@@ -145,6 +160,15 @@ After the storage has been requested/purchased by a group's PI and then provisio
 Note that this subdirectory will be **mounted on demand** on ShARC/Iceberg: 
 it will not be visible if you simply list the contents of the ``/shared`` directory but 
 will be accessible if you ``cd`` (change directory) into it e.g. ``cd /shared/my_group_file_share1``
+
+If you need to access a ``/shared`` area on Bessemer please contact `helpdesk@sheffield.ac.uk <helpdesk@sheffield.ac.uk>`_ to arrange this.
+
+.. warning::
+
+        * If you access a ``/shared`` directory stored in Sheffield from Bessemer then you may experience slower performance, espeicially for small files.
+        * Network traffic between Bessemer and Sheffield Research Filestore is not encrypted when travelling between Sheffield and Leeds over JANET
+        * ``/shared`` areas can be created on Bessemer's filestore system if you need faster access from Bessemer
+
 
 **Regarding permissions**: 
 behind the scenes, the file server that provides this shared storage manages permissions using 
