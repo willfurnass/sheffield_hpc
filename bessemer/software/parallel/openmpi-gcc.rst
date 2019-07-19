@@ -80,7 +80,7 @@ Your output would be something like: ::
 
 
 This is an expected behaviour since we did not specify the number of CPU cores when requesting our interactive session.
-You can request an interactive node with multiple cores (4 in this example, upto 40) by using the command: ::
+You can request an interactive node with multiple cores (4 in this example) by using the command: ::
 
     srun --ntasks=4 --pty bash -i
 
@@ -94,7 +94,7 @@ Write a shell script (minimal example) We name the script as ‘test.sh’: ::
 
 
     #!/bin/bash
-    #SBATCH --nodes=2
+    #SBATCH --nodes=1
     #SBATCH --ntasks-per-node=40
 
     module use /usr/local/modulefiles/staging/eb/all/
@@ -102,7 +102,7 @@ Write a shell script (minimal example) We name the script as ‘test.sh’: ::
 
     srun file
 
-Maximum 40 cores can be requested per node. I.e use  the parameters  ‘--nodes=2 ‘and ‘--ntasks-per-node=40‘ to request 80 CPU cores in total.
+Maximum 40 cores can be requested.
 
 Submit your script by using the command: ::
 
@@ -110,11 +110,11 @@ Submit your script by using the command: ::
 
 Your output would be something like: ::
 
-    Hello world from processor bessemer-node003.shef.ac.uk, rank 44 out of 80 processors
-    Hello world from processor bessemer-node002.shef.ac.uk, rank 5 out of 80 processors
+    Hello world from processor bessemer-node003.shef.ac.uk, rank 24 out of 40 processors
+    Hello world from processor bessemer-node002.shef.ac.uk, rank 5 out of 40 processors
     ...
-    Hello world from processor bessemer-node003.shef.ac.uk, rank 41 out of 80 processors
-    Hello world from processor bessemer-node003.shef.ac.uk, rank 42 out of 80 processors
+    Hello world from processor bessemer-node003.shef.ac.uk, rank 31 out of 40 processors
+    Hello world from processor bessemer-node003.shef.ac.uk, rank 32 out of 40 processors
 
 
 
