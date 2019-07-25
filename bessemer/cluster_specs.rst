@@ -10,7 +10,7 @@ Total capacity
 * CPU cores: 1,040 
 * Total memory: 5,184 GiB
 * GPUs: 4
-* Fast network filesystem (`Lustre <http://lustre.org/>`_):  460TiB
+* Fast network filesystem (`Lustre`_):  460 TiB
 
 Note that some of these resources have been purchased by research groups who have exclusive access to them.
 
@@ -26,9 +26,9 @@ General CPU node specifications
 
   * `Skylake`_ processor microarchitecture;
   * 2.00 GHz;
-  * Support for `AVX2`_ vectorisation instructions (simultaneously apply the same operation to multiple values in hardware);
+  * Support for `AVX-512`_ vectorisation instructions (simultaneously apply the same operation to multiple values in hardware);
   * Support for `Fused Multiply-Add`_ instructions (expedites operations involving the accummulation of products e.g. matrix multiplication).
-  * `Hyperthreading <https://en.wikipedia.org/wiki/Hyper-threading>`_ is disabled on all nodes.
+  * `Hyperthreading`_ is disabled on all nodes.
 
 * RAM: 192 GB (i.e. 4.8 GiB / core)
 
@@ -76,13 +76,15 @@ Non-worker nodes
   * Lustre parallel filesystem
   * Slurm scheduler 'head' nodes
 
-.. _AVX2: https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#Advanced_Vector_Extensions_2
+.. _AVX-512: https://en.wikipedia.org/wiki/AVX-512
 .. _Dell PowerEdge C4140: http://www.dell.com/uk/business/p/poweredge-c4140/pd
 .. _Dell PowerEdge C6420: http://www.dell.com/uk/business/p/poweredge-c6420/pd
 .. _Fused Multiply-Add: https://en.wikipedia.org/wiki/Multiply%E2%80%93accumulate_operation#Fused_multiply.E2.80.93add
-.. _Skylake: https://en.wikipedia.org/wiki/Skylake_(microarchitecture)
+.. _Hyperthreading:  https://en.wikipedia.org/wiki/Hyper-threading
 .. _Intel Xeon Gold 6138: https://ark.intel.com/content/www/us/en/ark/products/120476/intel-xeon-gold-6138-processor-27-5m-cache-2-00-ghz.html
+.. _Lustre:  http://lustre.org/
 .. _NVIDIA Tesla V100: https://www.nvidia.com/en-gb/data-center/tesla-v100/
+.. _Skylake: https://en.wikipedia.org/wiki/Skylake_(microarchitecture)
 
 .. nnodes ``qhost | grep -c 'sharc-'``
 .. ncores ``qhost | awk 'FNR > 3 {sum += $3} END {print sum}'``
