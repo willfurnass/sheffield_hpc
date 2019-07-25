@@ -20,7 +20,9 @@ Specifications
 Requesting Access
 -----------------
 
-The nodes are managed by the `RSE group <http://rse.shef.ac.uk>`_ and are available by request to all research groups belonging to the Computer Science Department.
+The nodes are managed by the `RSE group <https://rse.shef.ac.uk>`_ and 
+are available by request to all research groups belonging to the Computer Science Department 
+plus their collaborators.
 
 To use the nodes you must 
 
@@ -29,7 +31,7 @@ To use the nodes you must
 #. Start interactive jobs in ``rse-interactive.q`` Grid Engine *Cluster Queue*;
 #. Start batch jobs in the ``rse.q`` Grid Engine *Cluster Queue*;
 
-To join this ACL please email `RSE enquiries <rse@shef.ac.uk>`_.
+To join this ACL please complete `this Google Form <https://docs.google.com/forms/d/19j8enPCALohamEWk-jkjnwYRiLbI2DMMWMqSJhAbE_I/>`_.
 
 Running an interactive session
 ------------------------------
