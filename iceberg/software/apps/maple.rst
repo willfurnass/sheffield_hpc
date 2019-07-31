@@ -43,7 +43,7 @@ For general information on how to submit batch jobs refer to :ref:`submit-batch`
 
 Tutorials
 ---------
-* `High Performance Computing with Maple <http://rse.shef.ac.uk/blog/HPC-Maple-1/>`_ A tutorial from the Sheffield Research Software Engineering group on how to use Maple in a High Performance Computing environment
+* `High Performance Computing with Maple <https://rse.shef.ac.uk/blog/HPC-Maple-1/>`_ A tutorial from the Sheffield Research Software Engineering group on how to use Maple in a High Performance Computing environment
 
 Installation notes
 ------------------

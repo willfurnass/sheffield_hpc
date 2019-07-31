@@ -143,7 +143,7 @@ should use JupyterHub on ShARC instead.
 .. _JupyterHub: https://jupyterhub.readthedocs.io/
 .. _OpenDreamKit: http://opendreamkit.org/
 .. _Research Infrastructure: https://ec.europa.eu/programmes/horizon2020/en/h2020-section/european-research-infrastructures-including-e-infrastructures
-.. _Research Software Engineering team: http://rse.shef.ac.uk
+.. _Research Software Engineering team: https://rse.shef.ac.uk
 .. _BAD days: http://bitsandchips.me/BAD_days/
 .. _NetworkX examples: https://networkx.github.io/documentation/stable/auto_examples/index.html
 .. _runnable journal papers: http://nbviewer.jupyter.org/github/cossatot/lanf_earthquake_likelihood/blob/master/notebooks/lanf_manuscript_notebook.ipynb

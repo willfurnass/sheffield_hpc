@@ -46,7 +46,7 @@ run on HPC, for example `CASTEP <sharc/software/apps/castep.html>`_ or
 with its own opinions about the best parallel setup to use.
 Consult the `software documentation <sharc/software/>`_.
 
-If you need advice on how to parallelise your workflow, please contact the `Research Software Engineering Group <http://rse.shef.ac.uk/contact/>`_
+If you need advice on how to parallelise your workflow, please contact the `Research Software Engineering Group <https://rse.shef.ac.uk/contact/>`_
 
 .. toctree::
    :maxdepth: 1

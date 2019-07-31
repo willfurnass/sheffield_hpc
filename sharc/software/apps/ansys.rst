@@ -6,7 +6,7 @@ ANSYS
    :Versions: 15.0, 16.1, 17.2, 18.0, 18.2, 19.0, 19.1, 19.2, 19.3 & 19.4
    :Dependencies: No prerequsite modules loaded. However, If using the User Defined Functions (UDF) will also need the following: For ANSYS Mechanical, Workbench, CFX and AutoDYN: Intel 14.0 or above; Compiler For Fluent: GCC 4.6.1 or above
    :URL: http://www.ansys.com 
-   :Local URL: http://www.shef.ac.uk/cics/research/software/fluent
+   :Local URL: https://www.shef.ac.uk/cics/research/software/fluent
 
 
 The Ansys suite of programs can be used to numerically simulate a large variety of structural and fluid dynamics problems found in many engineering, physics, medical, aeronotics and automative industry applications.

@@ -23,7 +23,7 @@ Research Software Engineering Team
 
 The Sheffield Research Software Engineering Team is an academically led group in the `Department of Computer Science <https://www.sheffield.ac.uk/dcs>`_ that collaborates closely with CiCS.
 They can assist with code optimisation, training and all aspects of High Performance Computing including GPU computing along with local, national, regional and cloud computing services.
-Take a look at the `Research Software Engineering <http://rse.shef.ac.uk/>`_ website or email `rse@sheffield.ac.uk <rse@sheffield.ac.uk>`_
+Take a look at the `Research Software Engineering <https://rse.shef.ac.uk/>`_ website or email `rse@sheffield.ac.uk <rse@sheffield.ac.uk>`_
 
 .. toctree::
    :maxdepth: 1

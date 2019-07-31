@@ -24,8 +24,8 @@ If this happens, you should immediately email ``research-it@sheffield.ac.uk`` an
 I can not log into iceberg via the applications portal
 ------------------------------------------------------
 Most of the time such problems arise due to due to Java version issues. As Java updates are released regularly, these problems are usually caused by the changes to the Java plug-in for the browser.
-Follow the trouble-shooting link from the `iceberg browser-access page <http://www.sheffield.ac.uk/cics/research/hpc/using/access/browser>`_ to resolve these problems. There is also a link on that page to test the functionality of your java plug-in. It can also help to try a different browser to see if it makes any difference.
-All failing, you may have to fall back to one of the `non-browser access methods <http://www.sheffield.ac.uk/cics/research/hpc/using/access>`_.
+Follow the trouble-shooting link from the `iceberg browser-access page <https://www.sheffield.ac.uk/cics/research/hpc/using/access/browser>`_ to resolve these problems. There is also a link on that page to test the functionality of your java plug-in. It can also help to try a different browser to see if it makes any difference.
+All failing, you may have to fall back to one of the `non-browser access methods <https://www.sheffield.ac.uk/cics/research/hpc/using/access>`_.
 
 I cannot see my folders in /data or /shared
 -------------------------------------------

@@ -15,7 +15,7 @@ DGX-1 Specifications
 Requesting Access
 -----------------
 
-The node managed by the `RSE group <http://rse.shef.ac.uk>`_ and is available by request to all research groups belonging to the Computer Science Department.
+The node managed by the `RSE group <https://rse.shef.ac.uk>`_ and is available by request to all research groups belonging to the Computer Science Department.
 
 To use the DGX-1 you must join the computer science RSE group and submit jobs to the RSE queue. To join this group please email `Twin Karmakharm <t.karmakharm@sheffield.ac.uk>`_  or `RSE enquiries <rse@shef.ac.uk>`_.
 

@@ -47,7 +47,7 @@ Here is an example that requests 4 *slots* (CPU cores) with 8GB of RAM per slot 
 
 Example MPI jobs
 ----------------
-Some more example MPI jobs are available in the `HPC Examples repository <https://github.com/mikecroucher/HPC_Examples/tree/master/MPI>`_ of Sheffield's `Research Software Engineering group <http://rse.shef.ac.uk/>`_
+Some more example MPI jobs are available in the `HPC Examples repository <https://github.com/mikecroucher/HPC_Examples/tree/master/MPI>`_ of Sheffield's `Research Software Engineering group <https://rse.shef.ac.uk/>`_
 
 Interactive MPI
 ---------------

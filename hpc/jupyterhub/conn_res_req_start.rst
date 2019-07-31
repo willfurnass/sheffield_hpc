@@ -52,7 +52,7 @@ should leave this setting as its default.**
 Currently supported projects:
 
 * ``gpu``:    GPU-equipped nodes (public)
-* ``rse``:    The `Research Software Engineering group's <http://rse.shef.ac.uk>`_ nodes (restricted access)
+* ``rse``:    The `Research Software Engineering group's <https://rse.shef.ac.uk>`_ nodes (restricted access)
 * ``cstest``: CiCS testing only
 
 Support for other Projects can be added on request.
