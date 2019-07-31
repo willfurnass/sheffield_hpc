@@ -16,7 +16,7 @@ About Caffe on ShARC
 
 Caffe is available on ShARC as both Singularity images and as a module.
 
-This software and documentation is maintained by the `RSES group <http://rse.shef.ac.uk/>`_ and GPUComputing@Sheffield_. For feature requests or if you encounter any problems, please raise an issue on the `GPU Computing repository <https://github.com/RSE-Sheffield/GPUComputing/issues>`_.
+This software and documentation is maintained by the `RSES group <https://rse.shef.ac.uk/>`_ and GPUComputing@Sheffield_. For feature requests or if you encounter any problems, please raise an issue on the `GPU Computing repository <https://github.com/RSE-Sheffield/GPUComputing/issues>`_.
 
 
 Caffe Singularity Images

@@ -6,7 +6,7 @@ Ansys EM
    :Versions: 16.1, 17.2, 18.0, 18.2, 19.0, 19.1, 19.2, 19.3 & 19.4
    :Dependencies: For integration with Ansys Workbench requires Ansys 16.1, 17.2, 18.0, 18.2, 19.0, 19.1, 19.2, 19.3 & 19.4
    :URL: http://www.ansys.com 
-   :Local URL: http://www.shef.ac.uk/cics/research/software/fluent
+   :Local URL: https://www.shef.ac.uk/cics/research/software/fluent
 
 
 ANSYS Electromagnetics Suite for Linux/Unix.

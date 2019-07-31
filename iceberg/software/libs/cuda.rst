@@ -99,7 +99,7 @@ allows for 'fatbinary' executables that are optimised for multiple device archit
 
 Each ``-gencode`` argument requires two values, 
 the *virtual architecture* and *real architecture*, 
-for use in NVCC's `two-stage compilation <http://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#virtual-architectures>`_.
+for use in NVCC's `two-stage compilation <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#virtual-architectures>`_.
 I.e. ``-gencode=arch=compute_20,code=sm_20`` specifies a virtual architecture of ``compute_20`` and real architecture ``sm_20``.
 
 To support future hardware of higher compute capability, 
@@ -124,8 +124,8 @@ use the following ``-gencode`` arguments:
 
 To build a CUDA application that runs on both Iceberg and ShARC see :ref:`cuda_sharc`.
 
-Further details of these compiler flags can be found in the `NVCC Documentation <http://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#options-for-steering-gpu-code-generation>`_, 
-along with details of the supported `virtual architectures <http://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#virtual-architecture-feature-list>`_ and `real architectures <http://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-feature-list>`_.
+Further details of these compiler flags can be found in the `NVCC Documentation <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#options-for-steering-gpu-code-generation>`_, 
+along with details of the supported `virtual architectures <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#virtual-architecture-feature-list>`_ and `real architectures <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-feature-list>`_.
 
 .. note:: SM 20 and SM 21 are deprecated in CUDA 8.0.
 
@@ -138,7 +138,7 @@ along with details of the supported `virtual architectures <http://docs.nvidia.c
 Documentation
 -------------
 
-* `CUDA Toolkit Documentation <http://docs.nvidia.com/cuda/index.html#axzz3uLoSltnh>`_
+* `CUDA Toolkit Documentation <https://docs.nvidia.com/cuda/index.html#axzz3uLoSltnh>`_
 * `The power of C++11 in CUDA 7 <http://devblogs.nvidia.com/parallelforall/power-cpp11-cuda-7/>`_
 
 Profiling using nvprof

@@ -9,7 +9,7 @@ MATLAB
    :Support Level: FULL
    :Dependancies: None
    :URL: http://uk.mathworks.com/products/matlab
-   :Local URL:  http://www.shef.ac.uk/wrgrid/software/matlab
+   :Local URL:  https://www.shef.ac.uk/wrgrid/software/matlab
    :Documentation: http://uk.mathworks.com/help/matlab
 
 Scientific computing and visualisation.

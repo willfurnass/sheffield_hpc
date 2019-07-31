@@ -13,7 +13,7 @@ This version of R is built using the :ref:`Intel compilers <iceberg_intel_compil
 the Intel Math Kernel Library. 
 This combination can result in significantly faster runtimes in certain circumstances.
 For more details of what is made faster, 
-see `this blog post <http://rse.shef.ac.uk/blog/intel-R-iceberg/>`_ 
+see `this blog post <https://rse.shef.ac.uk/blog/intel-R-iceberg/>`_ 
 which was written back when we built this version of R for the first time on Sheffield's old HPC system, Iceberg.
 
 Most R extensions are written and tested for the gcc suite of compilers so 

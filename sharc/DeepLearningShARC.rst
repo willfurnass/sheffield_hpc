@@ -8,7 +8,7 @@ The availability of large amount of data, exponential power in parallel computat
 Deep Learning Consultancy, Training & Support
 ---------------------------------------------
 
-The `Research Software Engineering Sheffield (RSES) <http://rse.shef.ac.uk/>`_ group is responsible for supporting Deep Learning software on ShARC. Please file any Deep Learning related issues on our `GPU Computing Github respository <https://github.com/RSE-Sheffield/GPUComputing>`_.
+The `Research Software Engineering Sheffield (RSES) <https://rse.shef.ac.uk/>`_ group is responsible for supporting Deep Learning software on ShARC. Please file any Deep Learning related issues on our `GPU Computing Github respository <https://github.com/RSE-Sheffield/GPUComputing>`_.
 
 **If you have a research project that requires Deep Learning expertise or support, members of the RSES team are available to be costed on your grants. Contact** `rse@shef.ac.uk <rse@shef.ac.uk>`_ **for more information.**
 
