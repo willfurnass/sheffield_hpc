@@ -22,4 +22,4 @@ A student's supervisor can request an account for the student by emailing
 .. note::
 You must not share your account credentials or allow others to run jobs using your account. 
 Any misuse of accounts will be investigated in accordance with 
-the University of Sheffield's `IT Code of Practice <https://www.sheffield.ac.uk/cics/codeofpractice>`__.
+the University of Sheffield's `IT Code of Practice <https://www.sheffield.ac.uk/cics/codeofpractice/core>`__.
