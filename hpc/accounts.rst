@@ -7,7 +7,7 @@ Before you can start using the clusters you need to register for an HPC account.
 
 An account gives you access to all our clusters (ShARC, Bessemer and Iceberg).
 
-Accounts are availible for staff by emailing `helpdesk@sheffield.ac.uk <helpdesk@sheffield.ac.uk>`_.
+Accounts are available for staff by emailing `helpdesk@sheffield.ac.uk <helpdesk@sheffield.ac.uk>`_.
 
 The following categories of students can also have an account with
 the permission of their supervisors:
@@ -19,3 +19,7 @@ the permission of their supervisors:
 A student's supervisor can request an account for the student by emailing
 `helpdesk@sheffield.ac.uk <helpdesk@sheffield.ac.uk>`_.
 
+.. note::
+You must not share your account credentials or allow others to run jobs using your account. 
+Any misuse of accounts will be investigated in accordance with 
+the University of Sheffield's `IT Code of Practice <https://www.sheffield.ac.uk/cics/codeofpractice>`__.
