@@ -12,7 +12,7 @@ The `RSE`_ group director (Paul Richmond) is a co-investigator in the EPSRC Tier
 Requesting access
 -----------------
 
-If you would like to use JADE for the purpose of machine learning, `please fill in this form to request access. <https://goo.gl/forms/oLFkwwKuYWDKAwXq1>`_ The application will be put through a short internal review process by the `RSE`_ team before approval.
+If you would like to use JADE for the purpose of machine learning, `please fill in this form to request access. <https://forms.gle/b9qjrBb82yyyYyuM8>`_ The application will be put through a short internal review process by the `RSE`_ team before approval.
 
 .. _RSE: https://rse.shef.ac.uk
 
