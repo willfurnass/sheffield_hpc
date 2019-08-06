@@ -11,4 +11,5 @@ an omission, or wish to request new software please create an issue on our `gith
 
     apps/index
     development/index
+    libs/index
     parallel/index

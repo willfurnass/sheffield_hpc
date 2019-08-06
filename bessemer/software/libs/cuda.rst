@@ -117,8 +117,8 @@ To build a CUDA application which targets just the public GPUS nodes, use the fo
 .. code-block:: sh
 
    nvcc filename.cu \
-      -gencode=arch=compute_70,code=compute_70
-
+      -gencode=arch=compute_70,code=sm_70 \
+      -gencode=arch=compute_70,code=compute_70 \
 
 Further details of these compiler flags can be found in the `NVCC Documentation <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#options-for-steering-gpu-code-generation>`_, 
 along with details of the supported `virtual architectures <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#virtual-architecture-feature-list>`_ and `real architectures <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-feature-list>`_.
