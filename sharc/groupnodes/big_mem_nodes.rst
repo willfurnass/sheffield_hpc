@@ -20,19 +20,26 @@ Specifications
 Requesting Access
 -----------------
 
-The nodes are managed by the `RSE group <https://rse.shef.ac.uk>`_ and 
-are available by request to all research groups belonging to the Computer Science Department 
-plus their collaborators.
+Access to the node is managed by the `RSE team <https://rse.shef.ac.uk>`_. Access policy:
 
-To use the nodes you must 
+* PhD students, researchers and staff in Computer Science can all request access to the nodes.
+* Access to others who are collaborating on projects with some Computer Science / RSE involvement
+  can be made on a case-by-case basis.
+* Access to Computer Science MSc students
+  can be made on a case-by-case basis.
+
+A number of other users were granted access before this policy was developed.
+
+To request access complete `this Google Form <https://docs.google.com/forms/d/19j8enPCALohamEWk-jkjnwYRiLbI2DMMWMqSJhAbE_I/edit>`__
+and someone within the RSE team will then respond with further information.
+
+To use the nodes you must:
 
 #. Be made a member of the ``rse`` Grid Engine (scheduler) *Access Control List* (ACL i.e. user group);
 #. Submit jobs using the ``rse`` Grid Engine *Project*;
 #. Start interactive jobs in ``rse-interactive.q`` Grid Engine *Cluster Queue*;
 #. Start batch jobs in the ``rse.q`` Grid Engine *Cluster Queue*;
-
-To join this ACL please complete `this Google Form <https://docs.google.com/forms/d/19j8enPCALohamEWk-jkjnwYRiLbI2DMMWMqSJhAbE_I/>`_.
-
+   
 Running an interactive session
 ------------------------------
 
