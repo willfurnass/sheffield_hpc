@@ -1,0 +1,25 @@
+#%Module1.0#####################################################################
+##
+## Repast HPC 2.2.0 module file
+##
+#  By Des Ryan September 2019
+#################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+
+set vers 2.2.0
+
+proc ModulesHelp { } {
+        global vers
+
+        puts stderr "	Adds Repast HPC $vers code to your PATH environment"
+}
+module-whatis "	Adds Repast HPC $vers code to your PATH environment"
+
+module load mpi/mpich3/3.1.4/gcc-6.2
+
+set repastpath /usr/local/packages/apps/repast_hpc/$vers/gcc-6.2-mpich-3.1.4
+set thirdpartypath /usr/local/packages/apps/repast_hpc/$vers/third-party-mpich-3.1.4
+
+prepend-path LD_LIBRARY_PATH $thirdpartypath/Boost/Boost_1.61/lib:$repastpath/lib
