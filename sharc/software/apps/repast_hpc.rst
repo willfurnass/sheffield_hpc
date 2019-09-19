@@ -4,7 +4,7 @@ Repast HPC
 .. sidebar:: Repast HPC
 
    :Version: 2.2.0
-   :Dependencies: Modules loaded for GCC 6.2.0 compiler and Open MPI 2.1.1
+   :Dependencies: Modules loaded for GCC 6.2.0 compiler and either MPICH-3.1.4 or Open MPI 2.1.1
    :URL: https://repast.github.io/
    :Documentation: https://repast.github.io/docs.html
 
