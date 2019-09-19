@@ -4,7 +4,7 @@ Repast HPC
 .. sidebar:: Repast HPC
 
    :Version: 2.2.0
-   :Dependencies: Modules loaded for GCC 6.2.0 compiler and Open MPI 2.1.1
+   :Dependencies: Modules loaded for GCC 6.2.0 compiler and either MPICH-3.1.4 or Open MPI 2.1.1
    :URL: https://repast.github.io/
    :Documentation: https://repast.github.io/docs.html
 
@@ -18,9 +18,11 @@ Usage
 
 Repast HPC 2.2.0 can be activated using the module file::
 
+    module load apps/repast_hpc/2.2.0/gcc-mpich-3.1.4
     module load apps/repast_hpc/2.2.0/gcc-6.2-openmpi-2.1.1
 
-Note that the above module file also loads GCC 6.2.0 and Open MPI 2.1.1.
+
+Note that the above module files also loads GCC 6.2.0 compiler and either MPICH-3.1.4 or Open MPI 2.1.1.
 
 
 Batch jobs
@@ -34,9 +36,9 @@ Users are encouraged to write their own batch submission scripts. The following 
     #$ -l rmem=2G
     #$ -pe mpi 4
 
-    module load apps/repast_hpc/2.2.0/gcc-6.2-openmpi-2.1.1
+    module load apps/repast_hpc/2.2.0/gcc-mpich-3.1.4
 
-    export repastroot=/usr/local/packages/apps/repast_hpc/2.2.0/gcc-6.2-openmpi-2.1.1
+    export repastroot=/usr/local/packages/apps/repast_hpc/2.2.0/gcc-6.2-mpich-3.1.4
 
     cp $repastroot/bin/zombie/* .
 
@@ -49,10 +51,10 @@ Installation notes
 ------------------
 
 Repast HPC 2.2.0 was installed using the
-:download:`install_repast_hpc.sh </sharc/software/install_scripts/apps/repast_hpc/2.2.0/gcc-6.2-openmpi-2.1.1/install_repast_hpc.sh>` installation script.
+:download:`install_repast_hpc.sh </sharc/software/install_scripts/apps/repast_hpc/2.2.0/gcc-6.2-mpich-3.1.4/install_repast_hpc.sh>` installation script.
 The module file is
-:download:`/usr/local/modulefiles/apps/repast_hpc/2.2.0/gcc-6.2-openmpi-2.1.1 </sharc/software/modulefiles/apps/repast_hpc/2.2.0/gcc-6.2-openmpi-2.1.1>`.
+:download:`/usr/local/modulefiles/apps/repast_hpc/2.2.0/gcc-6.2-mpich-3.1.4 </sharc/software/modulefiles/apps/repast_hpc/2.2.0/gcc-6.2-mpich-3.1.4>`.
 
-Third-party software required by Repast HPC 2.2.0 (Curl 7.42.1, NetCDF 4.2.1.1, NetCDF-CXX 4.2 and Boost 1.61.0) were installed in ``/usr/local/packages/apps/repast_hpc/2.2.0/third-party`` using the GCC 6.2.0 compiler with Open MPI 2.1.1.
+Third-party software required by Repast HPC 2.2.0 (Curl 7.42.1, NetCDF 4.2.1.1, NetCDF-CXX 4.2 and Boost 1.61.0) were installed in ``/usr/local/packages/apps/repast_hpc/2.2.0/third-party-mpich-3.1.4`` using the GCC 6.2.0 compiler with MPICH-3.1.4.
 
 The installation of Repast HPC 2.2.0 was tested by running the example batch submission script (above).
