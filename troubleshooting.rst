@@ -343,7 +343,7 @@ available on ShARC. Do this using
 
 .. code-block:: none
 
-module avail
+module avail |& grep -i name_of_dependency
 
 or
 
