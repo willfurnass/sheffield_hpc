@@ -276,3 +276,85 @@ keep track of resources (files and process) associated with that job.
 These groups have numeric IDs but no names, which can result in harmless warning messages in certain circumstances.
 
 See ``man 8 pam_sge-qrsh-setup`` for the details of how and why Grid Engine creates these groups.
+
+How do I install software in my /home or /data directories
+----------------------------------------------------------
+
+1) binary installs - copy the relevant binary files to a folder of
+your choice (in general create a folder with the software name e.g.
+plink_install). The path to this folder is
+/home/username/plink_install
+
+The executable can then be run in 2 ways:
+
+.. code-block:: none
+
+cd /home/username/plink_install
+# if the binary is called plink then run it using
+./plink
+
+OR, from anywhere in your directory structure run using:
+
+.. code-block:: none
+
+/home/username/plink_install/plink
+
+2) build & install source code - copy the source code (normally a .zip
+or .tar.gz) to your /home or /data areas. Extract the files using
+unzip or tar xf, & then cd into the source code directory. It is
+important to read the README file here since this will give details on
+how to build the code & any dependencies etc. However in general the
+build process is as follows:
+
+Source code is for a application called wobble.
+
+We will install the software in a directory called wobble_install in /data
+
+.. code-block:: none
+
+mkdir /data/username/wobble_install
+#cd into the source code directory which we extracted
+cd wobble
+module load dev/gcc/4.9.4 (altho the README file may suggest a
+different gcc version &/or cmake)
+./configure --prefix=/data/username/wobble_install
+make install
+
+if the wobble executable is called wobble, located in
+/data/username/wobble_install/bin, then it can be run using:
+
+.. code-block:: none
+
+/data/username/wobble_install/bin/wobble
+
+Note for both (1) & (2) above you can add the directories containing
+the executables to the PATH variable so that to run the executables
+you just type their names i.e. plink or wobble
+
+.. code-block:: none
+
+export PATH=path_to_executable_folder:$PATH
+
+NOTE on Library dependencies - sometimes during a build you will get
+errors related to missing libraries or other dependencies (these
+should be specified in the README file). However before you trigger a
+help desk call check to see if the library or other dependency is
+available on ShARC. Do this using
+
+.. code-block:: none
+
+module avail
+
+or
+
+.. code-block:: none
+
+module avail |& grep -i name_of_dependency
+
+If it is available on ShARC then load it using
+
+.. code-block:: none
+
+module load name_module
+
+
