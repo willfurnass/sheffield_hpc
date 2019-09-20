@@ -289,7 +289,7 @@ The executable can then be run in 2 ways: ::
 
 	cd /home/username/plink_install
 
-# if the binary is called plink then run it using: ::
+If the binary is called plink then run it using: ::
 
 	./plink
 
@@ -304,7 +304,7 @@ important to read the README file here since this will give details on
 how to build the code & any dependencies etc. However in general the
 build process is as follows:
 
-Source code is for a application called wobble.
+Source code is for an application called wobble.
 
 We will install the software in a directory called wobble_install in /data: ::
 
