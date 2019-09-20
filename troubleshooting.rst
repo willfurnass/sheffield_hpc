@@ -347,7 +347,7 @@ module avail
 
 or : ::
 
-module avail |& grep -i name_of_dependency
+	module avail |& grep -i name_of_dependency
 
 If it is available on ShARC then load it using
 
