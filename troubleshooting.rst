@@ -289,8 +289,9 @@ The executable can then be run in 2 ways: ::
 
 	cd /home/username/plink_install
 
-# if the binary is called plink then run it using
-./plink
+# if the binary is called plink then run it using: ::
+
+	./plink
 
 OR, from anywhere in your directory structure run using: ::
 
