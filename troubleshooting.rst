@@ -277,70 +277,10 @@ These groups have numeric IDs but no names, which can result in harmless warning
 
 See ``man 8 pam_sge-qrsh-setup`` for the details of how and why Grid Engine creates these groups.
 
-How do I install software in my /home or /data directories
-----------------------------------------------------------
+Using ''sudo'' to install software on ShARC
+-------------------------------------------
 
-1) binary installs - copy the relevant binary files to a folder of
-your choice (in general create a folder with the software name e.g.
-plink_install). The path to this folder is
-/home/username/plink_install
+HPC users do not have sufficient access privileges to use sudo to install software (in /usr/local). Users can however install applications in their /home or /data directories. The webpage 'Installing Applications on iceberg and ShARC <https://www.sheffield.ac.uk/cics/research/hpc/using/install>' provides guidance on how to do this.
 
-The executable can then be run in 2 ways: ::
 
-	cd /home/username/plink_install
-
-If the binary is called plink then run it using: ::
-
-	./plink
-
-OR, from anywhere in your directory structure run using: ::
-
-	/home/username/plink_install/plink
-
-2) build & install source code - copy the source code (normally a .zip
-or .tar.gz) to your /home or /data areas. Extract the files using
-unzip or tar xf, & then cd into the source code directory. It is
-important to read the README file here since this will give details on
-how to build the code & any dependencies etc. However in general the
-build process is as follows:
-
-Source code is for an application called wobble.
-
-We will install the software in a directory called wobble_install in /data: ::
-
-	mkdir /data/username/wobble_install
-
-	#cd into the source code directory which we extracted
-	cd wobble
-	module load dev/gcc/4.9.4 (altho the README file may suggest a
-	different gcc version &/or cmake)
-	./configure --prefix=/data/username/wobble_install
-	make install
-
-if the wobble executable is called wobble, located in
-/data/username/wobble_install/bin, then it can be run using: ::
-
-	/data/username/wobble_install/bin/wobble
-
-Note for both (1) & (2) above you can add the directories containing
-the executables to the PATH variable so that to run the executables
-you just type their names i.e. plink or wobble: ::
-
-	export PATH=path_to_executable_folder:$PATH
-
-NOTE on Library dependencies - sometimes during a build you will get
-errors related to missing libraries or other dependencies (these
-should be specified in the README file). However before you trigger a
-help desk call check to see if the library or other dependency is
-available on ShARC. Do this using: ::
-
-	module avail
-
-or : ::
-
-	module avail |& grep -i name_of_dependency
-
-If it is available on ShARC then load it using: ::
-
-	module load name_module
 
