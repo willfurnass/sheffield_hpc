@@ -277,10 +277,10 @@ These groups have numeric IDs but no names, which can result in harmless warning
 
 See ``man 8 pam_sge-qrsh-setup`` for the details of how and why Grid Engine creates these groups.
 
-Using ''sudo'' to install software on ShARC
+Using 'sudo' to install software on ShARC
 -------------------------------------------
 
-HPC users do not have sufficient access privileges to use sudo to install software (in /usr/local). Users can however install applications in their /home or /data directories. The webpage 'Installing Applications on iceberg and ShARC <https://www.sheffield.ac.uk/cics/research/hpc/using/install>' provides guidance on how to do this.
+HPC users do not have sufficient access privileges to use sudo to install software (in /usr/local). Users can however install applications in their /home or /data directories. The webpage 'Installing Applications on iceberg and ShARC <https://www.sheffield.ac.uk/cics/research/hpc/using/install>'_ provides guidance on how to do this.
 
 
 
