@@ -4,14 +4,17 @@ CUDA
 ====
 
 CUDA (*Compute Unified Device Architecture*) 
-is a parallel computing platform and application programming interface (API) model created by NVIDIA.
-It allows software developers to use a CUDA-enabled graphics processing unit (GPU) for general purpose processing, 
+is a parallel computing platform and application programming interface (API) model
+created by NVIDIA.
+It allows software developers to use a CUDA-enabled graphics processing unit (GPU)
+for general purpose processing, 
 an approach known as *General Purpose GPU* (GPGPU) computing.
 
 Usage
 -----
 
-You need to first request one or more GPUs within an :ref:`interactive session or batch job on a worker node <submit-queue>`. 
+You need to first request one or more GPUs within an
+:ref:`interactive session or batch job on a worker node <submit-queue>`. 
 
 At present public GPUs are only available in batch jobs. 
 To request say three unspecified GPUs for a batch job 
@@ -25,11 +28,16 @@ you would include the following in the header of your submission script:
 
 You then need to ensure a version of the CUDA library (and compiler) is loaded.
 As with much software installed on the cluster, 
-versions of CUDA are activated via the :ref:`'module load' command<env_modules>`:
+versions of CUDA are activated via the :ref:`'module load' command<env_modules>`,
+so you need to run one of the following: ::
 
-.. code-block:: sh
+   module load fosscuda/2019a  
 
-   module load fosscuda/2019a  # to load CUDA 10.1 plus the GCC compiler, OpenMPI, OpenBLAS, SCALAPACK and FFTW
+to load CUDA 10.1 plus the :ref:`GCC <gcc_bessemer>` 8.2.0 compiler, OpenMPI, OpenBLAS, SCALAPACK and FFTW, or alternatively run : ::
+
+   module load CUDA/10.1.105-GCC-8.2.0-2.31.1
+
+to load *just* CUDA and :ref:`GCC <gcc_bessemer>` 8.2.0.
 
 To then confirm which version of CUDA you are using:
 
@@ -55,7 +63,9 @@ will compile the CUDA program contained in the file ``filename.cu``.
 Compiling the sample programs
 -----------------------------
 
-You do not need to be using a GPU-enabled node to compile the sample programs but you do need at least one GPU to run them.
+You do not need to be using a GPU-enabled node
+to compile the sample programs
+but you do need at least one GPU to run them.
 
 In this demonstration, we create a batch job that 
 
@@ -74,7 +84,6 @@ In this demonstration, we create a batch job that
    #SBATCH --ntasks=1
    #SBATCH --partition=gpu
    
-   module use /usr/local/modulefiles/staging/eb/all
    module load fosscuda/2019a  # provides CUDA 10.1
    
    mkdir -p $HOME/examples

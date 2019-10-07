@@ -1,7 +1,9 @@
-OpenMPI (gcc version)
-=====================
+.. _openmpi_bessemer:
 
-.. sidebar:: OpenMPI (gcc version)
+OpenMPI
+=======
+
+.. sidebar:: OpenMPI
 
    :Latest Version: 3.1.1
    :Dependancies: gcc
@@ -12,11 +14,9 @@ The Open MPI Project is an open source Message Passing Interface implementation 
 Versions
 --------
 
-You can load a specific version using ::
+You can load a specific version using: ::
 
-    module use /usr/local/modulefiles/staging/eb/all/
     module load OpenMPI/3.1.3-GCC-8.2.0-2.31.1
-
 
 See `here <https://mail-archive.com/announce@lists.open-mpi.org/msg00118.html>`__ for a brief guide to the new features in OpenMPI 3.x and `here <https://raw.githubusercontent.com/open-mpi/ompi/v3.1.x/NEWS>`__ for a detailed view of the changes between OpenMPI versions.
 

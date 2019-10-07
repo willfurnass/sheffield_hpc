@@ -22,7 +22,6 @@ The latest version of MATLAB (currently 2019a) is made available by running:
 
 .. code-block:: bash
 
-   module use /usr/local/modulefiles/staging/eb/all/
    module load MATLAB/2019a/binary
 
 You can then run MATLAB by entering ``matlab &``.
@@ -46,7 +45,6 @@ We assume you'll call this ``my_job.sh``:
    #!/bin/bash
    #SBATCH --mem=16000                # Request  16 GB of real memory
 
-   module use /usr/local/modulefiles/staging/eb/all/
    module load MATLAB/2019a/binary
 
    matlab -nodesktop -nosplash -r helloworld
@@ -89,7 +87,6 @@ An example (using 40 cores) batch script ``submit_Matlab_par.sh`` is:
    #SBATCH --time=00:05:00
    #SBATCH --job-name=matlab_batch_test
 
-   module use /usr/local/modulefiles/staging/eb/all/
    module load MATLAB/2019a/binary
 
    matlab -nodisplay -nosplash -r parallel_example
