@@ -5,7 +5,7 @@ OpenMPI
 
 .. sidebar:: OpenMPI
 
-   :Latest Version: 3.1.1
+   :Latest Version: 3.1.3
    :Dependancies: gcc
    :URL: http://www.open-mpi.org/
 
@@ -99,7 +99,7 @@ Write a shell script (minimal example) We name the script as ‘test.sh’: ::
 
     module load OpenMPI/3.1.3-GCC-8.2.0-2.31.1
 
-    srun file
+    srun --export=ALL file
 
 Maximum 40 cores can be requested.
 

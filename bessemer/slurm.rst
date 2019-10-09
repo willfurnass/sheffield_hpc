@@ -75,7 +75,7 @@ The next example script requests 40 CPU cores in total and 64Gb memory. Notifica
 
     module load OpenMPI/3.1.3-GCC-8.2.0-2.31.1
 
-    srun program
+    srun --export=ALL program
 
 Maximum 40 cores can be requested per node in the general use queues.
 

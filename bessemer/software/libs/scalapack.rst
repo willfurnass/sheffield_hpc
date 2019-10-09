@@ -1,6 +1,6 @@
 .. _scalapack_bessemer:
 
-OpenBLAS
+ScaLAPACK
 ========
 
 .. sidebar:: ScaLAPACK
