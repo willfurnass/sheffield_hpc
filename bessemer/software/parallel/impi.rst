@@ -97,7 +97,6 @@ Write a shell script (minimal example) We name the script as ‘test.sh’: ::
     #SBATCH --nodes=1
     #SBATCH --ntasks-per-node=40
 
-    module use /usr/local/modulefiles/staging/eb/all/
     module load OpenMPI/3.1.3-GCC-8.2.0-2.31.1
 
     srun file

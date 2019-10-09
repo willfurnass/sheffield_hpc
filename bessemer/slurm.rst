@@ -73,7 +73,6 @@ The next example script requests 40 CPU cores in total and 64Gb memory. Notifica
     #SBATCH --mem=64000
     #SBATCH --mail-user=username@sheffield.ac.uk
 
-    module use /usr/local/modulefiles/staging/eb/all/
     module load OpenMPI/3.1.3-GCC-8.2.0-2.31.1
 
     srun program
