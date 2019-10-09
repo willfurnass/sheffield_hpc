@@ -3,11 +3,9 @@
 Bessemer
 ========
 
-This is the documentation for Bessemer, The University of Sheffield's new High Performance Computing System and the successor to Iceberg and ShARC.
+This is the documentation for Bessemer, The University of Sheffield's newest High Performance Computing cluster.
 
-.. warning::
-
-    Bessemer is currently being installed and tested and is not yet available for use
+Bessemer is designed to support jobs requiring up to 40 cores per job - for larger jobs please use :ref:`sharc`.
 
 .. toctree::
   :hidden:
