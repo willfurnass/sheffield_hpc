@@ -9,7 +9,7 @@ for C (gcc), C++ (g++) and Fortran (gfortran).
 It is possible to switch versions of the gcc compiler suite using modules.
 After connecting to Bessemer,  start an interactive sessson: :: 
 
-   srun --pty bash –i
+   srun --pty bash -i
 
 then choose the version of the compiler you wish to use
 by running *one* of the following lines: ::

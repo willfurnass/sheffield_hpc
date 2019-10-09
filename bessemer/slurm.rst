@@ -156,7 +156,7 @@ Shows job details:
 
 .. code-block:: sh
 
-    sacct –v
+    sacct -v
 
 Details the HPC nodes:
 

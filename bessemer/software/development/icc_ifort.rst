@@ -9,7 +9,7 @@ To activate icc/icpc,
 first connect to Bessemer, 
 start an interactive session: ::
 
-   srun --pty bash –i
+   srun --pty bash -i
 
 then run: :: 
 
