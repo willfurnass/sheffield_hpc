@@ -2,19 +2,25 @@
 
 PGI Compilers
 =============
-The PGI Compiler suite offers C,C++ and Fortran Compilers. For full details of the features of this compiler suite, see `PGI's website <http://www.pgroup.com/products/pgiworkstation.htm>`_.
+
+The PGI Compiler suite offers C, C++ and Fortran Compilers.
+For full details of the features of this compiler suite
+see `PGI's website <http://www.pgroup.com/products/pgiworkstation.htm>`_.
 
 Making the PGI Compilers available
 ----------------------------------
 
-After connecting to the Bessemer cluster, start an interactive session with the ``srun --pty bash –i`` command then activate a specific version of the compiler suite using one of: ::
+After connecting to the Bessemer cluster, start an interactive session: ::
 
-    module use /usr/local/modulefiles/staging/eb/all/
-    module load PGI/19.1-GCC-8.2.0-2.31.1
+   srun --pty bash -i
 
-Once you've loaded the module, you can check the version with ::
+then activate a specific version of the compiler suite using: ::
 
-    pgcc --version
+   module load PGI/19.1-GCC-8.2.0-2.31.1
+
+Once you've loaded the module, you can check the version with: ::
+
+   pgcc --version
 
 
 Compilation examples

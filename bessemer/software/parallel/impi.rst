@@ -1,28 +1,28 @@
-OpenMPI (gcc version)
-=====================
+.. _impi_bessemer:
 
-.. sidebar:: OpenMPI (gcc version)
+Intel MPI
+=========
 
-   :Latest Version: 3.1.1
-   :Dependancies: gcc
-   :URL: http://www.open-mpi.org/
+.. sidebar:: Intel MPI
 
-The Open MPI Project is an open source Message Passing Interface implementation that is developed and maintained by a consortium of academic, research, and industry partners. Open MPI is therefore able to combine the expertise, technologies, and resources from all across the High Performance Computing community in order to build the best MPI library available. Open MPI offers advantages for system and software vendors, application developers and computer science researchers.
+   :URL: https://software.intel.com/en-us/mpi-library
+
+"Intel MPI Library is a multifabric message-passing library
+that implements the open-source MPICH specification.
+Use the library to create, maintain, and test advanced, complex applications that
+perform better on HPC clusters based on Intel® processors."
 
 Versions
 --------
 
-You can load a specific version using ::
+You can load a specific version using: ::
 
-    module use /usr/local/modulefiles/staging/eb/all/
-    module load OpenMPI/3.1.3-GCC-8.2.0-2.31.1
+    module load impi/2018.4.274-iccifort-2019.1.144-GCC-8.2.0-2.31.1 
 
-
-See `here <https://mail-archive.com/announce@lists.open-mpi.org/msg00118.html>`__ for a brief guide to the new features in OpenMPI 3.x and `here <https://raw.githubusercontent.com/open-mpi/ompi/v3.1.x/NEWS>`__ for a detailed view of the changes between OpenMPI versions.
+which explicitly loads versions of icc, ifort (and GCC).
 
 Example
 -------
-
 
 Consider the following source code (hello.c):
 
@@ -97,10 +97,9 @@ Write a shell script (minimal example) We name the script as ‘test.sh’: ::
     #SBATCH --nodes=1
     #SBATCH --ntasks-per-node=40
 
-    module use /usr/local/modulefiles/staging/eb/all/
     module load OpenMPI/3.1.3-GCC-8.2.0-2.31.1
 
-    srun file
+    srun --export=ALL file
 
 Maximum 40 cores can be requested.
 

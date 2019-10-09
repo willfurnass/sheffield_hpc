@@ -1,4 +1,4 @@
-.. _bessemer-python-conda:
+.. _python_conda_bessemer:
 
 Python
 ======
@@ -23,11 +23,10 @@ Using conda Python
 ------------------
 
 After connecting to Bessemer, start an interactive session
-with the ``srun --pty bash –i command``.
+with the ``srun --pty bash -i command``.
 
 Anaconda Python can be loaded with::
 
-    module use /usr/local/modulefiles/staging/eb/all/
     module load Anaconda3/5.3.0 
 
 
