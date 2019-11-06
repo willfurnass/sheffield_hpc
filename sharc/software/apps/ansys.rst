@@ -30,7 +30,9 @@ Ansys can be activated using the module files::
 	
 
 The Ansys Workbench GUI executable is ``ansyswb``. ``ansyswb`` can be launched during an interactive session with X Window support (e.g. an interactive ``qrshx`` session).
-The Ansys Mechanical exectuable is ``ansys-mechanical`` and ``fluent`` is the executable for Fluent. 
+The Ansys Mechanical executable is ``ansys-mechanical`` and ``fluent`` is the executable for Fluent.
+ 
+NOTE: for Ansys versions >= 18.0 using the command ``fluent`` results in an unresponsive fluent launcher. To launch fluent and bypass the launcher use ``fluent dim`` where dim = 2d, 2ddp, 3d or 3ddp.
 
 
 Batch jobs
