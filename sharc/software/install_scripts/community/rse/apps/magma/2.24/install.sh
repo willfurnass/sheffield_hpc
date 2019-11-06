@@ -29,7 +29,7 @@ sha256sum "${CUDA8_GZIPPED}" | grep -qw "${CUDA8_GZIPPED_SHA256}"
 sha256sum "${SHARED_TARBALL}" | grep -qw "${SHARED_TARBALL_SHA256}"
 
 # Create installation prefixes (for AVX64 and CUDA8)
-readonly BASE_PKG_PREFIX='/tmp/crap/usr/local/community/rse/pkgs'
+readonly BASE_PKG_PREFIX='/usr/local/community/rse/pkgs'
 readonly PREFIX_AVX64="${BASE_PKG_PREFIX}/apps/magma/${MAGMA_VERS}/binary-avx64"
 readonly PREFIX_CUDA8="${BASE_PKG_PREFIX}/apps/magma/${MAGMA_VERS}/binary-cuda8"
 mkdir -p "${PREFIX_AVX64}" "${PREFIX_CUDA8}"
@@ -50,7 +50,7 @@ for prefix in "${PREFIX_AVX64}/" "${PREFIX_CUDA8}/"; do
 done
 
 # Modulefile config
-readonly BASE_MOD_PREFIX='/tmp/crap/usr/local/community/rse/mods'
+readonly BASE_MOD_PREFIX='/usr/local/community/rse/mods'
 readonly MODFILE_AVX64="${BASE_MOD_PREFIX}/apps/magma/${MAGMA_VERS}/binary-avx64"
 readonly MODFILE_CUDA8="${BASE_MOD_PREFIX}/apps/magma/${MAGMA_VERS}/binary-cuda8"
 mkdir -p "$(dirname "${MODFILE_AVX64}")" "$(dirname "${MODFILE_CUDA8}")"
