@@ -1,0 +1,23 @@
+#%Module1.0#####################################################################
+##
+##  MAGMA 2.24 (AVX64 build) module file
+##
+################################################################################
+
+# Module file logging
+source /usr/local/etc/module_logging.tcl
+
+proc ModulesHelp { } {
+    global vers
+    puts stderr "   Makes MAGMA $vers (AVX64 build) available for use"
+}
+
+set vers 2.24
+set magmaroot /usr/local/community/rse/pkgs/apps/magma/$vers/binary-avx64
+set magmapassfile /usr/local/community/rse/pkgs/apps/magma/$vers/magmapassfile
+
+module-whatis   "Makes MAGMA $vers (AVX64 build) available for use"
+
+setenv MAGMAROOT $magmaroot
+prepend-path PATH $magmaroot
+setenv MAGMAPASSFILE $magmapassfile

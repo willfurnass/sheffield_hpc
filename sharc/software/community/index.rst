@@ -11,6 +11,11 @@ Software installation should follow our installation guide (see :ref:`sharc-soft
 
 Software installations must be maintained by a resposible owner.  Software which is not actively maintained may be removed.
 
-Notes on modulefiles and documentation
+Publicly-documented community software
+--------------------------------------
 
-
+.. toctree::
+    :maxdepth: 1
+    :glob:
+    
+    ./*

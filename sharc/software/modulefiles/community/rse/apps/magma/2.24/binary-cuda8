@@ -1,0 +1,29 @@
+#%Module1.0#####################################################################
+##
+##  MAGMA 2.24 (CUDA 8 build) module file
+##
+################################################################################
+
+# Module file logging
+source /usr/local/etc/module_logging.tcl
+
+proc ModulesHelp { } {
+    global vers
+    global cudavers
+    global cudamajorvers
+    puts stderr "   Makes MAGMA $vers (CUDA $cudamajorvers build) available for use (also loads CUDA $cudavers)"
+}
+
+set vers 2.24
+set cudavers 8.0.44
+set cudamajorvers 8
+set magmaroot /usr/local/community/rse/pkgs/apps/magma/$vers/binary-cuda$cudamajorvers
+set magmapassfile /usr/local/community/rse/pkgs/apps/magma/$vers/magmapassfile
+
+module-whatis   "Makes MAGMA $vers (CUDA $cudamajorvers build) available for use (also loads CUDA $cudavers)"
+
+module load libs/CUDA/$cudavers/binary
+
+setenv MAGMAROOT $magmaroot
+prepend-path PATH $magmaroot
+setenv MAGMAPASSFILE $magmapassfile

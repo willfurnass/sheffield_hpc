@@ -17,9 +17,9 @@ an omission, or wish to request new software please create an issue on our `gith
     policy/index
     community/index
 
-* :ref:`sharc-apps`
-* :ref:`sharc-dev`
-* :ref:`sharc-libs`
-* :ref:`sharc-parallel`
-* :ref:`sharc-software-install-guide`
-* :ref:`sharc-community`
+.. * :ref:`sharc-apps`
+   * :ref:`sharc-dev`
+   * :ref:`sharc-libs`
+   * :ref:`sharc-parallel`
+   * :ref:`sharc-software-install-guide`
+   * :ref:`sharc-community`
