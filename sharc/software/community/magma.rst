@@ -21,7 +21,7 @@ Magma is distributed by the Computational Algebra Group at the University of Syd
 .. note::
    This page details an installation of Magma that is 
    only licensed for use by members of the Dept of Computer Science and their collaborators 
-   on the Dept of Computer Science nodes in ShARC.
+   on the :ref:`Dept of Computer Science (COM) nodes in ShARC <groupnodes_sharc>`
    It is not possible to use this installation of Magma on other nodes.
 
 Interactive Usage
@@ -35,7 +35,7 @@ Make an additional set of modulefiles available: ::
 
    module use /usr/local/community/rse/mods
 
-Load a version of Magma (with AVX support): ::
+Load a version of Magma (with `AVX <https://en.wikipedia.org/wiki/Advanced_Vector_Extensions>`__ support): ::
 
    module load apps/magma/2.24/binary-avx64
 
@@ -47,7 +47,7 @@ Alternatively, for Magma with **CUDA** support (and 1 NVIDIA P100 GPU): ::
 
    qrshx -P rse -q rse-interactive.q -l gpu=1
    module use /usr/local/community/rse/mods
-   module load apps/magma/2.24/binary-cuda8  # also loads the CUDA 8.0.44
+   module load apps/magma/2.24/binary-cuda8  # also loads CUDA 8.0.44
    magma
 
 Documentation
