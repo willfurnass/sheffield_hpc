@@ -12,10 +12,7 @@ For a guide on the rst file format see `this <http://thomas-cokelaer.info/tutori
 
 Rendered Documentation
 ----------------------
-Two versions of the documentation are currently automatically built from this repository:
-
-* `A website <https://docs.hpc.shef.ac.uk/en/latest/>`_.
-* `A .pdf document <https://readthedocs.org/projects/iceberg/downloads/pdf/latest/>`_.
+`This website <https://docs.hpc.shef.ac.uk/en/latest/>`_  is currently automatically built from this repository.
 
 How to Contribute
 -----------------
@@ -52,17 +49,6 @@ Building the documentation on a local Windows machine
    Or if you don't have the ``make`` utility installed on your machine then build with *sphinx* directly: ::
 
     sphinx-build . ./html
-
-#. If you want to build the PDF documentation you will need:
-
-    * `GNU Make <http://gnuwin32.sourceforge.net/packages/make.htm>`_
-    * `MikTeX <http://miktex.org/download>`_
-
-   Then from the command line, the following will build the ``.pdf`` file: ::
-
-    make latexpdf
-
-   On first run, MikTeX will prompt you to install various extra LaTeX packages.
 
 Building the documentation on a local Linux machine
 ###################################################
