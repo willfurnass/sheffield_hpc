@@ -18,12 +18,10 @@ The three supported toolchains on Bessemer are:
    - Fourier transforms: :ref:`FFTW <fftw_bessemer>`
 
 - ``fosscuda``
-
    - As per ``foss``
    - Plus CUDA
 
 - ``intel``
-
    - C, C++ and Fortran compilers (:ref:`icc/icpc/ifort <icc_ifort_bessemer>`)
    - MPI implementation (:ref:`Intel MPI <impi_bessemer>`)
    - BLAS, LAPACK and fourier transforms: :ref:`Intel MKL <imkl_bessemer>`
