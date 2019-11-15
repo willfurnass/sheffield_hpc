@@ -1,4 +1,4 @@
-.. _jags:
+.. _jags_sharc:
 
 JAGS
 ====
