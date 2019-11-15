@@ -1,0 +1,21 @@
+#%Module#####################################################################
+##
+## GATK 4.1.4 modulefile
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        puts stderr "Makes GATK 4.1.4 available"
+}
+
+module load apps/java/jdk1.8.0_102/binary
+
+set version 4.1.4
+set GATK_DIR /usr/local/packages/apps/gatk/$version/binary/
+
+module-whatis   "Makes GATK 4.1.4 available"
+prepend-path PATH $GATK_DIR
+prepend-path GATKHOME $GATK_DIR
