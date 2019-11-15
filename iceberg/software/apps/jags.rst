@@ -1,4 +1,4 @@
-.. _jags_iceberg:
+.. _jags:
 
 JAGS
 ====
