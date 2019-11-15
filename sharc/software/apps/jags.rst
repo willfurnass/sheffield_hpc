@@ -74,4 +74,4 @@ Version 4.2
 JAGS 4.2 was built with gcc 4.9.4
 
 * Installed using :download:`install.sh </sharc/software/install_scripts/apps/jags/4.2/gcc-4.9.4/install_jags.sh>`
-* :download:`This module file </sharc/software/modulefiles/jags/4.2/gcc-4.9.4>` was installed as ``/usr/local/modulefiles/apps/jags/4.2/gcc-4.9.4``
+* :download:`This module file </sharc/software/modulefiles/apps/jags/4.2/gcc-4.9.4>` was installed as ``/usr/local/modulefiles/apps/jags/4.2/gcc-4.9.4``
