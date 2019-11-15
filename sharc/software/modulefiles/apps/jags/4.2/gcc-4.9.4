@@ -1,0 +1,24 @@
+#%Module#####################################################################
+##
+## JAGS 4.2 module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        puts stderr "Makes JAGS 4.2 available"
+}
+
+set JAGS_DIR /usr/local/packages/apps/jags/4.2/gcc-4.9.4
+module load dev/gcc/4.9.4
+module load libs/blas/3.4.2-5/binary
+module load libs/lapack/3.4.2-5/binary
+
+module-whatis   "Makes JAGS 4.2 library available"
+
+prepend-path JAGS_INCLUDE $JAGS_DIR/include/JAGS/
+prepend-path JAGS_LIB $JAGS_DIR/lib64
+prepend-path LD_LIBRARY_PATH $JAGS_DIR/lib64
+prepend-path PATH $JAGS_DIR/bin
