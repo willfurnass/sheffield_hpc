@@ -11,7 +11,7 @@ Mathematica is a technical computing environment and programming language with s
 
 Single Core Interactive Usage
 -----------------------------
-After connecting to ShARC (see :ref:``ssh``),  start an interactive session with ``qrshx``.
+After connecting to ShARC (see :ref:`ssh`),  start an interactive session with ``qrshx``.
 
 Mathematica can be loaded with ::
 
