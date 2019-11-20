@@ -5,13 +5,16 @@ cuDNN
 
 .. sidebar:: cuDNN
 
-
    :Dependencies: CUDA, gcc
    :URL: https://developer.nvidia.com/cudnn
    :Documentation: https://developer.nvidia.com/cudnn
 
 
-The NVIDIA CUDA Deep Neural Network library (cuDNN) is a GPU-accelerated library of primitives for deep neural networks. cuDNN provides highly tuned implementations for standard routines such as forward and backward convolution, pooling, normalization, and activation layers. cuDNN is part of the NVIDIA Deep Learning SDK.
+The NVIDIA CUDA Deep Neural Network library (cuDNN) is
+a GPU-accelerated library of primitives for deep neural networks.
+cuDNN provides highly tuned implementations for standard routines such
+as forward and backward convolution, pooling, normalization, and activation layers.
+cuDNN is part of the NVIDIA Deep Learning SDK.
 
 Usage
 -----

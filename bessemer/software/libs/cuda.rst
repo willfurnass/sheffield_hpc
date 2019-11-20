@@ -28,18 +28,22 @@ you would include the following in the header of your submission script:
 
 You then need to ensure a version of the CUDA library (and compiler) is loaded.
 As with much software installed on the cluster, 
-versions of CUDA are activated via the :ref:`'module load' command<env_modules>`,
-so you need to run one of the following: ::
+versions of CUDA are activated via the :ref:`'module load' command<env_modules>`.
+
+To load CUDA 10.1 plus 
+the :ref:`GCC <gcc_bessemer>` 8.2.0 compiler, OpenMPI, OpenBLAS, SCALAPACK and FFTW: ::
 
    module load fosscuda/2019a  
 
-to load CUDA 10.1 plus the :ref:`GCC <gcc_bessemer>` 8.2.0 compiler, OpenMPI, OpenBLAS, SCALAPACK and FFTW, or alternatively run : ::
+To load *just* CUDA and :ref:`GCC <gcc_bessemer>` 8.2.0: ::
 
    module load CUDA/10.1.105-GCC-8.2.0-2.31.1
 
-to load *just* CUDA and :ref:`GCC <gcc_bessemer>` 8.2.0.
+To load *just* CUDA 10.0: ::
 
-To then confirm which version of CUDA you are using:
+    module load CUDA/10.0.130
+
+Confirm which version of CUDA you are using via ``nvcc --version`` e.g.: 
 
 .. code-block:: console
 
@@ -236,3 +240,7 @@ Results: ::
    # Avg bus bandwidth    : 4.42606 
    #
 
+CUDA 10.0
+^^^^^^^^^
+
+Explicitly installed via the EasyBuild-provided ``CUDA/10.0.130`` easyconfig.
