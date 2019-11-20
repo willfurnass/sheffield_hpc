@@ -17,7 +17,7 @@ JAGS is Just Another Gibbs Sampler.  It is a program for analysis of Bayesian hi
 
 Interactive Usage
 -----------------
-After connecting to ShARC (see :ref:``ssh``),  start an interactive session with the :ref:``qrshx`` or :ref:``qrsh`` command. To make JAGS available in this session, run one of the following module commands ::
+After connecting to ShARC (see :ref:`ssh`),  start an interactive session with the :ref:`qrshx` or :ref:`qrsh` command. To make JAGS available in this session, run one of the following module commands ::
 
       module load apps/jags/4.2/gcc-4.9.4
 
