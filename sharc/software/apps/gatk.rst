@@ -12,7 +12,7 @@ The Genome Analysis Toolkit or GATK is a software package for analysis of high-t
 
 Interactive Usage
 -----------------
-After connecting to ShARC (see :ref:``ssh``),  start an interactive sesssion with the ``qsh``, ``qrshx`` or ``qrsh`` command.
+After connecting to ShARC (see :ref:`ssh`),  start an interactive sesssion with the ``qsh``, ``qrshx`` or ``qrsh`` command.
 
 The latest version of GATK (currently 4.1.4) is made available with the command
 
