@@ -20,6 +20,7 @@ COMSOL Multiphysics is installed on Bessemer but is not presently supported by C
 The following COMSOL Multiphysics 5.4 modules are installed:
 
 Electromagnetics Modules
+
 *    AC/DC
 *    RF
 *    Wave Optics
