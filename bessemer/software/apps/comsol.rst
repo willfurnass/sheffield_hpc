@@ -15,7 +15,7 @@ COMSOL Multiphysics provides a range of simulation, finite element analysis and 
 Availability, licensing and modules
 -----------------------------------
 
-COMSOL Multiphysics is installed on Bessemer but is not presently supported by CiCS.  There is no site license for COMSOL so to run it on Bessemer you will need either your own license or access to licenses managed by others.  For example, a research group may operate a *license server* that can issue COMSOL licenses to (approved) users.  If you need access to a license on a temporary basis then you could try contacting `Prof. Will Zimmerman <https://www.sheffield.ac.uk/cbe/academic-staff/professor-will-zimmerman>`_, who has purchased several licenses for his research group and may be willing to hire out licenses to other researchers.  See `Interactive usage` for information on how to specify a COMSOL license when starting COMSOL on Iceberg.
+COMSOL Multiphysics is installed on Bessemer but is not presently supported by CiCS.  There is no site license for COMSOL so to run it on Bessemer you will need either your own license or access to licenses managed by others.  For example, a research group may operate a *license server* that can issue COMSOL licenses to (approved) users.  If you need access to a license on a temporary basis then you could try contacting `Prof. Will Zimmerman <https://www.sheffield.ac.uk/cbe/academic-staff/professor-will-zimmerman>`_, who has purchased several licenses for his research group and may be willing to hire out licenses to other researchers.  See `Interactive usage (below)` for information on how to specify a COMSOL license when starting COMSOL on Bessemer.
 
 The following COMSOL Multiphysics 5.4 modules are installed:
 
@@ -85,8 +85,7 @@ Interfacing Products
 Interactive usage
 -----------------
 
-After connecting to Bessemer (see :ref:`ssh`),  start an interactive graphical session with the :code:`srun --mem=2G --pty bash -i` command. 
-Alternatively, if you require more memory, for example 16 GB, use the command :code:`srun --mem=16G --pty bash -i` 
+After connecting to Bessemer (see :ref:`ssh`),  start an `interactive graphical session <https://docs.hpc.shef.ac.uk/en/latest/hpc/scheduler/submit.html#interactive-sessions>`_.
 
 Next, run the following to make COMSOL Multiphysics available in your current session: ::
 
@@ -95,10 +94,6 @@ Next, run the following to make COMSOL Multiphysics available in your current se
 Specify the location of your license information: ::
 
         export LM_LICENSE_SERVER=/home/myusername/path/to/mylicensefile.dat:$LM_LICENSE_SERVER
-
-Finally, start COMSOL Multiphysics: ::
-
-	comsol
 
 The COMSOL Multiphysics user interface should then appear.  Here ``mylicensefile.dat`` is a file containing either:
 
@@ -113,6 +108,10 @@ If you are using a license server then your license file needs to contain no mor
 where ``mylicenseserver.sheffield.ac.uk`` is the hostname of your license server and ``port_number`` is the *port* to connect to on that machine to request a COMSOL license.
 
 The person responsible for managing the license server may ask for your Bessemer username to allow you to request licenses (whilst preventing others from doing so).
+
+Finally, start COMSOL Multiphysics: ::
+
+	comsol
 
 Serial batch usage
 ------------------
