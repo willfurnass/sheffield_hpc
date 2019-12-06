@@ -29,7 +29,6 @@ Anaconda Python can be loaded with::
 
     module load Anaconda3/5.3.0 
 
-
 The ``root`` conda environment (the default) provides Python 3 and no extra
 modules, it is automatically updated, and not recommended for general use, just
 as a base for your own environments.
@@ -115,3 +114,29 @@ Provided system-wide are a set of anaconda environments, these will be
 installed with the anaconda version number in the environment name, and never
 modified. They will therefore provide a static base for derivative environments
 or for using directly.
+
+Using conda and Python in a batch job
+#####################################
+
+Create a batch job submission script called ``myscript.slurm`` that is similar to the following:
+
+.. code-block:: bash
+
+   #!/bin/bash
+   #SBATCH --ntasks=1
+   #SBATCH --time=10:00
+   #SBATCH --mem-per-cpu=100
+
+   export SLURM_EXPORT_ENV=ALL
+   module load Anaconda3/5.3.0 
+
+   # We assume that the conda environment 'myexperiment' has already been created
+   source activate myexperiment
+   srun python mywork.py
+
+Then submit this to Slurm by running:
+
+.. code-block:: bash
+
+   sbatch myscript.slurm
+
