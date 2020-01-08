@@ -86,7 +86,7 @@ The script below is an example of a batch submission script for a single core jo
 Note that the module ``ifort/2019.1.144-GCC-8.2.0-2.31.1``, required for compiling the user subroutines, is not automatically loaded when the module for Abaqus is loaded.
 
 Addendum: Abaqus 6.14.2 (non-EasyBuild install):
------------------------------------------
+------------------------------------------------
 
 Abaqus 6.14.2 was installed using the standard Abaqus installer due to issues using EasyBuild.
 
