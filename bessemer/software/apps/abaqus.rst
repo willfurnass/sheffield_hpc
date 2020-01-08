@@ -3,7 +3,7 @@ Abaqus
 
 .. sidebar:: Abaqus
    
-   :Versions: 2018
+   :Versions: 6.14.2 (see Addendum below), 2018 
    :Dependencies: User subroutines need the Intel FORTRAN compiler 2019.
    :URL: http://www.3ds.com/products-services/simulia/products/abaqus/ 
    :Documentation: https://www.3ds.com/products-services/simulia/products/abaqus/ (note: register for an account to access)
@@ -84,3 +84,34 @@ The script below is an example of a batch submission script for a single core jo
     abaqus job=my_job input=umatmst3.inp user=umatmst3.f scratch=$TMPDIR memory="8gb" interactive
 
 Note that the module ``ifort/2019.1.144-GCC-8.2.0-2.31.1``, required for compiling the user subroutines, is not automatically loaded when the module for Abaqus is loaded.
+
+Addendum: Abaqus 6.14.2 (non-EasyBuild install):
+-----------------------------------------
+
+Abaqus 6.14.2 was installed using the standard Abaqus installer due to issues using EasyBuild.
+
+It can be activated using the following module commands::
+
+    module use /usr/local/modulefiles/staging/apps
+    module load ABAQUS/6.14.2/binary
+
+and launched using::
+
+    abaqus cae
+
+The following is an example batch submission script, ``my_job.sh``, to run the executable ``abaqus`` with input file is ``s4d.inp``. The script requests 4 cores using the OpenMP parallel environment ``smp`` with a runtime of 30 mins and 2 GB of real memory per core. ::
+
+    #!/bin/bash
+    #SBATCH --comment=abaqus_smp_test
+    #SBATCH --nodes=1
+    #SBATCH --ntasks-per-node=4
+    #SBATCH --mem=8000
+    #SBATCH --output=output_abaqus_smp_4
+    #SBATCH --time=00:30:00
+    #SBATCH --mail-user=joe.bloggs@sheffield.ac.uk
+    #SBATCH --mail-type=ALL
+    module use /usr/local/modulefiles/staging/apps
+    module load module load ABAQUS/6.14.2/binary
+    unset SLURM_GTIDS
+    abaqus job=my_job input=s4d.inp mp_mode=threads cpus=$SLURM_NTASKS scratch=$TMPDIR memory="8gb" interactive
+
