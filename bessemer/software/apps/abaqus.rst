@@ -3,7 +3,7 @@ Abaqus
 
 .. sidebar:: Abaqus
    
-   :Versions: 6.14.2 (see Addendum below), 2018 
+   :Versions: 6.14.2 (see Addendum section), 2018 
    :Dependencies: User subroutines need the Intel FORTRAN compiler 2019.
    :URL: http://www.3ds.com/products-services/simulia/products/abaqus/ 
    :Documentation: https://www.3ds.com/products-services/simulia/products/abaqus/ (note: register for an account to access)
@@ -92,7 +92,7 @@ Abaqus 6.14.2 was installed using the standard Abaqus installer due to issues us
 
 It can be activated using the following module commands::
 
-    module use /usr/local/modulefiles/staging/apps
+    module use /usr/local/modulefiles/live/apps
     module load ABAQUS/6.14.2/binary
 
 and launched using::
@@ -110,8 +110,8 @@ The following is an example batch submission script, ``my_job.sh``, to run the e
     #SBATCH --time=00:30:00
     #SBATCH --mail-user=joe.bloggs@sheffield.ac.uk
     #SBATCH --mail-type=ALL
-    module use /usr/local/modulefiles/staging/apps
-    module load module load ABAQUS/6.14.2/binary
+    module use /usr/local/modulefiles/live/apps
+    module load ABAQUS/6.14.2/binary
     unset SLURM_GTIDS
     abaqus job=my_job input=s4d.inp mp_mode=threads cpus=$SLURM_NTASKS scratch=$TMPDIR memory="8gb" interactive
 
