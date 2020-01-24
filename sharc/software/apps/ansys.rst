@@ -50,6 +50,8 @@ Batch jobs
 
     #!/bin/bash
     #$ -cwd
+    #$ -M joe.bloggs@sheffield.ac.uk
+    #$ -m abe
     #$ -l h_rt=00:30:00
     #$ -l rmem=2G
     #$ -pe mpi-rsh 8
@@ -67,7 +69,7 @@ The job is submitted to the queue by typing::
     #!/bin/bash
     #$ -cwd
     #$ -N mech_test
-    #$ -M des.ryan@sheffield.ac.uk
+    #$ -M joe.bloggs@sheffield.ac.uk
     #$ -m abe
     #$ -l h_rt=00:10:00
     #$ -l rmem=2G
@@ -80,7 +82,7 @@ The equivalent batch script for using MPI (``multi-node distributed memory``) pa
     #!/bin/bash
     #$ -cwd
     #$ -N mech_test
-    #$ -M des.ryan@sheffield.ac.uk
+    #$ -M joe.bloggs@sheffield.ac.uk
     #$ -m abe
     #$ -l h_rt=00:10:00
     #$ -l rmem=2G
