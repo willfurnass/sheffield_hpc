@@ -54,7 +54,7 @@ The job is submitted to the queue by typing::
 
     sbatch cfd_job.sh
 
-The following is an example batch submission script, ``mech_job.sh``, to run the mechanical executable ``mapdl`` with input file ``CrankSlot_Flexible.inp``, and carry out a mechanical simulation. The script requests 2 cores using the OpenMP parallel environment with a runtime of 60 mins and 2 GB of real memory per core (Note: Fluent . ::
+The following is an example batch submission script, ``mech_job.sh``, to run the mechanical executable ``mapdl`` with input file ``CrankSlot_Flexible.inp``, and carry out a mechanical simulation. The script requests 2 cores using the OpenMP parallel environment with a runtime of 60 mins and 2 GB of real memory per core. ::
 
     #!/bin/bash
     #SBATCH --nodes=1
@@ -66,7 +66,7 @@ The following is an example batch submission script, ``mech_job.sh``, to run the
     #SBATCH --mail-user=joe.bloggs@sheffield.ac.uk
     #SBATCH --mail-type=ALL
     module load ANSYS/19.4
-    ANSYS_OPTIONS="-dis -p aa_r -dir $(pwd) -b -np $SLURM_NTASKS -j solution -i"
+    ANSYS_OPTIONS="-smp -dir $(pwd) -b -np $SLURM_NTASKS -j solution -i"
     mapdl $ANSYS_OPTIONS CrankSlot_Flexible.inp
 
 The job is submitted to the queue by typing::
