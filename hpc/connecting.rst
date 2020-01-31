@@ -19,9 +19,9 @@ including *MobaXTerm*.
 .. note::
 
     You can connect to **Iceberg** using SSH (or the related protocols SCP and SFTP) from 
-    anywhere (on campus and off campus with/without a `VPN connection <https://www.sheffield.ac.uk/cics/vpn>`_)
+    anywhere (on campus and off campus with/without a `VPN connection <https://www.sheffield.ac.uk/it-services/vpn>`_)
     but if you are using **ShARC** or **Bessemer** and you are **off-campus** then 
-    you need to `set up a VPN connection first <https://www.sheffield.ac.uk/cics/vpn>`_ 
+    you need to `set up a VPN connection first <https://www.sheffield.ac.uk/it-services/vpn>`_ 
     (or establish one SSH connection to Iceberg then a second from Iceberg to ShARC or Bessemer).
 
 SSH client software on Windows
@@ -68,7 +68,7 @@ log in to a cluster: ::
 
 Here you need to:
 
-* replace ``$USER`` with your CiCS username (e.g. ``te1st``)
+* replace ``$USER`` with your IT Services username (e.g. ``te1st``)
 * replace ``$SGE_CLUSTER_NAME`` with ``sharc``, ``bessemer`` or ``iceberg``.
 
 .. note::

@@ -264,8 +264,8 @@ including basic usage.
 Training
 --------
 
-* CiCS run an `Introduction to Matlab course <http://rcg.group.shef.ac.uk/courses/matlab/>`_
-* In November 2015, CiCS hosted a masterclass in *Parallel Computing in MATLAB*. The materials `are available online <http://rcg.group.shef.ac.uk/courses/mathworks-parallelmatlab/>`_
+* IT Services run an `Introduction to Matlab course <http://rcg.group.shef.ac.uk/courses/matlab/>`_
+* In November 2015, IT Services hosted a masterclass in *Parallel Computing in MATLAB*. The materials `are available online <http://rcg.group.shef.ac.uk/courses/mathworks-parallelmatlab/>`_
 
 
 Installation notes

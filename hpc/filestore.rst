@@ -151,11 +151,11 @@ This does not support POSIX locking which can cause issues for some applications
 ``/shared`` directories
 -----------------------
 
-CiCS now provide `10 terabytes of shared storage for free per research group <https://sheffield.ac.uk/cics/research-storage/using-research-storage>`__.
-After the storage has been requested/purchased by a group's PI and then provisioned by CiCS it can be accessed by name
+IT Services now provide `10 terabytes of shared storage for free per research group <https://sheffield.ac.uk/it-services/research-storage/using-research-storage>`__.
+After the storage has been requested/purchased by a group's PI and then provisioned by IT Services it can be accessed by name
 
 * as a Windows-style (SMB) file share on machines other than ShARC/Iceberg using ``\\uosfstore.shef.ac.uk\shared\``;
-* as a subdirectory of ``/shared`` on ShARC/Iceberg (you need to **explicitly request HPC access when you order storage from CiCS**).
+* as a subdirectory of ``/shared`` on ShARC/Iceberg (you need to **explicitly request HPC access when you order storage from IT Services**).
   
 Note that this subdirectory will be **mounted on demand** on ShARC/Iceberg: 
 it will not be visible if you simply list the contents of the ``/shared`` directory but 
@@ -198,8 +198,8 @@ some applications can cause problems when accessing files/directories on ``/shar
 
 The documentation for the ``/shared`` storage serivce includes information on:
 
-* `how access/permissions are managed <https://www.sheffield.ac.uk/cics/research-storage/access-rights>`__
-* `how to create folders with associated permissions <https://www.sheffield.ac.uk/cics/research-storage/create-folders>`__ 
+* `how access/permissions are managed <https://www.sheffield.ac.uk/it-services/research-storage/access-rights>`__
+* `how to create folders with associated permissions <https://www.sheffield.ac.uk/it-services/research-storage/create-folders>`__ 
   within ``/shared`` storage areas
 
 ``/scratch``: for reading/writing small files
