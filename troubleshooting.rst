@@ -3,7 +3,7 @@
 Troubleshooting
 ===============
 In this section, we'll discuss some tips for solving problems with ShARC, Bessemer and Iceberg. 
-It is suggested that you work through some of the ideas here before contacting the CiCS helpdesk for assistance.
+It is suggested that you work through some of the ideas here before contacting the IT Services helpdesk for assistance.
 
 Frequently Asked Questions
 ``````````````````````````
@@ -24,8 +24,8 @@ If this happens, you should immediately email ``research-it@sheffield.ac.uk`` an
 I can not log into iceberg via the applications portal
 ------------------------------------------------------
 Most of the time such problems arise due to due to Java version issues. As Java updates are released regularly, these problems are usually caused by the changes to the Java plug-in for the browser.
-Follow the trouble-shooting link from the `iceberg browser-access page <https://www.sheffield.ac.uk/cics/research/hpc/using/access/browser>`_ to resolve these problems. There is also a link on that page to test the functionality of your java plug-in. It can also help to try a different browser to see if it makes any difference.
-All failing, you may have to fall back to one of the `non-browser access methods <https://www.sheffield.ac.uk/cics/research/hpc/using/access>`_.
+Follow the trouble-shooting link from the `iceberg browser-access page <https://www.sheffield.ac.uk/it-services/research/hpc/using/access/browser>`_ to resolve these problems. There is also a link on that page to test the functionality of your java plug-in. It can also help to try a different browser to see if it makes any difference.
+All failing, you may have to fall back to one of the `non-browser access methods <https://www.sheffield.ac.uk/it-services/research/hpc/using/access>`_.
 
 I cannot see my folders in /data or /shared
 -------------------------------------------
@@ -43,7 +43,7 @@ If a job exceeds either the real memory or time limits it gets terminated immedi
 
 It is therefore important to estimate the amount of memory and time that is needed to run your job to completion and specify it at the time of submitting the job to the batch queue.
 
-Please refer to the section on `hitting-limits and estimating-resources <https://www.shef.ac.uk/cics/research/hpc/iceberg/requirements>`_ for information on how to avoid these problems.
+Please refer to the section on `hitting-limits and estimating-resources <https://www.shef.ac.uk/it-services/research/hpc/iceberg/requirements>`_ for information on how to avoid these problems.
 
 Exceeding your disk space quota
 -------------------------------
@@ -280,7 +280,7 @@ See ``man 8 pam_sge-qrsh-setup`` for the details of how and why Grid Engine crea
 Using 'sudo' to install software on ShARC
 -------------------------------------------
 
-HPC users do not have sufficient access privileges to use sudo to install software (in /usr/local). Users can however install applications in their /home or /data directories. The webpage `Installing Applications on iceberg and ShARC <https://www.sheffield.ac.uk/cics/research/hpc/using/install>`_ provides guidance on how to do this.
+HPC users do not have sufficient access privileges to use sudo to install software (in /usr/local). Users can however install applications in their /home or /data directories. The webpage `Installing Applications on iceberg and ShARC <https://www.sheffield.ac.uk/it-services/research/hpc/using/install>`_ provides guidance on how to do this.
 
 
 

@@ -8,7 +8,7 @@ Connecting
 
 #. From a web browser navigate to the following URL 
    from a machine that is on-campus or
-   has a `VPN connection to the University <https://www.sheffield.ac.uk/cics/vpn>`__: ::
+   has a `VPN connection to the University <https://www.sheffield.ac.uk/it-services/vpn>`__: ::
 
         https://jupyter-sharc.shef.ac.uk
 
@@ -53,7 +53,7 @@ Currently supported projects:
 
 * ``gpu``:    GPU-equipped nodes (public)
 * ``rse``:    The `Research Software Engineering group's <https://rse.shef.ac.uk>`_ nodes (restricted access)
-* ``cstest``: CiCS testing only
+* ``cstest``: IT Services testing only
 
 Support for other Projects can be added on request.
 

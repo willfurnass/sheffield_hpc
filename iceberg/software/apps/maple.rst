@@ -54,7 +54,7 @@ These are primarily for administrators of the system.
 * Run the installer **Maple2016.1LinuxX64Installer.run** and follow instructions.
 * Choose Install folder `/usr/local/packages6/apps/binapps/maple2016`
 * Do not configure MATLAB
-* Choose a network license. Details on CiCS internal wiki.
+* Choose a network license. Details on IT Services internal wiki.
 * Uncheck 'Enable periodic checking for Maple 2016 updates'
 * Check 'Check for updates now'
 

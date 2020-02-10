@@ -82,7 +82,7 @@ html_theme_options = {'navbar_sidebarrel':False,
                       'navbar_title': ' ',
                       'navbar_links': [
                           ("Home", "index"),
-                          ("Research Computing @ CiCS", "https://www.shef.ac.uk/cics/research", True),
+                          ("Research Computing @ IT Services", "https://www.shef.ac.uk/it-services/research", True),
                           ("Research Software Engineering @ TUOS", "https://rse.shef.ac.uk", True)
                       ],
                       'globaltoc_depth': 1}
