@@ -25,8 +25,9 @@ Using conda Python
 After connecting to Bessemer, start an interactive session
 with the ``srun --pty bash -i command``.
 
-Anaconda Python can be loaded with::
+Anaconda Python can be loaded with one of the following:
 
+    module load Anaconda3/2019.07
     module load Anaconda3/5.3.0 
 
 The ``root`` conda environment (the default) provides Python 3 and no extra
@@ -39,14 +40,14 @@ Creating an Environment
 
 Every user can create their own environments, and packages shared with the
 system-wide environments will not be reinstalled or copied to your file store,
-they will be ``symlinked``, this reduces the space you need in your ``/home``
+they will be *symlinked*, this reduces the space you need in your ``/home``
 directory to install many different Python environments.
 
-To create a clean environment with just Python 2 and numpy you can run::
+To create a clean environment with just Python 3.8 and numpy you can run::
 
-    conda create -n mynumpy python=2.7 numpy
+    conda create -n mynumpy python=3.8 numpy
 
-This will download the latest release of Python 2.7 and numpy, and create an
+This will download the latest release of Python 3.8 and numpy, and create an
 environment named ``mynumpy``.
 
 Any version of Python or list of packages can be provided::
@@ -56,10 +57,10 @@ Any version of Python or list of packages can be provided::
 If you wish to modify an existing environment, such as one of the anaconda
 installations, you can ``clone`` that environment::
 
-    conda create --clone anaconda3-4.2.0 -n myexperiment
+    conda create --clone myscience -n myexperiment
 
 This will create an environment called ``myexperiment`` which has all the
-anaconda 4.2.0 packages installed with Python 3.
+same conda packages as the ``myscience`` environment.
 
 
 Installing Packages Inside an Environment
@@ -128,7 +129,7 @@ Create a batch job submission script called ``myscript.slurm`` that is similar t
    #SBATCH --mem-per-cpu=100
 
    export SLURM_EXPORT_ENV=ALL
-   module load Anaconda3/5.3.0 
+   module load Anaconda3/2019.07
 
    # We assume that the conda environment 'myexperiment' has already been created
    source activate myexperiment
