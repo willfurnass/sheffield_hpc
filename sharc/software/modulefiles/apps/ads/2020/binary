@@ -1,0 +1,24 @@
+#%Module1.0#####################################################################
+##
+## ADS 2020 module file
+##
+#  By Des Ryan on February 2020
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes ADS Version 2020 available for use"
+}
+
+module-whatis   "Makes ADS 2020 available"
+
+# module variables
+#
+ set     version 2020
+ set     adsroot     /usr/local/packages/apps/ads/$version/binary/bin
+ prepend-path PATH $adsroot
