@@ -3,7 +3,7 @@
 ADS
 ===
 
-.. sidebar:: ads
+.. sidebar:: ADS
 
    :Latest Version:  2020
    :URL: https://www.keysight.com/gb/en/products/software/pathwave-design-software/pathwave-advanced-design-system.html
