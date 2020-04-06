@@ -44,7 +44,7 @@ Backups
 +---------------------------+--------------------+---------------------------------------+
 | Frequency of snapshotting | Snapshots retained | Mirrored onto separate storage system |
 +===========================+====================+=======================================+
-| Every 4 hours             | 10 most recent     | No                                    |
+| Every 4 hours             | 10 most recent     | Yes                                   |
 +---------------------------+--------------------+---------------------------------------+
 | Every night               | Last 28 days       | Yes                                   |
 +---------------------------+--------------------+---------------------------------------+
@@ -115,7 +115,7 @@ An example of how slow it can be for large numbers of small files is detailed `h
 +----------+---------------------+--------+----------------+---------------------+--------------------------------------------------------+---------------------------+
 | ShARC    | ``/fastdata``       | Lustre | None           | 669 TB              | ShARC's fastdata filesystem is accessible from Iceberg | 100Gb/s (*Omni-Path*)     |
 +----------+---------------------+--------+----------------+---------------------+--------------------------------------------------------+---------------------------+
-| Iceberg  | ``/fastdata-sharc`` | Lustre | None           | 669 TB              | ShARC's fastdata filesystem is accessible from Iceberg | 10Gb/s Ethernet           |
+| Iceberg  | ``/fastdata-sharc`` | Lustre | None           | 669 TB              | ShARC's fastdata filesystem is accessible from Iceberg | 1Gb/s Ethernet            |
 +----------+---------------------+--------+----------------+---------------------+--------------------------------------------------------+---------------------------+
 
 Backups
@@ -187,6 +187,19 @@ After one of these project storage area has been requested/purchased it can be a
 
 * as a Windows-style (SMB) file share on machines other than ShARC/Iceberg using ``\\uosfstore.shef.ac.uk\shared\``;
 * as a subdirectory of ``/shared`` on ShARC/Iceberg (you need to **explicitly request HPC access when you order storage from IT Services**).
+
+Backups
+^^^^^^^
+
++---------------------------+--------------------+---------------------------------------+
+| Frequency of snapshotting | Snapshots retained | Mirrored onto separate storage system |
++===========================+====================+=======================================+
+| Every 4 hours             | 10 most recent     | Yes                                   |
++---------------------------+--------------------+---------------------------------------+
+| Every night               | Last 7 days        | Yes                                   |
++---------------------------+--------------------+---------------------------------------+
+
+See also: :ref:`recovering_snapshots`.
   
 Automounting
 ^^^^^^^^^^^^
@@ -242,8 +255,8 @@ some applications can cause problems when accessing files/directories on ``/shar
 
 **Changing how attempts to change permissions are handled**: each ``/shared`` area can be configured so that
 
-1. Attempts to change file/directory mode bits fail (e.g. ``chmod +x /shared/mygroup1/myprogram.sh`` fails) (**default configuration per area**) **or**
-1. Attempts to change file/directory mode bits appear to succeed (e.g. ``chmod +x /shared/mygroup1/myprogram.sh`` does not fail but also does not actually change any permissions on the underlying file server) (**alternative configuration per area**)
+#. Attempts to change file/directory mode bits fail (e.g. ``chmod +x /shared/mygroup1/myprogram.sh`` fails) (**default configuration per area**) **or**
+#. Attempts to change file/directory mode bits appear to succeed (e.g. ``chmod +x /shared/mygroup1/myprogram.sh`` does not fail but also does not actually change any permissions on the underlying file server) (**alternative configuration per area**)
 
 Contact the Helpdesk if you would like to switch to using the second way of handling permissions for a particular ``/shared/`` area.
 
@@ -305,38 +318,64 @@ Anything under the ``/scratch`` may be deleted periodically when the worker-node
 How to check your quota usage
 -----------------------------
 
-To find out your storage quota usage for your :ref:`home directory <home_dir>` and, if not on Bessemer, :ref:`data directory <data_dir>`: ::
+To find out your storage quota usage for your :ref:`home directory <home_dir>`, :ref:`data directory <data_dir>` (if not on Bessemer) and particular :ref:`shared_dir`: ::
 
-    quota
+    df -h somedirectoryname
 
+For example:
+
++--------------------------------------------------+------------------------------+
+| Storage area                                     | Command to check quota       |
++==================================================+==============================+
+| :ref:`Home directory <home_dir>`                 | ``df -h /home/$USER``        |
++--------------------------------------------------+------------------------------+
+| :ref:`Data directory <data_dir>`                 | ``df -h /data/$USER``        |
++--------------------------------------------------+------------------------------+
+| A :ref:`Shared (project) directory <shared_dir>` | ``df -h /shared/myproject1`` |
++--------------------------------------------------+------------------------------+
 
 .. _exceed_quota:
 
 If you exceed your filesystem quota
 -----------------------------------
 
-As soon as the quota is exceeded your account becomes frozen. 
+If you reach your quota for your :ref:`home directory <home_dir>` then
+many common programs/commands may cease to work as expected or at all and
+you may not be able to log in.
+
+In addition, jobs may fail if you exceed your quota
+for your :ref:`data directory <data_dir>` or a :ref:`Shared (project) directory <shared_dir>`.
+
 In order to avoid this situation it is strongly recommended that you:
 
-* Use the :ref:`quota <quota_check>` command to check your usage regularly.
-* Copy files that do not need to be backed up to a  ``/fastdata/username`` area, 
+* :ref:`Check your quota usage <quota_check>` regularly.
+* Copy files that do not need to be backed up to a :ref:`Fastdata area <fastdata_dir>`
   or remove them from Bessemer/ShARC/Iceberg completely.
-
 
 .. _recovering_snapshots:
 
-Recovering snapshots 
---------------------
+Recovering files from backups
+-----------------------------
 
-We take regular backups of :ref:`home_dir` and :ref:`data_dir` and it is possible to directly access a limited subset of them.
+:ref:`home_dir`, :ref:`data_dir` and :ref:`shared_dir` are regularly backed up.
+See above for details of the backup schedules per area.
+These backup processes create a series of storage area *snapshots*,
+a subset of which can be accessed by HPC users from the HPC systems themselves
+by *explicitly* browsing to hidden directories e.g.
 
-There are 7 days worth of snapshots available in :ref:`home_dir` and :ref:`data_dir` 
-in a hidden directory called ``.snapshot``. 
-You need to explicitly ``cd`` into this directory to get at the files: ::
++--------------------------------------------------+----------------------------------+
+| Storage area                                     | Parent directory of snapshots    |
++==================================================+==================================+
+| :ref:`Home directory <home_dir>`                 | ``/home/$USER/.snapshot``        |
++--------------------------------------------------+----------------------------------+
+| :ref:`Data directory <data_dir>`                 | ``/data/$USER/.snapshot``        |
++--------------------------------------------------+----------------------------------+
+| A :ref:`Shared (project) directory <shared_dir>` | ``/shared/myproject1/.snapshot`` |
++--------------------------------------------------+----------------------------------+
 
-    cd /home/YOURUSERNAME/.snapshot
+From within per-snapshot directories you can access (read-only) copies of files/directories.
+This allows you to attempt recover any files you might have accidentally modified or deleted recently.
 
-The files are read-only. 
-This allows you to attempt recover any files you might have accidentally deleted recently.
-
-This does not apply for :ref:`fastdata_dir` for which we take no backups.
+Note that ``.snapshot`` directories are not visible when listing all hidden items within their parent directories
+(e.g. using ``ls -a /home/$USER``): 
+you need to explicitly ``cd`` into ``.snapshot`` directories to see/access them.
