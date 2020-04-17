@@ -5,10 +5,10 @@ Filestores
 
 Every HPC user has access to *up to* five different storage areas:
 
-* :ref:`home_dir`: per-user backed-up storage
-* :ref:`data_dir`: additional per-user backed-up storage (*not on Bessemer*)
+* :ref:`home_dir`: per-user :term:`backed-up <Mirrored backups>`, :term:`snapshotted <Snapshotted storage>` storage
+* :ref:`data_dir`: additional per-user snapshotted storage (*not on Bessemer*)
 * :ref:`fastdata_dir`: high-performance shared filesystem for temporary data - optimised for reading/writing large files from multiple nodes and threads simultaneously
-* :ref:`shared_dir`: per-PI shared storage areas for project data - can be accessed from non-HPC machines too
+* :ref:`shared_dir`: per-PI shared storage areas (snapshotted and backed-up) for project data - can be accessed from non-HPC machines too
 * :ref:`scratch_dir`: per-node temporary storage - useful for reading/writing lots of small files within *one job*
 
 The storage areas differ in terms of:
@@ -18,7 +18,9 @@ The storage areas differ in terms of:
 * whether they are shared between clusters;
 * whether the underlying storage system is performant if reading/writing large files;
 * whether the underlying storage system is performant if reading/writing small files;
-* frequency of backup and the time that the data can be left there.
+* frequency of :term:`storage snapshotting <Snapshotted storage>`, 
+  whether storage is :term:`mirrored <Mirrored backups>` 
+  and the maximum duration data can be retained for.
 
 .. _home_dir:
 
@@ -38,16 +40,16 @@ All users have a home directory on each system, some of which are shared between
 
 See also: :ref:`quota_check` and * :ref:`exceed_quota`.
 
-Backups
-^^^^^^^
+Snapshotting and mirrored backups
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+---------------------------+--------------------+---------------------------------------+
-| Frequency of snapshotting | Snapshots retained | Mirrored onto separate storage system |
-+===========================+====================+=======================================+
-| Every 4 hours             | 10 most recent     | Yes                                   |
-+---------------------------+--------------------+---------------------------------------+
-| Every night               | Last 28 days       | Yes                                   |
-+---------------------------+--------------------+---------------------------------------+
++---------------------------+--------------------+----------------------------------------+
+| Frequency of snapshotting | Snapshots retained | Backed up onto separate storage system |
++===========================+====================+========================================+
+| Every 4 hours             | 10 most recent     | Yes                                    |
++---------------------------+--------------------+----------------------------------------+
+| Every night               | Last 28 days       | Yes                                    |
++---------------------------+--------------------+----------------------------------------+
 
 See also: :ref:`recovering_snapshots`.
 
@@ -70,16 +72,16 @@ Every user on Iceberg and ShARC (**not Bessemer**) has access to a larger *data*
 
 See also: :ref:`quota_check` and * :ref:`exceed_quota`.
 
-Backups
-^^^^^^^
+Snapshotting and mirrored backups
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+---------------------------+--------------------+---------------------------------------+
-| Frequency of snapshotting | Snapshots retained | Mirrored onto separate storage system |
-+===========================+====================+=======================================+
-| Every 4 hours             | 10 most recent     | No                                    |
-+---------------------------+--------------------+---------------------------------------+
-| Every night               | Last 7 days        | No                                    |
-+---------------------------+--------------------+---------------------------------------+
++---------------------------+--------------------+----------------------------------------+
+| Frequency of snapshotting | Snapshots retained | Backed up onto separate storage system |
++===========================+====================+========================================+
+| Every 4 hours             | 10 most recent     | No                                     |
++---------------------------+--------------------+----------------------------------------+
+| Every night               | Last 7 days        | No                                     |
++---------------------------+--------------------+----------------------------------------+
 
 See also: :ref:`recovering_snapshots`.
 
@@ -118,10 +120,11 @@ An example of how slow it can be for large numbers of small files is detailed `h
 | Iceberg  | ``/fastdata-sharc`` | Lustre | None           | 669 TB              | ShARC's fastdata filesystem is accessible from Iceberg | 1Gb/s Ethernet            |
 +----------+---------------------+--------+----------------+---------------------+--------------------------------------------------------+---------------------------+
 
-Backups
-^^^^^^^
+Snapshotting and mirrored backups
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Fastdata areas are **not backed up**.
+**Snapshotting is not enabled** for fastdata areas and
+these areas are **not backed up**.
 
 Managing your files in fastdata areas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -161,7 +164,7 @@ Automatic file deletion
     We reserve the right to change this policy without warning in order to ensure efficient running of the service.
 
     It is important to therefore not use *fastdata* areas for long-term storage and 
-    **copy important data** from these areas to **backed-up areas** (:ref:`home_dir`, :ref:`data_dir` or :ref:`shared_dir`).
+    **copy important data** from these areas to areas suitable for longer-term storage (:ref:`home_dir`, :ref:`data_dir` (*not* backed up) or :ref:`shared_dir`).
 
 You can use the ``lfs``  command to find out which files in a *fastdata* directory are older than a certain number of days and hence approaching the time of deletion. 
 For example, to find files 50 or more days old ::
@@ -188,16 +191,16 @@ After one of these project storage areas has been requested/purchased it can be 
 * as a Windows-style (SMB) file share on machines other than ShARC/Iceberg using ``\\uosfstore.shef.ac.uk\shared\``;
 * as a subdirectory of ``/shared`` on ShARC/Iceberg (you need to **explicitly request HPC access when you order storage from IT Services**).
 
-Backups
-^^^^^^^
+Snapshotting and mirrored backups
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+---------------------------+--------------------+---------------------------------------+
-| Frequency of snapshotting | Snapshots retained | Mirrored onto separate storage system |
-+===========================+====================+=======================================+
-| Every 4 hours             | 10 most recent     | Yes                                   |
-+---------------------------+--------------------+---------------------------------------+
-| Every night               | Last 7 days        | Yes                                   |
-+---------------------------+--------------------+---------------------------------------+
++---------------------------+--------------------+----------------------------------------+
+| Frequency of snapshotting | Snapshots retained | Backed up onto separate storage system |
++===========================+====================+========================================+
+| Every 4 hours             | 10 most recent     | Yes                                    |
++---------------------------+--------------------+----------------------------------------+
+| Every night               | Last 7 days        | Yes                                    |
++---------------------------+--------------------+----------------------------------------+
 
 See also: :ref:`recovering_snapshots`.
   
@@ -258,7 +261,8 @@ some applications can cause problems when accessing files/directories on ``/shar
 #. Attempts to change file/directory mode bits fail (e.g. ``chmod +x /shared/mygroup1/myprogram.sh`` fails) (**default configuration per area**) **or**
 #. Attempts to change file/directory mode bits appear to succeed (e.g. ``chmod +x /shared/mygroup1/myprogram.sh`` does not fail but also does not actually change any permissions on the underlying file server) (**alternative configuration per area**)
 
-Contact the Helpdesk if you would like to switch to using the second way of handling permissions for a particular ``/shared/`` area.
+If you would like to switch to using the second way of handling permissions for a particular ``/shared/`` area then
+the Owner of this area should make a request via the Helpdesk.
 
 Further information
 ^^^^^^^^^^^^^^^^^^^
@@ -354,13 +358,12 @@ In order to avoid this situation it is strongly recommended that you:
 
 .. _recovering_snapshots:
 
-Recovering files from backups
------------------------------
+Recovering files from snapshots
+-------------------------------
 
-:ref:`home_dir`, :ref:`data_dir` and :ref:`shared_dir` are regularly backed up.
-See above for details of the backup schedules per area.
-These backup processes create a series of storage area *snapshots*,
-a subset of which can be accessed by HPC users from the HPC systems themselves
+:ref:`home_dir`, :ref:`data_dir` and :ref:`shared_dir` are regularly :term:`snapshotted <Snapshotted storage>`.
+See above for details of the snapshot schedules per area.
+A subset of snapshots can be accessed by HPC users from the HPC systems themselves
 by *explicitly* browsing to hidden directories e.g.
 
 +--------------------------------------------------+----------------------------------+
