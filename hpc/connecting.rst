@@ -24,6 +24,14 @@ including *MobaXTerm*.
     you need to `set up a VPN connection first <https://www.sheffield.ac.uk/it-services/vpn>`_ 
     (or establish one SSH connection to Iceberg then a second from Iceberg to ShARC or Bessemer).
 
+
+.. note::
+
+   If your University account has `Multifactor Authentication (MFA) <https://sites.google.com/sheffield.ac.uk/mfa/home>`__ 
+   enabled and you access **Iceberg** from off campus without using VPN
+   then you will be prompted to enter a one-time code or send a push notication to your MFA device after entering your username and password.
+   If you use public key authenticaion then you will not be prompted for MFA.
+
 SSH client software on Windows
 ------------------------------
 
