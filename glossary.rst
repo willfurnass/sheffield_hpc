@@ -30,3 +30,21 @@ some of the most common terms as quickly as possible.
         The actual time taken to complete a job as measured by a clock on the
         wall or your wristwatch. 
 
+    Snapshotted storage
+        A storage area where the state of files/directories can be captured and saved at a moment in time.
+        These snapshots are typically taken periodically to allow previous versions of files/directories to quickly be recovered.
+        Some snapshotting systems only allow system administrators to access snapshots; 
+        others, like that used on our HPC systems, permit users to directly view (read-only) snapshots.
+
+        The system that provides snapshotting at TUOS stores snapshot data in the same filesystems as the 'live' data
+        (on the same physical disks)
+        so does not provide a true backup mechanism i.e. does not guard against disk/storage/filesystem failure.
+
+        Also, users have no control over when snapshots are taken and snapshotting cannot log *why* files changed between snapshots:
+        users should have their own mechanisms for meaningfully tracking changes to data, code and text files they care about, 
+        with `git <https://rse.shef.ac.uk/blog/2020-03-29-git-github-remote/>`__ being the most obvious tool for tracking changes to code and text files.
+
+    Mirrored backups
+        Many TUOS storage areas use :term:`snapshotting <Snapshotted storage>` to allow users to recover older versions of files but this does not guard against disk/storage/filesystem failures.
+        For this reason all data in certain storage areas is periodically copied (*mirrored*) to one or more separate storage systems in remote locations.
+        These mirrored backups are only accessible to system administrators.
