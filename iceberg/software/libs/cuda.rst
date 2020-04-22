@@ -106,7 +106,7 @@ To support future hardware of higher compute capability,
 an additional ``-gencode`` argument can be used to enable Just in Time (JIT) compilation of embedded intermediate PTX code. 
 This argument should use the highest virtual architecture specified in other gencode arguments 
 for both the ``arch`` and ``code``
-i.e ``-gencode=arch=compute_20,code=sm_20``.
+i.e ``-gencode=arch=compute_20,code=compute_20``.
 
 The minimum specified virtual architecture must be less than or equal to the `Compute Capability <https://developer.nvidia.com/cuda-gpus>`_ of the GPU used to execute the code.
 
