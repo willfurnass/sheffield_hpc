@@ -1,9 +1,9 @@
 .. _dgx1_com_groupnodes_sharc:
 
-Nvidia DGX-1 [COM]
+NVIDIA DGX-1 [COM]
 ==================
 
-   The Nvidia DGX-1 is the world's first Deep Learning supercomputer.
+   The NVIDIA DGX-1 is the world's first Deep Learning supercomputer.
    It is equipped with 8 Tesla P100 GPUs
    connected together with NVLink technology to provide super fast inter-GPU communication.
    Capable of performing 170 TeraFLOPs of computation,
@@ -16,10 +16,17 @@ DGX-1 Specifications
 * 8x Tesla P100 GPUs (16GB RAM each)
 * Dual 20-core Intel Xeon E5-2698 v4 2.2 GHz
 * 512 GB System RAM
+* SSD storage array: provides 6.5TB under ``/scratch``
 
 .. note::
 
    One GPU is faulty; only 7 GPUs are currently usable.
+
+.. note::
+
+   The storage array is configured for performance (RAID 0) and not resilience so 
+   should be considered a cache 
+   and should not be used store the only copy of important data.
 
 Requesting Access
 -----------------
