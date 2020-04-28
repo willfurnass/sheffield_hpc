@@ -17,5 +17,6 @@ the :ref:`gompi or iimpi toolchain<bessemer_eb_toolchains>`
 (and the zlib and Szip libraries)
 run *one* of the following: ::
 
+   module load HDF5/1.10.5-gompi-2019b
    module load HDF5/1.10.5-gompi-2019a
    module load HDF5/1.10.5-iimpi-2019a

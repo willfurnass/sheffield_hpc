@@ -14,8 +14,10 @@ It also provides some optimised LAPACK routines.
 Usage
 -----
 
-OpenBLAS can be activated using: ::
+OpenBLAS can be activated using one of: ::
 
-   module load OpenBLAS/0.3.5-GCC-8.2.0-2.31.1
+   module load OpenBLAS/0.3.7-GCC-8.3.0  # foss-2019b toolchain
+   module load OpenBLAS/0.3.5-GCC-8.2.0-2.31.1  # foss-2019a toolchain
+   module load OpenBLAS/0.3.1-GCC-7.3.0-2.30  # foss-2018b toolchain
 
-which also loads :ref:`GCC <gcc_bessemer>` 8.2.0.
+which also loads a version of the :ref:`GCC <gcc_bessemer>` compiler.

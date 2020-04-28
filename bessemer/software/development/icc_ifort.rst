@@ -5,31 +5,23 @@ Intel Compilers
 
 Intel has compilers for C (icc), C++ (icpc) and Fortran (ifort).
 
-To activate icc/icpc, 
-first connect to Bessemer, 
-start an interactive session: ::
+To activate *both* the C/C++ and Fortran compilers use one of: ::
 
-   srun --pty bash -i
+   module load iccifort/2019.5.281  # subset of intel-2019b EasyBuild toolchain
+   module load iccifort/2019.1.144-GCC-8.2.0-2.31.1  # subset of intel-2019a toolchain
 
-then run: :: 
+Which implicitly also load versions of the :ref:`GCC <gcc_bessemer>` compiler.
 
-   module load icc/2019.1.144-GCC-8.2.0-2.31.1
+For older versions of the ``intel`` EasyBuild toolchain you can also load icc/icpc and ifort independently using one of: ::
 
-which implicitly loads :ref:`GCC <gcc_bessemer>` 8.2.0, which is a dependency.
+   module load icc/2019.1.144-GCC-8.2.0-2.31.1  # subset of intel-2019a toolchain
+   module load ifort/2019.1.144-GCC-8.2.0-2.31.1  # subset of intel-2019a toolchain
+
+Again, versions of the :ref:`GCC <gcc_bessemer>` compiler are implicitly loaded.
 
 Confirm that you've loaded the version of icc/icpc you require: ::
 
    icc -v
-
-To instead activate ifort you need the following ``module load`` command: ::
-
-   module load ifort/2019.1.144-GCC-8.2.0-2.31.1
-
-which also implicitly loads :ref:`GCC <gcc_bessemer>` 8.2.0.
-
-To load *both* icc/icpc *and* ifort: ::
-
-   module load iccifort/2019.1.144-GCC-8.2.0-2.31.1
 
 Documentation
 -------------

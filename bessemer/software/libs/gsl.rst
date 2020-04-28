@@ -5,7 +5,7 @@ GSL
 
 .. sidebar:: GSL
    
-   :Version: 2.5
+   :Version: 2.6
    :URL: https://www.gnu.org/software/gsl/
    :Documentation: https://www.gnu.org/software/gsl/doc/html/index.html
 
@@ -16,11 +16,13 @@ See `here <https://www.gnu.org/software/gsl/doc/html/intro.html>`__ for the type
 Usage
 -----
 
-The GSL library can be loaded activate: ::
+The GSL library can be loaded by running one of: ::
 
+   module load GSL/2.6-GCC-8.3.0
    module load GSL/2.5-GCC-8.2.0-2.31.1
 
-if you also want to activate or have already activated :ref:`GCC <gcc_bessemer>` 8.2.0, *or*: ::
+which will also load a particular :ref:`GCC <gcc_bessemer>`,
+*or*: ::
 
    module load GSL/2.5-iccifort-2019.1.144-GCC-8.2.0-2.31.1
 

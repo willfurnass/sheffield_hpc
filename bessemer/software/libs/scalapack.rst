@@ -29,6 +29,10 @@ To load ScaLAPACK plus
 
 run *one* of the following: ::
 
+   module load ScaLAPACK/2.0.2-gompi-2019b
    module load ScaLAPACK/2.0.2-gompi-2019a-OpenBLAS-0.3.5
    module load ScaLAPACK/2.0.2-gompi-2018b-OpenBLAS-0.3.1
-   module load ScaLAPACK/2.0.2-gompic-2019a-OpenBLAS-0.3.5:
+   module load ScaLAPACK/2.0.2-gompic-2019b
+   module load ScaLAPACK/2.0.2-gompic-2019a-OpenBLAS-0.3.5
+
+Note that all load OpenBLAS, despite the change in the module naming convention for more recent toolchains.

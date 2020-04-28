@@ -15,11 +15,12 @@ perform better on HPC clusters based on Intel® processors."
 Versions
 --------
 
-You can load a specific version using: ::
+You can load a specific version using one of the following: ::
 
-    module load impi/2018.4.274-iccifort-2019.1.144-GCC-8.2.0-2.31.1 
+   module use impi/2018.5.288-iccifort-2019.5.281  # subset of intel 2019b EasyBuild toolchain
+   module use impi/2018.4.274-iccifort-2019.1.144-GCC-8.2.0-2.31.1  # subset of intel 2019a EasyBuild toolchain
 
-which explicitly loads versions of icc, ifort (and GCC).
+which implicitly load versions of icc, ifort (and GCC).
 
 Example
 -------

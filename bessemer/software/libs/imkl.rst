@@ -19,8 +19,10 @@ FFTW functions from other math libraries.
 Usage
 -----
 
-The Intel MKL can be activated using: ::
+The Intel MKL can be activated using one of the following: ::
 
-   module load imkl/2019.1.144-iimpi-2019a
+   module load imkl/2019.5.281-iimpi-2019b  # subset of intel-2019b EasyBuild toolchain
+   module load imkl/2019.1.144-iimpi-2019a  # subset of intel-2019b EasyBuild toolchain
 
-which also loads the :ref:`iimpi-2019a <bessemer_eb_toolchains>` toolchain.
+which also implicitly loads a version of the :ref:`iimpi <bessemer_eb_toolchains>` toolchain, 
+itself being a subset of the ``intel`` toolchain.
