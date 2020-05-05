@@ -22,6 +22,8 @@ set prefix /usr/local/packages/libs/CUDA/$vers/binary
 
 setenv       CUDA_DIR        $prefix
 setenv       CUDA_HOME       $prefix
+setenv       CUDA_ROOT       $prefix
+setenv       CUDA_PATH       $prefix
 setenv	     CUDA_SDK	     [format "%s/NVIDIA_CUDA-%s_Samples" $prefix $shortvers]
 
 prepend-path PATH            $prefix/bin
