@@ -199,13 +199,13 @@ CUDA 10.2.89
 ^^^^^^^^^^^^
 
 #. Installed with :download:`install.sh </sharc/software/install_scripts/libs/CUDA/install.sh>` with ``10.2.89_440.33.01`` as the sole argument. 
-#. :download:`Modulefile </sharc/software/modulefiles/libs/CUDA/10.2.89/binary` was installed as ``/usr/local/modulefiles/libs/CUDA/10.2.89/binary``
+#. :download:`Modulefile </sharc/software/modulefiles/libs/CUDA/10.2.89/binary>` was installed as ``/usr/local/modulefiles/libs/CUDA/10.2.89/binary``
 
 CUDA 10.1.243
 ^^^^^^^^^^^^^
 
 #. Installed with :download:`install.sh </sharc/software/install_scripts/libs/CUDA/install.sh>` with ``10.1.243_418.87.00`` as the sole argument. 
-#. :download:`Modulefile </sharc/software/modulefiles/libs/CUDA/10.1.243/binary` was installed as ``/usr/local/modulefiles/libs/CUDA/10.1.243/binary``
+#. :download:`Modulefile </sharc/software/modulefiles/libs/CUDA/10.1.243/binary>` was installed as ``/usr/local/modulefiles/libs/CUDA/10.1.243/binary``
 
 CUDA 10.0.130
 ^^^^^^^^^^^^^
