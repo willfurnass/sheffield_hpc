@@ -25,6 +25,8 @@ Load the appropriate cuDNN version (**and implicitly load a specific CUDA versio
 
 .. code-block:: bash
 
+   module load libs/cudnn/7.6.5.32/binary-cuda-10.2.89
+   module load libs/cudnn/7.6.5.32/binary-cuda-10.0.130
    module load libs/cudnn/7.6.5.32/binary-cuda-10.0.130
    module load libs/cudnn/7.6.5.32/binary-cuda-9.0.176
    module load libs/cudnn/7.5.0.56/binary-cuda-10.0.130
@@ -44,6 +46,8 @@ Examples
 
 Examples are provided for the following versions 
 
+ * ``libs/cudnn/7.6.5.32/binary-cuda-10.2.89``
+ * ``libs/cudnn/7.6.5.32/binary-cuda-10.1.243``
  * ``libs/cudnn/7.6.5.32/binary-cuda-10.0.130``
  * ``libs/cudnn/7.6.5.32/binary-cuda-9.0.176``
  * ``libs/cudnn/7.5.0.56/binary-cuda-10.0.130``
@@ -77,7 +81,9 @@ The cuDNN library is only available to download through the `developer portal <h
 Version 7.6.5.32
 ^^^^^^^^^^^^^^^^
 
-- Install script: :download:`install_cudnn7.6.5.32_for_cuda_10.0_and_9.0.sh </sharc/software/install_scripts/libs/cudnn/install_7.6.5.32_for_cuda_10.0_and_9.0.sh>`
+- Install script: :download:`install_cudnn7.6.5.32.sh </sharc/software/install_scripts/libs/cudnn/install_7.6.5.32.sh>`
+- :download:`Module file for CUDA 10.2 </sharc/software/modulefiles/libs/cudnn/7.6.5.32/binary-cuda-10.2.89>`
+- :download:`Module file for CUDA 10.1 </sharc/software/modulefiles/libs/cudnn/7.6.5.32/binary-cuda-10.1.243>`
 - :download:`Module file for CUDA 10.0 </sharc/software/modulefiles/libs/cudnn/7.6.5.32/binary-cuda-10.0.130>`
 - :download:`Module file for CUDA 9.0 </sharc/software/modulefiles/libs/cudnn/7.6.5.32/binary-cuda-9.0.176>`
 - Testing: ran the ``mnistCUDNN`` example (see *Examples* above) with CUDA 10.0 on a V100 GPU; results: ::

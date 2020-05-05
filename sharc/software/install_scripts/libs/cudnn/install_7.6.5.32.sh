@@ -12,7 +12,7 @@ VERS_MAJ="${VERS%%.*}"
 MEDIA_DIR="/usr/local/media/protected/cuDNN"
 PREFIX_BASE="/usr/local/packages/libs/cudnn/$VERS"
 
-for cuda_maj_min_vers in 9.0 10.0; do 
+for cuda_maj_min_vers in 9.0 10.0 10.1 10.2; do 
     tarball="${MEDIA_DIR}/cudnn-${cuda_maj_min_vers}-linux-x64-v${VERS}.tgz"
     install_dir="${PREFIX_BASE}/binary-cuda-${cuda_maj_min_vers}"
     mkdir -p "$install_dir"
