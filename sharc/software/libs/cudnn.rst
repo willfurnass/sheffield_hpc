@@ -65,8 +65,6 @@ Usage with ``libs/cudnn/7.3.1.20/binary-cuda-9.0.176``:
    cp -r "$CUDNN_HOME/src/cudnn_samples_v7" "${TMPDIR-/tmp}"
    # Compile an example
    cd "${TMPDIR-/tmp}/cudnn_samples_v7/mnistCUDNN"
-   if [ -z ${CUDA_PATH+x} ]; then
-      export CUDA_PATH="${CUDA_HOME}"
    make
    # Run the example
    ./mnistCUDNN
