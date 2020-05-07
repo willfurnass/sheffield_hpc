@@ -72,8 +72,8 @@ Then GPU version of Tensorflow can be installed by the following ::
   #Activate the 'tensorflow-gpu' environment
   source activate tensorflow-gpu
 
-  #Install GPU version of Tensorflow
-  pip install tensorflow-gpu
+  #Install GPU version of Tensorflow 2.0
+  pip install tensorflow-gpu==2.0
 
 If you wish to use an older version of tensorflow-gpu, you can do so using :code:`pip install tensorflow-gpu==<version_number>`
 
@@ -120,12 +120,18 @@ Tensorflow releases depend on specific versions of both CUDA and CUDNN. If the w
 
 This indicates that Tensorflow was expecting to find CUDA 10.0 (and an appropriate version of CUDNN) but was unable to do so.
 
-The following table shows the which module to load for the various versions of Tensorflow, based on the `tested build configurations <https://www.tensorflow.org/install/source#linux>`_. Newer versions may require more recent CUDA and CUDNN releases. 
+The following table shows the which module to load for the various versions of Tensorflow, based on the `tested build configurations <https://www.tensorflow.org/install/source#linux>`_. 
+
+
 
 +------------+------+--------+--------------------------------------------+
 | Tensorflow | CUDA | CUDNN  | Module                                     | 
 +============+======+========+============================================+
-| >= 1.13.1  | 10.0 | >= 7.4 | `libs/cudnn/7.5.0.56/binary-cuda-10.0.130` |
+| 2.0.0      | 10.0 | >= 7.4 | `libs/cudnn/7.5.0.56/binary-cuda-10.0.130` |
++------------+------+--------+--------------------------------------------+
+| 1.14.0     | 10.0 | >= 7.4 | `libs/cudnn/7.5.0.56/binary-cuda-10.0.130` |
++------------+------+--------+--------------------------------------------+
+| 1.13.1     | 10.0 | >= 7.4 | `libs/cudnn/7.5.0.56/binary-cuda-10.0.130` |
 +------------+------+--------+--------------------------------------------+
 | >= 1.5.0   |  9.0 | 7      | `libs/cudnn/7.3.1.20/binary-cuda-9.0.176`  |
 +------------+------+--------+--------------------------------------------+
