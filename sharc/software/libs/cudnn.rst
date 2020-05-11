@@ -26,7 +26,7 @@ Load the appropriate cuDNN version (**and implicitly load a specific CUDA versio
 .. code-block:: bash
 
    module load libs/cudnn/7.6.5.32/binary-cuda-10.2.89
-   module load libs/cudnn/7.6.5.32/binary-cuda-10.0.130
+   module load libs/cudnn/7.6.5.32/binary-cuda-10.1.243
    module load libs/cudnn/7.6.5.32/binary-cuda-10.0.130
    module load libs/cudnn/7.6.5.32/binary-cuda-9.0.176
    module load libs/cudnn/7.5.0.56/binary-cuda-10.0.130
