@@ -27,6 +27,8 @@ versions of CUDA are activated via the :ref:`'module load' command<env_modules>`
 
 .. code-block:: sh
 
+   module load libs/CUDA/10.2.89/binary
+   module load libs/CUDA/10.1.243/binary
    module load libs/CUDA/10.0.130/binary
    module load libs/CUDA/9.1.85/binary
    module load libs/CUDA/9.0.176/binary
@@ -39,9 +41,9 @@ To then confirm which version of CUDA you are using:
 
     $ nvcc --version
     nvcc: NVIDIA (R) Cuda compiler driver
-    Copyright (c) 2005-2017 NVIDIA Corporation
-    Built on Fri_Nov__3_21:07:56_CDT_2017
-    Cuda compilation tools, release 9.1, V9.1.85
+    Copyright (c) 2005-2019 NVIDIA Corporation
+    Built on Wed_Oct_23_19:24:38_PDT_2019
+    Cuda compilation tools, release 10.2, V10.2.89
 
 **Important** To compile CUDA programs you also need a compatible version of the :ref:`GCC compiler <gcc_sharc>`:
 
@@ -175,8 +177,8 @@ Run the command:
 
 Example output is: ::
 
-   NVRM version: NVIDIA UNIX x86_64 Kernel Module  396.37  Tue Jun 12 13:47:27 PDT 2018
-   GCC version:  gcc version 4.8.5 20150623 (Red Hat 4.8.5-28) (GCC)
+   NVRM version: NVIDIA UNIX x86_64 Kernel Module  440.64.00  Wed Feb 26 16:26:08 UTC 2020
+   GCC version:  gcc version 4.8.5 20150623 (Red Hat 4.8.5-39) (GCC)
 
 Installation notes
 ------------------
@@ -186,12 +188,24 @@ These are primarily for system administrators.
 Device driver
 ^^^^^^^^^^^^^
 
-The NVIDIA device driver is installed and configured using the ``gpu-nvidia-driver`` systemd service (managed by puppet).
+The NVIDIA device driver is installed and configured using the ``gpu-nvidia-driver`` systemd service (managed by Puppet).
 This service runs ``/usr/local/scripts/gpu-nvidia-driver.sh`` at boot time to:
 
 - Check the device driver version and uninstall it then reinstall the target version if required;
 - Load the ``nvidia`` kernel module;
 - Create several *device nodes* in ``/dev/``.
+
+CUDA 10.2.89
+^^^^^^^^^^^^
+
+#. Installed with :download:`install.sh </sharc/software/install_scripts/libs/CUDA/install.sh>` with ``10.2.89_440.33.01`` as the sole argument. 
+#. :download:`Modulefile </sharc/software/modulefiles/libs/CUDA/10.2.89/binary>` was installed as ``/usr/local/modulefiles/libs/CUDA/10.2.89/binary``
+
+CUDA 10.1.243
+^^^^^^^^^^^^^
+
+#. Installed with :download:`install.sh </sharc/software/install_scripts/libs/CUDA/install.sh>` with ``10.1.243_418.87.00`` as the sole argument. 
+#. :download:`Modulefile </sharc/software/modulefiles/libs/CUDA/10.1.243/binary>` was installed as ``/usr/local/modulefiles/libs/CUDA/10.1.243/binary``
 
 CUDA 10.0.130
 ^^^^^^^^^^^^^
