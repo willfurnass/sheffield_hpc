@@ -54,4 +54,8 @@ Using Jupyter Notebooks
 The basics of using Jupyter Notebooks to create self-describing, runable workflow documents 
 are explained in the `Jupyter Notebook official documentation`_.
 
+Pyspark
+^^^^^^^
+if you want to use `Pyspark <https://spark.apache.org/docs/latest/api/python/index.html>`__ with conda and :ref:`Jupyter on ShARC <jupyterhub_sge>` then some extra configuration is required: see :ref:`pyspark_sharc_jupyterhub`.
+
 .. _Jupyter Notebook official documentation: http://jupyter-notebook.readthedocs.io/en/latest/examples/Notebook/Notebook%20Basics.html

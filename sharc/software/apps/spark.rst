@@ -1,4 +1,4 @@
-.. _sparc_sharc:
+.. _spark_sharc:
 
 spark
 =====
@@ -54,6 +54,50 @@ You must also tell Spark to only use 4 cores by setting the ``MASTER`` environme
   export MASTER=local[4]
 
 A full example using Python is given `here <https://github.com/mikecroucher/HPC_Examples/tree/master/languages/Python/pyspark_pi>`__.
+
+.. _pyspark_sharc_jupyterhub:
+
+Using pyspark in JupyterHub sessions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Alternative setup instructions are required when using `Pyspark <https://spark.apache.org/docs/latest/api/python/index.html>`__ with conda and :ref:`Jupyter on ShARC <jupyterhub_sge>`:
+
+- A version of Java needs to be loaded
+- Pyspark needs to be told to write temporary files to a sensible location
+- Pyspark needs to be told to create an appropriate number of worker processes
+  given the :ref:`number of CPU cores allocated to the job by the scheduler <jh_conn_res_req_start>`.
+
+First, ensure you have access to a conda environment containing the ``ipykernel`` and ``pyspark`` conda packages (see :ref:`jh_conda`).
+
+Next, add the following to a cell at the top of the Notebook you want to use pyspark with: :: 
+
+   import os
+
+   # Java required by Spark - ensure a version is available:
+   if 'JAVA_HOME' not in os.environ:
+   os.environ['JAVA_HOME'] = "/usr/local/packages/apps/java/jdk1.8.0_102/binary"
+
+   # Tell Spark to save temporary files to a sensible place:
+   if 'TMPDIR' in os.environ:
+   os.environ['SPARK_LOCAL_DIRS'] = os.environ['TMPDIR']
+
+   from pyspark import SparkConf
+   from pyspark import SparkContext
+   conf = SparkConf()
+   conf.setAppName('conda-pyspark')
+
+   # Create as many Spark processes as allocated CPU cores
+   # (assuming all cores allocated on one node):
+   if 'NSLOTS' in os.environ:
+   conf.setMaster("local[{}]".format(os.environ['NSLOTS']))
+
+   # Finally, create our Spark context
+   sc = SparkContext(conf=conf)
+
+   # Verify how many processes Spark will create/use
+   print(sc.defaultParallelism)
+
+It may be possible to install/use Java using conda but this has not been tested.
 
 Installation notes
 ------------------
