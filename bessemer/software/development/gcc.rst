@@ -14,8 +14,9 @@ After connecting to Bessemer,  start an interactive sessson: ::
 then choose the version of the compiler you wish to use
 by running *one* of the following lines: ::
 
-   module load GCC/8.2.0-2.31.1
-   module load GCC/7.3.0-2.30  
+   module load GCC/8.3.0  # part of the foss-2019b toolchain
+   module load GCC/8.2.0-2.31.1  # part of the foss-2019a toolchain
+   module load GCC/7.3.0-2.30  # part of the foss-2018b toolchain
 
 Confirm that you've loaded the version of gcc you wanted using ``gcc -v``.
 

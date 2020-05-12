@@ -32,7 +32,9 @@ Dependency versions for toolchains
 See the `EasyBuild documentation for dependency versions for foss and intel <https://easybuild.readthedocs.io/en/latest/Common-toolchains.html#overview-of-common-toolchains>`__
 
 ``fosscuda-2019a`` has the same dependencies as ``foss-2019a`` plus 
-CUDA 10.1
+CUDA 10.1.
+``fosscuda-2019b`` has the same dependencies as ``foss-2019b`` plus 
+CUDA 10.1 update 1.
 
 Sub-toolchains
 --------------

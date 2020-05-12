@@ -5,18 +5,22 @@ OpenMPI
 
 .. sidebar:: OpenMPI
 
-   :Latest Version: 3.1.3
+   :Latest Version: 3.1.4
    :Dependancies: gcc
-   :URL: http://www.open-mpi.org/
+   :URL: https://www.open-mpi.org/
 
-The Open MPI Project is an open source Message Passing Interface implementation that is developed and maintained by a consortium of academic, research, and industry partners. Open MPI is therefore able to combine the expertise, technologies, and resources from all across the High Performance Computing community in order to build the best MPI library available. Open MPI offers advantages for system and software vendors, application developers and computer science researchers.
+The OpenMPI Project is an open source Message Passing Interface implementation that is developed and maintained by a consortium of academic, research, and industry partners. OpenMPI is therefore able to combine the expertise, technologies, and resources from all across the High Performance Computing community in order to build the best MPI library available. OpenMPI offers advantages for system and software vendors, application developers and computer science researchers.
 
 Versions
 --------
 
-You can load a specific version using: ::
+You can load a specific version using one of the following: ::
 
-    module load OpenMPI/3.1.3-GCC-8.2.0-2.31.1
+   module load OpenMPI/3.1.1-GCC-7.3.0-2.30  # part of the foss-2018b toolchain
+   module load OpenMPI/3.1.3-GCC-8.2.0-2.31.1  # part of the foss-2019a toolchain
+   module load OpenMPI/3.1.3-gcccuda-2019a  # part of the fosscuda-2019a toolchain
+   module load OpenMPI/3.1.4-GCC-8.3.0  # part of the foss-2019b toolchain
+   module load OpenMPI/3.1.4-gcccuda-2019b  # part of the fosscuda-2019b toolchain
 
 See `here <https://mail-archive.com/announce@lists.open-mpi.org/msg00118.html>`__ for a brief guide to the new features in OpenMPI 3.x and `here <https://raw.githubusercontent.com/open-mpi/ompi/v3.1.x/NEWS>`__ for a detailed view of the changes between OpenMPI versions.
 

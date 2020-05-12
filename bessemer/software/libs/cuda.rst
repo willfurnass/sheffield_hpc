@@ -31,13 +31,15 @@ As with much software installed on the cluster,
 versions of CUDA are activated via the :ref:`'module load' command<env_modules>`.
 
 To load CUDA 10.1 plus 
-the :ref:`GCC <gcc_bessemer>` 8.2.0 compiler, OpenMPI, OpenBLAS, SCALAPACK and FFTW: ::
+the :ref:`GCC <gcc_bessemer>` 8.x compiler, OpenMPI, OpenBLAS, SCALAPACK and FFTW: ::
 
+   module load fosscuda/2019b  
    module load fosscuda/2019a  
 
-To load *just* CUDA and :ref:`GCC <gcc_bessemer>` 8.2.0: ::
+To load *just* CUDA and :ref:`GCC <gcc_bessemer>` 8.x: ::
 
-   module load CUDA/10.1.105-GCC-8.2.0-2.31.1
+   module load CUDA/10.1.243-GCC-8.3.0  # subset of the fosscuda-2019b toolchain
+   module load CUDA/10.1.105-GCC-8.2.0-2.31.1  # subset of the fosscuda-2019a toolchain
 
 To load *just* CUDA 10.0: ::
 
