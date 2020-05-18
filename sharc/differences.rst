@@ -19,7 +19,7 @@ Nodes on ShARC are connected together using `Intel Omnipath <http://www.intel.co
 Off campus access
 -----------------
 If you are off-campus, you will need to use a VPN connection to access ShARC.
-Iceberg can be accessed without a VPN Connection.
+Iceberg can be accessed without a VPN Connection (see :ref:`connecting`).
 
 Software and Module names
 -------------------------

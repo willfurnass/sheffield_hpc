@@ -8,34 +8,42 @@ use a mechanism called `SSH <https://en.wikipedia.org/wiki/Secure_Shell>`__,
 which is a common way of remotely logging in to computers 
 running the Linux operating system.  
 
-
-
 To connect to another machine using SSH you need to 
 have a SSH *client* program installed on your machine.  
 macOS and Linux come with a command-line (text-only) SSH client pre-installed.  
 On Windows there are various graphical SSH clients you can use, 
 including *MobaXTerm*.
 
-.. note::
+**Whether/how you can connect** to a University cluster using SSH (or the related protocols SCP and SFTP) **depends on**:
 
-    You can connect to **Iceberg** using SSH (or the related protocols SCP and SFTP) from 
-    anywhere (on campus and off campus with/without a `VPN connection <https://www.sheffield.ac.uk/it-services/vpn>`_)
-    but if you are using **ShARC** or **Bessemer** and you are **off-campus** then 
-    you need to `set up a VPN connection first <https://www.sheffield.ac.uk/it-services/vpn>`_ 
-    (or establish one SSH connection to Iceberg then a second from Iceberg to ShARC or Bessemer).
+* Where you are connecting from:
 
+  * on campus;
+  * off campus *after* `establishing a VPN connection <https://www.sheffield.ac.uk/it-services/vpn>`_;
+  * off campus without a VPN connection.
 
-.. note::
+* Whether `Multifactor Authentication (MFA) <https://sites.google.com/sheffield.ac.uk/mfa/home>`__  has been enabled on your University account.
+  If MFA has been enabled then when logging in with SSH you will be prompted to enter a one-time code or send a push notication to your MFA device 
+  after entering your username and password.
 
-   If your University account has `Multifactor Authentication (MFA) <https://sites.google.com/sheffield.ac.uk/mfa/home>`__ 
-   enabled and you access **Iceberg** from off campus without using VPN
-   then you will be prompted to enter a one-time code or send a push notication to your MFA device after entering your username and password.
-   If you use public key authenticaion then you will not be prompted for MFA.
+* Whether you want to use password-based authentication or 'public-key'-based authentication.
+
+**Authentication requirements per cluster**:
+
++----------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| Cluster  | From campus or via VPN | From off campus and without a VPN connection                                                                                  |
++==========+========================+===============================================================================================================================+
+| Bessemer | Password or public key | Not permitted                                                                                                                 |
++----------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| ShARC    | Password or public key | Not permitted                                                                                                                 |
++----------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| Iceberg  | Password or public key | Requires password (including MFA, if enabled for your account); *public key authentication not permitted after 15th May 2020* |
++----------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 
 SSH client software on Windows
 ------------------------------
 
-Download and install the *Installer edition* of `mobaxterm <https://mobaxterm.mobatek.net/download-home-edition.html>`_.
+Download and install the *Installer edition* of `MobaXterm <https://mobaxterm.mobatek.net/download-home-edition.html>`_.
 
 After starting MobaXterm you should see something like this:
 
@@ -51,7 +59,7 @@ Click *Start local terminal* and if you see something like the following then pl
 
 Running commands from a terminal (from the command-line) may initially be
 unfamiliar to Windows users but this is the recommended approach for
-running commands on ShARC and Iceberg as 
+running commands on Bessemer, ShARC and Iceberg as 
 it is the idiomatic way of interfacing with the Linux clusters.
 
 SSH client software on Mac OS/X and Linux
@@ -72,12 +80,12 @@ Establishing a SSH connection
 Once you have a terminal open run the following command to 
 log in to a cluster: ::
 
-    ssh -X $USER@$SGE_CLUSTER_NAME.shef.ac.uk
+    ssh -X $USER@$CLUSTER_NAME.shef.ac.uk
 
 Here you need to:
 
 * replace ``$USER`` with your IT Services username (e.g. ``te1st``)
-* replace ``$SGE_CLUSTER_NAME`` with ``sharc``, ``bessemer`` or ``iceberg``.
+* replace ``$CLUSTER_NAME`` with ``bessemer``, ``sharc`` or ``iceberg``.
 
 .. note::
 
@@ -134,5 +142,7 @@ What Next?
 Now you have connected to a cluster, 
 you can look at how to submit jobs with :ref:`submit-queue` or 
 look at the software installed on 
-:ref:`ShARC <sharc-software>`, :ref:`Iceberg <iceberg-software>`
-and :ref:`Bessemer <bessemer-software>`.
+:ref:`Bessemer <bessemer-software>`
+:ref:`ShARC <sharc-software>` and 
+:ref:`Iceberg <iceberg-software>`.
+and 
