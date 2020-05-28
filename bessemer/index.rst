@@ -15,6 +15,7 @@ Bessemer is designed to support jobs requiring up to 40 cores per job - for larg
   software/index
   cluster_specs
   slurm
+  groupnodes/index
 
 * :ref:`bessemer-software`
 * :ref:`bessemer-specs`
