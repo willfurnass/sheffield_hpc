@@ -36,7 +36,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Sheffield HPC Documentation'
-copyright = u'2019, The University of Sheffield'
+copyright = u'2020, The University of Sheffield'
 author = u'The University of Sheffield'
 
 # The version info for the project you're documenting, acts as replacement for
