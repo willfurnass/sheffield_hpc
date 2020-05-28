@@ -142,7 +142,6 @@ What Next?
 Now you have connected to a cluster, 
 you can look at how to submit jobs with :ref:`submit-queue` or 
 look at the software installed on 
-:ref:`Bessemer <bessemer-software>`
+:ref:`Bessemer <bessemer-software>`,
 :ref:`ShARC <sharc-software>` and 
 :ref:`Iceberg <iceberg-software>`.
-and 
