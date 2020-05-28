@@ -29,10 +29,10 @@ Building the documentation on a local Windows machine
 
 #. Install **Python 3.6** on your machine by downloading and running the `Miniconda for Python 3.6 <https://conda.io/miniconda.html>`_ installer: 
 
-    * Install for *just you*;
-    * Install to the default location (e.g. ``C:\Users\myusername\Miniconda3``);
-    * Do **not** *add Anaconda to your PATH environment variable*;
-    * Do **not** *register Anaconda as your default Python 3.6*.
+   * Install for *just you*;
+   * Install to the default location (e.g. ``C:\Users\myusername\Miniconda3``);
+   * Do **not** *add Anaconda to your PATH environment variable*;
+   * Do **not** *register Anaconda as your default Python 3.6*.
 
 #. Click *Start* -> *Anaconda3 (64-bit)* -> *Anaconda Prompt* to open a terminal window.
 
@@ -88,6 +88,13 @@ Building the documentation on a local Mac machine
 #. To build the HTML documentation run::
 
     make html
+
+Check external links
+####################
+
+Do this with: ::
+
+   make linkcheck
 
 Continuous build and serve
 ##########################
