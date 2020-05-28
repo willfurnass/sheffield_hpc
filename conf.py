@@ -69,31 +69,33 @@ todo_include_todos = False
 
 # -- Options for HTML output ----------------------------------------------
 
-import sphinx_bootstrap_theme
-
+import sphinx_rtd_theme
 html_theme = 'tuos'
+html_theme_path = ['themes'] + [sphinx_rtd_theme.get_html_theme_path()]
+html_theme_options = {
+    'style_external_links': True,
+    'canonical_url': 'https://docs.hpc.sheffield.ac.uk',
+}
 
-html_theme_path = ['themes'] + sphinx_bootstrap_theme.get_html_theme_path()
-
-html_theme_options = {'navbar_sidebarrel':False,
-                      'navbar_pagenav': False,
-                      'source_link_position': False,
-                      'bootswatch_theme': 'flatly',
-                      'navbar_site_name': "Sheffield HPC Documentation",
-                      'navbar_title': ' ',
-                      'navbar_links': [
-                          ("Home", "index"),
-                          ("Research Computing @ IT Services", "https://www.shef.ac.uk/it-services/research", True),
-                          ("Research Software Engineering @ TUOS", "https://rse.shef.ac.uk", True)
-                      ],
-                      'globaltoc_depth': 1}
+# html_theme_options = {'navbar_sidebarrel':False,
+#                       'navbar_pagenav': False,
+#                       'source_link_position': False,
+#                       'bootswatch_theme': 'flatly',
+#                       'navbar_site_name': "Sheffield HPC Documentation",
+#                       'navbar_title': ' ',
+#                       'navbar_links': [
+#                           ("Home", "index"),
+#                           ("Research Computing @ IT Services", "https://www.shef.ac.uk/it-services/research", True),
+#                           ("Research Software Engineering @ TUOS", "https://rse.shef.ac.uk", True)
+#                       ],
+#                       'globaltoc_depth': 1}
 
 #html_sidebars = {'software/**': ['softwaretoc.html'],
 #                 'gpu/**': ['softwaretoc.html'],
 #                 'using-iceberg/**': ['softwaretoc.html'],
 #                 'index': []}
 
-html_sidebars = {'**': ['softwaretoc.html']}
+#html_sidebars = {'**': ['softwaretoc.html']}
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
