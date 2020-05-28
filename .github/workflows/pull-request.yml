@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: ammaraskar/sphinx-action@master
+    - uses: ammaraskar/sphinx-action@v0.4
       with:
+        build-command: "sphinx-build -b html -W -d _build/doctrees   . _build/html"
         docs-folder: "."
