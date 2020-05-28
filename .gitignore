@@ -4,3 +4,4 @@ html/
 get_docs.py
 *.*~
 *swp
+.mypy_cache
