@@ -3,13 +3,14 @@
 Filestores
 ==========
 
-Every HPC user has access to *up to* five different storage areas:
+Every HPC user has access to *up to* six different storage areas:
 
 * :ref:`home_dir`: per-user :term:`backed-up <Mirrored backups>`, :term:`snapshotted <Snapshotted storage>` storage
 * :ref:`data_dir`: additional per-user snapshotted storage (*not on Bessemer*)
 * :ref:`fastdata_dir`: high-performance shared filesystem for temporary data - optimised for reading/writing large files from multiple nodes and threads simultaneously
 * :ref:`shared_dir`: per-PI shared storage areas (snapshotted and backed-up) for project data - can be accessed from non-HPC machines too
 * :ref:`scratch_dir`: per-node temporary storage - useful for reading/writing lots of small files within *one job*
+* :ref:`community_dir`: cluster-wide storage areas to allow users to share software.
 
 The storage areas differ in terms of:
 
@@ -20,7 +21,8 @@ The storage areas differ in terms of:
 * whether the underlying storage system is performant if reading/writing small files;
 * frequency of :term:`storage snapshotting <Snapshotted storage>`, 
   whether storage is :term:`mirrored <Mirrored backups>` 
-  and the maximum duration data can be retained for.
+  and the maximum duration data can be retained for;
+* whether they handle permissions like a typical Linux filesystem.
 
 .. _home_dir:
 
@@ -223,6 +225,7 @@ If you need to access a ``/shared`` area on Bessemer please contact `helpdesk@sh
         * Network traffic between Bessemer and Sheffield Research Filestore is not encrypted when travelling between Sheffield and Leeds over JANET
         * ``/shared`` areas can be created on Bessemer's filestore system if you need faster access from Bessemer
 
+.. _shared_dir_perms:
 
 Permissions behaviour
 ^^^^^^^^^^^^^^^^^^^^^
@@ -315,6 +318,36 @@ Anything under the ``/scratch`` may be deleted periodically when the worker-node
 ``/scratch`` is **not backed up**.  There are no quotas for ``/scratch`` storage.
 
 ``/scratch`` uses the ext4 filesystem.
+
+.. _community_dir:
+
+*Community* areas for software
+------------------------------
+
+Most data that researchers want to share with their collaborators at the University should reside in :ref:`shared_dir`.
+However, as mentioned in :ref:`shared_dir_perms`, these areas may not be ideal for storing executable software/scripts
+due to the way permissions are handled beneath ``/shared``.
+
+Also, users may want to install software on the clusters that they want to be accessible by all cluster users.
+
+To address these two needs users can request the creation of a new directory beneath of the three directories listed below
+and if their request is granted they will be given write access to this area:
+
++----------+--------------------------+------+-----------------------------+-------------------------------------+-----------------------------------------+
+| System   | Path                     | Type | Software install guidelines | Public index of areas               | Notes                                   |
++==========+==========================+======+=============================+=====================================+=========================================+
+| Bessemer | ``/usr/local/community`` | NFS  |                             |                                     |                                         |
++----------+--------------------------+------+-----------------------------+-------------------------------------+-----------------------------------------+
+| ShARC    | ``/usr/local/community`` | NFS  | :ref:`sharc-community`      | :ref:`sharc-software-install-guide` | Also available at ``/usr/local/extras`` |
++----------+--------------------------+------+-----------------------------+-------------------------------------+-----------------------------------------+
+| Iceberg  | ``/usr/local/extras``    | NFS  |                             |                                     |                                         |
++----------+--------------------------+------+-----------------------------+-------------------------------------+-----------------------------------------+
+
+Note that:
+
+* Software installation should follow our installation guidelines where provided.
+* Software installations must be maintained by a responsible owner.
+* Software which is not actively maintained may be removed.
 
 
 .. _quota_check:
