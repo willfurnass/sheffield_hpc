@@ -10,7 +10,7 @@ Usage
 
 Doxygen can be loaded with: ::
 
-    module load dev/doxygen/1.8.13/gcc-4.9.4
+    module load apps/doxygen/1.8.13/gcc-4.9.4
 
 NB Doxygen has a run-time dependency on ``libstdc++`` so the above also needs to
 (and does) load the :ref:`GCC compiler <gcc_sharc>` version 4.9.4.
