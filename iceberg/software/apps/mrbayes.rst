@@ -10,28 +10,27 @@ MrBayes is a program for the Bayesian estimation of phylogeny.
 
 Interactive Usage
 -----------------
-After connecting to Iceberg (see :ref:`ssh`),  start an interactive session with the :code:`qrshx` command.
 
-The latest version of MrBayes (currently 3.2.6) is made available with the command ::
+After connecting to Iceberg (see :ref:`ssh`), :ref:`start an interactive session <sched_interactive>` then
 
-        module load apps/gcc/4.4.7/mrbayes
+load a specific version of MrBayes with: ::
 
-Alternatively, you can load a specific version with ::
+   module load apps/gcc/4.4.7/mrbayes/3.2.6
 
-        module load apps/gcc/4.4.7/mrbayes/3.2.6
-
-This command makes the MrBayes `mb` binary available to your session.
+This command makes the MrBayes ``mb`` executable available to your session.
 
 Installation notes
 ------------------
-MrBayes was installed with gcc 4.4.7 ::
 
-  tar -xvzf ./mrbayes-3.2.6.tar.gz
-  ls
-  cd mrbayes-3.2.6
-  autoconf
-  ./configure --with-beagle=/usr/local/packages6/libs/gcc/4.4.7/beagle/2.1.2 --prefix=/usr/local/packages6/apps/gcc/4.4.7/mrbayes/3.2.6/
-  make
-  make install
+MrBayes was installed with gcc 4.4.7: ::
 
-:download:`This modulefile </iceberg/software/modulefiles/apps/gcc/4.4.7/mrbayes/3.2.6>` was installed as ``/usr/local/modulefiles/apps/gcc/4.4.7/mrbayes/3.2.6``
+    tar -xvzf ./mrbayes-3.2.6.tar.gz
+    ls
+    cd mrbayes-3.2.6
+    autoconf
+    ./configure --with-beagle=/usr/local/packages6/libs/gcc/4.4.7/beagle/2.1.2 --prefix=/usr/local/packages6/apps/gcc/4.4.7/mrbayes/3.2.6/
+    make
+    make install
+
+:download:`This modulefile </iceberg/software/modulefiles/apps/gcc/4.4.7/mrbayes/3.2.6>`
+was installed as ``/usr/local/modulefiles/apps/gcc/4.4.7/mrbayes/3.2.6``

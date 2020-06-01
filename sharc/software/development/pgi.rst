@@ -7,15 +7,16 @@ The PGI Compiler suite offers C,C++ and Fortran Compilers. For full details of t
 Making the PGI Compilers available
 ----------------------------------
 
-After connecting to the ShARC cluster (see :ref:`ssh`),  start an interactive session with the :ref:`qrshx` or :ref:`qrsh` command then activate a specific version of the compiler suite using one of: ::
+After connecting to the ShARC cluster (see :ref:`ssh`), :ref:`start an interactive session <sched_interactive>`
+then load with a specific version of the compiler suite using one of: ::
 
-    module load dev/PGI-compilers/19.5
-    module load dev/PGI-compilers/17.5
-    module load dev/PGI-compilers/16.10
+   module load dev/PGI-compilers/19.5
+   module load dev/PGI-compilers/17.5
+   module load dev/PGI-compilers/16.10
 
-Once you've loaded the module, you can check the version with ::
+Once you've loaded the module, you can check the version with: ::
 
-    pgcc --version
+   pgcc --version
 
 Compilation examples
 --------------------
@@ -29,29 +30,31 @@ To compile a C hello world example into an executable called ``hello`` using the
 
 To compile a C++ hello world example into an executable called ``hello`` using the PGI C++ compiler ::
 
-      pgc++ hello.cpp -o hello
+   pgc++ hello.cpp -o hello
 
 **Fortran**
 
 To compile a Fortran hello world example into an executable called ``hello`` using the PGI Fortran compiler ::
 
-      pgf90 hello.f90 -o hello
+   pgf90 hello.f90 -o hello
 
 Compiling on the GPU using the PGI Compiler
 -------------------------------------------
 
 Start an interactive GPU session (:ref:`GPUInteractive_sharc`) and the following module command ::
 
-        module load dev/PGI-compilers/19.5
+   module load dev/PGI-compilers/19.5
 
 The PGI compilers have several features that make them interesting to users of GPU hardware:-
 
 OpenACC Directives
 ^^^^^^^^^^^^^^^^^^
 
-OpenACC is a relatively new way of programming GPUs that can be significantly simpler to use than low-level language extensions such as CUDA or OpenCL. From the `OpenACC website <http://www.openacc-standard.org/About_OpenACC>`_ :
+OpenACC is a relatively new way of programming GPUs that can be significantly simpler to use than low-level language extensions such as CUDA or OpenCL.
+From the `OpenACC website <http://www.openacc-standard.org/About_OpenACC>`_ :
 
-    The OpenACC Application Program Interface describes a collection of compiler directives to specify loops and regions of code in standard C, C++ and Fortran to be offloaded from a host CPU to an attached accelerator. OpenACC is designed for portability across operating systems, host CPUs, and a wide range of accelerators, including APUs, GPUs, and many-core coprocessors.
+    The OpenACC Application Program Interface describes a collection of compiler directives to specify loops and regions of code in standard C, C++ and Fortran to be offloaded from a host CPU to an attached accelerator.
+    OpenACC is designed for portability across operating systems, host CPUs, and a wide range of accelerators, including APUs, GPUs, and many-core coprocessors.
 
     The directives and programming model defined in the OpenACC API document allow programmers to create high-level host+accelerator programs without the need to explicitly initialize the accelerator, manage data or program transfers between the host and accelerator, or initiate accelerator startup and shutdown.
 
@@ -67,9 +70,11 @@ In mid 2009, PGI and NVIDIA cooperated to develop CUDA Fortran. CUDA Fortran inc
 CUDA-x86
 ^^^^^^^^
 
-NVIDIA CUDA was developed to enable offloading computationally intensive kernels to massively parallel GPUs. Through API function calls and language extensions, CUDA gives developers explicit control over the mapping of general-purpose computational kernels to GPUs, as well as the placement and movement of data between an x86 processor and the GPU.
+NVIDIA CUDA was developed to enable offloading computationally intensive kernels to massively parallel GPUs.
+Through API function calls and language extensions, CUDA gives developers explicit control over the mapping of general-purpose computational kernels to GPUs, as well as the placement and movement of data between an x86 processor and the GPU.
 
-The PGI CUDA C/C++ compiler for x86 platforms allows developers using CUDA to compile and optimize their CUDA applications to run on x86-based workstations, servers and clusters with or without an NVIDIA GPU accelerator. When run on x86-based systems without a GPU, PGI CUDA C applications use multiple cores and the streaming SIMD (Single Instruction Multiple Data) capabilities of Intel and AMD CPUs for parallel execution.
+The PGI CUDA C/C++ compiler for x86 platforms allows developers using CUDA to compile and optimize their CUDA applications to run on x86-based workstations, servers and clusters with or without an NVIDIA GPU accelerator.
+When run on x86-based systems without a GPU, PGI CUDA C applications use multiple cores and the streaming SIMD (Single Instruction Multiple Data) capabilities of Intel and AMD CPUs for parallel execution.
 
 * `PGI CUDA-x86 guide <http://www.pgroup.com/resources/cuda-x86.htm>`_.
 

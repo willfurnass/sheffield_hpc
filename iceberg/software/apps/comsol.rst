@@ -15,7 +15,12 @@ COMSOL Multiphysics provides a range of simulation, finite element analysis and 
 Availability, licensing and modules
 -----------------------------------
 
-COMSOL Multiphysics is installed on Iceberg but is not presently supported by IT Services.  There is no site license for COMSOL so to run it on Iceberg you will need either your own license or access to licenses managed by others.  For example, a research group may operate a *license server* that can issue COMSOL licenses to (approved) users.  If you need access to a license on a temporary basis then you could try contacting `Prof. Will Zimmerman <https://www.sheffield.ac.uk/cbe/staff/staffprofiles/wzimmerman>`_, who has purchased several licenses for his research group and may be willing to hire out licenses to other researchers.  See `Interactive usage` for information on how to specify a COMSOL license when starting COMSOL on Iceberg.
+COMSOL Multiphysics is installed on Iceberg but is not presently supported by IT Services.
+There is no site license for COMSOL so to run it on Iceberg you will need either your own license or access to licenses managed by others.
+For example, a research group may operate a *license server* that can issue COMSOL licenses to (approved) users.
+If you need access to a license on a temporary basis then you could try contacting `Prof. Will Zimmerman <https://www.sheffield.ac.uk/cbe/staff/staffprofiles/wzimmerman>`_,
+who has purchased several licenses for his research group and may be willing to hire out licenses to other researchers.
+See `Interactive usage` for information on how to specify a COMSOL license when starting COMSOL on Iceberg.
 
 The following COMSOL Multiphysics 5.2 modules are installed:
 
@@ -56,30 +61,32 @@ The following COMSOL Multiphysics 5.2 modules are installed:
 Interactive usage
 -----------------
 
-After connecting to iceberg (see :ref:`ssh`),  start an interactive graphical session with the :code:`qrshx` command. 
-Alternatively, if you require more memory, for example 16 GB, use the command :code:`qrshx -l rmem=16G` 
+After connecting to Iceberg (see :ref:`ssh`), :ref:`start an interactive graphical session <sched_interactive>`.
+You may wish to start a session with more than the default of 2GB of memory.
 
 Next, run the following to make COMSOL Multiphysics available in your current session: ::
 
-        module load apps/binapps/comsol/5.2
+   module load apps/binapps/comsol/5.2
 
 Specify the location of your license information: ::
 
-        export LM_LICENSE_SERVER=/home/myusername/path/to/mylicensefile.dat:$LM_LICENSE_SERVER
+   export LM_LICENSE_SERVER=/home/myusername/path/to/mylicensefile.dat:$LM_LICENSE_SERVER
 
 Finally, start COMSOL Multiphysics: ::
 
-	comsol
+   comsol
 
-The COMSOL Multiphysics user interface should then appear.  Here ``mylicensefile.dat`` is a file containing either:
+The COMSOL Multiphysics user interface should then appear.
+
+Here ``mylicensefile.dat`` is a file containing either:
 
 * details of your license (which components you can use) *or*
 * details of the *license server* that you want COMSOL to request licenses from.
 
 If you are using a license server then your license file needs to contain no more than the following: ::
 
-        SERVER mylicenseserver.sheffield.ac.uk ANY 65321
-        USE_SERVER
+   SERVER mylicenseserver.sheffield.ac.uk ANY 65321
+   USE_SERVER
         
 where ``mylicenseserver.sheffield.ac.uk`` is the hostname of your license server and ``654321`` is the *port* to connect to on that machine to request a COMSOL license.
 
@@ -90,23 +97,23 @@ Serial batch usage
 
 To submit a batch job that will run on just one CPU core create a file called e.g. ``myjob.sge``: ::
 
-        #!/bin/bash
-        #$ -l h_rt=02:00:00
-        #$ -l rmem=16G
-        #$ -m bea
-        #$ -M myusername@sheffield.ac.uk
-        #$ -j y
-        #$ -o myjob.log
+   #!/bin/bash
+   #$ -l h_rt=02:00:00
+   #$ -l rmem=16G
+   #$ -m bea
+   #$ -M myusername@sheffield.ac.uk
+   #$ -j y
+   #$ -o myjob.log
 
-        module load apps/binapps/comsol/5.2
-        export _JAVA_OPTIONS="-Xmx2g"
+   module load apps/binapps/comsol/5.2
+   export _JAVA_OPTIONS="-Xmx2g"
 
-        export LM_LICENSE_FILE=/path/to/mylicence.dat
-        INPFILE=myinput.mph
-        OUTFILE=myoutput.mph
-        BATCHLOG=myjob_comsol_own_log.log
+   export LM_LICENSE_FILE=/path/to/mylicence.dat
+   INPFILE=myinput.mph
+   OUTFILE=myoutput.mph
+   BATCHLOG=myjob_comsol_own_log.log
 
-        comsol batch -tmpdir $TMPDIR -inputfile $INPFILE -outputfile $OUTFILE -batchlog $BATCHLOG
+   comsol batch -tmpdir $TMPDIR -inputfile $INPFILE -outputfile $OUTFILE -batchlog $BATCHLOG
 
 You will need to change:
 
@@ -125,7 +132,7 @@ You may want to change:
 
 Next, submit this using: ::
 
-        qsub myjob.sge
+   qsub myjob.sge
 
 and await an email to notify you that the job has completed.
 

@@ -6,13 +6,13 @@ sbt
    :Versions:  0.13.13
    :URL: https://www.scala-sbt.org/
 
-sbt is a build tool for Scala, Java, and more.
+SBT is a build tool for Scala, Java, and more.
 
 Interactive Usage
 -----------------
 
-After :ref:`connecting to the cluster <connecting>`, 
-:ref:`start an interactive session <submit-queue>`.
+After :ref:`connecting to the cluster <connecting>`,
+:ref:`start an interactive session <sched_interactive>`.
 
 Load a particular version of sbt using: ::
 

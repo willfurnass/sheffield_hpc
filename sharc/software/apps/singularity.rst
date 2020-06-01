@@ -56,13 +56,13 @@ Singularity images are currently provided for:
 Interactive Usage of Singularity Images
 ---------------------------------------
 
-**To use Singularity interactively, an interactive session must first be requested using** :ref:`qrshx` **for example.**
+To use Singularity interactively, first :ref:`start an interactive session <sched_interactive>`.
 
 To get an interactive shell in to the image, use the following command: ::
 
   singularity shell path/to/imgfile.img
 
-Or if you prefer bash: ::
+Or to explicitly start a bash shell: ::
 
   singularity exec path/to/imgfile.img /bin/bash
 

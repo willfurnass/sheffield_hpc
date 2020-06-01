@@ -8,9 +8,11 @@ Intel Compilers help create C, C++ and Fortran applications that can take full a
 Versions
 --------
 
-The Intel compilers were installed as part of :ref:`Intel Parallel Studio <sharc-intel-parallel-studio>` but can be used with or without the other Parallel Studio components.
+The Intel compilers were installed as part of :ref:`Intel Parallel Studio <sharc-intel-parallel-studio>`
+but can be used with or without the other Parallel Studio components.
 
-After connecting to the ShARC cluster (see :ref:`ssh`),  start an interactive session with the :code:`qrshx` or :code:`qrsh` command then activate a specific version of the compilers using one of: ::
+After connecting to the ShARC cluster (see :ref:`ssh`), :ref:`start an interactive session <sched_interactive>`
+then load a specific version of the compilers using one of: ::
 
         module load dev/intel-compilers/17.0.0/binary
         module load dev/intel-compilers/16.0.1/binary
@@ -22,31 +24,30 @@ Compilation examples
 C
 ^
 
-
 To compile the C hello world example into an executable called ``hello`` using the Intel C compiler: ::
 
-        icc hello.c -o hello
+   icc hello.c -o hello
 
 C++
 ^^^
 
 To compile the C++ hello world example into an executable called ``hello`` using the Intel C++ compiler: ::
 
-      icpc hello.cpp -o hello
+   icpc hello.cpp -o hello
 
 Fortran
 ^^^^^^^
 
 To compile the Fortran hello world example into an executable called ``hello`` using the Intel Fortran compiler: ::
 
-      ifort hello.f90 -o hello
+   ifort hello.f90 -o hello
 
 Detailed Documentation
 ----------------------
 Once you have loaded the module on ShARC, ``man`` pages are available for Intel compiler products: ::
 
-        man ifort
-        man icc
+   man ifort
+   man icc
 
 The following links are to Intel's website:
 

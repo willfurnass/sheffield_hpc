@@ -24,7 +24,7 @@ and launched using::
     abaqus cae
 
 
-**Note:** there is an Abaqus/SLURM mpi issue which prevents Abaqus from running jobs correctly. To rectify this problem the following command should be used prior to lauching the GUI::
+**Note:** there is an Abaqus/Slurm mpi issue which prevents Abaqus from running jobs correctly. To rectify this problem the following command should be used prior to lauching the GUI::
 
     unset SLURM_GTIDS
 

@@ -9,7 +9,9 @@ JAGS
    :URL: http://mcmc-jags.sourceforge.net/
    :dependencies: GCC-4.9.4, Blas & Lapack libraries
 
-JAGS is Just Another Gibbs Sampler.  It is a program for analysis of Bayesian hierarchical models using Markov Chain Monte Carlo (MCMC) simulation not wholly unlike BUGS.  JAGS was written with three aims in mind:
+JAGS is Just Another Gibbs Sampler.
+It is a program for analysis of Bayesian hierarchical models using Markov Chain Monte Carlo (MCMC) simulation not wholly unlike BUGS.
+JAGS was written with three aims in mind:
 
 * To have a cross-platform engine for the BUGS language
 * To be extensible, allowing users to write their own functions, distributions and samplers.
@@ -17,11 +19,13 @@ JAGS is Just Another Gibbs Sampler.  It is a program for analysis of Bayesian hi
 
 Interactive Usage
 -----------------
-After connecting to ShARC (see :ref:`ssh`),  start an interactive session with the :ref:`qrshx` or :ref:`qrsh` command. To make JAGS available in this session, run one of the following module commands ::
+After connecting to Iceberg (see :ref:`ssh`),
+:ref:`start an interactive session <sched_interactive>`
+then load a specific version of JAGS using the following: ::
 
-      module load apps/jags/4.2/gcc-4.9.4
+   module load apps/jags/4.2/gcc-4.9.4
 
-You can now run the ``jags`` command ::
+You can now run the ``jags`` command: ::
 
     jags
     Welcome to JAGS 4.2.0 on Fri Nov 15 09:21:17 2019
@@ -32,25 +36,31 @@ You can now run the ``jags`` command ::
 
 The rjags and runjags interfaces in R
 -------------------------------------
-`rjags <https://cran.r-project.org/web/packages/rjags/index.html>`_ and `runjags <https://cran.r-project.org/web/packages/runjags/index.html>`_ are CRAN packages that provide an R interface to jags. They are not installed in R by default.
 
-After connecting to ShARC (see :ref:``ssh``), start an interactive session with the :ref:``qrshx`` command. Run the following module commands ::
+`rjags <https://cran.r-project.org/web/packages/rjags/index.html>`_ and `runjags <https://cran.r-project.org/web/packages/runjags/index.html>`_
+are CRAN packages that provide an R interface to jags.
+They are not installed in R by default.
 
-	module load apps/jags/4.2/gcc-4.9.4
-        module load apps/R/3.5.1/gcc-4.8.5
+After connecting to iceberg (see :ref:`ssh`),
+`start an interactive session <sched_interactive>`
+then run the following module commands: ::
+
+   module load apps/jags/4.2/gcc-4.9.4
+   module load apps/R/3.5.1/gcc-4.8.5
 
 Launch R by typing ``R`` and pressing return. Within R, execute the following commands ::
 
-        install.packages('rjags')
-        install.packages('runjags')
+   install.packages('rjags')
+   install.packages('runjags')
 
-and follow the on-screen inctructions. Answer ``y`` to any questions about the creation of a personal library should they be asked.
+and follow the on-screen instructions.
+Answer ``y`` to any questions about the creation of a personal library should they be asked.
 
 The packages will be stored in a directory called `R` within your home directory.
 
 You should only need to run the ``install.packages`` commands once. When you log into the system in future, you will only need to run the ``module`` commands above to make JAGS available to the system.
 
-You load the rjags packages the same as you would any other R package ::
+You load the ``rjags`` packages the same as you would any other R package: ::
 
         library('rjags')
         library('runjags')

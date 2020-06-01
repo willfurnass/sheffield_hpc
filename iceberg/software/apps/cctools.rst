@@ -12,13 +12,8 @@ The Cooperative Computing Tools (cctools) contains Parrot, Chirp, Makeflow, Work
 
 Interactive Usage
 -----------------
-After connecting to Iceberg (see :ref:`ssh`), start an interactive session with the `qrsh` or `qrshx` command.
-
-The default version of cctools is made available with the command ::
-
-        module load apps/binapps/cctools
-
-Alternatively, you can explicitly load a specific version using::
+After connecting to Iceberg (see :ref:`ssh`), :ref:`start an interactive session <sched_interactive>` then
+load a specific version of cctools using: ::
 
        module load apps/binapps/cctools/6.2.10
 
@@ -26,17 +21,17 @@ Alternatively, you can explicitly load a specific version using::
 Accessing CernVM-FS
 -------------------
 
-`parrot_run` provided by cctools can be used to provide access to `CernVM-FS <http://cernvm.cern.ch/portal/filesystem/parrot>`_ 
+``parrot_run`` provided by cctools can be used to provide access to `CernVM-FS <http://cernvm.cern.ch/portal/filesystem/parrot>`_ 
 
 e.g. to access the Atlas CernVM-FS repo ::
 
- parrot_run bash
-
- ls /cvmfs/atlas.cern.ch/repo
-
- LibCvmfs version 2.4, revision 25
-
- ATLASLocalRootBase  benchmarks  conditions  containers  dev  images  sw  tools
+   parrot_run bash
+  
+   ls /cvmfs/atlas.cern.ch/repo
+  
+   LibCvmfs version 2.4, revision 25
+  
+   ATLASLocalRootBase  benchmarks  conditions  containers  dev  images  sw  tools
 
 The environment variable ``PARROT_CVMFS_ALIEN_CACHE`` is used to specify the location for the CVMFS cache.
 

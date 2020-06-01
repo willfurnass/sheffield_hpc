@@ -13,52 +13,52 @@ Interactive usage
 TBB can be used with and without :ref:`other Parallel Studio packages
 <sharc-intel-parallel-studio>`.
 
-To make use of it you first need to start an :ref:`interactive session that has access to multiple cores <submit-queue>`.
+To make use of it you first need to start an :ref:`interactive session that has access to multiple cores <sched_interactive>`.
 Here we request six cores from the clusters' scheduler: ::
 
-        $ qrsh -pe smp 6
+   qrshx -pe smp 6
 
 Next, we need to *active* a specific version of TBB.  Run **one** of the following: ::
 
-        $ module load libs/intel-tbb/2019.3/binary
-        $ module load libs/intel-tbb/2017.0/binary
-        $ module load libs/intel-tbb/2016.1/binary
-        $ module load libs/intel-tbb/2015.7/binary
+   module load libs/intel-tbb/2019.3/binary
+   module load libs/intel-tbb/2017.0/binary
+   module load libs/intel-tbb/2016.1/binary
+   module load libs/intel-tbb/2015.7/binary
 
 You can find sample TBB programs **for TBB 2017.0** in the directory ``$TBB_SAMPLES``: ::
 
-        $ ls $TBB_SAMPLES
+   $ ls $TBB_SAMPLES
 
-        common  concurrent_hash_map  concurrent_priority_queue  GettingStarted  graph  index.html  license.txt  parallel_do  parallel_for  parallel_reduce  pipeline  task  task_arena  task_group  test_all
+   common  concurrent_hash_map  concurrent_priority_queue  GettingStarted  graph  index.html  license.txt  parallel_do  parallel_for  parallel_reduce  pipeline  task  task_arena  task_group  test_all
 
 We can compile and run a sample program by copying the samples to our (writable) home directory, 
 moving in to the directory containing the sample program (which should have a ``Makefile``) 
 then running ``make``: ::
 
-        $ cp -r $TBB_SAMPLES ~/tbb_samples
-        $ cd ~/tbb_samples/GettingStarted/sub_string_finder/
-        $ ls
+   $ cp -r $TBB_SAMPLES ~/tbb_samples
+   $ cd ~/tbb_samples/GettingStarted/sub_string_finder/
+   $ ls
 
-        license.txt  Makefile  readme.html  sub_string_finder.cpp  sub_string_finder_extended.cpp  sub_string_finder_pretty.cpp
+   license.txt  Makefile  readme.html  sub_string_finder.cpp  sub_string_finder_extended.cpp  sub_string_finder_pretty.cpp
 
-        $ make
+   $ make
 
-        g++ -O2 -DNDEBUG  -o sub_string_finder sub_string_finder.cpp -ltbb -lrt 
-        g++ -O2 -DNDEBUG  -o sub_string_finder_pretty sub_string_finder_pretty.cpp -ltbb -lrt 
-        g++ -O2 -DNDEBUG  -o sub_string_finder_extended sub_string_finder_extended.cpp -ltbb -lrt 
-        ./sub_string_finder_extended 
-         Done building string.
-         Done with serial version.
-         Done with parallel version.
-         Done validating results.
-        Serial version ran in 3.79692 seconds
-        Parallel version ran in 0.794959 seconds
-        Resulting in a speedup of 4.77625
+   g++ -O2 -DNDEBUG  -o sub_string_finder sub_string_finder.cpp -ltbb -lrt 
+   g++ -O2 -DNDEBUG  -o sub_string_finder_pretty sub_string_finder_pretty.cpp -ltbb -lrt 
+   g++ -O2 -DNDEBUG  -o sub_string_finder_extended sub_string_finder_extended.cpp -ltbb -lrt 
+   ./sub_string_finder_extended 
+    Done building string.
+    Done with serial version.
+    Done with parallel version.
+    Done validating results.
+   Serial version ran in 3.79692 seconds
+   Parallel version ran in 0.794959 seconds
+   Resulting in a speedup of 4.77625
 
 Many of the sample directories contain HTML documentation.  
-To read this you need to start an :ref:`interactive graphical session <submit-queue>` (using ``qrshx`` or ``qrshx``) then run: ::
+To read this you need to start an :ref:`interactive graphical session <sched_interactive>` then run: ::
 
-        $ firefox ~/tbb_samples/index.html
+   $ firefox ~/tbb_samples/index.html
  
 Tutorials
 ---------

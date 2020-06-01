@@ -21,24 +21,23 @@ But you can use ``conda`` to download it:
 Installing Go via conda
 -----------------------
 
-After connecting to ShARC, start an interactive session with
-the :ref:`qrshx` command.
-
-Load ``conda`` ::
+After connecting to ShARC,
+:ref:`start an interactive session <sched_interactive>` then
+load ``conda`` ::
 
    module load apps/python/conda
 
-create a ``conda`` environment (you can choose a different name if you want) ::
+Create a ``conda`` environment (you can choose a different environment  name if you want): ::
 
    conda create --name my-go-stuff
 
-activate it. ::
+Activate it: ::
 
    . activate my-go-stuff
 
 (On newer versions of conda, it's ``conda activate go``)
 
-Following `the conda-forge page <https://anaconda.org/conda-forge/go>`_ install Go. ::
+Following `the conda-forge page <https://anaconda.org/conda-forge/go>`_ install Go: ::
 
    conda install --channel conda-forge go
 
@@ -59,12 +58,7 @@ You do need to load conda and activate your environment: ::
 Learning Go and other Go resources
 ----------------------------------
 
-The main Go website: https://golang.org/
-
-An interactive tour: https://tour.golang.org/welcome/1
-
-Effective Go: https://golang.org/doc/effective_go.html
-
-An interactive web page for small Go snippets: https://play.golang.org/
-
-END
+* The main Go website: https://golang.org/
+* An interactive tour: https://tour.golang.org/welcome/1
+* Effective Go: https://golang.org/doc/effective_go.html
+* An interactive web page for small Go snippets: https://play.golang.org/

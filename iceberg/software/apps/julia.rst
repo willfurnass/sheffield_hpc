@@ -10,20 +10,20 @@ Julia is a high-level, high-performance dynamic programming language for technic
 
 Interactive Usage
 -----------------
-After connecting to iceberg (see :ref:`ssh`),  start an interactive session with either the or :ref:`qrsh` or :ref:`qrshx` commands.
-
-The latest version of Julia (currently 0.5.0-rc3) is made available with the commands ::
+After connecting to iceberg (see :ref:`ssh`),  
+:ref:`start an interactive session <sched_interactive>` then
+load a particular version of Julia using: ::
 
         module load compilers/gcc/5.2
         module load apps/gcc/5.2/julia/0.5.0-rc3
 
 This adds Julia to your PATH and also loads the gcc 5.2 compiler environment with which Julia was built.
 
-Start Julia by executing the command ::
+Start Julia using: ::
 
        julia
 
-You can exit a Julia session with the **quit()** function.
+You can exit a Julia session with the ``quit()`` function.
 
 Installation notes
 ------------------

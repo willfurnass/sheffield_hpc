@@ -12,13 +12,14 @@ Advanced Design System is an electronic design automation software system produc
 
 Interactive Usage
 -----------------
-After connecting to sharc (see :ref:`ssh`),  start an interactive session with the :ref:`qrshx` command.
+After connecting to sharc (see :ref:`ssh`), :ref:`start an interactive graphical session <sched_interactive>` then
+load a specific version of ADS using: ::
 
-ADS 2020 is made available with the command ::
+   module load apps/ads/2020/binary
 
-        module load apps/ads/2020/binary
+You can then run the graphical interface of ADS using: ::
 
-You can then run the graphical interface of ADS by entering ``ads``.
+   ads
 
 Installation notes
 ------------------

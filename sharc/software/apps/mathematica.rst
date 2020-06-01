@@ -11,119 +11,129 @@ Mathematica is a technical computing environment and programming language with s
 
 Single Core Interactive Usage
 -----------------------------
-After connecting to ShARC (see :ref:`ssh`),  start an interactive session with ``qrshx``.
+After connecting to ShARC (see :ref:`ssh`) ,
+:ref:`start an interactive session <sched_interactive>` then
+load a specific version of Mathematica using: ::
 
-Mathematica can be loaded with ::
+   module load apps/mathematica/12.0.0/binary
 
-        module load apps/mathematica/12.0.0/binary
+Mathematica can then be started using: ::
 
-Mathematica can then be started with the ``mathematica`` command ::
-
-        mathematica
+   mathematica
 
 Multicore Interactive Usage
 ---------------------------
-Mathematica has extensive parallel functionality. To use it, you should request a parallel interactive session. For example, to request 4 cores ::
 
-    qrshx -pe smp 2
+Mathematica has extensive parallel functionality.
+To use it, you should request a parallel interactive session.
+For example, to request 4 cores: ::
 
-Load and launch Mathematica ::
+   qrshx -pe smp 2
 
-    module load apps/mathematica/12.0.0/binary
-    mathematica
+Load and launch Mathematica: ::
 
-In Mathematica, time how long it takes to calculate the first 20 million primes on 1 CPU core ::
+   module load apps/mathematica/12.0.0/binary
+   mathematica
 
-    AbsoluteTiming[primelist = Table[Prime[k], {k, 1, 20000000}];]
+In Mathematica, let's time how long it takes to calculate the first 20 million primes on 1 CPU core: ::
 
-Now, let's launch 2 ParallelKernels and redo the calculation in parallel ::
+   AbsoluteTiming[primelist = Table[Prime[k], {k, 1, 20000000}];]
 
-    LaunchKernels[2]
-    AbsoluteTiming[primelist =
-    ParallelTable[Prime[k], {k, 1, 20000000},
-    Method -> "CoarsestGrained"];]
+Now, let's launch 2 Parallel Kernels and redo the calculation in parallel: ::
 
-This illustrates a couple of points:-
+   LaunchKernels[2]
+   AbsoluteTiming[primelist =
+   ParallelTable[Prime[k], {k, 1, 20000000},
+   Method -> "CoarsestGrained"];]
 
-* You should always request the same number of kernels as you requested in your ``qrshx`` command (in this case, 2).
+This illustrates a couple of points:
+
+* You should always request the same number of kernels as you requested when you started your interactive session (in this case, 2).
 * N kernels doesn't always translate to N times faster.
 
 Batch Submission
 ----------------
-Unfortunately, it is not possible to run Mathematica notebook .nb files directly in batch.  Instead, you need to create a simple text file that contains all of the Mathematica commands you want to execute.  Typically, such files are given the extension .m.  Let’s run the following simple Mathematica script as a batch job. ::
 
-  (*Find out what version of Mathematica this machine is running*)
-  Print["Mathematica version is " <> $Version]
+Unfortunately, it is not possible to run Mathematica notebook ``.nb`` files directly in batch.
+Instead, you need to create a simple text file that contains all of the Mathematica commands you want to execute.
+Typically, such files are given the extension ``.m``.
+Let’s run the following simple Mathematica script as a batch job: ::
 
-  (*Find out the name of the machine we are running on*)
-  Print["The machine name is " <> $MachineName]
+   (*Find out what version of Mathematica this machine is running*)
+   Print["Mathematica version is " <> $Version]
 
-  (*Do a calculation*)
-  Print["The result of the integral is "]
-  Print [ Integrate[Sin[x]^2, x]]
+   (*Find out the name of the machine we are running on*)
+   Print["The machine name is " <> $MachineName]
 
-Copy and paste the above into a text file called `very_simple_mathematica.m`
+   (*Do a calculation*)
+   Print["The result of the integral is "]
+   Print [ Integrate[Sin[x]^2, x]]
 
-An example batch submission script for this file is ::
+Copy and paste the above into a text file called ``very_simple_mathematica.m``.
 
-  #!/bin/bash
-  # Request 4 gigabytes of real memory
-  #$ -l rmem=4G
+An example batch submission script for this file is: ::
 
-  module load apps/mathematica/12.0.0/binary
+   #!/bin/bash
+   # Request 4 gigabytes of real memory
+   #$ -l rmem=4G
 
-  math -script very_simple_mathematica.m
+   module load apps/mathematica/12.0.0/binary
 
-Copy and paste the above into a file called `run_job.sh` and submit with ::
+   math -script very_simple_mathematica.m
 
-  qsub run_job.sh
+Copy and paste the above into a file called ``run_job.sh`` and submit with ::
 
-Once the job has successfully completed, the output will be in a file named like `run_job.sh.o396699`. The number at the end refers to the job-ID given to this job by the system and will be different for you. The contents of this file is ::
+   qsub run_job.sh
 
-  more run_job.sh.o396699
+Once the job has successfully completed, the output will be in a file named like ``run_job.sh.o396699``.
+The number at the end refers to the job ID given to this job by the system and will be different for you.
+Let's take a look at the contents of this file ::
 
-  Mathematica version is 10.2.0 for Linux x86 (64-bit) (July 28, 2015)
-  The machine name is node131
-  The result of the integral is
-  x/2 - Sin[2*x]/4
+   more run_job.sh.o396699
+ 
+   Mathematica version is 10.2.0 for Linux x86 (64-bit) (July 28, 2015)
+   The machine name is node131
+   The result of the integral is
+   x/2 - Sin[2*x]/4
 
 Installation notes
 ------------------
-These are primarily for administrators of the system. 
-Download the Mathematica package, Mathematica_12.0.0_LINUX.sh, from Wolfram.
+
+These are primarily for administrators of the system.
+Download the Mathematica package, ``Mathematica_12.0.0_LINUX.sh``, from Wolfram.
 
 **For Version 12.0.0** ::
 
-    mkdir -p /usr/local/packages/apps/mathematica/12.0.0/binary
-    chmod +x ./Mathematica_12.0.0_LINUX.sh
-    ./Mathematica_12.0.0_LINUX.sh
+   mkdir -p /usr/local/packages/apps/mathematica/12.0.0/binary
+   chmod +x ./Mathematica_12.0.0_LINUX.sh
+   ./Mathematica_12.0.0_LINUX.sh
 
 The installer is interactive. Here's the session output ::
 
-  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                                                                                       Wolfram Mathematica 12 Installer
-  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-  Copyright (c) 1988-2019 Wolfram Research, Inc. All rights reserved.
-
-  WARNING: Wolfram Mathematica is protected by copyright law and international treaties. Unauthorized reproduction or distribution may result in severe civil and criminal penalties and will be
-  prosecuted to the maximum extent possible under law.
-
-  Enter the installation directory, or press ENTER to select /usr/local/Wolfram/Mathematica/12.0.0:
-  > /usr/local/packages/apps/mathematica/12.0.0/binary
-
-  Now installing...
-
-  Installation complete.
+   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                        Wolfram Mathematica 12 Installer
+   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+   Copyright (c) 1988-2019 Wolfram Research, Inc. All rights reserved.
+ 
+   WARNING: Wolfram Mathematica is protected by copyright law and international treaties. Unauthorized reproduction or distribution may result in severe civil and criminal penalties and will be
+   prosecuted to the maximum extent possible under law.
+ 
+   Enter the installation directory, or press ENTER to select /usr/local/Wolfram/Mathematica/12.0.0:
+   > /usr/local/packages/apps/mathematica/12.0.0/binary
+ 
+   Now installing...
+ 
+   Installation complete.
 
 
 Remove the ``playerpass`` file ::
 
-  rm /usr/local/packages/apps/mathematica/12.0.0/binary/Configuration/Licensing/playerpass
+   rm /usr/local/packages/apps/mathematica/12.0.0/binary/Configuration/Licensing/playerpass
 
 Install the University network license ``mathpass`` file at ``/usr/local/packages6/apps/mathematica/12.0.0/Configuration/Licensing``. Mathpass contains the following ::
 
-  !mathlm.sheffield.ac.uk
+   !mathlm.sheffield.ac.uk
 
 Modulefiles
 -----------

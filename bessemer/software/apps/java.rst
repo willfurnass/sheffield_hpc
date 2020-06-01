@@ -16,9 +16,8 @@ Interactive Usage
 -----------------
 
 After :ref:`connecting to Bessemer <connecting>`,
-start :ref:`an interactive session <submit-queue>`.
-
-You can then load a version of of Java using one of the following: ::
+start :ref:`an interactive session <sched_interactive>` then
+load a version of of Java using one of the following: ::
 
    module load Java/11
    module load Java/11.0.2

@@ -20,12 +20,11 @@ As Theano and all its dependencies are written in Python. A Singularity image is
 
 This software and documentation is maintained by the `RSES group <https://rse.shef.ac.uk/>`_ and `GPUComputing@Sheffield <http://gpucomputing.shef.ac.uk/>`_. For feature requests or if you encounter any problems, please raise an issue on the `GPU Computing repository <https://github.com/RSE-Sheffield/GPUComputing/issues>`_.
 
-
-
 Local Installation
 ------------------
 
-First request an interactive session, e.g. with :ref:`qrshx`. To use GPUs, see :ref:`GPUInteractive_sharc`.
+First, :ref:`start an interactive session <sched_interactive>`.
+To use GPUs, see :ref:`GPUInteractive_sharc`.
 
 Load the relevant modules with the following command: ::
 

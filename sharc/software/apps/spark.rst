@@ -12,7 +12,7 @@ Apache Spark is a fast and general engine for large-scale data processing.
 
 Interactive Usage
 -----------------
-After connecting to ShARC (see :ref:`ssh`),  start an interactive session with the :ref:`qrsh` or :ref:`qrshx` command.
+After connecting to ShARC (see :ref:`ssh`), :ref:`start an interactive session <sched_interactive>`.
 
 Before using Spark, you will need to load a :ref:`version of Java <Java-sharc>`. For example: ::
 

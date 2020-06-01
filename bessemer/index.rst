@@ -18,4 +18,6 @@ Bessemer is designed to support jobs requiring up to 40 cores per job - for larg
 
 * :ref:`bessemer-software`
 * :ref:`bessemer-specs`
-* :ref:`slurm_info`
+
+.. 
+   * :ref:`slurm_info`

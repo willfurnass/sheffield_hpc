@@ -11,10 +11,8 @@ an approach known as *General Purpose GPU* (GPGPU) computing.
 Usage
 -----
 
-You need to first request one or more GPUs within an :ref:`interactive session or batch job on a worker node <submit-queue>`.  
-For example, to request a single GPU for an interactive session on a worker node:
-
-.. code-block:: sh
+You need to first request one or more GPUs within an :ref:`interactive session or batch job on a worker node <sched_interactive>`.  
+For example, to request a single GPU for an interactive session on a worker node: ::
 
    qrshx -l gpu=1
 
@@ -23,9 +21,7 @@ For example, to request a single GPU for an interactive session on a worker node
 You then need to load a version of the CUDA library (and compiler).
 There are several versions of the CUDA library available. 
 As with much software installed on the cluster, 
-versions of CUDA are activated via the :ref:`'module load' command<env_modules>`:
-
-.. code-block:: sh
+versions of CUDA are activated via the :ref:`'module load' command<env_modules>`: ::
 
    module load libs/cuda/8.0.44
    module load libs/cuda/7.5.18
@@ -33,9 +29,7 @@ versions of CUDA are activated via the :ref:`'module load' command<env_modules>`
    module load libs/cuda/4.0.17
    module load libs/cuda/3.2.16
 
-To then confirm which version of CUDA you are using:
-
-.. code-block:: console
+To then confirm which version of CUDA you are using: ::
 
    $ nvcc --version
    nvcc: NVIDIA (R) Cuda compiler driver
@@ -50,9 +44,7 @@ To then confirm which version of CUDA you are using:
 Compiling a simple CUDA program
 -------------------------------
 
-An example of the use of ``nvcc`` (the CUDA compiler)
-
-.. code-block:: sh
+An example of the use of ``nvcc`` (the CUDA compiler): ::
 
    nvcc filename.cu
 
@@ -63,9 +55,7 @@ Compiling the sample programs
 
 You do not need to be using a GPU-enabled node to compile the sample programs but you do need a GPU to run them.
 
-In a ``qrshx`` session:
-
-.. code-block:: sh
+In a ``qrshx`` session: ::
 
    # Load modules
    module load libs/cuda/8.0.44

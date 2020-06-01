@@ -11,21 +11,14 @@ an approach known as *General Purpose GPU* (GPGPU) computing.
 Usage
 -----
 
-You need to first request one or more GPUs within an :ref:`interactive session or batch job on a worker node <submit-queue>`.  
-For example, to request a single GPU for an interactive session on a worker node:
-
-.. code-block:: sh
+You need to first request one or more GPUs within an :ref:`interactive session <sched_interactive>` or :ref:`batch job <sched_batch>` on a worker node .  
+For example, to request a single GPU for an interactive session on a worker node: ::
 
    qrshx -l gpu=1
 
 .. note:: See :ref:`GPUComputing_sharc` for more information on how to request a GPU-enabled node for an interactive session or job submission. 
 
-You then need to load a version of the CUDA library (and compiler).
-There are several versions of the CUDA library available. 
-As with much software installed on the cluster, 
-versions of CUDA are activated via the :ref:`'module load' command<env_modules>`:
-
-.. code-block:: sh
+Next, load a specific version of the CUDA library (and NVCC compiler) using one of the following: ::
 
    module load libs/CUDA/10.2.89/binary
    module load libs/CUDA/10.1.243/binary
@@ -35,27 +28,23 @@ versions of CUDA are activated via the :ref:`'module load' command<env_modules>`
    module load libs/CUDA/8.0.44/binary
    module load libs/CUDA/7.5.18/binary
 
-To then confirm which version of CUDA you are using:
+To then confirm which version of CUDA you are using: ::
 
-.. code-block:: console
-
-    $ nvcc --version
-    nvcc: NVIDIA (R) Cuda compiler driver
-    Copyright (c) 2005-2019 NVIDIA Corporation
-    Built on Wed_Oct_23_19:24:38_PDT_2019
-    Cuda compilation tools, release 10.2, V10.2.89
+   $ nvcc --version
+   nvcc: NVIDIA (R) Cuda compiler driver
+   Copyright (c) 2005-2019 NVIDIA Corporation
+   Built on Wed_Oct_23_19:24:38_PDT_2019
+   Cuda compilation tools, release 10.2, V10.2.89
 
 **Important** To compile CUDA programs you also need a compatible version of the :ref:`GCC compiler <gcc_sharc>`:
 
-* CUDA 7.x and 8.x: GCC >= 4.7.0 (to allow for the use of c++11 features) and < 5.0.0
+* CUDA 7.x and 8.x: GCC >= 4.7.0 (to allow for the use of C++11 features) and < 5.0.0
 * CUDA 9.x: GCC < 7.0.0
 
 Compiling a simple CUDA program
 -------------------------------
 
-An example of the use of ``nvcc`` (the CUDA compiler)
-
-.. code-block:: sh
+An example of the use of ``nvcc`` (the CUDA compiler): ::
 
    nvcc filename.cu
 
@@ -66,9 +55,7 @@ Compiling the sample programs
 
 You do not need to be using a GPU-enabled node to compile the sample programs but you do need a GPU to run them.
 
-In a ``qrshx`` session:
-
-.. code-block:: sh
+In an interactive session or batch job session: ::
 
    # Load modules
    module load libs/CUDA/9.1.85/binary
@@ -114,9 +101,7 @@ i.e. ``-gencode=arch=compute_60,code=compute_60``.
 The minimum specified virtual architecture must be less than or equal to the `Compute Capability <https://developer.nvidia.com/cuda-gpus>`_ of the GPU used to execute the code.
 
 Public GPU nodes in ShARC contain Tesla K80 GPUs, which are compute capability 37.
-To build a CUDA application which targets the public GPUS nodes, use the following ``-gencode`` arguments: 
-
-.. code-block:: sh
+To build a CUDA application which targets the public GPUS nodes, use the following ``-gencode`` arguments: ::
 
    nvcc filename.cu \
       -gencode=arch=compute_37,code=sm_37 \
@@ -125,16 +110,13 @@ To build a CUDA application which targets the public GPUS nodes, use the followi
 ShARC also contains Tesla P100 GPUs and Tesla V100 GPUs in private nodes,
 which are compute capability 60 and 70 respectively.
 To build a CUDA application which targets any GPU on ShARC (either public or private), 
-use the following ``-gencode`` arguments (for CUDA 9.0 and above):
-
-.. code-block:: sh
+use the following ``-gencode`` arguments (for CUDA 9.0 and above): ::
 
    nvcc filename.cu \
       -gencode=arch=compute_37,code=sm_37 \
       -gencode=arch=compute_60,code=sm_60 \
       -gencode=arch=compute_70,code=sm_70 \
       -gencode=arch=compute_70,code=compute_70
-
 
 Further details of these compiler flags can be found in the `NVCC Documentation <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#options-for-steering-gpu-code-generation>`_, 
 along with details of the supported `virtual architectures <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#virtual-architecture-feature-list>`_ and `real architectures <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-feature-list>`_.
@@ -169,9 +151,7 @@ a self-paced `introduction to CUDA <http://gpucomputing.shef.ac.uk/education/cud
 Determining the NVIDIA Driver version
 -------------------------------------
 
-Run the command:
-
-.. code-block:: sh
+Run the command: ::
 
    cat /proc/driver/nvidia/version
 

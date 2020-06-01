@@ -5,10 +5,11 @@ JAGS
 
 .. sidebar:: JAGS
 
-   :Latest version: 4.2
    :URL: http://mcmc-jags.sourceforge.net/
 
-JAGS is Just Another Gibbs Sampler.  It is a program for analysis of Bayesian hierarchical models using Markov Chain Monte Carlo (MCMC) simulation not wholly unlike BUGS.  JAGS was written with three aims in mind:
+JAGS is Just Another Gibbs Sampler.
+It is a program for analysis of Bayesian hierarchical models using Markov Chain Monte Carlo (MCMC) simulation not wholly unlike BUGS.
+JAGS was written with three aims in mind:
 
 * To have a cross-platform engine for the BUGS language
 * To be extensible, allowing users to write their own functions, distributions and samplers.
@@ -16,16 +17,18 @@ JAGS is Just Another Gibbs Sampler.  It is a program for analysis of Bayesian hi
 
 Interactive Usage
 -----------------
-After connecting to Iceberg (see :ref:`ssh`),  start an interactive session with the :ref:`qrshx` or :ref:`qrsh` command. To make JAGS available in this session, run one of the following module commands ::
+After connecting to Iceberg (see :ref:`ssh`),
+:ref:`start an interactive session <sched_interactive>`
+then load a specific version of JAGS using one of the following: ::
 
-      module load apps/gcc/4.8.2/JAGS/4.2
-      module load apps/gcc/4.8.2/JAGS/3.4
-      module load apps/gcc/4.8.2/JAGS/3.1
+   module load apps/gcc/4.8.2/JAGS/4.2
+   module load apps/gcc/4.8.2/JAGS/3.4
+   module load apps/gcc/4.8.2/JAGS/3.1
 
-You can now run the ``jags`` command ::
+You can now run the ``jags`` command: ::
 
     jags
-    Welcome to JAGS 4.2.0 on Thu Jun 30 09:21:17 2016
+    Welcome to JAGS 4.2.0 on Fri Nov 15 09:21:17 2019
     JAGS is free software and comes with ABSOLUTELY NO WARRANTY
     Loading module: basemod: ok
     Loading module: bugs: ok
@@ -33,26 +36,32 @@ You can now run the ``jags`` command ::
 
 The rjags and runjags interfaces in R
 -------------------------------------
-`rjags <https://cran.r-project.org/web/packages/rjags/index.html>`_ and `runjags <https://cran.r-project.org/web/packages/runjags/index.html>`_ are CRAN packages that provide an R interface to jags. They are not installed in R by default.
 
-After connecting to iceberg (see :ref:`ssh`), start an interactive session with the :ref:`qrshx` command. Run the following module commands ::
+`rjags <https://cran.r-project.org/web/packages/rjags/index.html>`_ and `runjags <https://cran.r-project.org/web/packages/runjags/index.html>`_
+are CRAN packages that provide an R interface to jags.
+They are not installed in R by default.
 
-        module load compilers/gcc/4.8.2
-        module load apps/gcc/4.8.2/JAGS/4.2
-        module load apps/R/3.3.0
+After connecting to iceberg (see :ref:`ssh`),
+`start an interactive session <sched_interactive>`
+then run the following module commands: ::
+
+   module load compilers/gcc/4.8.2
+   module load apps/gcc/4.8.2/JAGS/4.2
+   module load apps/R/3.3.0
 
 Launch R by typing ``R`` and pressing return. Within R, execute the following commands ::
 
-        install.packages('rjags')
-        install.packages('runjags')
+   install.packages('rjags')
+   install.packages('runjags')
 
-and follow the on-screen inctructions. Answer ``y`` to any questions about the creation of a personal library should they be asked.
+and follow the on-screen instructions.
+Answer ``y`` to any questions about the creation of a personal library should they be asked.
 
 The packages will be stored in a directory called `R` within your home directory.
 
 You should only need to run the ``install.packages`` commands once. When you log into the system in future, you will only need to run the ``module`` commands above to make JAGS available to the system.
 
-You load the rjags packages the same as you would any other R package ::
+You load the ``rjags`` packages the same as you would any other R package: ::
 
         library('rjags')
         library('runjags')
@@ -103,3 +112,8 @@ JAGS 3.1 was built with gcc 4.8.2 ::
     ./configure --prefix=/usr/local/packages6/apps/gcc/4.8.2/JAGS/3.1
     make
     make install
+
+
+.. _CRAN: https://cran.r-project.org/
+.. _rjags: https://cran.r-project.org/web/packages/rjags/index.html
+.. _runjags: https://cran.r-project.org/web/packages/runjags/index.html

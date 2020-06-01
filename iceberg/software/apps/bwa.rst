@@ -10,15 +10,9 @@ BWA (Burrows-Wheeler Aligner) is a software package for mapping low-divergent se
 
 Interactive Usage
 -----------------
-After connecting to Iceberg (see :ref:`ssh`),  start an interactive session with the :ref:`qrshx` command.
+After connecting to Iceberg (see :ref:`ssh`),  :ref:`start an interactive session <sched_interactive>`.
 
-The latest version of bwa (currently 0.7.12) is made available with the command
-
-.. code-block:: none
-
-        module load apps/gcc/5.2/bwa
-
-Alternatively, you can load a specific version with ::
+Next, load a specific version of bwa with: ::
 
         module load apps/gcc/5.2/bwa/0.7.12
         module load apps/gcc/5.2/bwa/0.7.5a

@@ -12,25 +12,24 @@ The Genome Analysis Toolkit or GATK is a software package for analysis of high-t
 
 Interactive Usage
 -----------------
-After connecting to ShARC (see :ref:`ssh`),  start an interactive sesssion with the ``qsh``, ``qrshx`` or ``qrsh`` command.
 
-The latest version of GATK (currently 4.1.4) is made available with the command
+After connecting to ShARC (see :ref:`ssh`),
+:ref:`start an interactive sesssion <sched_interactive>` then
+load a specific version of GATK using: ::
 
-.. code-block:: none
+   module load apps/gatk/4.1.4/binary
 
-        module load apps/gatk/4.1.4/binary
-
-Version 4.1.4 of GATK also loads Java 1.8 module.
+The modulefile for version 4.1.4 of GATK also loads the Java 1.8 modulefile.
 
 An environment variable called ``GATKHOME`` is created by the module command that contains the path to the requested version of GATK.
 
-Thus, you can run the program with the command ::
+After loading GATK you can then run the program using: ::
 
-  gatk Anytool toolArgs
+   gatk Anytool toolArgs
 
-You can obtain a full list of tools using ::
+You can obtain a full list of tools using: ::
 
-  gatk --list
+   gatk --list
 
 
 Installation notes

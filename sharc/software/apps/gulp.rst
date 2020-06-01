@@ -44,22 +44,22 @@ Interactive Usage
 
 The serial build of GULP should be used for interactive usage. 
 After connecting to ShARC (see :ref:`ssh`),  
-start an interactive session with the ``qrsh`` or ``qrshx`` command. 
-Make the serial version of GULP available using the following: ::
+:ref:`start an interactive session <sched_interactive>`
+then load the serial version of GULP available using: ::
 
-        module load apps/gulp/4.4/intel-17.0.0
+   module load apps/gulp/4.4/intel-17.0.0
 
 You can then run GULP and show all output on the screen using: ::
 
-        gulp < inputfile
+   gulp < inputfile
 
 You can also simultaneously save this output in a file (here called ``outputfile``): ::
 
-        gulp < inputfile | tee outputfile
+   gulp < inputfile | tee outputfile
 
 If you get: ::
 
-        -bash: gulp: command not found
+   -bash: gulp: command not found
 
 it is probably because you are not a member of the ``gulp`` group. See Licensing_.
 
@@ -68,39 +68,39 @@ Serial batch jobs
 
 Create a batch job submission script like the following: ::
 
-        #!/bin/bash
-        #$ -N my_gulp_serial_job
-        #$ -j y
-        #$ -m bea
-        #$ -M YOUREMAIL@sheffield.ac.uk
+   #!/bin/bash
+   #$ -N my_gulp_serial_job
+   #$ -j y
+   #$ -m bea
+   #$ -M YOUREMAIL@sheffield.ac.uk
 
-        module load apps/gulp/4.4/intel-17.0.0
+   module load apps/gulp/4.4/intel-17.0.0
 
-        gulp < infile > outfile
+   gulp < infile > outfile
 
 Then submit this job to the scheduler: ::
 
-        qsub my_batch_job_script.sge
+   qsub my_batch_job_script.sge
 
 Multi-node batch jobs
 ---------------------
 
 Create a batch job submission script like the following: ::
 
-        #!/bin/bash
-        #$ -N my_gulp_mpi_16_slot_job
-        #$ -pe mpi 16
-        #$ -j y
-        #$ -m bea
-        #$ -M YOUREMAIL@sheffield.ac.uk
+   #!/bin/bash
+   #$ -N my_gulp_mpi_16_slot_job
+   #$ -pe mpi 16
+   #$ -j y
+   #$ -m bea
+   #$ -M YOUREMAIL@sheffield.ac.uk
 
-        module load apps/gulp/4.4/intel-17.0.0-openmpi-2.0.1
+   module load apps/gulp/4.4/intel-17.0.0-openmpi-2.0.1
 
-        mpirun -np $NSLOTS gulp < infile > outfile
+   mpirun -np $NSLOTS gulp < infile > outfile
 
 Then submit this job to the scheduler: ::
 
-        qsub my_batch_job_script.sge
+   qsub my_batch_job_script.sge
 
 Examples
 --------
@@ -109,74 +109,74 @@ The software comes with several example input files (plus example output files f
 
 To run them, first activate either serial or the MPI build of GULP (using ``module load``) then copy the examples to a writable location e.g.: ::
         
-        cp $GULP_EXAMPLES /data/$USER/gulp_4_4_examples
-        cd /data/$USER/gulp_4_4_examples
+   cp $GULP_EXAMPLES /data/$USER/gulp_4_4_examples
+   cd /data/$USER/gulp_4_4_examples
 
 Next, create a batch job submission script like the following (for serial testing): ::
 
-        #!/bin/bash
-        #$ -N gulp_ex_serial
-        #$ -j y
-        #$ -m bea
-        #$ -M YOUREMAIL@sheffield.ac.uk
+   #!/bin/bash
+   #$ -N gulp_ex_serial
+   #$ -j y
+   #$ -m bea
+   #$ -M YOUREMAIL@sheffield.ac.uk
 
-        module purge
-        module load apps/gulp/4.4/intel-17.0.0
-        export OMP_NUM_THREADS=1
+   module purge
+   module load apps/gulp/4.4/intel-17.0.0
+   export OMP_NUM_THREADS=1
 
-        for infile in ./example*.gin; do
-            outfile=${infile/gin/got}
-            echo "*******************************************"
-            echo "gulp < $infile | tee $outfile"
-            echo "*******************************************"
+   for infile in ./example*.gin; do
+       outfile=${infile/gin/got}
+       echo "*******************************************"
+       echo "gulp < $infile | tee $outfile"
+       echo "*******************************************"
 
-            gulp < $infile | tee $outfile
-        done
+       gulp < $infile | tee $outfile
+   done
 
-        # Determine the difference between each generated output file 
-        # and a corresponding example output file provided with GULP
-        sh ./diff.sh
-        # Collate these differences
-        for infile in example*.diff; do
-            (echo $infile; cat $infile) >> diffs_serial.log
-        done
+   # Determine the difference between each generated output file 
+   # and a corresponding example output file provided with GULP
+   sh ./diff.sh
+   # Collate these differences
+   for infile in example*.diff; do
+       (echo $infile; cat $infile) >> diffs_serial.log
+   done
 
 or like the following (for MPI testing using 16 cores): ::
 
-        #!/bin/bash
-        #$ -N gulp_ex_mpi_16
-        #$ -pe mpi 16
-        #$ -j y
-        #$ -m bea
-        #$ -M YOUREMAIL@sheffield.ac.uk
+   #!/bin/bash
+   #$ -N gulp_ex_mpi_16
+   #$ -pe mpi 16
+   #$ -j y
+   #$ -m bea
+   #$ -M YOUREMAIL@sheffield.ac.uk
 
-        module purge
-        module load apps/gulp/4.4/intel-17.0.0-openmpi-2.0.1
+   module purge
+   module load apps/gulp/4.4/intel-17.0.0-openmpi-2.0.1
 
-        for infile in ./example*.gin; do
-            outfile=${infile/gin/got}
-            echo "*******************************************"
-            echo "mpirun -np 16 gulp < $infile | tee $outfile"
-            echo "*******************************************"
+   for infile in ./example*.gin; do
+       outfile=${infile/gin/got}
+       echo "*******************************************"
+       echo "mpirun -np 16 gulp < $infile | tee $outfile"
+       echo "*******************************************"
 
-            mpirun -np 16 gulp < $infile | tee $outfile
+       mpirun -np 16 gulp < $infile | tee $outfile
 
-            # Needed to avoid errors about not being able to 
-            # connect to 'orted' daemons on nodes
-            sleep 5
-        done
-         
-        # Determine the difference between each generated output file 
-        # and a corresponding example output file provided with GULP
-        sh ./diff.sh
-        # Collate these differences
-        for infile in example*.diff; do
-            (echo $infile; cat $infile) >> diffs_mpi16.log
-        done
+       # Needed to avoid errors about not being able to 
+       # connect to 'orted' daemons on nodes
+       sleep 5
+   done
+    
+   # Determine the difference between each generated output file 
+   # and a corresponding example output file provided with GULP
+   sh ./diff.sh
+   # Collate these differences
+   for infile in example*.diff; do
+       (echo $infile; cat $infile) >> diffs_mpi16.log
+   done
 
 Finally, submit this job to the scheduler: ::
 
-        qsub my_batch_job_script.sge
+   qsub my_batch_job_script.sge
 
 After receiving email notification that the job has finished, check in the ``gulp_4_4_examples`` directory for an output file containing:
 
@@ -220,8 +220,8 @@ Both versions were tested using the process outlined in the Examples_ section.  
 
 A summary of the issues encountered during these 58 tests: ::
 
-        $ egrep '(WARNING|ERROR)' timings_serial.log | sort | uniq -c
-              1 !! WARNING : Ambiguous vacancy specifier used
+   $ egrep '(WARNING|ERROR)' timings_serial.log | sort | uniq -c
+        1 !! WARNING : Ambiguous vacancy specifier used
 
 The results for the MPI version:
 
@@ -230,7 +230,7 @@ The results for the MPI version:
 
 A summary of the issues encountered during these 58 tests: ::
 
-    $ egrep '(WARNING|ERROR)' timings_mpi_16.log | sort | uniq -c
+   $ egrep '(WARNING|ERROR)' timings_mpi_16.log | sort | uniq -c
           1 !! ERROR : RFO keyword cannot be used with conjugate gradients
          31 !! ERROR : second derivatives unavailable in parallel
           1 !! WARNING : Not all configurations optimised successfully in relaxed

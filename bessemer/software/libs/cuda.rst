@@ -14,13 +14,11 @@ Usage
 -----
 
 You need to first request one or more GPUs within an
-:ref:`interactive session or batch job on a worker node <submit-queue>`. 
+:ref:`interactive session or batch job on a worker node <sched_interactive>`. 
 
 At present public GPUs are only available in batch jobs. 
 To request say three unspecified GPUs for a batch job 
-you would include the following in the header of your submission script:
-
-.. code-block:: sh
+you would include the following in the header of your submission script: ::
 
    #SBATCH --gres=gpu:3
 

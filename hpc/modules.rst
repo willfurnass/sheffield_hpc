@@ -3,6 +3,9 @@
 Activating software using Environment Modules
 =============================================
 
+.. contents::
+   :local:
+
 Overview and rationale
 ----------------------
 

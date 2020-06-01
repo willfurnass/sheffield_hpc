@@ -21,8 +21,9 @@ it is recommended that you perform testing before switching to this version of R
 
 Loading the modules
 -------------------
+
 After connecting to ShARC (see :ref:`ssh`), 
-start an interactive session with the :code:`qrshx` command.
+:ref:`start an interactive session <sched_interactive>`.
 
 There are two types of the Intel builds of R, ``sequential`` and ``parallel``.
 
@@ -46,15 +47,16 @@ set the bash environment variable ``OMP_NUM_THREADS`` to the number of cores you
 and also use the ``smp`` parallel environment.  
 E.g. add the following to your submission script: ::
 
-    #$ -pe smp 8
+   #$ -pe smp 8
 
-    # Set OMP_NUM_THREADS to the number of cores requested using '-pe smp'
-    export OMP_NUM_THREADS=$NSLOTS
+   # Set OMP_NUM_THREADS to the number of cores requested using '-pe smp'
+   export OMP_NUM_THREADS=$NSLOTS
 
-    module load apps/R/3.5.1/intel-17.0-parallel
+   module load apps/R/3.5.1/intel-17.0-parallel
 
 Installing additional packages
 ------------------------------
+
 To ensure that the Intel builds do not contaminate the standard gcc builds, 
 the Intel R module files set the environment variable ``R_LIBS_USER`` to point to 
 ``~/R/intel_R/parallel-3.5.1/`` or ``~/R/intel_R/sequential-3.5.1/`` respectively 
@@ -71,6 +73,7 @@ for the standard version of R and vice versa.
 
 Installation Notes
 ------------------
+
 These notes are primarily for administrators of the system.
 
 Version 3.5.1

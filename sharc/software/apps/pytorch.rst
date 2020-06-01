@@ -9,49 +9,48 @@ PyTorch
 
 PyTorch is an open source machine learning library for Python, based on `Torch <http://torch.ch/>`_, used for applications such as natural language processing.
 
-
 About PyTorch on ShARC
 ----------------------
 
 **A GPU-enabled worker node must be requested in order to enable GPU acceleration. See** :ref:`GPUComputing_sharc` **for more information.**
 
-As PyTorch and all its dependencies are written in Python, it can be installed locally in your home directory. The use of Anaconda (:ref:`sharc-python-conda`) is recommended as it is able to create a virtual environment in your home directory, allowing the installation of new Python packages without admin permission.
+As PyTorch and all its dependencies are written in Python, it can be installed locally in your home directory.
+The use of Anaconda (:ref:`sharc-python-conda`) is recommended as it is able to create a virtual environment in your home directory,
+allowing the installation of new Python packages without admin permission.
 
 This software and documentation is maintained by the `RSES group <https://rse.shef.ac.uk/>`_ and `GPUComputing@Sheffield <http://gpucomputing.shef.ac.uk/>`_. For feature requests or if you encounter any problems, please raise an issue on the `GPU Computing repository <https://github.com/RSE-Sheffield/GPUComputing/issues>`_.
-
-
 
 Installation in Home Directory
 ------------------------------
 
-Conda is used to create a virtual python enviroment for installing your local version of PyTorch.
+Conda is used to create a virtual python environment for installing your local version of PyTorch.
 
 .. warning::
   Torch requires more than 2GB of RAM for installation so you **must** use the ``-l rmem=8G`` flag to request more memory, ``8G`` means 8 GB of RAM.
 
-First request an interactive session, e.g. with :ref:`qrshx`. or optionally with GPU :ref:`GPUInteractive_sharc`. ::
+First :ref:`start an interactive session <sched_interactive>`, optionally :ref:`requesting one or more GPUs <GPUInteractive_sharc>`: ::
 
-  #To request 8GB of ram for the session
+  # To request 8GB of ram for the session
   qrshx -l rmem=8G
 
-  #OR To request a GPU node with 8GB RAM
+  # OR To request a GPU node with 8GB RAM
   qrshx -l rmem=8G -l gpu=1
 
 Then PyTorch can be installed by the following ::
 
-  #Load the conda module
+  # Load the conda module
   module load apps/python/conda
 
-  #*Only needed if we're using GPU* Load the CUDA and cuDNN module
+  # *Only needed if we're using GPU* Load the CUDA and cuDNN module
   module load libs/cudnn/7.3.1.20/binary-cuda-9.0.176
 
-  #Create an conda virtual environment called 'pytorch'
+  # Create an conda virtual environment called 'pytorch'
   conda create -n pytorch python=3.6
 
-  #Activate the 'pytorch' environment
+  # Activate the 'pytorch' environment
   source activate pytorch
 
-  #Install PyTorch
+  # Install PyTorch
   pip install torch torchvision
 
 
@@ -59,11 +58,11 @@ Then PyTorch can be installed by the following ::
 
 Every time you use a new session or within your job scripts, the modules must be loaded and conda must be activated again. Use the following command to activate the Conda environment with PyTorch installed: ::
 
-  #Load the conda module
+  # Load the conda module
   module load apps/python/conda
-  #*Only needed if we're using GPU* Load the CUDA and cuDNN module
+  # *Only needed if we're using GPU* Load the CUDA and cuDNN module
   module load libs/cudnn/7.3.1.20/binary-cuda-9.0.176
-  #Activate the 'pytorch' environment
+  # Activate the 'pytorch' environment
   source activate pytorch
 
 Testing your PyTorch installation
@@ -72,10 +71,8 @@ Testing your PyTorch installation
 .. note::
   Taken from the official `getting started <https://pytorch.org/get-started/locally/>`_ page.
 
-
 To ensure that PyTorch was installed correctly, we can verify the installation by running sample PyTorch code. Here we will construct a randomly initialized tensor. ::
 
-  from __future__ import print_function
   import torch
   x = torch.rand(5, 3)
   print(x)

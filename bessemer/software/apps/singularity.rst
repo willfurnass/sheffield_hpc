@@ -49,7 +49,7 @@ must be done on your machine (see :ref:`create_image_singularity_bessemer`).
 Interactive Usage of Singularity Images
 ---------------------------------------
 
-**To use Singularity interactively, an interactive session must first be requested using** :ref:`qrshx` **for example.**
+To use Singularity interactively, first start an :ref:`interactive session <sched_interactive>`.
 
 To get an interactive shell in to the image, use the following command: ::
 

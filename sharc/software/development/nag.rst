@@ -6,24 +6,26 @@ The NAG Fortran Compiler is robust, highly tested, and valued by developers all 
 Making the NAG Compiler available
 ---------------------------------
 
-After connecting to ShARC (see :ref:`ssh`),  start an interactive sesssion with the :code:`qrshx` command. 
-To make a version of the NAG Fortran Compiler available: ::
+After connecting to ShARC (see :ref:`ssh`), :ref:`start an interactive sesssion <sched_interactive>` then
+make a specific version of the NAG Fortran Compiler available using: ::
 
-        module load dev/NAG/6.2
+   module load dev/NAG/6.2
 
 Older versions (6.0 and 6.1) are deprecated.
 
 Compilation examples
 --------------------
+
 To compile the Fortran hello world example into an executable called ``hello`` using the NAG compiler: ::
 
-        nagfor hello.f90 -o hello
+   nagfor hello.f90 -o hello
 
 Detailed Documentation
 ----------------------
+
 Once you've run one of the NAG Compiler module command, ``man`` documentation is available: ::
 
-        man nagfor
+   man nagfor
 
 Extensive documentation including the differences between versions can be `found on NAG's website <https://www.nag.co.uk/nag-compiler>`__.
 

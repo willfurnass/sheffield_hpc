@@ -12,13 +12,8 @@ Scientific Computing and Visualisation
 
 Interactive Usage
 -----------------
-After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the :ref:`qrshx` command.
-
-The latest version of Maple (currently 2016) is made available with the command ::
-
-        module load apps/binapps/maple
-
-Alternatively, you can load a specific version with ::
+After connecting to iceberg (see :ref:`ssh`), :ref:`start an interactive session <sched_interactive>` then
+load a specific version of Maple with: ::
 
         module load apps/binapps/maple/2016
         module load apps/binapps/maple/2015
@@ -27,9 +22,12 @@ You can then run the graphical version of Maple by entering ``xmaple`` or the co
 
 Batch usage
 -----------
-It is not possible to run Maple worksheets in batch mode. Instead, you must convert your worksheet to a pure text file that contains a set of maple input commands. You can do this in Maple by opening your worksheet and clicking on **File->Export As->Maple Input**. The result will have the file extension .mpl
+It is not possible to run Maple worksheets in batch mode.
+Instead, you must convert your worksheet to a pure text file that contains a set of maple input commands.
+You can do this in Maple by opening your worksheet and clicking on **File->Export As->Maple Input**.
+The result will have the file extension .mpl
 
-An example Sun Grid Engine submission script that makes use of a .mpl file called, for example, **mycode.mpl** is ::
+An example Sun Grid Engine submission script that makes use of a .mpl file called, for example, **mycode.mpl** is: ::
 
     #!/bin/bash
     # Request 4 gigabytes of real memory
@@ -39,11 +37,11 @@ An example Sun Grid Engine submission script that makes use of a .mpl file calle
 
     maple < mycode.mpl
 
-For general information on how to submit batch jobs refer to :ref:`submit-batch`
+For general information on how to submit batch jobs refer to :ref:`sched_batch`.
 
 Tutorials
 ---------
-* `High Performance Computing with Maple <https://rse.shef.ac.uk/blog/hpc-maple-1/>`_ A tutorial from the Sheffield Research Software Engineering group on how to use Maple in a High Performance Computing environment
+* `High Performance Computing with Maple <https://rse.shef.ac.uk/blog/hpc-maple-1/>`_: A tutorial from the Sheffield Research Software Engineering group on how to use Maple in a High Performance Computing environment
 
 Installation notes
 ------------------

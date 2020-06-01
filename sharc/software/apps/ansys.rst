@@ -15,21 +15,20 @@ The Ansys suite of programs can be used to numerically simulate a large variety 
 Usage
 -----
 
-Ansys can be activated using the module files::
+A particular version of Ansys can be activated by loading one of the following module files: ::
 
-    module load apps/ansys/15.0
-    module load apps/ansys/16.1
-    module load apps/ansys/17.2
-    module load apps/ansys/18.0/binary
-    module load apps/ansys/18.2/binary
-    module load apps/ansys/19.0/binary
-    module load apps/ansys/19.1/binary
-    module load apps/ansys/19.2/binary
-    module load apps/ansys/19.3/binary
-    module load apps/ansys/19.4/binary
+   module load apps/ansys/19.4/binary
+   module load apps/ansys/19.3/binary
+   module load apps/ansys/19.2/binary
+   module load apps/ansys/19.1/binary
+   module load apps/ansys/19.0/binary
+   module load apps/ansys/18.2/binary
+   module load apps/ansys/18.0/binary
+   module load apps/ansys/17.2
+   module load apps/ansys/16.1
+   module load apps/ansys/15.0
 	
-
-The Ansys Workbench GUI executable is ``ansyswb``. ``ansyswb`` can be launched during an interactive session with X Window support (e.g. an interactive ``qrshx`` session).
+The Ansys Workbench GUI executable is ``ansyswb``. ``ansyswb`` can be launched during an :ref:`interactive graphical session <sched_interactive>` i.e. a session with X Window support.
 The Ansys Mechanical executable is ``ansys-mechanical`` and ``fluent`` is the executable for Fluent.
  
 NOTE: for Ansys versions >= 18.0 using the command ``fluent`` results in an unresponsive fluent launcher. To launch fluent and bypass the launcher use ``fluent dim`` where dim = 2d, 2ddp, 3d or 3ddp.
@@ -38,9 +37,9 @@ ANSYS example models
 --------------------
 
 ANSYS contains a large number of example models which can be used to become familiar with the software.
-The models can be found in::
+The models can be found in: ::
 
-    /usr/local/packages/live/eb/ANSYS/19.4/v194/ansys/data
+   /usr/local/packages/live/eb/ANSYS/19.4/v194/ansys/data
 	
 
 Batch jobs
@@ -48,47 +47,47 @@ Batch jobs
 	
 ``Fluent CFD``: the following is an example batch submission script, ``cfd_job.sh``, to run the executable ``fluent`` with input journal file ``test.jou``, and carry out a 2D double precision CFD simulation. The script requests 8 cores using the MPI parallel environment ``mpi-rsh`` with a runtime of 30 mins and 2 GB of real memory per core. The Fluent input journal file is ``test.jou``. **Note:** Please use the ``mpi-rsh`` parallel environment to run MPI parallel jobs for Ansys/Fluent. ::
 
-    #!/bin/bash
-    #$ -cwd
-    #$ -M joe.bloggs@sheffield.ac.uk
-    #$ -m abe
-    #$ -l h_rt=00:30:00
-    #$ -l rmem=2G
-    #$ -pe mpi-rsh 8
+   #!/bin/bash
+   #$ -cwd
+   #$ -M joe.bloggs@sheffield.ac.uk
+   #$ -m abe
+   #$ -l h_rt=00:30:00
+   #$ -l rmem=2G
+   #$ -pe mpi-rsh 8
 
-    module load apps/ansys/19.4
+   module load apps/ansys/19.4
 
-    fluent 2ddp -i test.jou -g -t$NSLOTS -sge -mpi=intel -rsh -sgepe mpi-rsh
+   fluent 2ddp -i test.jou -g -t$NSLOTS -sge -mpi=intel -rsh -sgepe mpi-rsh
 
-The job is submitted to the queue by typing::
+The job is submitted to the queue by typing: ::
 
-    qsub cfd_job.sh
+   qsub cfd_job.sh
 
 ``Mapdl mechanical``: the following is an example batch submission script, ``mech_job.sh``, to run the mechanical executable ``mapdl`` with input file ``CrankSlot_Flexible.inp``, and carry out a mechanical simulation. The script requests 4 cores using the OpenMP (``single node shared memory``) parallel environment with a runtime of 10 mins and 2 GB of real memory per core. ::
 
-    #!/bin/bash
-    #$ -cwd
-    #$ -N mech_test
-    #$ -M joe.bloggs@sheffield.ac.uk
-    #$ -m abe
-    #$ -l h_rt=00:10:00
-    #$ -l rmem=2G
-    #$ -pe smp 4
-    module load apps/ansys/19.4/binary
-    mapdl -b -np $NSLOTS -smp -i CrankSlot_Flexible.inp
+   #!/bin/bash
+   #$ -cwd
+   #$ -N mech_test
+   #$ -M joe.bloggs@sheffield.ac.uk
+   #$ -m abe
+   #$ -l h_rt=00:10:00
+   #$ -l rmem=2G
+   #$ -pe smp 4
+   module load apps/ansys/19.4/binary
+   mapdl -b -np $NSLOTS -smp -i CrankSlot_Flexible.inp
 
 The equivalent batch script for using MPI (``multi-node distributed memory``) parallel environment is ::
 
-    #!/bin/bash
-    #$ -cwd
-    #$ -N mech_test
-    #$ -M joe.bloggs@sheffield.ac.uk
-    #$ -m abe
-    #$ -l h_rt=00:10:00
-    #$ -l rmem=2G
-    #$ -pe mpi 4
-    module load apps/ansys/19.4/binary
-    mapdl -i CrankSlot_Flexible.inp -b -np $NSLOTS -sge -mpi=INTELMPI -rsh -sgepe mpi-rsh 
+   #!/bin/bash
+   #$ -cwd
+   #$ -N mech_test
+   #$ -M joe.bloggs@sheffield.ac.uk
+   #$ -m abe
+   #$ -l h_rt=00:10:00
+   #$ -l rmem=2G
+   #$ -pe mpi 4
+   module load apps/ansys/19.4/binary
+   mapdl -i CrankSlot_Flexible.inp -b -np $NSLOTS -sge -mpi=INTELMPI -rsh -sgepe mpi-rsh 
 
 		
 Installation notes
@@ -149,8 +148,8 @@ SSH access to worker nodes being prohibited for most users.
 
 For versions 19.3 & 19.4 mapdl will not run without modifying the file::
 
-    /usr/local/packages/live/eb/ANSYS/19.4/v194/ansys/bin/anssh.ini
+   /usr/local/packages/live/eb/ANSYS/19.4/v194/ansys/bin/anssh.ini
 
 The following instruction should be inserted at line 2127 in ``anssh.ini``::
 
-    setenv KMP_AFFINITY compact
+   setenv KMP_AFFINITY compact

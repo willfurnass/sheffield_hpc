@@ -140,7 +140,7 @@ What Next?
 ----------
 
 Now you have connected to a cluster, 
-you can look at how to submit jobs with :ref:`submit-queue` or 
+you can look at how to submit jobs with :ref:`sched_interactive` or 
 look at the software installed on 
 :ref:`Bessemer <bessemer-software>`,
 :ref:`ShARC <sharc-software>` and 

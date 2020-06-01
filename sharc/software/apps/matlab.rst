@@ -15,17 +15,9 @@ Scientific computing and visualisation.
 
 Interactive usage
 -----------------
-After connecting to ShARC (see :ref:`ssh`),  start an interactive session with the ``qrshx`` command.
 
-The latest version of MATLAB (currently 2019a) is made available by running:
-
-.. code-block:: bash
-
-   module load apps/matlab
-
-Alternatively, you can load a specific version with one of the following commands:
-
-.. code-block:: bash
+After connecting to ShARC (see :ref:`ssh`), :ref:`start an interactive graphical session <sched_interactive>` then
+load a specific version of MATLAB using one of the following: ::
 
    module load apps/matlab/2016a/binary
    module load apps/matlab/2016b/binary
@@ -39,6 +31,7 @@ You can then run MATLAB by entering ``matlab``.
 
 Serial (one CPU) batch usage
 ----------------------------
+
 Here, we assume that you wish to run the program ``helloworld.m`` on the system:
 	
 .. code-block:: matlab
@@ -48,9 +41,7 @@ Here, we assume that you wish to run the program ``helloworld.m`` on the system:
    end	
 
 First, you need to write a batch submission file.
-We assume you'll call this ``my_job.sge``:
-
-.. code-block:: bash
+We assume you'll call this ``my_job.sge``: ::
 
    #!/bin/bash
    #$ -l rmem=4G                  		# Request  4 GB of real memory
@@ -60,9 +51,7 @@ We assume you'll call this ``my_job.sge``:
    matlab -nodesktop -nosplash -r helloworld
 
 Ensure that ``helloworld.m`` and ``my_job.sge`` are both in your current working directory, 
-then submit your job to the batch system:
-
-.. code-block:: bash
+then submit your job to the batch system: ::
 
    qsub my_job.sge
 
@@ -79,9 +68,7 @@ The MATLAB compiler **mcc** can be used to generate standalone executables.
 These executables can then be run on other computers that does not have MATLAB installed. 
 We strongly recommend you use R2016b or later versions to take advantage of this feature. 
 
-To compile a MATLAB function or script for example called ``myscript.m`` the following steps are required:
-
-.. code-block:: bash
+To compile a MATLAB function or script for example called ``myscript.m`` the following steps are required: ::
 
    # Load the matlab 2019a module
    module load apps/matlab/2019a/binary  
@@ -94,16 +81,12 @@ To compile a MATLAB function or script for example called ``myscript.m`` the fol
    ./run_myscript.sh $MCRROOT
 
 If ``myscript.m`` is a MATLAB function that require inputs then 
-these can be suplied on the command line. 
-For example if the first line of ``myscript.m`` reads:
-
-.. code-block:: matlab
+these can be supplied on the command line. 
+For example if the first line of ``myscript.m`` reads: ::
 
    function out = myscript ( a , b , c )
 
-then to run it with 1.0, 2.0, 3.0 as its parameters you will need to type:
-
-.. code-block:: bash
+then to run it with 1.0, 2.0, 3.0 as its parameters you will need to type: ::
 
    ./run_myscript.sh $MCRROOT 1.0 2.0  3.0 
 
@@ -122,9 +105,7 @@ Parallel MATLAB: single node
 
 Parallel MATLAB can be run exclusively on a single node. 
 
-An example batch script ``my_parallel_job.sh`` is:
-
-.. code-block:: bash
+An example batch script ``my_parallel_job.sh`` is: ::
 
    #!/bin/bash
    #$ -l rmem=2G
@@ -138,9 +119,7 @@ An example batch script ``my_parallel_job.sh`` is:
    # Run parallel_example.m
    matlab -nodisplay -r parallel_example
 
-where ``parallel_example.m`` is:
-
-.. code-block:: matlab
+where ``parallel_example.m`` is: ::
 
    % Create parallel pool of workers on the local node.
    % Ensure that this is the same number as what you requested from the scheduler
@@ -174,20 +153,16 @@ Parallel MATLAB using multiple nodes is restricted to 32 cores.
 
 The user must first configure MATLAB for cluster usage by starting MATLAB interactively.
 This is done by logging into ShARC, 
-launching a ``qrshx`` session, 
+launching an :ref:`interactive graphical session <sched_interactive>`,
 loading a version of MATLAB (e.g. using ``module load apps/matlab/2019a``) and 
 launching MATLAB with ``matlab``. 
-You then need to type the following at the prompt within the MATLAB GUI:
-
-.. code-block:: matlab
+You then need to type the following at the prompt within the MATLAB GUI: ::
 
    configCluster;
 
 The MATLAB GUI can then be closed.
 
-An example batch script ``submit_Matlab_mpi.sh`` is:
-
-.. code-block:: bash
+An example batch script ``submit_Matlab_mpi.sh`` is: ::
 
    #!/bin/bash
    #$ -M someuser@sheffield.ac.uk
@@ -199,9 +174,7 @@ An example batch script ``submit_Matlab_mpi.sh`` is:
    # Run parallel_example.m
    matlab -nodisplay -nosplash -r submit_matlab_fnc
 
-where ``submit_matlab_fnc.m`` is:
-
-.. code-block:: matlab
+where ``submit_matlab_fnc.m`` is: ::
 
    function submit_matlab_fnc
 
@@ -215,9 +188,7 @@ where ``submit_matlab_fnc.m`` is:
    % Parallel_example.m contains the parfor loop, no_of_cores < 31
    j = c.batch(@parallel_example, 1, {}, 'Pool', no_of_cores);
 
-and ``parallel_example.m`` is:
-
-.. code-block:: matlab
+and ``parallel_example.m`` is: ::
 
    function time = parallel_example
    cd path_working_directory;
@@ -246,9 +217,7 @@ MATLAB Engine for Python
 
 This is a MathWorks-developed way of running MATLAB from Python.
 On ShARC the recommended way of installing this is into a :ref:`conda environment <sharc-python-conda>`.
-Here's how you can install the R2017b version into a new conda environment called ``my-environment-name``:
-
-.. code-block:: bash
+Here's how you can install the R2017b version into a new conda environment called ``my-environment-name``: ::
 
    module load apps/python/conda
    conda create -n my-environment-name python=2.7
@@ -266,7 +235,6 @@ Training
 
 * IT Services run an `Introduction to Matlab course <http://rcg.group.shef.ac.uk/courses/matlab/>`_
 * In November 2015, IT Services hosted a masterclass in *Parallel Computing in MATLAB*. The materials `are available online <http://rcg.group.shef.ac.uk/courses/mathworks-parallelmatlab/>`_
-
 
 Installation notes
 ------------------
