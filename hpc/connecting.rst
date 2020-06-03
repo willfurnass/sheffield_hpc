@@ -24,7 +24,7 @@ including *MobaXTerm*.
 
 * Whether `Multifactor Authentication (MFA) <https://sites.google.com/sheffield.ac.uk/mfa/home>`__  has been enabled on your University account.
   If MFA has been enabled then when logging in with SSH you will be prompted to enter a one-time code or send a push notication to your MFA device 
-  after entering your username and password.
+  after entering your username and password.  If you do not have MFA enabled on your account then you will not be able to login from off campus without using VPN.
 
 * Whether you want to use password-based authentication or 'public-key'-based authentication.
 
@@ -37,7 +37,7 @@ including *MobaXTerm*.
 +----------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 | ShARC    | Password or public key | Not permitted                                                                                                                 |
 +----------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| Iceberg  | Password or public key | Requires password (including MFA, if enabled for your account); *public key authentication not permitted after 15th May 2020* |
+| Iceberg  | Password or public key | Requires password (including MFA); *public key authentication not permitted after 15th May 2020* |
 +----------+------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 
 SSH client software on Windows
