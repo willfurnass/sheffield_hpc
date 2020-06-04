@@ -1,0 +1,37 @@
+#%Module1.0#####################################################################
+##
+## gmp 6.2.0
+##
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "	Adds `gmp-$version' to your PATH environment variable 
+}
+
+set     version 6.2.0
+
+
+
+
+module-whatis   "loads the necessary `texinfo-$version' library paths"
+
+# Loads the required modules
+module load apps/texinfo/6.7/gcc-8.2.0
+module load dev/gcc/8.2
+
+# Sets the paths
+set PREFIX /usr/local/packages/apps/gmp/6.2.0
+
+#Caffe and dependencies
+prepend-path LIBRARY_PATH $PREFIX/lib
+prepend-path LD_LIBRARY_PATH $PREFIX/lib
+#set LDFLAGS -L/usr/local/packages/apps/gmp/6.2.0/lib
+#set CPPFLAGS -I/usr/local/packages/apps/gmp/6.2.0/include
+prepend-path --delim " " LDFLAGS "-L/usr/local/packages/apps/gmp/6.2.0/lib"
+prepend-path --delim " " CPPFLAGS "-I/usr/local/packages/apps/gmp/6.2.0/include"
