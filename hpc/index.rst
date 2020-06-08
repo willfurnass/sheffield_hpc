@@ -15,6 +15,7 @@ This guide will get you set up using the University's clusters
 
    accounts
    connecting
+   mfa
    filestore
    transferring-files
    scheduler/index
