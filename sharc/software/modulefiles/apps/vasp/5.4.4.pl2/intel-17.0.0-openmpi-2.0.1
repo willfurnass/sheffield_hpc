@@ -1,0 +1,31 @@
+#%Module1.0#####################################################################
+##
+## VASP module file
+##
+#  By Des M. Ryan June 2020
+#  ################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes VASP Version 5.4.4 available for use"
+}
+
+#set USER $::env(USER)
+
+module-whatis   "Makes VASP Version 5.4.4 available"
+
+# load modules
+ module load mpi/openmpi/2.0.1/intel-17.0.0
+ module load libs/intel-mkl/2017.0/binary
+
+# module variables
+#
+ set     version 5.4.4.pl2
+ set     vasproot /usr/local/packages/apps/vasp/$version/intel-17.0.0-openmpi-2.0.1/vasp.5.4.4.pl2
+
+ prepend-path PATH $vasproot/bin

@@ -3,7 +3,7 @@ VASP
 
 .. sidebar:: VASP
 
-   :Version: 5.4.1 (05Feb16)
+   :Version: 5.4.1 (05Feb16), 5.4.4 (pl2)
    :Dependencies: Fortran and C compilers, an implementation of MPI, numerical libraries BLAS, LAPACK, ScaLAPACK, FFTW. Modules for Intel compiler 17.0.0, Open MPI 2.0.1 and Intel MKL 2017.0 loaded.
    :URL: https://www.vasp.at/
    :Documentation: https://www.vasp.at/index.php/documentation
@@ -19,7 +19,11 @@ VASP 5.4.1 can be activated using the module file::
 
     module load apps/vasp/5.4.1.05Feb16/intel-17.0.0-openmpi-2.0.1
 
-The VASP 5.4.1 executables are ``vasp_std``, ``vasp_gam`` and ``vasp_ncl``.
+VASP 5.4.4 can be activated using the module file::
+
+    module load apps/vasp/5.4.4.pl2/intel-17.0.0-openmpi-2.0.1
+
+The VASP executables are ``vasp_std``, ``vasp_gam`` and ``vasp_ncl``.
 
 **Important note:** Only licensed users of VASP are entitled to use the code; refer to VASP's website for license details: https://www.vasp.at/index.php/faqs. Access to VASP on ShARC is restricted to members of the unix group ``vasp``.
 To be added to this group, please contact ``research-it@sheffield.ac.uk`` and provide evidence of your eligibility to use VASP.
@@ -36,7 +40,7 @@ Users are encouraged to write their own batch submission scripts. The following 
     #$ -l rmem=2G
     #$ -pe mpi 4
 
-    module load apps/vasp/5.4.1.05Feb16/intel-17.0.0-openmpi-2.0.1
+    module load apps/vasp/5.4.4.pl2/intel-17.0.0-openmpi-2.0.1
     
     mpirun vasp_std
 
@@ -45,6 +49,11 @@ The script requests 4 cores using the Open MPI parallel environment ``mpi`` with
 
 Installation notes
 ------------------
+
+VASP 5.4.4.pl2 was installed using the
+:download:`install_vasp.sh </sharc/software/install_scripts/apps/vasp/5.4.4.pl2/intel-17.0.0-openmpi-2.0.1/install_vasp.sh>` script;
+the module file is 
+:download:`/usr/local/modulefiles/apps/vasp/5.4.4.pl2/intel-17.0.0-openmpi-2.0.1 </sharc/software/modulefiles/apps/vasp/5.4.4.pl2/intel-17.0.0-openmpi-2.0.1>`.
 
 VASP 5.4.1 (05Feb16) was installed using the
 :download:`install_vasp.sh </sharc/software/install_scripts/apps/vasp/5.4.1.05Feb16/intel-17.0.0-openmpi-2.0.1/install_vasp.sh>` script;
