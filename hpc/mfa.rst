@@ -16,14 +16,14 @@ SSH clients
 ^^^^^^^^^^^
 
 SSH has a built in functionality to reuse existing connections for new sessions.  You can enable this feature by adding the following config
-to your `~/.ssh/config` file ::
+to your `~/.ssh/config` file on your local PC::
 
   Host iceberg.shef.ac.uk
     ControlMaster auto
     ControlPath ~/.ssh/sockets/%r@%h-%p
     ControlPersist 600
 
-You will need to create the directory `~/.ssh/sockets` before running ssh.  The ``ControlPersist`` option allows you to specify how long (in seconds) your SSH connection
+You will need to create the directory ``~/.ssh/sockets`` before running ssh.  The ``ControlPersist`` option allows you to specify how long (in seconds) your SSH connection
 should perist after you have closed all your existing sessions.  During this time you can start a new session without reauthenticating.
 
 .. warning::
@@ -49,7 +49,7 @@ Other applications which use Putty for SSH connections can also re-use your exis
 
 .. note::
 
-    If you perform a large file stranfer over a shared session you may find that other sessions sharing the same connection become less responsive.
+    If you perform a large file transfer over a shared session you may find that other sessions sharing the same connection become less responsive.
 
 
 TMUX/screen
@@ -58,6 +58,8 @@ TMUX/screen
 `TMUX <https://github.com/tmux/tmux/wiki>`_ and `screen <https://www.gnu.org/software/screen/manual/screen.html>`_ are available on the HPC login nodes and 
 can be used to run multiple shell sessions within a single SSH session. 
 
+For examples of using TMUX to manage mutiple sessions see the following RSE blog post: `tmux: remote terminal management and multiplexing <https://rse.shef.ac.uk/blog/tmux-intro/>`_ 
+ 
 
 Transferring files
 ------------------
