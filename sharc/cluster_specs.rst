@@ -58,11 +58,11 @@ Two nodes are publicly available (not exclusive to research groups):
 * CPUs: 2 x Intel Xeon E5-2630 v3 (2.40GHz)
 * RAM: 64 GB (i.e. 4 GiB / core); 1866 MHz; DDR4
 * Local storage: 800 GiB SATA SSD
-* GPUs: 8 x `NVIDIA Tesla K80`_
+* GPUs: 8 x `NVIDIA Tesla K80`_ (4x dual-GPU accelerators)
 
-  * 24 GiB of GDDR5 memory (12 GiB per GPU; 96 GiB per node)
-  * Up to 2.91 Teraflops of double precision performance with NVIDIA GPU Boost
-  * Up to 8.74 Teraflops of single precision performance with NVIDIA GPU Boost
+  * 12 GiB of GDDR5 memory per GPU (24 GiB per accelerator; 96 GiB per node)
+  * Up to 1.46 Teraflops of double precision performance with NVIDIA GPU Boost per GPU (2.91 TFLOPS per accelerator)
+  * Up to 4.37 Teraflops of single precision performance with NVIDIA GPU Boost per GPU (8.74 TFLOPS per accelerator)
 
 Hardware-accellerated visualisation nodes
 -----------------------------------------
