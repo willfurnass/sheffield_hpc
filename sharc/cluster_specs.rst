@@ -60,7 +60,7 @@ Two nodes are publicly available (not exclusive to research groups):
 * Local storage: 800 GiB SATA SSD
 * GPUs: 8 x `NVIDIA Tesla K80`_
 
-  * 24 GiB of GDDR5 memory (12 GiB per GPU; 192 GiB per node)
+  * 24 GiB of GDDR5 memory (12 GiB per GPU; 96 GiB per node)
   * Up to 2.91 Teraflops of double precision performance with NVIDIA GPU Boost
   * Up to 8.74 Teraflops of single precision performance with NVIDIA GPU Boost
 
