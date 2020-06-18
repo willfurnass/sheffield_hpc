@@ -15,8 +15,11 @@ Bessemer is designed to support jobs requiring up to 40 cores per job - for larg
   software/index
   cluster_specs
   slurm
+  GPUComputingBessemer
   groupnodes/index
 
 * :ref:`bessemer-software`
 * :ref:`bessemer-specs`
 * :ref:`slurm_info`
+* :ref:`GPUComputing_bessemer`
+* :ref:`groupnodes_bessemer`
