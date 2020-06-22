@@ -22,7 +22,7 @@ To start using the GPU enabled nodes interactively, type:
 The ``--gres=gpu:1`` parameter determines how many GPUs you are requesting, just one in this case. 
 Currently, the maximum number of GPUs allowed per job is set to 4. 
 
-Interactive sessions provide you with 4 GB of CPU RAM by default which is significantly less than the amount of GPU RAM available. 
+Interactive sessions provide you with 2 GB of CPU RAM by default which is significantly less than the amount of GPU RAM available. 
 This can lead to issues where your session has insufficient CPU RAM to transfer data to and from the GPU. 
 As such, it is recommended that you request enough CPU memory to communicate properly with the GPU:
 
