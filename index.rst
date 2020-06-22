@@ -42,6 +42,7 @@ Take a look at the `Research Software Engineering <https://rse.shef.ac.uk/>`_ we
    iceberg/index
    sharc/index
    jade
+   jade2
    parallel/index
    troubleshooting
    glossary
