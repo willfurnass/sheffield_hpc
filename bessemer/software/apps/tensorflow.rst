@@ -91,7 +91,10 @@ Then GPU version of TensorFlow can be installed by the following ::
    # Install GPU version of TensorFlow
    pip install tensorflow-gpu
 
-If you wish to use an older version of ``tensorflow-gpu``, you can do so using ``pip install tensorflow-gpu==<version_number>``.
+To install a version of ``tensorflow-gpu`` other than the latest version
+you should specify a version number when running ``pip install`` i.e. ::
+
+   pip install tensorflow-gpu==<version_number>
 
 **Every Session Afterwards and in Your Job Scripts**
 
