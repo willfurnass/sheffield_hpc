@@ -23,7 +23,6 @@ Hardware
 * 63 Nodes of DGX MAX-Q, each with:
     * 8x Nvidia V100 32GB GPUs
     * 512GB RAM
-    * 70TB 
 * 70TB DDN AI400 NVMe storage
 * 1PB Lustre disk storage
 * EDR infiniband interconnect
