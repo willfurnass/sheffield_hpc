@@ -1,7 +1,7 @@
 .. _jade2:
 
 JADE II (Tier 2 GPU cluster)
-=========================
+============================
 
 The JADE II cluster is a 2020 renewal of the `Joint Academic Data Science Endeavour (JADE) <https://www.jade.ac.uk>`_ maintaing its status as the largest GPU facility in the UK supporting world-leading research in machine learning.
 
