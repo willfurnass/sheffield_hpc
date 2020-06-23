@@ -23,8 +23,8 @@ Hardware
 * 63 Nodes of DGX MAX-Q, each with:
     * 8x Nvidia V100 32GB GPUs
     * 512GB RAM
-* 70TB DDN AI400 NVMe storage for read intensive/streaming applications
-* 1PB Lustre spinning disk storage
+* 70TB `DDN AI400 <https://www.ddn.com/products/a3i-accelerated-any-scale-ai/>`__ shared storage (NVMe) for read intensive/streaming applications
+* 1PB Lustre shared storage (spinning disk)
 * EDR infiniband interconnect
 
 Software
