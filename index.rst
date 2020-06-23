@@ -39,9 +39,10 @@ Take a look at the `Research Software Engineering <https://rse.shef.ac.uk/>`_ we
 
    hpc/index
    bessemer/index
-   iceberg/index
    sharc/index
-   jade
+   iceberg/index
    parallel/index
    troubleshooting
    glossary
+   jade
+   bede
