@@ -45,4 +45,5 @@ Take a look at the `Research Software Engineering <https://rse.shef.ac.uk/>`_ we
    troubleshooting
    glossary
    jade
+   jade2
    bede
