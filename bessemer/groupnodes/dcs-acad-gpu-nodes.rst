@@ -65,13 +65,10 @@ Only certain users have access to a given Account.
 
 Each of the four academics (plus their collaborators) have ring-fenced, on-demand access to the resources of half a node.
 
-To submit a job via this route, you need to specify a *Partition* and *Account* when submitting a batch job or starting an interactive session:
+To submit a job via this route, you need to :ref:`specify a *Partition* and *Account* <slurm_access_priv_nodes>` when submitting a batch job or starting an interactive session:
 
 * Partition: ``dcs-acad``
 * Account: ``dcs-acadX`` where ``X`` is 1, 2, 3 or 4 and :ref:`varies between the academics <dcs_acad_gpu_node_accounts>`).
-
-.. todo::
-   Add link to central info on how to specify partitions/accounts
 
 Resource limits per job:
 
@@ -89,7 +86,7 @@ Resource limits per job:
 
 If any of the academics (or their collaborators) want to run a larger job that requires
 up to *all* the resources available in *one* of these two nodes
-then they can specify a different Partition when submitting a batch job or starting an interactive session:
+then they can :ref:`specify a different Partition <slurm_access_priv_nodes>` when submitting a batch job or starting an interactive session:
 
 * Partition: ``dcs-acad-pre``
 * Account: ``dcs-acadX`` where ``X`` is 1, 2, 3 or 4 and :ref:`varies between the academics <dcs_acad_gpu_node_accounts>`).
@@ -112,7 +109,8 @@ Resource limits per job:
 3. General pre-emptable access to both nodes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Users other than the academics and their collaborators can make use of idle time on these nodes and other nodes by submitting batch jobs and starting interactive sessions using:
+Users other than the academics and their collaborators can make use of idle time on these nodes and other nodes by
+submitting batch jobs and starting interactive sessions using a :ref:`particular partition <slurm_access_priv_nodes>`:
 
 * Partition: ``preempt``
 
