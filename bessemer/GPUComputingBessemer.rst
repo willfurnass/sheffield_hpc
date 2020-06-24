@@ -17,25 +17,26 @@ To start using the GPU enabled nodes interactively, type:
 
 .. code-block:: sh
 
-   srun --gres=gpu:1 --pty bash 
+   srun --nodes=1 --gpus-per-node=1 --pty bash
 
-The ``--gres=gpu:1`` parameter determines how many GPUs you are requesting
-(just one in this case). 
+The ``--gpus-per-node=1`` parameter determines how many GPUs you are requesting
+(just one in this case).
+Don't forget to specify ``--nodes=1`` too.
 Currently, the maximum number of GPUs allowed per job is set to 4,
-as Bessemer is configured to only permit single-node jobs 
+as Bessemer is configured to only permit single-node jobs
 and GPU nodes contain up to 4 GPUs.
-If you think you would benefit from using >4 GPUs in a single job 
+If you think you would benefit from using >4 GPUs in a single job
 then consider requesting access to :ref:`jade`.
 
 Interactive sessions provide you with 2 GB of CPU RAM by default,
 which is significantly less than the amount of GPU RAM available on a single GPU.
-This can lead to issues where your session has insufficient CPU RAM to transfer data to and from the GPU. 
+This can lead to issues where your session has insufficient CPU RAM to transfer data to and from the GPU.
 As such, it is recommended that you request enough CPU memory to communicate properly with the GPU:
 
 .. code-block:: sh
 
    # NB Each NVIDIA V100 GPU has 16GB of RAM
-   srun --gres=gpu:1 --mem=18G --pty bash 
+   srun --nodes=1 --gpus-per-node=1 --mem=18G --pty bash
 
 The above will give you 2GB more CPU RAM than the 16GB of GPU RAM available on the NVIDIA V100.
 
@@ -50,13 +51,13 @@ Submitting batch GPU jobs
   See :ref:`submitting jobs on slurm <slurm_job>` if you're not already familiar with the concept.
 
 To run batch jobs on GPU nodes, ensure your job submission script includes a request for GPUs,
-e.g. for a single GPU ``--gres=gpu:1``:
+e.g. for a single GPU ``--nodes=1 --gpus-per-node=1``:
 
 .. code-block:: sh
 
     #!/bin/bash
     #SBATCH --nodes=1
-    #SBATCH --gres=gpu:1
+    #SBATCH --gpus-per-node=1
 
     #Your code below...
 
@@ -72,9 +73,9 @@ There are two ways of requesting multiple CPUs in conjunction with GPU requests.
 
       #!/bin/bash
       #SBATCH --nodes=1
-      #SBATCH --gres=gpu:2 #Requests 2GPU
-      #SBATCH -c=2 #Requests 2 CPU
-  
+      #SBATCH --gpus-per-node=2  # Requests 2 GPUs
+      #SBATCH -c=2               # Requests 2 CPUs
+
   The script above requests 2 CPUs and 2 GPUs.
 
 * To request multiple CPUs based on the number of GPUs requested, the ``--cpus-per-gpu`` option is used:
@@ -83,8 +84,8 @@ There are two ways of requesting multiple CPUs in conjunction with GPU requests.
 
       #!/bin/bash
       #SBATCH --nodes=1
-      #SBATCH --gres=gpu:2 #Requests 2GPUs
-      #SBATCH --cpus-per-gpu=2 #Requests 2 CPUs per GPU requested
+      #SBATCH --gpus-per-node=2  # Requests 2 GPUs
+      #SBATCH --cpus-per-gpu=2   # Requests 2 CPUs per GPU requested
 
   The script above requests 2 GPUs and 2 CPUs **per** GPU for a total of 4 CPUs.
 

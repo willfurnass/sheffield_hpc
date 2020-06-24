@@ -43,7 +43,7 @@ First request an interactive session, e.g. with :ref:`slurm_interactive` or opti
    srun --mem=8G --pty bash
  
    # OR To request and 8GB RAM _and_ a GPU 
-   srun --mem=8G --gres=gpu:1 --pty bash
+   srun --mem=8G --nodes=1 --gpus-per-node=1 --pty bash
 
 Then PyTorch can be installed by the following ::
 
