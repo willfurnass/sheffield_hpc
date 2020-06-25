@@ -6,20 +6,21 @@ GPU nodes for specific Computer Science academics
 Four academics in the `Department of Computer Science <https://www.sheffield.ac.uk/dcs>`__ (DCS)
 share two GPU nodes in :ref:`Bessemer <bessemer>`.
 
-
 .. _dcs_acad_gpu_node_accounts:
 
-+------------------+--------------------+
-| Academic         | SLURM Account name |
-+==================+====================+
-| `Loic Barrault`_ | ``dcs-acad1``      |
-+------------------+--------------------+
-| `Chenghua Lin`_  | ``dcs-acad2``      |
-+------------------+--------------------+
-| `Aditya Gilra`_  | ``dcs-acad3``      |
-+------------------+--------------------+
-| `Po Yang`_       | ``dcs-acad4``      |
-+------------------+--------------------+
+.. list-table::
+   :header-rows: 1
+
+   * - Academic
+     - Slurm Account name
+   * - `Loic Barrault`_
+     - ``dcs-acad1``
+   * - `Chenghua Lin`_
+     - ``dcs-acad2``
+   * - `Aditya Gilra`_
+     -  ``dcs-acad3``
+   * - `Po Yang`_
+     - ``dcs-acad3``
 
 .. _dcs_acad_gpu_nodes_hw:
 
@@ -28,19 +29,21 @@ Hardware specifications
 
 ``bessemer-node041`` and ``bessemer-node042`` each have:
 
-+---------------+------------------------------------------------------------------------------+
-| Processors    | 2x Intel Xeon Gold 6138 (2.00GHz; 40 cores per CPU)                          |
-+---------------+------------------------------------------------------------------------------+
-| RAM           | 192GB (DDR4 @ 2666 MHz)                                                      |
-+---------------+------------------------------------------------------------------------------+
-| NUMA nodes    | 2x                                                                           |
-+---------------+------------------------------------------------------------------------------+
-| GPUS          | 4x NVIDIA Tesla V100 SXM2 (16GB RAM each; NVLINK interconnects between GPUs) |
-+---------------+------------------------------------------------------------------------------+
-| Networking    | 25 Gbps Ethernet                                                             |
-+---------------+------------------------------------------------------------------------------+
-| Local storage | 140 GB of temporary storage under ``/scratch`` (2x SSD RAID1)                |
-+---------------+------------------------------------------------------------------------------+
+.. list-table::
+   :header-rows: 0
+
+   * - Processors
+     - 2x Intel Xeon Gold 6138 (2.00GHz; 40 cores per CPU)
+   * - RAM
+     - 192GB (DDR4 @ 2666 MHz)
+   * - NUMA nodes
+     - 2x
+   * - GPUS
+     - 4x NVIDIA Tesla V100 SXM2 (16GB RAM each; NVLINK interconnects between GPUs)
+   * - Networking
+     - 25 Gbps Ethernet
+   * - Local storage
+     - 140 GB of temporary storage under ``/scratch`` (2x SSD RAID1)
 
 Requesting access
 -----------------
@@ -54,7 +57,7 @@ via `this web interface <https://www.sheffield.ac.uk/storage/groups/>`__.
 Using the nodes
 ---------------
 
-There are three ways to access these nodes.
+There are several ways to access these nodes.
 The type of access granted for a job depends on which SLURM *Account* and *Partition* are requested at job submission time.
 Only certain users have access to a given Account.
 
@@ -106,18 +109,18 @@ Resource limits per job:
   i.e. multi-node jobs are not permitted.
 * Same default and maximum run-time (:ref:`as above <dcs_acad_gpu_nodes_non_prempt_access>`).
 
-3. General pre-emptable access to both nodes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Users other than the academics and their collaborators can make use of idle time on these nodes and other nodes by
-submitting batch jobs and starting interactive sessions using a :ref:`particular partition <slurm_access_priv_nodes>`:
-
-* Partition: ``preempt``
-
-These jobs can be pre-empted by jobs submitted to the ``dcs-acad-pre`` and ``dcs-acad`` partitions.
-
 .. todo::
-   Link to central info on Bessemer's preempt partition to avoid duplicating info on many pages.
+
+   Re-add the following after setting it up:
+
+   3. General pre-emptable access to both nodes
+
+   Users other than the academics and their collaborators can make use of idle time on these nodes and other nodes by
+   submitting batch jobs and starting interactive sessions using a :ref:`particular partition <slurm_access_priv_nodes>`:
+
+   * Partition: ``preempt``
+
+   These jobs can be pre-empted by jobs submitted to the ``dcs-acad-pre`` and ``dcs-acad`` partitions.
 
 
 .. _Loic Barrault: https://www.sheffield.ac.uk/dcs/people/academic/loic-barrault
