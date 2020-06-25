@@ -18,11 +18,10 @@ You need to first request one or more GPUs within an
 
 At present public GPUs are only available in batch jobs. 
 To request say three unspecified GPUs for a batch job 
-you would include the following in the header of your submission script:
+you would include *both* the following in the header of your submission script: ::
 
-.. code-block:: sh
-
-   #SBATCH --gres=gpu:3
+   #SBATCH --nodes=1
+   #SBATCH --gpus-per-node=3
 
 .. .. note:: See :ref:`GPUComputing_bessemer` for more information on how to request a GPU-enabled node for an interactive session or job submission. 
 
@@ -45,9 +44,7 @@ To load *just* CUDA 10.0: ::
 
     module load CUDA/10.0.130
 
-Confirm which version of CUDA you are using via ``nvcc --version`` e.g.: 
-
-.. code-block:: console
+Confirm which version of CUDA you are using via ``nvcc --version`` e.g.: ::
 
    $ nvcc --version
    nvcc: NVIDIA (R) Cuda compiler driver
@@ -58,9 +55,7 @@ Confirm which version of CUDA you are using via ``nvcc --version`` e.g.:
 Compiling a simple CUDA program
 -------------------------------
 
-An example of the use of ``nvcc`` (the CUDA compiler)
-
-.. code-block:: sh
+An example of the use of ``nvcc`` (the CUDA compiler): ::
 
    nvcc filename.cu
 
@@ -83,11 +78,11 @@ In this demonstration, we create a batch job that
 .. code-block:: sh
 
    #!/bin/bash
-   #SBATCH --gres=gpu:2              # Number of GPUs (per node)
+   #SBATCH --nodes=1
+   #SBATCH --gpus-per-node=2     # Number of GPUs (per node)
    #SBATCH --mem=8G
-   #SBATCH --time=0-00:05            # time (DD-HH:MM)
+   #SBATCH --time=0-00:05        # time (DD-HH:MM)
    #SBATCH --job-name=gputest
-   #SBATCH --ntasks=1
    #SBATCH --partition=gpu
    
    module load fosscuda/2019a  # provides CUDA 10.1

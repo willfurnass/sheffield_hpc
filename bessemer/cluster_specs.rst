@@ -85,9 +85,3 @@ Non-worker nodes
 .. _Lustre:  http://lustre.org/
 .. _NVIDIA Tesla V100: https://www.nvidia.com/en-gb/data-center/tesla-v100/
 .. _Skylake: https://en.wikipedia.org/wiki/Skylake_(microarchitecture)
-
-.. nnodes ``qhost | grep -c 'sharc-'``
-.. ncores ``qhost | awk 'FNR > 3 {sum += $3} END {print sum}'``
-.. totmem ``for node in $(qhost | awk '/sharc-/ {print $1}'); do qconf -se $node | egrep -o 'h_vmem=[0-9]*[^MGT]'; done | awk -F '=' '{sum += $2} END {print sum}'``
-.. ngpus ``for node in $(qhost -F gpu | grep 'gpu=' -B1 | awk '/sharc-/ {print $1}'); do qconf -se $node | egrep -o 'gpu=[0-9]*'; done | awk -F '=' '{sum += $2} END {print sum}'``
-.. lustresize ``df -h --output=size /mnt/fastdata/ | tail -1``

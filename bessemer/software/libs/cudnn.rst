@@ -21,7 +21,7 @@ Usage
 
 **Only GPU-enabled nodes are able to run the library.**
 
-.. See** :ref:`GPUComputing_sharc` **for more information on how to request a GPU-enabled node for an interactive session or job submission.**
+.. See** :ref:`GPUComputing_bessemer` **for more information on how to request a GPU-enabled node for an interactive session or job submission.**
 
 Load the appropriate cuDNN version
 (and implicitly load a :ref:`specified CUDA version <cuda_bessemer>`)

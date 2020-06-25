@@ -9,6 +9,8 @@ Slurm is a highly scalable cluster management and job scheduling system, used in
 * it provides a framework for starting, executing, and monitoring work on the set of allocated nodes,
 * it arbitrates contention for resources by managing a queue of pending work.
 
+.. _slurm_interactive:
+
 Request an Interactive Shell
 ----------------------------
 
@@ -31,6 +33,9 @@ You can request additional memory (parameter "nn" represents the amount of memor
 .. code-block:: sh
 
     srun --mem="NN"G --pty bash -i
+
+
+.. _slurm_job:
 
 Submitting Non-Interactive Jobs
 -------------------------------
