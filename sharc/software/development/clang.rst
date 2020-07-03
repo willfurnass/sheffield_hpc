@@ -13,7 +13,7 @@ Clang can be loaded with: ::
     module load dev/clang/11.0.0/gcc-8.2
 
 
-NB Clang requires the :ref:`Cmake build tool <cmake_sharc>` version 3.17.1, and the :ref:`GCC compiler <gcc_sharc>`version 8.2
+NB Clang requires the :ref:`Cmake build tool <_cmake_sharc>` version 3.17.1, and the :ref:`GCC compiler <gcc_sharc>`version 8.2
 
 
 Detailed Documentation
