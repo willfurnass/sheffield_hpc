@@ -1,0 +1,31 @@
+#%Module1.0#####################################################################
+##
+## clang 11.0.0
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+
+set     app clang
+set     version 11.0.0
+set     gcc 8.2
+module-whatis   "loads the necessary `$app-$version' library paths"
+
+module load dev/cmake/3.17.1/gcc-8.2
+
+set BASEPATH /usr/local/packages/dev/$app/$version/gcc-$gcc
+
+prepend-path PATH 		$BASEPATH/bin
+prepend-path LD_LIBRARY_PATH	$BASEPATH/lib
+prepend-path LIBRARY_PATH    $BASEPATH/lib
+prepend-path MANPATH		$BASEPATH/share/man
+
+#prepend-path --delim " " CPPFLAGS " -I$BASEPATH/include"
+#prepend-path --delim " " CFLAGS   " -I$BASEPATH/include"
+#prepend-path --delim " " LDFLAGS  " -L$BASEPATH/lib -L$BASEPATH/lib64"
+
+#setenv  CC      gcc
+#setenv  CXX     g++
+#setenv  F77     gfortran
+#setenv  F90     gfortran
+#setenv  F95     gfortran
+#setenv  FC      gfortran
