@@ -6,7 +6,7 @@ VASP
    :Version: 5.4.1 (05Feb16), 5.4.4 (pl2)
    :Dependencies: Fortran and C compilers, an implementation of MPI, numerical libraries BLAS, LAPACK, ScaLAPACK, FFTW. Modules for Intel compiler 17.0.0, Open MPI 2.0.1 and Intel MKL 2017.0 loaded.
    :URL: https://www.vasp.at/
-   :Documentation: https://www.vasp.at/index.php/documentation
+   :Documentation: https://www.vasp.at/documentation/
 
 
 The Vienna Ab initio Simulation Package (VASP) is a computer program for atomic scale materials modelling, e.g. electronic structure calculations and quantum-mechanical molecular dynamics, from first principles.
