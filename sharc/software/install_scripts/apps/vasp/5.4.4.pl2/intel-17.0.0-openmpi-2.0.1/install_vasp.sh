@@ -74,6 +74,8 @@ cd vasp.5.4.4.pl2
 cp arch/makefile.include.linux_intel makefile.include
 # change intel mpiifort to openmpi mpifort
 sed -i -e s/mpiifort/mpifort/ makefile.include
+#info from Anthony Meijer
+sed -i -e s/-lmkl_blacs_intelmpi_lp64/-lmkl_blacs_openmpi_lp64/ makefile.include
 make all >& make.log
 # check for executable files in ./bin - there should be 3
 ls -lrt bin | awk '{print $0}END{print NR " files found"}'
