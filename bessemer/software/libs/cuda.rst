@@ -29,11 +29,15 @@ You then need to ensure a version of the CUDA library (and compiler) is loaded.
 As with much software installed on the cluster, 
 versions of CUDA are activated via the :ref:`'module load' command<env_modules>`.
 
+To load *just* CUDA 10.2 plus the :ref:`GCC <gcc_bessemer>` 8.3 compiler: ::
+
+   module load CUDA/10.2.89-GCC-8.3.0
+
 To load CUDA 10.1 plus 
 the :ref:`GCC <gcc_bessemer>` 8.x compiler, OpenMPI, OpenBLAS, SCALAPACK and FFTW: ::
 
-   module load fosscuda/2019b  
-   module load fosscuda/2019a  
+   module load fosscuda/2019b  # includes GCC 8.3
+   module load fosscuda/2019a   # includes GCC 8.2 
 
 To load *just* CUDA and :ref:`GCC <gcc_bessemer>` 8.x: ::
 
