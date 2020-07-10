@@ -17,7 +17,7 @@ To start using the GPU enabled nodes interactively, type:
 
 .. code-block:: sh
 
-   srun --nodes=1 --gpus-per-node=1 --pty bash
+   srun --partition=gpu --qos=gpu --nodes=1 --gpus-per-node=1 --pty bash
 
 The ``--gpus-per-node=1`` parameter determines how many GPUs you are requesting
 (just one in this case).
@@ -36,7 +36,7 @@ As such, it is recommended that you request enough CPU memory to communicate pro
 .. code-block:: sh
 
    # NB Each NVIDIA V100 GPU has 16GB of RAM
-   srun --nodes=1 --gpus-per-node=1 --mem=18G --pty bash
+   srun --partition=gpu --qos=gpu --nodes=1 --gpus-per-node=1 --mem=18G --pty bash
 
 The above will give you 2GB more CPU RAM than the 16GB of GPU RAM available on the NVIDIA V100.
 
@@ -56,6 +56,8 @@ e.g. for a single GPU ``--nodes=1 --gpus-per-node=1``:
 .. code-block:: sh
 
     #!/bin/bash
+    #SBATCH --partition=gpu
+    #SBATCH --qos=gpu
     #SBATCH --nodes=1
     #SBATCH --gpus-per-node=1
 
@@ -72,6 +74,8 @@ There are two ways of requesting multiple CPUs in conjunction with GPU requests.
   .. code-block:: sh
 
       #!/bin/bash
+      #SBATCH --partition=gpu
+      #SBATCH --qos=gpu
       #SBATCH --nodes=1
       #SBATCH --gpus-per-node=2  # Requests 2 GPUs
       #SBATCH -c=2               # Requests 2 CPUs
@@ -83,6 +87,8 @@ There are two ways of requesting multiple CPUs in conjunction with GPU requests.
   .. code-block:: sh
 
       #!/bin/bash
+      #SBATCH --partition=gpu
+      #SBATCH --qos=gpu
       #SBATCH --nodes=1
       #SBATCH --gpus-per-node=2  # Requests 2 GPUs
       #SBATCH --cpus-per-gpu=2   # Requests 2 CPUs per GPU requested
