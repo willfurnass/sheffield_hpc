@@ -41,16 +41,16 @@ First request an interactive session, e.g. with :ref:`slurm_interactive` or opti
 
    # To request 8GB of RAM for the session
    srun --mem=8G --pty bash
- 
-   # OR To request and 8GB RAM _and_ a GPU 
-   srun --mem=8G --nodes=1 --gpus-per-node=1 --pty bash
+
+   # OR To request and 8GB RAM _and_ a GPU
+   srun --partition=gpu --qos=gpu --mem=8G --nodes=1 --gpus-per-node=1 --pty bash
 
 Then PyTorch can be installed by the following ::
 
    # Load the conda module
-   module load Anaconda3/5.3.0 
+   module load Anaconda3/5.3.0
 
-   # (Only needed if we're using GPU) Load a cuDNN module 
+   # (Only needed if we're using GPU) Load a cuDNN module
    # (which in this case implicitly loads CUDA 10.1)
    module load cuDNN/7.4.2.24-gcccuda-2019a
 
@@ -71,7 +71,7 @@ the modules must be loaded and conda must be activated again.
 Use the following command to activate the Conda environment with PyTorch installed: ::
 
    # Load the conda module
-   module load Anaconda3/5.3.0 
+   module load Anaconda3/5.3.0
    # *Only needed if we're using GPU* Load the CUDA and cuDNN module
    module load cuDNN/7.4.2.24-gcccuda-2019a
    # Activate the 'pytorch' environment

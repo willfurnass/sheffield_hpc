@@ -3,30 +3,32 @@
 CUDA
 ====
 
-CUDA (*Compute Unified Device Architecture*) 
+CUDA (*Compute Unified Device Architecture*)
 is a parallel computing platform and application programming interface (API) model
 created by NVIDIA.
 It allows software developers to use a CUDA-enabled graphics processing unit (GPU)
-for general purpose processing, 
+for general purpose processing,
 an approach known as *General Purpose GPU* (GPGPU) computing.
 
 Usage
 -----
 
 You need to first request one or more GPUs within an
-:ref:`interactive session or batch job on a worker node <submit-queue>`. 
+:ref:`interactive session or batch job on a worker node <submit-queue>`.
 
-At present public GPUs are only available in batch jobs. 
-To request say three unspecified GPUs for a batch job 
-you would include *both* the following in the header of your submission script: ::
+At present public GPUs are only available in batch jobs.
+To request say three unspecified public GPUs for a batch job
+you would include *all* the following in the header of your submission script: ::
 
+   #SBATCH --partition=gpu
+   #SBATCH --qos=gpu
    #SBATCH --nodes=1
    #SBATCH --gpus-per-node=3
 
-.. .. note:: See :ref:`GPUComputing_bessemer` for more information on how to request a GPU-enabled node for an interactive session or job submission. 
+.. .. note:: See :ref:`GPUComputing_bessemer` for more information on how to request a GPU-enabled node for an interactive session or job submission.
 
 You then need to ensure a version of the CUDA library (and compiler) is loaded.
-As with much software installed on the cluster, 
+As with much software installed on the cluster,
 versions of CUDA are activated via the :ref:`'module load' command<env_modules>`.
 
 To load *just* CUDA 10.2 plus the :ref:`GCC <gcc_bessemer>` 8.3 compiler: ::
@@ -39,7 +41,7 @@ the :ref:`GCC <gcc_bessemer>` 8.x compiler, OpenMPI, OpenBLAS, SCALAPACK and FFT
    module load fosscuda/2019b  # includes GCC 8.3
    module load fosscuda/2019a   # includes GCC 8.2 
 
-To load *just* CUDA and :ref:`GCC <gcc_bessemer>` 8.x: ::
+To load *just* CUDA 10.1 and :ref:`GCC <gcc_bessemer>` 8.x: ::
 
    module load CUDA/10.1.243-GCC-8.3.0  # subset of the fosscuda-2019b toolchain
    module load CUDA/10.1.105-GCC-8.2.0-2.31.1  # subset of the fosscuda-2019a toolchain
@@ -72,7 +74,7 @@ You do not need to be using a GPU-enabled node
 to compile the sample programs
 but you do need at least one GPU to run them.
 
-In this demonstration, we create a batch job that 
+In this demonstration, we create a batch job that
 
 #. Requests two GPUs, a single CPU core and 8GB RAM
 #. Loads a module to provide CUDA 10.1
@@ -82,22 +84,23 @@ In this demonstration, we create a batch job that
 .. code-block:: sh
 
    #!/bin/bash
+   #SBATCH --partition=gpu
+   #SBATCH --qos=gpu
    #SBATCH --nodes=1
    #SBATCH --gpus-per-node=2     # Number of GPUs (per node)
    #SBATCH --mem=8G
    #SBATCH --time=0-00:05        # time (DD-HH:MM)
    #SBATCH --job-name=gputest
-   #SBATCH --partition=gpu
-   
+
    module load fosscuda/2019a  # provides CUDA 10.1
-   
+
    mkdir -p $HOME/examples
    cd $HOME/examples
    if ! [[ -f cuda-samples/.git ]]; then
        git clone https://github.com/NVIDIA/cuda-samples.git cuda-samples
-   fi 
+   fi
    cd cuda-samples
-   git checkout tags/10.1.1  # use sample programs compatible with CUDA 10.1 
+   git checkout tags/10.1.1  # use sample programs compatible with CUDA 10.1
    cd Samples/matrixMul
    make
    ./matrixMul
@@ -105,28 +108,28 @@ In this demonstration, we create a batch job that
 GPU Code Generation Options
 ---------------------------
 
-To achieve the best possible performance whilst being portable, 
+To achieve the best possible performance whilst being portable,
 GPU code should be generated for the architecture(s) it will be executed upon.
 
-This is controlled by specifying ``-gencode`` arguments to NVCC which, 
-unlike the ``-arch`` and ``-code`` arguments, 
+This is controlled by specifying ``-gencode`` arguments to NVCC which,
+unlike the ``-arch`` and ``-code`` arguments,
 allows for 'fatbinary' executables that are optimised for multiple device architectures.
 
-Each ``-gencode`` argument requires two values, 
-the *virtual architecture* and *real architecture*, 
+Each ``-gencode`` argument requires two values,
+the *virtual architecture* and *real architecture*,
 for use in NVCC's `two-stage compilation <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#virtual-architectures>`_.
 I.e. ``-gencode=arch=compute_70,code=sm_70`` specifies a virtual architecture of ``compute_70`` and real architecture ``sm_70``.
 
-To support future hardware of higher compute capability, 
-an additional ``-gencode`` argument can be used to enable Just in Time (JIT) compilation of embedded intermediate PTX code. 
-This argument should use the highest virtual architecture specified in other gencode arguments 
+To support future hardware of higher compute capability,
+an additional ``-gencode`` argument can be used to enable Just in Time (JIT) compilation of embedded intermediate PTX code.
+This argument should use the highest virtual architecture specified in other gencode arguments
 for both the ``arch`` and ``code``
 i.e. ``-gencode=arch=compute_70,code=compute_70``.
 
 The minimum specified virtual architecture must be less than or equal to the `Compute Capability <https://developer.nvidia.com/cuda-gpus>`_ of the GPU used to execute the code.
 
 Public and private GPU nodes in Bessemer contain Tesla V100 GPUs, which are compute capability 70.
-To build a CUDA application which targets just the public GPUS nodes, use the following ``-gencode`` arguments: 
+To build a CUDA application which targets just the public GPUS nodes, use the following ``-gencode`` arguments:
 
 .. code-block:: sh
 
@@ -134,7 +137,7 @@ To build a CUDA application which targets just the public GPUS nodes, use the fo
       -gencode=arch=compute_70,code=sm_70 \
       -gencode=arch=compute_70,code=compute_70 \
 
-Further details of these compiler flags can be found in the `NVCC Documentation <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#options-for-steering-gpu-code-generation>`_, 
+Further details of these compiler flags can be found in the `NVCC Documentation <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#options-for-steering-gpu-code-generation>`_,
 along with details of the supported `virtual architectures <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#virtual-architecture-feature-list>`_ and `real architectures <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-feature-list>`_.
 
 Documentation
@@ -146,18 +149,18 @@ Documentation
 Profiling using nvprof
 ----------------------
 
-Note that ``nvprof``, NVIDIA's CUDA profiler, 
+Note that ``nvprof``, NVIDIA's CUDA profiler,
 cannot write output to the ``/fastdata`` filesystem.
 
-This is because the profiler's output is a `SQLite <https://www.sqlite.org/>`__ database 
+This is because the profiler's output is a `SQLite <https://www.sqlite.org/>`__ database
 and SQLite requires a filesystem that supports file locking
-but file locking is not enabled on the (`Lustre <http://lustre.org/>`__) filesystem mounted on ``/fastdata`` 
-(for performance reasons). 
+but file locking is not enabled on the (`Lustre <http://lustre.org/>`__) filesystem mounted on ``/fastdata``
+(for performance reasons).
 
 CUDA Training
 -------------
 
-`GPUComputing@sheffield <http://gpucomputing.shef.ac.uk>`_ provides 
+`GPUComputing@sheffield <http://gpucomputing.shef.ac.uk>`_ provides
 a self-paced `introduction to CUDA <http://gpucomputing.shef.ac.uk/education/cuda/>`_ training course.
 
 Determining the NVIDIA Driver version
@@ -172,7 +175,7 @@ Run the command:
 Example output is: ::
 
    NVRM version: NVIDIA UNIX x86_64 Kernel Module  418.67  Sat Apr  6 03:07:24 CDT 2019
-   GCC version:  gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC) 
+   GCC version:  gcc version 4.8.5 20150623 (Red Hat 4.8.5-36) (GCC)
 
 Installation notes
 ------------------
@@ -194,14 +197,14 @@ CUDA 10.1
 
 Installed as a dependency of the ``fosscuda-2019a`` easyconfig.
 
-Inter-GPU performance was tested on all 4x V100 devices in ``bessemer-node026`` (no NVLINK) 
+Inter-GPU performance was tested on all 4x V100 devices in ``bessemer-node026`` (no NVLINK)
 using `nccl-tests <https://github.com/NVIDIA/nccl-tests>`__ and ``NCCL/2.4.2-gcccuda-2019a``.
 ``nccl-tests`` was run using ``./build/all_reduce_perf -b 8 -e 128M -f 2 -g 4``
 
 Results: ::
 
 
-   # nThread 1 nGpus 4 minBytes 8 maxBytes 134217728 step: 2(factor) warmup iters: 5 iters: 20 validation: 1 
+   # nThread 1 nGpus 4 minBytes 8 maxBytes 134217728 step: 2(factor) warmup iters: 5 iters: 20 validation: 1
    #
    # Using devices
    #   Rank  0 Pid  31823 on bessemer-node026 device  0 [0x3d] Tesla V100-PCIE-32GB
@@ -209,9 +212,9 @@ Results: ::
    #   Rank  2 Pid  31823 on bessemer-node026 device  2 [0x3f] Tesla V100-PCIE-32GB
    #   Rank  3 Pid  31823 on bessemer-node026 device  3 [0x40] Tesla V100-PCIE-32GB
    #
-   #                                                     out-of-place                       in-place          
+   #                                                     out-of-place                       in-place
    #       size         count    type   redop     time   algbw   busbw  error     time   algbw   busbw  error
-   #        (B)    (elements)                     (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+   #        (B)    (elements)                     (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)
               8             2   float     sum    16.36    0.00    0.00  1e-07    15.99    0.00    0.00  0e+00
              16             4   float     sum    183.5    0.00    0.00  3e-08    16.04    0.00    0.00  3e-08
              32             8   float     sum    15.99    0.00    0.00  3e-08    15.93    0.00    0.00  3e-08
@@ -238,7 +241,7 @@ Results: ::
        67108864      16777216   float     sum   9013.1    7.45   11.17  2e-07   8998.9    7.46   11.19  2e-07
       134217728      33554432   float     sum    18003    7.46   11.18  2e-07    17974    7.47   11.20  2e-07
    # Out of bounds values : 0 OK
-   # Avg bus bandwidth    : 4.42606 
+   # Avg bus bandwidth    : 4.42606
    #
 
 CUDA 10.0

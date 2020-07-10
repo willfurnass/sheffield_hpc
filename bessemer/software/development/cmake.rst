@@ -12,12 +12,10 @@ CMake can be loaded with one of: ::
 
    module load CMake/3.15.3-GCCcore-8.3.0  # compatible with foss-2019b toolchain
    module load CMake/3.13.3-GCCcore-8.2.0  # compatible with foss-2019a toolchain
-   module load CMake/3.11.4-GCCcore-7.3.0  # compatible with foss-2018b toolchain
    module load CMake/3.12.1-GCCcore-7.3.0  # compatible with foss-2018b toolchain
-   module load CMake/3.9.5-GCCcore-6.4.0
 
-CMake has a run-time dependency on `libstdc++` so the cmake module files 
-depend on and load particular versions of the :ref:`GCC compiler <gcc_bessemer>`,
+CMake has a run-time dependency on ``libstdc++`` so
+the cmake module files depend on and load particular versions of the :ref:`GCC compiler <gcc_bessemer>`,
 plus versions of the ncurses, zlib, bzip2 and cURL libraries.
 
 Usage of CMake often involves: 
