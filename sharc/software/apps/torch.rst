@@ -1,13 +1,24 @@
 .. _torch_sharc:
 
-Torch
-=====
+Torch (Lua)
+===========
 
-.. sidebar:: Torch
+.. sidebar:: Torch (Lua)
 
    :URL: http://torch.ch/
 
-Torch is a scientific computing framework with wide support for machine learning algorithms that puts GPUs first. It is easy to use and efficient, thanks to an easy and fast scripting language, LuaJIT, and an underlying C/CUDA implementation.
+Torch is a scientific computing framework with wide support for machine learning algorithms that puts GPUs first. 
+It is a wrapper written in the Lua language around the THNN library. 
+Torch is easy to use and efficient, thanks to an easy and fast scripting language, LuaJIT, and an underlying C/CUDA implementation.
+
+.. note::
+
+   This version of Torch should not be confused with PyTorch, which is a Python wrapper around the THNN library.
+
+   PyTorch provides similar functionality but is more actively maintained.
+   We recommend most people use PyTorch instead of this version of Torch.
+
+   See also the documentation for :ref:`PyTorch on ShARC <pytorch_sharc>`.
 
 About Torch on ShARC
 --------------------
