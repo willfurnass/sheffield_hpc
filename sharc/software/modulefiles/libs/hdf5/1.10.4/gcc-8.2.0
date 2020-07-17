@@ -1,0 +1,30 @@
+#%Module1.0#####################################################################
+##
+## HDF5 library module file
+##
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "Adds environment variables to allow access to the gcc version of HDF5 1.10.4"
+}
+
+module load dev/gcc/8.2
+module load mpi/openmpi/4.0.1/gcc-8.2
+
+set version 1.10.4
+
+module-whatis   "Adds environment variables to allow access to the gcc version of HDF5 1.10.4"
+
+set HDF5_DIR  /usr/local/packages/libs/hdf5/$version/gcc-8.2.0
+prepend-path           PATH                $HDF5_DIR/bin
+prepend-path           LD_LIBRARY_PATH     $HDF5_DIR/lib
+prepend-path           LIBRARY_PATH        $HDF5_DIR/lib
+prepend-path           LD_RUN_PATH         $HDF5_DIR/lib
+prepend-path           CPLUS_INCLUDE_FILE  $HDF5_DIR/include
+prepend-path           CPATH               $HDF5_DIR/include
