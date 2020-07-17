@@ -1,4 +1,4 @@
-.. _dnf5_sharc:
+.. _hdf5_sharc:
 
 High-performance data management and storage suite (HDF5)
 =========================================================
