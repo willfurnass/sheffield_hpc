@@ -89,19 +89,22 @@ Every time you use a new session or within your job scripts, the modules must be
 Testing your Tensorflow installation
 ------------------------------------
 
-You can test that Tensorflow is running on the GPU with the following python code ::
+You can test that Tensorflow is running on the GPU with the following Python code
+(requires TensorFlow >= 2): ::
 
-  import tensorflow as tf
-  # Creates a graph
-  #If using CPU, replace /device:GPU:0 with /cpu:0
-  with tf.device('/device:GPU:0'):
-    a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
-    b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
-    c = tf.matmul(a, b)
-  # Creates a session with log_device_placement set to True.
-  sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
-  # Runs the op.
-  print(sess.run(c))
+   import tensorflow as tf
+
+   tf.debugging.set_log_device_placement(True)
+
+   # Creates a graph
+   # (ensure tensors placed on the GPU)
+   with tf.device('/device:GPU:0'):
+       a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
+       b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
+       c = tf.matmul(a, b)
+
+   # Runs the op.
+   print(c)
 
 Which gives the following results ::
 
