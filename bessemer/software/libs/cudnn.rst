@@ -29,6 +29,9 @@ with one of the following commands:
 
 .. code-block:: bash
 
+   module load cuDNN/7.6.4.38-gcccuda-2019b
+   module load cuDNN/7.6.4.38-gcccuda-2019a
+   module load cuDNN/7.6.4.38-CUDA-10.0.130
    module load cuDNN/7.4.2.24-gcccuda-2019a
    module load cuDNN/7.4.2.24-CUDA-10.0.130
 
@@ -37,144 +40,20 @@ Installation notes
 
 This section is primarily for administrators of the system.
 
-The cuDNN library is only available to download through the `developer portal <https://developer.nvidia.com/cudnn>`_.
-Installation ``.tgz`` files must be located in ``/usr/local/media/eb-srcs/c/cuDNN/`` before cuDNN can be installed via EasyBuild.
+All cuDNN installs were installed using eponymous EasyBuild easyconfigs. 
 
-cuDNN/7.4.2.24-gcccuda-2019a
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+cuDNN installation ``.tgz`` files must be located in ``/usr/local/media/eb-srcs/c/cuDNN/`` before cuDNN can be installed via EasyBuild.
+The cuDNN library is *only* available to download through the `NVIDIA Developer portal <https://developer.nvidia.com/cudnn>`_.
 
-Installed using Easybuild-provided ``cuDNN-7.4.2.24-gcccuda-2019a`` easyconfig.
+cuDNN can be tested by logging in to the Developer Portal and downloading the *cuDNN Code Samples and User Guide for Ubuntu18.04 (Deb)* for the versions of CUDA and cuDNN you want to test.
+You can then extract some sample programs from this file using something like the following: ::
 
-Testing: ran the ``mnistCUDNN`` example (see *Examples* above) with CUDA 10.1 (``foss-2019a`` toolchain) on a V100 GPU; results: ::
+   pushd ${TMPDIR-tmp}
+   ar x path/to/libcudnn7-doc_7.6.4.38-1+cuda10.1_amd64.deb
+   tar -Jxf data.tar.xz
+   cd ./usr/src/cudnn_samples_v7/mnistCUDNN/
 
-    /usr/local/packages/staging/eb/CUDA/10.1.105-GCC-8.2.0-2.31.1/bin/nvcc -ccbin g++ -I/usr/local/packages/staging/eb/CUDA/10.1.105-GCC-8.2.0-2.31.1/include -IFreeImage/include  -m64    -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=sm_35 -gencode arch=compute_50,code=sm_50 -gencode arch=compute_53,code=sm_53 -gencode arch=compute_53,code=compute_53 -o fp16_dev.o -c fp16_dev.cu
-    g++ -I/usr/local/packages/staging/eb/CUDA/10.1.105-GCC-8.2.0-2.31.1/include -IFreeImage/include   -o fp16_emu.o -c fp16_emu.cpp
-    g++ -I/usr/local/packages/staging/eb/CUDA/10.1.105-GCC-8.2.0-2.31.1/include -IFreeImage/include   -o mnistCUDNN.o -c mnistCUDNN.cpp
-    /usr/local/packages/staging/eb/CUDA/10.1.105-GCC-8.2.0-2.31.1/bin/nvcc -ccbin g++   -m64      -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=sm_35 -gencode arch=compute_50,code=sm_50 -gencode arch=compute_53,code=sm_53 -gencode arch=compute_53,code=compute_53 -o mnistCUDNN fp16_dev.o fp16_emu.o mnistCUDNN.o -I/usr/local/packages/staging/eb/CUDA/10.1.105-GCC-8.2.0-2.31.1/include -IFreeImage/include  -LFreeImage/lib/linux/x86_64 -LFreeImage/lib/linux -lcudart -lcublas -lcudnn -lfreeimage -lstdc++ -lm
-    cudnnGetVersion() : 7402 , CUDNN_VERSION from cudnn.h : 7402 (7.4.2)
-    Host compiler version : GCC 8.2.0
-    There are 1 CUDA capable devices on your machine :
-    device 0 : sms 80  Capabilities 7.0, SmClock 1380.0 Mhz, MemSize (Mb) 32480, MemClock 877.0 Mhz, Ecc=1, boardGroupID=0
-    Using device 0
+Then build and run the ``mnistCUDNN`` sample program using: ::
 
-    Testing single precision
-    Loading image data/one_28x28.pgm
-    Performing forward propagation ...
-    Testing cudnnGetConvolutionForwardAlgorithm ...
-    Fastest algorithm is Algo 0
-    Testing cudnnFindConvolutionForwardAlgorithm ...
-    ^^^^ CUDNN_STATUS_SUCCESS for Algo 0: 0.016384 time requiring 0 memory
-    ^^^^ CUDNN_STATUS_SUCCESS for Algo 2: 0.047104 time requiring 57600 memory
-    ^^^^ CUDNN_STATUS_SUCCESS for Algo 1: 0.081920 time requiring 3464 memory
-    ^^^^ CUDNN_STATUS_SUCCESS for Algo 7: 0.084992 time requiring 2057744 memory
-    ^^^^ CUDNN_STATUS_SUCCESS for Algo 5: 0.117760 time requiring 203008 memory
-    Resulting weights from Softmax:
-    0.0000000 0.9999399 0.0000000 0.0000000 0.0000561 0.0000000 0.0000012 0.0000017 0.0000010 0.0000000 
-    Loading image data/three_28x28.pgm
-    Performing forward propagation ...
-    Resulting weights from Softmax:
-    0.0000000 0.0000000 0.0000000 0.9999288 0.0000000 0.0000711 0.0000000 0.0000000 0.0000000 0.0000000 
-    Loading image data/five_28x28.pgm
-    Performing forward propagation ...
-    Resulting weights from Softmax:
-    0.0000000 0.0000008 0.0000000 0.0000002 0.0000000 0.9999820 0.0000154 0.0000000 0.0000012 0.0000006 
-
-    Result of classification: 1 3 5
-
-    Test passed!
-
-    Testing half precision (math in single precision)
-    Loading image data/one_28x28.pgm
-    Performing forward propagation ...
-    Testing cudnnGetConvolutionForwardAlgorithm ...
-    Fastest algorithm is Algo 0
-    Testing cudnnFindConvolutionForwardAlgorithm ...
-    ^^^^ CUDNN_STATUS_SUCCESS for Algo 0: 0.016384 time requiring 0 memory
-    ^^^^ CUDNN_STATUS_SUCCESS for Algo 2: 0.044032 time requiring 28800 memory
-    ^^^^ CUDNN_STATUS_SUCCESS for Algo 1: 0.046080 time requiring 3464 memory
-    ^^^^ CUDNN_STATUS_SUCCESS for Algo 7: 0.055296 time requiring 2057744 memory
-    ^^^^ CUDNN_STATUS_SUCCESS for Algo 5: 0.068608 time requiring 203008 memory
-    Resulting weights from Softmax:
-    0.0000001 1.0000000 0.0000001 0.0000000 0.0000563 0.0000001 0.0000012 0.0000017 0.0000010 0.0000001 
-    Loading image data/three_28x28.pgm
-    Performing forward propagation ...
-    Resulting weights from Softmax:
-    0.0000000 0.0000000 0.0000000 1.0000000 0.0000000 0.0000714 0.0000000 0.0000000 0.0000000 0.0000000 
-    Loading image data/five_28x28.pgm
-    Performing forward propagation ...
-    Resulting weights from Softmax:
-    0.0000000 0.0000008 0.0000000 0.0000002 0.0000000 1.0000000 0.0000154 0.0000000 0.0000012 0.0000006 
-
-    Result of classification: 1 3 5
-
-    Test passed!
-
-7.4.2.24-CUDA-10.0.130
-^^^^^^^^^^^^^^^^^^^^^^
-
-Installed using Easybuild-provided ``cuDNN-7.4.2.24-CUDA-10.0.130`` easyconfig.
-
-Testing: ran the ``mnistCUDNN`` example (see *Examples* above) with CUDA 10.0 on a V100 GPU; results: ::
-
-    /usr/local/packages/staging/eb/CUDA/10.0.130/bin/nvcc -ccbin g++ -I/usr/local/packages/staging/eb/CUDA/10.0.130/include -IFreeImage/include  -m64    -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=sm_35 -gencode arch=compute_50,code=sm_50 -gencode arch=compute_53,code=sm_53 -gencode arch=compute_53,code=compute_53 -o fp16_dev.o -c fp16_dev.cu
-    g++ -I/usr/local/packages/staging/eb/CUDA/10.0.130/include -IFreeImage/include   -o fp16_emu.o -c fp16_emu.cpp
-    g++ -I/usr/local/packages/staging/eb/CUDA/10.0.130/include -IFreeImage/include   -o mnistCUDNN.o -c mnistCUDNN.cpp
-    /usr/local/packages/staging/eb/CUDA/10.0.130/bin/nvcc -ccbin g++   -m64      -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=sm_35 -gencode arch=compute_50,code=sm_50 -gencode arch=compute_53,code=sm_53 -gencode arch=compute_53,code=compute_53 -o mnistCUDNN fp16_dev.o fp16_emu.o mnistCUDNN.o -I/usr/local/packages/staging/eb/CUDA/10.0.130/include -IFreeImage/include  -LFreeImage/lib/linux/x86_64 -LFreeImage/lib/linux -lcudart -lcublas -lcudnn -lfreeimage -lstdc++ -lm
-    cudnnGetVersion() : 7402 , CUDNN_VERSION from cudnn.h : 7402 (7.4.2)
-    Host compiler version : GCC 4.8.5
-    There are 1 CUDA capable devices on your machine :
-    device 0 : sms 80  Capabilities 7.0, SmClock 1380.0 Mhz, MemSize (Mb) 32480, MemClock 877.0 Mhz, Ecc=1, boardGroupID=0
-    Using device 0
-
-    Testing single precision
-    Loading image data/one_28x28.pgm
-    Performing forward propagation ...
-    Testing cudnnGetConvolutionForwardAlgorithm ...
-    Fastest algorithm is Algo 0
-    Testing cudnnFindConvolutionForwardAlgorithm ...
-    ^^^^ CUDNN_STATUS_SUCCESS for Algo 0: 0.017408 time requiring 0 memory
-    ^^^^ CUDNN_STATUS_SUCCESS for Algo 2: 0.048128 time requiring 57600 memory
-    ^^^^ CUDNN_STATUS_SUCCESS for Algo 1: 0.083936 time requiring 3464 memory
-    ^^^^ CUDNN_STATUS_SUCCESS for Algo 7: 0.088096 time requiring 2057744 memory
-    ^^^^ CUDNN_STATUS_SUCCESS for Algo 4: 0.111616 time requiring 207360 memory
-    Resulting weights from Softmax:
-    0.0000000 0.9999399 0.0000000 0.0000000 0.0000561 0.0000000 0.0000012 0.0000017 0.0000010 0.0000000 
-    Loading image data/three_28x28.pgm
-    Performing forward propagation ...
-    Resulting weights from Softmax:
-    0.0000000 0.0000000 0.0000000 0.9999288 0.0000000 0.0000711 0.0000000 0.0000000 0.0000000 0.0000000 
-    Loading image data/five_28x28.pgm
-    Performing forward propagation ...
-    Resulting weights from Softmax:
-    0.0000000 0.0000008 0.0000000 0.0000002 0.0000000 0.9999820 0.0000154 0.0000000 0.0000012 0.0000006 
-
-    Result of classification: 1 3 5
-
-    Test passed!
-
-    Testing half precision (math in single precision)
-    Loading image data/one_28x28.pgm
-    Performing forward propagation ...
-    Testing cudnnGetConvolutionForwardAlgorithm ...
-    Fastest algorithm is Algo 0
-    Testing cudnnFindConvolutionForwardAlgorithm ...
-    ^^^^ CUDNN_STATUS_SUCCESS for Algo 0: 0.014336 time requiring 0 memory
-    ^^^^ CUDNN_STATUS_SUCCESS for Algo 7: 0.052224 time requiring 2057744 memory
-    ^^^^ CUDNN_STATUS_SUCCESS for Algo 2: 0.052256 time requiring 28800 memory
-    ^^^^ CUDNN_STATUS_SUCCESS for Algo 1: 0.056320 time requiring 3464 memory
-    ^^^^ CUDNN_STATUS_SUCCESS for Algo 4: 0.067584 time requiring 207360 memory
-    Resulting weights from Softmax:
-    0.0000001 1.0000000 0.0000001 0.0000000 0.0000563 0.0000001 0.0000012 0.0000017 0.0000010 0.0000001 
-    Loading image data/three_28x28.pgm
-    Performing forward propagation ...
-    Resulting weights from Softmax:
-    0.0000000 0.0000000 0.0000000 1.0000000 0.0000000 0.0000720 0.0000000 0.0000000 0.0000000 0.0000000 
-    Loading image data/five_28x28.pgm
-    Performing forward propagation ...
-    Resulting weights from Softmax:
-    0.0000000 0.0000008 0.0000000 0.0000002 0.0000000 1.0000000 0.0000154 0.0000000 0.0000012 0.0000006 
-
-    Result of classification: 1 3 5
-
-    Test passed!
-
+   make
+   ./mnistCUDNN
