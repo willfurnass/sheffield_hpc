@@ -12,9 +12,7 @@ Usage
 -----
 
 You need to first request one or more GPUs within an :ref:`interactive session or batch job on a worker node <submit-queue>`.  
-For example, to request a single GPU for an interactive session on a worker node:
-
-.. code-block:: sh
+For example, to request a single GPU for an interactive session on a worker node: ::
 
    qrshx -l gpu=1
 
@@ -23,10 +21,9 @@ For example, to request a single GPU for an interactive session on a worker node
 You then need to load a version of the CUDA library (and compiler).
 There are several versions of the CUDA library available. 
 As with much software installed on the cluster, 
-versions of CUDA are activated via the :ref:`'module load' command<env_modules>`:
+versions of CUDA are activated via the :ref:`'module load' command<env_modules>`: ::
 
-.. code-block:: sh
-
+   module load libs/CUDA/11.0.2/binary
    module load libs/CUDA/10.2.89/binary
    module load libs/CUDA/10.1.243/binary
    module load libs/CUDA/10.0.130/binary
@@ -39,11 +36,11 @@ To then confirm which version of CUDA you are using:
 
 .. code-block:: console
 
-    $ nvcc --version
-    nvcc: NVIDIA (R) Cuda compiler driver
-    Copyright (c) 2005-2019 NVIDIA Corporation
-    Built on Wed_Oct_23_19:24:38_PDT_2019
-    Cuda compilation tools, release 10.2, V10.2.89
+   nvcc: NVIDIA (R) Cuda compiler driver
+   Copyright (c) 2005-2020 NVIDIA Corporation
+   Built on Thu_Jun_11_22:26:38_PDT_2020
+   Cuda compilation tools, release 11.0, V11.0.194
+   Build cuda_11.0_bu.TC445_37.28540450_0
 
 **Important** To compile CUDA programs you also need a compatible version of the :ref:`GCC compiler <gcc_sharc>`:
 
@@ -53,9 +50,7 @@ To then confirm which version of CUDA you are using:
 Compiling a simple CUDA program
 -------------------------------
 
-An example of the use of ``nvcc`` (the CUDA compiler)
-
-.. code-block:: sh
+An example of the use of ``nvcc`` (the CUDA compiler): ::
 
    nvcc filename.cu
 
@@ -71,17 +66,16 @@ In a ``qrshx`` session:
 .. code-block:: sh
 
    # Load modules
-   module load libs/CUDA/9.1.85/binary
-   module load dev/gcc/4.9.4
+   module load libs/CUDA/11.0.2/binary
 
    # Copy CUDA samples to a local directory
-   # It will create a directory called NVIDIA_CUDA-9.1_Samples/
+   # It will create a directory called NVIDIA_CUDA-11.0_Samples/
    mkdir cuda_samples
    cd cuda_samples
    cp -r $CUDA_SDK .
 
    # Compile (this will take a while)
-   cd NVIDIA_CUDA-9.1_Samples/
+   cd NVIDIA_CUDA-11.0_Samples/
    make
 
 The ``make`` command then runs the ``nvcc`` CUDA compiler and
@@ -114,9 +108,7 @@ i.e. ``-gencode=arch=compute_60,code=compute_60``.
 The minimum specified virtual architecture must be less than or equal to the `Compute Capability <https://developer.nvidia.com/cuda-gpus>`_ of the GPU used to execute the code.
 
 Public GPU nodes in ShARC contain Tesla K80 GPUs, which are compute capability 37.
-To build a CUDA application which targets the public GPUS nodes, use the following ``-gencode`` arguments: 
-
-.. code-block:: sh
+To build a CUDA application which targets the public GPUS nodes, use the following ``-gencode`` arguments: ::
 
    nvcc filename.cu \
       -gencode=arch=compute_37,code=sm_37 \
@@ -125,9 +117,7 @@ To build a CUDA application which targets the public GPUS nodes, use the followi
 ShARC also contains Tesla P100 GPUs and Tesla V100 GPUs in private nodes,
 which are compute capability 60 and 70 respectively.
 To build a CUDA application which targets any GPU on ShARC (either public or private), 
-use the following ``-gencode`` arguments (for CUDA 9.0 and above):
-
-.. code-block:: sh
+use the following ``-gencode`` arguments (for CUDA 9.0 and above): ::
 
    nvcc filename.cu \
       -gencode=arch=compute_37,code=sm_37 \
@@ -169,15 +159,13 @@ a self-paced `introduction to CUDA <http://gpucomputing.shef.ac.uk/education/cud
 Determining the NVIDIA Driver version
 -------------------------------------
 
-Run the command:
-
-.. code-block:: sh
+Run the command: ::
 
    cat /proc/driver/nvidia/version
 
 Example output is: ::
 
-   NVRM version: NVIDIA UNIX x86_64 Kernel Module  440.64.00  Wed Feb 26 16:26:08 UTC 2020
+   NVRM version: NVIDIA UNIX x86_64 Kernel Module  450.51.05  Sun Jun 28 10:33:40 UTC 2020
    GCC version:  gcc version 4.8.5 20150623 (Red Hat 4.8.5-39) (GCC)
 
 Installation notes
@@ -194,6 +182,12 @@ This service runs ``/usr/local/scripts/gpu-nvidia-driver.sh`` at boot time to:
 - Check the device driver version and uninstall it then reinstall the target version if required;
 - Load the ``nvidia`` kernel module;
 - Create several *device nodes* in ``/dev/``.
+
+CUDA 11.0.2
+^^^^^^^^^^^
+
+#. Installed with :download:`install.sh </sharc/software/install_scripts/libs/CUDA/install.sh>` with ``11.0.2_450.51.05`` as the sole argument. 
+#. :download:`Modulefile </sharc/software/modulefiles/libs/CUDA/11.0.2/binary>` was installed as ``/usr/local/modulefiles/libs/CUDA/11.0.2/binary``
 
 CUDA 10.2.89
 ^^^^^^^^^^^^
