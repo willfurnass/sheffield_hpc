@@ -40,10 +40,10 @@ As such, it is recommended that you request enough CPU memory to communicate pro
 
 .. code-block:: sh
 
-   # NB Each NVIDIA K80 GPU has 12GB of RAM
+   # NB Each NVIDIA K80 GPU has 12GB of onboard memory
    qrshx -l gpu=1 -l rmem=13G
 
-The above will give you 1GB more CPU RAM than the 13GB of GPU RAM available on the NVIDIA K80.
+The above command will give you 13GB of main memory, which is 1GB more than the 12GB of GPU memory available onboard the NVIDIA K80.
 
 
 .. _GPUJobs_sharc:
