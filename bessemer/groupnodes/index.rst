@@ -7,6 +7,7 @@ Department or research group-specific nodes in Bessemer
     :maxdepth: 1
     :glob:
 
+    ./dcs-gpu-nodes
     ./dcs-acad-gpu-nodes
 
 .. _slurm_access_priv_nodes:

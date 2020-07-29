@@ -1,7 +1,12 @@
-.. _dgx1_com_groupnodes_sharc:
+.. _dgx1_dcs_groupnodes_sharc:
 
-NVIDIA DGX-1 [COM]
-==================
+NVIDIA DGX-1 (Computer Science)
+===============================
+
+This GPU node was purchased for :ref:`ShARC <sharc>` by the `Department of Computer Science <https://www.sheffield.ac.uk/dcs>`__ (DCS)
+for use by DCS research staff, their collaborators and their research students.
+
+NVIDIA's blurb when the DGX-1 was launched:
 
    The NVIDIA DGX-1 is the world's first Deep Learning supercomputer.
    It is equipped with 8 Tesla P100 GPUs
@@ -10,13 +15,26 @@ NVIDIA DGX-1 [COM]
    it can provide up to 75 times speed up on training deep neural networks 
    compared to the latest Intel Xeon CPU.
 
-DGX-1 Specifications
---------------------
+Hardware specifications
+-----------------------
 
-* 8x Tesla P100 GPUs (16GB RAM each)
-* Dual 20-core Intel Xeon E5-2698 v4 2.2 GHz
-* 512 GB System RAM
-* SSD storage array: provides 6.5TB under ``/scratch``
+The node, ``sharc-node126``, has: 
+
+.. list-table::
+   :header-rows: 0
+
+   * - Processors
+     - 2x 20-core Intel Xeon E5-2698 v4 2.2 GHz
+   * - RAM
+     - 512 GB system RAM
+   * - NUMA nodes
+     - 2x
+   * - GPUS
+     - 8x Tesla P100 GPUs (16GB RAM each)
+   * - Networking
+     - 1 Gbps Ethernet
+   * - Local storage
+     - SSD storage array: provides 6.5TB under ``/scratch``
 
 .. note::
 
@@ -24,19 +42,24 @@ DGX-1 Specifications
 
 .. note::
 
+   All other nodes in ShARC are connected to the cluster's 100 Gbps Omni-Path networking fabric
+   but this not is not as it cannot accommodate an Omni-Path adaptor card.
+
+.. note::
+
    The storage array is configured for performance (RAID 0) and not resilience so 
    should be considered a cache 
    and should not be used store the only copy of important data.
 
-Requesting Access
+Requesting access
 -----------------
 
-Same as per the :ref:`COM big memory nodes <big_mem_com_groupnodes_sharc>`.
+Same as per the :ref:`DCS big memory nodes <big_mem_dcs_groupnodes_sharc>`.
 
 Starting an interactive session
 -------------------------------
 
-Once you have been granted access to the RSE nodes in ShARC, 
+Once you have been granted access to the DCS nodes in ShARC, 
 to request an interactive session (interactive job) on the DGX-1 node with a single GPU, 
 type:
 
@@ -45,7 +68,7 @@ type:
    qrshx -l gpu=1 -P rse -q rse-interactive.q
 
 * ``-l gpu=1`` denotes the number of GPUs that will be used in the job (maximum of 7), 
-  This is required otherwise the job will be placed on a one of the RSE team's CPU-only nodes.
+  This is required otherwise the job will be placed on a one of the DCS team's CPU-only nodes.
 * ``-P rse -q rse.q`` denotes that the job will be submitted under the ``rse`` Project and 
   you want it to only run in the ``rse-interactive.q`` job queue,
   which is for interactive jobs that can run for up to 8 hours.

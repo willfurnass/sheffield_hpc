@@ -9,7 +9,7 @@ Requesting access to GPU facilities
 .. note:: Public GPU nodes have now been made available to Iceberg and ShARC users, these can be be used without acquiring extra permission.
 
 Research groups also have an option to purchase and add nodes to the cluster to be managed by IT Services. 
-For these nodes (e.g. :ref:`dgx1_com_groupnodes_sharc`), 
+For these nodes (e.g. :ref:`dgx1_dcs_groupnodes_sharc`), 
 permission from the group leader is required for access.
 
 The node owner always has highest priority on the job queue but 
@@ -97,7 +97,7 @@ Hardware
 
 **Research-group-specific GPU nodes:**
 
-* :ref:`dgx1_com_groupnodes_sharc`
+* :ref:`dgx1_dcs_groupnodes_sharc`
 
 
 GPU-enabled Software

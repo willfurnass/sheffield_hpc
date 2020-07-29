@@ -33,7 +33,7 @@ See :ref:`GPUResources_sharc` for more information on the GPU resources availabl
 Nvidia DGX-1 Deep Learning Supercomputer
 ----------------------------------------
 
-The Nvidia DGX-1 is the world's first Deep Learning supercomputer. It is available to use for research groups within the Computer Science deparment. See :ref:`dgx1_com_groupnodes_sharc` for more information.
+The Nvidia DGX-1 is the world's first Deep Learning supercomputer. It is available to use for research groups within the Computer Science deparment. See :ref:`dgx1_dcs_groupnodes_sharc` for more information.
 
 Training Materials
 ------------------
