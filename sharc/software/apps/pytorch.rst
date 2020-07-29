@@ -9,6 +9,14 @@ PyTorch
 
 PyTorch is an open source machine learning library for Python, based on `Torch <http://torch.ch/>`_, used for applications such as natural language processing.
 
+.. note::
+
+   PyTorch should not be confused with the Lua version of Torch, which is a Lua wrapper around the THNN library.
+
+   The Lua version provides similar functionality but is less actively maintained.
+   We recommend most people use PyTorch instead of (Lua) Torch.
+
+   See also the documentation for :ref:`(Lua) Torch on ShARC <torch_sharc>`.
 
 About PyTorch on ShARC
 ----------------------
