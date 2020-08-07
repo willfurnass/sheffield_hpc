@@ -3,8 +3,8 @@ ANSYS
 
 .. sidebar:: ANSYS
    
-   :Versions: 15.0, 16.1, 17.2, 18.0, 18.2, 19.0, 19.1, 19.2, 19.3 & 19.4
-   :Dependencies: No prerequsite modules loaded. However, If using the User Defined Functions (UDF) will also need the following: For ANSYS Mechanical, Workbench, CFX and AutoDYN: Intel 14.0 or above; Compiler For Fluent: GCC 4.6.1 or above
+   :Versions: 15.0, 16.1, 17.2, 18.0, 18.2, 19.0, 19.1, 19.2, 19.3, 19.4, 20.1 &  20.2
+   :Dependencies: No prerequsite modules loaded. However, if using the User Defined Functions (UDF) will also need the following: For ANSYS Mechanical, Workbench, CFX and AutoDYN: Intel 14.0 or above; Compiler For Fluent: GCC 4.6.1 or above
    :URL: http://www.ansys.com 
    :Local URL: https://www.shef.ac.uk/it-services/research/software/fluent
 
@@ -27,12 +27,17 @@ Ansys can be activated using the module files::
     module load apps/ansys/19.2/binary
     module load apps/ansys/19.3/binary
     module load apps/ansys/19.4/binary
+    module load apps/ansys/20.1/binary
+    module load apps/ansys/20.2/binary
 	
 
 The Ansys Workbench GUI executable is ``ansyswb``. ``ansyswb`` can be launched during an interactive session with X Window support (e.g. an interactive ``qrshx`` session).
 The Ansys Mechanical executable is ``ansys-mechanical`` and ``fluent`` is the executable for Fluent.
  
-NOTE: for Ansys versions >= 18.0 using the command ``fluent`` results in an unresponsive fluent launcher. To launch fluent and bypass the launcher use ``fluent dim`` where dim = 2d, 2ddp, 3d or 3ddp.
+NOTE: for Ansys versions >= 18.0 using the command ``fluent`` results in an unresponsive fluent launcher. To launch fluent and bypass the launcher use ``fluent dim`` where dim = 2d, 2ddp, 3d or 3ddp or unset the following environment variables before running the command::
+
+    unset SGE_TASK_ID
+    unset RESTARTED
 
 ANSYS example models
 --------------------
@@ -40,7 +45,7 @@ ANSYS example models
 ANSYS contains a large number of example models which can be used to become familiar with the software.
 The models can be found in::
 
-    /usr/local/packages/live/eb/ANSYS/19.4/v194/ansys/data
+    /usr/local/packages/apps/ansys/20.2/binary/v202/ansys/data
 	
 
 Batch jobs
@@ -49,16 +54,18 @@ Batch jobs
 ``Fluent CFD``: the following is an example batch submission script, ``cfd_job.sh``, to run the executable ``fluent`` with input journal file ``test.jou``, and carry out a 2D double precision CFD simulation. The script requests 8 cores using the MPI parallel environment ``mpi-rsh`` with a runtime of 30 mins and 2 GB of real memory per core. The Fluent input journal file is ``test.jou``. **Note:** Please use the ``mpi-rsh`` parallel environment to run MPI parallel jobs for Ansys/Fluent. ::
 
     #!/bin/bash
+    #$ -V
     #$ -cwd
     #$ -M joe.bloggs@sheffield.ac.uk
     #$ -m abe
     #$ -l h_rt=00:30:00
     #$ -l rmem=2G
     #$ -pe mpi-rsh 8
+    #$ -N JobName
 
-    module load apps/ansys/19.4
+    module load apps/ansys/20.2/binary
 
-    fluent 2ddp -i test.jou -g -t$NSLOTS -sge -mpi=intel -rsh -sgepe mpi-rsh
+    fluent 2ddp -i test.jou -g -t8 -sge -mpi=intel -rsh
 
 The job is submitted to the queue by typing::
 
@@ -67,28 +74,30 @@ The job is submitted to the queue by typing::
 ``Mapdl mechanical``: the following is an example batch submission script, ``mech_job.sh``, to run the mechanical executable ``mapdl`` with input file ``CrankSlot_Flexible.inp``, and carry out a mechanical simulation. The script requests 4 cores using the OpenMP (``single node shared memory``) parallel environment with a runtime of 10 mins and 2 GB of real memory per core. ::
 
     #!/bin/bash
+    #$ -V
     #$ -cwd
-    #$ -N mech_test
+    #$ -N JobName
     #$ -M joe.bloggs@sheffield.ac.uk
     #$ -m abe
     #$ -l h_rt=00:10:00
     #$ -l rmem=2G
     #$ -pe smp 4
-    module load apps/ansys/19.4/binary
-    mapdl -b -np $NSLOTS -smp -i CrankSlot_Flexible.inp
+    module load apps/ansys/20.2/binary
+    mapdl -b -np 4 -smp -i CrankSlot_Flexible.inp
 
 The equivalent batch script for using MPI (``multi-node distributed memory``) parallel environment is ::
 
     #!/bin/bash
+    #$ -V
     #$ -cwd
-    #$ -N mech_test
+    #$ -N JobName
     #$ -M joe.bloggs@sheffield.ac.uk
     #$ -m abe
     #$ -l h_rt=00:10:00
     #$ -l rmem=2G
     #$ -pe mpi 4
-    module load apps/ansys/19.4/binary
-    mapdl -i CrankSlot_Flexible.inp -b -np $NSLOTS -sge -mpi=INTELMPI -rsh -sgepe mpi-rsh 
+    module load apps/ansys/20.2/binary
+    mapdl -i CrankSlot_Flexible.inp -b -np 4 -sge -mpi=INTELMPI -rsh
 
 		
 Installation notes
@@ -144,12 +153,19 @@ Ansys 19.4 was installed using the
 file is
 :download:`/usr/local/modulefiles/apps/ansys/19.4/binary </sharc/software/modulefiles/apps/ansys/19.4/binary>`.
 
+Ansys 20.1 and 20.2 were installed using the GUI installer and then permissions were corrected as follows::
+
+    chmod 775 -R /usr/local/packages/apps/ansys/20.1/binary
+    chmod 775 -R /usr/local/packages/apps/ansys/20.2/binary
+	
+Please follow the same install directory structure.
+
 The ``mpi-rsh`` tight-integration parallel environment is required to run Ansys/Fluent using MPI due to 
 SSH access to worker nodes being prohibited for most users.
 
-For versions 19.3 & 19.4 mapdl will not run without modifying the file::
+For versions 19.3 & 19.4 and onward mapdl will not run without modifying the file::
 
-    /usr/local/packages/live/eb/ANSYS/19.4/v194/ansys/bin/anssh.ini
+    /usr/local/packages/apps/ansys/19.4/binary/v194/ansys/bin/anssh.ini
 
 The following instruction should be inserted at line 2127 in ``anssh.ini``::
 

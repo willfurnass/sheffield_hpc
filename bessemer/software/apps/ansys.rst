@@ -85,9 +85,13 @@ The following instruction should be inserted at line 2306 in ``anssh.ini``::
     setenv KMP_AFFINITY compact
 
 	
-Please note ANSYS 20.1 and 20.2 have been installed manually with the GUI in the following directory::
+Please note ANSYS 20.1 and 20.2 have been installed manually with the GUI in the following directories and permissions corrected as follows::
 	
-    /usr/local/packages/manual/ANSYS/
+    /usr/local/packages/manual/ANSYS/20.1/binary/
+    /usr/local/packages/manual/ANSYS/20.2/binary/
+	
+    chmod 775 -R /usr/local/packages/manual/ANSYS/20.1/binary/
+    chmod 775 -R /usr/local/packages/manual/ANSYS/20.2/binary/
 	
 Please follow the same install directory structure.
 
