@@ -3,8 +3,8 @@ ANSYS
 
 .. sidebar:: ANSYS
    
-   :Versions: 19.4 
-   :Dependencies: User subroutines need the GCC/7.3.0-2.30 compiler.
+   :Versions: 19.4, 20.1, 20.2 
+   :Dependencies: UDFs / User subroutines need the GCC/7.3.0-2.30 compiler.
    :URL: http://www.ansys.com 
 
 The ANSYS suite of programs can be used to numerically simulate a large variety of structural and fluid dynamics problems found in many engineering, physics, medical, aeronotics and automative industry applications.
@@ -14,9 +14,9 @@ Interactive usage
 
 After connecting to Bessemer (see :ref:`ssh`),  start an `interactive graphical session <https://docs.hpc.shef.ac.uk/en/latest/hpc/scheduler/submit.html#interactive-sessions>`_.
 
-ANSYS version 19.4 can be activated using the module file::
+ANSYS version 20.2 can be activated using the module file::
 
-    module load ANSYS/19.4
+    module load ANSYS/20.2
 
 and the workbench is launched using::
 
@@ -30,7 +30,7 @@ ANSYS example models
 ANSYS contains a large number of example models which can be used to become familiar with the software.
 The models can be found in::
 
-    /usr/local/packages/live/eb/ANSYS/19.4/v194/ansys/data
+    /usr/local/packages/manual/ANSYS/20.2/binary/v202/ansys/data/
 	
 
 Batch jobs
@@ -47,7 +47,7 @@ The following is an example batch submission script, ``cfd_job.sh``, to run the 
     #SBATCH --time=01:00:00
     #SBATCH --mail-user=joe.bloggs@sheffield.ac.uk
     #SBATCH --mail-type=ALL
-    module load ANSYS/19.4
+    module load ANSYS/20.2
     fluent 2ddp -i subjou.jou -g -t4
 	
 The job is submitted to the queue by typing::
@@ -65,7 +65,7 @@ The following is an example batch submission script, ``mech_job.sh``, to run the
     #SBATCH --time=01:00:00
     #SBATCH --mail-user=joe.bloggs@sheffield.ac.uk
     #SBATCH --mail-type=ALL
-    module load ANSYS/19.4
+    module load ANSYS/20.2
     ANSYS_OPTIONS="-smp -dir $(pwd) -b -np $SLURM_NTASKS -j solution -i"
     mapdl $ANSYS_OPTIONS CrankSlot_Flexible.inp
 
@@ -78,9 +78,23 @@ Installation note for Administrators:
 
 mapdl will not run without modifying the file::
 
-    /usr/local/packages/live/eb/ANSYS/19.4/v194/ansys/bin/anssh.ini
+    /usr/local/packages/manual/ANSYS/20.2/binary/v202/ansys/bin/anssh.ini
 
-The following instruction should be inserted at line 2127 in ``anssh.ini``::
+The following instruction should be inserted at line 2306 in ``anssh.ini``::
 
     setenv KMP_AFFINITY compact
+
+	
+Please note ANSYS 20.1 and 20.2 have been installed manually with the GUI in the following directory::
+	
+    /usr/local/packages/manual/ANSYS/
+	
+Please follow the same install directory structure.
+
+In addition the following software packages are not included with the installations::
+
+
+    "ANSYS Chemkin"
+    "ANSYS Geometry Interfaces".
+	
 
