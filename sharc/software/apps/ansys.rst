@@ -65,7 +65,7 @@ Batch jobs
 
     module load apps/ansys/20.2/binary
 
-    fluent 2ddp -i test.jou -g -t8 -sge -mpi=intel -rsh
+    fluent 2ddp -i test.jou -g -t8 -mpi=intel -rsh
 
 The job is submitted to the queue by typing::
 
@@ -97,7 +97,7 @@ The equivalent batch script for using MPI (``multi-node distributed memory``) pa
     #$ -l rmem=2G
     #$ -pe mpi 4
     module load apps/ansys/20.2/binary
-    mapdl -i CrankSlot_Flexible.inp -b -np 4 -sge -mpi=INTELMPI -rsh
+    mapdl -i CrankSlot_Flexible.inp -b -np 4 -sge -mpi=INTELMPI -rsh -sgepe mpi-rsh
 
 		
 Installation notes
