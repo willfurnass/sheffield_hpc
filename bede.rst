@@ -84,7 +84,7 @@ If you are hoping to use Bede in your research in the coming months then you wil
 
    "We acknowledge the N8 Centre for Computationally Intensive Research (N8 CIR) for computational resources established through EPSRC (EP/T022167/1)"
 
-A high-resolution version of the N8 CIR logo for use in talks or on posters can be found :ref:`here <N8 CIR logo>`.
+A high-resolution version of the `N8 CIR logo`_ can be used in talks or on posters.
 
 
 .. _Bitware 250-SoC: https://www.bittware.com/fpga/250-soc/
