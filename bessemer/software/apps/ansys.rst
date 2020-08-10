@@ -16,7 +16,7 @@ After connecting to Bessemer (see :ref:`ssh`),  start an `interactive graphical 
 
 ANSYS version 20.2 can be activated using the module file::
 
-    module load ANSYS/20.2
+    module load ANSYS/20.2/binary
 
 and the workbench is launched using::
 
@@ -30,7 +30,7 @@ ANSYS example models
 ANSYS contains a large number of example models which can be used to become familiar with the software.
 The models can be found in::
 
-    /usr/local/packages/manual/ANSYS/20.2/binary/v202/ansys/data/
+    /usr/local/packages/live/noeb/ANSYS/20.2/binary/v202/ansys/data/
 	
 
 Batch jobs
@@ -78,20 +78,20 @@ Installation note for Administrators:
 
 mapdl will not run without modifying the file::
 
-    /usr/local/packages/manual/ANSYS/20.2/binary/v202/ansys/bin/anssh.ini
+    /usr/local/packages/live/noeb/ANSYS/20.2/binary/v202/ansys/bin/anssh.ini
 
-The following instruction should be inserted at line 2306 in ``anssh.ini``::
+The following instruction should be inserted at line 2433 in ``anssh.ini``::
 
     setenv KMP_AFFINITY compact
 
 	
 Please note ANSYS 20.1 and 20.2 have been installed manually with the GUI in the following directories and permissions corrected as follows::
 	
-    /usr/local/packages/manual/ANSYS/20.1/binary/
-    /usr/local/packages/manual/ANSYS/20.2/binary/
+    /usr/local/packages/live/noeb/ANSYS/20.1/binary/
+    /usr/local/packages/live/noeb/ANSYS/20.2/binary/
 	
-    chmod 775 -R /usr/local/packages/manual/ANSYS/20.1/binary/
-    chmod 775 -R /usr/local/packages/manual/ANSYS/20.2/binary/
+    chmod 775 -R /usr/local/packages/live/noeb/ANSYS/20.1/binary/
+    chmod 775 -R /usr/local/packages/live/noeb/ANSYS/20.2/binary/
 	
 Please follow the same install directory structure.
 
