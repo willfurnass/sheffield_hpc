@@ -15,7 +15,8 @@ CMake can be loaded with: ::
 
 
 NB CMake has a run-time dependency on `libstdc++` so the above also needs to
-(and does) load the :ref:`GCC compiler <gcc_sharc>` version 4.9.4, or version 8.2
+(and does) load the :ref:`GCC compiler <gcc_sharc>` version 4.9.4, or version 8.2.
+If you need to compile a CMake project with the :ref:`sharc-intel-compilers`, you must ``module load`` the Intel compiler prior to loading cmake.
 
 Usage often involves: 
 
