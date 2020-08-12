@@ -80,6 +80,10 @@ The set of research software available on the cluster is yet to be finalised by 
 Acknowledgement for presentations and papers
 --------------------------------------------
 
+.. image:: /images/N8_CIR_Logo_Colour.png
+    :align: right
+    :width: 200
+
 If you are hoping to use Bede in your research in the coming months then you will need to acknowledge the facility in presentations and papers using the following text:
 
    "We acknowledge the N8 Centre for Computationally Intensive Research (N8 CIR) for computational resources established through EPSRC (EP/T022167/1)"
