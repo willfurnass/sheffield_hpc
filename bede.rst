@@ -77,10 +77,24 @@ The set of research software available on the cluster is yet to be finalised by 
     * ``nsight-systems`` and ``nsight-compute``
     * ``cuda-gdb``
 
+Acknowledgement for presentations and papers
+--------------------------------------------
+
+.. image:: /images/N8_CIR_Logo_Colour.png
+    :align: right
+    :width: 200
+
+If you are hoping to use Bede in your research in the coming months then you will need to acknowledge the facility in presentations and papers using the following text:
+
+   "We acknowledge the N8 Centre for Computationally Intensive Research (N8 CIR) for computational resources established through EPSRC (EP/T022167/1)"
+
+A high-resolution version of the `N8 CIR logo`_ can be used in talks or on posters.
+
 
 .. _Bitware 250-SoC: https://www.bittware.com/fpga/250-soc/
 .. _IBM AC922: https://www.ibm.com/uk-en/marketplace/power-systems-ac922
 .. _IBM IC922: https://www.ibm.com/uk-en/marketplace/power-system-ic922
+.. _N8 CIR logo: https://n8cir.org.uk/about/n8-cir-logo/
 .. _N8 Research Partnership: https://www.n8research.org.uk/
 .. _NVIDIA T4: https://www.nvidia.com/en-gb/data-center/tesla-t4/
 .. _NVIDIA V100: https://www.nvidia.com/en-us/data-center/v100/
