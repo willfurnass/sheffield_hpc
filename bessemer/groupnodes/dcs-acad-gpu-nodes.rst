@@ -72,6 +72,7 @@ To submit a job via this route, you need to :ref:`specify a *Partition* and *Acc
 
 * Partition: ``dcs-acad``
 * Account: ``dcs-acadX`` where ``X`` is 1, 2, 3 or 4 and :ref:`varies between the academics <dcs_acad_gpu_node_accounts>`).
+* QoS: do not specify one i.e. do not use the ``--qos`` parameter.
 
 Resource limits per job:
 
@@ -93,9 +94,7 @@ then they can :ref:`specify a different Partition <slurm_access_priv_nodes>` whe
 
 * Partition: ``dcs-acad-pre``
 * Account: ``dcs-acadX`` where ``X`` is 1, 2, 3 or 4 and :ref:`varies between the academics <dcs_acad_gpu_node_accounts>`).
-
-.. todo::
-   Is this the right account to use here?
+* QoS: do not specify one i.e. do not use the ``--qos`` parameter.
 
 *However*, to facilitate fair sharing of these GPU nodes jobs submitted via this route are *pre-emptable*:
 they will be stopped mid-execution if a job is submitted to the ``dcs-acad`` partition (:ref:`see above <dcs_acad_gpu_nodes_non_prempt_access>`)
