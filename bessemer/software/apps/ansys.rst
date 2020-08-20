@@ -16,6 +16,8 @@ After connecting to Bessemer (see :ref:`ssh`),  start an `interactive graphical 
 
 ANSYS version 20.2 can be activated using the module file::
 
+    module load ANSYS/19.4
+    module load ANSYS/20.1/binary
     module load ANSYS/20.2/binary
 
 and the workbench is launched using::
@@ -31,11 +33,14 @@ ANSYS contains a large number of example models which can be used to become fami
 The models can be found in::
 
     /usr/local/packages/live/noeb/ANSYS/20.2/binary/v202/ansys/data/
+    /usr/local/packages/live/noeb/ANSYS/20.1/binary/v201/ansys/data/
+    /usr/local/packages/live/eb/ANSYS/19.4/v194/ansys/data
 	
 
 Batch jobs
 ----------
-
+Fluent
+########
 The following is an example batch submission script, ``cfd_job.sh``, to run the executable ``fluent`` with input journal file ``subjou.jou``, and carry out a 2D double precision CFD simulation. The script requests 4 cores using the OpenMP parallel environment with a runtime of 60 mins and 2 GB of real memory per core. ::
 
     #!/bin/bash
@@ -48,13 +53,20 @@ The following is an example batch submission script, ``cfd_job.sh``, to run the 
     #SBATCH --mail-user=joe.bloggs@sheffield.ac.uk
     #SBATCH --mail-type=ALL
     module load ANSYS/20.2
-    fluent 2ddp -i subjou.jou -g -t4
+    fluent 2ddp -i subjou.jou -g -t$SLURM_NTASKS 
+    #Note $SLURM_NTASKS is a SLURM variable which will return the requested number of tasks per node.
 	
 The job is submitted to the queue by typing::
 
     sbatch cfd_job.sh
+	
+| 
 
-The following is an example batch submission script, ``mech_job.sh``, to run the mechanical executable ``mapdl`` with input file ``CrankSlot_Flexible.inp``, and carry out a mechanical simulation. The script requests 2 cores using the OpenMP parallel environment with a runtime of 60 mins and 2 GB of real memory per core. ::
+------------
+
+Map-DL
+########
+``Mapdl mechanical``: the following is an example batch submission script, ``mech_job.sh``, to run the mechanical executable ``mapdl`` with input file ``CrankSlot_Flexible.inp``, and carry out a mechanical simulation. The script requests 2 cores using the OpenMP parallel environment with a runtime of 60 mins and 2 GB of real memory per core. ::
 
     #!/bin/bash
     #SBATCH --nodes=1
@@ -66,7 +78,8 @@ The following is an example batch submission script, ``mech_job.sh``, to run the
     #SBATCH --mail-user=joe.bloggs@sheffield.ac.uk
     #SBATCH --mail-type=ALL
     module load ANSYS/20.2
-    ANSYS_OPTIONS="-smp -dir $(pwd) -b -np $SLURM_NTASKS -j solution -i"
+    ANSYS_OPTIONS="-smp -dir $(pwd) -b -np $SLURM_NTASKS -j solution -i" 
+    #Note $SLURM_NTASKS is a SLURM variable which will return the requested number of tasks per node.
     mapdl $ANSYS_OPTIONS CrankSlot_Flexible.inp
 
 The job is submitted to the queue by typing::
@@ -84,7 +97,8 @@ The following instruction should be inserted at line 2433 in ``anssh.ini``::
 
     setenv KMP_AFFINITY compact
 
-	
+------------
+
 Please note ANSYS 20.1 and 20.2 have been installed manually with the GUI in the following directories and permissions corrected as follows::
 	
     /usr/local/packages/live/noeb/ANSYS/20.1/binary/

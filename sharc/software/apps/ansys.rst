@@ -34,6 +34,8 @@ Ansys can be activated using the module files::
 The Ansys Workbench GUI executable is ``ansyswb``. ``ansyswb`` can be launched during an interactive session with X Window support (e.g. an interactive ``qrshx`` session).
 The Ansys Mechanical executable is ``ansys-mechanical`` and ``fluent`` is the executable for Fluent.
  
+------------
+ 
 NOTE: for Ansys versions >= 18.0 using the command ``fluent`` results in an unresponsive fluent launcher. To launch fluent and bypass the launcher use ``fluent dim`` where dim = 2d, 2ddp, 3d or 3ddp or unset the following environment variables before running the command::
 
     unset SGE_TASK_ID
@@ -46,11 +48,22 @@ ANSYS contains a large number of example models which can be used to become fami
 The models can be found in::
 
     /usr/local/packages/apps/ansys/20.2/binary/v202/ansys/data
-	
+    /usr/local/packages/apps/ansys/20.1/binary/v201/ansys/data
+    /usr/local/packages/apps/ansys/19.4/binary/v194/ansys/data
+    /usr/local/packages/apps/ansys/19.3/binary/v193/ansys/data
+    /usr/local/packages/apps/ansys/19.2/binary/v192/ansys/data
+    /usr/local/packages/apps/ansys/19.1/binary/v191/ansys/data
+    /usr/local/packages/apps/ansys/19.0/binary/v190/ansys/data
+    /usr/local/packages/apps/ansys/18.2/binary/v182/ansys/data
+    /usr/local/packages/apps/ansys/18.0/binary/v180/ansys/data
+    /usr/local/packages/apps/ansys/17.2/v172/ansys/data
+    /usr/local/packages/apps/ansys/16.1/v161/ansys/data
+    /usr/local/packages/apps/ansys/15.0.7/ansys_inc/v150/ansys/data
 
 Batch jobs
 ----------
-	
+Fluent
+########
 ``Fluent CFD``: the following is an example batch submission script, ``cfd_job.sh``, to run the executable ``fluent`` with input journal file ``test.jou``, and carry out a 2D double precision CFD simulation. The script requests 8 cores using the MPI parallel environment ``mpi-rsh`` with a runtime of 30 mins and 2 GB of real memory per core. The Fluent input journal file is ``test.jou``. **Note:** Please use the ``mpi-rsh`` parallel environment to run MPI parallel jobs for Ansys/Fluent. ::
 
     #!/bin/bash
@@ -65,12 +78,19 @@ Batch jobs
 
     module load apps/ansys/20.2/binary
 
-    fluent 2ddp -i test.jou -g -t8 -mpi=intel -rsh
+    fluent 2ddp -i test.jou -g -t$NSLOTS -mpi=intel -rsh 
+	#Note $NSLOTS is a Sun Grid Engine variable which will return the requested number of cores.
 
 The job is submitted to the queue by typing::
 
     qsub cfd_job.sh
+	
+| 
 
+------------
+
+Map-DL
+########
 ``Mapdl mechanical``: the following is an example batch submission script, ``mech_job.sh``, to run the mechanical executable ``mapdl`` with input file ``CrankSlot_Flexible.inp``, and carry out a mechanical simulation. The script requests 4 cores using the OpenMP (``single node shared memory``) parallel environment with a runtime of 10 mins and 2 GB of real memory per core. ::
 
     #!/bin/bash
@@ -83,7 +103,8 @@ The job is submitted to the queue by typing::
     #$ -l rmem=2G
     #$ -pe smp 4
     module load apps/ansys/20.2/binary
-    mapdl -b -np 4 -smp -i CrankSlot_Flexible.inp
+    mapdl -b -np $NSLOTS -smp -i CrankSlot_Flexible.inp 
+	#Note $NSLOTS is a Sun Grid Engine variable which will return the requested number of cores.
 
 The equivalent batch script for using MPI (``multi-node distributed memory``) parallel environment is ::
 
@@ -97,7 +118,8 @@ The equivalent batch script for using MPI (``multi-node distributed memory``) pa
     #$ -l rmem=2G
     #$ -pe mpi 4
     module load apps/ansys/20.2/binary
-    mapdl -i CrankSlot_Flexible.inp -b -np 4 -sge -mpi=INTELMPI -rsh -sgepe mpi-rsh
+    mapdl -i CrankSlot_Flexible.inp -b -np $NSLOTS -sge -mpi=INTELMPI -rsh -sgepe mpi-rsh 
+	#Note $NSLOTS is a Sun Grid Engine variable which will return the requested number of cores.
 
 		
 Installation notes
@@ -152,6 +174,8 @@ Ansys 19.4 was installed using the
 :download:`install_ansys_194.sh </sharc/software/install_scripts/apps/ansys/19.4/binary/install_ansys_194.sh>` script; the module
 file is
 :download:`/usr/local/modulefiles/apps/ansys/19.4/binary </sharc/software/modulefiles/apps/ansys/19.4/binary>`.
+
+----------
 
 Ansys 20.1 and 20.2 were installed using the GUI installer and then permissions were corrected as follows::
 
