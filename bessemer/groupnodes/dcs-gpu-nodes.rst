@@ -60,6 +60,7 @@ To submit a job via this route, you need to :ref:`specify a *Partition* and *Acc
 
 * Partition: ``dcs-gpu-test``
 * Account: ``dcs-res`` (members of DCS) or ``dcs-collab`` (collaborators of DCS)
+* QoS: do not specify one i.e. do not use the ``--qos`` parameter.
 
 Resource limits per job:
 
@@ -79,6 +80,7 @@ then you can :ref:`specify a different Partition <slurm_access_priv_nodes>` when
 
 * Partition: ``dcs-gpu``
 * Account: ``dcs-res`` (members of DCS) or ``dcs-collab`` (collaborators of DCS)
+* QoS: do not specify one i.e. do not use the ``--qos`` parameter.
 
 Please *only run batch jobs this way*: long-running interactive sessions that are associated with large resource requests are often an inefficient way of using cluster resources.
 
