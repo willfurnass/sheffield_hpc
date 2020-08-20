@@ -14,7 +14,7 @@ Interactive usage
 
 After connecting to Bessemer (see :ref:`ssh`),  start an `interactive graphical session <https://docs.hpc.shef.ac.uk/en/latest/hpc/scheduler/submit.html#interactive-sessions>`_.
 
-ANSYS version 20.2 can be activated using the module file::
+ANSYS can be activated using the following module files::
 
     module load ANSYS/19.4
     module load ANSYS/20.1/binary
@@ -39,8 +39,8 @@ The models can be found in::
 
 Batch jobs
 ----------
-Fluent
-########
+ANSYS Fluent
+#############
 The following is an example batch submission script, ``cfd_job.sh``, to run the executable ``fluent`` with input journal file ``subjou.jou``, and carry out a 2D double precision CFD simulation. The script requests 4 cores using the OpenMP parallel environment with a runtime of 60 mins and 2 GB of real memory per core. ::
 
     #!/bin/bash
@@ -64,8 +64,8 @@ The job is submitted to the queue by typing::
 
 ------------
 
-Map-DL
-########
+ANSYS Mechnical / Map-DL
+#########################
 ``Mapdl mechanical``: the following is an example batch submission script, ``mech_job.sh``, to run the mechanical executable ``mapdl`` with input file ``CrankSlot_Flexible.inp``, and carry out a mechanical simulation. The script requests 2 cores using the OpenMP parallel environment with a runtime of 60 mins and 2 GB of real memory per core. ::
 
     #!/bin/bash
