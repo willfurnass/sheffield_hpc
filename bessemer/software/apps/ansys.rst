@@ -4,7 +4,7 @@ ANSYS
 .. sidebar:: ANSYS
    
    :Versions: 19.4, 20.1, 20.2 
-   :Dependencies: UDFs / User subroutines need the GCC/7.3.0-2.30 compiler.
+   :Dependencies: UDFs / User subroutines need the GCC/7.3.0-2.30 compiler or above.
    :URL: http://www.ansys.com 
 
 The ANSYS suite of programs can be used to numerically simulate a large variety of structural and fluid dynamics problems found in many engineering, physics, medical, aeronotics and automative industry applications.
