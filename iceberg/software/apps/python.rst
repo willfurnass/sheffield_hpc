@@ -185,6 +185,13 @@ update script located in
 run regularly to keep this base environments upto date with Python, and more
 importantly with the conda package manager itself.
 
+Between updates, remove write permissions on certain dirs/files to prevent sysadmins from
+accidentally installing central conda envs instead of local ones /
+encountering errors when trying to create local envs: ::
+
+   chmod ugo-w /usr/local/packages6/conda /usr/local/packages6/conda/envs
+   chmod -R ugo-w /usr/local/packages6/conda/pkgs
+
 Installing a New Version of Anaconda
 ####################################
 
