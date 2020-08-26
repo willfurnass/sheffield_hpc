@@ -1,0 +1,34 @@
+#%Module1.0#####################################################################
+##
+## proj module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+
+proc ModulesHelp { } {
+    global projversion
+    puts stderr "   Activate v$projversion (plus $compiler $compilervers) of the PROJ.4 cartegraphic projections library"
+}
+
+set projversion 7.1.0
+set compiler     gcc
+set compilervers 8.2
+
+module-whatis   "Activate v$projversion o(plus $compiler $compilervers) f the PROJ.4 cartegraphic projections library"
+
+set projroot /usr/local/packages/libs/proj/$projversion/$compiler-$compilervers
+
+# Need a particular version of the C++ std lib
+module load dev/$compiler/$compilervers
+module load libs/sqlite/3.32.3/gcc-8.2.0
+module load libs/tiff/4.1.0/gcc-8.2.0
+
+
+prepend-path CPATH $projroot/include
+# Used by ld at compile time
+prepend-path LIBRARY_PATH $projroot/lib/
+# Used at run time
+prepend-path LD_LIBRARY_PATH $projroot/lib/
+prepend-path MANPATH $projroot/share/man/
+prepend-path PATH $projroot/bin/
