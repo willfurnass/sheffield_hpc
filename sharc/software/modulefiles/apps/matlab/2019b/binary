@@ -1,0 +1,20 @@
+#%Module1.0#####################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+
+proc ModulesHelp { } {
+    global version
+    puts stderr "   Makes MATLAB $version available for use"
+}
+module-whatis   "Makes MATLAB 2019b available for use"
+
+# Do not use other versions at the same time.
+conflict apps/matlab
+
+set  version    2019b
+set  matlabroot /usr/local/packages/apps/matlab/$version/binary
+
+prepend-path PATH    $matlabroot/bin
+prepend-path LD_LIBRARY_PATH /usr/local/packages/libs/libsndfile/1.0.28/gcc-4.9.4/lib
+setenv       MCRROOT $matlabroot
