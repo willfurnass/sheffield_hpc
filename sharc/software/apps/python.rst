@@ -143,10 +143,10 @@ Using Python with MPI
 There is an **experimental** set of packages for conda
 that have been compiled by the RSE and RCG teams,
 which allow you to use a MPI stack entirely managed by Conda.
-This allows you to easily create complex evironments and 
+This allows you to easily create complex evironments and
 use MPI without worrying about other modules or system libraries.
 
-To get access to these packages you need to 
+To get access to these packages you need to
 run the following command to add the repo to your conda config: ::
 
     conda config --add channels file:///usr/local/packages/apps/conda/conda-bld/
@@ -161,7 +161,7 @@ Currently, this channel provides Conda packages for:
  - ``mpi4py`` (and ``openmpi``) for Python 3.4, 3.5, 3.6 and 2.7
  - ``h5py`` (and ``hdf5``) with MPI support for Python 3.5 and 2.7
 
-The build scripts for these packages can be found in 
+The build scripts for these packages can be found in
 this `GitHub <https://github.com/rcgsheffield/conda-packages>`_ repository.
 
 Installation Notes
@@ -178,6 +178,13 @@ permissions to ``/usr/local/packages/apps/conda``) and run::
 
     $ conda update --all
     $ conda update conda
+
+Between updates, remove write permissions on certain dirs/files to prevent sysadmins from
+accidentally installing central conda envs instead of local ones /
+encountering errors when trying to create local envs: ::
+
+   chmod ugo-w /usr/local/packages/apps/conda /usr/local/packages/apps/conda/envs
+   chmod -R ugo-w /usr/local/packages/apps/conda/pkgs
 
 Installing a New Version of Anaconda
 ####################################
