@@ -91,6 +91,6 @@ Test by running ``make check`` from the build directory.  For this build this yi
 
 PROJ 7.1.0 was compiled with v8.2.0 of the GCC compiler suite.
 
-#. Download, configure, build and install by switching to a scratch directory and running :download:`this script </sharc/software/install_scripts/libs/proj/7.10/gcc-8.2.0/install.sh>`
+#. Download, configure, build and install by switching to a scratch directory and running :download:`this script </sharc/software/install_scripts/libs/proj/7.1.0/gcc-8.2.0/install.sh>`
 #. Install :download:`this modulefile </sharc/software/modulefiles/libs/proj/7.1.0/gcc-8.2.0>` as ``/usr/local/modulefiles/libs/proj/7.1.0/gcc-8.2.0``
 
