@@ -1,0 +1,39 @@
+#%Module1.0#####################################################################
+##
+## sqlite module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+
+proc ModulesHelp { } {
+    global sqliteversion
+    global compiler
+    global compilervers
+    puts stderr "   Activate v$sqliteversion of sqlite"
+}
+
+set sqliteversion  3.32.3
+set compiler     gcc
+set compilervers 8.2.0
+
+module-whatis   "Activate v$sqliteversion of sqlite"
+
+set sqliteroot /usr/local/packages/libs/sqlite/$sqliteversion/$compiler-$compilervers
+
+# Need a particular version of the C++ std lib
+module load dev/$compiler/8.2
+
+#tcl required for sqlite make test during build
+prepend-path PATH /usr/local/packages/apps/tcl/8.6.10/gcc-8.2.0/bin
+prepend-path LD_LIBRARY_PATH /usr/local/packages/apps/tcl/8.6.10/gcc-8.2.0/lib
+prepend-path LIBRARY_PATH /usr/local/packages/apps/tcl/8.6.10/gcc-8.2.0/lib
+
+prepend-path PATH $sqliteroot/bin
+prepend-path LIBRARY_PATH $sqliteroot/lib
+prepend-path LD_LIBRARY_PATH $sqliteroot/lib
+prepend-path CPATH $sqliteroot/include
+
+prepend-path SQLITE3_INCLUDE $sqliteroot/include
+prepend-path SQLITE3_CFLAGS $sqliteroot/include
+prepend-path SQLITE3_LIBS $sqliteroot/lib
