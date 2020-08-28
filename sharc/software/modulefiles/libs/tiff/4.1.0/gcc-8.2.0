@@ -1,0 +1,35 @@
+#%Module1.0#####################################################################
+##
+## tiff module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+
+proc ModulesHelp { } {
+    global tiffversion
+    global compiler
+    global compilervers
+    puts stderr "   Activate v$tiffversion of tiff"
+}
+
+set tiffversion  4.1.0
+set compiler     gcc
+set compilervers 8.2
+
+module-whatis   "Activate v$tiffversion of tiff"
+
+set tiffroot /usr/local/packages/libs/tiff/4.1.0/gcc-8.2
+
+# Need a particular version of the C++ std lib
+module load dev/$compiler/$compilervers
+
+#tcl required for sqlite make test during build
+prepend-path PATH $tiffroot/bin
+prepend-path LD_LIBRARY_PATH $tiffroot/lib
+prepend-path LIBRARY_PATH $tiffroot/lib
+prepend-path CPATH $tiffroot/include
+
+prepend-path TIFF_INCLUDE $tiffroot/include
+prepend-path TIFF_CFLAGS $tiffroot/include
+prepend-path TIFF_LIBS $tiffroot/lib
