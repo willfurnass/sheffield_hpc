@@ -5,7 +5,7 @@ Bede (Tier 2 GPU cluster)
 
 Bede is a new `EPSRC-funded <https://gow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/T022167/1>`__ 'Tier 2' (regional) HPC cluster.  
 It is currently being configured and tested
-and **should be available for use by researchers in the summer of 2020**.
+and **may** be available for use by researchers in 2020.
 The system will be available for use by researchers from `N8 Research Partnership`_ institutions
 (Durham, Lancaster, Leeds, Liverpool, Manchester, Newcastle, Sheffield and York).
 
