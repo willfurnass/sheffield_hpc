@@ -53,14 +53,19 @@ The following is an example batch submission script, ``cfd_job.sh``, to run the 
     #SBATCH --mail-user=joe.bloggs@sheffield.ac.uk
     #SBATCH --mail-type=ALL
     module load ANSYS/20.2
-    fluent 2ddp -i subjou.jou -g -t$SLURM_NTASKS 
-    #Note $SLURM_NTASKS is a SLURM variable which will return the requested number of tasks per node.
+    fluent 2ddp -i subjou.jou -g -t$SLURM_NTASKS  -affinity=off
+
+
 	
 The job is submitted to the queue by typing::
 
     sbatch cfd_job.sh
-	
-| 
+
+**Notes:**
+^^^^^^^^^^^^^^
+- You must use ``-affinity off`` in order to avoid sub-optimal CPU core distribution when in use with the SLURM scheduler `see details <https://github.com/rcgsheffield/sheffield_hpc/issues/1082>`_.
+
+- ``$SLURM_NTASKS`` is a SLURM variable which will return the requested number of tasks per node.
 
 ------------
 
@@ -78,13 +83,19 @@ ANSYS Mechnical / Map-DL
     #SBATCH --mail-user=joe.bloggs@sheffield.ac.uk
     #SBATCH --mail-type=ALL
     module load ANSYS/20.2
-    ANSYS_OPTIONS="-smp -dir $(pwd) -b -np $SLURM_NTASKS -j solution -i" 
-    #Note $SLURM_NTASKS is a SLURM variable which will return the requested number of tasks per node.
+    ANSYS_OPTIONS="-affinity=off -smp -dir $(pwd) -b -np $SLURM_NTASKS -j solution -i" 
     mapdl $ANSYS_OPTIONS CrankSlot_Flexible.inp
 
 The job is submitted to the queue by typing::
 
     sbatch mech_job.sh
+	
+	
+**Notes:**
+^^^^^^^^^^^^^^
+- You must use ``-affinity off`` in order to avoid sub-optimal CPU core distribution when in use with the SLURM scheduler `see details <https://github.com/rcgsheffield/sheffield_hpc/issues/1082>`_.
+
+- ``$SLURM_NTASKS`` is a SLURM variable which will return the requested number of tasks per node.
 
 Installation note for Administrators:
 -------------------------------------
