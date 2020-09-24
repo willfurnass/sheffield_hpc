@@ -53,7 +53,7 @@ The following is an example batch submission script, ``cfd_job.sh``, to run the 
     #SBATCH --mail-user=joe.bloggs@sheffield.ac.uk
     #SBATCH --mail-type=ALL
     module load ANSYS/20.2
-    fluent 2ddp -i subjou.jou -g -t$SLURM_NTASKS  -affinity=off
+    fluent 2ddp -i subjou.jou -g -t$SLURM_NTASKS
 
 
 	
@@ -63,7 +63,7 @@ The job is submitted to the queue by typing::
 
 **Notes:**
 ^^^^^^^^^^^^^^
-- You must use ``-affinity off`` in order to avoid sub-optimal CPU core distribution when in use with the SLURM scheduler `see details <https://github.com/rcgsheffield/sheffield_hpc/issues/1082>`_.
+- ``export FLUENT_AFFINITY=0`` has been added to the module files in order to fix incorrect core allocation - `see details <https://github.com/rcgsheffield/sheffield_hpc/issues/1082>`_.
 
 - ``$SLURM_NTASKS`` is a SLURM variable which will return the requested number of tasks per node.
 
@@ -93,7 +93,6 @@ The job is submitted to the queue by typing::
 	
 **Notes:**
 ^^^^^^^^^^^^^^
-- You must use ``-affinity off`` in order to avoid sub-optimal CPU core distribution when in use with the SLURM scheduler `see details <https://github.com/rcgsheffield/sheffield_hpc/issues/1082>`_.
 
 - ``$SLURM_NTASKS`` is a SLURM variable which will return the requested number of tasks per node.
 
