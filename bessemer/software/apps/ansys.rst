@@ -83,7 +83,7 @@ ANSYS Mechnical / Map-DL
     #SBATCH --mail-user=joe.bloggs@sheffield.ac.uk
     #SBATCH --mail-type=ALL
     module load ANSYS/20.2
-    ANSYS_OPTIONS="-affinity=off -smp -dir $(pwd) -b -np $SLURM_NTASKS -j solution -i" 
+    ANSYS_OPTIONS="-smp -dir $(pwd) -b -np $SLURM_NTASKS -j solution -i" 
     mapdl $ANSYS_OPTIONS CrankSlot_Flexible.inp
 
 The job is submitted to the queue by typing::
