@@ -121,7 +121,8 @@ The equivalent batch script for using MPI (``multi-node distributed memory``) pa
     mapdl -i CrankSlot_Flexible.inp -b -np $NSLOTS -sge -mpi=INTELMPI -rsh -sgepe mpi-rsh 
 	#Note $NSLOTS is a Sun Grid Engine variable which will return the requested number of cores.
 
-		
+----------
+	
 Installation notes
 ------------------
 
@@ -175,7 +176,6 @@ ANSYS 19.4 was installed using the
 file is
 :download:`/usr/local/modulefiles/apps/ansys/19.4/binary </sharc/software/modulefiles/apps/ansys/19.4/binary>`.
 
-----------
 
 ANSYS 20.1 and 20.2 were installed using the GUI installer and then permissions were corrected as follows::
 
@@ -184,10 +184,14 @@ ANSYS 20.1 and 20.2 were installed using the GUI installer and then permissions 
 	
 Please follow the same install directory structure.
 
+----------
+
 The ``mpi-rsh`` tight-integration parallel environment is required to run ANSYS/Fluent using MPI due to 
 SSH access to worker nodes being prohibited for most users.
 
-For versions 19.3 & 19.4 and onward mapdl will not run without modifying the file::
+----------
+
+For versions 19.x mapdl `will not run <https://github.com/rcgsheffield/sheffield_hpc/issues/1083>`_  without modifying the file::
 
     /usr/local/packages/apps/ansys/19.4/binary/v194/ansys/bin/anssh.ini
 

@@ -96,14 +96,16 @@ The job is submitted to the queue by typing::
 
 - ``$SLURM_NTASKS`` is a SLURM variable which will return the requested number of tasks per node.
 
+----------
+
 Installation note for Administrators:
 -------------------------------------
 
-mapdl will not run without modifying the file::
+MAPDL will not run in ANSYS versions 19.X without modifying the file::
 
-    /usr/local/packages/live/noeb/ANSYS/20.2/binary/v202/ansys/bin/anssh.ini
+    /usr/local/packages/live/noeb/ANSYS/19.4/binary/v194/ansys/bin/anssh.ini
 
-The following instruction should be inserted at line 2433 in ``anssh.ini``::
+The following instruction should be inserted at line 2127 in ``anssh.ini``::
 
     setenv KMP_AFFINITY compact
 
@@ -118,6 +120,8 @@ Please note ANSYS 20.1 and 20.2 have been installed manually with the GUI in the
     chmod 775 -R /usr/local/packages/live/noeb/ANSYS/20.2/binary/
 	
 Please follow the same install directory structure.
+
+----------
 
 In addition the following software packages are not included with the installations::
 
