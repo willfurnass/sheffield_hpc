@@ -101,7 +101,7 @@ The job is submitted to the queue by typing::
 Installation note for Administrators:
 -------------------------------------
 
-MAPDL will not run in ANSYS versions 19.X without modifying the file::
+MAPDL will not run in ANSYS versions 19.X `without modifying <https://github.com/rcgsheffield/sheffield_hpc/issues/1083>`_ the file::
 
     /usr/local/packages/live/noeb/ANSYS/19.4/binary/v194/ansys/bin/anssh.ini
 
