@@ -1,0 +1,32 @@
+#%Module1.0#####################################################################
+##
+## Phoronix Test Suite Module file
+##
+################################################################################
+# Module file logging
+source /usr/local/etc/module_logging.tcl
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "Adds Phoronix Test Suite and required depencies to the PATH and LD_LIBRARY_PATH"
+}
+
+
+module-whatis   "Phoronix Test Suite is a free and open-source benchmark software for Linux and other operating systems which is developed by Michael Larabel and Matthew Tippett. "
+
+prepend-path PATH /usr/local/packages/apps/phoronixtestsuite/pts9.8.0/binary
+prepend-path PATH /usr/local/packages/apps/phoronixtestsuite/php-8.0.0-dev/bin
+prepend-path LD_LIBRARY_PATH /usr/local/packages/apps/phoronixtestsuite/php-8.0.0-dev/lib
+prepend-path LD_LIBRARY_PATH /usr/local/packages/apps/phoronixtestsuite/php-8.0.0-dev/lib64
+
+# Ensure Phoronix is not caching system info
+setenv NO_PHODEVI_CACHE 1
+
+# Add the PHP ini files to load the PHP modules
+setenv PHP_INI_SCAN_DIR /usr/local/packages/apps/phoronixtestsuite/php-8.0.0-dev/phpini
+
+if {[module-info mode load]} {
+}
+
+set-alias "p" "phoronix-test-suite"
