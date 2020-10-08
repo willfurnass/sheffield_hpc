@@ -1,0 +1,37 @@
+#%Module
+proc ModulesHelp { } {
+    puts stderr {
+
+Description
+===========
+Phoronix Test Suite is a free and open-source benchmark software for Linux and other 
+    operating systems which is developed by Michael Larabel and Matthew Tippett.
+
+
+
+More information
+================
+ - Homepage: https://www.phoronix-test-suite.com/
+    }
+}
+
+module-whatis {Description: Adds Phoronix Test Suite and required depencies to the PATH and LD_LIBRARY_PATH}
+module-whatis {Homepage: https://www.phoronix-test-suite.com/}
+module-whatis {URL: https://www.phoronix-test-suite.com/}
+
+
+prepend-path PATH /usr/local/packages/live/noeb/phoronixtestsuite/pts9.8.0/binary
+prepend-path PATH /usr/local/packages/live/noeb/phoronixtestsuite/php-8.0.0-dev/bin
+prepend-path LD_LIBRARY_PATH /usr/local/packages/live/noeb/phoronixtestsuite/php-8.0.0-dev/lib
+prepend-path LD_LIBRARY_PATH /usr/local/packages/live/noeb/phoronixtestsuite/php-8.0.0-dev/lib64
+
+# Ensure Phoronix is not caching system info
+setenv NO_PHODEVI_CACHE 1
+
+# Add the PHP ini files to load the PHP modules
+setenv PHP_INI_SCAN_DIR /usr/local/packages/live/noeb/phoronixtestsuite/php-8.0.0-dev/phpini
+
+# NOT Built with EasyBuild version 4.0.0
+
+set-alias "p" "phoronix-test-suite"
+
