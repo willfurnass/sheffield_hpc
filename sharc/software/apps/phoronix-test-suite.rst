@@ -136,3 +136,7 @@ The ./configure for this compiling is as follows: ::
 Please ensure that the PKG_CONFIG_PATH environment variable is set correctly: ::
 
     export PKG_CONFIG_PATH=/usr/local/packages/apps/phoronixtestsuite/php-8.0.0-dev/lib/pkgconfig/:/usr/local/packages/apps/phoronixtestsuite/php-8.0.0-dev/lib64/pkgconfig/
+	
+----------
+
+Compiling and installing PHP modules will require you to first load the Phoronix Module then follow the instructions (with respect to phpize and onward) in this link: https://ma.ttias.be/how-to-compile-and-install-php-extensions-from-source/
