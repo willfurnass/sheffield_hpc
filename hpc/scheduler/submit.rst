@@ -81,8 +81,16 @@ SGE Command            Slurm Command            Description
                        | ``-t [days-hh:mm:ss]`` The upper limit is 08:00:00.  NB these limits may
                                                 differ for reservations/projects.
 
-``-l rmem=xxG``        ``--mem=xxG``            Specify the maximum amount (xx) of (real) memory to be
-                                                used (**per CPU core**) in Gigabytes.
+``-l rmem=xxG``        ``--mem=xxG``			 
+												For **SGE**, ``-l rmem=xxG``  is used to specify the maximum amount 
+												(``xx``) of real memory to be requested **per CPU core**.
+												
+												For **SLURM**, ``--mem=xxG``  is used to specify the maximum amount 
+												(``xx``) of real memory to be requested **per node**.
+
+												If the real memory usage of your job exceeds this value 
+												multiplied by the number of cores / nodes you requested then 
+												your job will be killed.
 
 ``-pe <env> <nn>``                              Specify an MPI *parallel environment* and a number of 
                                                 processor cores.
@@ -235,11 +243,16 @@ SGE Command            Slurm Command            Description
 
 ``-pe smp <nn>``       ``-c <nn>``              For parallel jobs requesting ``<<nn>>`` CPU cores on a single node
 
-``-l rmem=xxG``        ``--mem=xxG``            Specify the maximum amount (``xx``) of real memory to be 
-                                                requested **per CPU core**.
-                                                If the real memory usage of your 
-                                                job exceeds this value multiplied by the number of
-                                                cores you requested then your job will be killed.
+``-l rmem=xxG``        ``--mem=xxG``			 
+												For **SGE**, ``-l rmem=xxG``  is used to specify the maximum amount 
+												(``xx``) of real memory to be requested **per CPU core**.
+												
+												For **SLURM**, ``--mem=xxG``  is used to specify the maximum amount 
+												(``xx``) of real memory to be requested **per node**.
+
+												If the real memory usage of your job exceeds this value 
+												multiplied by the number of cores / nodes you requested then 
+												your job will be killed.
 
 ``-l arch=``           n/a                      Target a processor architecture. This is irrelevant on 
                                                 ShARC as all processors are the same model.  Options 
