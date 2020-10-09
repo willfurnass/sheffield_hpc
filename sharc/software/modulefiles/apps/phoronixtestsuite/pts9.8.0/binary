@@ -26,7 +26,4 @@ setenv NO_PHODEVI_CACHE 1
 # Add the PHP ini files to load the PHP modules
 setenv PHP_INI_SCAN_DIR /usr/local/packages/apps/phoronixtestsuite/php-8.0.0-dev/phpini
 
-if {[module-info mode load]} {
-}
-
 set-alias "p" "phoronix-test-suite"
