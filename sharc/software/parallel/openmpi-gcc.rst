@@ -44,7 +44,6 @@ In more detail ::
     ssh user@sharc  
 
     # Start an interactive session from which we can run MPI processes using a core on each of four nodes 
-    # Note you must use qrshx not qrshx
     qrshx -pe mpi 4
 
     # Load an MPI implementation
