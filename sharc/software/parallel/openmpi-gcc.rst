@@ -43,8 +43,9 @@ In more detail ::
     # Connect to ShARC
     ssh user@sharc  
 
-    # Start an interactive session from which we can run MPI processes using a core on each of four nodes
-    qrsh -pe mpi 4
+    # Start an interactive session from which we can run MPI processes using a core on each of four nodes 
+    # Note you must use qrshx not qrshx
+    qrshx -pe mpi 4
 
     # Load an MPI implementation
     module load mpi/openmpi/3.1.1/gcc-8.2

@@ -73,7 +73,8 @@ To build an MPI program (e.g. :download:`mpi_hello_world.c`)::
     ssh user@sharc  
 
     # Start an interactive session 
-    qrsh 
+    # Note you must use qrshx not qrshx
+    qrshx 
 
     # Load an MPI implementation
     module load mpi/mvapich2/2.3b/intel-17.0.0
