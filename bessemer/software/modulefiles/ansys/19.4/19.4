@@ -1,0 +1,50 @@
+#%Module
+proc ModulesHelp { } {
+    puts stderr {
+
+Description
+===========
+ANSYS simulation software enables organizations to confidently predict
+    how their products will operate in the real world. We believe that every product is
+    a promise of something greater.
+
+
+More information
+================
+ - Homepage: http://www.ansys.com
+    }
+}
+
+module-whatis {Description: ANSYS simulation software enables organizations to confidently predict
+    how their products will operate in the real world. We believe that every product is
+    a promise of something greater. }
+module-whatis {Homepage: http://www.ansys.com}
+module-whatis {URL: http://www.ansys.com}
+
+set root /usr/local/packages/live/eb/ANSYS/19.4
+
+conflict ANSYS
+
+prepend-path	PATH		$root/v194/Framework/bin/Linux64
+prepend-path	PATH		$root/v194/aisol/bin/linx64
+prepend-path	PATH		$root/v194/RSM/bin
+prepend-path	PATH		$root/v194/ansys/bin
+prepend-path	PATH		$root/v194/autodyn/bin
+prepend-path	PATH		$root/v194/CFD-Post/bin
+prepend-path	PATH		$root/v194/CFX/bin
+prepend-path	PATH		$root/v194/fluent/bin
+prepend-path	PATH		$root/v194/TurboGrid/bin
+prepend-path	PATH		$root/v194/polyflow/bin
+prepend-path	PATH		$root/v194/Icepak/bin
+prepend-path	PATH		$root/v194/icemcfd/linux64_amd/bin
+prepend-path	PATH		$root/v194/CEI/bin
+setenv	EBROOTANSYS		"$root"
+setenv	EBVERSIONANSYS		"19.4"
+setenv	EBDEVELANSYS		"$root/easybuild/ANSYS-19.4-easybuild-devel"
+
+prepend-path	PATH		$root
+setenv	ICEM_ACN		"/usr/local/packages/live/eb/ANSYS/19.4/v194/icemcfd/linux64_amd"
+# Built with EasyBuild version 4.0.0
+
+# Fix applied for issue with core allocation problem - JM 25-09-2020 - see https://github.com/rcgsheffield/sheffield_hpc/issues/1082
+setenv FLUENT_AFFINITY "0" 

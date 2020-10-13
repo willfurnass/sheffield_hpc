@@ -125,4 +125,11 @@ In addition the following software packages are not included with the installati
     "ANSYS Chemkin"
     "ANSYS Geometry Interfaces".
 	
+------------
+
+Module files are available below:
+
+- :download:`/usr/local/modulefiles/live/eb/all/ANSYS/19.4 </bessemer/software/modulefiles/ansys/19.4/19.4>`
+- :download:`/usr/local/modulefiles/live/noeb/ANSYS/20.1/binary </bessemer/software/modulefiles/ansys/20.1/binary>`
+- :download:`/usr/local/modulefiles/live/noeb/ANSYS/20.2/binary  </bessemer/software/modulefiles/ansys/20.2/binary>`
 
