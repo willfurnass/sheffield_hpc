@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _`Intel R`:
 
 R (Intel Build)

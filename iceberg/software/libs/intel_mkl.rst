@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _iceberg_intel_mkl:
 
 Intel Math Kernel Library

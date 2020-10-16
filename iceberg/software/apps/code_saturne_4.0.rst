@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 Code Saturne 4.0
 ================
 

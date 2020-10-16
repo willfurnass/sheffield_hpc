@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _flamegpu_iceberg:
 
 .. highlight:: bash

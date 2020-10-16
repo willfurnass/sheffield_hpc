@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _iceberg-software:
 
 Software on iceberg

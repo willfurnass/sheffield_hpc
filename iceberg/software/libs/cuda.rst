@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _`cuda_iceberg`:
 
 CUDA

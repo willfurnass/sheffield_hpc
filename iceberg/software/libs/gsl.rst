@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _gsl_iceberg:
 
 GNU Scientific Libary (GSL)

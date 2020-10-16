@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 icu - International Components for Unicode
 ==========================================
 

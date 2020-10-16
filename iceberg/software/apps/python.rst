@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _python-conda:
 
 Python

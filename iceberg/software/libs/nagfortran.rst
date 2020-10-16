@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _`NAG Fortran Library (serial)`:
 
 NAG Fortran Library (Serial)

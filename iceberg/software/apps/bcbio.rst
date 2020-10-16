@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 bcbio
 =====
 .. sidebar:: bcbio

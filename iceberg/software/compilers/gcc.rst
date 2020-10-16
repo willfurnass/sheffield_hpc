@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _gcc_iceberg:
 
 GNU Compiler Collection (gcc)

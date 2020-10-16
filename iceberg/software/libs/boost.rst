@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _boost_iceberg:
 
 Boost C++ Library

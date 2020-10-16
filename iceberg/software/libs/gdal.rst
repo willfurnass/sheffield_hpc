@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _gdal_iceberg:
 
 Geospatial Data Abstraction Library (GDAL)

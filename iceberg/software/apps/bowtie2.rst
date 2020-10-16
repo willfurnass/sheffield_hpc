@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _bowtie2:
 
 Bowtie2

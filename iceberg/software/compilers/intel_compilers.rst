@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _iceberg_intel_compilers:
 
 Intel Compilers

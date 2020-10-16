@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _theano_iceberg:
 
 Theano

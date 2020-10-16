@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _`PGI Compilers`:
 
 PGI Compilers

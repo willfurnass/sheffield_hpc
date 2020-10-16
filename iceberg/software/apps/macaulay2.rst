@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _macaulay2:
 
 Macaulay2

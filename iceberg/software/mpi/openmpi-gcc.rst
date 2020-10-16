@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _openmpi_gcc_iceberg:
 
 OpenMPI (gcc version)

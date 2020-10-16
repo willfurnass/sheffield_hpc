@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _bzip2:
 
 bzip2

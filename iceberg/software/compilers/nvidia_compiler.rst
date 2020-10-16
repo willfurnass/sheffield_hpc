@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _nvidia_compiler_iceberg:
 
 NVCC - NVIDIA CUDA Compiler

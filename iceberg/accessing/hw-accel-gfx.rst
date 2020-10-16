@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _iceberg-hw-accel-gfx:
 
 Hardware-accelerated graphics rendering

@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _proj_iceberg:
 
 PROJ.4

@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _iceberg_intel_parallel_studio:
 
 Intel Parallel Studio

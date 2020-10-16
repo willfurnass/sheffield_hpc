@@ -1,3 +1,5 @@
+.. include:: warning.rst 
+
 .. _cluster-specs:
 
 Iceberg specifications
