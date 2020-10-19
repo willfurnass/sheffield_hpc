@@ -1,3 +1,5 @@
+.. include:: ../../../iceberg-eol.rst 
+
 .. _iceberg_intel_daal:
 
 Intel Data Analytics Acceleration Library 

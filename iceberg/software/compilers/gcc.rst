@@ -1,3 +1,5 @@
+.. include:: ../../../iceberg-eol.rst 
+
 .. _gcc_iceberg:
 
 GNU Compiler Collection (gcc)

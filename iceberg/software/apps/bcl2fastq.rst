@@ -1,3 +1,5 @@
+.. include:: ../../../iceberg-eol.rst 
+
 bcl2fastq
 =========
 

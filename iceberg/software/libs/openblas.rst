@@ -1,3 +1,5 @@
+.. include:: ../../../iceberg-eol.rst 
+
 .. _openblas_iceberg:
 
 OpenBLAS

@@ -1,3 +1,5 @@
+.. include:: ../../../iceberg-eol.rst 
+
 .. _netcdf_pgi:
 
 NetCDF (PGI build)

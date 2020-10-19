@@ -1,3 +1,5 @@
+.. include:: ../../../iceberg-eol.rst 
+
 .. _`Intel R`:
 
 R (Intel Build)

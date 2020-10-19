@@ -1,3 +1,5 @@
+.. include:: ../../../iceberg-eol.rst 
+
 .. _iceberg_comsol:
 
 COMSOL Multiphysics

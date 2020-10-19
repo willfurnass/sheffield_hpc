@@ -1,3 +1,5 @@
+.. include:: ../../../iceberg-eol.rst 
+
 .. _gdal_iceberg:
 
 Geospatial Data Abstraction Library (GDAL)

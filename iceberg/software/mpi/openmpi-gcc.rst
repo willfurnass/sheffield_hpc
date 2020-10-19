@@ -1,3 +1,5 @@
+.. include:: ../../../iceberg-eol.rst 
+
 .. _openmpi_gcc_iceberg:
 
 OpenMPI (gcc version)

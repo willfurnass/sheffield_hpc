@@ -1,3 +1,5 @@
+.. include:: ../iceberg-eol.rst 
+
 .. _GPUComputing_iceberg:
 
 Using GPUs on Iceberg

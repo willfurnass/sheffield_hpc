@@ -1,3 +1,5 @@
+.. include:: ../../iceberg-eol.rst 
+
 .. _iceberg-hw-accel-gfx:
 
 Hardware-accelerated graphics rendering

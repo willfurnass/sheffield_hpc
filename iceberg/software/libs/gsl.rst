@@ -1,3 +1,5 @@
+.. include:: ../../../iceberg-eol.rst 
+
 .. _gsl_iceberg:
 
 GNU Scientific Libary (GSL)
