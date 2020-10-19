@@ -1,4 +1,4 @@
-.. _cfitsio:
+.. _cfitsio_sharc:
 
 cfitsio
 =======
