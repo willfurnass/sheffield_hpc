@@ -1,4 +1,4 @@
-.. include:: warning.rst 
+.. include:: ../../../iceberg-eol.rst 
 
 Code Saturne 4.0
 ================

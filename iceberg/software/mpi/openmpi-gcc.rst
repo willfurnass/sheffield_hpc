@@ -1,4 +1,4 @@
-.. include:: warning.rst 
+.. include:: ../../../iceberg-eol.rst 
 
 .. _openmpi_gcc_iceberg:
 

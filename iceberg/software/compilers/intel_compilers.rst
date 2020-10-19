@@ -1,4 +1,4 @@
-.. include:: warning.rst 
+.. include:: ../../../iceberg-eol.rst 
 
 .. _iceberg_intel_compilers:
 

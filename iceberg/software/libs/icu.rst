@@ -1,4 +1,4 @@
-.. include:: warning.rst 
+.. include:: ../../../iceberg-eol.rst 
 
 icu - International Components for Unicode
 ==========================================

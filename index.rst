@@ -1,3 +1,5 @@
+.. include:: iceberg-eol.rst
+
 .. _hpc-home:
 
 High Performance Computing at Sheffield
