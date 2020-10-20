@@ -12,14 +12,19 @@
 
 ############################# Module Loads ###################################
 
-modulename=dev/gcc/8.2															# If this ever changes from dev at the start go down to line 73 and edit prefix. 16/10/2020 J.Moore
+modulename=dev/gcc/8.2															# If this ever changes from dev at the start go down to line 18 and edit moduleprefix. 16/10/2020 J.Moore
 module load $modulename
+
+moduleprefix=dev-                                   							# Strip this from the second modulenamestripped - change it if needed.
+modulenamestripped="${modulename////-}"       									# Believe it or not this converts the forward slash to a dash...
+modulenamestripped="${modulenamestripped#"$moduleprefix"}"      				# Finish by taking that prefix off and you get a nice name. 16/10/2020 J.Moore
+modulefiledir=/usr/local/modulefiles/libs/$name/$version
 
 ############################## Variable Setup ################################
 
 name=cfitsio 																	# Please go check the tar for this.
-version=3.49 																	# and this too - further down they get connected with a dash - line 67. 16/10/2020 J.Moore
-prefix=/usr/local/packages/libs/$name/$version/$modulename
+version=3.49 																	# and this too - further down they get connected with a dash - line 72. 16/10/2020 J.Moore
+prefix=/usr/local/packages/libs/$name/$version/$modulenamestripped
 build_dir=/scratch/$USER/$name
 filename=cfitsio_latest.tar.gz
 baseurl=http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/
@@ -70,10 +75,5 @@ cd $name-$version 																# Fixed this to CD in the right directory, not
 make -j 8
 make install
 
-prefix=dev-                                   									# Strip this from the second modulenamestripped - change it if needed.
-modulenamestripped="${modulename////-}"       									# Believe it or not this converts the forward slash to a dash...
-modulenamestripped="${modulenamestripped#"$prefix"}"      						# Finish by taking that prefix off and you get a nice name. 16/10/2020 J.Moore
-
-modulefiledir=/usr/local/modulefiles/libs/$name/$version
 mkdir -p $modulefiledir
 touch $modulefiledir/$modulenamestripped										# Touch to make the empty module file - you'll have to fill it yourself! 16/10/2020 J.Moore
