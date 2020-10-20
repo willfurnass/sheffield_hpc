@@ -15,9 +15,9 @@
 modulename=dev/gcc/8.2															# If this ever changes from dev at the start go down to line 18 and edit moduleprefix. 16/10/2020 J.Moore
 module load $modulename
 
-moduleprefix=dev-                                   							# Strip this from the second modulenamestripped - change it if needed.
-modulenamestripped="${modulename////-}"       									# Believe it or not this converts the forward slash to a dash...
-modulenamestripped="${modulenamestripped#"$moduleprefix"}"      				# Finish by taking that prefix off and you get a nice name. 16/10/2020 J.Moore
+moduleprefix=dev-																# Strip this from the second modulenamestripped - change it if needed.
+modulenamestripped="${modulename////-}"											# Believe it or not this converts the forward slash to a dash...
+modulenamestripped="${modulenamestripped#"$moduleprefix"}"						# Finish by taking that prefix off and you get a nice name. 16/10/2020 J.Moore
 modulefiledir=/usr/local/modulefiles/libs/$name/$version
 
 ############################## Variable Setup ################################
@@ -54,10 +54,10 @@ then
 fi 
 
 # Download the source
-if [ -e $filename ]                                               
-then                                                                            
-  echo "Install tarball exists. Download not required."                         
-else                                                                            
+if [ -e $filename ]
+then
+  echo "Install tarball exists. Download not required."
+else
   echo "Downloading source" 
   wget $baseurl/$filename
 fi
