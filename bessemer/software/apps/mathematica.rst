@@ -23,7 +23,7 @@ Mathematica can then be started with the ``mathematica`` command ::
 
 Multicore Interactive Usage
 ---------------------------
-Mathematica has extensive parallel functionality. To use it, you should request a parallel interactive session. For example, to request 4 cores ::
+Mathematica has extensive parallel functionality. To use it, you should request a parallel interactive session. For example, to request 2 cores ::
 
     srun -c="2" --pty bash -i
 
@@ -69,22 +69,23 @@ An example batch submission script for this file is ::
   #!/bin/bash
   # Request 4 gigabytes of real memory
   #SBATCH --mem=4000
-
+  #SBATCH --mail-user=des.ryan@sheffield.ac.uk
+  #SBATCH --mail-type=ALL
   module load MATHEMATICA/12.0.0/binary
 
   math -script very_simple_mathematica.m
 
 Copy and paste the above into a file called `run_job.sh` and submit with ::
 
-  qsub run_job.sh
+  sbatch run_job.sh
 
 Once the job has successfully completed, the output will be in a file named like `slurm-1503687.out`. The number at the end refers to the job-ID given to this job by the system and will be different for you. The contents of this file is ::
 
   more slurm-1503687.out
 
-  Mathematica version is 10.2.0 for Linux x86 (64-bit) (July 28, 2015)
-  The machine name is node131
-  The result of the integral is
+  Mathematica version is 12.0.0 for Linux x86 (64-bit) (April 7, 2019)
+  The machine name is bessemer-node017
+  The result of the integral is 
   x/2 - Sin[2*x]/4
 
 Installation notes
