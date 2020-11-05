@@ -45,6 +45,10 @@ Hardware specifications
    * - Local storage
      - 140 GB of temporary storage under ``/scratch`` (2x SSD RAID1)
 
+.. note::
+
+   Most other GPU nodes in Bessemer have 32GB of GPU memory per GPU.
+
 Requesting access
 -----------------
 
