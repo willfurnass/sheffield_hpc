@@ -40,6 +40,9 @@ As such, it is recommended that you request enough CPU memory to communicate pro
 
 The above will give you 2GB more CPU RAM than the 32GB of GPU RAM available on the NVIDIA V100.
 
+.. note::
+
+   Some private GPU nodes have only 16GB of GPU RAM per GPU; the users of private GPU nodes should check and be aware of how much GPU memory is available.
 
 .. _GPUJobs_bessemer:
 
