@@ -176,7 +176,7 @@ R/4.0.0-foss-2020a
 ^^^^^^^^^^^^^^^^^^
 
 Installed using an eponymous easyconfig,
-which is the easyconfig that shipped with EasyBuild 4.2.2
+which is the easyconfig that shipped with EasyBuild 4.3.1
 minus any of the configuration to install 765 packages from CRAN
 (i.e. just base R was installed).
 
