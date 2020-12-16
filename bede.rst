@@ -18,6 +18,12 @@ This system is particularly well suited to supporting:
 * **Jobs that require much movement of data between CPU and GPU memory**.
 * In particular **deep learning and machine learning workflows** that meet either of the above criteria.
 
+Status
+------
+
+Academics/researchers can apply for access to the system (see `Further Information`_)
+but note that some aspects of the system plus the registration and support mechanisms are still being refined.
+
 Noteworthy features of the system
 ---------------------------------
 
