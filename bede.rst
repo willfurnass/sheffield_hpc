@@ -3,95 +3,68 @@
 Bede (Tier 2 GPU cluster)
 =========================
 
-Bede is a new `EPSRC-funded <https://gow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/T022167/1>`__ 'Tier 2' (regional) HPC cluster.  
-It is currently being configured and tested
-and **may** be available for use by researchers in 2020.
-The system will be available for use by researchers from `N8 Research Partnership`_ institutions
+Bede is a `EPSRC-funded <https://gow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/T022167/1>`__ 'Tier 2' (regional) GPU-equipped HPC cluster.  
+The system is available for use by researchers from `N8 Research Partnership`_ institutions
 (Durham, Lancaster, Leeds, Liverpool, Manchester, Newcastle, Sheffield and York).
-
-This system will be particularly well suited to supporting:
- 
-- **Jobs that require multiple GPUs and possibly multiple nodes**
-- **Jobs that require much movement of data between CPU and GPU memory**
 
 NB the system was previously known as NICE-19.
 
-Hardware, OS and scheduler
---------------------------
+Suitable workflows
+------------------
 
-* Main GPU nodes (32x) - each (`IBM AC922`_) node has
+This system is particularly well suited to supporting:
+ 
+* **Jobs that benefit from distributing work between  multiple GPUs and possibly multiple nodes**.
+* **Jobs that require much movement of data between CPU and GPU memory**.
+* In particular **deep learning and machine learning workflows** that meet either of the above criteria.
 
-  * 2x IBM POWER9_ CPUs (and two NUMA nodes), with
+Noteworthy features of the system
+---------------------------------
+
+* 32x GPU nodes (`IBM AC922`_ nodes) each with 
+
+  * 2x IBM POWER9_ CPUs 
   * 2x `NVIDIA V100`_ GPUs per CPU
-  * Each CPU is connected to its two GPUs via high-bandwidth, low-latency NVLink interconnects
-    (helps if you need to move lots of data to/from GPU memory)
+  * Each CPU is connected to its two GPUs via high-bandwidth, low-latency interconnects (NVLink), which helps if you need to move lots of data to/from GPU memory
 
-* Inference GPU nodes (6x `IBM IC922`_)
-   
-  * 4x nodes have `NVIDIA T4`_ inference GPUs 
-  * 2x nodes have FPGAs instead (`Bitware 250-SoC`_, which is a Xilinx Zinq Ultrascale+ FPGA that has ARM on the package too)
+* 4x 'inference' nodes (`IBM IC922`_ nodes) each with
 
-* Networking
+  * 2x IBM POWER9_ CPUs 
+  * 4x `NVIDIA T4`_ GPUs 
 
-  * 100 Gb EDR Infiniband
-    (high bandwith and low latency to support multi-node jobs)
-  * 10 Gb Ethernet as a backup
+* High-bandwidth, low-latency networking between nodes (100 Gb/s EDR Infiniband)
+* High-performance parallel file system (Lustre)
+* Slurm job scheduler
+* Installed software
 
-* Storage: Lustre parallel file system (available over Infiniband and Ethernet network interfaces)
-* Scheduler: Slurm
+  * IBM Watson Machine Learning Community Edition
 
-Research software
------------------
-
-The set of research software available on the cluster is yet to be finalised by is likely to include the following (subject to change):
-
-* IBM Watson Machine Learning Community Edition
-
-  * IBM Distributed Deep Learning (DDL)
-
-    * Efficiently scale popular machine learning frameworks over multiple CPUs/GPUs/nodes
-    * Works with TensorFlow, IBMCaffe and Pytorch
-
-  * IBM Large Model Support
-
-    * Work with models too large to fit into the memory of a single GPU by transparently moving data from CPU to GPU memory as required.
-    * Works with BVLC Caffe, IBMCaffe, TensorFlow, TensorFlow-Keras, PyTorch
-
-  * IBM Snap ML
-
-    * A library for training generalized linear models
-    * Supports GPU acceleration, distributed training and sparse data structures
-    * Can integrate with Scikit-Learn and Apache Spark
-
-  * IBM provide this software inc their custom versions of PyTorch, TensorFlow etc via conda channels
-
-* Profiling and debugging
+    * Includes Conda packages for helping transparently distribute Deep Learning training and inference tasks 
+      over multiple GPUs and/or nodes 
+      when using e.g. TensorFlow, IBM Caffe and Pytorch.
+    * Includes conda packages for accelerating the training of generalized linear models 
+      (e.g. in scikit-learn and Apache Spark) using GPUs and multiple nodes
 
   * Standard GNU toolkit via the IBM Advanced Toolchain for Linux
 
-    * Provides IBM-optimised GNU compilers, BLAS/LAPACK, glibc, gdb, valgrind, itrace, Boost, Python, Go and more
+    * Inc. IBM-optimised GNU compilers, BLAS/LAPACK, glibc, gdb, valgrind, itrace, Boost, Python, Go and more
 
-  * NVIDIA tools
+  * NVIDIA profilers and debuggers
 
-    * ``nvprof``
-    * ``nsight-systems`` and ``nsight-compute``
-    * ``cuda-gdb``
+Further information
+-------------------
 
-Acknowledgement for presentations and papers
---------------------------------------------
+See the `N8 CIR's Bede site <https://n8cir.org.uk/supporting-research/facilities/nice/>`__ for:
 
-.. image:: /images/N8_CIR_Logo_Colour.png
-    :align: right
-    :width: 200
-
-If you are hoping to use Bede in your research in the coming months then you will need to acknowledge the facility in presentations and papers using the following text:
-
-   "We acknowledge the N8 Centre for Computationally Intensive Research (N8 CIR) for computational resources established through EPSRC (EP/T022167/1)"
-
-A high-resolution version of the `N8 CIR logo`_ can be used in talks or on posters.
+* Documentation on how to use the system
+* Information on per-institution RSE support (including the contact for Sheffield)
+* How to register a project
+* Hardware specifications
+* Available software
+* How to acknowledge Bede and the N8 CIR in publications
+* Bede and N8 CIR logos 
 
 
-.. _Bitware 250-SoC: https://www.bittware.com/fpga/250-soc/
 .. _IBM AC922: https://www.ibm.com/uk-en/marketplace/power-systems-ac922
 .. _IBM IC922: https://www.ibm.com/uk-en/marketplace/power-system-ic922
 .. _N8 CIR logo: https://n8cir.org.uk/about/n8-cir-logo/
