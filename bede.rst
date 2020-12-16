@@ -26,11 +26,13 @@ Noteworthy features of the system
   * 2x IBM POWER9_ CPUs 
   * 2x `NVIDIA V100`_ GPUs per CPU
   * Each CPU is connected to its two GPUs via high-bandwidth, low-latency interconnects (NVLink), which helps if you need to move lots of data to/from GPU memory
+  * 512 GB RAM
 
 * 4x 'inference' nodes (`IBM IC922`_ nodes) each with
 
   * 2x IBM POWER9_ CPUs 
-  * 4x `NVIDIA T4`_ GPUs 
+  * 4x `NVIDIA T4`_ GPUs
+  * 256 GB RAM
 
 * High-bandwidth, low-latency networking between nodes (100 Gb/s EDR Infiniband)
 * High-performance parallel file system (Lustre)
