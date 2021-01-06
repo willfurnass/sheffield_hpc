@@ -8,6 +8,7 @@ build_dir=~/R-$version-build
 mkdir -p $build_dir
 mkdir -p $install_dir
 module load dev/gcc/10.1
+module load libs/pcre2/10.36/gcc-10.1
 cd $build_dir
 
 #Download the installer

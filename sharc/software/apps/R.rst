@@ -208,7 +208,7 @@ This was a set of scripted installs. It was compiled from source with gcc 8.2.0 
 
 * Install log-files, including the output of the ``make check`` tests are available on the system at ``/usr/local/packages/apps/R/4.0.0/gcc-8.2.0/install_logs/`` and ``/usr/local/packages/apps/R/4.0.0/gcc-10.1/install_logs/``
 
-
+* PCRE2 was compiled as a dependency with the appropriate compilers for each.
 
 
 Version 3.6.3
