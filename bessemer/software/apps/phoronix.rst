@@ -35,6 +35,8 @@ A list of these tests/test suites can be found here: https://openbenchmarking.or
 
 A summary of common commands can be found here: https://www.phoronix-test-suite.com/documentation/phoronix-test-suite.html
 
+A Phoronix Test Suite cheat sheet can be found at: https://gist.github.com/anshula/728a76297e4a4ee7688d
+
 Concepts to be aware of include:
 #######################################
 * You can save your results locally or also upload your results to the OpenBenchmarking website which may be useful for comparison.
