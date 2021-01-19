@@ -62,7 +62,7 @@ Noteworthy features of the system
 Further information
 -------------------
 
-See the `N8 CIR's Bede site <https://n8cir.org.uk/supporting-research/facilities/nice/>`__ for:
+See the `N8 CIR's Bede site <https://n8cir.org.uk/supporting-research/facilities/bede/>`__ for:
 
 * Documentation on how to use the system
 * Information on per-institution RSE support (including the contact for Sheffield)
