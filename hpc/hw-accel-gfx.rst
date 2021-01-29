@@ -22,33 +22,33 @@ Usage instructions
 #. :ref:`Connect to ShARC <connecting>`.  
 #. On the login node (**not** a worker node) run the command ``qsh-vis``.  The output should look something like the following: ::
 
-   [te1st@sharc-login1 ~]$ qsh-vis
+      [te1st@sharc-login1 ~]$ qsh-vis
 
-   NOTE: you can only run 1 GPU acclerated session
-
-
-   New 'sharc-node098.shef.ac.uk:1 (te1st)' desktop is sharc-node098.shef.ac.uk:1
-
-   Starting applications specified in /home/te1st/.vnc/xstartup
-   Log file is /home/te1st/.vnc/sharc-node098.shef.ac.uk:1.log
+      NOTE: you can only run 1 GPU acclerated session
 
 
-   Accelerated VNC graphics session started
+      New 'sharc-node098.shef.ac.uk:1 (te1st)' desktop is sharc-node098.shef.ac.uk:1
 
-   *******To connect: *******
+      Starting applications specified in /home/te1st/.vnc/xstartup
+      Log file is /home/te1st/.vnc/sharc-node098.shef.ac.uk:1.log
 
-   Use the TigerVNC application to connect to:
-   sharc-node098.shef.ac.uk:5901
 
-   Make sure to enter your normal ShARC username/password when prompted.
+      Accelerated VNC graphics session started
 
-   The latest version of the TigerVNC client can be downloaded from:
-   https://github.com/TigerVNC/tigervnc/releases
+      *******To connect: *******
 
-   Note that TigerVNC no longer supports http access to the java vncviewer client, however the
-   java vncviewer application can be downloaded from https://github.com/TigerVNC/tigervnc/releases
+      Use the TigerVNC application to connect to:
+      sharc-node098.shef.ac.uk:5901
 
-   Hit [enter] to terminate this VNC graphics session
+      Make sure to enter your normal ShARC username/password when prompted.
+
+      The latest version of the TigerVNC client can be downloaded from:
+      https://github.com/TigerVNC/tigervnc/releases
+
+      Note that TigerVNC no longer supports http access to the java vncviewer client, however the
+      java vncviewer application can be downloaded from https://github.com/TigerVNC/tigervnc/releases
+
+      Hit [enter] to terminate this VNC graphics session
 
 #. Leave that terminal running.
 #. On your machine start the 'VNC Viewer' program that comes with TigerVNC (this is called ``vncviewer`` on Linux).  You should then see a dialog box like this:
@@ -68,8 +68,8 @@ Resources available to qsh-vis sessions
 
 * Sessions started using ``qsh-vis`` by default have allocated to them:
 
-    * 1 CPU core
-    * 1 GPU
+  * 1 CPU core
+  * 1 GPU
 
 * You can request additional resources by passing the same parameters to ``qsh-vis`` that can be used with ``qrsh``/``qrshx``/``qsh``/``qsub`` (see :ref:`submit-queue`).
 * Research groups who have purchased their own GPU visualisation nodes may have different defaults.
