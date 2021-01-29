@@ -6,9 +6,6 @@
 # configure the variables for the build.
 # This script will then create the directories you need and download and unzip
 # the source in to the build dir.
-#
-# Ported from Iceberg 16/10/2020 J.Moore - It might make some weird extra dirs...
-
 
 ############################# Module Loads ###################################
 

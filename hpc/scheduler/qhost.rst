@@ -12,7 +12,7 @@ Documentation is available on the system using the command::
 
 Examples
 --------
-Get an overview of the nodes and CPUS on Iceberg ::
+Get an overview of the nodes and CPUS on ShARC: ::
 
     qhost
 

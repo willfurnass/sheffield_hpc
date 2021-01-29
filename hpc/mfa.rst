@@ -18,7 +18,7 @@ SSH clients
 SSH has a built in functionality to reuse existing connections for new sessions.  You can enable this feature by adding the following config
 to your `~/.ssh/config` file on your local PC::
 
-  Host iceberg.shef.ac.uk
+  Host sharc.shef.ac.uk
     ControlMaster auto
     ControlPath ~/.ssh/sockets/%r@%h-%p
     ControlPersist 600

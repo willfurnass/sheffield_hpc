@@ -10,7 +10,7 @@ Total capacity
 * CPU cores: 2024
 * Total memory: 12160 GiB
 * GPUs: 40
-* Fast network filesystem (`Lustre <http://lustre.org/>`_): 669 TiB (``/home`` and ``/data`` are shared with Iceberg)
+* Fast network filesystem (`Lustre <http://lustre.org/>`_): 669 TiB 
 
 Note that some of these resources have been purchased by research groups who have exclusive access to them.
 

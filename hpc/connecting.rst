@@ -37,8 +37,6 @@ including *MobaXTerm*.
 +----------+------------------------+---------------------------------------------------------------------------------------------------+
 | ShARC    | Password or public key | Not permitted                                                                                     |
 +----------+------------------------+---------------------------------------------------------------------------------------------------+
-| Iceberg  | Password or public key | Requires password (including MFA); *public key authentication not permitted after 15th May 2020*  | 
-+----------+------------------------+---------------------------------------------------------------------------------------------------+
 
 SSH client software on Windows
 ------------------------------
@@ -59,7 +57,7 @@ Click *Start local terminal* and if you see something like the following then pl
 
 Running commands from a terminal (from the command-line) may initially be
 unfamiliar to Windows users but this is the recommended approach for
-running commands on Bessemer, ShARC and Iceberg as 
+running commands on Bessemer or ShARC as 
 it is the idiomatic way of interfacing with the Linux clusters.
 
 SSH client software on Mac OS/X and Linux
@@ -85,7 +83,7 @@ log in to a cluster: ::
 Here you need to:
 
 * replace ``$USER`` with your IT Services username (e.g. ``te1st``)
-* replace ``$CLUSTER_NAME`` with ``bessemer``, ``sharc`` or ``iceberg``.
+* replace ``$CLUSTER_NAME`` with ``bessemer`` or ``sharc``.
 
 .. note::
 
@@ -210,4 +208,3 @@ you can look at how to submit jobs with :ref:`submit-queue` or
 look at the software installed on 
 :ref:`Bessemer <bessemer-software>`,
 :ref:`ShARC <sharc-software>` and 
-:ref:`Iceberg <iceberg-software>`.

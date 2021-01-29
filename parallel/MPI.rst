@@ -20,30 +20,30 @@ The `Message Passing Interface (MPI) <http://mpi-forum.org/>`_ itself is just a 
 
 There are multiple implementations of this specification, each produced by a different organisation, 
 including `OpenMPI <https://www.open-mpi.org/>`_ and `MVAPICH <http://mvapich.cse.ohio-state.edu/>`_.
-This documentation includes information on the MPI implementations available on :ref:`ShARC <sharc-parallel>` and :ref:`Iceberg <mpi>`.  
-These implementations have been compiled on our clusters in a way that allows them to make optimal use of each cluster's high-speed network infrastructure (*OmniPath* on ShARC, *Infiniband* on Iceberg).
+This documentation includes information on the MPI implementations available on :ref:`ShARC <sharc-parallel>`.  
+These implementations have been compiled in a way that allows them to make optimal use of the cluster's high-speed network infrastructure (*OmniPath* on ShARC).
 If you are not sure which implementation to use then try the latest available version of OpenMPI.
 
 Batch MPI
 ---------
 To use MPI you need to: 
 
-* Include information in your :ref:`batch job submission script <submit-queue>` that tells the Grid Engine scheduler you want to use a particular **Parallel Environment** (``mpi`` on ShARC, ``openmpi-ib`` on Iceberg);
+* Include information in your :ref:`batch job submission script <submit-queue>` that tells the Grid Engine scheduler you want to use a particular **Parallel Environment** (``mpi`` on ShARC);
 * Use ``module load`` to activate a particular :ref:`MPI implementation <mpi_impl>` (or ``module load`` an application that itself loads an MPI implementation behind the scenes).
 
 Here is an example that requests 4 *slots* (CPU cores) with 8GB of RAM per slot then runs a program called ``executable`` in the current directory using the OpenMPI library (version 2.0.1, built using version 6.2 of the gcc compiler).  It is assumed that ``executable`` was previously compiled using that exact same MPI library.  The Parallel Environment is specified using ``-pe``. :: 
 
-  #!/bin/bash
-  # Request 4 MPI 'slots' (cores)
-  #$ -pe mpi 4
-  # Request 8GB of RAM per slot
-  #$ -l rmem=8G
+   #!/bin/bash
+   # Request 4 MPI 'slots' (cores)
+   #$ -pe mpi 4
+   # Request 8GB of RAM per slot
+   #$ -l rmem=8G
 
-  # Load a MPI library
-  module load mpi/openmpi/1.10.4/gcc-6.2
+   # Load a MPI library
+   module load mpi/openmpi/1.10.4/gcc-6.2
 
-  # Run a program previously compiled using that specific MPI library
-  mpirun ./executable
+   # Run a program previously compiled using that specific MPI library
+   mpirun ./executable
 
 Example MPI jobs
 ----------------

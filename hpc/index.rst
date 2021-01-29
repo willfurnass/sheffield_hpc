@@ -8,7 +8,7 @@ the Linux operating system
 or even a command line before 
 this is the place to start. 
 This guide will get you set up using the University's clusters 
-(ShARC, Bessemer and Iceberg) fairly quickly.
+(Bessemer and ShARC) fairly quickly.
 
 .. toctree::
    :maxdepth: 2
@@ -20,4 +20,5 @@ This guide will get you set up using the University's clusters
    transferring-files
    scheduler/index
    modules
+   hw-accel-gfx
    jupyterhub

@@ -132,19 +132,15 @@ Python from the `Intel Python Distribution <https://software.intel.com/en-us/dis
    ---
 
    Before that, we need to configure conda so that it stores any environments we create in ``/data/username/.conda-sharc`` as
-   
-   * the set of conda packages used in our environments can grow quite large; ``/home`` can fill up quickly if environments are created there;
-   * ``/home`` and ``/data`` are shared between ShARC and Iceberg but 
-     sharing environments between the clusters causes problems; 
-     we therefore need the environments to be stored in a per-cluster directory.
+   the set of conda packages used in our environments can grow quite large; ``/home`` can fill up quickly if environments are created there.
    
    First, tell conda where to look for a config file by starting a :ref:`Jupyter Terminal <jh_terminal>` then running ::
    
-       echo "export CONDARC=$HOME/.condarc-${SGE_CLUSTER_NAME}.yml" >> ~/.bashrc
+       echo "export CONDARC=$HOME/.condarc-sharc.yml" >> ~/.bashrc
    
    Secondly, create a config file that tells conda where to look for / create conda environments.  Again, from a Jupyter Terminal: ::
    
-       nano ~/.condarc-${SGE_CLUSTER_NAME}.yml
+       nano ~/.condarc-sharcyml
    
    to start editing the config file in text editor, then type: ::
    

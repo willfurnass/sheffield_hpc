@@ -3,7 +3,7 @@
 Starting interactive jobs and submitting batch jobs
 ===================================================
 
-Jobs (both interactive sessions and batch jobs) on Iceberg and ShARC 
+Jobs (both interactive sessions and batch jobs) on ShARC 
 are managed using the `Son of Grid Engine <https://arc.liv.ac.uk/trac/SGE>`_
 **job scheduling software**.  You will typically see this referred to as
 **SGE**, as it is one of several derivatives of `Sun Grid Engine
@@ -162,7 +162,7 @@ Some things to note:
 * You will often require one or more ``module`` commands in your submission file. 
   These make programs and libraries available to your scripts.  
   Many applications and libraries are available as modules on 
-  :ref:`ShARC <sharc-software>`, :ref:`Bessemer <bessemer-software>` and :ref:`iceberg <iceberg-software>`.
+  :ref:`ShARC <sharc-software>`, :ref:`Bessemer <bessemer-software>`.
 
 Here is a more complex example that requests more resources:
 
@@ -225,7 +225,7 @@ SGE Command            Slurm Command            Description
 ====================== ======================== ====================================================================
 ``-l h_rt=hh:mm:ss``   | ``-t [min]``           Specify the total maximum wall clock execution time for the job.
                        | ``-t [days-hh:mm:ss]`` The upper limit is typically 96:00:00 (4 days) on ShARC
-                                                and 168:00:00 (7 days) on Iceberg and Bessemer.  Note that these 
+                                                and 168:00:00 (7 days) on Bessemer.  Note that these 
                                                 limits may differ for specific Projects/Queues.  
                                                 Also note that requesting less execution time may 
                                                 result in your job spending less time queuing.
@@ -241,9 +241,8 @@ SGE Command            Slurm Command            Description
                                                 job exceeds this value multiplied by the number of
                                                 cores you requested then your job will be killed.
 
-``-l arch=``           n/a                      Target a processor architecture. This is irrelevant on 
-                                                ShARC as all processors are the same model.  Options 
-                                                on Iceberg include ``intel-e5-2650v2`` and ``intel-x5650``.
+``-l arch=``           n/a                      Target a processor architecture. Note that all public nodes 
+                                                in ShARC use the same model of processor.
 
 ``-N``                 ``--job-name=``          Job name, used to name output files and in the queue list.
 
@@ -283,20 +282,6 @@ Frequently Asked SGE Questions
 **How many jobs can I submit at any one time**
 
 You can submit up to 2000 jobs to the cluster, and the scheduler will allow up to 200 of your jobs to run simultaneously (we occasionally alter this value depending on the load on the cluster).
-
-**How do I specify the processor type on Iceberg?**
-
-Add the following line to your submission script ::
-
-    #$ -l arch=intel-e5-2650v2
-
-This specifies nodes that have the Ivybridge `E5-2650 CPU <http://ark.intel.com/products/75269/Intel-Xeon-Processor-E5-2650-v2-20M-Cache-2_60-GHz>`_.
-All such nodes on Iceberg have 16 cores.
-
-To only target the older, 12 core nodes that contain `X5650 CPUs <http://ark.intel.com/products/47922/Intel-Xeon-Processor-X5650-12M-Cache-2_66-GHz-6_40-GTs-Intel-QPI>`_ add the following line to your submission script ::
-
-    #$ -l arch=intel-x5650
-
 
 **How do I specify multiple email addresses for SGE job notifications?**
 
