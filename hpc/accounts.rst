@@ -7,7 +7,7 @@ Before you can start using the clusters you need to register for an HPC account.
 
 An account gives you access to all our clusters (Bessemer and ShARC).
 
-Accounts are available for staff by emailing `helpdesk@sheffield.ac.uk <helpdesk@sheffield.ac.uk>`_.
+Accounts are available for staff by emailing `it-servicedesk@sheffield.ac.uk <it-servicedesk@sheffield.ac.uk>`_.
 
 The following categories of students can also have an account with
 the permission of their supervisors:
@@ -17,7 +17,7 @@ the permission of their supervisors:
 * Undergraduates 3rd & 4th year  - project work
 
 A student's supervisor can request an account for the student by emailing
-`helpdesk@sheffield.ac.uk <helpdesk@sheffield.ac.uk>`_.
+`it-servicedesk@sheffield.ac.uk <it-servicedesk@sheffield.ac.uk>`_.
 
 .. note::
 
@@ -33,4 +33,4 @@ A student's supervisor can request an account for the student by emailing
 
    Extra care should always be taken when dealing with sensitive information; if you are in any doubt about 
    the sensitivity of information, or how it should be handled, then please contact the IT Services 
-   `helpdesk@sheffield.ac.uk <helpdesk@sheffield.ac.uk>`_ for advice.
+   `it-servicedesk@sheffield.ac.uk <it-servicedesk@sheffield.ac.uk>`_ for advice.

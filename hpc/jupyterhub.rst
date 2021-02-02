@@ -76,8 +76,7 @@ Status of and maintenance of ShARC's JupyterHub service
 
 This service is currenty **experimental**.
 If you use this service and encounter a problem,
-**please provide feedback** to
-`w.furnass@sheffield.ac.uk <w.furnass@sheffield.ac.uk>`_.
+please contact `it-servicedesk@sheffield.ac.uk <it-servicedesk@sheffield.ac.uk>`_.
 
 The server that provider the JupyterHub service is 
 typically **rebooted at 03:26 on the 2nd Tuesday of the month**
