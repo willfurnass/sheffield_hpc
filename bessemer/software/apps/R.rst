@@ -125,7 +125,7 @@ Since there are so many, we only install those libraries that have been explicit
 The associated R packages are not included in the central installation of R.
 
 To request the installation of R packages that depend on non-R libraries
-please contact ``helpdesk@sheffield.ac.uk``.
+please contact ``it-servicedesk@sheffield.ac.uk``.
 
 Using the Rmath library in C Programs
 -------------------------------------
