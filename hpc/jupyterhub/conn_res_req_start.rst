@@ -12,7 +12,7 @@ Connecting
 
         https://jupyter-sharc.shef.ac.uk
 
-#. When prompted, log in using your ShARC/Iceberg username 
+#. When prompted, log in using your University username 
    (e.g. ``te1st``, *not* the first part of your email address)
    and password.
 

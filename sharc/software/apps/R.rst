@@ -145,7 +145,7 @@ so you will need to install them yourself to your home directory following the i
 
    You may also need to ``module load`` those dependencies each time you *use* your R package.
 
-   See :ref:`here <Libraries>` more information on the available external libraries
+   See :ref:`here <sharc-libs>` more information on the available external libraries
 
 Using the Rmath library in C Programs
 -------------------------------------

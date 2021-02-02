@@ -6,7 +6,7 @@ Activating software using Environment Modules
 Overview and rationale
 ----------------------
 
-'Environment Modules' are the mechanism by which much of the software is made available to the users of the ShARC and Iceberg clusters.
+'Environment Modules' are the mechanism by which much of the software is made available to the users of the Bessemer and ShARC clusters.
 
 To make a particular piece of software available a user will *load* a module e.g. 
 on ShARC, you can load a particular version of the '``scotch``' library (version 6.0.4, built using the GCC 6.2 compiler and with support for parallel execution using OpenMPI 2.0.1) with: ::
@@ -21,26 +21,26 @@ If you then want to switch to using a different version of ``scotch`` (should an
 then load the other.  
 
 You may wonder why modules are necessary: why not just install packages provided by the vender of the operating system installed on the cluster?
-In shared high-performance computing environments such as ShARC and Iceberg:
+In shared high-performance computing environments such as Bessemer and ShARC:
 
 * users typically want control over the version of applications that is used (e.g. to give greater confidence that results of numerical simulations can be reproduced);
 * users may want to use applications built using compiler X rather than compiler Y as compiler X might generate faster code and/or more accurate numerical results in certain situations;
-* users may want a version of an application built with support for particular parallelisation mechanisms such as MPI for distributing work between machines, OpenMP for distributing work between CPU cores or CUDA for parallelisation on GPUs);
+* users may want a version of an application built with support for particular parallelisation mechanisms such as MPI for distributing work between machines (ShARC only), OpenMP for distributing work between CPU cores or CUDA for parallelisation on GPUs);
 * users may want an application built with support for a particular library.
 
-There is therefore a need to maintain multiple versions of the same applications on ShARC and Iceberg.
+There is therefore a need to maintain multiple versions of the same applications on Bessemer and ShARC.
 Module files allow users to select and use the versions they need for their research.
 
-If you switch to using a cluster other than Iceberg or ShARC then you will likely find that environment modules are used there too.  
+If you switch to using a cluster other than Bessemer or ShARC then you will likely find that environment modules are used there too.  
 Modules are not the only way of managing software on clusters: increasingly common approaches include:
 
-* the :ref:`Conda <sharc-python-conda>` package manager (Python-centric but can manage software written in any language; can be used on ShARC and Iceberg);
+* the :ref:`Conda <sharc-python-conda>` package manager (Python-centric but can manage software written in any language; can be used on Bessemer and ShARC);
 * :ref:`Singularity <singularity_sharc>`, a means for deploying software in `containers <https://en.wikipedia.org/wiki/Operating-system-level_virtualization>`__ (similar to `Docker <https://www.docker.com/>`__; can be used on ShARC).
 
 Basic guide
 -----------
 
-You can list all (loaded and unloaded) modules on Iceberg or ShARC using: ::
+You can list all (loaded and unloaded) modules on Bessemer or ShARC using: ::
 
     module avail
 
@@ -69,8 +69,8 @@ or to unload all loaded modules: ::
 
 To learn more about what software is available on the system and discover the names of module files, you can view the online documentation for 
 
+* :ref:`software on Bessemer <bessemer-software>`
 * :ref:`software on ShARC <sharc-software>`
-* :ref:`software on Iceberg <iceberg-software>`
 
 You can search for a module using: ::
 
@@ -83,13 +83,13 @@ The name of a Module should tell you:
 * the name and version of compiler that the software was built using (if applicable; not all installed software was installed from source);
 * the name and version of used libraries that distinguish the different installs of a given piece of software (e.g. the version of OpenMPI an application was built with).
 
-Note that the module naming convention differs between ShARC and Iceberg.
+Note that the module naming convention differs between Bessemer and ShARC.
 
 Some other things to be aware of:
 
 * You can load and unload modules in both interactive and batch jobs;
 * Modules may themselves load other modules.  If this is the case for a given module then it is typically noted in our documentation for the corresponding software;
-* Available applications and application versions may differ between ShARC and Iceberg;
+* Available applications and application versions may differ between Bessemer and ShARC;
 * The order in which you load modules may be significant (e.g. if module A sets ``SOME_ENV_VAR=apple`` and module B sets ``SOME_ENV_VAR=pear``);
 * Some related module files have been set up so that they are mutually exclusive e.g. on ShARC the modules ``dev/NAG/6.0`` and ``dev/NAG/6.1`` cannot be loaded simultaneously (as users should never want to have both loaded).
 
@@ -147,18 +147,17 @@ then if you want to load these modules **in an interactive session or in a batch
 
     source /home/te1st/proj1/setup_env.sh
 
-If you want to run the job on both Iceberg and ShARC (which provide different software / module files) 
-you could adapt your script to load different modules depending on the cluster name e.g. ::
+If you want to run the job on both Bessemer and ShARC (which provide different software / module files) 
+you could adapt your script to load different modules depending on which cluster you are using: ::
 
-    case $SGE_CLUSTER_NAME in
-    iceberg)
-        module load compilers/pgi/13.1
-        module load mpi/pgi/openmpi/1.6.4
-        ;;
-    sharc)
-        module load mpi/openmpi/2.0.1/pgi-17.5
-        ;;
-    esac
+    if [[ -n "$SGE_CLUSTER_NAME" ]]; then
+        # On ShARC:
+        module load some/module
+        module load another/module
+    else
+        # On Bessemer
+        module load different/module
+    fi
 
 Managing your environment this way is more likely to result in reproducible research, 
 particularly if changes to the content of ``/home/te1st/proj1`` are tracked using Git or another version control tool
@@ -172,7 +171,7 @@ You may therefore want to use them to manage software installed in
 * your home directory
 * a directory shared by your research group
 
-If you want your own Modules, you typically need to create a hierarchy of directories and files.  Within a base directory the relative path to a given module file determines the name you need to use to load it.  See the ``/usr/local/modulefiles`` directories on ShARC and Iceberg to:
+If you want your own Modules, you typically need to create a hierarchy of directories and files.  Within a base directory the relative path to a given module file determines the name you need to use to load it.  See the ``/usr/local/modulefiles`` directories on Bessemer and ShARC to:
 
 * see the files that provide all cluster-wide modules and 
 * get an understanding of the (`Tcl <https://www.tcl.tk/>`__) syntax and structure of module files.  

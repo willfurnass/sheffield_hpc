@@ -127,16 +127,6 @@ The JupyterHub service on ShARC is currently developed and maintained by the Uni
    :target: OpenDreamKit_
 
 
-Jupyter on Iceberg
-------------------
-
-Until 24 Oct 2018 there was a JupyterHub service running on the Iceberg cluster;
-this was much more limited than the service on ShARC and 
-has been decommissioned.  
-All users interested in running Jupyter Notebooks on local HPC facilities 
-should use JupyterHub on ShARC instead.
-
-
 .. _676541: http://cordis.europa.eu/project/rcn/198334_en.html
 .. _Horizon2020: https://ec.europa.eu/programmes/horizon2020/
 .. _Jupyter: https://jupyter.org/

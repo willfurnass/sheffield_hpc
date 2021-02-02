@@ -5,7 +5,7 @@ Getting an Account
 
 Before you can start using the clusters you need to register for an HPC account.
 
-An account gives you access to all our clusters (ShARC, Bessemer and Iceberg).
+An account gives you access to all our clusters (Bessemer and ShARC).
 
 Accounts are available for staff by emailing `helpdesk@sheffield.ac.uk <helpdesk@sheffield.ac.uk>`_.
 

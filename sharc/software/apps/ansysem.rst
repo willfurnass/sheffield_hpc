@@ -30,7 +30,7 @@ Ansys EM can be activated using the module files::
 
 Ansys EM is integrated with the Ansys Workbench GUI (the ``ansyswb`` executable) for each version. The Ansys EM exectuable is ``ansysedt``.
 
-**Note:** An accelerated-graphics interactive session with X Window support (i.e. a :ref:`iceberg-hw-accel-gfx` interactive session on ShARC) is required to run the ``ansysedt`` executable as a GUI. On the login node, the command ``qsh-vis`` will initiate an accelerated-graphics interactive session.
+**Note:** An accelerated-graphics interactive session with X Window support (i.e. a :ref:`hw-accel-gfx` interactive session on ShARC) is required to run the ``ansysedt`` executable as a GUI. On the login node, the command ``qsh-vis`` will initiate an accelerated-graphics interactive session.
 
 
 Batch jobs

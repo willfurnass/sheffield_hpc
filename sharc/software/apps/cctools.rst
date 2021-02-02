@@ -12,7 +12,7 @@ The Cooperative Computing Tools (cctools) contains Parrot, Chirp, Makeflow, Work
 
 Interactive Usage
 -----------------
-After connecting to Iceberg (see :ref:`ssh`), start an interactive session with the `qrsh` or `qrshx` command.
+After connecting to the cluster (see :ref:`ssh`), start an interactive session with the `qrsh` or `qrshx` command.
 
 The default version of cctools is made available with the command ::
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This is a template script for building and installing software on iceberg.
+# This is a template script for building and installing software on ShARC.
 # You should use it to document how you install things.
 # You will need to configure any module loads the build needs and then
 # configure the variables for the build.

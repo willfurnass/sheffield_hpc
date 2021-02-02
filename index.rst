@@ -1,20 +1,12 @@
-.. include:: iceberg-eol.rst
-
 .. _hpc-home:
 
 High Performance Computing at Sheffield
 =======================================
 
-.. image:: images/iceberg.png
-   :width: 40%
-   :align: right
-   :alt: A picture showing some of the Iceberg hardware.
-
 This is the documentation for The University of Sheffield's High Performance Computing (HPC) clusters:
 
 * :ref:`bessemer` 
 * :ref:`sharc` 
-* :ref:`iceberg`
 
 Run by IT Services' Research Computing Group
 with additional support from the Research Software Engineering team in Computer Science,
@@ -42,10 +34,10 @@ Take a look at the `Research Software Engineering <https://rse.shef.ac.uk/>`_ we
    hpc/index
    bessemer/index
    sharc/index
-   iceberg/index
    parallel/index
    troubleshooting
    glossary
    jade
    jade2
    bede
+   oldsystems
