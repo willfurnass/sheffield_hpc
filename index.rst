@@ -40,3 +40,4 @@ Take a look at the `Research Software Engineering <https://rse.shef.ac.uk/>`_ we
    jade
    jade2
    bede
+   oldsystems
