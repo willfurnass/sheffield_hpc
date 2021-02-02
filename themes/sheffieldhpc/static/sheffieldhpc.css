@@ -330,3 +330,7 @@ div.rightside {
   margin-left: 45%;
   /* float: right; */
 }
+
+div.wy-nav-content {
+  max-width: 75px;
+}
