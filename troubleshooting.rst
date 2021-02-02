@@ -173,7 +173,7 @@ the most likely cause is that you forgot the ``-X`` switch when you logged into 
 
 instead of: ::
 
-        ssh -X username@iclustername.sheffield.ac.uk
+        ssh -X username@clustername.sheffield.ac.uk
 
 macOS users might also encounter this issue if their `XQuartz <https://www.xquartz.org/>`_ is not up to date.
 
