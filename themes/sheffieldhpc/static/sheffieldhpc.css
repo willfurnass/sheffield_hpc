@@ -306,15 +306,31 @@ table.table:not(.footnote) thead th:not(.field-name) {
 }
 
 /* Forkme Banner */
-a.forkme>img {
-    position: absolute;
-    top: 80px;
-    right: 0px;
-    border: 0;
+/* a.forkme>img { */
+/*     position: absolute; */
+/*     top: 80px; */
+/*     right: 0px; */
+/*     border: 0; */
+/* } */
+
+/* @media (max-width: 850px) { */
+/*     a.forkme>img { */
+/*         display: none; */
+/*     } */
+/* } */
+
+/* For multiple columns (https://stackoverflow.com/a/58853076) */
+div.leftside {
+  width: 43%;
+  padding: 0px 3px 0px 0px;
+  float: left;
 }
 
-@media (max-width: 850px) {
-    a.forkme>img {
-        display: none;
-    }
+div.rightside {
+  margin-left: 45%;
+  /* float: right; */
+}
+
+div.wy-nav-content {
+  max-width: 75px;
 }
