@@ -4,7 +4,7 @@
 Sheffield High Performance Computing Documentation
 ==================================================
 
-This is the source for the documentation of Bessemer, ShARC and Iceberg, The University of Sheffield's High Performance Computing clusters.
+This is the source for the documentation of Bessemer and ShARC, The University of Sheffield's High Performance Computing clusters.
 
 It is written in the reStructuredText_ (*rst*) format and the Sphinx_ tool is used to convert this to a set of HTML pages.
 

@@ -24,6 +24,13 @@ The latest version of MATLAB (currently 2020a) is made available by running:
 
    module load MATLAB/2020a
 
+Alternatively, you can load earlier MATLAB versions by running:
+
+.. code-block:: bash
+
+   module load MATLAB/2018b
+   module load MATLAB/2019a
+
 You can then run MATLAB by entering ``matlab &``.
 
 
@@ -119,3 +126,13 @@ The MATLAB script, ``parallel_example.m``,
 creates 200 square (500 x 500) matrices comprised of random values,
 calculates the eigenvalues of each 
 and records the maximum eigenvalue for each matrix in the array ``max_eigenvals``.
+
+Installation note for Administrators:
+-------------------------------------
+
+MATLAB 2018b & 2019a were installed using Easybuild.
+
+MATLAB 2020a was installed using the MATLAB installer GUI in the following directory::
+	
+    /usr/local/packages/live/noeb/MATLAB/2020a/binary/
+

@@ -11,7 +11,7 @@ A brief walk-through for the eager.
 
        https://jupyter-sharc.shef.ac.uk
 
-#. Log in when prompted using your ShARC/Iceberg username and password.
+#. Log in when prompted using your University username and password.
 
 #. Click **Start My Server**.
 

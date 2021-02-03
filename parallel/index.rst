@@ -15,7 +15,7 @@ it is enabled on most laptop-class cores,
 but is disabled on most HPC clusters.
 Hyper-threading is disabled on most nodes on ShARC.
 
-Computer clusters such as ShARC or Iceberg contain many hundreds of cores and
+Computer clusters such as ShARC contain many hundreds of cores and
 the key to making your research code faster is to distribute your work across them.
 If your program is designed to run on only one core,
 running it on an HPC cluster without modification will not make it any faster (it may even be slower!).

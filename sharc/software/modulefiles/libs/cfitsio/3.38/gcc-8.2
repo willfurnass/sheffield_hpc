@@ -1,0 +1,22 @@
+#%Module1.0#####################################################################
+##
+## cfitsio 3.38 module file
+##
+
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+module load dev/gcc/8.2
+
+proc ModulesHelp { } {
+        puts stderr "Makes the CFITSIO 3.38 library available"
+}
+
+set LIB_DIR  /usr/local/packages/libs/cfitsio/3.38/gcc-8.2
+
+module-whatis "Makes the CFITSIO 3.38 library available"
+
+prepend-path LD_LIBRARY_PATH $LIB_DIR/lib
+prepend-path CFITSIO_INCLUDE_PATH $LIB_DIR/include
