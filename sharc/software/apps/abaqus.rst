@@ -39,6 +39,7 @@ Abaqus 2018 documentation in HTML format is located at ``/usr/local/packages/app
 
 **Note:** When using hardware-accelerated graphics rendering for Abaqus 6.14-2 on ShARC, i.e., during a ``qsh-vis`` interactive session, please run ``abq6142 cae`` to launch the GUI. When using a general compute node for Abaqus 2017, 2017-ga or 2018 on ShARC, please run ``abaqus cae -mesa`` or ``abq2017 cae -mesa`` (or ``abq2018 cae -mesa``) to launch the GUI without support for hardware-accelerated graphics rendering. The option ``-mesa`` disables hardware-accelerated graphics rendering within Abaqus's GUI.
 
+------------
 
 Abaqus example problems
 -----------------------
@@ -51,6 +52,7 @@ For example, after loading the Abaqus module enter the following at the command 
 	
 This will extract the input file ``s4d.inp`` to run the computation defined by the commands and batch submission script below.
 
+------------
 
 Batch jobs
 ----------
@@ -93,28 +95,7 @@ Note that the module ``dev/intel-compilers/15.0.7``, required for user subroutin
 
 **Important information:** Please note that at present Abaqus will not run on more than one node when using MPI on ShARC. The SGE option ``-l excl=true`` can be used to request that an MPI job runs on one compute node only. The recommended way to run Abaqus in parallel on ShARC is to use OpenMP.
 
-Using /fastdata as your Abaqus working directory
-------------------------------------------------
-
-If you want to run Abaqus from a directory on :ref:`/fastdata <filestore>`
-then you need to have the following line in your batch job submission script
-just before the main ``abaqus`` command: ::
-
-   export BAS_DISABLE_FILE_LOCKING=1
-
-Otherwise your Abaqus job will fail and 
-you will see errors like the following
-in your ``my_job_name.dat`` output file: ::
-
-    ***ERROR: An error occurred during a write access to 
-              <rank=0,arg_name=outdir>my_user_job.stt file. Check the disk space 
-              on your system.
-
-This is a lie; Abaqus is failing to write the ``.stt`` file as it tries to use `file locking <https://en.wikipedia.org/wiki/File_locking>`__ 
-which is not enabled on the ``/fastdata`` filesystem at present for performance reasons.
-Setting the ``BAS_DISABLE_FILE_LOCKING`` environment variable to ``1`` is a Dassault Systems-approved workaround for this.
-
-
+------------
 
 Licensed options
 ----------------
@@ -174,6 +155,31 @@ All available Abaqus licenses can be viewed using ``abaqus licensing r`` e.g. ::
    tfluid_int_fluent               61.9         250         31-dec-2018  ABAQUSLM
 
 Run ``abaqus licensing`` for usage info for the Abaqus licensing sub-command. Run ``abaqus licensing ru`` to see current licence usage.
+
+------------
+
+Checkpointing your work
+-----------------------
+
+Abaqus has a built-in checkpoint and restart feature.
+
+Add the following to the input file (refer to official Abaqus documentation for detail): ::
+
+   *RESTART, WRITE, OVERLAY, FREQUENCY=10
+
+**OVERLAY** saves only one state, i.e. overwrites the restart file every time new restart information is written
+    
+**FREQUENCY=N** writes restart information every N timesteps
+
+And, to restart the job, create a new input file newJobName with only a single line:  ::
+
+   *RESTART, READ
+
+Then run Abaqus specifying both the new and old job names:  ::
+
+   abaqus jobname=newJobName oldjob=oldJobName
+
+------------
 
 Installation notes
 ------------------
