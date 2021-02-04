@@ -110,6 +110,33 @@ This will create an environment called ``myexperiment`` which has all the
 anaconda 4.2.0 packages installed with Python 3.
 
 
+.. _sharc_conda_data_dir:
+
+Avoiding large Conda environments filling up your home directory
+################################################################
+
+If you want to create one or more large Conda environments
+(e.g. containing bulky Deep Learning packages such as TensorFlow or PyTorch)
+then there's a risk you'll quickly use up your home directory's :ref:`10GB storage quota <filestore>`.
+
+First, tell conda where to look for a config file: ::
+
+   echo "export CONDARC=$HOME/.condarc-sharc.yml" >> ~/.bashrc
+
+Next, create a ``.condarc-sharc.yml`` file in your home directory, 
+copy in the contents of your ``.condarc`` file if you have one,
+then ensure that the first line beneath ``envs_dirs:`` in that file is: ::
+
+      - /data/te1st/.conda-sharc
+
+i.e.: ::
+
+    envs_dirs:
+      - /data/te1st/.conda-sharc
+
+making sure to replace ``te1st`` with your username.
+
+
 Installing Packages Inside an Environment
 #########################################
 

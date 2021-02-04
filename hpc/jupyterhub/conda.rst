@@ -123,37 +123,12 @@ Python from the `Intel Python Distribution <https://software.intel.com/en-us/dis
    conda create -n example-intel-python-env -c intel intelpython3_core 
    ipykernel jupyter_client
 
-.. comment:
-   Omit the following until 
-   1. finalised a conda env location policy that works on both clusters
-   2. updated batch job submission script so CONDARC set 
-      (as don't think .bashrc is read when start Jupyter session via batch job)
-   3. Figured out how/why nb_conda does not allow new envs to be created.
-   ---
+.. note::
+   If you want to create one or more large Conda environments then 
+   there is a risk this will fill up your 10GB home directory.  
 
-   Before that, we need to configure conda so that it stores any environments we create in ``/data/username/.conda-sharc`` as
-   the set of conda packages used in our environments can grow quite large; ``/home`` can fill up quickly if environments are created there.
-   
-   First, tell conda where to look for a config file by starting a :ref:`Jupyter Terminal <jh_terminal>` then running ::
-   
-       echo "export CONDARC=$HOME/.condarc-sharc.yml" >> ~/.bashrc
-   
-   Secondly, create a config file that tells conda where to look for / create conda environments.  Again, from a Jupyter Terminal: ::
-   
-       nano ~/.condarc-sharcyml
-   
-   to start editing the config file in text editor, then type: ::
-   
-       envs_dirs:
-         - /data/te1st/.conda-sharc
-   
-   ...making sure to replace ``te1st`` with your username.
-   
-   To then create an environment using the *Conda* tab in the Jupyter user interface:
-   
-   #. Click the **+** above the upper most pane.
-   #. Enter a name for your environment.
-   #. Select a language/Kernel (currently only Python 2, Python 3 and R are supported)
+   You may want to explicitly tell Conda to 
+   :ref:`create environments in a location with a larger quota <sharc_conda_data_dir>`.
 
 Capturing the state of an environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
