@@ -97,55 +97,6 @@ All available Abaqus licenses can be viewed using ``abaqus licensing r`` e.g. ::
    $ module load ABAQUS/2018
    $ abaqus licensing r
 
-   Feature                         Version     #licenses    Expires      Vendor
-   _______                         _________   _________    __________   ______
-   abaqus_extended                 61.9         19          31-dec-2018  ABAQUSLM
-   abaqus                          61.9         250         31-dec-2018  ABAQUSLM
-   ams                             61.9         1           31-dec-2018  ABAQUSLM
-   aqua                            61.9         250         31-dec-2018  ABAQUSLM
-   cosim_acusolve                  61.9         1           31-dec-2018  ABAQUSLM
-   cosim_direct                    61.9         1           31-dec-2018  ABAQUSLM
-   cse                             61.9         1           31-dec-2018  ABAQUSLM
-   design                          61.9         250         31-dec-2018  ABAQUSLM
-   euler_lagrange                  61.9         1           31-dec-2018  ABAQUSLM
-   gpgpu                           61.9         1           31-dec-2018  ABAQUSLM
-   multiphysics                    61.9         1           31-dec-2018  ABAQUSLM
-   parallel                        61.9         16384       31-dec-2018  ABAQUSLM
-   sw_assoc_import                 61.9         1           31-dec-2018  ABAQUSLM
-   catiav5_assoc_import            61.9         1           31-dec-2018  ABAQUSLM
-   catiav5_import                  61.9         1           31-dec-2018  ABAQUSLM
-   catiav6_assoc_import            61.9         1           31-dec-2018  ABAQUSLM
-   tomee                           61.9         1           31-dec-2018  ABAQUSLM
-   pydriver                        61.9         1           31-dec-2018  ABAQUSLM
-   cae                             61.9         19          31-dec-2018  ABAQUSLM
-   rtgateway                       61.9         19          31-dec-2018  ABAQUSLM
-   gateway                         61.9         19          31-dec-2018  ABAQUSLM
-   safe_ex_gui                     61.9         19          31-dec-2018  ABAQUSLM
-   cfd                             61.9         250         31-dec-2018  ABAQUSLM
-   explicit                        61.9         250         31-dec-2018  ABAQUSLM
-   foundation                      61.9         250         31-dec-2018  ABAQUSLM
-   simflow                         61.9         250         31-dec-2018  ABAQUSLM
-   standard                        61.9         250         31-dec-2018  ABAQUSLM
-   cse_token                       61.9         250         31-dec-2018  ABAQUSLM
-   safe_ex_engine                  61.9         250         31-dec-2018  ABAQUSLM
-   tosca_topo                      61.9         250         31-dec-2018  ABAQUSLM
-   tosca_shape                     61.9         250         31-dec-2018  ABAQUSLM
-   tosca_bead                      61.9         250         31-dec-2018  ABAQUSLM
-   tosca_sizing                    61.9         250         31-dec-2018  ABAQUSLM
-   tosca_int_abaqus                61.9         250         31-dec-2018  ABAQUSLM
-   tosca_int_ansys                 61.9         250         31-dec-2018  ABAQUSLM
-   tosca_int_nastran               61.9         250         31-dec-2018  ABAQUSLM
-   tosca_adv_nonlinear             61.9         250         31-dec-2018  ABAQUSLM
-   tosca_adv_durability            61.9         250         31-dec-2018  ABAQUSLM
-   tosca_adv_morph                 61.9         250         31-dec-2018  ABAQUSLM
-   tosca_smooth                    61.9         250         31-dec-2018  ABAQUSLM
-   tosca_report                    61.9         250         31-dec-2018  ABAQUSLM
-   tfluid_topo                     61.9         250         31-dec-2018  ABAQUSLM
-   tfluid_smooth                   61.9         250         31-dec-2018  ABAQUSLM
-   tfluid_parallel                 61.9         250         31-dec-2018  ABAQUSLM
-   tfluid_int_ccmp                 61.9         250         31-dec-2018  ABAQUSLM
-   tfluid_int_fluent               61.9         250         31-dec-2018  ABAQUSLM
-
 Run ``abaqus licensing`` for usage info for the Abaqus licensing sub-command. Run ``abaqus licensing ru`` to see current licence usage.
 
 ------------
