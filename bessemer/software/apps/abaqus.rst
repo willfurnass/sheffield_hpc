@@ -17,6 +17,7 @@ After connecting to Bessemer (see :ref:`ssh`),  start an `interactive graphical 
 
 Abaqus version 2018 can be activated using the module file::
 
+    module load ABAQUS/6.14.2/binary
     module load ABAQUS/2018
 
 and launched using::
