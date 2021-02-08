@@ -170,9 +170,9 @@ For example, to find files 50 or more days old ::
 File locking
 ^^^^^^^^^^^^
 
-POSIX file locking is not enabled on these Lustre filesystems, 
-which can cause issues for certain applications that require/expect it
-(e.g. programs that create/use SQLite databases).
+As of September 2020 POSIX file locking is enabled on all Lustre filesystems. 
+Prior to this the lack of file locking support on the University's Lustre filesystems caused problems for certain workflows/applications
+(e.g. for programs that create/use SQLite databases).
 
 .. _shared_dir:
 
