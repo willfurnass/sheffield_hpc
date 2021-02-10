@@ -14,11 +14,11 @@ This sub-tree contains reference information that is pulled into other pages.
   TimeAllocationLimits
   MemoryAllocationLimits
   CpuAllocationLimits
-  FilestoreLimits
+  FileStoreLimits
   ListingQueues
 
 * :doc:`TimeAllocationLimits`
 * :doc:`MemoryAllocationLimits`
 * :doc:`CpuAllocationLimits`
-* :doc:`FilestoreLimits`
+* :doc:`FileStoreLimits`
 * :doc:`ListingQueues`
