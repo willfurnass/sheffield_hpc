@@ -26,7 +26,7 @@ On ShARC your script needs to include a line like: ::
 
 Change ``N`` to the number of processor cores you wish to use. 
 
-Here's an example that requests 4 cores on ShARC: ::
+Here's an example that requests 4 cores and 4 threads on ShARC: ::
 
    #!/bin/bash
    # Request 4 cores from ShARC's scheduler
@@ -34,7 +34,7 @@ Here's an example that requests 4 cores on ShARC: ::
    #$ Request 4 GB of memory per CPU core
    #$ -l rmem=4G
  
-   # Tell programs that use the OpenMP library to use 4 cores
+   # Tell programs that use the OpenMP library to use 4 threads
    export OMP_NUM_THREADS=4
    ./myprogram
 
