@@ -25,7 +25,7 @@ and launched using::
     abaqus cae
 
 
-**Note:** there is an Abaqus/SLURM mpi issue which prevents Abaqus from running jobs correctly. To rectify this problem the following command should be used prior to lauching the GUI::
+**Note:** users must unset the SLURM environment variable SLURM_GTIDS. Failure to do so will cause Abaqus to get stuck due to the MPI that Abaqus ships with not supporting the SLURM scheduler. SLURM_GTIDS should be unset for both interactive/GUI and batch jobs::
 
     unset SLURM_GTIDS
 
