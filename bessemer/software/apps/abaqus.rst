@@ -132,7 +132,6 @@ Abaqus 6.14.2 was installed using the standard Abaqus installer due to issues us
 
 It can be activated using the following module commands::
 
-    module use /usr/local/modulefiles/live/apps
     module load ABAQUS/6.14.2/binary
 
 and launched using::
