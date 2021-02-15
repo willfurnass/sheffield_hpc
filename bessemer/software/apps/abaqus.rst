@@ -17,6 +17,7 @@ After connecting to Bessemer (see :ref:`ssh`),  start an `interactive graphical 
 
 Abaqus version 2018 can be activated using the module file::
 
+    module load ABAQUS/6.14.2/binary
     module load ABAQUS/2018
 
 and launched using::
@@ -28,6 +29,7 @@ and launched using::
 
     unset SLURM_GTIDS
 
+------------
 
 Abaqus example problems
 -----------------------
@@ -40,6 +42,7 @@ For example, after loading the Abaqus module enter the following at the command 
 	
 This will extract the input file ``s4d.inp`` to run the computation defined by the commands and batch submission script below.
 
+------------
 
 Batch jobs
 ----------
@@ -85,6 +88,43 @@ The script below is an example of a batch submission script for a single core jo
 
 Note that the module ``ifort/2019.1.144-GCC-8.2.0-2.31.1``, required for compiling the user subroutines, is not automatically loaded when the module for Abaqus is loaded.
 
+------------
+
+Licensed options
+----------------
+
+All available Abaqus licenses can be viewed using ``abaqus licensing r`` e.g. ::
+
+   $ module load ABAQUS/2018
+   $ abaqus licensing r
+
+Run ``abaqus licensing`` for usage info for the Abaqus licensing sub-command. Run ``abaqus licensing ru`` to see current licence usage.
+
+------------
+
+Checkpointing your work
+-----------------------
+
+Abaqus has a built-in checkpoint and restart feature.
+
+Add the following to the input file (refer to official Abaqus documentation for detail): ::
+
+   *RESTART, WRITE, OVERLAY, FREQUENCY=10
+
+**OVERLAY** saves only one state, i.e. overwrites the restart file every time new restart information is written
+    
+**FREQUENCY=N** writes restart information every N timesteps
+
+And, to restart the job, create a new input file newJobName with only a single line:  ::
+
+   *RESTART, READ
+
+Then run Abaqus specifying both the new and old job names:  ::
+
+   abaqus jobname=newJobName oldjob=oldJobName
+
+------------
+
 Addendum: Abaqus 6.14.2 (non-EasyBuild install):
 ------------------------------------------------
 
@@ -92,7 +132,6 @@ Abaqus 6.14.2 was installed using the standard Abaqus installer due to issues us
 
 It can be activated using the following module commands::
 
-    module use /usr/local/modulefiles/live/apps
     module load ABAQUS/6.14.2/binary
 
 and launched using::
