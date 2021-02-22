@@ -27,14 +27,14 @@ After connecting to Bessemer (see :ref:`ssh`), you can start an `interactive gra
 
     module load OpenFOAM/8-foss-2020a
     source $FOAM_BASH
+    rm -r /fastdata/$USER/tests/openfoam/run/
     mkdir -p /fastdata/$USER/tests/openfoam/run
-    rm -r /fastdata/$USER/tests/openfoam/run/*
     cd /fastdata/$USER/tests/openfoam/run
     cp -r $FOAM_TUTORIALS/incompressible/simpleFoam/pitzDaily .
     chmod 700 -R pitzDaily && cd pitzDaily
-    srun blockMesh
-    srun simpleFoam
-    srun paraFoam #To view the output.
+    srun --export=ALL blockMesh
+    srun --export=ALL simpleFoam
+    srun --export=ALL paraFoam #To view the output.
 
 ------------
 
@@ -58,16 +58,16 @@ The following is an example batch job running the pitzDaily example model:
     #SBATCH --time=01:00:00
     #SBATCH --mail-user=joe.bloggs@sheffield.ac.uk
     #SBATCH --mail-type=ALL
+    rm -r /fastdata/$USER/tests/openfoam/run/
     mkdir -p /fastdata/$USER/tests/openfoam/run
-    rm -r /fastdata/$USER/tests/openfoam/run/*
     cd /fastdata/$USER/tests/openfoam/run
     module load OpenFOAM/8-foss-2020a
     source $FOAM_BASH
     cp -r $FOAM_TUTORIALS/incompressible/simpleFoam/pitzDaily .
     chmod 700 -R pitzDaily && cd pitzDaily
-    srun blockMesh
-    srun decomposePar
-    srun simpleFoam -parallel
+    srun --export=ALL blockMesh
+    srun --export=ALL decomposePar
+    srun --export=ALL simpleFoam -parallel
 
 ------------
 

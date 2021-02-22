@@ -8,9 +8,9 @@
 #SBATCH --mail-user=joe.bloggs@sheffield.ac.uk
 #SBATCH --mail-type=ALL
 
-mkdir -p /fastdata/$USER/tests/openfoam/run
+rm -r /fastdata/$USER/tests/openfoam/run/
 
-rm -r /fastdata/$USER/tests/openfoam/run/*
+mkdir -p /fastdata/$USER/tests/openfoam/run
 
 cd /fastdata/$USER/tests/openfoam/run
 
@@ -92,6 +92,6 @@ roots
 EOF
 
 
-srun blockMesh
-srun decomposePar
-srun simpleFoam -parallel
+srun --export=ALL blockMesh
+srun --export=ALL decomposePar
+srun --export=ALL simpleFoam -parallel
