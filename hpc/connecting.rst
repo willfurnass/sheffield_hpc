@@ -147,8 +147,9 @@ if you are unable to use VPN we also provide an SSH gateway service to allow off
 
 .. note::
   * Access to the HPC SSH gateway service requires that you have an existing :ref:`HPC account <accounts>`. 
+  * Access to the HPC SSH gateway service requires that you have `multi-factor authentication <https://sites.google.com/sheffield.ac.uk/mfa/setting-up-mfa>`_  enabled.  
   * You must additionally request access to the HPC SSH gateway by emailing `it-servicedesk@sheffield.ac.uk <it-servicedesk@sheffield.ac.uk>`_ including a justification for your request.
-
+  
 The SSH gateway servers are configured to be SSH jump hosts only.  They do not have direct access to HPC filestore or Research Shared areas, and you cannot 
 run an interactive SSH terminal session directly on the gateway servers.  Additionally the HPC gateway servers only allow access to the HPC clusters - you cannot access any 
 other IT Services or departmental servers using this gateway.
