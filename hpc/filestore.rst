@@ -111,9 +111,9 @@ An example of how slow it can be for large numbers of small files is detailed `h
 +----------+---------------------+--------+----------------+---------------------+-------------------------+---------------------------+
 | System   | Path                | Type   | Quota per user | Filesystem capacity | Shared between systems? | Network bandwith per link |
 +==========+=====================+========+================+=====================+=========================+===========================+
-| Bessemer | ``/fastdata``       | Lustre | None           | 460 TB              | No                      | 25Gb/s Ethernet           |
+| Bessemer | ``/fastdata``       | Lustre | No limits      | 460 TB              | No                      | 25Gb/s Ethernet           |
 +----------+---------------------+--------+----------------+---------------------+-------------------------+---------------------------+
-| ShARC    | ``/fastdata``       | Lustre | None           | 669 TB              | No                      | 100Gb/s (*Omni-Path*)     |
+| ShARC    | ``/fastdata``       | Lustre | No limits      | 669 TB              | No                      | 100Gb/s (*Omni-Path*)     |
 +----------+---------------------+--------+----------------+---------------------+-------------------------+---------------------------+
 
 Snapshotting and mirrored backups
