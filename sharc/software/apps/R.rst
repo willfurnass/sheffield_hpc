@@ -7,6 +7,7 @@ R
 
    :URL: https://www.r-project.org/
    :Documentation: https://www.r-project.org/
+   :Versions: 3.3.2, 3.3.3, 3.4.0, 3.5.1, 3.6.3, 4.0.0
 
 R is a statistical computing language.
 
@@ -14,12 +15,10 @@ Interactive Usage
 -----------------
 After connecting to ShARC, start an :ref:`interactive session <submit-interactive>`.
 
-The latest version of R can be loaded with: ::
-
-   module load apps/R
-
-Alternatively, you can load a specific version of R using one of the following: ::
+You can load a specific version of R using one of the following: ::
         
+   module load apps/R/4.0.0/gcc-10.1.0
+   module load apps/R/4.0.0/gcc-8.2.0
    module load apps/R/3.6.3/gcc-8.2.0
    module load apps/R/3.5.1/gcc-4.8.5
    module load apps/R/3.4.0/gcc-4.8.5
@@ -192,6 +191,25 @@ For more details see :ref:`Intel R (Sharc)`
 Installation Notes
 ------------------
 These notes are primarily for administrators of the system.
+
+Version 4.0.0
+^^^^^^^^^^^^^
+
+* `What's new in R version 4.0.0 <https://stat.ethz.ch/pipermail/r-announce/2020/000653.html>`_ 
+
+This was a set of scripted installs. It was compiled from source with gcc 8.2.0 / gcc 10.1.0 with ``--with-blas --with-lapack --enable-R-shlib --with-tcltk`` enabled. It was run in installed with an interactive session mode.
+
+* :download:`install-R4.0-gcc-8.2.0.sh </sharc/software/install_scripts/apps/R/4.0.0/gcc-8.2.0/install-R4.0-gcc-8.2.0.sh>` Downloads, compiles, tests and installs R 4.0.0 and the ``Rmath`` library.
+
+* :download:`install-R4.0-gcc-10.1.0.sh </sharc/software/install_scripts/apps/R/4.0.0/gcc-10.1.0/install-R4.0-gcc-10.1.0.sh>` Downloads, compiles, tests and installs R 4.0.0 and the ``Rmath`` library.
+
+* :download:`R 4.0.0 GCC 8.2.0 Modulefile </sharc/software/modulefiles/apps/R/4.0.0/gcc-8.2.0>` located on the system at ``/usr/local/modulefiles/apps/R/4.0.0/``
+* :download:`R 4.0.0 GCC 10.1.0 Modulefile </sharc/software/modulefiles/apps/R/4.0.0/gcc-10.1.0>` located on the system at ``/usr/local/modulefiles/apps/R/4.0.0/``
+
+* Install log-files, including the output of the ``make check`` tests are available on the system at ``/usr/local/packages/apps/R/4.0.0/gcc-8.2.0/install_logs/`` and ``/usr/local/packages/apps/R/4.0.0/gcc-10.1/install_logs/``
+
+* PCRE2 was compiled as a dependency with the appropriate compilers for each.
+
 
 Version 3.6.3
 ^^^^^^^^^^^^^
