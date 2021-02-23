@@ -7,7 +7,7 @@ R
 
    :URL: https://www.r-project.org/
    :Documentation: https://www.r-project.org/
-   :Versions: 3.3.2, 3.3.3, 3.4.0, 3.5.1, 3.6.3, 4.0.0
+   :Versions: 3.3.2, 3.3.3, 3.4.0, 3.5.1, 3.6.3, 4.0.0, 4.0.2, 4.0.3
 
 R is a statistical computing language.
 
