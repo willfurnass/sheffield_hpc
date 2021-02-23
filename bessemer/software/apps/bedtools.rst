@@ -26,7 +26,7 @@ After this any of the bedtools commands can be run from the prompt.
 
 Installation notes
 ------------------
-Bedtools using Easybuild, build details can be found in ``/usr/local/packages/live/eb/BEDTools/2.29.2-GCC-9.3.0/easybuild/``
+Bedtools was installed using Easybuild 4.3.1, build details can be found in ``/usr/local/packages/live/eb/BEDTools/2.29.2-GCC-9.3.0/easybuild/``
 
 
 Testing
