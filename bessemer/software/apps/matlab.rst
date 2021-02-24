@@ -141,7 +141,7 @@ MATLAB 2019a was installed using Easybuild in the following directory::
 
     /usr/local/packages/live/eb/MATLAB/2019a
 
-The 2019a modulefile is :download:`/usr/local/modulefiles/live/eb/all/MATLAB/2019a </bessemer/software/modulefiles/MATLAB/2019aa/2019a>`.
+The 2019a modulefile is :download:`/usr/local/modulefiles/live/eb/all/MATLAB/2019a </bessemer/software/modulefiles/MATLAB/2019a/2019a>`.
 
 MATLAB 2020a was installed using the MATLAB installer GUI in the following directory::
 	
