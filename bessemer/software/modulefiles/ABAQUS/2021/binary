@@ -1,0 +1,34 @@
+#%Module
+proc ModulesHelp { } {
+    puts stderr {
+
+Description
+===========
+Finite Element Analysis software for modeling, visualization and best-in-class implicit and explicit
+ dynamics FEA.
+
+
+More information
+================
+ - Homepage: http://www.simulia.com/products/abaqus_fea.html
+    }
+}
+
+module-whatis {Description: Finite Element Analysis software for modeling, visualization and best-in-class implicit and explicit
+ dynamics FEA.}
+module-whatis {Homepage: http://www.simulia.com/products/abaqus_fea.html}
+module-whatis {URL: http://www.simulia.com/products/abaqus_fea.html}
+
+# load modules
+module load ifort/2019.1.144-GCC-8.2.0-2.31.1
+
+set root /usr/local/packages/live/noeb/ABAQUS/2021/binary
+
+conflict ABAQUS
+
+prepend-path	PATH		$root/SIMULIA/Commands
+setenv	EBROOTABAQUS		"$root"
+setenv	EBVERSIONABAQUS		"2021"
+
+prepend-path	PATH		$root
+# Built with EasyBuild version 4.0.0
