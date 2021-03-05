@@ -3,7 +3,7 @@
 Starting interactive jobs and submitting batch jobs
 ===================================================
 
-Jobs (both interactive sessions and batch jobs) on Iceberg and ShARC 
+Jobs (both interactive sessions and batch jobs) on Iceberg and ShARC
 are managed using the `Son of Grid Engine <https://arc.liv.ac.uk/trac/SGE>`_
 **job scheduling software**.  You will typically see this referred to as
 **SGE**, as it is one of several derivatives of `Sun Grid Engine
@@ -27,11 +27,11 @@ like MATLAB or Ansys, or compiling software, you will need to request
 interactive session from the scheduler.  The pre-requisites for this (including
 connecting to the clusters) are described in :ref:`getting-started`.
 
-There are three commands for requesting an interactive shell using SGE: 
+There are three commands for requesting an interactive shell using SGE:
 
 * :ref:`qrsh` - No support for graphical applications.  Standard SGE command.
 * :ref:`qsh` - Supports graphical applications.  Standard SGE command.
-* :ref:`qrshx` - Supports graphical applications. Superior to :ref:`qsh`.  Unique to Sheffield's clusters.  
+* :ref:`qrshx` - Supports graphical applications. Superior to :ref:`qsh`.  Unique to Sheffield's clusters.
 
 Slurm uses the `srun --pty bash -i <https://slurm.schedmd.com/srun.html>`_  command to launch interactive jobs: ::
 
@@ -49,7 +49,7 @@ For example to stat an interactive session with access to 16 GB of RAM:
 
     [te1st@bessemer-login1 ~]$ srun --mem=6G --pty bash -i
 
-To start a session with access to 8 cores: 
+To start a session with access to 8 cores:
 
 * **SGE:** ::
 
@@ -81,18 +81,22 @@ SGE Command            Slurm Command            Description
                        | ``-t [days-hh:mm:ss]`` The upper limit is 08:00:00.  NB these limits may
                                                 differ for reservations/projects.
 
-``-l rmem=xxG``        ``--mem=xxG``			 
-												For **SGE**, ``-l rmem=xxG``  is used to specify the maximum amount 
-												(``xx``) of real memory to be requested **per CPU core**.
-												
-												For **SLURM**, ``--mem=xxG``  is used to specify the maximum amount 
-												(``xx``) of real memory to be requested **per node**.
+``-l rmem=xxG``        ``--mem=xxG``
+                                                For **SGE** (**ShARC**), ``-l rmem=xxG``  is used to specify the
+                                                maximum amount (``xx``) of real memory to be requested
+                                                **per CPU core**.
 
-												If the real memory usage of your job exceeds this value 
-												multiplied by the number of cores / nodes you requested then 
-												your job will be killed.
 
-``-pe <env> <nn>``                              Specify an MPI *parallel environment* and a number of 
+                                                For **SLURM** (**Bessemer**), ``--mem=xxG``  is used to specify the
+                                                maximum amount (``xx``) of real memory to be requested
+                                                **per node**.
+
+
+                                                If the real memory usage of your job exceeds this value
+                                                multiplied by the number of cores / nodes you requested then
+                                                your job will be killed.
+
+``-pe <env> <nn>``                              Specify an MPI *parallel environment* and a number of
                                                 processor cores.
 
 ``-pe smp <nn>``        ``-c <nn>``             The smp parallel environment provides multiple threads
@@ -167,9 +171,9 @@ Some things to note:
 * Comments start with a ``#``
 * **SGE** Scheduler options, such as the amount of memory requested, start with ``#$``
 * **Slurm** Scheduler options start with ``#SBATCH``
-* You will often require one or more ``module`` commands in your submission file. 
-  These make programs and libraries available to your scripts.  
-  Many applications and libraries are available as modules on 
+* You will often require one or more ``module`` commands in your submission file.
+  These make programs and libraries available to your scripts.
+  Many applications and libraries are available as modules on
   :ref:`ShARC <sharc-software>`, :ref:`Bessemer <bessemer-software>` and :ref:`iceberg <iceberg-software>`.
 
 Here is a more complex example that requests more resources:
@@ -206,7 +210,7 @@ Using **Slurm:**
     #!/bin/bash
     # Request 16 gigabytes of real memory (RAM)
     #SBATCH --mem=16G
-    # Request 4 cores 
+    # Request 4 cores
     #SBATCH -c 4
     # Email notifications to me@somedomain.com
     #SBATCH --mail-user=me@somedomain.com
@@ -233,29 +237,29 @@ SGE Command            Slurm Command            Description
 ====================== ======================== ====================================================================
 ``-l h_rt=hh:mm:ss``   | ``-t [min]``           Specify the total maximum wall clock execution time for the job.
                        | ``-t [days-hh:mm:ss]`` The upper limit is typically 96:00:00 (4 days) on ShARC
-                                                and 168:00:00 (7 days) on Iceberg and Bessemer.  Note that these 
-                                                limits may differ for specific Projects/Queues.  
-                                                Also note that requesting less execution time may 
+                                                and 168:00:00 (7 days) on Iceberg and Bessemer.  Note that these
+                                                limits may differ for specific Projects/Queues.
+                                                Also note that requesting less execution time may
                                                 result in your job spending less time queuing.
 
-``-pe <env> <nn>``     n/a                      Specify a *parallel environment* and a number of 
+``-pe <env> <nn>``     n/a                      Specify a *parallel environment* and a number of
                                                 processor cores.
 
 ``-pe smp <nn>``       ``-c <nn>``              For parallel jobs requesting ``<<nn>>`` CPU cores on a single node
 
-``-l rmem=xxG``        ``--mem=xxG``			 
-												For **SGE**, ``-l rmem=xxG``  is used to specify the maximum amount 
+``-l rmem=xxG``        ``--mem=xxG``
+												For **SGE**, ``-l rmem=xxG``  is used to specify the maximum amount
 												(``xx``) of real memory to be requested **per CPU core**.
-												
-												For **SLURM**, ``--mem=xxG``  is used to specify the maximum amount 
+
+												For **SLURM**, ``--mem=xxG``  is used to specify the maximum amount
 												(``xx``) of real memory to be requested **per node**.
 
-												If the real memory usage of your job exceeds this value 
-												multiplied by the number of cores / nodes you requested then 
+												If the real memory usage of your job exceeds this value
+												multiplied by the number of cores / nodes you requested then
 												your job will be killed.
 
-``-l arch=``           n/a                      Target a processor architecture. This is irrelevant on 
-                                                ShARC as all processors are the same model.  Options 
+``-l arch=``           n/a                      Target a processor architecture. This is irrelevant on
+                                                ShARC as all processors are the same model.  Options
                                                 on Iceberg include ``intel-e5-2650v2`` and ``intel-x5650``.
 
 ``-N``                 ``--job-name=``          Job name, used to name output files and in the queue list.
@@ -265,9 +269,9 @@ SGE Command            Slurm Command            Description
 
 ``-M``                 ``--mail-user=``         Email address to send notifications to.
 
-``-m bea``             ``--mail-type=``         Type of notifications to send. 
+``-m bea``             ``--mail-type=``         Type of notifications to send.
                                                 For SGE can be any combination of
-                                                begin (``b``) end (``e``) or abort (``a``) i.e. 
+                                                begin (``b``) end (``e``) or abort (``a``) i.e.
                                                 ``-m ea`` for end and abortion messages.
 
 ``-a``                 ``--begin=``             | Specify the earliest time for a job to start
@@ -284,7 +288,7 @@ SGE Command            Slurm Command            Description
                                                 being limited to just the default per job (one core
                                                 and a set amount of RAM).  Also note that the use of
                                                 this option will likely result in longer queuing times.
-     
+
 ``-l hostname=``       ``--nodelist=``          Target a node by name. Not recommended for normal use.
 
 ====================== ======================== ====================================================================
