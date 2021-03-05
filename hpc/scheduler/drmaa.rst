@@ -6,7 +6,7 @@ DRMAA
 The Distributed Resource Management Application API (DRMAA) is a specification for 
 **programatically submitting/controlling jobs** to/on job scheduling software 
 such as the :ref:`Grid Engine <submit-queue>` software used on 
-the :ref:`sharc` and :ref:`iceberg` clusters.  
+the :ref:`sharc` cluster.  
 
 Support for DRMAA is built in to Grid Engine and other scheduling software such as Torque, PBS, HTCondor and SLURM.
 
@@ -151,7 +151,7 @@ See the `documentation <http://drmaa-python.readthedocs.io/en/latest/>`__ for th
 Java bindings
 -------------
 
-Java bindings for DRMAA are not currently available on :ref:`sharc` or :ref:`iceberg`.
+Java bindings for DRMAA are not currently available on :ref:`sharc`.
 
 Administrator notes
 -------------------

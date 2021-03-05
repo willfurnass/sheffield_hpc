@@ -1,0 +1,25 @@
+#%Module1.0#####################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+
+proc ModulesHelp { } {
+    global version
+    puts stderr "   Makes IDL $version available for use"
+}
+module-whatis   "Makes IDL available for use"
+
+# For GUI
+module load apps/java/jdk1.8.0_102/binary
+
+# Do not use other versions at the same time.
+conflict apps/idl
+
+set  version    8.8
+set  idlroot /usr/local/packages/apps/idl/$version/binary/idl88
+
+prepend-path PATH    $idlroot/bin
+setenv       IDL_DIR $idlroot
+
+file mkdir /tmp/Harris/License/flexera-sv
+file mkdir /tmp/Harris/License/flexera

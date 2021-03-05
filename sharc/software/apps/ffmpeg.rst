@@ -13,7 +13,7 @@ It is also highly portable: FFmpeg compiles, runs, and passes our testing infras
 
 Interactive Usage
 -----------------
-After connecting to iceberg (see :ref:`ssh`),  start an interactive session with the :code:`qsh` or :code:`qrsh` command.
+After connecting to the cluster (see :ref:`ssh`),  start an interactive session with the :code:`qsh` or :code:`qrsh` command.
 The latest version of ffmpeg (currently 4.1) is made available with the command ::
 
         module load apps/ffmpeg

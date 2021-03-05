@@ -1,0 +1,21 @@
+#%Module#####################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global ver
+
+        puts stderr "   Adds Mathematica $ver to your environment variables."
+}
+
+# Mathematica version (not in the user's environment)
+set     ver     12.0.0
+
+module-whatis   "sets the necessary Mathematica $ver paths"
+
+set mathematica_dir /usr/local/packages/live/noeb/MATHEMATICA/$ver/binary
+
+prepend-path PATH $mathematica_dir/Executables
+

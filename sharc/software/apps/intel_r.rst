@@ -9,7 +9,7 @@ R (Intel Build)
    :Documentation: http://www.r-project.org/
 
 R is a statistical computing language. 
-This version of R is built using the :ref:`Intel compilers <iceberg_intel_compilers>` and 
+This version of R is built using the :ref:`Intel compilers <sharc-intel-compilers>` and 
 the Intel Math Kernel Library. 
 This combination can result in significantly faster runtimes in certain circumstances.
 For more details of what is made faster, 

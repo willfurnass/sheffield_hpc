@@ -5,7 +5,7 @@ MATLAB
 
 .. sidebar:: MATLAB
 
-   :Versions:  2020a, 2019a, 2018b
+   :Versions:  2020b, 2020a, 2019a, 2018b
    :Support Level: FULL
    :Dependancies: None
    :URL: https://uk.mathworks.com/products/matlab
@@ -18,10 +18,18 @@ Interactive usage
 -----------------
 After connecting to Bessemer,  start an interactive session with the ``srun --pty bash –i`` command.
 
-The latest version of MATLAB (currently 2020a) is made available by running:
+The latest version of MATLAB (currently 2020b) is made available by running:
 
 .. code-block:: bash
 
+   module load MATLAB/2020b
+
+Alternatively, you can load earlier MATLAB versions by running:
+
+.. code-block:: bash
+
+   module load MATLAB/2018b
+   module load MATLAB/2019a
    module load MATLAB/2020a
 
 You can then run MATLAB by entering ``matlab &``.
@@ -45,7 +53,7 @@ We assume you'll call this ``my_job.slurm``:
    #!/bin/bash
    #SBATCH --mem=16000                # Request  16 GB of real memory
 
-   module load MATLAB/2020a
+   module load MATLAB/2020b
 
    matlab -nodesktop -nosplash -r helloworld
 
@@ -80,7 +88,7 @@ Create a Slurm submission script called ``parallel_example.slurm`` containing:
    #SBATCH --time=00:05:00
    #SBATCH --job-name=matlab_par_test
    
-   module load MATLAB/2020a
+   module load MATLAB/2020b
    
    matlab -nodisplay -nosplash -r "parallel_example($SLURM_NTASKS)"
 
@@ -119,3 +127,31 @@ The MATLAB script, ``parallel_example.m``,
 creates 200 square (500 x 500) matrices comprised of random values,
 calculates the eigenvalues of each 
 and records the maximum eigenvalue for each matrix in the array ``max_eigenvals``.
+
+Installation note for Administrators:
+-------------------------------------
+
+MATLAB 2018b was installed using Easybuild in the following directory::
+
+    /usr/local/packages/live/eb/MATLAB/2018b
+
+The 2018b modulefile is :download:`/usr/local/modulefiles/live/eb/all/MATLAB/2018b </bessemer/software/modulefiles/MATLAB/2018b/2018b>`.
+
+MATLAB 2019a was installed using Easybuild in the following directory::
+
+    /usr/local/packages/live/eb/MATLAB/2019a
+
+The 2019a modulefile is :download:`/usr/local/modulefiles/live/eb/all/MATLAB/2019a </bessemer/software/modulefiles/MATLAB/2019a/2019a>`.
+
+MATLAB 2020a was installed using the MATLAB installer GUI in the following directory::
+	
+    /usr/local/packages/live/noeb/MATLAB/2020a/binary/
+
+The 2020a modulefile is :download:`/usr/local/modulefiles/live/noeb/MATLAB/2020a/binary </bessemer/software/modulefiles/MATLAB/2020a/binary>`.
+
+MATLAB 2020b was installed using the MATLAB installer GUI in the following directory::
+	
+    /usr/local/packages/live/noeb/MATLAB/2020b/binary/
+
+The 2020b modulefile is :download:`/usr/local/modulefiles/live/noeb/MATLAB/2020b/binary </bessemer/software/modulefiles/MATLAB/2020b/binary>`.
+

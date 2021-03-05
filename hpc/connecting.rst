@@ -37,8 +37,6 @@ including *MobaXTerm*.
 +----------+------------------------+---------------------------------------------------------------------------------------------------+
 | ShARC    | Password or public key | Not permitted                                                                                     |
 +----------+------------------------+---------------------------------------------------------------------------------------------------+
-| Iceberg  | Password or public key | Requires password (including MFA); *public key authentication not permitted after 15th May 2020*  | 
-+----------+------------------------+---------------------------------------------------------------------------------------------------+
 
 SSH client software on Windows
 ------------------------------
@@ -59,7 +57,7 @@ Click *Start local terminal* and if you see something like the following then pl
 
 Running commands from a terminal (from the command-line) may initially be
 unfamiliar to Windows users but this is the recommended approach for
-running commands on Bessemer, ShARC and Iceberg as 
+running commands on Bessemer or ShARC as 
 it is the idiomatic way of interfacing with the Linux clusters.
 
 SSH client software on Mac OS/X and Linux
@@ -85,7 +83,7 @@ log in to a cluster: ::
 Here you need to:
 
 * replace ``$USER`` with your IT Services username (e.g. ``te1st``)
-* replace ``$CLUSTER_NAME`` with ``bessemer``, ``sharc`` or ``iceberg``.
+* replace ``$CLUSTER_NAME`` with ``bessemer`` or ``sharc``.
 
 .. note::
 
@@ -136,12 +134,78 @@ Which will pop up another terminal window, which supports graphical applications
        <source src="https://rcg.group.shef.ac.uk/tutorial_videos/mobaxterm-login-matlab-demo.mp4" type="video/mp4" />
    </video>
 
+HPC SSH Gateway
+---------------
+
+Direct SSH access to the HPC clusters from off campus is not possible without the use of VPN. However 
+if you are unable to use VPN we also provide an SSH gateway service to allow off-site SSH access to our HPC clusters.
+
+.. note::
+
+  Use of a `VPN connection <https://www.sheffield.ac.uk/it-services/vpn>`_ is the recommended method to use for off-site SSH access to the HPC clusters.
+
+
+.. note::
+  * Access to the HPC SSH gateway service requires that you have an existing :ref:`HPC account <accounts>`. 
+  * Access to the HPC SSH gateway service requires that you have `multi-factor authentication <https://sites.google.com/sheffield.ac.uk/mfa/setting-up-mfa>`_  enabled.  
+  * You must additionally request access to the HPC SSH gateway by emailing `it-servicedesk@sheffield.ac.uk <it-servicedesk@sheffield.ac.uk>`_ including a justification for your request.
+  
+The SSH gateway servers are configured to be SSH jump hosts only.  They do not have direct access to HPC filestore or Research Shared areas, and you cannot 
+run an interactive SSH terminal session directly on the gateway servers.  Additionally the HPC gateway servers only allow access to the HPC clusters - you cannot access any 
+other IT Services or departmental servers using this gateway, unless an exception has been agreed with the Information Security team in IT Services.
+
+
+* Access a HPC cluster via SSH: ::
+
+    ssh -J [username]@hpcgw.shef.ac.uk [username]@sharc.shef.ac.uk
+
+* Transfer a file using SCP: ::
+
+    scp -J [username]@hpcgw.shef.ac.uk [source path] [destination path]
+
+* Transfer files using Rsync: ::
+
+    rsync -av -e 'ssh -J [username]@hpcgw.shef.ac.uk' [source path] [destination path]
+
+
+* Using WinSCP: ::
+
+    New Session -> Advanced -> Connection -> Tunnel
+    Select 'Connect through SSH tunnel'
+    Hostname: 'hpcgw.shef.ac.uk'
+    Port number: '22'
+
+.. image:: /images/SSHgatewayWinSCP.png
+   :width: 75%
+   :align: center
+
+* Configure MobaXterm: :: 
+
+    Edit 'Session Settings':
+    Set 'SSH Use 2-factor authentication for SSH gateways'
+
+.. image:: /images/SSHgatewayMobaXtermSettings.png
+   :width: 75%
+   :align: center
+
+* Create a new session using MobaXterm: ::
+
+    Select 'Network settings' tab within SSH Session settings
+    Select 'Connect through SSH gateway (jump host)
+    Gateway SSH server: 'hpcgw.shef.ac.uk'
+    Port: '22'
+
+.. image:: /images/SSHgatewayMobaXtermSession.png
+   :width: 75%
+   :align: center
+
+* When prompted to enter your Duo two-factor code either input a 6 digit code from your Duo device or enter '1' for a push notification to be sent to your device.
+
 What Next?
 ----------
 
 Now you have connected to a cluster, 
 you can look at how to submit jobs with :ref:`submit-queue` or 
 look at the software installed on 
-:ref:`Bessemer <bessemer-software>`,
-:ref:`ShARC <sharc-software>` and 
-:ref:`Iceberg <iceberg-software>`.
+:ref:`Bessemer <bessemer-software>` and 
+:ref:`ShARC <sharc-software>`.

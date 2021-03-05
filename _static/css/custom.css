@@ -1,0 +1,7 @@
+.wy-nav-content {
+  max-width: 75% !important;
+}
+
+.wy-menu-vertical li.toctree-l3, .wy-menu-vertical li.toctree-l4 .wy-menu-vertical {
+    font-size: 1em;
+}

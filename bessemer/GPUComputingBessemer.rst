@@ -35,11 +35,14 @@ As such, it is recommended that you request enough CPU memory to communicate pro
 
 .. code-block:: sh
 
-   # NB Each NVIDIA V100 GPU has 16GB of RAM
-   srun --partition=gpu --qos=gpu --nodes=1 --gpus-per-node=1 --mem=18G --pty bash
+   # NB Each NVIDIA V100 GPU has 32GB of RAM
+   srun --partition=gpu --qos=gpu --nodes=1 --gpus-per-node=1 --mem=34G --pty bash
 
-The above will give you 2GB more CPU RAM than the 16GB of GPU RAM available on the NVIDIA V100.
+The above will give you 2GB more CPU RAM than the 32GB of GPU RAM available on the NVIDIA V100.
 
+.. note::
+
+   Some private GPU nodes have only 16GB of GPU RAM per GPU; the users of private GPU nodes should check and be aware of how much GPU memory is available.
 
 .. _GPUJobs_bessemer:
 

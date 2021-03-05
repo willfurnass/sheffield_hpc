@@ -42,7 +42,7 @@ Access to the node is managed by the `RSE team <https://rse.shef.ac.uk>`_. Acces
 
 A number of other users were granted access before this policy was developed.
 
-To request access complete `this Google Form <https://docs.google.com/forms/d/19j8enPCALohamEWk-jkjnwYRiLbI2DMMWMqSJhAbE_I/edit>`__
+To request access complete `this Google Form <https://docs.google.com/forms/d/e/1FAIpQLSfIT2mqAw3l3HAqTJ3HsThiaKT7HYb04MqyLST9vYARspRO6A/viewform?usp=sf_link>`__
 and someone within the RSE team will then respond with further information.
 
 Using the nodes

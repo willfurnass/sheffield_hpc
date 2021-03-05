@@ -2,8 +2,8 @@
 
 Troubleshooting
 ===============
-In this section, we'll discuss some tips for solving problems with ShARC, Bessemer and Iceberg. 
-It is suggested that you work through some of the ideas here before contacting the IT Services helpdesk for assistance.
+In this section, we'll discuss some tips for solving problems with Bessemer and ShARC. 
+It is suggested that you work through some of the ideas here before contacting the IT Services Helpdesk for assistance.
 
 Frequently Asked Questions
 ``````````````````````````
@@ -16,15 +16,15 @@ This may be because you've deleted your ``.bashrc`` and ``.bash_profile`` files 
 
 I can no longer log in
 ----------------------
-If you are confident that you have no password or remote-access-client related issues but you still can not log onto iceberg you may be having problems due to exceeding your iceberg filestore quota.
+If you are confident that you have no password or remote-access-client related issues but you still can not log onto a cluster you may be having problems due to exceeding your cluster filestore quota.
 If you exceed your filestore quota in your ``/home`` area it is sometimes possible that crucial system files in your home directory gets truncated that effect the subsequent login process.
 
 If this happens, you should immediately email ``research-it@sheffield.ac.uk`` and ask to be unfrozen.
 
-I can not log into iceberg via the applications portal
-------------------------------------------------------
+I can not log into a cluster via the MyApps applications portal
+---------------------------------------------------------------
 Most of the time such problems arise due to due to Java version issues. As Java updates are released regularly, these problems are usually caused by the changes to the Java plug-in for the browser.
-Follow the trouble-shooting link from the `iceberg browser-access page <https://www.sheffield.ac.uk/it-services/research/hpc/using/access/browser>`_ to resolve these problems. There is also a link on that page to test the functionality of your java plug-in. It can also help to try a different browser to see if it makes any difference.
+Follow the trouble-shooting link from the `browser-access page <https://www.sheffield.ac.uk/it-services/research/hpc/using/access/browser>`_ to resolve these problems. There is also a link on that page to test the functionality of your java plug-in. It can also help to try a different browser to see if it makes any difference.
 All failing, you may have to fall back to one of the `non-browser access methods <https://www.sheffield.ac.uk/it-services/research/hpc/using/access>`_.
 
 I cannot see my folders in /data or /shared
@@ -43,7 +43,8 @@ If a job exceeds either the real memory or time limits it gets terminated immedi
 
 It is therefore important to estimate the amount of memory and time that is needed to run your job to completion and specify it at the time of submitting the job to the batch queue.
 
-Please refer to the section on `hitting-limits and estimating-resources <https://www.shef.ac.uk/it-services/research/hpc/iceberg/requirements>`_ for information on how to avoid these problems.
+..
+   Please refer to the section on `hitting-limits and estimating-resources <https://www.shef.ac.uk/it-services/research/hpc/iceberg/requirements>`_ for information on how to avoid these problems.
 
 Exceeding your disk space quota
 -------------------------------
@@ -124,9 +125,9 @@ This asks for 8 Gigabytes of RAM (real memory). Note that you should:
 
 If your program fails with an **Illegal Instruction** error then it may have been compiled using (and optimised for) one type of processor but is running on another.
 
-If you get this error **after copying compiled programs onto Iceberg** then you may need to recompile them on Iceberg or recompile them elsewhere without agressively optimising for processor architecture.
+If you get this error **after copying compiled programs onto a cluster** then you may need to recompile them on on the cluster or recompile them elsewhere without aggressively optimising for processor architecture.
 
-If however you get this error when **running programs on Iceberg that you have also compiled on the cluster** then you may have compiled on one processor type and be running on a different type.
+If however you get this error when **running programs on the cluster that you have also compiled on the cluster** then you may have compiled on one processor type and be running on a different type.
 You may not consistently get the *illegal instruction* error here as the scheduler may allocate you a different type of processor every time you run your program.
 you can either recompile your program without optimisations for processor architecture or force your job to run on the type of processor it was compiled on using the ``-l arch=`` ``qsub``/``qrsh``/``qsh`` parameter e.g.
 
@@ -166,13 +167,13 @@ If you receive the error message: ::
 
         error: no DISPLAY variable found with interactive job
 
-the most likely cause is that you forgot the ``-X`` switch when you logged into iceberg. That is, you might have typed: ::
+the most likely cause is that you forgot the ``-X`` switch when you logged into the cluster. That is, you might have typed: ::
 
-        ssh username@iceberg.sheffield.ac.uk
+        ssh username@clustername.sheffield.ac.uk
 
 instead of: ::
 
-        ssh -X username@iceberg.sheffield.ac.uk
+        ssh -X username@clustername.sheffield.ac.uk
 
 macOS users might also encounter this issue if their `XQuartz <https://www.xquartz.org/>`_ is not up to date.
 
@@ -193,8 +194,8 @@ Strange fonts or errors re missing fonts when trying to start a graphical applic
 -------------------------------------------------------------------------------------
 
 Certain programs require esoteric fonts to be installed on the machine running the X server (i.e. your local machine).
-Example of such programs are ``qmon``, a graphical interface to the Grid Engine scheduling software, and :ref:`Ansys <ansys_iceberg>`.
-If you try to run ``qmon`` or Ansys **on a Linux machine** and see strange symbols instead of the latin alphabet or get an error message that includes: ::
+Example of such programs are ``qmon``, a graphical interface to the Grid Engine scheduling software, and the Ansys software.
+If you try to run ``qmon`` or Ansys **on a Linux machine** and see strange symbols instead of the Latin alphabet or get an error message that includes: ::
 
         X Error of failed request: BadName (named color or font does not exist)
 
@@ -227,14 +228,8 @@ On ShARC all worker nodes have a dummy sound device installed
 This may be useful if you wish to run a program that expects to be able to output audio (and crashes if no sound device is found) 
 but you don't actually want to monitor that audio output.
 
-``snd_dummy`` is not (yet) set up on Iceberg's worker nodes.
-
 Login node RSA/ECDSA/ED25519 fingerprints
 -----------------------------------------
-
-The RSA key fingerprint for Iceberg's login nodes is: ::
-
-   de:72:72:e5:5b:fa:0f:96:03:d8:72:9f:02:d6:1d:fd
 
 The RSA, ECDSA and ED25519 fingerprints for ShARC's login nodes are: ::
 
@@ -277,10 +272,11 @@ These groups have numeric IDs but no names, which can result in harmless warning
 
 See ``man 8 pam_sge-qrsh-setup`` for the details of how and why Grid Engine creates these groups.
 
-Using 'sudo' to install software on ShARC
--------------------------------------------
+Using 'sudo' to install software on the clusters
+------------------------------------------------
 
-HPC users do not have sufficient access privileges to use sudo to install software (in /usr/local). Users can however install applications in their /home or /data directories. The webpage `Installing Applications on iceberg and ShARC <https://www.sheffield.ac.uk/it-services/research/hpc/using/install>`_ provides guidance on how to do this.
+HPC users do not have sufficient access privileges to use sudo to install software (in /usr/local). Users can however install applications in their /home or /data directories. 
+The webpage `Installing Applications on Bessemer and ShARC <https://www.sheffield.ac.uk/it-services/research/hpc/using/install>`_ provides guidance on how to do this.
 
 
 
