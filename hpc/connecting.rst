@@ -152,7 +152,7 @@ if you are unable to use VPN we also provide an SSH gateway service to allow off
   
 The SSH gateway servers are configured to be SSH jump hosts only.  They do not have direct access to HPC filestore or Research Shared areas, and you cannot 
 run an interactive SSH terminal session directly on the gateway servers.  Additionally the HPC gateway servers only allow access to the HPC clusters - you cannot access any 
-other IT Services or departmental servers using this gateway.
+other IT Services or departmental servers using this gateway, unless an exception has been agreed with the Information Security team in IT Services.
 
 
 * Access a HPC cluster via SSH: ::
