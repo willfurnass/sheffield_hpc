@@ -54,7 +54,7 @@ Usage of these commands is as follows:
 
 You can configure the resources available to the interactive session by
 adding command line options.
-For example to stat an interactive session with access to 16 GB of RAM:
+For example to start an interactive session with access to 16 GB of RAM:
 
 **SGE:** ::
 
@@ -162,20 +162,20 @@ can be submitted as a batch job. This excludes jobs that require a
 Graphical User Interface (GUI), however, many common GUI applications such as Ansys or MATLAB can also be
 used without their GUIs.
 
-When you submit a batch job, you provide an executable script file that will be consumed by
+When you submit a batch job, you provide an executable script file that will be executed by
 the scheduler. This is normally a bash script file which provides commands and
 options to the program you are using.
 
 There is a single command to submit jobs via SGE:
 
-* :ref:`qsub` - Standard SGE command with no support for interactivity or graphical applications.  
+* :ref:`qsub` - Standard SGE command with no support for interactivity or graphical applications.
 
 SLURM also uses a single command to submit batch jobs:
 
 * `sbatch <https://slurm.schedmd.com/sbatch.html>`_ Standard SLURM command with no support for interactivity or graphical applications.
 
 
-These scripts are consumed by the qsub and sbatch commands as below:
+These scripts are executed by the qsub and sbatch commands as below:
 
 
 Using  batch scheduler commands
@@ -258,7 +258,7 @@ Using **SGE:**
 
     # Run the program foo with input foo.dat
     # and output foo.res
-    foo < foo.dat > foo.res
+    foo foo.dat foo.res
 
 Using **Slurm:**
 
@@ -283,7 +283,7 @@ Using **Slurm:**
 
     # Run the program foo with input foo.dat
     # and output foo.res
-    foo < foo.dat > foo.res
+    foo foo.dat foo.res
 
 
 Scheduler Options
@@ -360,7 +360,7 @@ SGE Command            Slurm Command            Description
 ``-M``                 ``--mail-user=``         Email address to send notifications
                                                 to.
 
-``-m bea``             ``--mail-type=``         Type of notifications to send.
+``-m bea``             ``--mail-type=all``      Type of notifications to send.
                                                 For SGE can be any combination of
                                                 begin (``b``) end (``e``) or abort
                                                 (``a``) i.e.
