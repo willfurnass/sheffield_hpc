@@ -3,8 +3,8 @@
 Starting interactive jobs and submitting batch jobs
 ===================================================
 
-Jobs (both interactive sessions and batch jobs) on ShARC 
-are managed using the `Son of Grid Engine <https://arc.liv.ac.uk/trac/SGE>`_
+
+Jobs (both interactive sessions and batch jobs) on ShARC are managed using the `Son of Grid Engine <https://arc.liv.ac.uk/trac/SGE>`_
 **job scheduling software**.  You will typically see this referred to as
 **SGE**, as it is one of several derivatives of `Sun Grid Engine
 <https://en.wikipedia.org/wiki/Oracle_Grid_Engine>`_.
@@ -27,37 +27,54 @@ like MATLAB or Ansys, or compiling software, you will need to request
 interactive session from the scheduler.  The pre-requisites for this (including
 connecting to the clusters) are described in :ref:`getting-started`.
 
-There are three commands for requesting an interactive shell using SGE: 
+There are three commands for requesting an interactive shell using SGE:
 
 * :ref:`qrsh` - No support for graphical applications.  Standard SGE command.
 * :ref:`qsh` - Supports graphical applications.  Standard SGE command.
-* :ref:`qrshx` - Supports graphical applications. Superior to :ref:`qsh`.  Unique to Sheffield's clusters.  
+* :ref:`qrshx` - Supports graphical applications. Superior to :ref:`qsh`.  Unique to Sheffield's clusters.
 
-Slurm uses the `srun --pty bash -i <https://slurm.schedmd.com/srun.html>`_  command to launch interactive jobs: ::
+SLURM uses a single command to launch interactive jobs:
+
+* `srun <https://slurm.schedmd.com/srun.html>`_ Standard SLURM command supporting graphical applications.
+
+-----------
+
+Using  interactive scheduler commands
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Usage of these commands is as follows:
+
+**SGE:** ::
+
+    [te1st@sharc-login1 ~]$ qrshx
+
+**Slurm:** ::
 
     [te1st@bessemer-login1 ~]$ srun --pty bash -i
 
 You can configure the resources available to the interactive session by
 adding command line options.
-For example to stat an interactive session with access to 16 GB of RAM:
+For example to start an interactive session with access to 16 GB of RAM:
 
-* **SGE:** ::
+**SGE:** ::
 
     [te1st@sharc-login1 ~]$ qrshx -l rmem=16G
 
-* **Slurm:** ::
+**Slurm:** ::
 
-    [te1st@bessemer-login1 ~]$ srun --mem=6G --pty bash -i
+    [te1st@bessemer-login1 ~]$ srun --mem=16G --pty bash -i
 
-To start a session with access to 8 cores: 
+To start a session with access to 2 cores:
 
-* **SGE:** ::
+**SGE:** ::
 
-    [te1st@sharc-login1 ~]$ qrshx -pe smp 8
+    [te1st@sharc-login1 ~]$ qrshx -pe smp 2
 
-* **Slurm:** ::
+**Slurm:** ::
 
     [te1st@bessemer-login1 ~]$ srun -c 2 --pty bash -i
+
+The SLURM ``-c`` is cores per task, take care with your chosen number of tasks.
 
 A table of :ref:`submit-interactive-options` is given below; any of these can be
 combined together to request more resources.
@@ -74,23 +91,59 @@ combined together to request more resources.
 Common Interactive Job Options
 ``````````````````````````````
 
-====================== ======================== ================================================================
+====================== ======================== ====================================
 SGE Command            Slurm Command            Description
-====================== ======================== ================================================================
-``-l h_rt=hh:mm:ss``   | ``-t [min]``           Specify the total maximum wall clock execution time for the job.
-                       | ``-t [days-hh:mm:ss]`` The upper limit is 08:00:00.  NB these limits may
-                                                differ for reservations/projects.
+====================== ======================== ====================================
+``-l h_rt=hh:mm:ss``   | ``-t [min]``           Specify the total maximum wall clock
+                       | ``-t [days-hh:mm:ss]`` execution
+                                                time for the job. The upper limit is
+                                                08:00:00. NB these limits may differ
+                                                for reservations /projects.
 
-``-l rmem=xxG``        ``--mem=xxG``            Specify the maximum amount (xx) of (real) memory to be
-                                                used (**per CPU core**) in Gigabytes.
+``-l rmem=xxG``        ``--mem=xxG``
+                                                For **SGE** (**ShARC**),
+                                                ``-l rmem=xxG``
+                                                is used to specify the maximum amount
+                                                (``xx``)
+                                                of real memory to be requested **per
+                                                CPU
+                                                core**.
 
-``-pe <env> <nn>``                              Specify an MPI *parallel environment* and a number of 
-                                                processor cores.
 
-``-pe smp <nn>``        ``-c <nn>``             The smp parallel environment provides multiple threads
-                                                on one node. ``<nn>`` specifies the max number of
-                                                threads.
-====================== ======================== ================================================================
+                                                For **SLURM** (**Bessemer**),
+                                                ``--mem=xxG``
+                                                is used to specify the maximum
+                                                amount (``xx``)
+                                                of real memory to be requested
+                                                **per node**.
+
+
+                                                If the real memory usage of your
+                                                job exceeds
+                                                this value multiplied by the number
+                                                of cores
+                                                / nodes you requested then your
+                                                job will be
+                                                killed.
+
+``-pe <env> <nn>``                              Specify an MPI *parallel
+                                                environment* and a
+                                                number of processor cores.
+
+``-pe smp <nn>``        ``-c <nn>``
+                                                **For SGE** the smp parallel
+                                                environment
+                                                provides multiple cores on one node.
+                                                ``<nn>``
+                                                specifies the max number of
+                                                cores.
+
+                                                **For SLURM** ``-c`` is cores per
+                                                task,
+                                                take care with your chosen
+                                                number of tasks.
+
+====================== ======================== ====================================
 
 .. _submit-batch:
 
@@ -109,16 +162,30 @@ can be submitted as a batch job. This excludes jobs that require a
 Graphical User Interface (GUI), however, many common GUI applications such as Ansys or MATLAB can also be
 used without their GUIs.
 
-When you submit a batch job, you provide an executable file that will be run by
+When you submit a batch job, you provide an executable script file that will be executed by
 the scheduler. This is normally a bash script file which provides commands and
 options to the program you are using.
-Once you have a script file, or other executable file, you can submit it to the queue by running:
 
-* **SGE** ::
+There is a single command to submit jobs via SGE:
+
+* :ref:`qsub` - Standard SGE command with no support for interactivity or graphical applications.
+
+SLURM also uses a single command to submit batch jobs:
+
+* `sbatch <https://slurm.schedmd.com/sbatch.html>`_ Standard SLURM command with no support for interactivity or graphical applications.
+
+
+These scripts are executed by the qsub and sbatch commands as below:
+
+
+Using  batch scheduler commands
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**SGE** ::
 
     qsub myscript.sh
 
-* **Slurm** ::
+**Slurm** ::
 
     sbatch myscript.sh
 
@@ -159,10 +226,12 @@ Some things to note:
 * Comments start with a ``#``
 * **SGE** Scheduler options, such as the amount of memory requested, start with ``#$``
 * **Slurm** Scheduler options start with ``#SBATCH``
-* You will often require one or more ``module`` commands in your submission file. 
-  These make programs and libraries available to your scripts.  
-  Many applications and libraries are available as modules on 
+
+* You will often require one or more ``module`` commands in your submission file.
+  These make programs and libraries available to your scripts.
+  Many applications and libraries are available as modules on
   :ref:`ShARC <sharc-software>`, :ref:`Bessemer <bessemer-software>`.
+
 
 Here is a more complex example that requests more resources:
 
@@ -171,8 +240,8 @@ Using **SGE:**
    .. code-block:: bash
 
     #!/bin/bash
-    # Request 16 gigabytes of real memory (RAM)
-    #$ -l rmem=16G
+    # Request 16 gigabytes of real memory (RAM) 4 cores *4G = 16
+    #$ -l rmem=4G
     # Request 4 cores in an OpenMP environment
     #$ -pe openmp 4
     # Email notifications to me@somedomain.com
@@ -189,16 +258,16 @@ Using **SGE:**
 
     # Run the program foo with input foo.dat
     # and output foo.res
-    foo < foo.dat > foo.res
+    foo foo.dat foo.res
 
 Using **Slurm:**
 
    .. code-block:: bash
 
     #!/bin/bash
-    # Request 16 gigabytes of real memory (RAM)
+    # Request 16 gigabytes of real memory (RAM) 4 cores *4G = 16
     #SBATCH --mem=16G
-    # Request 4 cores 
+    # Request 4 cores
     #SBATCH -c 4
     # Email notifications to me@somedomain.com
     #SBATCH --mail-user=me@somedomain.com
@@ -214,66 +283,121 @@ Using **Slurm:**
 
     # Run the program foo with input foo.dat
     # and output foo.res
-    foo < foo.dat > foo.res
+    foo foo.dat foo.res
 
 
 Scheduler Options
 -----------------
 
-====================== ======================== ====================================================================
+====================== ======================== ====================================
 SGE Command            Slurm Command            Description
-====================== ======================== ====================================================================
-``-l h_rt=hh:mm:ss``   | ``-t [min]``           Specify the total maximum wall clock execution time for the job.
-                       | ``-t [days-hh:mm:ss]`` The upper limit is typically 96:00:00 (4 days) on ShARC
-                                                and 168:00:00 (7 days) on Bessemer.  Note that these 
-                                                limits may differ for specific Projects/Queues.  
-                                                Also note that requesting less execution time may 
-                                                result in your job spending less time queuing.
+====================== ======================== ====================================
+``-l h_rt=hh:mm:ss``   | ``-t [min]``           Specify the total maximum wall clock
+                       | ``-t [days-hh:mm:ss]`` execution time for the job. The
+                                                upper limit is typically 96:00:00
+                                                (4 days) on ShARC
+                                                and 168:00:00 (7 days) on Bessemer.
+                                                Note that these
+                                                limits may differ for specific
+                                                Projects/Queues.
+                                                Also note that requesting less
+                                                execution time may
+                                                result in your job spending less
+                                                time queuing.
 
-``-pe <env> <nn>``     n/a                      Specify a *parallel environment* and a number of 
+``-pe <env> <nn>``     n/a                      Specify a *parallel environment*
+                                                and a number of
                                                 processor cores.
 
-``-pe smp <nn>``       ``-c <nn>``              For parallel jobs requesting ``<<nn>>`` CPU cores on a single node
+``-pe smp <nn>``       ``-c <nn>``
+                                                **For SGE** the smp parallel
+                                                environment
+                                                provides multiple cores on one node.
+                                                ``<nn>``
+                                                specifies the max number of
+                                                cores.
 
-``-l rmem=xxG``        ``--mem=xxG``            Specify the maximum amount (``xx``) of real memory to be 
-                                                requested **per CPU core**.
-                                                If the real memory usage of your 
-                                                job exceeds this value multiplied by the number of
-                                                cores you requested then your job will be killed.
+                                                **For SLURM** ``-c`` is cores per
+                                                task,
+                                                take care with your chosen
+                                                number of tasks.
 
-``-l arch=``           n/a                      Target a processor architecture. Note that all public nodes 
-                                                in ShARC use the same model of processor.
+``-l rmem=xxG``        ``--mem=xxG``
+                                                For **SGE** (**ShARC**),
+                                                ``-l rmem=xxG``  is used to specify
+                                                the
+                                                maximum amount (``xx``) of real
+                                                memory to be requested
+                                                **per CPU core**.
 
-``-N``                 ``--job-name=``          Job name, used to name output files and in the queue list.
 
-``-j y[es]|n[o]``      ``-o [filename]``        Join the error and normal output into one file rather
+                                                For **SLURM** (**Bessemer**),
+                                                ``--mem=xxG``  is used to specify
+                                                the
+                                                maximum amount (``xx``) of real
+                                                memory to be requested
+                                                **per node**.
+
+
+                                                If the real memory usage of your
+                                                job exceeds this value
+                                                multiplied by the number of cores
+                                                / nodes you requested then
+                                                your job will be killed.
+
+``-l arch=``           n/a                      Target a processor architecture.
+                                                Note that all public nodes
+                                                in ShARC use the same model of
+                                                processor.
+
+``-N``                 ``--job-name=``          Job name, used to name output
+                                                files and in the queue list.
+
+``-j y[es]|n[o]``      ``-o [filename]``        Join the error and normal output
+                                                into one file rather
                                                 than two.
 
-``-M``                 ``--mail-user=``         Email address to send notifications to.
+``-M``                 ``--mail-user=``         Email address to send notifications
+                                                to.
 
-``-m bea``             ``--mail-type=``         Type of notifications to send. 
+``-m bea``             ``--mail-type=all``      Type of notifications to send.
                                                 For SGE can be any combination of
-                                                begin (``b``) end (``e``) or abort (``a``) i.e. 
-                                                ``-m ea`` for end and abortion messages.
+                                                begin (``b``) end (``e``) or abort
+                                                (``a``) i.e.
+                                                ``-m ea`` for end and abortion
+                                                messages.
 
-``-a``                 ``--begin=``             | Specify the earliest time for a job to start
-                                                | SGE format:  ``[YYMMDDhhmm]``
-                                                | Slurm format: ``YYYY-MM-DD[HH:MM[:SS]]``
 
-``-wd working_dir``    ``--workdir=``           Execute  the  job  from  the  directory  specified
+``-a``                 ``--begin=``             Specify the earliest time for a
+                                                job to start
+                                                SGE format:  ``[YYMMDDhhmm]``
+                                                Slurm format:
+                                                ``YYYY-MM-DD[HH:MM[:SS]]``
 
-``-l excl=true``       ``--exclusive``          Request exclusive access to all nodes used by the job so
-                                                no other jobs can run on them.  This can be useful for
-                                                benchmarking purposes where you want to ensure that you
-                                                have exclusive use of e.g. memory/IO buses.  Note that
-                                                you still need to request CPU cores and memory to avoid
-                                                being limited to just the default per job (one core
-                                                and a set amount of RAM).  Also note that the use of
-                                                this option will likely result in longer queuing times.
-     
-``-l hostname=``       ``--nodelist=``          Target a node by name. Not recommended for normal use.
+``-wd working_dir``    ``--workdir=``           Execute  the  job  from  the
+                                                directory  specified
 
-====================== ======================== ====================================================================
+``-l excl=true``       ``--exclusive``          Request exclusive access to all
+                                                nodes used by the job so
+                                                no other jobs can run on them.
+                                                This can be useful for
+                                                benchmarking purposes where you
+                                                want to ensure that you
+                                                have exclusive use of e.g.
+                                                memory/IO buses.  Note that
+                                                you still need to request CPU
+                                                cores and memory to avoid
+                                                being limited to just the
+                                                default per job (one core
+                                                and a set amount of RAM).  Also
+                                                note that the use of
+                                                this option will likely result in
+                                                longer queuing times.
+
+``-l hostname=``       ``--nodelist=``          Target a node by name. Not
+                                                recommended for normal use.
+
+====================== ======================== ====================================
 
 The `Slurm docs <https://slurm.schedmd.com/sbatch.html>`_ have a complete list of available ``sbatch`` options.
 
