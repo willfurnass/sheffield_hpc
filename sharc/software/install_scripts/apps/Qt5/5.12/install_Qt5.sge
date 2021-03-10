@@ -12,12 +12,12 @@
 #Suggested resource values above should be sane and work.
 #Script written by JMoore 17-02-2021 @ The University of Sheffield IT Services.
 
-#Notes: 
+#Notes:
 #
-#Module file will need export QT_QPA_FONTDIR=/usr/share/fonts/dejavu/ if fontconfig 
+#Module file will need export QT_QPA_FONTDIR=/usr/share/fonts/dejavu/ if fontconfig
 #is not specified and working in the configure
 #
-#Module file will also need export XDG_RUNTIME_DIR=$TMPDIR to avoid non-writable 
+#Module file will also need export XDG_RUNTIME_DIR=$TMPDIR to avoid non-writable
 #directory location - this may be set elsewhere by SGE if it has a similar setup
 #as SLURM with Prolog
 
@@ -30,14 +30,14 @@
 PACKAGENAME=Qt5
 GCCVER=8.2
 CMAKEVER=3.17.1
-PACKAGEVER=5.14
+PACKAGEVER=5.12
 
 
 ######################## You should not need to edit below ########################
 ###################################################################################
 
 #Start the main work of the script
-echo "Running install script to make Package: " + $PACKAGENAME " Version: " + $PACKAGEVER 
+echo "Running install script to make Package: " + $PACKAGENAME " Version: " + $PACKAGEVER
 
 
 #Setup calculated variables
@@ -80,10 +80,10 @@ cd $SOURCEDIR
 #Download source and extract
 echo "Download Source"
 
-git clone https://code.qt.io/qt/qt5.git  
+git clone https://code.qt.io/qt/qt5.git
 cd qt5
 git checkout $PACKAGEVER
-git submodule update --init --recursive   
+git submodule update --init --recursive
 
 
 #Configure
@@ -129,4 +129,3 @@ cp $FULLPATH $INSTALLDIR
 #To be added - automatic module file generation - usage of EOF likely.
 mkdir -p $MODULEDIR
 touch $MODULEDIR$MODULEFILENAME
-
