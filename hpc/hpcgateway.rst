@@ -27,6 +27,10 @@ Overview of the connection process
 ----------------------------------
 
 .. image:: /images/hpcgateway-sequence-diag.png
+  :width: 75%
+  :align: center
+
+
 
 Specific usage examples
 -----------------------
