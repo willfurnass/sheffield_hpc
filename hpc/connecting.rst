@@ -23,7 +23,7 @@ including *MobaXTerm*.
   * off campus without a VPN connection.
 
 * Whether `Multifactor Authentication (MFA) <https://sites.google.com/sheffield.ac.uk/mfa/home>`__  has been enabled on your University account.
-  If MFA has been enabled then when logging in with SSH you will be prompted to enter a one-time code or send a push notication to your MFA device
+  If MFA has been enabled then when logging in with SSH you will be prompted to enter a one-time code or send a push notification to your MFA device
   after entering your username and password.  If you do not have MFA enabled on your account then you will not be able to login from off campus without using VPN.
 
 * Whether you want to use password-based authentication or 'public-key'-based authentication.
@@ -33,9 +33,9 @@ including *MobaXTerm*.
 +----------+------------------------+---------------------------------------------------------------------------------------------------+
 | Cluster  | From campus or via VPN | From off campus and without a VPN connection                                                      |
 +==========+========================+===================================================================================================+
-| Bessemer | Password or public key | Not permitted                                                                                     |
+| Bessemer | Password or public key | Not permitted (unless using the :ref:`HPC SSH gateway service <hpcgw_summary>`)                   |
 +----------+------------------------+---------------------------------------------------------------------------------------------------+
-| ShARC    | Password or public key | Not permitted                                                                                     |
+| ShARC    | Password or public key | Not permitted (unless using the :ref:`HPC SSH gateway service <hpcgw_summary>`)                   |
 +----------+------------------------+---------------------------------------------------------------------------------------------------+
 
 SSH client software on Windows
@@ -136,6 +136,8 @@ Which will pop up another terminal window, which supports graphical applications
 
 ---------
 
+.. _hpcgw_summary:
+
 What if I cannot use the VPN or I need a persistent long term connection
 ---------------------------------------------------------------------------
 
@@ -147,7 +149,7 @@ if you are unable to use VPN we also provide an SSH gateway service to allow off
   * You must additionally request access to the HPC SSH gateway by emailing `it-servicedesk@sheffield.ac.uk <it-servicedesk@sheffield.ac.uk>`_ including a justification for your request.
   * If the cluster access can be handled via the usage of the SSL VPN without undue effort, your request will not be granted.
 
-The details for this can be found on the following link :ref:`HPC Gateway Service Details <hpcgateway>`
+For more information see :ref:`HPC Gateway Service Details <hpcgateway>`.
 
 
 

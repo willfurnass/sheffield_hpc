@@ -17,10 +17,32 @@ if you are unable to use VPN we also provide an SSH gateway service to allow off
   * You must additionally request access to the HPC SSH gateway by emailing `it-servicedesk@sheffield.ac.uk <it-servicedesk@sheffield.ac.uk>`_ including a justification for your request.
   * If the cluster access can be handled via the usage of the SSL VPN without undue effort, your request will not be granted.
 
-The SSH gateway servers are configured to be SSH jump hosts only.  They do not have direct access to HPC filestore or Research Shared areas, and you cannot
-run an interactive SSH terminal session directly on the gateway servers.  Additionally the HPC gateway servers only allow access to the HPC clusters - you cannot access any
-other IT Services or departmental servers using this gateway.
+The SSH gateway server, ``hpcgw.shef.ac.uk``, is configured to be a SSH 'jump host' only:
+it does not have direct access to HPC filestore or Research Shared areas, and
+you cannot run an interactive SSH terminal session directly on the gateway server.
+Additionally the HPC gateway server only allow access to the HPC clusters;
+you cannot access any other IT Services or departmental servers using this gateway.
 
+Overview of the connection process
+----------------------------------
+
+.. mermaid::
+
+   sequenceDiagram
+      autonumber
+      participant User
+      participant hpcgw
+      participant HPC
+      User ->> HPC: SSH/SCP/SFTP/Rsync request via hpcgw
+      hpcgw -->> User: Password prompt
+      User ->> hpcgw: Submit password
+      hpcgw -->> User: MFA prompt
+      User ->> hpcgw: Request and respond to Duo push notification or enter Duo token code
+      HPC --> User: Password or public key-based SSH authentication
+      User -> HPC: SSH/SCP/SFTP/Rsync access
+
+Specific usage examples
+-----------------------
 
 * Access a HPC cluster via SSH: ::
 
