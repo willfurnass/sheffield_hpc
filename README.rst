@@ -115,6 +115,17 @@ The validity of the reStructuredText in this repo and the ability to convert tha
 * By a [GitHub Actions](https://github.com/rcgsheffield/sheffield_hpc/actions/) Workflow each time a contributor creates or updates a Pull Request.
 * By `ReadTheDocs <https://readthedocs.org/projects/iceberg/>`__ on each push to the ``master`` branch.
 
+(Re)-generating PNG images from Mermaid.js diagram definitions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Some diagrams, such as ``images/hpcgateway-sequence-diag.png`` 
+have been generated with `mermaid-cli <https://github.com/mermaid-js/mermaid-cli>`__ 
+and Mermaid.js diagram definitions such as ``images/hpcgateway-sequence-diag.mmd``.
+How to install mermaid-cli and regenerate one of these diagrams: ::
+
+  yarn add @mermaid-js/mermaid-cli 
+  ./node_modules/.bin/mmdc -i images/hpcgateway-sequence-diag.mmd -o images/hpcgateway-sequence-diag.png
+
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
 .. _reStructuredText: https://docutils.sourceforge.io/rst.html
 .. _Miniconda installer: https://conda.io/miniconda.html

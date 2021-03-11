@@ -26,20 +26,11 @@ you cannot access any other IT Services or departmental servers using this gatew
 Overview of the connection process
 ----------------------------------
 
-.. mermaid::
+.. image:: /images/hpcgateway-sequence-diag.png
+  :width: 75%
+  :align: center
 
-   sequenceDiagram
-      autonumber
-      participant User
-      participant hpcgw
-      participant HPC
-      User ->> HPC: SSH/SCP/SFTP/Rsync request via hpcgw
-      hpcgw -->> User: Password prompt
-      User ->> hpcgw: Submit password
-      hpcgw -->> User: MFA prompt
-      User ->> hpcgw: Request and respond to Duo push notification or enter Duo token code
-      HPC --> User: Password or public key-based SSH authentication
-      User -> HPC: SSH/SCP/SFTP/Rsync access
+
 
 Specific usage examples
 -----------------------
