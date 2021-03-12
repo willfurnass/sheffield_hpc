@@ -28,6 +28,11 @@ including *MobaXTerm*.
 
 * Whether you want to use password-based authentication or 'public-key'-based authentication.
 
+.. note::
+
+    The `University Connect for China (UCC) <https://www.sheffield.ac.uk/it-services/university-connect-china>`_ is not the same service as the SSL VPN service and will not grant access to the HPC clusters.
+    Users of the UCC must disconnect the UCC and connect to the SSL VPN in order to connect to the HPC clusters.
+
 **Authentication requirements per cluster**:
 
 +----------+------------------------+---------------------------------------------------------------------------------------------------+
