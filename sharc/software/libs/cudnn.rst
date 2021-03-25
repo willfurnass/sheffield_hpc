@@ -25,6 +25,7 @@ Load the appropriate cuDNN version (**and implicitly load a specific CUDA versio
 
 .. code-block:: bash
 
+   module load libs/cudnn/8.0.5.39/binary-cuda-11.1.1
    module load libs/cudnn/7.6.5.32/binary-cuda-10.2.89
    module load libs/cudnn/7.6.5.32/binary-cuda-10.1.243
    module load libs/cudnn/7.6.5.32/binary-cuda-10.0.130
@@ -46,6 +47,7 @@ Examples
 
 Examples are provided for the following versions 
 
+ * ``libs/cudnn/8.0.5.39/binary-cuda-11.1.1``
  * ``libs/cudnn/7.6.5.32/binary-cuda-10.2.89``
  * ``libs/cudnn/7.6.5.32/binary-cuda-10.1.243``
  * ``libs/cudnn/7.6.5.32/binary-cuda-10.0.130``
@@ -55,16 +57,17 @@ Examples are provided for the following versions
  * ``libs/cudnn/7.3.1.20/binary-cuda-9.0.176``
  * ``libs/cudnn/4.0/binary-cuda-7.5.18``
 
-Usage with ``libs/cudnn/7.3.1.20/binary-cuda-9.0.176``:
+Usage with ``libs/cudnn/8.0.5.39/binary-cuda-11.1.1``:
 
 .. code-block:: bash
 
    # start an interactive session on a GPU node
    qrshx -l gpu=1  
-   # Copy the cuDNN 7 examples to a temporary directory
-   cp -r "$CUDNN_HOME/src/cudnn_samples_v7" "${TMPDIR-/tmp}"
+   module load libs/cudnn/8.0.5.39/binary-cuda-11.1.1
+   # Copy the cuDNN 8 examples to a temporary directory
+   cp -r "$CUDNN_HOME/src/cudnn_samples_v8" "${TMPDIR-/tmp}"
    # Compile an example
-   cd "${TMPDIR-/tmp}/cudnn_samples_v7/mnistCUDNN"
+   cd "${TMPDIR-/tmp}/cudnn_samples_v8/mnistCUDNN"
    make
    # Run the example
    ./mnistCUDNN
@@ -74,12 +77,19 @@ Installation notes
 
 This section is primarily for administrators of the system.
 
-The cuDNN library is only available to download through the `developer portal <https://developer.nvidia.com/cudnn>`_.  Installation ``.tgz`` files are located in ``/usr/local/media/protected/cudnn``.
+The cuDNN library is only available to download through the `developer portal <https://developer.nvidia.com/cudnn>`_.  
+Installation ``.tgz`` files and ``.deb`` files containing samples are located in ``/usr/local/media/protected/cudnn``.
+
+Version 8.0.5.39
+^^^^^^^^^^^^^^^^
+- Install script: :download:`install.sh </sharc/software/install_scripts/libs/cudnn/install.sh>`
+- :download:`Module file for CUDA 11.1 </sharc/software/modulefiles/libs/cudnn/8.0.5.39/binary-cuda-11.1.1>`
+- Testing: ran the ``mnistCUDNN`` example (see *Examples* above) with CUDA 11.1 on a V100 GPU.
 
 Version 7.6.5.32
 ^^^^^^^^^^^^^^^^
 
-- Install script: :download:`install_cudnn7.6.5.32.sh </sharc/software/install_scripts/libs/cudnn/install_7.6.5.32.sh>`
+- Install script: :download:`install.sh </sharc/software/install_scripts/libs/cudnn/install.sh>`
 - :download:`Module file for CUDA 10.2 </sharc/software/modulefiles/libs/cudnn/7.6.5.32/binary-cuda-10.2.89>`
 - :download:`Module file for CUDA 10.1 </sharc/software/modulefiles/libs/cudnn/7.6.5.32/binary-cuda-10.1.243>`
 - :download:`Module file for CUDA 10.0 </sharc/software/modulefiles/libs/cudnn/7.6.5.32/binary-cuda-10.0.130>`
@@ -148,7 +158,7 @@ Version 7.6.5.32
 Version 7.5.0.56
 ^^^^^^^^^^^^^^^^
 
-- Install script: :download:`install_cudnn7.5.0.56_for_cuda_10.0_and_9.0.sh </sharc/software/install_scripts/libs/cudnn/install_7.5.0.56_for_cuda_10.0_and_9.0.sh>`
+- Install script: :download:`install.sh </sharc/software/install_scripts/libs/cudnn/install.sh>`
 - :download:`Module file for CUDA 10.0 </sharc/software/modulefiles/libs/cudnn/7.5.0.56/binary-cuda-10.0.130>`
 - :download:`Module file for CUDA 9.0 </sharc/software/modulefiles/libs/cudnn/7.5.0.56/binary-cuda-9.0.176>`
 - Testing: ran the ``mnistCUDNN`` example (see *Examples* above) with CUDA 10.0 on a V100 GPU; results: ::
@@ -216,7 +226,7 @@ Version 7.5.0.56
 Version 7.3.1.20
 ^^^^^^^^^^^^^^^^
 
-- Install script: :download:`install_cudnn7.3.1.20_for_cuda_9.0.sh </sharc/software/install_scripts/libs/cudnn/install_7.3.1.20_for_cuda_9.0.sh>`
+- Install script: :download:`install.sh </sharc/software/install_scripts/libs/cudnn/install.sh>`
 - :download:`Module file for CUDA 9.0 </sharc/software/modulefiles/libs/cudnn/7.3.1.20/binary-cuda-9.0.176>`
 - Testing: ran the ``mnistCUDNN`` example (see *Examples* above) with CUDA 9.0 on a V100 GPU; results: ::
 
