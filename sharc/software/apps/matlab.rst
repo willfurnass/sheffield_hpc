@@ -79,7 +79,7 @@ MATLAB Compiler and running free-standing compiled MATLAB programs
 ------------------------------------------------------------------
 
 The MATLAB compiler **mcc** can be used to generate standalone executables.
-These executables can then be run on other computers that does not have MATLAB installed. 
+These executables can then be run on other computers that do not have MATLAB installed. 
 We strongly recommend you use R2016b or later versions to take advantage of this feature. 
 
 To compile a MATLAB function or script for example called ``myscript.m`` the following steps are required:
