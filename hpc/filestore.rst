@@ -87,12 +87,12 @@ Automounting
 ^^^^^^^^^^^^^
 
 *Data* directories are **made available to you (mounted) on demand**: 
-if you list the contents of just ``/data`` after first logging on then ``/data/yourusername`` subdirectories might not be shown.
-However, if you list the contents of ``/data/yourusername`` itself or change into that directory
+if you list the contents of just ``/data`` after first logging on then your ``/data/te1st`` subdirectory (where ``te1st`` is your username) might not be shown.
+However, if you list the contents of ``/data/te1st`` itself or change into that directory
 then its contents will appear.  
 
 Later on if you list the contents of ``/data`` again 
-you may find that ``/data/yourusername`` has disappeared again, as 
+you may find that ``/data/te1st`` has disappeared again, as 
 it is automatically *unmounted* following a period of inactivity.  
 
 .. _fastdata_dir:
@@ -126,25 +126,26 @@ Managing your files in fastdata areas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In order to avoid interference from other users' files 
-it is **important** that you store your files in a directory created and named the same as your username. e.g. ::
+it is **important** that you store your files in a directory created and named the same as your username 
+e.g. if your username is ``te1st`` then you can a fastdata area for yourself using: ::
 
-    mkdir /fastdata/yourusername
+    mkdir /fastdata/te1st
 
 By default the directory you create will have world-read access.  
 If you want to restrict read access to just your account then run ::
 
-    chmod 700 /fastdata/yourusername
+    chmod 700 /fastdata/te1st
 
 after creating the directory. 
 A more sophisticated sharing scheme would have private and public directories ::
 
-    mkdir /fastdata/yourusername
-    mkdir /fastdata/yourusername/public
-    mkdir /fastdata/yourusername/private
+    mkdir /fastdata/te1st
+    mkdir /fastdata/te1st/public
+    mkdir /fastdata/te1st/private
 
-    chmod 755 /fastdata/yourusername
-    chmod 755 /fastdata/yourusername/public
-    chmod 700 /fastdata/yourusername/private
+    chmod 755 /fastdata/te1st
+    chmod 755 /fastdata/te1st/public
+    chmod 700 /fastdata/te1st/private
 
 Automatic file deletion
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -163,9 +164,9 @@ Automatic file deletion
     **copy important data** from these areas to areas suitable for longer-term storage (:ref:`home_dir`, :ref:`data_dir` (*not* backed up) or :ref:`shared_dir`).
 
 You can use the ``lfs``  command to find out which files in a *fastdata* directory are older than a certain number of days and hence approaching the time of deletion. 
-For example, to find files 50 or more days old ::
+For example, if your username is ``te1st`` then you can find files 50 or more days old using: ::
 
-    lfs find -ctime +50 /fastdata/yourusername
+    lfs find -ctime +50 /fastdata/te1st
 
 File locking
 ^^^^^^^^^^^^
