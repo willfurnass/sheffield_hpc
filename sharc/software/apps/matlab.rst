@@ -5,7 +5,7 @@ MATLAB
 
 .. sidebar:: MATLAB
 
-   :Versions:  2016a, 2016b, 2017a, 2017b, 2018a, 2018b, 2019a, 2019b, 2020a, 2020b 
+   :Versions:  2013a, 2016a, 2016b, 2017a, 2017b, 2018a, 2018b, 2019a, 2019b, 2020a, 2020b 
    :Support Level: FULL
    :Dependancies: None
    :URL: http://uk.mathworks.com/products/matlab
@@ -27,6 +27,7 @@ Alternatively, you can load a specific version with one of the following command
 
 .. code-block:: bash
 
+   module load apps/matlab/2013a/binary
    module load apps/matlab/2016a/binary
    module load apps/matlab/2016b/binary
    module load apps/matlab/2017a/binary
