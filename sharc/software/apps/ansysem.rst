@@ -6,10 +6,15 @@ Ansys EM
    :Versions: 16.1, 17.2, 18.0, 18.2, 19.0, 19.1, 19.2, 19.3,  19.4, 20.2 & 21.1
    :Dependencies: For integration with Ansys Workbench requires Ansys 16.1, 17.2, 18.0, 18.2, 19.0, 19.1, 19.2, 19.3, 19.4, 20.2 & 21.1
    :URL: http://www.ansys.com
-   :Local URL: https://www.shef.ac.uk/it-services/research/software/fluent
+
 
 
 ANSYS Electromagnetics Suite for Linux/Unix.
+
+.. note::
+
+    * The University of Sheffield ANSYS licence servers currently only support ANSYS EM 2020 R1 or higher.
+
 
 
 Usage
@@ -48,9 +53,15 @@ The following is an example batch submission script which is submitted to the qu
     #$ -l rmem=2G
     #$ -pe mpi 8
 
-    module load apps/ansysem/16.1
+    module load apps/ansysem/21.1
 
-    ansysedt -ng -BatchSolve -Distributed -machinelist num=8 -batchoptions 'HFSS/HPCLicenseType'='pool' -batchoptions 'HFSS-IE/HPCLicenseType'='pool' Tee.aedt
+    ansysedt -ng -BatchSolve -Distributed -machinelist num=8 -batchoptions 'HFSS/HPCLicenseType'='pool' -batchoptions 'HFSS-IE/HPCLicenseType'='pool' -useElectronicsPPE Tee.aedt
+
+.. note::
+
+    * The University of Sheffield ANSYS licence servers currently only support ANSYS EM 2020 R1 or higher.
+    * The ``-useElectronicsPPE`` argument is required if you are using the University of Sheffield ANSYS licence server.
+    * If you are using an alternative licencing method and one of the older modules this option is unlikely to be required.
 
 The script requests 8 cores using the MPI parallel environment ``mpi`` with a runtime of 30 mins and 2 GB of real memory per core. The Ansys EM input file is ``Tee.aedt`` and batch options ``'HFSS/HPCLicenseType'='pool'`` and ``'HFSS-IE/HPCLicenseType'='pool'`` change the HPC licencing from "pack" (the default) to "pool".
 
