@@ -1,0 +1,71 @@
+#%Module
+proc ModulesHelp { } {
+    puts stderr {
+
+Description
+===========
+OpenFOAM is a free, open source CFD software package.
+ OpenFOAM has an extensive range of features to solve anything from complex fluid flows
+ involving chemical reactions, turbulence and heat transfer,
+ to solid dynamics and electromagnetics.
+
+
+More information
+================
+ - Homepage: https://www.openfoam.org/
+    }
+}
+
+module-whatis {Description: OpenFOAM is a free, open source CFD software package.
+ OpenFOAM has an extensive range of features to solve anything from complex fluid flows
+ involving chemical reactions, turbulence and heat transfer,
+ to solid dynamics and electromagnetics.}
+module-whatis {Homepage: https://www.openfoam.org/}
+module-whatis {URL: https://www.openfoam.org/}
+
+set root /usr/local/packages/live/eb/OpenFOAM/8-foss-2020a
+
+conflict OpenFOAM
+
+if { ![ is-loaded foss/2020a ] } {
+    module load foss/2020a
+}
+
+if { ![ is-loaded libreadline/8.0-GCCcore-9.3.0 ] } {
+    module load libreadline/8.0-GCCcore-9.3.0
+}
+
+if { ![ is-loaded ncurses/6.2-GCCcore-9.3.0 ] } {
+    module load ncurses/6.2-GCCcore-9.3.0
+}
+
+if { ![ is-loaded METIS/5.1.0-GCCcore-9.3.0 ] } {
+    module load METIS/5.1.0-GCCcore-9.3.0
+}
+
+if { ![ is-loaded SCOTCH/6.0.9-gompi-2020a ] } {
+    module load SCOTCH/6.0.9-gompi-2020a
+}
+
+if { ![ is-loaded CGAL/4.14.3-gompi-2020a-Python-3.8.2 ] } {
+    module load CGAL/4.14.3-gompi-2020a-Python-3.8.2
+}
+
+if { ![ is-loaded ParaView/5.8.0-foss-2020a-Python-3.8.2-mpi ] } {
+    module load ParaView/5.8.0-foss-2020a-Python-3.8.2-mpi
+}
+
+prepend-path	CMAKE_PREFIX_PATH		$root
+setenv	EBROOTOPENFOAM		"$root"
+setenv	EBVERSIONOPENFOAM		"8"
+setenv	EBDEVELOPENFOAM		"$root/easybuild/OpenFOAM-8-foss-2020a-easybuild-devel"
+
+setenv	WM_COMPILE_OPTION		"Opt"
+setenv	WM_PROJECT_VERSION		"8"
+setenv	FOAM_INST_DIR		"/usr/local/packages/live/eb/OpenFOAM/8-foss-2020a"
+setenv	WM_COMPILER		"Gcc"
+setenv	WM_MPLIB		"EASYBUILDMPI"
+setenv	FOAM_BASH		"/usr/local/packages/live/eb/OpenFOAM/8-foss-2020a/OpenFOAM-8/etc/bashrc"
+setenv	FOAM_CSH		"/usr/local/packages/live/eb/OpenFOAM/8-foss-2020a/OpenFOAM-8/etc/cshrc"
+setenv	WM_LABEL_SIZE		"32"
+# Built with EasyBuild version 4.3.1

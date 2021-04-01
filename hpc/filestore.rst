@@ -35,9 +35,7 @@ All users have a home directory on each system, some of which are shared between
 +==========+========================+======+================+===============================================+=========================+
 | Bessemer | ``/home/yourusername`` | NFS  | 100GB          | Yes                                           | No                      |
 +----------+------------------------+------+----------------+-----------------------------------------------+-------------------------+
-| ShARC    | ``/home/yourusername`` | NFS  | 10GB           | Yes                                           | ShARC + Iceberg         |
-+----------+------------------------+------+----------------+-----------------------------------------------+-------------------------+
-| Iceberg  | ``/home/yourusername`` | NFS  | 10GB           | Yes                                           | ShARC + Iceberg         |
+| ShARC    | ``/home/yourusername`` | NFS  | 10GB           | Yes                                           | No                      |
 +----------+------------------------+------+----------------+-----------------------------------------------+-------------------------+
 
 See also: :ref:`quota_check` and * :ref:`exceed_quota`.
@@ -60,16 +58,14 @@ See also: :ref:`recovering_snapshots`.
 *Data* directories
 ------------------
 
-Every user on Iceberg and ShARC (**not Bessemer**) has access to a larger *data* storage area:
+Every user on ShARC (**not Bessemer**) has access to a larger *data* storage area:
 
 +----------+------------------------+------+----------------+-----------------------------------------------+-------------------------+
 | System   | Path                   | Type | Quota per user | Shared between system login and worker nodes? | Shared between systems? |
 +==========+========================+======+================+===============================================+=========================+
 | Bessemer | N/A                    | NFS  | N/A            | N/A                                           | N/A                     |
 +----------+------------------------+------+----------------+-----------------------------------------------+-------------------------+
-| ShARC    | ``/data/yourusername`` | NFS  | 100GB          | Yes                                           | ShARC + Iceberg         |
-+----------+------------------------+------+----------------+-----------------------------------------------+-------------------------+
-| Iceberg  | ``/data/yourusername`` | NFS  | 100GB          | Yes                                           | ShARC + Iceberg         |
+| ShARC    | ``/data/yourusername`` | NFS  | 100GB          | Yes                                           | No                      |
 +----------+------------------------+------+----------------+-----------------------------------------------+-------------------------+
 
 See also: :ref:`quota_check` and * :ref:`exceed_quota`.
@@ -91,12 +87,12 @@ Automounting
 ^^^^^^^^^^^^^
 
 *Data* directories are **made available to you (mounted) on demand**: 
-if you list the contents of just ``/data`` after first logging on then ``/data/yourusername`` subdirectories might not be shown.
-However, if you list the contents of ``/data/yourusername`` itself or change into that directory
+if you list the contents of just ``/data`` after first logging on then your ``/data/te1st`` subdirectory (where ``te1st`` is your username) might not be shown.
+However, if you list the contents of ``/data/te1st`` itself or change into that directory
 then its contents will appear.  
 
 Later on if you list the contents of ``/data`` again 
-you may find that ``/data/yourusername`` has disappeared again, as 
+you may find that ``/data/te1st`` has disappeared again, as 
 it is automatically *unmounted* following a period of inactivity.  
 
 .. _fastdata_dir:
@@ -112,15 +108,13 @@ are **not performant when reading/writing lots of small files**
 (:ref:`scratch_dir` are ideal for reading/writing lots of small temporary files within jobs).
 An example of how slow it can be for large numbers of small files is detailed `here <http://www.walkingrandomly.com/?p=6167>`__.
 
-+----------+---------------------+--------+----------------+---------------------+--------------------------------------------------------+---------------------------+
-| System   | Path                | Type   | Quota per user | Filesystem capacity | Shared between systems?                                | Network bandwith per link |
-+==========+=====================+========+================+=====================+========================================================+===========================+
-| Bessemer | ``/fastdata``       | Lustre | None           | 460 TB              | No                                                     | 25Gb/s Ethernet           |
-+----------+---------------------+--------+----------------+---------------------+--------------------------------------------------------+---------------------------+
-| ShARC    | ``/fastdata``       | Lustre | None           | 669 TB              | ShARC's fastdata filesystem is accessible from Iceberg | 100Gb/s (*Omni-Path*)     |
-+----------+---------------------+--------+----------------+---------------------+--------------------------------------------------------+---------------------------+
-| Iceberg  | ``/fastdata-sharc`` | Lustre | None           | 669 TB              | ShARC's fastdata filesystem is accessible from Iceberg | 1Gb/s Ethernet            |
-+----------+---------------------+--------+----------------+---------------------+--------------------------------------------------------+---------------------------+
++----------+---------------------+--------+----------------+---------------------+-------------------------+---------------------------+
+| System   | Path                | Type   | Quota per user | Filesystem capacity | Shared between systems? | Network bandwith per link |
++==========+=====================+========+================+=====================+=========================+===========================+
+| Bessemer | ``/fastdata``       | Lustre | No limits      | 460 TB              | No                      | 25Gb/s Ethernet           |
++----------+---------------------+--------+----------------+---------------------+-------------------------+---------------------------+
+| ShARC    | ``/fastdata``       | Lustre | No limits      | 669 TB              | No                      | 100Gb/s (*Omni-Path*)     |
++----------+---------------------+--------+----------------+---------------------+-------------------------+---------------------------+
 
 Snapshotting and mirrored backups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -132,25 +126,26 @@ Managing your files in fastdata areas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In order to avoid interference from other users' files 
-it is **important** that you store your files in a directory created and named the same as your username. e.g. ::
+it is **important** that you store your files in a directory created and named the same as your username 
+e.g. if your username is ``te1st`` then you can a fastdata area for yourself using: ::
 
-    mkdir /fastdata/yourusername
+    mkdir /fastdata/te1st
 
 By default the directory you create will have world-read access.  
 If you want to restrict read access to just your account then run ::
 
-    chmod 700 /fastdata/yourusername
+    chmod 700 /fastdata/te1st
 
 after creating the directory. 
 A more sophisticated sharing scheme would have private and public directories ::
 
-    mkdir /fastdata/yourusername
-    mkdir /fastdata/yourusername/public
-    mkdir /fastdata/yourusername/private
+    mkdir /fastdata/te1st
+    mkdir /fastdata/te1st/public
+    mkdir /fastdata/te1st/private
 
-    chmod 755 /fastdata/yourusername
-    chmod 755 /fastdata/yourusername/public
-    chmod 700 /fastdata/yourusername/private
+    chmod 755 /fastdata/te1st
+    chmod 755 /fastdata/te1st/public
+    chmod 700 /fastdata/te1st/private
 
 Automatic file deletion
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -169,16 +164,16 @@ Automatic file deletion
     **copy important data** from these areas to areas suitable for longer-term storage (:ref:`home_dir`, :ref:`data_dir` (*not* backed up) or :ref:`shared_dir`).
 
 You can use the ``lfs``  command to find out which files in a *fastdata* directory are older than a certain number of days and hence approaching the time of deletion. 
-For example, to find files 50 or more days old ::
+For example, if your username is ``te1st`` then you can find files 50 or more days old using: ::
 
-    lfs find -ctime +50 /fastdata/yourusername
+    lfs find -ctime +50 /fastdata/te1st
 
 File locking
 ^^^^^^^^^^^^
 
-POSIX file locking is not enabled on these Lustre filesystems, 
-which can cause issues for certain applications that require/expect it
-(e.g. programs that create/use SQLite databases).
+As of September 2020 POSIX file locking is enabled on all Lustre filesystems. 
+Prior to this the lack of file locking support on the University's Lustre filesystems caused problems for certain workflows/applications
+(e.g. for programs that create/use SQLite databases).
 
 .. _shared_dir:
 
@@ -190,8 +185,8 @@ The capacity per area can be extended and additional shared areas can be purchas
 
 After one of these project storage areas has been requested/purchased it can be accessed in two ways:
 
-* as a Windows-style (SMB) file share on machines other than ShARC/Iceberg using ``\\uosfstore.shef.ac.uk\shared\``;
-* as a subdirectory of ``/shared`` on ShARC/Iceberg (you need to **explicitly request HPC access when you order storage from IT Services**).
+* as a Windows-style (SMB) file share on machines other than Bessemer/ShARC using ``\\uosfstore.shef.ac.uk\shared\``;
+* as a subdirectory of ``/shared`` on Bessemer/ShARC (you need to **explicitly request HPC access when you order storage from IT Services**).
 
 Snapshotting and mirrored backups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -216,7 +211,7 @@ will be accessible if you ``cd`` (change directory) into a subdirectory e.g. ``c
 Specifics for Bessemer
 ^^^^^^^^^^^^^^^^^^^^^^
 
-If you need to access a ``/shared`` area on Bessemer please contact `helpdesk@sheffield.ac.uk <helpdesk@sheffield.ac.uk>`__ to arrange this.
+If you need to access a ``/shared`` area on Bessemer please contact `it-servicedesk@sheffield.ac.uk <it-servicedesk@sheffield.ac.uk>`__ to arrange this.
 
 
 .. warning::
@@ -254,7 +249,7 @@ some applications can cause problems when accessing files/directories on ``/shar
   unless Perl is explicitly told to test for file permissions in a more thorough way 
   (see the mention of ``use filetest 'access'`` `here <http://perldoc.perl.org/functions/-X.html>`_).
 * git: may complain that permissions have changed if 
-  a repository is simply moved to ``/shared/someplace`` from elsewhere on Bessemer/ShARC/Iceberg. 
+  a repository is simply moved to ``/shared/someplace`` from elsewhere on Bessemer/ShARC. 
   As a workaround you can tell git to not to track Linux permissions for a single repository using 
   ``git config core.filemode false`` or 
   for all repositories using ``git config --global core.filemode false``.
@@ -340,8 +335,6 @@ and if their request is granted they will be given write access to this area:
 +----------+--------------------------+------+-----------------------------+-------------------------------------+-----------------------------------------+
 | ShARC    | ``/usr/local/community`` | NFS  | :ref:`sharc-community`      | :ref:`sharc-software-install-guide` | Also available at ``/usr/local/extras`` |
 +----------+--------------------------+------+-----------------------------+-------------------------------------+-----------------------------------------+
-| Iceberg  | ``/usr/local/extras``    | NFS  |                             |                                     |                                         |
-+----------+--------------------------+------+-----------------------------+-------------------------------------+-----------------------------------------+
 
 Note that:
 
@@ -387,7 +380,7 @@ In order to avoid this situation it is strongly recommended that you:
 
 * :ref:`Check your quota usage <quota_check>` regularly.
 * Copy files that do not need to be backed up to a :ref:`Fastdata area <fastdata_dir>`
-  or remove them from Bessemer/ShARC/Iceberg completely.
+  or remove them from Bessemer/ShARC completely.
 
 .. _recovering_snapshots:
 

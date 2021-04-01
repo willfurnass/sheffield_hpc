@@ -34,7 +34,7 @@ Advantages of Array Jobs:
   * Parameter sensitivity analysis;
   * Batch file processing (where ``$SGE_TASK_ID`` might refer to a file in a list of files to be processed).
 
-Array Jobs on ShARC and Iceberg can have a maximum of 75000 tasks.
+Array Jobs on ShARC can have a maximum of 75000 tasks.
 
 Limiting number of concurrent tasks for GPU array jobs
 ------------------------------------------------------
@@ -68,7 +68,7 @@ a separate output and error file will be written *per task*
 to the directory the Job Array was submitted from.
 This may not be convenient:
 you may not want to be generating tens, hundreds or thousands of log files
-in your project's directories on ShARC/Iceberg.
+in your project's directories on ShARC.
 
 A more sensible approach could be to
 tell the scheduler to write output and error log files per task to

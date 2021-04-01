@@ -14,6 +14,9 @@ set -u
 
 
 VERSIONS=(
+    11.1.1_455.32.00
+    11.0.2_450.51.05
+    11.0.2_450.51.05
     10.2.89_440.33.01
     10.1.243_418.87.00
     10.0.130_410.48
@@ -72,12 +75,13 @@ fi
 chmod +x "$installer"
 
 prefix="/usr/local/packages/libs/CUDA/${cuda_vers}/binary"
-mkdir -m 2775 -p "$prefix"
-chown -R ${USER}:hpc_app-admins "$prefix"
+echo "Installing to ${prefix}..."
+mkdir -m 2775 -p "${prefix}"
+chown -R ${USER}:hpc_app-admins "${prefix}"
 chmod -R g+w "$prefix"
 
 echo "Installing CUDA using $installer"
-if [[ $cuda_vers_maj -eq 10 ]] && [[ $cuda_vers_min -ge 1 ]]; then
+if [[ $cuda_vers_maj -eq 10 ]] && [[ $cuda_vers_min -ge 1 ]] || [[ $cuda_vers_maj -ge 11 ]]; then
     # The installer changed a bit with 10.1
     # The logic for this version and more recent version is now partly based on the EasyBuild recipe
     pushd ${TMPDIR-/tmp}

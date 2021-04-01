@@ -4,7 +4,7 @@
 Sheffield High Performance Computing Documentation
 ==================================================
 
-This is the source for the documentation of Bessemer, ShARC and Iceberg, The University of Sheffield's High Performance Computing clusters.
+This is the source for the documentation of Bessemer and ShARC, The University of Sheffield's High Performance Computing clusters.
 
 It is written in the reStructuredText_ (*rst*) format and the Sphinx_ tool is used to convert this to a set of HTML pages.
 
@@ -114,6 +114,17 @@ The validity of the reStructuredText in this repo and the ability to convert tha
 * Locally by contributors when they run e.g. ``make html``
 * By a [GitHub Actions](https://github.com/rcgsheffield/sheffield_hpc/actions/) Workflow each time a contributor creates or updates a Pull Request.
 * By `ReadTheDocs <https://readthedocs.org/projects/iceberg/>`__ on each push to the ``master`` branch.
+
+(Re)-generating PNG images from Mermaid.js diagram definitions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Some diagrams, such as ``images/hpcgateway-sequence-diag.png`` 
+have been generated with `mermaid-cli <https://github.com/mermaid-js/mermaid-cli>`__ 
+and Mermaid.js diagram definitions such as ``images/hpcgateway-sequence-diag.mmd``.
+How to install mermaid-cli and regenerate one of these diagrams: ::
+
+  yarn add @mermaid-js/mermaid-cli 
+  ./node_modules/.bin/mmdc -i images/hpcgateway-sequence-diag.mmd -o images/hpcgateway-sequence-diag.png
 
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
 .. _reStructuredText: https://docutils.sourceforge.io/rst.html

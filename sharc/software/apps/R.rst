@@ -7,6 +7,7 @@ R
 
    :URL: https://www.r-project.org/
    :Documentation: https://www.r-project.org/
+   :Versions: 3.3.2, 3.3.3, 3.4.0, 3.5.1, 3.6.3, 4.0.0, 4.0.2, 4.0.3
 
 R is a statistical computing language.
 
@@ -19,7 +20,11 @@ The latest version of R can be loaded with: ::
    module load apps/R
 
 Alternatively, you can load a specific version of R using one of the following: ::
-        
+  
+   module load apps/R/4.0.3/gcc-8.2.0   
+   module load apps/R/4.0.2/gcc-8.2.0
+   module load apps/R/4.0.0/gcc-10.1.0
+   module load apps/R/4.0.0/gcc-8.2.0
    module load apps/R/3.6.3/gcc-8.2.0
    module load apps/R/3.5.1/gcc-4.8.5
    module load apps/R/3.4.0/gcc-4.8.5
@@ -34,7 +39,7 @@ Serial (one CPU) Batch usage
 ----------------------------
 Here, we assume that you wish to run the program ``my_code.r`` on the system. 
 With batch usage it is recommended to load a specific version of R, 
-for example ``module load apps/R/3.6.3``, 
+for example ``module load apps/R/4.0.3``, 
 to ensure the expected output is achieved.
 
 First, you need to write a batch submission file. 
@@ -46,7 +51,7 @@ We assume you'll call this ``my_job.sge``:
    #$ -cwd                                # Run job from current directory
    #$ -l rmem=4G                          # Request 4 gigabytes of memory
 
-   module load apps/R/3.6.3/gcc-8.2.0     # Recommended to load a specific version of R
+   module load apps/R/4.0.3/gcc-8.2.0     # Recommended to load a specific version of R
 
    R CMD BATCH my_code.r my_code.r.o$JOB_ID
 
@@ -113,7 +118,7 @@ These additional packages will be installed without prompting to your personal p
 To check your packages are up to date, and update them if necessary, 
 run the following line from an R interactive session ::
 
-   update.packages(lib.loc = "~/R/x86_64-unknown-linux-gnu-library/3.5/")
+   update.packages(lib.loc = "~/R/x86_64-unknown-linux-gnu-library/4.0/")
 
 The folder name after ``~/R/`` will likely change, 
 but this can be completed with tab autocompletion from the R session. 
@@ -145,7 +150,7 @@ so you will need to install them yourself to your home directory following the i
 
    You may also need to ``module load`` those dependencies each time you *use* your R package.
 
-   See :ref:`here <Libraries>` more information on the available external libraries
+   See :ref:`here <sharc-libs>` more information on the available external libraries
 
 Using the Rmath library in C Programs
 -------------------------------------
@@ -193,6 +198,49 @@ Installation Notes
 ------------------
 These notes are primarily for administrators of the system.
 
+
+Version 4.0.3
+^^^^^^^^^^^^^
+
+* `What's new in R version 4.0.3 <https://stat.ethz.ch/pipermail/r-announce/2020/000662.html>`_ 
+
+This was a scripted install. It was compiled from source with gcc 8.2.0 and with ``--with-blas --with-lapack --enable-R-shlib --with-tcltk`` enabled. It was run in batch mode.
+
+* :download:`install_r_4.0.3_gcc8.2.0.sh </sharc/software/install_scripts/apps/R/4.0.3/gcc-8.2.0/install.sh>` Downloads, compiles, tests and installs R 4.0.3 and the ``Rmath`` library.
+* :download:`R 4.0.3 Modulefile </sharc/software/modulefiles/apps/R/4.0.3/gcc-8.2.0>` located on the system at ``/usr/local/modulefiles/apps/R/4.0.3/``
+* Install log-files, including the output of the ``make check`` tests are available on the system at ``/usr/local/packages/apps/R/4.0.3/gcc-8.2.0/install_logs/``
+
+Version 4.0.2
+^^^^^^^^^^^^^
+
+* `What's new in R version 4.0.2 <https://stat.ethz.ch/pipermail/r-announce/2020/000658.html>`_ 
+
+This was a scripted install. It was compiled from source with gcc 8.2.0 and with ``--with-blas --with-lapack --enable-R-shlib --with-tcltk`` enabled. It was run in batch mode.
+
+* :download:`install_r_4.0.2_gcc8.2.0.sh </sharc/software/install_scripts/apps/R/4.0.2/gcc-8.2.0/install.sh>` Downloads, compiles, tests and installs R 4.0.3 and the ``Rmath`` library.
+* :download:`R 4.0.2 Modulefile </sharc/software/modulefiles/apps/R/4.0.2/gcc-8.2.0>` located on the system at ``/usr/local/modulefiles/apps/R/4.0.2/``
+* Install log-files, including the output of the ``make check`` tests are available on the system at ``/usr/local/packages/apps/R/4.0.2/gcc-8.2.0/install_logs/``
+
+
+Version 4.0.0
+^^^^^^^^^^^^^
+
+* `What's new in R version 4.0.0 <https://stat.ethz.ch/pipermail/r-announce/2020/000653.html>`_ 
+
+This was a set of scripted installs. It was compiled from source with gcc 8.2.0 / gcc 10.1.0 with ``--with-blas --with-lapack --enable-R-shlib --with-tcltk`` enabled. It was run in installed with an interactive session mode.
+
+* :download:`install-R4.0-gcc-8.2.0.sh </sharc/software/install_scripts/apps/R/4.0.0/gcc-8.2.0/install-R4.0-gcc-8.2.0.sh>` Downloads, compiles, tests and installs R 4.0.0 and the ``Rmath`` library.
+
+* :download:`install-R4.0-gcc-10.1.0.sh </sharc/software/install_scripts/apps/R/4.0.0/gcc-10.1.0/install-R4.0-gcc-10.1.0.sh>` Downloads, compiles, tests and installs R 4.0.0 and the ``Rmath`` library.
+
+* :download:`R 4.0.0 GCC 8.2.0 Modulefile </sharc/software/modulefiles/apps/R/4.0.0/gcc-8.2.0>` located on the system at ``/usr/local/modulefiles/apps/R/4.0.0/``
+* :download:`R 4.0.0 GCC 10.1.0 Modulefile </sharc/software/modulefiles/apps/R/4.0.0/gcc-10.1.0>` located on the system at ``/usr/local/modulefiles/apps/R/4.0.0/``
+
+* Install log-files, including the output of the ``make check`` tests are available on the system at ``/usr/local/packages/apps/R/4.0.0/gcc-8.2.0/install_logs/`` and ``/usr/local/packages/apps/R/4.0.0/gcc-10.1/install_logs/``
+
+* PCRE2 was compiled as a dependency with the appropriate compilers for each.
+
+
 Version 3.6.3
 ^^^^^^^^^^^^^
 
@@ -200,7 +248,7 @@ Version 3.6.3
 
 This was a scripted install. It was compiled from source with gcc 8.2.0 and with ``--with-blas --with-lapack --enable-R-shlib --with-tcltk`` enabled. It was run in batch mode.
 
-* :download:`install_r_3.6.3_gcc8.2.0.sh </sharc/software/install_scripts/apps/R/3.6.3/gcc-8.2.0/install.sh>` Downloads, compiles, tests and installs R 3.5.1 and the ``Rmath`` library.
+* :download:`install_r_3.6.3_gcc8.2.0.sh </sharc/software/install_scripts/apps/R/3.6.3/gcc-8.2.0/install.sh>` Downloads, compiles, tests and installs R 3.6.3 and the ``Rmath`` library.
 * :download:`R 3.6.3 Modulefile </sharc/software/modulefiles/apps/R/3.6.3/gcc-8.2.0>` located on the system at ``/usr/local/modulefiles/apps/R/3.6.3/``
 * Install log-files, including the output of the ``make check`` tests are available on the system at ``/usr/local/packages/apps/R/3.6.3/gcc-8.2.0/install_logs/``
 

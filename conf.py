@@ -21,7 +21,7 @@ import shutil
 # ones.
 extensions = [
     'sphinx.ext.intersphinx',
-    'sphinx.ext.todo'
+    'sphinx.ext.todo',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -37,7 +37,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Sheffield HPC Documentation'
-copyright = u'2020, The University of Sheffield'
+copyright = u'2021, The University of Sheffield'
 author = u'The University of Sheffield'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -69,31 +69,33 @@ todo_include_todos = False
 
 # -- Options for HTML output ----------------------------------------------
 
-import sphinx_bootstrap_theme
+import sphinx_rtd_theme
+html_theme = 'sheffieldhpc'
+html_theme_path = ['themes'] + [sphinx_rtd_theme.get_html_theme_path()]
+html_theme_options = {
+    'style_external_links': True,
+    'canonical_url': 'https://docs.hpc.sheffield.ac.uk',
+}
 
-html_theme = 'tuos'
-
-html_theme_path = ['themes'] + sphinx_bootstrap_theme.get_html_theme_path()
-
-html_theme_options = {'navbar_sidebarrel':False,
-                      'navbar_pagenav': False,
-                      'source_link_position': False,
-                      'bootswatch_theme': 'flatly',
-                      'navbar_site_name': "Sheffield HPC Documentation",
-                      'navbar_title': ' ',
-                      'navbar_links': [
-                          ("Home", "index"),
-                          ("Research Computing @ IT Services", "https://www.shef.ac.uk/it-services/research", True),
-                          ("Research Software Engineering @ TUOS", "https://rse.shef.ac.uk", True)
-                      ],
-                      'globaltoc_depth': 1}
+# html_theme_options = {'navbar_sidebarrel':False,
+#                       'navbar_pagenav': False,
+#                       'source_link_position': False,
+#                       'bootswatch_theme': 'flatly',
+#                       'navbar_site_name': "Sheffield HPC Documentation",
+#                       'navbar_title': ' ',
+#                       'navbar_links': [
+#                           ("Home", "index"),
+#                           ("Research Computing @ IT Services", "https://www.shef.ac.uk/it-services/research", True),
+#                           ("Research Software Engineering @ TUOS", "https://rse.shef.ac.uk", True)
+#                       ],
+#                       'globaltoc_depth': 1}
 
 #html_sidebars = {'software/**': ['softwaretoc.html'],
 #                 'gpu/**': ['softwaretoc.html'],
 #                 'using-iceberg/**': ['softwaretoc.html'],
 #                 'index': []}
 
-html_sidebars = {'**': ['softwaretoc.html']}
+#html_sidebars = {'**': ['softwaretoc.html']}
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -101,15 +103,21 @@ html_title = 'Sheffield HPC Documentation'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = 'themes/tuos/static/img/crest-l.gif'
+html_logo = 'themes/sheffieldhpc/static/img/crest-l.gif'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-# html_static_path = ['./_static']
+html_static_path = ['./_static']
+html_css_files = [
+    'css/custom.css',
+]
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'hpcdoc'
+
+# Hide 'view page source' link
+html_show_sourcelink = False
 
 # -- Options for manual page output ---------------------------------------
 

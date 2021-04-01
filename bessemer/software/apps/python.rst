@@ -25,7 +25,7 @@ Using conda Python
 After connecting to Bessemer, start an interactive session
 with the ``srun --pty bash -i command``.
 
-Anaconda Python can be loaded with one of the following:
+Anaconda Python can be loaded with one of the following::
 
     module load Anaconda3/2019.07
     module load Anaconda3/5.3.0 

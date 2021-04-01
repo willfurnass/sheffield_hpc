@@ -1,0 +1,20 @@
+#%Module1.0#####################################################################
+##
+## pcre 10.36 module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        puts stderr "Makes the pcre 10.36 library available"
+}
+
+module-whatis   "Makes the pcre 10.36 library available"
+
+set PCRE_DIR /usr/local/packages/libs/pcre2/10.36/gcc-8.2.0/
+
+prepend-path LD_LIBRARY_PATH $PCRE_DIR/lib
+prepend-path CPATH $PCRE_DIR/include
+prepend-path PATH $PCRE_DIR/bin

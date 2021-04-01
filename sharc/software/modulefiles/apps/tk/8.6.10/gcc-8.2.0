@@ -1,0 +1,22 @@
+#%Module1.0#####################################################################
+##
+## tk 8.6.10 lib / binary  module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        puts stderr "Makes the tk 8.6.10 binaries and libraries available"
+}
+
+
+set TK_DIR /usr/local/packages/apps/tk/8.6.10/gcc-8.2.0
+
+prepend-path PATH $TK_DIR/bin
+prepend-path LD_LIBRARY_PATH $TK_DIR/lib
+prepend-path CPATH $TK_DIR/include
+prepend-path PKG_CONFIG_PATH $TK_DIR/lib/pkgconfig
+
+setenv TK_LIBRARY $TK_DIR/lib/tk8.6

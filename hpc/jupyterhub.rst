@@ -76,8 +76,7 @@ Status of and maintenance of ShARC's JupyterHub service
 
 This service is currenty **experimental**.
 If you use this service and encounter a problem,
-**please provide feedback** to
-`w.furnass@sheffield.ac.uk <w.furnass@sheffield.ac.uk>`_.
+please contact `it-servicedesk@sheffield.ac.uk <it-servicedesk@sheffield.ac.uk>`_.
 
 The server that provider the JupyterHub service is 
 typically **rebooted at 03:26 on the 2nd Tuesday of the month**
@@ -125,16 +124,6 @@ The JupyterHub service on ShARC is currently developed and maintained by the Uni
    :alt: OpenDreamKit logo
    :align: center
    :target: OpenDreamKit_
-
-
-Jupyter on Iceberg
-------------------
-
-Until 24 Oct 2018 there was a JupyterHub service running on the Iceberg cluster;
-this was much more limited than the service on ShARC and 
-has been decommissioned.  
-All users interested in running Jupyter Notebooks on local HPC facilities 
-should use JupyterHub on ShARC instead.
 
 
 .. _676541: http://cordis.europa.eu/project/rcn/198334_en.html

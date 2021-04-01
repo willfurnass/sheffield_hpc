@@ -16,7 +16,6 @@ Usage
 You need to first request one or more GPUs within an
 :ref:`interactive session or batch job on a worker node <submit-queue>`.
 
-At present public GPUs are only available in batch jobs.
 To request say three unspecified public GPUs for a batch job
 you would include *all* the following in the header of your submission script: ::
 
@@ -149,13 +148,11 @@ Documentation
 Profiling using nvprof
 ----------------------
 
-Note that ``nvprof``, NVIDIA's CUDA profiler,
-cannot write output to the ``/fastdata`` filesystem.
+Prior to September 2020 ``nvprof``, NVIDIA's CUDA profiler, could write its `SQLite <https://www.sqlite.org/>`__ database outputs to the ``/fastdata`` filesystem.
+This was because SQLite requires a filesystem that supports file locking
+but file locking was not previously enabled on the (`Lustre <http://lustre.org/>`__) filesystem mounted on ``/fastdata``.
 
-This is because the profiler's output is a `SQLite <https://www.sqlite.org/>`__ database
-and SQLite requires a filesystem that supports file locking
-but file locking is not enabled on the (`Lustre <http://lustre.org/>`__) filesystem mounted on ``/fastdata``
-(for performance reasons).
+``nvprof`` can now write output data to any user-accessible filesystem including ``/fastdata``.
 
 CUDA Training
 -------------

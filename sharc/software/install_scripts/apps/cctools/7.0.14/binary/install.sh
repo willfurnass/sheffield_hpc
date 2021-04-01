@@ -1,5 +1,5 @@
 #!/bin/bash
-# Install script used to install cctools on Iceberg
+# Install script used to install cctools on ShARC
 # Requires tar file to be available in /usr/local/media/cctools
 
 ###############
