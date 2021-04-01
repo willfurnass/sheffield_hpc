@@ -40,7 +40,7 @@ Ansys EM is integrated with the Ansys Workbench GUI (the ``ansyswb`` executable)
 
 .. note::
 
-        An accelerated-graphics interactive session with X Window support (i.e. a :ref:`iceberg-hw-accel-gfx` interactive session on ShARC) is required to run the ``ansysedt`` executable as a GUI. On the login node, the command ``qsh-vis`` will initiate an accelerated-graphics interactive session.
+        An accelerated-graphics interactive session with X Window support (i.e. a :ref:`hw-accel-gfx` interactive session on ShARC) is required to run the ``ansysedt`` executable as a GUI. On the login node, the command ``qsh-vis`` will initiate an accelerated-graphics interactive session.
 
 
 
