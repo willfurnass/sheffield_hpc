@@ -3,7 +3,7 @@ ANSYS
 
 .. sidebar:: ANSYS
    
-   :Versions: 15.0, 16.1, 17.2, 18.0, 18.2, 19.0, 19.1, 19.2, 19.3, 19.4, 20.1 &  20.2
+   :Versions: 15.0, 16.1, 17.2, 18.0, 18.2, 19.0, 19.1, 19.2, 19.3, 19.4, 20.1, 20.2 & 21.1
    :Dependencies: No prerequsite modules loaded. However, if using the User Defined Functions (UDF) will also need the following: For ANSYS Mechanical, Workbench, CFX and AutoDYN: Intel 14.0 or above; Compiler For Fluent: GCC 4.6.1 or above
    :URL: http://www.ansys.com 
    :Local URL: https://www.shef.ac.uk/it-services/research/software/fluent
@@ -29,6 +29,7 @@ ANSYS can be activated using the following module files::
     module load apps/ansys/19.4/binary
     module load apps/ansys/20.1/binary
     module load apps/ansys/20.2/binary
+    module load apps/ansys/21.1/binary
 	
 
 The ANSYS Workbench GUI executable is ``ansyswb``. ``ansyswb`` can be launched during an interactive session with X Window support (e.g. an interactive ``qrshx`` session).
@@ -47,6 +48,7 @@ ANSYS example models
 ANSYS contains a large number of example models which can be used to become familiar with the software.
 The models can be found in::
 
+    /usr/local/packages/apps/ansys/21.1/binary/v211/ansys/data
     /usr/local/packages/apps/ansys/20.2/binary/v202/ansys/data
     /usr/local/packages/apps/ansys/20.1/binary/v201/ansys/data
     /usr/local/packages/apps/ansys/19.4/binary/v194/ansys/data
@@ -177,10 +179,11 @@ file is
 
 ----------
 
-ANSYS 20.1 and 20.2 were installed using the GUI installer and then permissions were corrected as follows::
+ANSYS 20.1, 20.2 and 21.1 were installed using the GUI installer and then permissions were corrected as follows::
 
     chmod 775 -R /usr/local/packages/apps/ansys/20.1/binary
     chmod 775 -R /usr/local/packages/apps/ansys/20.2/binary
+    chmod 775 -R /usr/local/packages/apps/ansys/21.1/binary
 	
 Please follow the same install directory structure.
 

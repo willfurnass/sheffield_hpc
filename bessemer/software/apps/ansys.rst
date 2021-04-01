@@ -3,7 +3,7 @@ ANSYS
 
 .. sidebar:: ANSYS
    
-   :Versions: 19.4, 20.1, 20.2 
+   :Versions: 19.4, 20.1, 20.2  and 21.1
    :Dependencies: UDFs / User subroutines need the GCC/7.3.0-2.30 compiler or above.
    :URL: http://www.ansys.com 
 
@@ -19,6 +19,7 @@ ANSYS can be activated using the following module files::
     module load ANSYS/19.4
     module load ANSYS/20.1/binary
     module load ANSYS/20.2/binary
+    module load ANSYS/21.1/binary
 
 and the workbench is launched using::
 
@@ -32,6 +33,7 @@ ANSYS example models
 ANSYS contains a large number of example models which can be used to become familiar with the software.
 The models can be found in::
 
+    /usr/local/packages/live/noeb/ANSYS/21.1/binary/v211/ansys/data/
     /usr/local/packages/live/noeb/ANSYS/20.2/binary/v202/ansys/data/
     /usr/local/packages/live/noeb/ANSYS/20.1/binary/v201/ansys/data/
     /usr/local/packages/live/eb/ANSYS/19.4/v194/ansys/data
@@ -109,13 +111,11 @@ The following instruction should be inserted at line 2433 in ``anssh.ini``::
 
 ------------
 
-Please note ANSYS 20.1 and 20.2 have been installed manually with the GUI in the following directories and permissions corrected as follows::
-	
-    /usr/local/packages/live/noeb/ANSYS/20.1/binary/
-    /usr/local/packages/live/noeb/ANSYS/20.2/binary/
+Please note ANSYS 20.1, 20.2 and 21.1 have been installed manually with the GUI in the following directories and permissions corrected as follows::
 	
     chmod 775 -R /usr/local/packages/live/noeb/ANSYS/20.1/binary/
     chmod 775 -R /usr/local/packages/live/noeb/ANSYS/20.2/binary/
+    chmod 775 -R /usr/local/packages/live/noeb/ANSYS/21.1/binary/
 	
 Please follow the same install directory structure.
 
