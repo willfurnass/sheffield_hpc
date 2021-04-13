@@ -13,7 +13,7 @@ ICU is released under a nonrestrictive open source license that is suitable for 
 
 Usage
 -----
-Version 58.2 of the icu library for C requires gcc version 4.9.4 (for the C++ standard library); To make the library **and this compiler** available, run one of the following: ::
+Version 58.2 of the icu library for C requires gcc version 4.9.4 or higher (for the C++ standard library); To make the library **and this compiler** available, run one of the following: ::
 
         module load libs/icu/58.2/gcc-4.9.4
         module load libs/icu/58.2/gcc-8.2-cmake-3.17.1
