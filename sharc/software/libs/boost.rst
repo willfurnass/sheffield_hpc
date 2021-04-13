@@ -13,7 +13,7 @@ Boost provides free, peer-reviewed and portable C++ source libraries.
 Usage
 -----
 
-To activate the library run: ::
+To activate the library run one of the following: ::
 
         module load libs/boost/1.64.0/gcc-4.9.4
         module load libs/boost/1.64.0/gcc-8.2-cmake-3.17
