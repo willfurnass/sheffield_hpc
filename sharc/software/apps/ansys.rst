@@ -2,11 +2,10 @@ ANSYS
 =====
 
 .. sidebar:: ANSYS
-   
+
    :Versions: 15.0, 16.1, 17.2, 18.0, 18.2, 19.0, 19.1, 19.2, 19.3, 19.4, 20.1, 20.2 & 21.1
    :Dependencies: No prerequsite modules loaded. However, if using the User Defined Functions (UDF) will also need the following: For ANSYS Mechanical, Workbench, CFX and AutoDYN: Intel 14.0 or above; Compiler For Fluent: GCC 4.6.1 or above
-   :URL: http://www.ansys.com 
-   :Local URL: https://www.shef.ac.uk/it-services/research/software/fluent
+   :URL: http://www.ansys.com
 
 
 The ANSYS suite of programs can be used to numerically simulate a large variety of structural and fluid dynamics problems found in many engineering, physics, medical, aeronotics and automative industry applications.
@@ -30,13 +29,13 @@ ANSYS can be activated using the following module files::
     module load apps/ansys/20.1/binary
     module load apps/ansys/20.2/binary
     module load apps/ansys/21.1/binary
-	
+
 
 The ANSYS Workbench GUI executable is ``ansyswb``. ``ansyswb`` can be launched during an interactive session with X Window support (e.g. an interactive ``qrshx`` session).
 The ANSYS Mechanical executable is ``ansys-mechanical`` and ``fluent`` is the executable for Fluent.
- 
+
 ------------
- 
+
 NOTE: for ANSYS versions >= 18.0 using the command ``fluent`` results in an unresponsive fluent launcher. To launch fluent and bypass the launcher use ``fluent dim`` where dim = 2d, 2ddp, 3d or 3ddp or unset the following environment variables before running the command::
 
     unset SGE_TASK_ID
@@ -66,7 +65,7 @@ Batch jobs
 ----------
 ANSYS Fluent
 #############
-``Fluent CFD``: the following is an example batch submission script, ``cfd_job.sh``, to run the executable ``fluent`` with input journal file ``test.jou``, and carry out a 2D double precision CFD simulation. The script requests 8 cores using the MPI parallel environment ``mpi-rsh`` with a runtime of 30 mins and 2 GB of real memory per core. The Fluent input journal file is ``test.jou``. **Note:** Please use the ``mpi-rsh`` parallel environment to run MPI parallel jobs for Ansys/Fluent. ::
+``Fluent CFD``: the following is an example batch submission script, ``cfd_job.sh``, to run the executable ``fluent`` with input journal file ``test.jou``, and carry out a 2D double precision CFD simulation. The script requests 8 cores using the MPI parallel environment ``mpi-rsh`` with a runtime of 30 mins and 2 GB of real memory per core. The Fluent input journal file is ``test.jou``. **Note:** Use of the ``mpi-rsh`` parallel environment to run MPI parallel jobs for Ansys is required. ::
 
     #!/bin/bash
     #$ -V
@@ -80,14 +79,17 @@ ANSYS Fluent
 
     module load apps/ansys/20.2/binary
 
-    fluent 2ddp -i test.jou -g -t$NSLOTS -mpi=intel -rsh 
-	#Note $NSLOTS is a Sun Grid Engine variable which will return the requested number of cores.
+    fluent 2ddp -i test.jou -g -t$NSLOTS -mpi=intel -rsh -sgepe mpi-rsh -sge -driver null
+
+.. note::
+
+    **$NSLOTS** is a Sun Grid Engine variable which will return the requested number of cores, **-rsh** tells Fluent to use RSH instead of SSH, **-sge** forces Fluent to recognise job submission via SGE, **-sgepe** selects the *mpi-rsh* SGE parallel environment and **-driver null** instructs Fluent that it will be running with no GUI to avoid errors caused by plot / figure export.
 
 The job is submitted to the queue by typing::
 
     qsub cfd_job.sh
-	
-| 
+
+|
 
 ------------
 
@@ -105,9 +107,9 @@ ANSYS Mechnical / Map-DL
     #$ -l rmem=2G
     #$ -pe smp 4
     module load apps/ansys/20.2/binary
-    mapdl -b -np $NSLOTS -smp -i CrankSlot_Flexible.inp 
-	#Note $NSLOTS is a Sun Grid Engine variable which will return the requested number of cores.
+    mapdl -b -np $NSLOTS -smp -i CrankSlot_Flexible.inp
 
+**Note:** Use of the ``mpi-rsh`` parallel environment to run MPI parallel jobs for Ansys is required.
 The equivalent batch script for using MPI (``multi-node distributed memory``) parallel environment is ::
 
     #!/bin/bash
@@ -118,12 +120,15 @@ The equivalent batch script for using MPI (``multi-node distributed memory``) pa
     #$ -m abe
     #$ -l h_rt=00:10:00
     #$ -l rmem=2G
-    #$ -pe mpi 4
+    #$ -pe mpi-rsh 4
     module load apps/ansys/20.2/binary
-    mapdl -i CrankSlot_Flexible.inp -b -np $NSLOTS -sge -mpi=INTELMPI -rsh -sgepe mpi-rsh 
-	#Note $NSLOTS is a Sun Grid Engine variable which will return the requested number of cores.
+    mapdl -i CrankSlot_Flexible.inp -b -np $NSLOTS -sge -mpi=INTELMPI -rsh -sgepe mpi-rsh
 
-		
+.. note::
+
+        **$NSLOTS** is a Sun Grid Engine variable which will return the requested number of cores, **-rsh** tells Mechanical to use RSH instead of SSH, **-sge** forces Mechanical to recognise job submission via SGE and **-sgepe** selects the *mpi-rsh* SGE parallel environment.
+
+
 Installation notes
 ------------------
 
@@ -140,17 +145,17 @@ file is
 ANSYS 17.2 was installed using the
 :download:`install_ansys.sh </sharc/software/install_scripts/apps/ansys/17.2/install_ansys.sh>` script; the module
 file is
-:download:`/usr/local/modulefiles/apps/ansys/17.2 </sharc/software/modulefiles/apps/ansys/17.2>`. 
+:download:`/usr/local/modulefiles/apps/ansys/17.2 </sharc/software/modulefiles/apps/ansys/17.2>`.
 
 ANSYS 18.0 was installed using the
 :download:`install_ansys_180.sh </sharc/software/install_scripts/apps/ansys/18.0/binary/install_ansys_180.sh>` script; the module
 file is
-:download:`/usr/local/modulefiles/apps/ansys/18.0/binary </sharc/software/modulefiles/apps/ansys/18.0/binary>`. 
+:download:`/usr/local/modulefiles/apps/ansys/18.0/binary </sharc/software/modulefiles/apps/ansys/18.0/binary>`.
 
 ANSYS 18.2 was installed using the
 :download:`install_ansys_182.sh </sharc/software/install_scripts/apps/ansys/18.2/binary/install_ansys_182.sh>` script; the module
 file is
-:download:`/usr/local/modulefiles/apps/ansys/18.2/binary </sharc/software/modulefiles/apps/ansys/18.2/binary>`. 
+:download:`/usr/local/modulefiles/apps/ansys/18.2/binary </sharc/software/modulefiles/apps/ansys/18.2/binary>`.
 
 ANSYS 19.0 was installed using the
 :download:`install_ansys_190.sh </sharc/software/install_scripts/apps/ansys/19.0/binary/install_ansys_190.sh>` script; the module
@@ -184,10 +189,10 @@ ANSYS 20.1, 20.2 and 21.1 were installed using the GUI installer and then permis
     chmod 775 -R /usr/local/packages/apps/ansys/20.1/binary
     chmod 775 -R /usr/local/packages/apps/ansys/20.2/binary
     chmod 775 -R /usr/local/packages/apps/ansys/21.1/binary
-	
+
 Please follow the same install directory structure.
 
-The ``mpi-rsh`` tight-integration parallel environment is required to run ANSYS/Fluent using MPI due to 
+The ``mpi-rsh`` tight-integration parallel environment is required to run ANSYS/Fluent using MPI due to
 SSH access to worker nodes being prohibited for most users.
 
 For versions 19.3 & 19.4 and onward mapdl will not run without modifying the file::
