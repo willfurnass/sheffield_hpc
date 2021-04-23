@@ -9,15 +9,15 @@ Introduction
 
 Choosing appropriate resources for your jobs is essential to ensuring your jobs will be scheduled as quickly as possible while wasting as little resources as possible.
 
-The key resources you need to optimise for are: 
+The key resources you need to optimise for are:
 
 * `Time allocation <#time-allocation-limits>`_
-* `RAM / Memory allocation <#memory-allocation-limits>`_
 * `CPU cores allocation <#cpu-allocation-limits>`_
+* `RAM / Memory allocation <#memory-allocation-limits>`_
 * `File storage limits / file store performance characteristics <#filestore-limits-file-store-performance-characteristics>`_
 
 
-It is important to be aware that the resource requests that you make are not flexible, if your job exceeds what you have requested for it the scheduler will terminate your job abruptly and without any warning. This means that it is safer to over estimate than under estimate your job's requirements. 
+It is important to be aware that the resource requests that you make are not flexible, if your job exceeds what you have requested for it the scheduler will terminate your job abruptly and without any warning. This means that it is safer to over estimate than under estimate your job's requirements.
 
 This does not mean that you can set extremely large values for these resource requests for several reasons, the most important being:
 
@@ -41,29 +41,51 @@ The time allocation limits will differ between job types and by cluster - a summ
 Determining time requirements using timing commands in your script:
 --------------------------------------------------------------------
 
-A way of deducing the wall_clock_time used by a job is to use the date or the timeused command within the script file. The date command is part of the Linux operating system whereas the timeused command is specific to iceberg and provides the usage figures directly rather than having to manually calculate it from two subsequent date commands. Here are some examples - 
+A way of deducing the wall_clock_time used by a job is to use the date or the timeused command within the script file. The date command is part of the Linux operating system whereas the timeused command is specific to iceberg and provides the usage figures directly rather than having to manually calculate it from two subsequent date commands. Here are some examples -
 
 
 Using the **date** command: ::
 
-        #$ -l h_rt=10:00:00 
-        date 
-        my_program < my_input 
-        date 
-    
-When the above script is submitted (via qsub), the job output file will contain the date and time at each invocation of the date command. You can then calculate the difference between these date/times to determine the actual time taken. 
+        #$ -l h_rt=10:00:00
+        date
+        my_program < my_input
+        date
+
+When the above script is submitted (via qsub), the job output file will contain the date and time at each invocation of the date command. You can then calculate the difference between these date/times to determine the actual time taken.
 
 
 Using the **timeused** command: ::
 
-       #$ -l h_rt=10:00:00 
+       #$ -l h_rt=10:00:00
        export TIMECOUNTER=0
-       source timeused 
+       source timeused
        my_program < my_input
-       source timeused 
-    
+       source timeused
+
 When the above script is submitted the first invocation of the timeused command will initialise the timer counter due to the fact that TIMECOUNTER variable is set to 0. The subsequent invocations will report the time in hours,minutes and seconds since the first invocation.
 
+
+-----------------
+
+
+.. include:: ../referenceinfo/CpuAllocationLimits.rst
+
+The CPU allocation limits will differ between job types and by cluster - a summary of these differences can be seen above. It is important to note that SLURM and SGE will request CPU on a different basis as detailed above.
+
+Determining CPU requirements:
+----------------------------------
+
+In order to determine your CPU requirements, you should investigate if your program / job supports parallel execution. If the program only supports serial processing, then you can only use 1 CPU core and should be using Bessemer (faster CPUs) to do so.
+
+If your job / program supports multiple cores, you need to assess whether it supports SMP (symmetric multiprocessing) where you can only use CPUs on 1 node or MPI (message passing interface) where you can access as many nodes, CPUs and cores as are available.
+
+For SMP only type parallel processing jobs: you can use a maximum of 16 cores on ShARC and 40 cores on Bessemer. Ideally you should use Bessemer as you can not only access more cores, you are using more modern cores.
+
+For MPI type parallel processing jobs: these can only run on ShARC and although you can access as many cores as are available you must consider how long a job will take to queue waiting for resources compared the the decrease in time for the job to complete computation.
+
+For both parallel processing methods you should run several test jobs using the tips from the `Time allocation <#time-allocation-limits>`_ section with various numbers of cores to assess what factor of speedup/slowdown is attained for queuing and computation / the total time for job completion.
+
+Remember, the larger your request, the longer it will take for the resources to become available and the time taken to queue is highly dependent on other cluster jobs.
 
 -----------------
 
@@ -79,26 +101,26 @@ Determining memory requirements:
 **By using the emailing parameters of the qsub or sbatch command:**
 
 
-Submit your job ``qsub`` or ``sbatch`` by specifying very generous memory and time requirements to ensure that it runs to completion" and also using the ``-M`` and ``-m abe`` or  ``--mail-user=`` and ``--mail-type=ALL``   parameters to receive an email-report. The mail message will list the maximum memory usage ( maxvmem / MaxVMSize  ) as well as the wallclock time used by the job. 
+Submit your job ``qsub`` or ``sbatch`` by specifying very generous memory and time requirements to ensure that it runs to completion" and also using the ``-M`` and ``-m abe`` or  ``--mail-user=`` and ``--mail-type=ALL``   parameters to receive an email-report. The mail message will list the maximum memory usage ( maxvmem / MaxVMSize  ) as well as the wallclock time used by the job.
 
 Here is an example job script for SGE: ::
 
       #$ -l h_rt=120:00:00
       #$ -l rmem=8G
-      #$ -m abe 
-      #$ -M joe.blogs@sheffield.ac.uk 
+      #$ -m abe
+      #$ -M joe.blogs@sheffield.ac.uk
       myprog < mydata.txt > myresults.txt\
-      
-      
+
+
 Here is an example job script for SLURM: ::
 
       #SBATCH --mem=8G
       #SBATCH --time=01:00:00
-      #SBATCH --mail-user=joe.blogs@sheffield.ac.uk 
+      #SBATCH --mail-user=joe.blogs@sheffield.ac.uk
       #SBATCH --mail-type=ALL
       myprog < mydata.txt > myresults.txt\
 
-When the job completes, you will receive an email reporting the memory and time usage figures. 
+When the job completes, you will receive an email reporting the memory and time usage figures.
 
 -----------------
 
@@ -108,12 +130,12 @@ You can detect the memory used by your job while it is running by using the **qs
 
 While a job is still running find out its job id by: ::
 
-    qstat 
-   
+    qstat
+
 And check its current usage of memory by: ::
 
     qstat -F -j job_id | grep mem
-  
+
 If your job has already finished you can list the memory usage with **qacct**: ::
 
     qacct -j job_id
@@ -124,7 +146,7 @@ The reported figures will indicate:
 * maximum memory needed since startup ( maxvmem ).
 * cumulative memory_usage*seconds ( mem ).
 
-It is the **maxvmem** figure that you will need to use to determine the ``-l rmem=`` parameter for your next job. 
+It is the **maxvmem** figure that you will need to use to determine the ``-l rmem=`` parameter for your next job.
 
 -----------------
 
@@ -137,41 +159,14 @@ While a job is still running find out its job id by: ::
 And check its current usage of memory by: ::
 
     sstat job_id --format='JobID,MaxVMSize'
-    
+
 If your job has already finished you can list the memory usage with sacct: ::
 
     sacct --format='JobID,Elapsed,MaxVMSize'
-    
-It is the **MaxVMSize** figure that you will need to use to determine the ``--mem=`` parameter for your next job. 
-    
------------------
 
-
-.. include:: ../referenceinfo/CpuAllocationLimits.rst
-
-The CPU allocation limits will differ between job types and by cluster - a summary of these differences can be seen above. It is important to note that SLURM and SGE will request CPU on a different basis as detailed above.
-
-Determining CPU requirements:
-----------------------------------
-
-In order to determine your CPU requirements, you should investigate if your program / job supports parallel execution. If the program only supports serial processing, then you can only use 1 CPU core and should be using Bessemer (faster CPUs) to do so.
-
-If your job / program supports multiple cores, you need to assess whether it supports SMP (symmetric multiprocessing) where you can only use CPUs on 1 node or OpenMPI (message passing interface) where you can access as many nodes, CPUs and cores as are available.
-
-For SMP only type parallel processing jobs: you can use a maximum of 16 cores on ShARC and 40 cores on Bessemer. Ideally you should use Bessemer as you can not only access more cores, you are using more modern cores.
-
-For OpenMPI type parallel processing jobs: these can only run on ShARC and although you can access as many cores as are available you must consider how long a job will take to queue waiting for resources compared the the decrease in time for the job to complete computation.
-
-For both parallel processing methods you should run several test jobs using the tips from the `Time allocation <#time-allocation-limits>`_ section with various numbers of cores to assess what factor of speedup/slowdown is attained for queuing and computation / the total time for job completion. 
-
-Remember, the larger your request, the longer it will take for the resources to become available and the time taken to queue is highly dependent on other cluster jobs.
-
------------------
-
-
+It is the **MaxVMSize** figure that you will need to use to determine the ``--mem=`` parameter for your next job.
 
 .. include:: ../referenceinfo/FileStoreLimits.rst
-
 
 
 -----------------
@@ -201,5 +196,3 @@ If you have access to additional queues / partitions and want to know their limi
 -----------------
 
 .. include:: ../referenceinfo/ListingQueues.rst
-
-
