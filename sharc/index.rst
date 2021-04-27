@@ -12,12 +12,14 @@ This is the documentation for ShARC (Sheffield Advanced Research Computer), The 
 
   software/index
   cluster_specs
+  sge
   GPUComputingShARC
   DeepLearningShARC
   groupnodes/index
 
 * :ref:`sharc-software`
 * :ref:`sharc-specs`
+* :ref:`sge_info`
 * :ref:`GPUComputing_sharc`
 * :ref:`DeepLearning_sharc`
 * :ref:`groupnodes_sharc`
