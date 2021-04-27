@@ -95,6 +95,22 @@ The next example script requests 16 CPU cores in the OpenMP parallel environment
 
 A maximum of 16 cores can be requested in the OpenMP parallel environment. More cores can be used by choosing an alternative MPI parallel environment.
 
+An example of an MPI batch job is shown below:
+
+.. code-block:: sh
+
+    #!/bin/bash
+    # Request 4 MPI 'slots' (cores)
+    #$ -pe mpi 4
+    # Request 8GB of RAM per slot
+    #$ -l rmem=8G
+
+    # Load a MPI library
+    module load mpi/openmpi/1.10.4/gcc-6.2
+
+    # Run a program previously compiled using that specific MPI library
+    mpirun ./executable
+
 
 Job Submission
 ^^^^^^^^^^^^^^
@@ -194,3 +210,18 @@ Deletes job from queue:
 .. code-block:: sh
 
     qdel jobid
+
+
+
+Reference information
+---------------------
+
+Commands that allow you to interact with the scheduler:
+
+    * :ref:`qhost` - Show's the status of Sun Grid Engine hosts.
+    * :ref:`qrsh` - Requests an interactive session on a worker node. No support for graphical applications.
+    * :ref:`qrshx` - Requests an interactive session on a worker node. Supports graphical applications. Superior to :ref:`qsh` in most cases.
+    * :ref:`qsh` - Requests an interactive session on a worker node. Supports graphical applications.
+    * :ref:`qstat` - Displays the status of jobs and queues.
+    * :ref:`qsub` - Submits a batch job to the system.
+    * :ref:`qtop` - Provides a summary of all processes running on the cluster for a given user
