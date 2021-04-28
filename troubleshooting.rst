@@ -2,7 +2,7 @@
 
 Troubleshooting
 ===============
-In this section, we'll discuss some tips for solving problems with Bessemer and ShARC. 
+In this section, we'll discuss some tips for solving problems with Bessemer and ShARC.
 It is suggested that you work through some of the ideas here before contacting the IT Services Helpdesk for assistance.
 
 Frequently Asked Questions
@@ -19,7 +19,9 @@ I can no longer log in
 If you are confident that you have no password or remote-access-client related issues but you still can not log onto a cluster you may be having problems due to exceeding your cluster filestore quota.
 If you exceed your filestore quota in your ``/home`` area it is sometimes possible that crucial system files in your home directory gets truncated that effect the subsequent login process.
 
-If this happens, you should immediately email ``research-it@sheffield.ac.uk`` and ask to be unfrozen.
+You may have inadvertently corrupted your shell environment if you have been installing software or making changes in your .bashrc file - please attempt to resolve this first by resetting your environment with the following command, replacing the variables appropriately: ``ssh -t $USER@$CLUSTER.shef.ac.uk 'resetenv -f'``
+
+If this does not resolve your issue and you suspect your ``/home`` area is full , you should immediately email ``research-it@sheffield.ac.uk`` and ask to be unfrozen.
 
 I can not log into a cluster via the MyApps applications portal
 ---------------------------------------------------------------
@@ -78,32 +80,32 @@ What are the rmem (real memory) and (deprecated) mem (virtual memory) options?
 ------------------------------------------------------------------------------
 
 .. warning::
- 
+
    The following is most likely only of interest when revisiting job submission scripts and documentation created before
-   26 June 2017 as now users only need to request real memory (``rmem``) and jobs are only killed if they exceed their ``rmem`` quota 
+   26 June 2017 as now users only need to request real memory (``rmem``) and jobs are only killed if they exceed their ``rmem`` quota
    (whereas prior to that date jobs could request and be policed using virtual memory ``mem`` requests).
 
 Running a program always involves loading the program instructions and also its data (i.e. all variables and arrays that it uses) into the computer's memory.
 A program's entire instructions and its entire data, along with any dynamically-linked libraries it may use, defines the **virtual storage** requirements of that program.
 If we did not have clever operating systems we would need as much physical memory (RAM) as the virtual storage requirements of that program.
-However, operating systems are clever enough to deal with situations where we have insufficient **real memory** (physical memory, typically called RAM) to 
-load all the program instructions and data into the available RAM. 
-This technique works because hardly any program needs to access all its instructions and its data simultaneously. 
-Therefore the operating system loads into RAM only those bits (**pages**) of the instructions and data that are needed by the program at a given instance. 
+However, operating systems are clever enough to deal with situations where we have insufficient **real memory** (physical memory, typically called RAM) to
+load all the program instructions and data into the available RAM.
+This technique works because hardly any program needs to access all its instructions and its data simultaneously.
+Therefore the operating system loads into RAM only those bits (**pages**) of the instructions and data that are needed by the program at a given instance.
 This is called **paging** and it involves copying bits of the programs instructions and data to/from hard-disk to RAM as they are needed.
 
-If the real memory (i.e. RAM) allocated to a job is much smaller than the entire memory requirements of a job ( i.e. virtual memory) 
-then there will be excessive need for paging that will slow the execution of the program considerably due to 
+If the real memory (i.e. RAM) allocated to a job is much smaller than the entire memory requirements of a job ( i.e. virtual memory)
+then there will be excessive need for paging that will slow the execution of the program considerably due to
 the relatively slow speeds of transferring information to/from the disk into RAM.
 
-On the other hand if the RAM allocated to a job is larger than the virtual memory requirement of that job then 
+On the other hand if the RAM allocated to a job is larger than the virtual memory requirement of that job then
 it will result in waste of RAM resources which will be idle duration of that job.
 
 * The virtual memory limit defined by the ``-l mem`` cluster scheduler parameter defines the maximum amount of virtual memory your job will be allowed to use. **This option is now deprecated** - you can continue to submit jobs requesting virtual memory, however the scheduler **no longer applies any limits to this resource**.
 * The real memory limit is defined by the ``-l rmem`` cluster scheduler parameter and defines the amount of RAM that will be allocated to your job.  The job scheduler will terminate jobs which exceed their real memory resource request.
 
 .. note::
- 
+
    As mentioned above, jobs now need to just request real memory and are policed using real memory usage.  The reasons for this are:
 
    * For best performance it is preferable to request as much real memory as the virtual memory storage requirements of a program as paging impacts on performance and memory is (relatively) cheap.
@@ -222,10 +224,10 @@ so this solution will continue to work following a reboot of your machine: ::
 Can I run programs that need to be able to talk to an audio device?
 -------------------------------------------------------------------
 
-On ShARC all worker nodes have a dummy sound device installed 
+On ShARC all worker nodes have a dummy sound device installed
 (which is provided by a kernel module called `snd_dummy <https://www.alsa-project.org/main/index.php/Matrix:Module-dummy>`__).
 
-This may be useful if you wish to run a program that expects to be able to output audio (and crashes if no sound device is found) 
+This may be useful if you wish to run a program that expects to be able to output audio (and crashes if no sound device is found)
 but you don't actually want to monitor that audio output.
 
 Login node RSA/ECDSA/ED25519 fingerprints
@@ -247,9 +249,9 @@ Issue when running multiple MPI jobs in sequence
 ------------------------------------------------
 
 If you have multiple ``mpirun`` commands in a single batch job submission script,
-you may find that one or more of these may fail after 
+you may find that one or more of these may fail after
 complaining about not being able to communicate with the ``orted`` daemon on other nodes.
-This appears to be something to do with multiple ``mpirun`` commands being called quickly in succession, 
+This appears to be something to do with multiple ``mpirun`` commands being called quickly in succession,
 and connections not being pulled down and new connections established quickly enough.
 
 Putting a sleep of e.g. 5s between ``mpirun`` commands seems to help here. i.e. ::
@@ -263,11 +265,11 @@ Putting a sleep of e.g. 5s between ``mpirun`` commands seems to help here. i.e. 
 Warning about 'groups: cannot find name for group ID xxxxx'
 -----------------------------------------------------------
 
-You may occasionally see warnings like the above e.g. when running a :ref:`Singularity <singularity_sharc>` container or when running the standard ``groups`` Linux utility.  
+You may occasionally see warnings like the above e.g. when running a :ref:`Singularity <singularity_sharc>` container or when running the standard ``groups`` Linux utility.
 These warnings can be ignored.
 
-The scheduler, Son of Grid Engine, dynamically creates a Unix group per job to 
-keep track of resources (files and process) associated with that job.  
+The scheduler, Son of Grid Engine, dynamically creates a Unix group per job to
+keep track of resources (files and process) associated with that job.
 These groups have numeric IDs but no names, which can result in harmless warning messages in certain circumstances.
 
 See ``man 8 pam_sge-qrsh-setup`` for the details of how and why Grid Engine creates these groups.
@@ -275,8 +277,5 @@ See ``man 8 pam_sge-qrsh-setup`` for the details of how and why Grid Engine crea
 Using 'sudo' to install software on the clusters
 ------------------------------------------------
 
-HPC users do not have sufficient access privileges to use sudo to install software (in /usr/local). Users can however install applications in their /home or /data directories. 
+HPC users do not have sufficient access privileges to use sudo to install software (in /usr/local). Users can however install applications in their /home or /data directories.
 The webpage `Installing Applications on Bessemer and ShARC <https://www.sheffield.ac.uk/it-services/research/hpc/using/install>`_ provides guidance on how to do this.
-
-
-
