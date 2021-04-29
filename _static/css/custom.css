@@ -5,3 +5,7 @@
 .wy-menu-vertical li.toctree-l3, .wy-menu-vertical li.toctree-l4 .wy-menu-vertical {
     font-size: 1em;
 }
+
+.rst-content .section ul li>p:only-child, .rst-content .section ul li>p:only-child:last-child {
+    margin-bottom:5px !important; /* This is a horrible hack and I know it */
+}
