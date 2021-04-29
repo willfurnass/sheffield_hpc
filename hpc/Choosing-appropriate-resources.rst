@@ -26,7 +26,7 @@ This does not mean that you can set extremely large values for these resource re
 
 It is also important to note that the Sheffield HPC clusters have been designed to fulfil different purposes. ShARC is a capability cluster designed to run very large compute jobs that will use multiple nodes. Bessemer is a capacity cluster designed to run compute jobs which will sit within a single node.
 
-With this in mind, you should prioritize putting smaller core count jobs onto Bessemer and massively parallel jobs onto ShARC while utilizing a form of MPI.
+With this in mind, you should prioritize putting smaller core count jobs onto Bessemer and massively parallel jobs onto ShARC (while utilizing a form of :ref:`MPI <parallel_MPI>`).
 
 -----------------
 
