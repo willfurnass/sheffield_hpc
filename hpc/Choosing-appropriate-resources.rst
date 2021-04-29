@@ -41,7 +41,7 @@ The time allocation limits will differ between job types and by cluster - a summ
 Determining time requirements using timing commands in your script
 --------------------------------------------------------------------
 
-A way of deducing the wall_clock_time used by a job is to use the date or the timeused command within the script file. The date command is part of the Linux operating system whereas the timeused command is specific to our clusters and provides the usage figures directly rather than having to manually calculate it from two subsequent date commands. Here are some examples -
+A way of deducing the "wall clock" time used by a job is to use the date or the timeused command within the script file. The date command is part of the Linux operating system whereas the timeused command is specific to our clusters and provides the usage figures directly rather than having to manually calculate it from two subsequent date commands. Here are some examples -
 
 
 Using the **date** command: ::
@@ -81,7 +81,9 @@ If your job / program supports multiple cores, you need to assess whether it sup
 
 For SMP only type parallel processing jobs: you can use a maximum of 16 cores on ShARC and 40 cores on Bessemer. Ideally you should use Bessemer as you can not only access more cores, you are using more modern cores.
 
-For MPI type parallel processing jobs: these can only run on ShARC and although you can access as many cores as are available you must consider how long a job will take to queue waiting for resources compared the the decrease in time for the job to complete computation.
+For multiple node MPI type parallel processing jobs: these can only run on ShARC and although you can access as many cores as are available you must consider how long a job will take to queue waiting for resources compared the the decrease in time for the job to complete computation.
+
+Single node MPI type parallel jobs can run on both ShARC (when running in the SMP parallel environment) and Bessemer.
 
 For both parallel processing methods you should run several test jobs using the tips from the `Time allocation <#time-allocation-limits>`_ section with various numbers of cores to assess what factor of speedup/slowdown is attained for queuing and computation / the total time for job completion.
 
