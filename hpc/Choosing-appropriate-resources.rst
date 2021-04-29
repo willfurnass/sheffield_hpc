@@ -35,7 +35,7 @@ With this in mind, you should prioritize putting smaller core count jobs onto Be
 .. include:: ../referenceinfo/TimeAllocationLimits.rst
 
 
-The time allocation limits will differ between job types and by cluster - a summary of these differences can be seen above. Time requirements are highly dependent on how many CPU cores your job is using - using more cores will drastically decrease the amount of time for processing - further details on CPU cores selection can be found in the `CPU cores allocation <#cpu-allocation-limits>`_ section.
+The time allocation limits will differ between job types and by cluster - a summary of these differences can be seen above. Time requirements are highly dependent on how many CPU cores your job is using - using more coresmay significantly decrease the amount of time the job spends running, depending on how optimally the software you are using supports parallelisation. Further details on CPU cores selection can be found in the `CPU cores allocation <#cpu-allocation-limits>`_ section.
 
 
 Determining time requirements using timing commands in your script
