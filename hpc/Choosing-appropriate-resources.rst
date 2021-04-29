@@ -38,7 +38,7 @@ With this in mind, you should prioritize putting smaller core count jobs onto Be
 The time allocation limits will differ between job types and by cluster - a summary of these differences can be seen above. Time requirements are highly dependent on how many CPU cores your job is using - using more cores will drastically decrease the amount of time for processing - further details on CPU cores selection can be found in the `CPU cores allocation <#cpu-allocation-limits>`_ section.
 
 
-Determining time requirements using timing commands in your script:
+Determining time requirements using timing commands in your script
 --------------------------------------------------------------------
 
 A way of deducing the wall_clock_time used by a job is to use the date or the timeused command within the script file. The date command is part of the Linux operating system whereas the timeused command is specific to iceberg and provides the usage figures directly rather than having to manually calculate it from two subsequent date commands. Here are some examples -
