@@ -41,7 +41,7 @@ The time allocation limits will differ between job types and by cluster - a summ
 Determining time requirements using timing commands in your script
 --------------------------------------------------------------------
 
-A way of deducing the wall_clock_time used by a job is to use the date or the timeused command within the script file. The date command is part of the Linux operating system whereas the timeused command is specific to iceberg and provides the usage figures directly rather than having to manually calculate it from two subsequent date commands. Here are some examples -
+A way of deducing the wall_clock_time used by a job is to use the date or the timeused command within the script file. The date command is part of the Linux operating system whereas the timeused command is specific to our clusters and provides the usage figures directly rather than having to manually calculate it from two subsequent date commands. Here are some examples -
 
 
 Using the **date** command: ::
