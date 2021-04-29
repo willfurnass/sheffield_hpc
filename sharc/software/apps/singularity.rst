@@ -161,11 +161,36 @@ Automatic Mounting of ShARC Filestore Inside Images
 
 When running Singularity containers on the cluster,
 the paths ``/fastdata``, ``/data``, ``/home``, ``/scratch``, ``/shared`` and ``/tmp`` are
-automatically *bind-mounted* (exposed) from the *host* operating system to your container 
-e.g. the cluster's ``/fastdata`` directory will be automatically visible within a container started on the cluster 
+automatically *bind-mounted* (exposed) from the *host* operating system to your container
+e.g. the cluster's ``/fastdata`` directory will be automatically visible within a container started on the cluster
 without that directory being explicitly created when the corresponding Singularity image was built.
 
-If 
+Considerations for MPI or Scheduler aware containers
+----------------------------------------------------
+
+When using the batch scheduler system care has to be taken with MPI jobs or containers which are scheduler aware. For the former, in order to use the Intel OmniPath Architecture with MPI the appropriate drivers must be available in the container or the job may revert to using the gigabit ethernet or crash.
+
+For the latter, by default any environment variables will pass through to a singularity container including any scheduler set environment variables.
+This can result in an MPI/scheduler aware container attempting to load the hostlist from the location set by the $PE_HOSTFILE variable. If this location is not available as the container has not bound the folder from the host machine the container will encounter errors.
+There are two methods that can be used to deal with this issue with their own advantages and limitations.
+
+Method 1 - Instruct Singularity to bind the required files/folder
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Singularity can be instructed to bind the required hostfile to the container by using the ``--bind`` argument when calling ``exec`` e.g. : ::
+
+    singularity exec --bind $PE_HOSTFILE:$PE_HOSTFILE:ro /usr/local/packages/singularity/images/example.simg /home/$USER/my_script.sh
+
+This will make the PE_HOSTFILE available thus any container which is MPI enabled and scheduler aware will attempt to spawn processes appropriately but this will require the correct setup of the container including any necessary versions, drivers and PMI support.
+
+Method 2 - Instruct Singularity to discard the environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Singularity can be instructed to use a clear environment by using the ``--cleanenv`` argument when calling ``exec`` e.g. : ::
+
+    singularity exec --cleanenv $PE_HOSTFILE:$PE_HOSTFILE:ro /usr/local/packages/singularity/images/example.simg /home/$USER/my_script.sh
+
+As this will remove all environment variables supplied to the container, there will be no attempt to look for a PE_HOSTFILE however this will limit your container to the SMP parallel environment only.
 
 Image Index on Github
 ---------------------
