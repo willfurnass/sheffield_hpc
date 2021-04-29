@@ -17,7 +17,7 @@ The key resources you need to optimise for are:
 * `File storage limits / file store performance characteristics <#filestore-limits-file-store-performance-characteristics>`_
 
 
-It is important to be aware that the resource requests that you make are not flexible, if your job exceeds what you have requested for it the scheduler will terminate your job abruptly and without any warning. This means that it is safer to over estimate than under estimate your job's requirements.
+It is important to be aware that the resource requests that you make are not flexible: if your job exceeds what you have requested for it the scheduler will terminate your job abruptly and without any warning. This means that it is safest to over estimate your job's requirements if they cannot be accurately and precisely known in advance.
 
 This does not mean that you can set extremely large values for these resource requests for several reasons, the most important being:
 
