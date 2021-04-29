@@ -105,11 +105,11 @@ Submit your job ``qsub`` or ``sbatch`` by specifying very generous memory and ti
 
 Here is an example job script for SGE: ::
 
-      #$ -l h_rt=120:00:00
+      #$ -l h_rt=01:00:00
       #$ -l rmem=8G
       #$ -m abe
       #$ -M joe.blogs@sheffield.ac.uk
-      myprog < mydata.txt > myresults.txt\
+      myprog < mydata.txt > myresults.txt
 
 
 Here is an example job script for SLURM: ::
@@ -118,7 +118,7 @@ Here is an example job script for SLURM: ::
       #SBATCH --time=01:00:00
       #SBATCH --mail-user=joe.blogs@sheffield.ac.uk
       #SBATCH --mail-type=ALL
-      myprog < mydata.txt > myresults.txt\
+      myprog < mydata.txt > myresults.txt
 
 When the job completes, you will receive an email reporting the memory and time usage figures.
 
@@ -144,7 +144,6 @@ The reported figures will indicate:
 
 * the currently used memory ( vmem ).
 * maximum memory needed since startup ( maxvmem ).
-* cumulative memory_usage*seconds ( mem ).
 
 It is the **maxvmem** figure that you will need to use to determine the ``-l rmem=`` parameter for your next job.
 
