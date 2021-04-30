@@ -161,11 +161,18 @@ Automatic Mounting of ShARC Filestore Inside Images
 
 When running Singularity containers on the cluster,
 the paths ``/fastdata``, ``/data``, ``/home``, ``/scratch``, ``/shared`` and ``/tmp`` are
-automatically *bind-mounted* (exposed) from the *host* operating system to your container 
-e.g. the cluster's ``/fastdata`` directory will be automatically visible within a container started on the cluster 
+automatically *bind-mounted* (exposed) from the *host* operating system into your container,
+i.e. the cluster's ordinary filestores will be automatically visible within a container started on the cluster
 without that directory being explicitly created when the corresponding Singularity image was built.
 
-If 
+MPI and Singularity
+-------------------
+If you try running MPI within a Singularity container on a single node the MPI implementation may auto-detect that its processes are running under the SGE job scheduler and will try to read a SGE file containing information on the CPU cores SGE has allocated to that job.
+This **will fail** unless you run your container with a ``--bind $PE_HOSTFILE:$PE_HOSTFILE:ro`` argument e.g.: ::
+
+    singularity exec --bind $PE_HOSTFILE:$PE_HOSTFILE:ro /usr/local/packages/singularity/images/example.simg /home/$USER/my_script.sh
+
+For a more complete guide to using MPI with Singularity (inc. multi-node jobs) `see the Singularity project's documentation <https://sylabs.io/guides/3.7/user-guide/mpi.html>`__.
 
 Image Index on Github
 ---------------------
