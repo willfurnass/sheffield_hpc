@@ -165,32 +165,14 @@ automatically *bind-mounted* (exposed) from the *host* operating system to your 
 i.e. the cluster's ordinary filestores will be automatically visible within a container started on the cluster
 without that directory being explicitly created when the corresponding Singularity image was built.
 
-Considerations for MPI or Scheduler aware containers
-----------------------------------------------------
-
-When using the batch scheduler system care has to be taken with MPI jobs or containers which are scheduler aware. For the former, in order to use the Intel OmniPath Architecture with MPI the appropriate drivers must be available in the container or the job may revert to using the gigabit ethernet or crash.
-
-For the latter, by default any environment variables will pass through to a singularity container including any scheduler set environment variables.
-This can result in an MPI/scheduler aware container attempting to load the hostlist from the location set by the $PE_HOSTFILE variable. If this location is not available as the container has not bound the folder from the host machine the container will encounter errors.
-There are two methods that can be used to deal with this issue with their own advantages and limitations.
-
-Method 1 - Instruct Singularity to bind the required files/folder
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Singularity can be instructed to bind the required hostfile to the container by using the ``--bind`` argument when calling ``exec`` e.g. : ::
+MPI and Singularity
+-------------------
+If you try running MPI within a Singularity container on a single node the MPI implementation may auto-detect that its processes are running under the SGE job scheduler and will try to read a SGE file containing information on the CPU cores SGE has allocated to that job.
+This **will fail** unless you run your container with a ``--bind $PE_HOSTFILE:$PE_HOSTFILE:ro`` argument e.g.: ::
 
     singularity exec --bind $PE_HOSTFILE:$PE_HOSTFILE:ro /usr/local/packages/singularity/images/example.simg /home/$USER/my_script.sh
 
-This will make the PE_HOSTFILE available thus any container which is MPI enabled and scheduler aware will attempt to spawn processes appropriately but this will require the correct setup of the container including any necessary versions, drivers and PMI support.
-
-Method 2 - Instruct Singularity to discard the environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Singularity can be instructed to use a clear environment by using the ``--cleanenv`` argument when calling ``exec`` e.g. : ::
-
-    singularity exec --cleanenv $PE_HOSTFILE:$PE_HOSTFILE:ro /usr/local/packages/singularity/images/example.simg /home/$USER/my_script.sh
-
-As this will remove all environment variables supplied to the container, there will be no attempt to look for a PE_HOSTFILE however this will limit your container to the SMP parallel environment only.
+For a more complete guide to using MPI with Singularity (inc. multi-node jobs) `see the Singularity project's documentation <https://sylabs.io/guides/3.7/user-guide/mpi.html>`__.
 
 Image Index on Github
 ---------------------
