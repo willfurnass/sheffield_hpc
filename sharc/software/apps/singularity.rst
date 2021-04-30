@@ -161,7 +161,7 @@ Automatic Mounting of ShARC Filestore Inside Images
 
 When running Singularity containers on the cluster,
 the paths ``/fastdata``, ``/data``, ``/home``, ``/scratch``, ``/shared`` and ``/tmp`` are
-automatically *bind-mounted* (exposed) from the *host* operating system to your container,
+automatically *bind-mounted* (exposed) from the *host* operating system into your container,
 i.e. the cluster's ordinary filestores will be automatically visible within a container started on the cluster
 without that directory being explicitly created when the corresponding Singularity image was built.
 
