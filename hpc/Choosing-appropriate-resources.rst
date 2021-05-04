@@ -11,10 +11,13 @@ Choosing appropriate resources for your jobs is essential to ensuring your jobs 
 
 The key resources you need to optimise for are:
 
-* `Time allocation <#time-allocation-limits>`_
-* `CPU cores allocation <#cpu-allocation-limits>`_
-* `RAM / Memory allocation <#memory-allocation-limits>`_
-* `File storage limits / file store performance characteristics <#filestore-limits-file-store-performance-characteristics>`_
+
+* :ref:`Cluster-choice`
+* :ref:`Time-allocation`
+* :ref:`Cores-allocation`
+* :ref:`Memory-allocation`
+* :ref:`Filestore-limits`
+
 
 
 It is important to be aware that the resource requests that you make are not flexible: if your job exceeds what you have requested for it the scheduler will terminate your job abruptly and without any warning. This means that it is safest to over estimate your job's requirements if they cannot be accurately and precisely known in advance.
@@ -24,13 +27,21 @@ This does not mean that you can set extremely large values for these resource re
 * Large allocations will take longer to queue and start.
 * Allocations larger than the scheduler can ever satisfy with the available resources **will never start.**
 
-It is also important to note that the Sheffield HPC clusters have been designed to fulfil different purposes. ShARC is for the most part a *capability* cluster designed to run larger compute jobs that will use multiple nodes. Bessemer is a *capacity* cluster designed to run smaller compute jobs which will fit on a single node.
+.. _Cluster-choice:
+
+==============================
+Cluster choice
+==============================
+
+It is also important to note that the Sheffield HPC clusters have been designed to fulfil different purposes. ShARC is for the most part a *capability* cluster designed to run larger compute jobs that will use multiple nodes. Bessemer is a *capacity* cluster designed to run smaller compute jobs which will fit on a single node. In addition, Bessemer has more modern faster CPUs but does not have a /data filestore.
 
 With this in mind, you should prioritize putting smaller core count jobs onto Bessemer and massively parallel jobs onto ShARC (while utilizing a form of :ref:`MPI <parallel_MPI>`).
 
+The specifications for each cluster are detailed for  ShARC here :ref:`sharc-specs` and Bessemer here. :ref:`bessemer-specs`
+
 -----------------
 
-
+.. _Time-allocation:
 
 .. include:: ../referenceinfo/TimeAllocationLimits.rst
 
@@ -67,6 +78,7 @@ When the above script is submitted the first invocation of the timeused command 
 
 -----------------
 
+.. _Cores-allocation:
 
 .. include:: ../referenceinfo/CpuAllocationLimits.rst
 
@@ -98,6 +110,7 @@ Some additional important considerations to make are:
 
 -----------------
 
+.. _Memory-allocation:
 
 .. include:: ../referenceinfo/MemoryAllocationLimits.rst
 
@@ -173,6 +186,8 @@ If your job has already finished you can list the memory usage with sacct: ::
     sacct --format='JobID,Elapsed,MaxVMSize'
 
 It is the **MaxVMSize** figure that you will need to use to determine the ``--mem=`` parameter for your next job.
+
+.. _Filestore-limits:
 
 .. include:: ../referenceinfo/FileStoreLimits.rst
 
