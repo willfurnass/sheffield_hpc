@@ -41,3 +41,4 @@ Take a look at the `Research Software Engineering <https://rse.shef.ac.uk/>`_ we
    jade2
    bede
    oldsystems
+   referenceinfo/index
