@@ -105,7 +105,7 @@ Some additional important considerations to make are:
 
 * `Amdahl's law <https://en.wikipedia.org/wiki/Amdahl%27s_law>`_ - an increase in cores or computational power will not scale in a perfectly linear manner. Using 2 cores will not be twice as fast as a single core - and the proportional time reduction from using more cores will decrease with larger core counts.
 * Job workload optimisation is highly dependent on the workload type - workloads can be CPU, memory bandwidth or IO (reading and writing to disk) limited - detailed exploration and profiling of workloads is beyond the scope of this guide.
-* Initially trying a smaller job will allow you to extrapolate likely CPU requirements but you must remain aware of the limitations as stated above.
+* Trying a smaller job (or preferably a set of smaller jobs of different sizes) will allow you to extrapolate likely resource requirements but you must remain aware of the limitations as stated above.
 
 
 -----------------
