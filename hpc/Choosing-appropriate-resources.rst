@@ -43,7 +43,7 @@ The specifications for each cluster are detailed for  ShARC here :ref:`sharc-spe
 
 .. _Time-allocation:
 
-.. include:: ../referenceinfo/SGE-scheduler/TimeAllocationLimits.rst
+.. include:: ../referenceinfo/scheduler/TimeAllocationLimits.rst
 
 
 The time allocation limits will differ between job types and by cluster - a summary of these differences can be seen above. Time requirements are highly dependent on how many CPU cores your job is using - using more cores may significantly decrease the amount of time the job spends running, depending on how optimally the software you are using supports parallelisation. Further details on CPU cores selection can be found in the `CPU cores allocation <#cpu-allocation-limits>`_ section.
@@ -80,7 +80,7 @@ When the above script is submitted the first invocation of the timeused command 
 
 .. _Cores-allocation:
 
-.. include:: ../referenceinfo/SGE-scheduler/CpuAllocationLimits.rst
+.. include:: ../referenceinfo/scheduler/CpuAllocationLimits.rst
 
 The CPU allocation limits will differ between job types and by cluster - a summary of these differences can be seen above. It is important to note that SLURM and SGE will request CPU on a different basis as detailed above.
 
@@ -105,14 +105,14 @@ Some additional important considerations to make are:
 
 * `Amdahl's law <https://en.wikipedia.org/wiki/Amdahl%27s_law>`_ - an increase in cores or computational power will not scale in a perfectly linear manner. Using 2 cores will not be twice as fast as a single core - and the proportional time reduction from using more cores will decrease with larger core counts.
 * Job workload optimisation is highly dependent on the workload type - workloads can be CPU, memory bandwidth or IO (reading and writing to disk) limited - detailed exploration and profiling of workloads is beyond the scope of this guide.
-* Initially trying a smaller job will allow you to extrapolate likely CPU requirements but you must remain aware of the limitations as stated above.
+* Trying a smaller job (or preferably a set of smaller jobs of different sizes) will allow you to extrapolate likely resource requirements but you must remain aware of the limitations as stated above.
 
 
 -----------------
 
 .. _Memory-allocation:
 
-.. include:: ../referenceinfo/SGE-scheduler/MemoryAllocationLimits.rst
+.. include:: ../referenceinfo/scheduler/MemoryAllocationLimits.rst
 
 The memory allocation limits will differ between job types and by cluster - a summary of these differences can be seen above. It is important to note that SLURM and SGE will request memory on a different basis as detailed above.
 
@@ -189,7 +189,7 @@ It is the **MaxVMSize** figure that you will need to use to determine the ``--me
 
 .. _Filestore-limits:
 
-.. include:: ../referenceinfo/SGE-scheduler/FileStoreLimits.rst
+.. include:: ../referenceinfo/scheduler/FileStoreLimits.rst
 
 
 -----------------
@@ -218,4 +218,4 @@ If you have access to additional queues / partitions and want to know their limi
 
 -----------------
 
-.. include:: ../referenceinfo/SGE-scheduler/ListingQueues.rst
+.. include:: ../referenceinfo/scheduler/ListingQueues.rst

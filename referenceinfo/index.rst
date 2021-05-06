@@ -11,5 +11,5 @@ This sub-tree contains reference information that is pulled into other pages.
   :maxdepth: 1
   :glob:
 
-  SGE-scheduler/index
+  scheduler/index
   ANSYS/index

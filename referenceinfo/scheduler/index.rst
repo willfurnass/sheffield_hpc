@@ -1,7 +1,7 @@
-.. _SGE-referenceinfo:
+.. _scheduler-reference-info:
 
 **********************************
-Son of Grid Engine Reference Info
+Scheduler Reference Info
 **********************************
 
 This sub-tree contains reference information that is pulled into other pages.
