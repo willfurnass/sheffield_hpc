@@ -50,13 +50,25 @@ For complex model setup, the primary way to make a journal file is to record a j
 Common journal file commands
 =================================
 
-Reading a case file: ::
+Note that the order of your journal file commands is **highly** important. The correct sequences must be followed and some stages have multiple options e.g. different initialisation methods.
+
+Reading a case file
+^^^^^^^^^^^^^^^^^^^^
+
+::
 
   ;Reading in the case file
   /rc fullcase.cas.gz
   ; an alternative form of this is "/file/read-case fullcase.cas.gz"
 
-Initialisation of a case file: ::
+Initialisation of a case file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Choose only one initialisation method.
+
+Normal Initialisation:
+
+::
 
   ;initialising the system
   /solve/init/init
@@ -66,10 +78,26 @@ Hybrid initialisation of a case file: ::
   ;hybrid initialising the system
   /solve/init/hyb-init
 
-Setting the transient time step: ::
+
+Setting the transient time step
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Only necessary if you are using a transient model.
+
+::
 
   ;Setting the transient time step size
   /solve/set/time-step 0.01
+
+
+Starting a solve process
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Depending on your model type, either solve specifying time steps and iterations, or just iterations.
+
+Starting a solve process with a number of iteration steps: ::
+
+  /solve/iter 2000
 
 Starting a solve process with a number of time steps and iteration steps: ::
 
@@ -77,14 +105,20 @@ Starting a solve process with a number of time steps and iteration steps: ::
   ;number of iterations per step (second number)
   /solve/dual-time-iterate 1000 1000
 
-Starting a solve process with a number of iteration steps: ::
 
-  /solve/iter 2000
+Outputting performance data at model finish:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Outputting perfomance data at model finish: ::
+::
 
   ;Outputting solver performance data upon completion of the simulation
   /parallel timer usage
+
+
+Saving your model
+^^^^^^^^^^^^^^^^^
+
+To save your model you will need to save your data, but you may also choose to save your final case file.
 
 Saving the final case file: ::
 
@@ -100,7 +134,10 @@ Saving the final data file: ::
   yes
   ; an alternative form of this is "/file/write-data output_results.data ok"
 
-Exit fluent: ::
+Exit fluent
+^^^^^^^^^^^
+
+::
 
   ;Exiting Fluent
   /exit
@@ -205,12 +242,11 @@ Example: Simple journal file - load case, initialise, run, save data and exit
   ;Reading in the case file
   /rc fullcase.cas.gz
   ;
-  ;hybrid initialising the system
-  /solve/init/hyb-init
+  ; initialising the system
+  /solve/init/init
   ;
-  ;Setting the number of time-steps (first number) and the max
-  ;number of iterations per step (second number)
-  /solve/dual-time-iterate 1000 1000
+  ;Setting the number of iterations and solving
+  /solve/iter 2000
   ;
   ;Writing the final data file (overwriting if required)
   /wd fullcase.dat.gz
