@@ -5,12 +5,12 @@
     :maxdepth: 1
     :glob:
 
-**************************************************************
+===================================================
 Writing Fluent journal files
-**************************************************************
+===================================================
 
 What is a Fluent journal file
-=============================
+---------------------------------------------------
 
 A journal file is effectively a sequence of TUI and/or Scheme commands that youâ€™ll supply to Fluent instead of using the GUI / TUI. These are arranged as they would be typed interactively into the program or entered through the GUI (graphics user interface) / TUI (text user interface).
 
@@ -18,7 +18,7 @@ A journal file is effectively a sequence of TUI and/or Scheme commands that youâ
 ==============
 
 Key things to understand about Fluent journal files
-===================================================
+---------------------------------------------------
 
 * The purpose of a journal file is to automate a series of commands instead of entering them repeatedly on the command line.
 * To include comments in your file, be sure to put a semicolon ``;`` at the beginning of each comment line.
@@ -29,7 +29,7 @@ Key things to understand about Fluent journal files
 ==============
 
 Why you should use a Fluent journal file
-========================================
+---------------------------------------------------
 
 * Using journal files with bash scripting can allow you to automate your jobs.
 * Using journal files can allow you to parameterise your models easily and automatically.
@@ -39,7 +39,7 @@ Why you should use a Fluent journal file
 ==============
 
 How to make a Fluent journal file
-=================================
+---------------------------------------------------
 
 If you have already made your case file and it is fully setup, the best way to make a journal file is to manually create one with a text editor with the necessary loading, initialisation, solving, stopping and saving commands.
 
@@ -48,7 +48,7 @@ For complex model setup, the primary way to make a journal file is to record a j
 ==============
 
 Common journal file commands
-=================================
+---------------------------------------------------
 
 Note that the order of your journal file commands is **highly** important. The correct sequences must be followed and some stages have multiple options e.g. different initialisation methods.
 
@@ -147,7 +147,7 @@ Exit fluent
 ==============
 
 Autosaving and saving intermediate state models
-===============================================
+---------------------------------------------------
 
 Autosaving
 ^^^^^^^^^^
@@ -235,7 +235,7 @@ You should ensure that the timer script is the first thing to execute to ensure 
 ==============
 
 Example: Simple journal file - load case, initialise, run, save data and exit
-=============================================================================
+------------------------------------------------------------------------------------------------------
 
 ::
 
@@ -258,7 +258,7 @@ Example: Simple journal file - load case, initialise, run, save data and exit
 ==============
 
 Example: Complex journal file - submerged vegetation benchmark
-==============================================================
+------------------------------------------------------------------------------------------------------
 
 The following ``runbenchmark.jou`` journal file manually loads the mesh specifies many parameters. The model being ran is a benchmark test case of submerged vegetation and is writing out a benchmarktimes.txt file with the start and end time of the model.
 

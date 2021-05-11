@@ -5,15 +5,25 @@
     :maxdepth: 1
     :glob:
 
-**************************************************************
+
 Exporting GUI Fluent plots in batch submission jobs
-**************************************************************
+---------------------------------------------------
 
 While in a batch job you cannot call a display of a window / figure / animation as Fluent has nowhere to direct this output (there is no available display.)
 
-To avoid this issue while attempting to export images from a batch job you should ensure the fluent command in your submission script has the ``-gu`` and  ``-driver null`` arguments i.e. for a ShARC batch job: ::
+To avoid this issue while attempting to export images from a batch job you should ensure the fluent command in your submission script has the ``-gu`` and  ``-driver null`` arguments.
+
+i.e. for a **ShARC** batch job:
+
+.. code-block:: bash
 
   fluent 2ddp -i test.jou -gu -t$NSLOTS -mpi=intel -rsh -sgepe mpi-rsh -sge -driver null
+
+for a **Bessemer** batch job:
+
+.. code-block:: bash
+
+  fluent 2ddp -i test.jou -gu -t$SLURM_NTASKS -driver null
 
 You can setup your plots / graphs either in your journal file or interactively via the GUI and saving the case file.
 
@@ -35,8 +45,8 @@ For an example of the journal file commands see below: ::
 
 ==============
 
-Sources:
-========
+Sources
+^^^^^^^^^
 
 * https://www.researchgate.net/post/How-can-I-export-my-contour-image-for-every-required-time-step-in-Fluent
 * https://www.eureka.im/273.html
