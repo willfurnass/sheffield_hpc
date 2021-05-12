@@ -4,11 +4,14 @@ R
 =
 
 .. sidebar:: R
-
+   
+   :Versions: 3.6.2,4.0.0
    :URL: https://www.r-project.org/
    :Documentation: https://www.r-project.org/
 
-R is a statistical computing language.
+R is a language and environment for statistical computing and graphics. 
+It is a GNU project which is similar to the S language and environment which was developed at Bell Laboratories (formerly AT&T, now Lucent Technologies) by John Chambers and colleagues. 
+R can be considered as a different implementation of S. There are some important differences, but much code written for S runs unaltered under R.
 
 Interactive Usage
 -----------------
@@ -18,6 +21,7 @@ start an :ref:`interactive session <submit-interactive>`.
 You can then load a specific version of R using: ::
         
    module load R/3.6.2-foss-2019b
+   module load R/4.0.0-foss-2020a
 
 R can then be run with: ::
 
@@ -167,6 +171,14 @@ see section 6.7 of the document `Writing R extensions <https://cran.r-project.or
 Installation Notes
 ------------------
 These notes are primarily for administrators of the system.
+
+R/4.0.0-foss-2020a
+^^^^^^^^^^^^^^^^^^
+
+Installed using an eponymous easyconfig,
+which is the easyconfig that shipped with EasyBuild 4.3.1
+minus any of the configuration to install 765 packages from CRAN
+(i.e. just base R was installed).
 
 R/3.6.2-foss-2019b
 ^^^^^^^^^^^^^^^^^^

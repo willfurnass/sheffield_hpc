@@ -1,0 +1,22 @@
+#%Module1.0#####################################################################
+##
+## tcl 8.6.10 lib / binary  module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        puts stderr "Makes the tcl 8.6.10 binaries and libraries available"
+}
+
+
+set TCL_DIR /usr/local/packages/apps/tcl/8.6.10/gcc-10.1
+
+prepend-path PATH $TCL_DIR/bin
+prepend-path LD_LIBRARY_PATH $TCL_DIR/lib
+prepend-path CPATH $TCL_DIR/include
+prepend-path PKG_CONFIG_PATH $TCL_DIR/lib/pkgconfig
+
+setenv TCL_LIBRARY $TCL_DIR/lib/tcl8.6

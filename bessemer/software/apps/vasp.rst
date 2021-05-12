@@ -3,7 +3,7 @@ VASP
 
 .. sidebar:: VASP
 
-   :Version: 5.4.1 (05Feb16)
+   :Version: 5.4.1,5.4.4
    :Dependencies: Fortran and C compilers, an implementation of MPI, numerical libraries BLAS, LAPACK, ScaLAPACK, FFTW. Modules for Intel compiler 2019.5.281, Intel MPI 2019.5.281 and Intel MKL 2019b loaded.
    :URL: https://www.vasp.at/
    :Documentation: https://www.vasp.at/documentation
@@ -18,6 +18,7 @@ Usage
 VASP 5.4.1 can be activated using the module file::
 
     module load VASP/5.4.1-intel-2019b
+    module load VASP/5.4.4-intel-2019b
 
 The VASP executables are ``vasp_std``, ``vasp_gam`` and ``vasp_ncl``.
 
@@ -50,9 +51,10 @@ Installation notes
 ------------------
 
 
-VASP 5.4.1 (05Feb16) was installed using Easybuild, build details can be found in ``/usr/local/packages/live/eb/VASP/5.4.1-intel-2019b/easybuild``
+VASP 5.4.1 and 5.4.4 were installed using Easybuild, build details can be found in ``/usr/local/packages/live/eb/VASP/5.4.1-intel-2019b/easybuild`` and ``/usr/local/packages/live/eb/VASP/5.4.4-intel-2019b/easybuild``
 
-The module file is 
+The module files are: 
 :download:`/usr/local/modulefiles/live/eb/all/VASP/5.4.1-intel-2019b </bessemer/software/modulefiles/VASP/5.4.1/5.4.1-intel-2019b>`.
+:download:`/usr/local/modulefiles/live/eb/all/VASP/5.4.4-intel-2019b </bessemer/software/modulefiles/VASP/5.4.4/5.4.4-intel-2019b>`.
 
-The VASP 5.4.1 installation was tested by running a batch job using the ``my_job.sh`` batch script, above, and the input for the "O atom" example (https://cms.mpi.univie.ac.at/wiki/index.php/O_atom) from the online VASP tutorials (https://cms.mpi.univie.ac.at/wiki/index.php/VASP_tutorials). 
+These installations were tested by running a batch job using the ``my_job.sh`` batch script above, and the input for the "O atom" example (https://cms.mpi.univie.ac.at/wiki/index.php/O_atom) from the online VASP tutorials (https://cms.mpi.univie.ac.at/wiki/index.php/VASP_tutorials). 

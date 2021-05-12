@@ -1,0 +1,43 @@
+#%Module1.0#####################################################################
+##
+## boost 1.64.0 module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        puts stderr "Makes boost 1.64.0 available"
+}
+
+module-whatis   "Makes boost 1.64.0 available"
+
+# Add required module loads
+
+module load dev/gcc/8.2
+module load dev/cmake/3.17.1/gcc-8.2
+module load libs/icu/58.2/gcc-8.2-cmake-3.17.1
+module load libs/libunistring/0.9.10/gcc-8.2-cmake-3.17.1
+
+# Set package root directory
+set ROOT_DIR_boost  /usr/local/packages/libs/boost/1.64.0/gcc-8.2-cmake-3.17.1/
+
+
+# Set library paths
+prepend-path LD_LIBRARY_PATH 	 $ROOT_DIR_boost/lib
+prepend-path LIBRARY_PATH 	     $ROOT_DIR_boost/lib
+
+
+# Set CMAKE PREFIX PATH
+prepend-path CMAKE_PREFIX_PATH 	 $ROOT_DIR_boost
+
+
+# Set CMAKE INCLUDES
+prepend-path CPLUS_INCLUDE_PATH  $ROOT_DIR_boost/include
+prepend-path CPATH 		         $ROOT_DIR_boost/include
+
+
+# Set BOOST_ROOT env var
+setenv BOOST_ROOT     $ROOT_DIR_boost
+

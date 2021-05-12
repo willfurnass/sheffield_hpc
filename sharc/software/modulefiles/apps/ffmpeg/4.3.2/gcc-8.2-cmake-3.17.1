@@ -1,0 +1,53 @@
+#%Module1.0#####################################################################
+##
+## ffmpeg 4.3.2 module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        puts stderr "Makes ffmpeg 4.3.2 available"
+}
+
+module-whatis   "Makes ffmpeg 4.3.2 available"
+
+# Add required module loads
+
+module load dev/gcc/8.2
+module load dev/cmake/3.17.1/gcc-8.2
+module load apps/nasm/2.15.05/gcc-8.2-cmake-3.17.1
+module load apps/yasm/1.3.0/gcc-8.2-cmake-3.17.1
+module load libs/libx264/544c61f0/gcc-8.2-cmake-3.17.1
+module load libs/libx265/3.4/gcc-8.2-cmake-3.17.1
+module load libs/lame/3.100/gcc-8.2-cmake-3.17.1
+module load libs/opus/1.3.1/gcc-8.2-cmake-3.17.1
+module load libs/libvpx/1.9.0/gcc-8.2-cmake-3.17.1
+module load libs/fdk_aac/2.0.1/gcc-8.2-cmake-3.17.1
+
+# Set package root directory
+set ROOT_DIR_ffmpeg  /usr/local/packages/apps/ffmpeg/4.3.2/gcc-8.2-cmake-3.17.1/
+
+
+# Set executable path
+prepend-path PATH        		 $ROOT_DIR_ffmpeg/bin
+
+
+# Set library paths
+prepend-path LD_LIBRARY_PATH 	 $ROOT_DIR_ffmpeg/lib
+prepend-path LIBRARY_PATH 	     $ROOT_DIR_ffmpeg/lib
+
+
+# Set CMAKE PREFIX PATH
+prepend-path CMAKE_PREFIX_PATH 	 $ROOT_DIR_ffmpeg
+
+
+# Set CMAKE INCLUDES
+prepend-path CPLUS_INCLUDE_PATH  $ROOT_DIR_ffmpeg/include
+prepend-path CPATH 		         $ROOT_DIR_ffmpeg/include
+
+
+# Set PKG_CONFIG_PATH
+prepend-path PKG_CONFIG_PATH     $ROOT_DIR_ffmpeg/lib/pkgconfig
+

@@ -1,0 +1,37 @@
+#%Module1.0#####################################################################
+##
+## libunistring 0.9.10 module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        puts stderr "Makes libunistring 0.9.10 available"
+}
+
+module-whatis   "Makes libunistring 0.9.10 available"
+
+# Add required module loads
+
+module load dev/gcc/8.2
+module load dev/cmake/3.17.1/gcc-8.2
+
+# Set package root directory
+set ROOT_DIR_libunistring  /usr/local/packages/libs/libunistring/0.9.10/gcc-8.2-cmake-3.17.1/
+
+
+# Set library paths
+prepend-path LD_LIBRARY_PATH 	 $ROOT_DIR_libunistring/lib
+prepend-path LIBRARY_PATH 	     $ROOT_DIR_libunistring/lib
+
+
+# Set CMAKE PREFIX PATH
+prepend-path CMAKE_PREFIX_PATH 	 $ROOT_DIR_libunistring
+
+
+# Set CMAKE INCLUDES
+prepend-path CPLUS_INCLUDE_PATH  $ROOT_DIR_libunistring/include
+prepend-path CPATH 		         $ROOT_DIR_libunistring/include
+
