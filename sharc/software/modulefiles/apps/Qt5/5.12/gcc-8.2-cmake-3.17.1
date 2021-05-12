@@ -1,0 +1,39 @@
+#%Module
+proc ModulesHelp { } {
+    puts stderr {
+
+Description
+===========
+Qt is a comprehensive cross-platform C++ application framework.
+
+
+More information
+================
+ - Homepage: https://qt.io/
+    }
+}
+
+module-whatis {Description: Qt is a comprehensive cross-platform C++ application framework.}
+module-whatis {Homepage: https://qt.io/}
+module-whatis {URL: https://qt.io/}
+
+module load dev/gcc/8.2
+module load dev/cmake/3.17.1/gcc-8.2
+
+
+
+set QTroot /usr/local/packages/apps/Qt5/5.12/gcc-8.2-cmake-3.17.1
+
+# Add the fonts or it won't render text
+setenv QT_QPA_FONTDIR /usr/share/fonts/dejavu/
+
+# Add map XDG_RUNTIME_DIR to $TMPDIR
+set TMPDIR $::env(TMPDIR)
+setenv XDG_RUNTIME_DIR $TMPDIR
+
+prepend-path    CMAKE_PREFIX_PATH               $QTroot
+prepend-path    CPATH           $QTroot/include
+prepend-path    LD_LIBRARY_PATH         $QTroot/lib
+prepend-path    LIBRARY_PATH            $QTroot/lib
+prepend-path    PATH            $QTroot/bin
+prepend-path    PKG_CONFIG_PATH         $QTroot/lib/pkgconfig

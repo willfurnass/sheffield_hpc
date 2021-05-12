@@ -1,0 +1,45 @@
+#%Module1.0#####################################################################
+##
+## icu 58.2 module file
+##
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        puts stderr "Makes icu 58.2 available"
+}
+
+module-whatis   "Makes icu 58.2 available"
+
+# Add required module loads
+
+module load dev/gcc/8.2
+module load dev/cmake/3.17.1/gcc-8.2
+
+# Set package root directory
+set ROOT_DIR_icu  /usr/local/packages/libs/icu/58.2/gcc-8.2-cmake-3.17.1/
+
+
+# Set executable path
+prepend-path PATH        		 $ROOT_DIR_icu/bin
+
+
+# Set library paths
+prepend-path LD_LIBRARY_PATH 	 $ROOT_DIR_icu/lib
+prepend-path LIBRARY_PATH 	     $ROOT_DIR_icu/lib
+
+
+# Set CMAKE PREFIX PATH
+prepend-path CMAKE_PREFIX_PATH 	 $ROOT_DIR_icu
+
+
+# Set CMAKE INCLUDES
+prepend-path CPLUS_INCLUDE_PATH  $ROOT_DIR_icu/include
+prepend-path CPATH 		         $ROOT_DIR_icu/include
+
+
+# Set PKG_CONFIG_PATH
+prepend-path PKG_CONFIG_PATH     $ROOT_DIR_icu/lib/pkgconfig
+

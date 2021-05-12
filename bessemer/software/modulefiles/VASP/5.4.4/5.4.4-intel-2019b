@@ -1,0 +1,38 @@
+#%Module
+proc ModulesHelp { } {
+    puts stderr {
+
+Description
+===========
+The Vienna Ab initio Simulation Package (VASP) is a computer program for atomic scale
+materials modelling, e.g. electronic structure calculations and quantum-mechanical molecular dynamics,
+from first principles.
+
+
+More information
+================
+ - Homepage: http://www.vasp.at
+    }
+}
+
+module-whatis {Description: The Vienna Ab initio Simulation Package (VASP) is a computer program for atomic scale
+materials modelling, e.g. electronic structure calculations and quantum-mechanical molecular dynamics,
+from first principles.}
+module-whatis {Homepage: http://www.vasp.at}
+module-whatis {URL: http://www.vasp.at}
+
+set root /usr/local/packages/live/eb/VASP/5.4.4-intel-2019b
+
+conflict VASP
+
+if { ![ is-loaded intel/2019b ] } {
+    module load intel/2019b
+}
+
+prepend-path	CMAKE_PREFIX_PATH		$root
+prepend-path	PATH		$root/bin
+setenv	EBROOTVASP		"$root"
+setenv	EBVERSIONVASP		"5.4.4"
+setenv	EBDEVELVASP		"$root/easybuild/VASP-5.4.4-intel-2019b-easybuild-devel"
+
+# Built with EasyBuild version 4.3.1

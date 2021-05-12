@@ -23,6 +23,7 @@ There are several versions of the CUDA library available.
 As with much software installed on the cluster, 
 versions of CUDA are activated via the :ref:`'module load' command<env_modules>`: ::
 
+   module load libs/CUDA/11.1.1/binary
    module load libs/CUDA/11.0.2/binary
    module load libs/CUDA/10.2.89/binary
    module load libs/CUDA/10.1.243/binary
@@ -38,9 +39,9 @@ To then confirm which version of CUDA you are using:
 
    nvcc: NVIDIA (R) Cuda compiler driver
    Copyright (c) 2005-2020 NVIDIA Corporation
-   Built on Thu_Jun_11_22:26:38_PDT_2020
-   Cuda compilation tools, release 11.0, V11.0.194
-   Build cuda_11.0_bu.TC445_37.28540450_0
+   Built on Mon_Oct_12_20:09:46_PDT_2020
+   Cuda compilation tools, release 11.1, V11.1.105
+   Build cuda_11.1.TC455_06.29190527_0
 
 **Important** To compile CUDA programs you also need a compatible version of the :ref:`GCC compiler <gcc_sharc>`:
 
@@ -66,16 +67,16 @@ In a ``qrshx`` session:
 .. code-block:: sh
 
    # Load modules
-   module load libs/CUDA/11.0.2/binary
+   module load libs/CUDA/11.1.1/binary
 
    # Copy CUDA samples to a local directory
-   # It will create a directory called NVIDIA_CUDA-11.0_Samples/
+   # It will create a directory called NVIDIA_CUDA-11.1_Samples/
    mkdir cuda_samples
    cd cuda_samples
    cp -r $CUDA_SDK .
 
    # Compile (this will take a while)
-   cd NVIDIA_CUDA-11.0_Samples/
+   cd NVIDIA_CUDA-11.1_Samples/
    make
 
 The ``make`` command then runs the ``nvcc`` CUDA compiler and
@@ -142,13 +143,11 @@ Documentation
 Profiling using nvprof
 ----------------------
 
-Note that ``nvprof``, NVIDIA's CUDA profiler, 
-cannot write output to the ``/fastdata`` filesystem.
+Prior to September 2020 ``nvprof``, NVIDIA's CUDA profiler, could write its `SQLite <https://www.sqlite.org/>`__ database outputs to the ``/fastdata`` filesystem.
+This was because SQLite requires a filesystem that supports file locking
+but file locking was not previously enabled on the (`Lustre <http://lustre.org/>`__) filesystem mounted on ``/fastdata``.
 
-This is because the profiler's output is a `SQLite <https://www.sqlite.org/>`__ database 
-and SQLite requires a filesystem that supports file locking
-but file locking is not enabled on the (`Lustre <http://lustre.org/>`__) filesystem mounted on ``/fastdata`` 
-(for performance reasons). 
+``nvprof`` can now write output data to any user-accessible filesystem including ``/fastdata``.
 
 CUDA Training
 -------------
@@ -165,8 +164,8 @@ Run the command: ::
 
 Example output is: ::
 
-   NVRM version: NVIDIA UNIX x86_64 Kernel Module  450.51.05  Sun Jun 28 10:33:40 UTC 2020
-   GCC version:  gcc version 4.8.5 20150623 (Red Hat 4.8.5-39) (GCC)
+   NVRM version: NVIDIA UNIX x86_64 Kernel Module  460.32.03  Sun Dec 27 19:00:34 UTC 2020
+   GCC version:  gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) 
 
 Installation notes
 ------------------
@@ -182,6 +181,12 @@ This service runs ``/usr/local/scripts/gpu-nvidia-driver.sh`` at boot time to:
 - Check the device driver version and uninstall it then reinstall the target version if required;
 - Load the ``nvidia`` kernel module;
 - Create several *device nodes* in ``/dev/``.
+
+CUDA 11.0.2
+^^^^^^^^^^^
+
+#. Installed with :download:`install.sh </sharc/software/install_scripts/libs/CUDA/install.sh>` with ``11.1.1_455.32.00`` as the sole argument. 
+#. :download:`Modulefile </sharc/software/modulefiles/libs/CUDA/11.1.1/binary>` was installed as ``/usr/local/modulefiles/libs/CUDA/11.1.1/binary``
 
 CUDA 11.0.2
 ^^^^^^^^^^^
