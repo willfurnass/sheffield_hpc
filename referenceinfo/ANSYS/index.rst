@@ -12,3 +12,4 @@ This sub-tree contains ANSYS packages reference information that is pulled into 
   :glob:
 
   fluent/index
+  ./*
