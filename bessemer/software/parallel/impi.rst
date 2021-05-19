@@ -19,6 +19,7 @@ You can load a specific version using one of the following: ::
 
    module use impi/2018.5.288-iccifort-2019.5.281  # subset of intel 2019b EasyBuild toolchain
    module use impi/2018.4.274-iccifort-2019.1.144-GCC-8.2.0-2.31.1  # subset of intel 2019a EasyBuild toolchain
+   module use impi/2018.3.222-iccifort-2018.3.222-GCC-7.3.0-2.30 # subset of intel 2018b EasyBuild toolchain
 
 which implicitly load versions of icc, ifort (and GCC).
 
@@ -85,7 +86,7 @@ You can request an interactive node with multiple cores (4 in this example) by u
 
     srun --ntasks=4 --pty bash -i
 
-Please note that requesting multiple cores in an interactive node depends on the availability. During peak times, it is unlikely that you can successfully request a large number of cpu cores interactively.  Therefore, it may be a better approach to submit your job non-interactively. 
+Please note that requesting multiple cores in an interactive node depends on the availability. During peak times, it is unlikely that you can successfully request a large number of cpu cores interactively.  Therefore, it may be a better approach to submit your job non-interactively.
 
 
 Non-interactive job submission
@@ -115,6 +116,3 @@ Your output would be something like: ::
     ...
     Hello world from processor bessemer-node003.shef.ac.uk, rank 31 out of 40 processors
     Hello world from processor bessemer-node003.shef.ac.uk, rank 32 out of 40 processors
-
-
-
