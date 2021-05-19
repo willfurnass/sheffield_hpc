@@ -110,7 +110,7 @@ SGE Command            Slurm Command            Description
                                                 core**.
 
 
-                                                For **SLURM** (**Bessemer**),
+                                                |br| For **SLURM** (**Bessemer**),
                                                 ``--mem=xxG``
                                                 is used to specify the maximum
                                                 amount (``xx``)
@@ -138,7 +138,7 @@ SGE Command            Slurm Command            Description
                                                 specifies the max number of
                                                 cores.
 
-                                                **For SLURM** ``-c`` is cores per
+                                                |br| **For SLURM** ``-c`` is cores per
                                                 task,
                                                 take care with your chosen
                                                 number of tasks.
@@ -297,7 +297,7 @@ SGE Command            Slurm Command            Description
                                                 upper limit is typically 96:00:00
                                                 (4 days) on ShARC
                                                 and 168:00:00 (7 days) on Bessemer.
-                                                Note that these
+                                                |br| |br| Note that these
                                                 limits may differ for specific
                                                 Projects/Queues.
                                                 Also note that requesting less
@@ -317,7 +317,7 @@ SGE Command            Slurm Command            Description
                                                 specifies the max number of
                                                 cores.
 
-                                                **For SLURM** ``-c`` is cores per
+                                                |br| **For SLURM** ``-c`` is cores per
                                                 task,
                                                 take care with your chosen
                                                 number of tasks.
@@ -331,7 +331,7 @@ SGE Command            Slurm Command            Description
                                                 **per CPU core**.
 
 
-                                                For **SLURM** (**Bessemer**),
+                                                |br| For **SLURM** (**Bessemer**),
                                                 ``--mem=xxG``  is used to specify
                                                 the
                                                 maximum amount (``xx``) of real
@@ -384,7 +384,7 @@ SGE Command            Slurm Command            Description
                                                 benchmarking purposes where you
                                                 want to ensure that you
                                                 have exclusive use of e.g.
-                                                memory/IO buses.  Note that
+                                                memory/IO buses. |br| |br| Note that
                                                 you still need to request CPU
                                                 cores and memory to avoid
                                                 being limited to just the
