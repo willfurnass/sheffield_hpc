@@ -9,6 +9,7 @@ To activate *both* the C/C++ and Fortran compilers use one of: ::
 
    module load iccifort/2019.5.281  # subset of intel-2019b EasyBuild toolchain
    module load iccifort/2019.1.144-GCC-8.2.0-2.31.1  # subset of intel-2019a toolchain
+   module load iccifort/2018.3.222-GCC-7.3.0-2.30 # subset of intel-2018b toolchain
 
 Which implicitly also load versions of the :ref:`GCC <gcc_bessemer>` compiler.
 
