@@ -401,6 +401,10 @@ SGE Command            Slurm Command            Description
 
 The `Slurm docs <https://slurm.schedmd.com/sbatch.html>`_ have a complete list of available ``sbatch`` options.
 
+
+.. include:: ../../referenceinfo/scheduler/SGE/sge_parallel_environments.rst
+
+
 Frequently Asked SGE Questions
 ------------------------------
 **How many jobs can I submit at any one time**

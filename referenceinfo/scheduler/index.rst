@@ -11,6 +11,7 @@ This sub-tree contains reference information that is pulled into other pages.
   :maxdepth: 1
   :glob:
 
+  SGE/index
   TimeAllocationLimits
   MemoryAllocationLimits
   CpuAllocationLimits
