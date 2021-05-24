@@ -41,7 +41,7 @@ Fluent Journal files
 ^^^^^^^^^^^^^^^^^^^^
 
 A Fluent journal file is effectively a sequence of TUI and/or Scheme commands that you’ll supply to Fluent instead of using the GUI / TUI.
-A more thorough explanation anmd tutorial on how to make a Fluent journal file can be found on the following page:  :ref:`Writing Fluent journal files. <writing-fluent-journal-files>`
+A more thorough explanation and tutorial on how to make a Fluent journal file can be found on the following page:  :ref:`Writing Fluent journal files. <writing-fluent-journal-files>`
 
 .. important::
 
@@ -64,8 +64,9 @@ Sample SMP Fluent Scheduler Job Script
 
 .. hint::
 
-    * **$SLURM_NTASKS** is a SLURM scheduler variable which will return the requested number of tasks.
-    * **-gu** and **-driver null** instructs Fluent that it will be running with no GUI to avoid errors caused by plot / figure export.
+    * The ``2ddp`` argument is used to specify a 2D double precision simulation. Valid values include: ``2d``, ``2ddp``, ``3d`` and ``3ddp``
+    * The argument ``$SLURM_NTASKS`` is a SLURM scheduler variable which will return the requested number of tasks.
+    * The arguments ``-gu`` and ``-driver null`` instruct Fluent that it will be running with no GUI to avoid errors caused by plot / figure export.
 
 
 .. code-block:: bash

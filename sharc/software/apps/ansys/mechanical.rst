@@ -49,11 +49,11 @@ The script requests 4 cores using the MPI parallel environment with a runtime of
 
     * Use of the ``#$ -V`` SGE option will instruct SGE to import your current terminal environment variables to be imported - **CAUTION** - this may not be desirable.
     * Use of the ``mpi-rsh`` parallel environment to run MPI parallel jobs for Ansys is required if using more than 16 cores on ShARC.
-    * **$NSLOTS** is a Sun of Grid Engine variable which will return the requested number of cores.
-    * **-mpi=INTELMPI** instructs MAPDL to use the in-built Intel MPI communications - important for using the high performance :ref:`Omnipath networking <sharc-network-specs>` between nodes.
-    * **-rsh** tells MAPDL to use RSH instead of SSH.
-    * **-sge** forces MAPDL to recognise job submission via SGE.
-    * **-sgepe** selects the *mpi-rsh* SGE parallel environment.
+    * The argument ``$NSLOTS`` is a Sun of Grid Engine variable which will return the requested number of cores.
+    * The argument ``-mpi=INTELMPI`` instructs MAPDL to use the in-built Intel MPI communications - important for using the high performance :ref:`Omnipath networking <sharc-network-specs>` between nodes.
+    * The argument ``-rsh`` tells MAPDL to use RSH instead of SSH.
+    * The argument ``-sge`` forces MAPDL to recognise job submission via SGE.
+    * The argument ``-sgepe`` selects the *mpi-rsh* SGE parallel environment.
 
 .. code-block:: bash
 
@@ -75,7 +75,7 @@ Sample SMP MAPDL Scheduler Job Script
 """"""""""""""""""""""""""""""""""""""""""""
 
 The following is an example batch submission script, ``mech_job.sh``, to run the mechanical executable ``mapdl`` with input file ``CrankSlot_Flexible.inp``, and carry out a mechanical simulation.
-The script requests 4 cores using the OpenMP (``single node shared memory``) parallel environment with a runtime of 10 mins and 2 GB of real memory per core:
+The script requests 4 cores using the SMP (``single node shared memory``) parallel environment with a runtime of 10 mins and 2 GB of real memory per core:
 
 .. code-block:: bash
 

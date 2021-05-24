@@ -48,7 +48,7 @@ Fluent Journal files
 ^^^^^^^^^^^^^^^^^^^^
 
 A Fluent journal file is effectively a sequence of TUI and/or Scheme commands that you’ll supply to Fluent instead of using the GUI / TUI.
-A more thorough explanation anmd tutorial on how to make a Fluent journal file can be found on the following page:  :ref:`Writing Fluent journal files. <writing-fluent-journal-files>`
+A more thorough explanation and tutorial on how to make a Fluent journal file can be found on the following page:  :ref:`Writing Fluent journal files. <writing-fluent-journal-files>`
 
 .. important::
 
@@ -72,13 +72,12 @@ The script requests 8 cores using the MPI parallel environment ``mpi-rsh`` with 
 
     * Use of the ``#$ -V`` SGE option will instruct SGE to import your current terminal environment variables to be imported - **CAUTION** - this may not be desirable.
     * Use of the ``mpi-rsh`` parallel environment to run MPI parallel jobs for Ansys is required if using more than 16 cores on ShARC.
-    * **$NSLOTS** is a Sun of Grid Engine variable which will return the requested number of cores.
-    * **-mpi=intel** instructs Fluent to use the in-built Intel MPI communications - important for using the high performance :ref:`Omnipath networking <sharc-network-specs>` between nodes.
-    * **-rsh** tells Fluent to use RSH instead of SSH.
-    * **-sge** forces Fluent to recognise job submission via SGE.
-    * **-sgepe** selects the *mpi-rsh* SGE parallel environment.
-    * **-pib.infinipath** instructs Fluent to use the high performance Omnipath networking. :ref:`Omnipath networking <sharc-network-specs>`
-    * **-gu** and **-driver null** instructs Fluent that it will be running with no GUI to avoid errors caused by plot / figure export.
+    * The ``2ddp`` argument is used to specify a 2D double precision simulation. Valid values include: ``2d``, ``2ddp``, ``3d`` and ``3ddp``
+    * The argument ``$NSLOTS`` is a Sun of Grid Engine variable which will return the requested number of cores.
+    * The argument ``-mpi=intel`` instructs Fluent to use the in-built Intel MPI communications - important for using the high performance :ref:`Omnipath networking <sharc-network-specs>` between nodes.
+    * The argument ``-pib.infinipath`` instructs Fluent to use the high performance Omnipath networking. :ref:`Omnipath networking <sharc-network-specs>` This will not work on version 18.2 and earlier.
+    * The arguments ``-gu`` and ``-driver null`` instruct Fluent that it will be running with no GUI to avoid errors caused by plot / figure export.
+    * The arguments ``-sgepe mpi-rsh -sge`` are not required and will cause issues if used with Fluent 21.1.
 
 .. code-block:: bash
 
@@ -94,7 +93,7 @@ The script requests 8 cores using the MPI parallel environment ``mpi-rsh`` with 
 
     module load apps/ansys/20.2/binary
 
-    fluent 2ddp -i test.jou -gu -t$NSLOTS -mpi=intel -rsh -sgepe mpi-rsh -sge -pib.infinipath -driver null
+    fluent 2ddp -i test.jou -gu -t$NSLOTS -rsh -mpi=intel -pib.infinipath -driver null
 
 -----------------------
 
@@ -117,7 +116,7 @@ The following is an example batch submission script, ``cfd_job.sh``, to run the 
 
     module load apps/ansys/20.2/binary
 
-    fluent 2ddp -i test.jou -g -t$NSLOTS -mpi=intel -rsh -sgepe smp -sge -driver null
+    fluent 2ddp -i test.jou -gu -t$NSLOTS -driver null
 
 
 Further details about how to construct batch jobs can be found on the :ref:`batch submission guide <submit-batch>` page
@@ -131,3 +130,13 @@ The job is submitted to the queue by typing:
 ----------------
 
 .. include:: ../../../../referenceinfo/ANSYS/fluent/export-fluent-plots-while-using-batch-jobs.rst
+
+
+Notes
+-------
+
+The previous options below have been removed due to a bug in Fluent 21.1 which results in incorrect job rewriting and resubmission to the scheduler. All versions have been tested and should automatically detect SGE correctly.
+
+* **-rsh** tells Fluent to use RSH instead of SSH.
+* **-sge** forces Fluent to recognise job submission via SGE.
+* **-sgepe** selects the *mpi-rsh* SGE parallel environment.

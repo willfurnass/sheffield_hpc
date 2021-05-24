@@ -43,11 +43,11 @@ Sample SMP MAPDL Scheduler Job Script
 """""""""""""""""""""""""""""""""""""""""""""
 
 ``Mapdl mechanical``: the following is an example batch submission script, ``mech_job.sh``, to run the mechanical executable ``mapdl`` with input file ``CrankSlot_Flexible.inp``, and carry out a mechanical simulation.
-The script requests 2 cores using the OpenMP parallel environment with a runtime of 60 mins and 2 GB of real memory per core.
+The script requests 2 cores using the SMP parallel environment with a runtime of 60 mins and 2 GB of real memory per core.
 
 .. hint::
 
-    * **$SLURM_NTASKS** is a SLURM scheduler variable which will return the requested number of tasks.
+    * The argument ``$SLURM_NTASKS`` is a SLURM scheduler variable which will return the requested number of tasks.
 
 
 .. code-block:: bash

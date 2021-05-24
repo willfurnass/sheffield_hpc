@@ -17,7 +17,7 @@ i.e. for a **ShARC** batch job:
 
 .. code-block:: bash
 
-  fluent 2ddp -i test.jou -gu -t$NSLOTS -mpi=intel -rsh -sgepe mpi-rsh -sge -driver null
+  fluent 2ddp -i test.jou -gu -t$NSLOTS -rsh -mpi=intel -pib.infinipath -driver null
 
 for a **Bessemer** batch job:
 
