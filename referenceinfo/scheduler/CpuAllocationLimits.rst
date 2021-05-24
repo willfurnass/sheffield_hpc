@@ -1,5 +1,10 @@
+.. toctree::
+    :hidden:
+    :maxdepth: 1
+    :glob:
+
 ==============================
-CPU Allocation Limits 
+CPU Allocation Limits
 ==============================
 
 
@@ -10,18 +15,14 @@ CPU Allocation Limits
    * - Scheduler Type
      - No. CPU Cores Available |br| |br| Interactive Job |br| (Default/ Min / Max )
      - No. CPU Cores Available |br| |br| Batch Job |br| (Default/ Min / Max )
-     - Submission Argument   
+     - Submission Argument
 
-   * - SGE (ShARC) 
-     - 1 / 1 / 16 
-     - 1 / 1 / ~1536  
+   * - SGE (ShARC)
+     - 1 / 1 / 16
+     - 1 / 1 / ~1536
      - ``-pe <env> <nn>``
-     
-   * - SLURM (Bessemer) 
-     - 1 / 1 / 40   
-     - 1 / 1 / 40     
+
+   * - SLURM (Bessemer)
+     - 1 / 1 / 40
+     - 1 / 1 / 40
      - ``-c <nn>``
-
-
-
-

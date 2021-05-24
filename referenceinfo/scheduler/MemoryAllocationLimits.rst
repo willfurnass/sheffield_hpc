@@ -1,3 +1,8 @@
+.. toctree::
+    :hidden:
+    :maxdepth: 1
+    :glob:
+
 ==============================
 Memory Allocation Limits
 ==============================
@@ -18,7 +23,7 @@ Memory Allocation Limits
      - 64 GB
      - 256 GB
      - 2 GB / 64 GB
-     - 2 GB / 64 GB (SMP) ~6144 GB (MPI)      
+     - 2 GB / 64 GB (SMP) ~6144 GB (MPI)
      - **Per core basis** ``-l rmem=<nn>``
 
    * - SLURM (Bessemer)

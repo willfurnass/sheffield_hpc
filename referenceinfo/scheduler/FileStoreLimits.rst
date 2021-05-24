@@ -1,3 +1,8 @@
+.. toctree::
+    :hidden:
+    :maxdepth: 1
+    :glob:
+
 =========================================================
 Filestore Limits / file store performance characteristics
 =========================================================

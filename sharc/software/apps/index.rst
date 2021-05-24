@@ -6,5 +6,6 @@ Applications on Sharc
 .. toctree::
     :maxdepth: 1
     :glob:
-    
+
+    ansys/index
     ./*
