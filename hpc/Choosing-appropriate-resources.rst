@@ -84,6 +84,10 @@ When the above script is submitted the first invocation of the timeused command 
 
 The CPU allocation limits will differ between job types and by cluster - a summary of these differences can be seen above. It is important to note that SLURM and SGE will request CPU on a different basis as detailed above.
 
+
+
+.. include:: ../referenceinfo/scheduler/SGE/sge_parallel_environments.rst
+
 Determining CPU requirements:
 ----------------------------------
 
