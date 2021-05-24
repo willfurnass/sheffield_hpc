@@ -77,6 +77,7 @@ The script requests 8 cores using the MPI parallel environment ``mpi-rsh`` with 
     * The argument ``-mpi=intel`` instructs Fluent to use the in-built Intel MPI communications - important for using the high performance :ref:`Omnipath networking <sharc-network-specs>` between nodes.
     * The argument ``-pib.infinipath`` instructs Fluent to use the high performance Omnipath networking. :ref:`Omnipath networking <sharc-network-specs>` This will not work on version 18.2 and earlier.
     * The arguments ``-gu`` and ``-driver null`` instruct Fluent that it will be running with no GUI to avoid errors caused by plot / figure export.
+    * The arguments ``-sgepe mpi-rsh -sge`` are not required and will cause issues if used with Fluent 21.1.
 
 .. code-block:: bash
 
