@@ -1,8 +1,8 @@
 .. _ansys-typical-file-paths:
 
-**********************************
+
 ANSYS Packages File Paths
-**********************************
+-------------------------
 
 This page contains a copy of the typical file paths for major ANSYS packages where ``$VERSION`` refers to an ANSYS version, e.g. 202, 190 etc... and ``$DOT_VER`` refers to the same version but with the dot structure e.g. 20.2 19.0 .
 
