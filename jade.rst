@@ -11,7 +11,7 @@ The `RSE`_ group director (Paul Richmond) is a co-investigator in the EPSRC Tier
 
 .. warning::
 
-   JADE will be decommissioned in September 2021.  Existing JADE users should migrate to using :ref:`JADE 2 <jade2>`or :ref:`Bede <bede>`.
+   JADE will be decommissioned in September 2021.  Existing JADE users should migrate to using :ref:`JADE 2 <jade2>` or :ref:`Bede <bede>`.
 
 
 Requesting access
