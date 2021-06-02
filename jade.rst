@@ -9,6 +9,11 @@ The computational hub harnesses the capabilities of the **NVIDIA DGX-1** Deep Le
 
 The `RSE`_ group director (Paul Richmond) is a co-investigator in the EPSRC Tier 2 JADE system. As such members of the University of Sheffield are able to access this resource for free (for use with deep learning research).
 
+.. warning::
+
+   JADE will be decommissioned in September 2021.  Existing JADE users should migrate to using :ref:`JADE 2 <jade2>` or :ref:`Bede <bede>`.
+
+
 Requesting access
 -----------------
 
