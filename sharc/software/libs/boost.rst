@@ -95,6 +95,13 @@ Boost in turn was installed as a dependency of Caffe.  It in turn depends on the
 Version 1.64.0
 ^^^^^^^^^^^^^^
 
+Both compiled versions have had a fix applied to correct errors with compiling non-C++ compliant code for arrays. See details at the following links:
+
+* https://chaste.cs.ox.ac.uk/trac/ticket/2893?cversion=0&cnum_hist=15
+* https://github.com/boostorg/serialization/commit/1d86261581230e2dc5d617a9b16287d326f3e229
+
+Previous errors observed were similar to error: ``‘make_array’ is not a member of ‘boost::serialization’``.
+
 GCC Version 4.9.4 built using:
 ______________________________
 
