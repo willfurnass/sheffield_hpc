@@ -4,21 +4,22 @@ GSL
 ===
 
 .. sidebar:: GSL
-   
+
    :Version: 2.4
    :URL: https://www.gnu.org/software/gsl/
    :Documentation: https://www.gnu.org/software/gsl/doc/html/index.html
 
-The GNU Scientific Library (GSL) is a collection of routines for numerical computing. 
-The routines have been written from scratch in C.  
+The GNU Scientific Library (GSL) is a collection of routines for numerical computing.
+The routines have been written from scratch in C.
 See `here <https://www.gnu.org/software/gsl/doc/html/intro.html>`__ for the types of routines that the GSL provides.
 
 Usage
 -----
 
-The GSL library can be loaded using: ::
+The GSL library can be loaded using either: ::
 
    module load libs/gsl/2.4/gcc-6.2
+   module load libs/gsl/2.4/gcc-8.2
 
 Example
 -------
@@ -61,8 +62,10 @@ NB generally, you may not need to compile using ``-lgslcblas`` depending on whic
 Installation notes
 ------------------
 
-* 2.4 built with GCC 6.2: 
+
+
+* 2.4 built with GCC 8.2/6.2 (same install script):
   :download:`install script </sharc/software/install_scripts/libs/gsl/2.4/gcc-6.2/install.sh>`;
   :download:`install log </sharc/software/install_scripts/libs/gsl/2.4/gcc-6.2/install.log>`;
-  :download:`modulefile </sharc/software/modulefiles/libs/gsl/2.4/gcc-6.2>`. 
+  :download:`modulefile </sharc/software/modulefiles/libs/gsl/2.4/gcc-6.2>`.
   The installation was tested during the build process using ``make check``.
