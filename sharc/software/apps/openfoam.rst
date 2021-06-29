@@ -3,7 +3,7 @@ OpenFOAM
 
 .. sidebar:: OpenFOAM
 
-   :Version: 4.1,8,v2012
+   :Version: 4.1, 8, v2012
    :Dependencies: GCC compiler, Open MPI, NCurses (essential), Scotch/PT-Scotch, GMP, MPFR.
    :URL: https://openfoam.org
    :Documentation: https://cfd.direct/openfoam/user-guide/
@@ -15,18 +15,24 @@ OpenFOAM is leading software for computational fluid dynamics (CFD). It is licen
 Usage
 -----
 
-OpenFOAM can be activated using one of the module files below: ::
+OpenFOAM can be activated using one of the module files below:
+
+.. code-block:: bash
 
     module load apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1
     module load apps/openfoam/8/gcc-8.2-openmpi-4.0.1
     module load apps/openfoam/v2012/gcc-8.2-openmpi-4.0.3
 
-OpenFOAM can be used in an interactive or batch job. OpenFOAM modules for version 8 and v2012 can be activated using the module file and sourcing the OpenFOAM environment script e.g.::
+OpenFOAM can be used in an interactive or batch job. OpenFOAM modules for version 8 and v2012 can be activated using the module file and sourcing the OpenFOAM environment script e.g.
+
+.. code-block:: bash
 
         module load apps/openfoam/8/gcc-8.2-openmpi-4.0.1
         source $FOAM_BASH
 
-OpenFOAM version 4.1 uses the module file to match the shell environment and can be loaded by simplying running: ::
+OpenFOAM version 4.1 uses the module file to match the shell environment and can be loaded by simplying running:
+
+.. code-block:: bash
 
     module load apps/openfoam/4.1/gcc-6.2-openmpi-2.0.1
 
@@ -37,7 +43,9 @@ Interactive Usage
 
 The following is an example single core interactive session running the pitzDaily example model.
 
-After connecting to ShARC (see :ref:`ssh`), you can start an `interactive graphical session <https://docs.hpc.shef.ac.uk/en/latest/hpc/scheduler/submit.html#interactive-sessions>`_. and assuming a single core request: ::
+After connecting to ShARC (see :ref:`ssh`), you can start an `interactive graphical session <https://docs.hpc.shef.ac.uk/en/latest/hpc/scheduler/submit.html#interactive-sessions>`_. and assuming a single core request:
+
+.. code-block:: bash
 
   rm -r /fastdata/$USER/tests/openfoam/run/
   mkdir -p /fastdata/$USER/tests/openfoam/run
@@ -61,7 +69,7 @@ The following is an example batch job running the pitzDaily example model:
 
     You will need to supply a `decomposeParDict <https://cfd.direct/openfoam/user-guide/v8-running-applications-parallel/>`_ in the system subdirectory of the case if using parallel processing - check the installation script for an example using the EOF method to add it :
 
-::
+.. code-block:: bash
 
   #!/bin/bash
   #$ -V
