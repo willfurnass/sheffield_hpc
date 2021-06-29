@@ -1,0 +1,103 @@
+#!/bin/bash
+#$ -V
+#$ -cwd
+#$ -M joe.bloggs@sheffield.ac.uk
+#$ -m abe
+#$ -l h_rt=01:00:00
+#$ -l rmem=2G
+#$ -pe mpi 4
+#$ -N test_OpenFOAM8_parallel-4
+#$ -q cstest.q
+#$ -P cstest
+
+rm -r /fastdata/$USER/tests/openfoam/run/
+
+mkdir -p /fastdata/$USER/tests/openfoam/run
+
+cd /fastdata/$USER/tests/openfoam/run
+
+module load apps/openfoam/8/gcc-8.2-openmpi-4.0.1
+
+source $FOAM_BASH
+
+#export OMPI_MCA_btl_openib_allow_ib=1
+
+
+cp -r $FOAM_TUTORIALS/incompressible/simpleFoam/pitzDaily .
+
+chmod 700 -R pitzDaily && cd pitzDaily
+
+
+cat <<EOF > system/decomposeParDict
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.3                                   |
+|   \\  /    A nd           | Web:      http://www.openfoam.org               |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+
+    root            "";
+    case            "";
+    instance        "";
+    local           "";
+
+    class           dictionary;
+    object          decomposeParDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+numberOfSubdomains 4;
+
+method          simple;
+
+simpleCoeffs
+{
+    n               (1 4 1);
+    delta           0.001;
+}
+
+hierarchicalCoeffs
+{
+    n               (1 1 1);
+    delta           0.001;
+    order           xyz;
+}
+
+metisCoeffs
+{
+    processorWeights
+    (
+        1
+        1
+        1
+    );
+}
+
+manualCoeffs
+{
+    dataFile        "";
+}
+
+distributed     no;
+
+roots
+(
+);
+
+
+// ************************************************************************* //
+EOF
+
+
+mpirun -n $NSLOTS blockMesh
+mpirun -n $NSLOTS decomposePar
+mpirun -n $NSLOTS simpleFoam -parallel
+

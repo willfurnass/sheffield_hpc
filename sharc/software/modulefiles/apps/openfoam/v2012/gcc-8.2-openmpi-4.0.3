@@ -1,0 +1,50 @@
+#%Module
+source /usr/local/etc/module_logging.tcl
+
+proc ModulesHelp { } {
+    puts stderr {
+
+Description
+===========
+OpenFOAM is a free, open source CFD software package.
+ OpenFOAM has an extensive range of features to solve anything from complex fluid flows
+ involving chemical reactions, turbulence and heat transfer,
+ to solid dynamics and electromagnetics.
+
+
+More information
+================
+ - Homepage: https://www.openfoam.com/
+    }
+}
+
+module-whatis {Description: OpenFOAM is a free, open source CFD software package.
+ OpenFOAM has an extensive range of features to solve anything from complex fluid flows
+ involving chemical reactions, turbulence and heat transfer,
+ to solid dynamics and electromagnetics.}
+module-whatis {Homepage: https://www.openfoam.com/}
+module-whatis {URL: https://www.openfoam.com/}
+
+set OpenFOAMroot /usr/local/packages/apps/openfoam/v2012
+
+conflict OpenFOAM
+
+module load dev/gcc/8.2
+module load dev/cmake/3.17.1/gcc-8.2
+module load apps/Qt5/5.12/gcc-8.2-cmake-3.17.1
+module load apps/gmp/6.2.0/gcc-8.2.0
+module load libs/mpfr/4.1.0/gcc-8.2-cmake-3.17.1
+module load libs/ncurses/6.2/gcc-8.2
+
+
+prepend-path    CMAKE_PREFIX_PATH               $OpenFOAMroot
+
+setenv  WM_COMPILE_OPTION               Opt
+setenv  WM_PROJECT_VERSION              v2012
+setenv  FOAM_INST_DIR           $OpenFOAMroot
+setenv  WM_COMPILER             Gcc
+setenv  WM_MPLIB                OPENMPI
+setenv  FOAM_BASH               $OpenFOAMroot/OpenFOAM-v2012/etc/bashrc
+setenv  FOAM_CSH                $OpenFOAMroot/OpenFOAM-v2012/etc/cshrc
+setenv  WM_LABEL_SIZE           64
+setenv OMPI_MCA_btl_openib_allow_ib 1
