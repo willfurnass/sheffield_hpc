@@ -56,7 +56,7 @@ Batch Usage
 
 The following is an example batch job running the pitzDaily example model:
 
-.. note::
+.. important::
 
     You will need to supply a `decomposeParDict <https://cfd.direct/openfoam/user-guide/v8-running-applications-parallel/>`_ in the system subdirectory of the case - check the installation script for an example using the EOF method to add it :
 

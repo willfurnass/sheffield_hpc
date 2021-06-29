@@ -65,7 +65,7 @@ Batch Usage
 
 The following is an example batch job running the pitzDaily example model:
 
-.. note::
+.. important::
 
     You will need to supply a `decomposeParDict <https://cfd.direct/openfoam/user-guide/v8-running-applications-parallel/>`_ in the system subdirectory of the case if using parallel processing - check the installation script for an example using the EOF method to add it :
 
@@ -115,7 +115,9 @@ Installation was tested as follows as above with the :download:`example batch sc
 
 https://openfoamwiki.net/index.php/DecomposePar
 
-Note that OpenFOAM v2012 has been compiled with its own included OpenMPI 4.0.3.
+.. note::
+
+  Note that OpenFOAM v2012 has been compiled with its own included OpenMPI 4.0.3.
 
 OpenFOAM 8
 ^^^^^^^^^^
