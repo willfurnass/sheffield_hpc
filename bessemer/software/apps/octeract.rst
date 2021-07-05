@@ -30,8 +30,8 @@ Octeract Engine 3.1.0 can be loaded by module loading with the following command
 Interactive jobs
 ----------------
 
-Octeract Engine can be used interactively by issuing starting an interactive session with ``qrshx`` 
-and then issuing the command:
+After connecting to Bessemer (see :ref:`ssh`), Octeract Engine can be used interactively by starting an :ref:`interactive session <submit-interactive>` with ``srun --pty bash -i`` 
+and then issuing the commands:
 
 .. code-block:: bash
 
