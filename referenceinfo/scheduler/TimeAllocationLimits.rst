@@ -1,5 +1,10 @@
+.. toctree::
+    :hidden:
+    :maxdepth: 1
+    :glob:
+
 ==============================
-Time Allocation Limits 
+Time Allocation Limits
 ==============================
 
 .. list-table:: Time Allocation Limits Table
@@ -9,14 +14,14 @@ Time Allocation Limits
    * - Scheduler Type
      - Interactive Job |br| (Default / Max)
      - Batch Job |br| (Default / Max)
-     - Submission Argument   
+     - Submission Argument
 
-   * - SGE (ShARC) 
-     - 8 / 8 hrs 
-     - 8 / 96 hrs   
-     - ``-l h_rt=<hh:mm:ss>`` 
-     
-   * - SLURM (Bessemer) 
-     - 8 / 8 hrs 
-     - 8 / 168 hrs   
+   * - SGE (ShARC)
+     - 8 / 8 hrs
+     - 8 / 96 hrs
+     - ``-l h_rt=<hh:mm:ss>``
+
+   * - SLURM (Bessemer)
+     - 8 / 8 hrs
+     - 8 / 168 hrs
      - ``--time=<days-hh:mm:ss>``

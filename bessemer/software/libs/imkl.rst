@@ -4,7 +4,7 @@ Intel MKL
 =========
 
 .. sidebar:: Intel MKL
-   
+
    :URL: https://software.intel.com/en-us/mkl
    :Documentation: https://software.intel.com/en-us/mkl/documentation/view-all
 
@@ -22,7 +22,8 @@ Usage
 The Intel MKL can be activated using one of the following: ::
 
    module load imkl/2019.5.281-iimpi-2019b  # subset of intel-2019b EasyBuild toolchain
-   module load imkl/2019.1.144-iimpi-2019a  # subset of intel-2019b EasyBuild toolchain
+   module load imkl/2019.1.144-iimpi-2019a  # subset of intel-2019a EasyBuild toolchain
+   module load imkl/2018.3.222-iimpi-2018b  # subset of intel-2018b EasyBuild toolchain
 
-which also implicitly loads a version of the :ref:`iimpi <bessemer_eb_toolchains>` toolchain, 
+which also implicitly loads a version of the :ref:`iimpi <bessemer_eb_toolchains>` toolchain,
 itself being a subset of the ``intel`` toolchain.

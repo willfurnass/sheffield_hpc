@@ -12,7 +12,7 @@ Because the BLAS are efficient, portable, and widely available,
 they are commonly used in the development of high quality linear algebra software,
 LAPACK for example.
 
-Two BLAS and LAPACK implementations are available on Bessemer: 
+Two BLAS and LAPACK implementations are available on Bessemer:
 
-* `OpenBLAS <openblas_bessemer>`__
-* `Intel MKL <imkl_bessemer>`__
+* :ref:`openblas_bessemer`
+* :ref:`imkl_bessemer`

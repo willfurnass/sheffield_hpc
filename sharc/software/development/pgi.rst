@@ -9,9 +9,12 @@ Making the PGI Compilers available
 
 After connecting to the ShARC cluster (see :ref:`ssh`),  start an interactive session with the :ref:`qrshx` or :ref:`qrsh` command then activate a specific version of the compiler suite using one of: ::
 
+    module load dev/PGI-compilers/20.4
     module load dev/PGI-compilers/19.5
+    module load dev/PGI-compilers/18.10
     module load dev/PGI-compilers/17.5
     module load dev/PGI-compilers/16.10
+    module load dev/PGI-compilers/12.10
 
 Once you've loaded the module, you can check the version with ::
 
@@ -75,13 +78,29 @@ The PGI CUDA C/C++ compiler for x86 platforms allows developers using CUDA to co
 
 Installation Notes
 ------------------
-*Version 19.5*
-The installer is interactive and the process was identical to that of version 17.5 below.
 
-*Version 17.5*
+Version 20.4
+^^^^^^^^^^^^^^
+
 The installer is interactive and the process was identical to that of version 16.10 below.
 
-*Version 16.10*
+Version 19.5
+^^^^^^^^^^^^^^
+
+The installer is interactive and the process was identical to that of version 16.10 below.
+
+Version 18.10
+^^^^^^^^^^^^^^^
+
+The installer is interactive and the process was identical to that of version 16.10 below.
+
+Version 17.5
+^^^^^^^^^^^^^^
+
+The installer is interactive and the process was identical to that of version 16.10 below.
+
+Version 16.10
+^^^^^^^^^^^^^^^
 
 The installer is interactive. Here is a log of the questions and answers. ::
 
@@ -127,17 +146,18 @@ The installer is interactive. Here is a log of the questions and answers. ::
 
   Do you want the files in the install directory to be read-only? (y/n) n
 
-Modulefile
-----------
-Version 19.5
-^^^^^^^^^^^^
-The PGI compiler installer creates a suitable modulefile that's configured to our system. It puts it at ``/usr/local/packages/dev/pgi/modulefiles/pgi64/19.5`` so all that is required is to copy this to where we keep the modulefiles at ``/usr/local/modulefiles/dev/PGI-compilers/19.5``
-
-Version 17.5
-^^^^^^^^^^^^
-The PGI compiler installer creates a suitable modulefile that's configured to our system. It puts it at ``/usr/local/packages/dev/pgi/modulefiles/pgi64/17.5`` so all that is required is to copy this to where we keep the modulefiles at ``/usr/local/modulefiles/dev/PGI-compilers/17.5``
-
-Version 16.10
+Version 12.10
 ^^^^^^^^^^^^^
-The PGI compiler installer creates a suitable modulefile that's configured to our system. It puts it at
-``/usr/local/packages/dev/pgi/modulefiles/pgi64/16.10`` so all that is required is to copy this to where we keep modules at ``/usr/local/modulefiles/dev/PGI-compilers/16.10``
+The installer is interactive and the process was identical to that of version 16.10 above however, it does not create its own module file and so the 16.10 modulefile was copied and amended.
+
+
+Module files
+------------
+
+Module files are automatically created by the installer at ``/usr/local/packages/dev/pgi/modulefiles/pgi/``, these are copied/moved to ``/usr/local/modulefiles/dev/PGI-compilers/`` and amended with the module logging script.
+
+Exceptions to this are noted below.
+
+Version 12.10
+^^^^^^^^^^^^^
+The installer is interactive and the process was identical to that of version 16.10 above however, it does not create its own module file and so the 16.10 modulefile was copied and amended to suit 12.10.

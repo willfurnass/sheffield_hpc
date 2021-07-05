@@ -1,0 +1,40 @@
+#!/bin/bash
+#$ -cwd
+#$ -M joe.bloggs@sheffield.ac.uk
+#$ -m abe
+#$ -l h_rt=08:00:00
+#$ -l rmem=4G
+#$ -pe smp 16
+#$ -N OF8compile_16-04-21_1
+#$ -q cstest.q
+#$ -P cstest
+#$ -j yes
+
+GCCVER=8.2
+CMAKEVER=3.17.1
+
+module load dev/gcc/$GCCVER
+module load dev/cmake/$CMAKEVER/gcc-$GCCVER
+module load apps/Qt5/5.12/gcc-$GCCVER-cmake-$CMAKEVER
+module load apps/gmp/6.2.0/gcc-8.2.0
+module load libs/mpfr/4.1.0/gcc-8.2-cmake-3.17.1
+module load libs/ncurses/6.2/gcc-8.2
+module load mpi/openmpi/4.0.1/gcc-8.2
+
+source /usr/local/packages/apps/openfoam/8/gcc-8.2-openmpi-4.0.1/OpenFOAM-8/etc/bashrc FOAMY_HEX_MESH=yes
+
+#FIX 64 BIT LIBS MISSING
+export LD_LIBRARY_PATH=/usr/local/packages/dev/gcc/8.2.0/lib64/:$LD_LIBRARY_PATH
+export CMAKE_PREFIX_PATH="/usr/local/packages/dev/gcc/8.2.0/lib64/"
+
+cd /usr/local/packages/apps/openfoam/8/gcc-8.2-openmpi-4.0.1/ThirdParty-8
+
+
+echo '############################### ENV LIST ###################################'
+env
+echo '############################### ENV  ###################################'
+
+./Allclean
+wmRefresh
+./Allwmake --with-ib --with-sge
+wmRefresh

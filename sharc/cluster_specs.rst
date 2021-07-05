@@ -10,7 +10,7 @@ Total capacity
 * CPU cores: 2024
 * Total memory: 12160 GiB
 * GPUs: 40
-* Fast network filesystem (`Lustre <http://lustre.org/>`_): 669 TiB 
+* Fast network filesystem (`Lustre <http://lustre.org/>`_): 669 TiB
 
 Note that some of these resources have been purchased by research groups who have exclusive access to them.
 
@@ -77,8 +77,12 @@ One node is publicly available:
 
   * Memory: 4 GiB GDDR5 SDRAM
 
+
+
 Networking
 ----------
+
+.. _sharc-network-specs:
 
 * Intel OmniPath Architecture (OPA) (100 Gb/s) to all public nodes
 * Gigabit Ethernet
