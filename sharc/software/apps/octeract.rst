@@ -36,7 +36,7 @@ and then issuing the commands:
 .. code-block:: bash
 
     module load apps/octeract-engine/3.1.0/binary
-    octeract-engine /usr/local/packages/apps/octeract-engine/3.1.0/binary/examples/nl/ex2_1_1.nl -n8 -d ${PWD}
+    octeract-engine /usr/local/packages/apps/octeract-engine/3.1.0/binary/examples/nl/ex2_1_1.nl -d ${PWD}
 
 
 Batch jobs
