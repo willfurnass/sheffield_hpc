@@ -31,7 +31,7 @@ Dakota 6.14.0 can be activated using the module file
 
 .. hint::
 
-    * It is recommended that users submit each Dakota subtask: ``simulator_script.sh`` should submit numerous SGE jobs.
+    * It is recommended that users submit each Dakota subtask to the scheduler: ``simulator_script.sh`` should submit numerous SGE jobs.
     * `Bash Heredoc scripting <https://linuxize.com/post/bash-heredoc/>`_ may be useful or required as part of submitting Dakota subtasks to the scheduler engine with ``simulator_script.sh`` to adjust resource requests or subscript variables.
 
 Interactive Usage
