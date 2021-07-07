@@ -45,6 +45,14 @@ Batch jobs
 Octeract Engine can be used in both :ref:`SMP<parallel_SMP>` (single node only) and 
 :ref:`MPI<parallel_MPI>` parallel environments - on Bessemer no parallel environment needs specifiying.
 
+.. important::
+
+    It is important that you use the ``-d $SLURM_SUBMIT_DIR`` argument to instruct Octeract Engine 
+    where to save the output file.
+
+    Octeract Engine will spawn a SLURM sub-task and SLURM will empty the ``$TMPDIR`` directory 
+    between tasks preventing any subsequent file move operation.
+
 Example job:
 ^^^^^^^^^^^^
 
