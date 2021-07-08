@@ -173,7 +173,7 @@ without that directory being explicitly created when the corresponding Singulari
   Unintended behaviour / corrupted Singularity environments may occur due to the presence of:
 
   * Shell initialisation files e.g. ``~/.bashrc`` or ``~/.profile``
-  * R profile files or libraries e.g. ``~/.Rprofile``
+  * R profile files (e.g. ``~/.Rprofile``) and/or libraries (e.g ``~/R/x86_64-pc-linux-gnu-library/4.1``)
   * Python or Conda initilisation files, (virtual/conda) envs or packages ``~/.conda/``, ``~/.condarc``, ``~/.local/python`` etc...
   * User supplied executables or libraries e.g. ``~/bin``, ``~/lib``, etc...
 
