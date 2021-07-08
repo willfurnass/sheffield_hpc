@@ -17,6 +17,8 @@ each with their own algorithms, to a grand total of 1031 high-performance algori
 Octeract Engine supports the :ref:`Python <python_conda_bessemer>`, C++ and Julia programming languages 
 alongside several modelling languages such as AMPL, PYOMO, JuMP, GAMS and Mosel.
 
+-----------
+
 Usage
 -----
 
