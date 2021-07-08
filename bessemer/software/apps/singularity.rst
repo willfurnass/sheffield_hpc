@@ -161,7 +161,7 @@ automatically mounted to your Bessemer directories.
   The automatic bind mounting of your HPC home directory into Singularity containers can result in the unexpected sharing of things like executables 
   and libraries between the host and Singularity container.
 
-  Unintended behaviour / corrupted Singularity environments may occur due to the presence of:
+  Unintended behaviour may occur with Singularity on the HPC system due to the presence of:
 
   * Shell initialisation files e.g. ``~/.bashrc`` or ``~/.profile``
   * R profile files or libraries e.g. ``~/.Rprofile``
