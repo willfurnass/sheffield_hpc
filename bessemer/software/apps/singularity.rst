@@ -156,6 +156,18 @@ When running Singularity images on Bessemer,
 the paths ``/fastdata``, ``/home``, ``/scratch``, ``/shared`` are
 automatically mounted to your Bessemer directories.
 
+.. warning::
+
+  The automatic bind mounting of the ``/home`` path can result in shell environment corruption and unintended sharing of executables 
+  and libraries between the host and Singularity container.
+
+  Unintended behaviour / corrupted Singularity environments may occur due to the presence of:
+
+  * Shell initialisation files e.g. ``~/.bashrc`` or ``~/.profile``
+  * R profile files or libraries e.g. ``~/.Rprofile``
+  * Python or Conda initilisation files, (virtual/conda) envs or packages ``~/.conda/``, ``~/.condarc``, ``~/.local/python`` etc...
+  * User supplied executables or libraries e.g. ``~/bin``, ``~/lib``, etc...
+
 
 Installing Singularity on Your Local Machine
 --------------------------------------------
@@ -206,7 +218,11 @@ The ``/home`` folder is automatically mounted by default.
 Creating Your Own Singularity Images
 ------------------------------------
 
-**Root access is required for modifying Singularity images so if you need to edit an image it must be done on your local machine.  However you can create disk images and import docker images using normal user privileges on recent versions of Singularity**
+.. important::
+
+  Root access is required for modifying Singularity images so if you need to edit an 
+  image it must be done on your local machine.  However you can create disk images and import docker 
+  images using normal user privileges on recent versions of Singularity.
 
 First create a Singularity definition file for bootstrapping an image your image. An example definition file we'll name ``Singularity`` is shown below ::
 
