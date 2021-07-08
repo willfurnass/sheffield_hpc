@@ -34,6 +34,7 @@ The ``root`` conda environment (the default) provides Python 3 and no extra
 modules, it is automatically updated, and not recommended for general use, just
 as a base for your own environments.
 
+.. _python_conda_bessemer_create_env:
 
 Creating an Environment
 #######################

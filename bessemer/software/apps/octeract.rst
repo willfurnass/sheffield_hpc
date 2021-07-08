@@ -14,8 +14,10 @@ Octeract Engine is a massively parallel MINLP solver. It is written in ORL (Octe
 The engine contains 14 Octeract solvers for different types of mathematical structure, 
 each with their own algorithms, to a grand total of 1031 high-performance algorithms.
 
-Octeract Engine supports the :ref:`Python <sharc-python-conda>`, C++ and Julia programming languages 
+Octeract Engine supports the :ref:`Python <python_conda_bessemer>`, C++ and Julia programming languages 
 alongside several modelling languages such as AMPL, PYOMO, JuMP, GAMS and Mosel.
+
+-----------
 
 Usage
 -----
@@ -26,6 +28,7 @@ Octeract Engine 3.1.0 can be loaded by module loading with the following command
 
     module load octeract-engine/3.1.0/binary
 
+-----------
 
 Interactive jobs
 ----------------
@@ -38,6 +41,7 @@ and then issuing the commands:
     module load octeract-engine/3.1.0/binary
     octeract-engine /usr/local/packages/live/noeb/octeract-engine/3.1.0/binary/examples/nl/ex2_1_1.nl -d ${PWD}
 
+-----------
 
 Batch jobs
 ----------
@@ -69,6 +73,37 @@ Example job:
     ​
     module load octeract-engine/3.1.0/binary
     octeract-engine /usr/local/packages/live/noeb/octeract-engine/3.1.0/binary/examples/nl/ex2_1_1.nl -n$SLURM_NTASKS -d $SLURM_SUBMIT_DIR
+
+-----------
+
+Using Octeract Engine with Pyomo:
+---------------------------------
+
+Integrating the Octeract Engine with Pyomo is straightforward using our :ref:`Python <python_conda_bessemer>` module.
+
+By :ref:`creating a specific Python environment <python_conda_bessemer_create_env>` for Octeract Engine and Pyomo you can help keep libraries and executables 
+managed and available without polluting your base environment. This process, followed by running an example, is shown below:
+
+.. hint::
+
+    You only need to create the conda environment and install Pyomo once. To use it for subsequent jobs you need only 
+    run the command: ``source activate octeract-engine-pyomo``
+
+.. code-block:: bash
+
+    module load octeract-engine/3.1.0/binary
+    module load Anaconda3/2019.07
+    conda create -n octeract-engine-pyomo python=3.7
+    source activate octeract-engine-pyomo #Make sure to use source activate, NOT conda activate.
+    pip install pyomo
+    pyomo --version #Check this version is supported.
+    python3 /usr/local/packages/live/noeb/octeract-engine/3.1.0/binary/examples/pyomo/pyomo_example.py
+
+
+The above instructions have been adjusted from the following documentation provided by Octeract 
+at: https://docs.octeract.com/htg1005-how_to_use_pyomo_with_octeract_engine
+
+-----------
 
 Installation notes
 ------------------
