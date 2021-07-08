@@ -170,7 +170,7 @@ without that directory being explicitly created when the corresponding Singulari
   The automatic bind mounting of your HPC home directory into Singularity containers can result in the unexpected sharing of things like executables 
   and libraries between the host and Singularity container.
 
-  Unintended behaviour / corrupted Singularity environments may occur due to the presence of:
+  Unintended behaviour may occur with Singularity on the HPC system due to the presence of:
 
   * Shell initialisation files e.g. ``~/.bashrc`` or ``~/.profile``
   * R profile files (e.g. ``~/.Rprofile``) and/or libraries (e.g ``~/R/x86_64-pc-linux-gnu-library/4.1``)
