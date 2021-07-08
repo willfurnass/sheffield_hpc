@@ -81,6 +81,7 @@ installed with the anaconda version number in the environment name, and never
 modified. They will therefore provide a static base for derivative environments
 or for using directly.
 
+.. _sharc_conda_create_env:
 
 Creating an Environment
 #######################

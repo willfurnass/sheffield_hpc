@@ -17,6 +17,8 @@ each with their own algorithms, to a grand total of 1031 high-performance algori
 Octeract Engine supports the :ref:`Python <sharc-python-conda>`, C++ and Julia programming languages 
 alongside several modelling languages such as AMPL, PYOMO, JuMP, GAMS and Mosel.
 
+-----------
+
 Usage
 -----
 
@@ -26,6 +28,7 @@ Octeract Engine 3.1.0 can be loaded by module loading with the following command
 
     module load apps/octeract-engine/3.1.0/binary
 
+-----------
 
 Interactive jobs
 ----------------
@@ -38,6 +41,7 @@ and then issuing the commands:
     module load apps/octeract-engine/3.1.0/binary
     octeract-engine /usr/local/packages/apps/octeract-engine/3.1.0/binary/examples/nl/ex2_1_1.nl -d ${PWD}
 
+----------
 
 Batch jobs
 ----------
@@ -81,7 +85,35 @@ Example MPI job:
     module load apps/octeract-engine/3.1.0/binary 
     octeract-engine /usr/local/packages/apps/octeract-engine/3.1.0/binary/examples/nl/ex2_1_1.nl -n8 -d $SGE_O_WORKDIR
 
+-----------
 
+Using Octeract Engine with Pyomo:
+---------------------------------
+
+Integrating the Octeract Engine with Pyomo is straightforward using our :ref:`Python <sharc-python-conda>` module.
+
+By :ref:`creating a specific Python environment <sharc_conda_create_env>` for Octeract Engine and Pyomo you can help keep libraries and executables 
+managed and available without polluting your base environment. This process, followed by running an example, is shown below:
+
+.. hint::
+
+    You only need to create the conda environment and install Pyomo once. To use it for subsequent jobs you need only 
+    run the command: ``source activate octeract-engine-pyomo``
+
+.. code-block:: bash
+
+    module load apps/octeract-engine/3.1.0/binary
+    module load apps/python/anaconda3-4.2.0
+    conda create -n octeract-engine-pyomo python=3.7
+    source activate octeract-engine-pyomo  #Make sure to use source activate, NOT conda activate.
+    pip install pyomo
+    pyomo --version #Check this version is supported.
+    python3 /usr/local/packages/apps/octeract-engine/3.1.0/binary/examples/pyomo/pyomo_example.py
+
+The above instructions have been adjusted from the following documentation provided by Octeract 
+at: https://docs.octeract.com/htg1005-how_to_use_pyomo_with_octeract_engine
+
+-----------
 
 Installation notes
 ------------------
