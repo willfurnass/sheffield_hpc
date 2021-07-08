@@ -167,7 +167,7 @@ without that directory being explicitly created when the corresponding Singulari
 
 .. warning::
 
-  The automatic bind mounting of the ``/home`` path can result in shell environment corruption and unintended sharing of executables 
+  The automatic bind mounting of your HPC home directory into Singularity containers can result in the unexpected sharing of things like executables 
   and libraries between the host and Singularity container.
 
   Unintended behaviour / corrupted Singularity environments may occur due to the presence of:
