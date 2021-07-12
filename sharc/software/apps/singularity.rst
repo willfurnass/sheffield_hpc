@@ -165,6 +165,18 @@ automatically *bind-mounted* (exposed) from the *host* operating system into you
 i.e. the cluster's ordinary filestores will be automatically visible within a container started on the cluster
 without that directory being explicitly created when the corresponding Singularity image was built.
 
+.. warning::
+
+  The automatic bind mounting of your HPC home directory into Singularity containers can result in the unexpected sharing of things like executables 
+  and libraries between the host and Singularity container.
+
+  Unintended behaviour may occur with Singularity on the HPC system due to the presence of:
+
+  * Shell initialisation files e.g. ``~/.bashrc`` or ``~/.profile``
+  * R profile files (e.g. ``~/.Rprofile``) and/or libraries (e.g ``~/R/x86_64-pc-linux-gnu-library/4.1``)
+  * Python or Conda initilisation files, (virtual/conda) envs or packages ``~/.conda/``, ``~/.condarc``, ``~/.local/python`` etc...
+  * User supplied executables or libraries e.g. ``~/bin``, ``~/lib``, etc...
+
 MPI and Singularity
 -------------------
 If you try running MPI within a Singularity container on a single node the MPI implementation may auto-detect that its processes are running under the SGE job scheduler and will try to read a SGE file containing information on the CPU cores SGE has allocated to that job.
@@ -229,7 +241,11 @@ The ``/home`` folder is automatically mounted by default.
 Creating Your Own Singularity Images
 ------------------------------------
 
-**Root access is required for modifying Singularity images so if you need to edit an image it must be done on your local machine.  However you can create disk images and import docker images using normal user privileges on recent versions of Singularity**
+.. important::
+    
+    Root access is required for modifying Singularity images so if you need to edit an 
+    image it must be done on your local machine.  However you can create disk images and 
+    import docker images using normal user privileges on recent versions of Singularity.
 
 First create a Singularity definition file for bootstrapping an image your image. An example definition file we'll name ``Singularity`` is shown below ::
 
