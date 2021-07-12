@@ -85,10 +85,14 @@ Gaussian 09 Revision E.01 and 16 Revision C.01  were installed manually
 :download:`install_gaussian_09.sh </sharc/software/install_scripts/apps/gaussian_09/d.01/pgi-17.5/install_gaussian_09.sh>` script.
 Vendor specified versions of PGI have been selected to maximise solver stability.
 
+Module logic and separated chemistry department specific directories have been created to facilitate 
+multiple group access to binaries correctly as filesystem ACLs are unavailable/undesirable 
+and nested groups unduly affect cluster performance. 
+
 Gaussian 09
 ^^^^^^^^^^^
 The Gaussian 09 code was compiled with :ref:`PGI 12.5<PGI Compilers_sharc>` 
-and has no architecutral optimisations that can be utilized and a 
+and has no architecutral optimisations that can be utilized. The 
 ``make.log`` file can be found in the ``$g09root/g09/``.
 
 The module file was manually created and can be downloaded:  
@@ -97,7 +101,7 @@ The module file was manually created and can be downloaded:
 Gaussian 16
 ^^^^^^^^^^^
 The Gaussian 16 code was compiled with :ref:`PGI 18.10<PGI Compilers_sharc>`. 
-and has architectural optimisations turned on for Haswell processors and a 
+and has architectural optimisations turned on for Haswell processors. The 
 ``make.log`` file can be found in the ``$g16root/g16/``.
 
 The module file was manually created and can be downloaded:  
