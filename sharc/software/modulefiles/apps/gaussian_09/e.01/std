@@ -1,0 +1,62 @@
+#%Module1.0#####################################################################
+##
+## Gaussian 09 module file
+##
+#  By J.Moore June 2021
+################################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global version
+
+        puts stderr "   Makes Gaussian 09 Revision e01 available for use"
+}
+
+module-whatis   "Makes Gaussian 09 Revision e01 available"
+
+module load dev/PGI-compilers/12.10
+
+# module variables
+#
+set     version e01
+set USER $::env(USER)
+set userid [ exec id -g -n $USER ]
+if { $userid == "ch" } {
+set     g09root /usr/local/packages/apps/gaussian_09/e.01/chem
+setenv  g09root $g09root
+} else {
+set     g09root /usr/local/packages/apps/gaussian_09/e.01
+setenv  g09root $g09root
+}
+ 
+# variables found from env diff after . $g09root/g09/bsd/g09.profile
+
+# Set env vars
+setenv _DSM_BARRIER          SHM
+setenv PGI_TERM              trace,abort
+setenv GAUSS_ARCHDIR         $g09root/g09/arch
+setenv G09BASIS              $g09root/g09/basis
+setenv GAUSS_BSDDIR          $g09root/g09/bsd
+setenv GAUSS_EXEDIR          $g09root/g09/bsd:$g09root/g09/local:$g09root/g09/extras:$g09root/g09
+setenv GV_DIR                $g09root/gv
+setenv GAUSS_LEXEDIR         $g09root/g09/linda-exe
+# setenv GAUSS_SCRDIR $TMPDIR
+
+ 
+# Prepend paths
+prepend-path PATH            $g09root/g09
+prepend-path PATH            $g09root/g09/bsd:$g09root/g09/local:$g09root/g09/extras:$g09root/g09
+prepend-path LD_LIBRARY_PATH $g09root/g09/bsd:$g09root/g09/local:$g09root/g09/extras:$g09root/g09:$g09root/gv/lib
+
+
+
+# Additional aliases from ./g09/bsd/g09.profile
+# set-alias gv {\$GV_DIR/gview.exe}
+# set-alias gv {\$GV_DIR/gview.csh}
+# set-alias sl {\$g09root/g09/tests/searchlog.csh}
+
+
+
