@@ -13,7 +13,7 @@ Interactive usage
 -----------------
 After connecting to Bessemer (see :ref:`ssh`),  start an interactive session with the :code:`srun --pty bash -i` command.
 
-The latest version of Maven (currently version 3.6.3) is made available with the command:
+The latest version of Maven (currently version 3.6.3) is made available with the commands:
 
 .. code-block:: none
 
@@ -21,7 +21,7 @@ The latest version of Maven (currently version 3.6.3) is made available with the
 	module load Java/11.0.2
 
 
-After this any of the Maven commands can be run from the prompt. The available commons can be obtained using:
+After this any of the Maven commands can be run from the prompt. The available commands can be obtained using:
 
 .. code-block:: none
 
