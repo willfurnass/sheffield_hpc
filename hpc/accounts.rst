@@ -6,6 +6,8 @@ Getting an Account
 Before you can start using the clusters you must first request HPC access. HPC access allows usage 
 of all of our clusters (:ref:`Bessemer <bessemer>` and :ref:`ShARC <sharc>`).
 
+--------
+
 For Staff
 ^^^^^^^^^
 
@@ -37,19 +39,24 @@ Sheffield login credentials to connect to the clusters.
 For further details on how to connect to the clusters please read the 
 section on :ref:`how to connect to the clusters<connecting>`. 
 
+--------
+
 Conditions for HPC access / usage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. important::
+
+   You must not share your account credentials or allow others to run jobs using your account. 
+   Any misuse of accounts will be investigated in accordance with 
+   the University of Sheffield's 
+   `IT Code of Practice <https://www.sheffield.ac.uk/it-services/codeofpractice/core>`__.
+
 
 As a multiple user shared system, our clusters have some additional considerations in comparison 
 to other IT Services provided at the University of Sheffield. Although we have strived to ensure 
 that a robust baseline of security is in place suitable for the HPC community, we are aware 
 that regulatory bodies and our research partners are asking for increasingly stringent security 
 controls that the HPC may not have in place.
-
-Extra care should always be taken when dealing with sensitive information; if you are in any doubt about 
-the sensitivity of information, or how it should be handled, then please contact the IT Services 
-`it-servicedesk@sheffield.ac.uk <it-servicedesk@sheffield.ac.uk>`_ for advice.
-
 
 .. warning::
 
@@ -58,9 +65,10 @@ the sensitivity of information, or how it should be handled, then please contact
    any other form of restricted data without first discussing your requirements with the Research IT Team - 
    research-it@sheffield.ac.uk 
 
-.. important::
+Extra care should always be taken when dealing with sensitive information; if you are in any doubt about 
+the sensitivity of information, or how it should be handled, then please contact IT Services 
+`it-servicedesk@sheffield.ac.uk <it-servicedesk@sheffield.ac.uk>`_ for advice.
 
-   You must not share your account credentials or allow others to run jobs using your account. 
-   Any misuse of accounts will be investigated in accordance with 
-   the University of Sheffield's 
-   `IT Code of Practice <https://www.sheffield.ac.uk/it-services/codeofpractice/core>`__.
+
+
+
