@@ -32,6 +32,8 @@ Software
 Requesting access
 -----------------
 
-If you would like to use JADE for the purpose of machine learning, `please fill in this form to request access. <https://docs.google.com/forms/d/e/1FAIpQLSf8iln8PuEGeZr2fSwJPH0mRMUq_eipxP4rtbJUSDq860g5cQ/viewform>`_ The application will be put through a short internal review process by the `RSE`_ team before approval.
+If you would like to use JADE for the purpose of machine learning, `please fill in this form <https://docs.google.com/forms/d/e/1FAIpQLSf8iln8PuEGeZr2fSwJPH0mRMUq_eipxP4rtbJUSDq860g5cQ/viewform>`__ to request access.
+The application will be put through a short internal review process by the `RSE`_ team before approval.
+Please contact ``tier-2-hpc-support-group@sheffield.ac.uk`` if you have any questions regarding JADE 2 in general and the application process.
 
 .. _RSE: https://rse.shef.ac.uk
