@@ -19,3 +19,4 @@ or :ref:`submit a batch job <submit-batch>` using ANSYS programs activating them
   module load apps/ansys/20.1/binary
   module load apps/ansys/20.2/binary
   module load apps/ansys/21.1/binary
+  module load apps/ansys/21.2/binary
