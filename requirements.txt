@@ -6,7 +6,7 @@ chardet==4.0.0
 docutils==0.16
 idna==2.9
 imagesize==1.2.0
-Jinja2==2.11.3
+Jinja2==3.0.1
 livereload==2.6.1
 MarkupSafe==2.0.1
 packaging==20.4
