@@ -3,6 +3,7 @@ argh==0.26.2
 Babel==2.9.1
 certifi==2021.5.30
 chardet==4.0.0
+Django<=3.0.0
 docutils==0.17.1
 idna==3.2
 imagesize==1.2.0
@@ -14,7 +15,7 @@ pathtools==0.1.2
 port-for==0.6.1
 Pygments==2.10.0
 pyparsing==2.4.7
-pytz==2021.1
+pytz==2020.1
 PyYAML==5.4.1
 requests==2.26.0
 six==1.16.0
@@ -30,5 +31,5 @@ sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.5
 tornado==6.1
-urllib3==1.26.6
+urllib3==1.24.2
 watchdog==2.1.5
