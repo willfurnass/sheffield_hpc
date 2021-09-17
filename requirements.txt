@@ -17,7 +17,7 @@ pyparsing==2.4.7
 pytz==2020.1
 PyYAML==5.4
 requests==2.26.0
-six==1.15.0
+six==1.16.0
 snowballstemmer==2.0.0
 Sphinx==3.4.3
 sphinx-autobuild==0.7.1
