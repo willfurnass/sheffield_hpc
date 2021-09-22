@@ -1,5 +1,39 @@
 .. _connecting:
 
+Connecting to a cluster using myApps (web browser)
+==================================================
+
+In order to access ShARC and Bessemer you must set up a VPN and MFA <https://www.sheffield.ac.uk/it-services/vpn>`_. See section **Whether/how you can connect** below. 
+
+The web browser method of access to ShARC and Bessemer is provided by the Secure Global Desktop Client <https://myapps.shef.ac.uk/installic_en.html>`_.
+
+This method works well for most browsers on all the common computing platforms (Linux, Windows, Mac), however we recommend Internet Explorer or Firefox.
+
+To login to ShARC or Bessemer click the following link:
+
+Connect via myAPPs Portal <https://myapps.shef.ac.uk/sgd/index.jsp?langSelected=en>`_.
+
+Logging in for the first time:
+
+When you login for the first time, select Client Options on the myApps Portal page (bottom right).
+
+Select Install the Client for the top option To use the installed Oracle Secure Global Desktop Client.
+
+This will take you to the client download/install page.
+
+Download and install the client for your system (Windows, Mac, or Linux).
+
+Enter your username and password on the myApps Portal login page
+
+Once you have managed to login, you will see a window with Applications on the Left Hand Panel.
+
+there are icons for ShARC Applications & Bessemer Applications respectively.
+
+For each of these you can select a HPC interactive job or a HPC terminal (where HPC is ShARC & Bessemer).
+The interactive job is equivalent to a qsh/qrshx session on a worker node
+The terminal is equivalent to a login node session from which you can use qsh/qrshx, qrsh, qsh-vis
+
+
 Connecting to a cluster using SSH
 =================================
 
