@@ -3,15 +3,15 @@
 Connecting to a cluster using myApps (web browser)
 ==================================================
 
-In order to access ShARC and Bessemer you must set up a 'VPN and MFA <https://www.sheffield.ac.uk/it-services/vpn>`_. Also see section **Whether/how you can connect** below. 
+In order to access ShARC and Bessemer you must set up a `VPN and MFA <https://www.sheffield.ac.uk/it-services/vpn>`_. Also see section **Whether/how you can connect** below. 
 
-The web browser method of access to ShARC and Bessemer is provided by the 'Secure Global Desktop Client <https://myapps.shef.ac.uk/installic_en.html>`_.
+The web browser method of access to ShARC and Bessemer is provided by the `Secure Global Desktop Client <https://myapps.shef.ac.uk/installic_en.html>`_.
 
 This method works well for most browsers on all the common computing platforms (Linux, Windows, Mac), however we recommend Internet Explorer or Firefox.
 
 To login to ShARC or Bessemer click the following link:
 
-'Connect via myAPPs Portal <https://myapps.shef.ac.uk/sgd/index.jsp?langSelected=en>`_
+`Connect via myAPPs Portal <https://myapps.shef.ac.uk/sgd/index.jsp?langSelected=en>`_
 
 Logging in for the first time:
 
