@@ -18,8 +18,7 @@ you will need to authenticate HPC login using MFA if using a password.`
 The reason for implementing MFA on the login nodes is security. The HE sector 
 `is experiencing an increasing number of attacks <https://www.ncsc.gov.uk/news/alert-targeted-ransomware-attacks-on-uk-education-sector>`_  , designed to penetrate our security measures and hijack data and 
 compute resource. MFA considerably decreases the risk of penetration using unsecured accounts.
-Whilst this adds a slightly irritating layer to the HPC login procedure when using a password, 
-its purpose is to protect your research (data & code).
+The purpose of this layer to the HPC login procedure is to protect your research (data & code).
 
 *Best wishes,*
 
