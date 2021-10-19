@@ -37,9 +37,6 @@ While using a X11 GUI forwarding supported SSH client, an interactive session ca
 the ``qrshx`` command which supports graphical applications. You can load an ANSYS module above and then 
 use the LS-DYNA executables as below.
 
-If desired, the ANSYS Workbench GUI executable can be launched with the  ``ansyswb`` command. To use more than a 
-single core, you should write a batch job script like one of the examples below.
-
 The following code can be used in an interactive session to launch a single core ANSYS LS-DYNA process:
 
 
@@ -76,8 +73,8 @@ ANSYS LS-DYNA is capable of running in both :ref:`MPI <parallel_MPI>` and :ref:`
 parallel environments.
 
 This necessitates the use of either the ``smp`` (up to 16 cores on a single node only) or ``mpi`` 
-(as many cores as desired across many nodes) parallel processing environments.
-
+(as many cores as desired across many nodes) parallel processing environments. To use more than a 
+single core, you should write a batch job script like one of the examples below.
 
 Batch Submission Scripts
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -204,6 +201,11 @@ Notes
 -------
 
 Due to the limited number of licenses available if issues are encountered with running 
-jobs please check the logs to see if this is the reason. If this is the case, please 
-resubmit your job and until it runs prior to contacting Research IT about issues 
-running these jobs.
+jobs please check the logs to see if the program is indicating an insufficient number 
+of available licenses. If this is the case, please resubmit your job until it runs.
+
+For other issues or if you wish to purchase some reserved licenses please contact
+Research IT.
+
+If desired to perform post modelling analysis etc... the ANSYS Workbench GUI 
+executable can be launched with the  ``runwb2`` command. 

@@ -37,10 +37,8 @@ Interactive jobs
 
 While using a X11 GUI forwarding supported SSH client, an interactive session can be started on ShARC with 
 the ``srun --pty bash -i`` command which supports graphical applications. You can load an ANSYS module above and then 
-use the LS-DYNA executables as below.
-
-If desired, the ANSYS Workbench GUI executable can be launched with the  ``ansyswb`` command. To use more than a 
-single core, you should write a batch job script like one of the examples below.
+use the LS-DYNA executables as below. To use more than a single core, you should write a batch job script like 
+one of the examples below.
 
 The following code can be used in an interactive session to launch a single core ANSYS LS-DYNA process:
 
@@ -55,12 +53,12 @@ The following code can be used in an interactive session to launch a single core
     export LSTC_LICENSE=ANSYS
 
     # Add the LS-DYNA executables to the PATH
-    export PATH=$ANSYSROOT/ansys/bin/linx64/:$PATH
+    export PATH=$EBROOTANSYS/ansys/bin/linx64/:$PATH
 
     # Add the MPI executables and libs to the PATH / LD_LIBRARY_PATH
     # Depending on ANSYS version the MPI paths may require changing.
-    export PATH=$ANSYSROOT/commonfiles/MPI/Intel/2018.3.222/linx64/bin/:$PATH
-    export LD_LIBRARY_PATH=$ANSYSROOT/commonfiles/MPI/Intel/2018.3.222/linx64/lib/:$LD_LIBRARY_PATH
+    export PATH=$EBROOTANSYS/commonfiles/MPI/Intel/2018.3.222/linx64/bin/:$PATH
+    export LD_LIBRARY_PATH=$EBROOTANSYS/commonfiles/MPI/Intel/2018.3.222/linx64/lib/:$LD_LIBRARY_PATH
 
     # Setup my variables
     #
@@ -111,12 +109,12 @@ Sample SMP LS-DYNA Batch Job Script
     export LSTC_LICENSE=ANSYS
 
     # Add the LS-DYNA executables to the PATH
-    export PATH=$ANSYSROOT/ansys/bin/linx64/:$PATH
+    export PATH=$EBROOTANSYS/ansys/bin/linx64/:$PATH
 
     # Add the MPI executables and libs to the PATH / LD_LIBRARY_PATH
     # Depending on ANSYS version the MPI paths may require changing.
-    export PATH=$ANSYSROOT/commonfiles/MPI/Intel/2018.3.222/linx64/bin/:$PATH
-    export LD_LIBRARY_PATH=$ANSYSROOT/commonfiles/MPI/Intel/2018.3.222/linx64/lib/:$LD_LIBRARY_PATH
+    export PATH=$EBROOTANSYS/commonfiles/MPI/Intel/2018.3.222/linx64/bin/:$PATH
+    export LD_LIBRARY_PATH=$EBROOTANSYS/commonfiles/MPI/Intel/2018.3.222/linx64/lib/:$LD_LIBRARY_PATH
 
     # Setup my variables
     #
@@ -145,6 +143,11 @@ Notes
 -------
 
 Due to the limited number of licenses available if issues are encountered with running 
-jobs please check the logs to see if this is the reason. If this is the case, please 
-resubmit your job and until it runs prior to contacting Research IT about issues 
-running these jobs.
+jobs please check the logs to see if the program is indicating an insufficient number 
+of available licenses. If this is the case, please resubmit your job until it runs.
+
+For other issues or if you wish to purchase some reserved licenses please contact
+Research IT.
+
+If desired to perform post modelling analysis etc... the ANSYS Workbench GUI 
+executable can be launched with the  ``runwb2`` command. 
