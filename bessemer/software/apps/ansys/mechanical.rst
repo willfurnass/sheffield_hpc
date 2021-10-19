@@ -26,7 +26,7 @@ Interactive jobs
 While using a X11 GUI forwarding supported SSH client, an interactive session can be started on Bessemer with the ``srun --pty bash -i`` command which supports graphical applications.
 You can load an ANSYS module above and then start the ANSYS mechanical launcher program by running the ``launcher`` command.
 
-If desired, the ANSYS Workbench GUI executable can be launched with the  ``ansyswb`` command.
+If desired, the ANSYS Workbench GUI executable can be launched with the  ``runwb2`` command.
 To use more than a single core, you should write a batch job script and ANSYS mechanical APDL script file for submission to the batch queues.
 
 --------------------

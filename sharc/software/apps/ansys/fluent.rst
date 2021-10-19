@@ -26,7 +26,7 @@ Interactive jobs
 While using a X11 GUI forwarding supported SSH client, an interactive session can be started on ShARC with the ``qrshx`` command which supports graphical applications.
 You can load an ANSYS module above and then start the fluent program by running the ``fluent`` command.
 
-If desired, the ANSYS Workbench GUI executable can be launched with the  ``ansyswb`` command.
+If desired, the ANSYS Workbench GUI executable can be launched with the  ``runwb2`` command.
 To use more than a single core, you should write a batch job script and fluent journal file for submission to the batch queues.
 
 
