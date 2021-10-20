@@ -51,7 +51,7 @@ typing ``sbatch my_job.sh``::
 
     ansysedt -ng -BatchSolve -Distributed -machinelist num=$SLURM_NTASKS -batchoptions 'HPCLicenseType'='pool' -useElectronicsPPE Tee.aedt
 
-The script requests 8 cores with a runtime of 30 mins and 2 GB of real memory per core. 
+The script requests 8 cores with a runtime of 30 mins and 2 GB of real memory.
 The Ansys EM input file is ``Tee.aedt`` and batch options ``'HPCLicenseType'='pool'`` 
 to change the HPC licencing from "pack" (the default) to "pool".
 
