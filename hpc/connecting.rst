@@ -52,12 +52,13 @@ including *MobaXTerm*.
   * off campus without a VPN connection.
 
 * Whether `Multifactor Authentication (MFA) <https://sites.google.com/sheffield.ac.uk/mfa/home>`__  has been enabled on your University account.
+
   MFA is :underline-bold:`now mandatory` for connecting to the clusters while using a password. 
   
   You will be prompted to enter a one-time code or send a push notification to your MFA device
   after entering your username and password.
 
-  In addition, if you do not have MFA enabled on your account then you will not be able to login from off campus without using VPN.
+  In addition, if you do not have MFA enabled on your account then you will not be able to login from off campus without using the VPN.
 
 * Whether you want to use password-based authentication or 'public-key'-based authentication.
 
@@ -75,6 +76,13 @@ including *MobaXTerm*.
 +----------+---------------------------------------+---------------------------------------------------------------------------------------------------+
 | ShARC    | Password + MFA **or** public key      | Not permitted (unless using the :ref:`HPC SSH gateway service <hpcgw_summary>`)                   |
 +----------+---------------------------------------+---------------------------------------------------------------------------------------------------+
+
+.. warning::
+
+    At present in order to access the clusters, MFA is needed only in order to connect to the VPN. 
+    Users can then login with either their password or using a public key. This is however subject 
+    to change with future password based logins from campus or via VPN to the clusters requiring 
+    their own MFA prompt as of the 21st of October 2021.
 
 SSH client software on Windows
 ------------------------------
