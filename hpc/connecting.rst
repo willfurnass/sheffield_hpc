@@ -53,22 +53,29 @@ including *MobaXTerm*.
 
 * Whether `Multifactor Authentication (MFA) <https://sites.google.com/sheffield.ac.uk/mfa/home>`__  has been enabled on your University account.
 
+  MFA is :underline-bold:`now mandatory` for connecting to the clusters while using a password. 
+  
+  You will be prompted to enter a one-time code or send a push notification to your MFA device
+  after entering your username and password.
+
+  In addition, if you do not have MFA enabled on your account then you will not be able to login from off campus without using the VPN.
+
 * Whether you want to use password-based authentication or 'public-key'-based authentication.
 
-.. note::
+.. warning::
 
     The `University Connect for China (UCC) <https://www.sheffield.ac.uk/it-services/university-connect-china>`_ is not the same service as the SSL VPN service and will not grant access to the HPC clusters.
     Users of the UCC must disconnect the UCC and connect to the SSL VPN in order to connect to the HPC clusters.
 
 **Authentication requirements per cluster**:
 
-+----------+------------------------+---------------------------------------------------------------------------------------------------+
-| Cluster  | From campus or via VPN | From off campus and without a VPN connection                                                      |
-+==========+========================+===================================================================================================+
-| Bessemer | Password or public key | Not permitted (unless using the :ref:`HPC SSH gateway service <hpcgw_summary>`)                   |
-+----------+------------------------+---------------------------------------------------------------------------------------------------+
-| ShARC    | Password or public key | Not permitted (unless using the :ref:`HPC SSH gateway service <hpcgw_summary>`)                   |
-+----------+------------------------+---------------------------------------------------------------------------------------------------+
++----------+---------------------------------------+---------------------------------------------------------------------------------------------------+
+| Cluster  | From campus or via VPN                | From off campus and without a VPN connection                                                      |
++==========+=======================================+===================================================================================================+
+| Bessemer | Password + MFA **or** public key      | Not permitted (unless using the :ref:`HPC SSH gateway service <hpcgw_summary>`)                   |
++----------+---------------------------------------+---------------------------------------------------------------------------------------------------+
+| ShARC    | Password + MFA **or** public key      | Not permitted (unless using the :ref:`HPC SSH gateway service <hpcgw_summary>`)                   |
++----------+---------------------------------------+---------------------------------------------------------------------------------------------------+
 
 .. warning::
 
