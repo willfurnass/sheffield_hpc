@@ -20,6 +20,9 @@ The reason for implementing MFA on the login nodes is security. The HE sector
 compute resource. MFA considerably decreases the risk of penetration using unsecured accounts.
 The purpose of this layer to the HPC login procedure is to protect your research (data & code).
 
+If you are having issues with Filezilla transfers please see our `new instructions <https://notesrcg.blogspot.com/2021/10/mfa-on-hpc-login-nodes-how-to-use.html>`_.
+
+
 *Best wishes,*
 
 *Research-IT*
