@@ -24,15 +24,15 @@ You can request an interactive node with multiple CPU cores by using the command
 
 .. code-block:: sh
 
-    srun -c="N" --pty bash -i
+    srun -cpus-per-task="N" --pty bash -i
 
 The parameter "N" represents the number of CPU cores upto 4 per interactive job. Please note that requesting multiple cores in an interactive node depends on the availability. During peak times, it is unlikely that you can successfully request a large number of cpu cores interactively.  Therefore, it may be a better approach to submit your job non-interactively. 
 
-You can request additional memory (parameter "nn" represents the amount of memory):
+You can request additional memory (parameter "NN" represents the amount of memory):
 
 .. code-block:: sh
 
-    srun --mem="NN"G --pty bash -i
+    srun --mem="NNG" --pty bash -i
 
 
 .. _slurm_job:
