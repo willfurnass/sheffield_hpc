@@ -49,3 +49,17 @@
     padding: 0 0.25em;
     background: white;
     }
+
+    .rst-content blockquote {
+      border-left: 10px solid rgb(155, 155, 155);
+      color: #333;
+      padding: 1em 1.2em 1em;
+      background-color: rgb(218, 218, 218);
+      margin: 5px 15px 20px;
+      display:flex;
+
+  }
+
+  .rst-content blockquote p {
+    margin-bottom:0px;
+  }
