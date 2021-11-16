@@ -22,18 +22,19 @@ A good definition is:
     computing power/resources in a way that delivers much higher performance / resource
     than one could get out of a typical desktop computer.
 
-In practice, the term "HPC" is difficult to define as it is like defining the 
-word "aircraft". It is difficult to capture the wide variety of aircraft and 
-their characteristics in one concise and simple definition. 
-
+In practice, the term "HPC" is difficult to define well in one concise and simple definition 
+due to the varied characteristics of the many software and hardware combinations 
+which constitutes HPC.
 
 It should also be noted that HPC is usually used to mean either 
 “high performance computing” or “high performance computer” which is usually 
 clear from the context of its use.
 
-High performance computing workloads are usually dispatched to HPC clusters but 
-this is not exclusive as it is possible to run these kinds of workloads on other 
-platforms, e.g. dedicated high performance workstations.
+Users of high performance computing will typically dispatch their workloads to 
+a HPC cluster which is a large computer aggregrated from many smaller computers. 
+It should be noted however that using a HPC cluster is not the only way run 
+these kinds of workloads as other platforms can be used, 
+e.g. dedicated high performance workstations.
 
 ------
 
@@ -74,8 +75,8 @@ quickly.
 
 Both general HPC clusters and those at Sheffield are composed of:
 
-* login nodes (also known as headnodes) where users login and interact with the 
-  cluster.
+* login nodes (also known as headnodes) where users login, edit, upload / download 
+  files but should not run any intensive programs and cannot load software modules.
 * compute nodes where user jobs are ran.
 * large memory nodes which are compute nodes with increased amounts of RAM available.
 * GPU nodes which are compute nodes with multiple GPUs available.
@@ -139,7 +140,7 @@ different job scheduler queue configurations.
 Jobs requiring or desiring the use of specialist nodes must specify this requirement 
 as part of their job resource request.
 
-At Sheffield University, the available reserved nodes and their details can be 
+At The University of Sheffield, the available reserved nodes and their details can be 
 found on their specific pages for the :ref:`ShARC <groupnodes_sharc>` and 
 :ref:`Bessemer <groupnodes_bessemer>` clusters.
 
@@ -166,8 +167,8 @@ access to a HPC cluster:
 
 ------
 
-When should I not use HPC?
---------------------------
+When should I :underline-bold:`not` use HPC?
+--------------------------------------------
 
 Low volume workloads
 ^^^^^^^^^^^^^^^^^^^^
@@ -199,7 +200,7 @@ HPC staff can help you optimise your workflows and software for use on the
 HPC clusters, but they cannot teach you how to use your program in great detail 
 nor train you on the basic usage of a program.
 
-At Sheffield University, research training needs should be addressed via 
+At The University of Sheffield, research training needs should be addressed via 
 `training courses provided by Research IT <https://crs.shef.ac.uk>`_ 
 (VPN must be turned on), 
 `Research Software Engineering <https://rse.shef.ac.uk/>`_  
@@ -216,6 +217,10 @@ Inappropriate usage of cluster resources, e.g. mining crypto-currency, hosting
 web services, abusing file storage for personal files or other non-legitimate 
 usage will likely result in your account being suspended, disciplinary 
 action being taken and in extreme cases possible prosecution.
+
+Account sharing is not permitted and any users/parties caught sharing accounts 
+will have access suspended and likely face disciplinary action, particularly if 
+the intent has been to avoid the fair scheduling mechanism.
 
 ------
 
