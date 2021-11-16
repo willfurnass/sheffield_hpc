@@ -214,13 +214,16 @@ For non-legitimate or non-research purposes
 
 University HPC clusters are provided to facilitate legitimate research workloads. 
 Inappropriate usage of cluster resources, e.g. mining crypto-currency, hosting 
-web services, abusing file storage for personal files or other non-legitimate 
-usage will likely result in your account being suspended, disciplinary 
-action being taken and in extreme cases possible prosecution.
+web services, abusing file storage for personal files, accessing files or software 
+to which a user is not entitled or other non-legitimate usage will likely result in 
+an investigation under the host organisation's IT Code of Practice.
 
-Account sharing is not permitted and any users/parties caught sharing accounts 
-will have access suspended and likely face disciplinary action, particularly if 
-the intent has been to avoid the fair scheduling mechanism.
+Account sharing is also not permitted and any users/parties caught sharing accounts 
+will also likely result in an investigation under the host organisation's IT Code 
+of Practice.
+
+The University of Sheffield IT Code of Practise can be found at the following link: 
+https://www.sheffield.ac.uk/it-services/codeofpractice/core
 
 ------
 
