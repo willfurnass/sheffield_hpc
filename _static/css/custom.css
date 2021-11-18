@@ -57,7 +57,7 @@
       background-color: rgb(218, 218, 218);
       margin: 5px 15px 20px;
       display:flex;
-
+      min-width: 180px;
   }
 
   .rst-content blockquote p {
