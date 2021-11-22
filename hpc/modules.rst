@@ -90,6 +90,8 @@ Some other things to be aware of:
 * The order in which you load modules may be significant (e.g. if module A sets ``SOME_ENV_VAR=apple`` and module B sets ``SOME_ENV_VAR=pear``);
 * Some related module files have been set up so that they are mutually exclusive e.g. on ShARC the modules ``dev/NAG/6.0`` and ``dev/NAG/6.1`` cannot be loaded simultaneously (as users should never want to have both loaded).
 
+.. _search_env_modules:
+
 Searching for Modules
 ----------------------
 
