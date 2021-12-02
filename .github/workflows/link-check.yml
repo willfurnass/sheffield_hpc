@@ -23,4 +23,4 @@ jobs:
           python -m pip install tox
 
       - name: Check links
-        run: tox -e py39-linkcheck
+        run: tox -e py37-linkcheck
