@@ -45,7 +45,7 @@ Batch usage
 
 The following is an example batch submission script, ``my_job.sh``, to run the executable ``STAR`` with input 
 files from https://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STARgenomes/Human/GRCh38_Ensembl99_sparseD3_sjdbOverhang99/. 
-The script requests 4 cores using the OpenMP parallel environment ``smp`` with a runtime of 2 hours and 2 GB of real memory per core to 
+The script requests 4 cores using the OpenMP parallel environment ``smp`` with a runtime of 30 minutes and 6 GB of real memory per core to 
 generate a genome index. 
 
 .. code-block:: bash
