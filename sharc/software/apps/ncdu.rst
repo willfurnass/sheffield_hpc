@@ -21,7 +21,8 @@ Ncdu aims to be fast, simple and easy to use, and should be able to run in any m
 Interactive usage
 -----------------
 
-.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import.rst
+After connecting to ShARC (see :ref:`ssh`), start an :ref:`interactive graphical session <submit_interactive_sharc>` 
+with the ``qrshx`` command.
 
 The latest version of |softwarename| (currently version |currentver|) is made available with the command:
 
