@@ -1,6 +1,7 @@
 .. |softwarename| replace:: ncdu
 .. |currentver| replace:: 1.15.1
 
+.. _ncdu_sharc:
 
 |softwarename|
 ==========================================================================================================
@@ -36,8 +37,6 @@ commands can be obtained using:
 
 	$ ncdu --help
 
---------
-
 |softwarename| is an excellent tool for determining what files and folders are consuming your storage 
 quota in the file storage areas. The example command below instructs ncdu to scan your home 
 directory and will then show an interactive summary of storage usage by file and folder.
@@ -45,6 +44,8 @@ directory and will then show an interactive summary of storage usage by file and
 .. code-block:: console
 
    $ ncdu $HOME
+
+Screenshots of the program in use can be found on the following page: https://dev.yorhel.nl/ncdu/scr
 
 --------
 
