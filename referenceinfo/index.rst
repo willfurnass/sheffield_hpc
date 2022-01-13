@@ -12,5 +12,8 @@ This section should be used to look for a quick references to very specific info
   :maxdepth: 1
   :glob:
 
-  scheduler/index
+
   ANSYS/index
+  environment-modules/index
+  linux-shell/index
+  scheduler/index
