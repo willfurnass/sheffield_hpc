@@ -93,21 +93,19 @@ OpenFOAM v2012
 
 OpenFOAM v2012 has been installed using Easybuild with all third party modules  (NCurses 6.2, METIS 5.1.0, SCOTCH 6.0.9, CGAL 4.14.3 and Paraview 5.8.0)
 
-Installation was tested as follows as above with the :download:`example batch script  </bessemer/software/modulefiles/OpenFOAM/test_OpenFOAMv2012_parallel.sbatch>` modified to load **OpenFOAM/v2012-foss-2020a** (Getting Started example from https://openfoam.org/download/8-source/) with the below decomposeParDict:
+Installation was tested as follows as above with the :download:`example batch script  </bessemer/software/modulefiles/OpenFOAM/test_OpenFOAMv2012_parallel.sbatch>` modified to load **OpenFOAM/v2012-foss-2020a** (Getting Started example from https://openfoam.org/download/8-source/) with the following decomposeParDict:
+https://openfoamwiki.net/index.php/DecomposePar
 
- https://openfoamwiki.net/index.php/DecomposePar
+The module file is available below:
 
- The module file is available below:
-
- - :download:`/usr/local/modulefiles/live/eb/all/OpenFOAM/v2012-foss-2020a </bessemer/software/modulefiles/OpenFOAM/v2012-foss-2020a>`
+- :download:`/usr/local/modulefiles/live/eb/all/OpenFOAM/v2012-foss-2020a </bessemer/software/modulefiles/OpenFOAM/v2012-foss-2020a>`
 
 OpenFOAM 8
 ^^^^^^^^^^
 
 OpenFOAM 8 has been installed using Easybuild with all third party modules (NCurses 6.2, METIS 5.1.0, SCOTCH 6.0.9, CGAL 4.14.3 and Paraview 5.8.0)
 
-Installation was tested as follows as above with the :download:`example batch script modified </bessemer/software/modulefiles/OpenFOAM/test_OpenFOAM_parallel.sbatch>` (Getting Started example from https://openfoam.org/download/8-source/) with the below decomposeParDict:
-
+Installation was tested as follows as above with the :download:`example batch script modified </bessemer/software/modulefiles/OpenFOAM/test_OpenFOAM_parallel.sbatch>` (Getting Started example from https://openfoam.org/download/8-source/) with the following decomposeParDict:
 https://openfoamwiki.net/index.php/DecomposePar
 
 
