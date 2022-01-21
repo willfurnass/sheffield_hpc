@@ -5,11 +5,16 @@
 
 Making software available via the .bashrc file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Software can be made available using your ``.bashrc`` file and adding/editing any 
 relevant environment variables. 
 
 .. warning::
+
+    Using your ``.bashrc`` file to make software available on ShARC will not work correctly in 
+    ``qsub`` batch jobs unless you supply the ``#$ -V`` SGE  argument in your submission script as 
+    non-interactive sessions **do not** source the ``.bashrc`` file.
+
+.. caution::
 
     We do not recommend editing your ``.bashrc`` file as this could result in corrupting your 
     shell environment. If possible make use of the :ref:`modules system <software_installs_modules>`.
