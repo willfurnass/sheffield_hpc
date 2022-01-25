@@ -88,9 +88,9 @@ e.g. Department specific nodes.
 All jobs are dispatchable
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When a user requests that a job, (either a batch or an interactive session), to 
-be run on the cluster and then the scheduler will run jobs from the queue based 
-on a set of rules and priorities.
+When a user requests that a job, (either a batch or an interactive session), is 
+ran on the cluster, the scheduler will run jobs from the queue based 
+on a set of rules, priorities and availabilities.
 
 How and where a job can run are set when the job is requested based on the resource 
 amounts requested as well as the chosen queue (assuming a user has permissions to use a queue.)

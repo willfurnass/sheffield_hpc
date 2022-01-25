@@ -40,8 +40,8 @@ You can stop this command by pressing ``Ctrl + C``.
 
 .. include:: /referenceinfo/imports/scheduler/SLURM/squeue_example_output_import.rst
 
-States shown above indicate job states including running **"R"** and Pending **"PD"** and various 
-reasons for pending states including a full node (**ReqNodeNotAvail**) and a user hitting 
+States shown above indicate job states including running **"R"** and Pending **"PD"** with various 
+reasons for pending states including a node (**ReqNodeNotAvail**) full of jobs and a user hitting 
 the max limit for numbers of jobs they can run simultaneously in a QOS (**QOSMaxJobsPerUserLimit**).
 
 A list of the most relevant job states and reasons can be seen below:
