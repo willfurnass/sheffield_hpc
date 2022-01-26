@@ -139,7 +139,7 @@ The job is submitted to the queue by typing:
     $ sbatch batch_smp_4_core.sh
 
 And will generate the normal log output file in addition to ``table_output.csv`` and 
-``spreadsheet_output.csv`` in the current workking directory.
+``spreadsheet_output.csv`` in the current working directory.
 
 Installation notes
 ------------------
