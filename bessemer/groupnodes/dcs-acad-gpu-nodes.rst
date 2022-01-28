@@ -17,7 +17,7 @@ share two GPU nodes in :ref:`Bessemer <bessemer>`.
      - ``dcs-acad1``
    * - `Chenghua Lin`_
      - ``dcs-acad2``
-   * - `Aditya Gilra`_
+   * - Matt Ellis
      -  ``dcs-acad3``
    * - `Po Yang`_
      - ``dcs-acad3``
@@ -128,5 +128,4 @@ Resource limits per job:
 
 .. _Carolina Scarton: https://www.sheffield.ac.uk/dcs/people/academic/carolina-scarton
 .. _Chenghua Lin: https://www.sheffield.ac.uk/dcs/people/academic/chenghua-lin
-.. _Aditya Gilra: https://www.sheffield.ac.uk/dcs/people/academic/aditya-gilra
 .. _Po Yang: https://www.sheffield.ac.uk/dcs/people/academic/po-yang
