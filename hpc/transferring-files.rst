@@ -250,7 +250,12 @@ as follows:
   lftp ftp.remotehost.com:~> login username
   Password:
 
-Once logged in, the ``get`` (download) and ``put`` (upload) commands can be used.
+At this stage directory listing and changing directory can be achieved using the 
+``ls`` and ``cd`` commands. By default these commands run on the remote server. To run 
+these commands on the local machine simply prefix each command with an ``!`` i.e.
+``!ls`` and ``!cd``.
+
+The ``get`` (download) and ``put`` (upload) commands can also be used.
 
 Downloading with lftp
 """"""""""""""""""""""
