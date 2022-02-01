@@ -97,7 +97,7 @@ To connect to the cluster, we’ll just need make a **new site** and enter our c
 
 .. caution::
 
-  By default Filezilla will save profile in plaintext on your machine. You ensure you use a master password to 
+  By default Filezilla will save profiles in plaintext on your machine. You must ensure you use a master password to 
   encrypt these credentials by changing the settings 
   `as shown in these instructions <https://filezillapro.com/docs/v3/advanced/master-password/>`_.
 
