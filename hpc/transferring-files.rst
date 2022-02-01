@@ -124,16 +124,24 @@ Using rsync
 ^^^^^^^^^^^^^^^^^^^^
 
 As you become more familiar with transferring files, you may find that the ``scp`` is limited. The ``rsync`` utility provides 
-advanced features for file transfer and is typically faster compared to both ``scp`` and ``sftp``. rsync is a utility for 
+advanced features for file transfer and is typically faster compared to both ``scp`` and ``sftp``. It is a utility for 
 efficiently transferring and synchronizing files between storage locations including networked computers by comparing the 
-modification times and sizes of files.
+modification times and sizes of files. The utility is particularly useful as it can also resume failed or partial file 
+transfers by using the ``--append-verify`` flag.
 
-Many users find ``rsync`` is especially useful for transferring large and/or many files and creating synced backup folders.
+Many users find ``rsync`` is especially useful for transferring large and/or many files as well as creating synced 
+backup folders.
+
+.. caution::
+
+  It is easy to make mistakes with ``rsync`` and accidentally transfer files to the wrong location, sync in the wrong 
+  direction or otherwise accidentally overwrite files. To help you avoid this, you can first use the ``--dry-run`` flag for 
+  ``rsync`` to show you the changes it will make for a given command.
 
 The ``rsync`` syntax is very similar to ``scp``. To transfer to another computer with commonly used options, 
 where below substitute **$CLUSTER_NAME** with bessemer or sharc and **$USER** with your cluster username.
 You should be prompted for your Duo MFA credentials after entering your password. Request a push notification or 
-enter your passcode.:
+enter your passcode:
 
 .. code-block:: shell
 
