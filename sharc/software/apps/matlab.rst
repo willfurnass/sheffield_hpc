@@ -195,6 +195,7 @@ An example batch script ``submit_Matlab_mpi.sh`` is:
 .. code-block:: bash
 
    #!/bin/bash
+   #$ -V
    #$ -M someuser@sheffield.ac.uk
    #$ -m bea
    #$ -j y

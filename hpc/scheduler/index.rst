@@ -88,9 +88,9 @@ e.g. Department specific nodes.
 All jobs are dispatchable
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When a user requests that a job, (either a batch or an interactive session), to 
-be run on the cluster and then the scheduler will run jobs from the queue based 
-on a set of rules and priorities.
+When a user requests that a job, (either a batch or an interactive session), is 
+ran on the cluster, the scheduler will run jobs from the queue based 
+on a set of rules, priorities and availabilities.
 
 How and where a job can run are set when the job is requested based on the resource 
 amounts requested as well as the chosen queue (assuming a user has permissions to use a queue.)
@@ -301,6 +301,8 @@ By default the ``qacct`` command will only bring up summary info about the user'
 current accounting file (which rotates monthly). Further detail about the output metrics and how 
 to query jobs older than a month can be found on the dedicated :ref:`qacct` page.
 
+.. _job_debugging_sharc:
+
 Debugging failed Jobs
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -485,14 +487,13 @@ Here is a more complex example that requests more resources:
 Monitoring running Jobs
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-There is are two commands to monitor running and queued jobs:
+There are two commands to monitor running and queued jobs:
 
 * :ref:`sstat`
 * :ref:`squeue`
 
 .. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/squeue_usage_import.rst
 
-|br|
 
 .. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/sstat_usage_import.rst
 
@@ -513,6 +514,8 @@ Jobs which have already finished can be investigated using the ``sacct`` command
 * :ref:`sacct` 
 
 .. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/sacct_usage_import.rst
+
+.. _job_debugging_bessemer:
 
 Debugging failed Jobs
 ^^^^^^^^^^^^^^^^^^^^^
