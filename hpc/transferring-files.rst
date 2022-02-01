@@ -214,11 +214,48 @@ Downloading with curl
     <hr class="hr-mid-section-separator">
 
 
+Using Git
+^^^^^^^^^
+
+The Git software and same named command can be used to download or synchronise a remote Git 
+repository onto the clusters. This can be achieved by 
+`setting up Git <https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup>`_ 
+and/or simply cloning the repository you desire.
+
+For example, cloning the source of the ``make`` software:
+
+.. code-block:: console
+    :emphasize-lines: 1
+
+    [user@sharc-login4 make-git]$ git clone https://git.savannah.gnu.org/git/make.git
+    Cloning into 'make'...
+    remote: Counting objects: 16331, done.
+    remote: Compressing objects: 100% (3434/3434), done.
+    remote: Total 16331 (delta 12822), reused 16331 (delta 12822)
+    Receiving objects: 100% (16331/16331), 5.07 MiB | 2.79 MiB/s, done.
+    Resolving deltas: 100% (12822/12822), done.
+
+Git is installed on the clusters and can be used on any node and all 
+`commands <https://blog.testproject.io/2021/03/22/git-commands-every-sdet-should-know/>`_ 
+such as **push**, **pull** etc... are supported.
+
+.. raw:: html
+
+    <hr class="hr-mid-section-separator">
+
 Using lftp
 ^^^^^^^^^^^^^^^^^^^^
 
+.. hint::
+
+  It is recommended that you use an alternative method than ``lftp`` if possible. Using 
+  ``lftp`` in the command line interface should be a last resort as it is a little 
+  difficult / confusing to use.
+
 ``lftp`` is a command-line program client for FTP, FTPS, FXP, HTTP, HTTPS, FISH, SFTP, 
-BitTorrent, and FTP over HTTP proxy. If you need to **login** to an FTP server to 
+BitTorrent, and FTP over HTTP proxy. 
+
+If you need to **login** to an FTP server to 
 make a direct download to a cluster, you can use the ``lftp`` client. 
 
 
