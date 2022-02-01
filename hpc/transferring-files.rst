@@ -95,6 +95,12 @@ and when you connected to a cluster, your cluster files will appear on the right
 
 To connect to the cluster, we’ll just need make a **new site** and enter our credentials in the **General** tab:
 
+.. caution::
+
+  By default Filezilla will save profile in plaintext on your machine. You ensure you use a master password to 
+  encrypt these credentials by changing the settings 
+  `as shown in these instructions <https://filezillapro.com/docs/v3/advanced/master-password/>`_.
+
 * **Host**: sftp://$CLUSTER_NAME.shef.ac.uk (replace $CLUSTER_NAME with bessemer or sharc.)
 * **User**: Your cluster username
 * **Password**: Your cluster password (leave blank and fill this interactively if on a shared machine.)
