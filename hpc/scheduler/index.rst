@@ -482,7 +482,35 @@ Here is a more complex example that requests more resources:
     # and output foo.res
     foo foo.dat foo.res
 
+.. _preemptable_jobs_bessemer:
 
+Pre-emptable Jobs
+^^^^^^^^^^^^^^^^^
+
+Under certain conditions, 
+Slurm on Bessemer allows jobs running in higher-priority Partitions (sets of nodes) to
+*pre-empt* (take over resources from) jobs in lower-priority Partitions.
+
+Specifically, Slurm allows users to run interactive sessions and batch jobs using idle resources
+in :ref:`private (research group-owned or dept-owned) nodes <groupnodes_bessemer>`,
+but these resources will be reclaimed (and the associated jobs pre-empted) if
+members of those groups/depts submit jobs that can only start if those resources are repurposed. 
+
+An example of this:
+
+1. Researcher A wants to run a job using 2 GPUs.  All 'public' GPUs are being used by jobs, but some GPUs in a private node belonging to research group X are idle.
+2. Researcher A decides that they want to use those idle GPUs but they aren't a member of research group X; however, they are happy to take the risk of their job being pre-empted by a member of research group X
+3. Researcher A submits a job and makes it pre-emptable (by adding submitting it to the ``preempt`` Partition using ``--partition=preempt``)
+4. The job starts running on a node which is a member of the ``preempt`` and ``research-group-X`` Partitions
+5. Researcher B is a member of research group X and submits a job to the ``research-group-X`` Partition.  
+6. This job can only start if the resources being used by the first job are reclaimed.
+7. As a result, Slurm pre-empts the first job with this second job, as a result of which the first job is cancelled.
+8. The second job runs to completion.
+
+Tips for using pre-emptable jobs:
+
+* Ensure that you're able to reliably re-submit your pre-emptable job if it is pre-empted before completion.  A common way of doing this is to write out state/progress information periodically whilst the job is running.
+* However, don't write out state/progress information too frequently otherwise you may be limited by the speed with which the job can write to disk.
 
 Monitoring running Jobs
 ^^^^^^^^^^^^^^^^^^^^^^^
