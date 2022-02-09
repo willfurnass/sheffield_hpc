@@ -489,7 +489,10 @@ Pre-emptable Jobs
 
 Under certain conditions, 
 Slurm on Bessemer allows jobs running in higher-priority Partitions (sets of nodes) to
-*pre-empt* (take over resources from) jobs in lower-priority Partitions.
+*pre-empt* jobs in lower-priority Partitions. 
+When a higher priority job *pre-empts* a lower priority job, 
+the lower priority job is stopped (and by default cancelled) and 
+the higher priority job takes its place.
 
 Specifically, Slurm allows users to run interactive sessions and batch jobs using idle resources
 in :ref:`private (research group-owned or dept-owned) nodes <groupnodes_bessemer>`,
@@ -510,7 +513,7 @@ An example of this:
 Tips for using pre-emptable jobs:
 
 * Ensure that you're able to reliably re-submit your pre-emptable job if it is pre-empted before completion.  A common way of doing this is to write out state/progress information periodically whilst the job is running.
-* However, don't write out state/progress information too frequently otherwise you may be limited by the speed with which the job can write to disk.
+* Select a sensible frequency for writing out state/progress information or you may cause poor performance due to storage write speed limits.
 
 Monitoring running Jobs
 ^^^^^^^^^^^^^^^^^^^^^^^
