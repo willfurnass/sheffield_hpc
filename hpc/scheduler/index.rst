@@ -487,24 +487,30 @@ Here is a more complex example that requests more resources:
 Pre-emptable Jobs
 ^^^^^^^^^^^^^^^^^
 
-Under certain conditions, 
+Under certain conditions,
 Slurm on Bessemer allows jobs running in higher-priority Partitions (sets of nodes) to
-*pre-empt* jobs in lower-priority Partitions. 
-When a higher priority job *pre-empts* a lower priority job, 
-the lower priority job is stopped (and by default cancelled) and 
+*pre-empt* jobs in lower-priority Partitions.
+When a higher priority job *pre-empts* a lower priority job,
+the lower priority job is stopped (and by default cancelled) and
 the higher priority job takes its place.
 
 Specifically, Slurm allows users to run interactive sessions and batch jobs using idle resources
 in :ref:`private (research group-owned or dept-owned) nodes <groupnodes_bessemer>`,
 but these resources will be reclaimed (and the associated jobs pre-empted) if
-members of those groups/depts submit jobs that can only start if those resources are repurposed. 
+members of those groups/departments submit jobs that can only start if those resources are repurposed.
 
-An example of this:
+.. note::
+    Support for pre-emptable jobs has been enabled on a trial basis
+    and will be disabled if it impacts on
+    priority access by groups / departments to
+    private nodes they have purchased.
+
+An example of the use of pre-emptable jobs:
 
 1. Researcher A wants to run a job using 2 GPUs.  All 'public' GPUs are being used by jobs, but some GPUs in a private node belonging to research group X are idle.
-2. Researcher A decides that they want to use those idle GPUs but they aren't a member of research group X; however, they are happy to take the risk of their job being pre-empted by a member of research group X
-3. Researcher A submits a job and makes it pre-emptable (by adding submitting it to the ``preempt`` Partition using ``--partition=preempt``)
-4. The job starts running on a node which is a member of the ``preempt`` and ``research-group-X`` Partitions
+2. Researcher A decides that they want to use those idle GPUs but they aren't a member of research group X; however, they are happy to take the risk of their job being pre-empted by a member of research group X.
+3. Researcher A submits a job and makes it pre-emptable (by adding submitting it to the ``preempt`` Partition using ``--partition=preempt``).
+4. The job starts running on a node which is a member of the ``preempt`` and ``research-group-X`` Partitions.
 5. Researcher B is a member of research group X and submits a job to the ``research-group-X`` Partition.  
 6. This job can only start if the resources being used by the first job are reclaimed.
 7. As a result, Slurm pre-empts the first job with this second job, as a result of which the first job is cancelled.
