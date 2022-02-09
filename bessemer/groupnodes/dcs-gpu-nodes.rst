@@ -99,7 +99,7 @@ Resource limits per job:
 
    Leave commented until implemented and tested
 
-   3. General pre-emptable access
+   3. General preemptable access
 
    Users other than Computer Science researchers and their collaborators can
    make use of idle time on these nodes and other nodes
@@ -108,6 +108,6 @@ Resource limits per job:
 
    * Partition: ``preempt``
 
-   These jobs can be pre-empted by jobs submitted to the ``dcs-gpu`` and ``dcs-gpu-test`` partitions;
+   These jobs can be preempted by jobs submitted to the ``dcs-gpu`` and ``dcs-gpu-test`` partitions;
    if this happens
-   the pre-empted jobs will be stopped mid-execution and re-queued.
+   the preempted jobs will be stopped mid-execution and re-queued.
