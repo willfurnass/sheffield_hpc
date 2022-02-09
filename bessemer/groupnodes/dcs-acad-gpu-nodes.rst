@@ -67,7 +67,7 @@ Only certain users have access to a given Account.
 
 .. _dcs_acad_gpu_nodes_non_prempt_access:
 
-1. Non-pre-emptable access to half a node
+1. Non-preemptable access to half a node
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Each of the four academics (plus their collaborators) have ring-fenced, on-demand access to the resources of half a node.
@@ -89,7 +89,7 @@ Resource limits per job:
 .. todo::
    If using cluster-wide values for default and max run time then link to central info re that rather than duplicating here.
 
-2. Pre-emptable access to both nodes
+2. Preemptable access to both nodes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If any of the academics (or their collaborators) want to run a larger job that requires
@@ -100,11 +100,11 @@ then they can :ref:`specify a different Partition <slurm_access_priv_nodes>` whe
 * Account: ``dcs-acadX`` where ``X`` is 1, 2, 3 or 4 and :ref:`varies between the academics <dcs_acad_gpu_node_accounts>`).
 * QoS: do not specify one i.e. do not use the ``--qos`` parameter.
 
-*However*, to facilitate fair sharing of these GPU nodes jobs submitted via this route are *pre-emptable*:
+*However*, to facilitate fair sharing of these GPU nodes jobs submitted via this route are *preemptable*:
 they will be stopped mid-execution if a job is submitted to the ``dcs-acad`` partition (:ref:`see above <dcs_acad_gpu_nodes_non_prempt_access>`)
 that requires those resources.
 
-When a job submitted by this route is pre-empted by another job the pre-empted job is terminated and re-queued.
+When a job submitted by this route is preempted by another job the preempted job is terminated and re-queued.
 
 Resource limits per job:
 
@@ -116,14 +116,14 @@ Resource limits per job:
 
    Re-add the following after setting it up:
 
-   3. General pre-emptable access to both nodes
+   3. General preemptable access to both nodes
 
    Users other than the academics and their collaborators can make use of idle time on these nodes and other nodes by
    submitting batch jobs and starting interactive sessions using a :ref:`particular partition <slurm_access_priv_nodes>`:
 
    * Partition: ``preempt``
 
-   These jobs can be pre-empted by jobs submitted to the ``dcs-acad-pre`` and ``dcs-acad`` partitions.
+   These jobs can be preempted by jobs submitted to the ``dcs-acad-pre`` and ``dcs-acad`` partitions.
 
 
 .. _Carolina Scarton: https://www.sheffield.ac.uk/dcs/people/academic/carolina-scarton
