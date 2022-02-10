@@ -13,15 +13,20 @@ module files you can add a directory called modules to your home directory
 To make these available automatically you can then add the ``module use $HOME/modules`` 
 command to your ``.bashrc`` file.
 
-You can generate a basic module file using the basic TCL commands to ``set`` variables, 
+You can generate a basic module file using the basic TCL directives to ``set`` variables, 
 export these to your shell with ``setenv`` and prepend paths to your existing environment 
 variables with ``prepend-path``.
 
 
 .. warning::
 
-    Module files are not aware of bash variables unless you import them from the env array 
-    and set a variable based on them, e.g. 
+    Module files are **not aware of bash shell variables unless you import them** from the env array 
+    and set a TCL variable based on them.
+    
+    e.g. the following example imports our **shell environment** ``HOME`` variable and sets the **TCL** 
+    ``HOME`` variable with it. The **TCL** ``HOME`` variable is used to set the **TCL variable** ``MY_PROGRAM_DIR`` 
+    (the software's installation directory). The **TCL** ``MY_PROGRAM_DIR`` variable is then used to add the program's 
+    ``bin`` directory to your **shell environment** ``PATH`` variable with the ``prepend-path`` directive.
 
     .. code-block:: TCL
 
@@ -30,8 +35,9 @@ variables with ``prepend-path``.
         prepend-path    PATH                $MY_PROGRAM_DIR/bin
 
 
-Much like using a ``.bashrc`` file we  add the required variables to a custom module file 
-which if called ``CustomModule`` and saved in ``/home/myusername/modules/`` may look something like:
+Much like using a ``.bashrc`` file with the export command, we can add the required variables and directives 
+to a custom module file. For example, if called ``CustomModule`` and saved in ``/home/myusername/modules/`` may 
+look something like:
 
 .. code-block:: TCL
 
@@ -55,8 +61,11 @@ which if called ``CustomModule`` and saved in ``/home/myusername/modules/`` may 
     module load dev/gcc/8.2
     module load dev/cmake/3.17.1/gcc-8.2
 
-    ## Set a program root directory variable - note that this is does not set the environment variable.
-    ## Note no trailing slash.
+    ## Set a program root directory TCL variable MY_PROGRAM_DIR to simplify prepend-path directives.
+    ## **Reminder** setting an environment variable with setenv does not set the equivalent TCL variable!
+    ## **Reminder** setting a TCL variable does not set the equivalent shell environment variable either!
+    ## Note no trailing slash is required for MY_PROGRAM_DIR as we are using a / on the prepend-path directives.
+
     set             MY_PROGRAM_DIR              /home/my_username/software/installs/my_new_program
     setenv          MY_PROGRAM_DIR              $MY_PROGRAM_DIR
     setenv          MY_SOFTWARE_LICENSE_PATH    /home/my_username/software/licenses/mysoftware/license.lic
@@ -67,8 +76,13 @@ which if called ``CustomModule`` and saved in ``/home/myusername/modules/`` may 
     prepend-path    PKG_CONFIG_PATH    $MY_PROGRAM_DIR/lib/pkgconfig
     prepend-path    CMAKE_PREFIX_PATH  $MY_PROGRAM_DIR
 
+.. hint::
 
-If the module set command is applied in your ``.bashrc`` file you could now load this module by running:
+    If you get warnings about missing file paths please ensure the file path exists and/or you have not made a mistake 
+    when defining your TCL variables. (Remember the difference between ``set`` and ``setenv`` directives and that one 
+    does not set the other.)
+
+If the module use command (``module use $HOME/modules``) is applied in your ``.bashrc`` file you could now load this module by running:
 
 .. code-block:: console
 
