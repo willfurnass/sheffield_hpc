@@ -278,7 +278,7 @@ Connecting with lftp
 
 .. caution::
 
-  Where possible please connect with the ftps protocol if possible as this protects your username 
+  Where possible please connect with the ftps protocol as this protects your username 
   and password from hackers performing man in the middle or sniffing attacks!
 
 Connecting to an FTP server can be achieved as follows:
