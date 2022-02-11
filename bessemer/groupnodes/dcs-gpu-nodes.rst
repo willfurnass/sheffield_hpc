@@ -17,7 +17,7 @@ Eight nodes (``bessemer-node030`` to ``bessemer-node037``) each have:
    :header-rows: 0
 
    * - Processors
-     - 2x Intel Xeon Gold 6138 (2.00GHz; 40 cores per CPU)
+     - 2x Intel Xeon Gold 6138 (2.00GHz; 20 cores per CPU)
    * - RAM
      - 192GB (DDR4 @ 2666 MHz)
    * - NUMA nodes
