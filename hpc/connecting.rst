@@ -84,6 +84,7 @@ including *MobaXTerm*.
 | ShARC    | Password + MFA **or** public key      | Not permitted (unless using the :ref:`HPC SSH gateway service <hpcgw_summary>`)                   |
 +----------+---------------------------------------+---------------------------------------------------------------------------------------------------+
 
+.. _mobaxterm_connecting_profile_setup:
 
 SSH client software on Windows
 ------------------------------
