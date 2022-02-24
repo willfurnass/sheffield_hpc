@@ -54,10 +54,10 @@ This gives rise to a number of ways to use multiple cores:
 - don't care which nodes, can run at different times: `Array Job <JobArray.html>`_.
 
 If you are using a standardised piece of software designed to
-run on HPC, for example `CASTEP <sharc/software/apps/castep.html>`_ or
-`GROMACS <sharc/software/apps/gromacs.html>`_, it may well come
+run on HPC, for example `CASTEP </sharc/software/apps/CASTEP.html>`_ or
+`GROMACS </sharc/software/apps/gromacs.html>`_, it may well come
 with its own opinions about the best parallel setup to use.
-Consult the `software documentation <sharc/software/>`_.
+Consult the `software documentation </sharc/software/>`_.
 
 .. include:: ../referenceinfo/scheduler/SGE/sge_parallel_environments.rst
 
