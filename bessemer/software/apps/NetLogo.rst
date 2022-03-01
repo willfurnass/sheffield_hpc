@@ -113,7 +113,7 @@ multicore NetLogo jobs.
 
 .. code-block:: shell
 
-    !/bin/bash
+    #!/bin/bash
     #SBATCH --nodes=1
     #SBATCH --ntasks-per-node=4
     #SBATCH --mem=8000
