@@ -64,30 +64,30 @@ the output you get will vary according to which version of the NAG library you a
 
 If you have loaded the ``module`` for nll6i273bl this will give the following output ::
 
-Use nagvars script to set NAG compile and link environment
-variables within nag_example script
-. /usr/local/packages/libs/NAG/nll6i273bl/scripts/nagvars.sh -quiet int32 static nag
+   Use nagvars script to set NAG compile and link environment
+   variables within nag_example script
+   . /usr/local/packages/libs/NAG/nll6i273bl/scripts/nagvars.sh -quiet int32 static nag
 
-Copying a00aafe.f90 to current directory
-cp /usr/local/packages/libs/NAG/nll6i273bl/f_examples/source/a00aafe.f90 .
+   Copying a00aafe.f90 to current directory
+   cp /usr/local/packages/libs/NAG/nll6i273bl/f_examples/source/a00aafe.f90 .
 
-Compiling and linking a00aafe.f90 to produce executable a00aafe.exe
-ifort -I/usr/local/packages/libs/NAG/nll6i273bl/lp64/nag_interface_blocks a00aafe.f90 /usr/local/packages/libs/NAG/nll6i273bl/lp64/lib/libnag_nag.a -lm -ldl -lstdc++ -o a00aafe.exe
+   Compiling and linking a00aafe.f90 to produce executable a00aafe.exe
+   ifort -I/usr/local/packages/libs/NAG/nll6i273bl/lp64/nag_interface_blocks a00aafe.f90 /usr/local/packages/libs/NAG/nll6i273bl/lp64/lib/libnag_nag.a -lm -ldl -lstdc++ -o a00aafe.exe
 
-Running a00aafe.exe
-./a00aafe.exe > a00aafe.r
- A00AAF Example Program Results
+   Running a00aafe.exe
+   ./a00aafe.exe > a00aafe.r
+    A00AAF Example Program Results
  
- *** Start of NAG Library implementation details ***
+    *** Start of NAG Library implementation details ***
  
- Implementation title: Linux, 64-bit, Intel Classic C/C++ or Intel Classic Fortran
-            Precision: double precision
-         Product Code: NLL6I273BL
-                 Mark: 27.3.0 (self-contained)
+    Implementation title: Linux, 64-bit, Intel Classic C/C++ or Intel Classic Fortran
+               Precision: double precision
+            Product Code: NLL6I273BL
+                    Mark: 27.3.0 (self-contained)
  
-  This is a 64-bit library using 32-bit integers.
+     This is a 64-bit library using 32-bit integers.
  
- *** End of NAG Library implementation details ***
+    *** End of NAG Library implementation details ***
 
 Documentation
 -------------
