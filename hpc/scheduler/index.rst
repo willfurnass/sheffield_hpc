@@ -265,7 +265,7 @@ Here is a more complex example that requests more resources:
     module load apps/gcc/foo
 
     # Set the OPENMP_NUM_THREADS environment variable to 4
-    export OMP_NUM_THREADS=4
+    export OMP_NUM_THREADS=$NSLOTS
 
     # Run the program foo with input foo.dat
     # and output foo.res
@@ -465,7 +465,7 @@ Here is a more complex example that requests more resources:
     # Request 16 gigabytes of real memory (RAM) 4 cores *4G = 16
     #SBATCH --mem=16G
     # Request 4 cores
-    #SBATCH -c 4
+    #SBATCH --ntasks-per-node=4
     # Email notifications to me@somedomain.com
     #SBATCH --mail-user=me@somedomain.com
     # Email notifications if the job fails
@@ -476,7 +476,7 @@ Here is a more complex example that requests more resources:
     module load apps/gcc/foo
 
     # Set the OPENMP_NUM_THREADS environment variable to 4
-    export OMP_NUM_THREADS=4
+    export OMP_NUM_THREADS=$SLURM_NTASKS
 
     # Run the program foo with input foo.dat
     # and output foo.res

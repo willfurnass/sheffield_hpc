@@ -87,7 +87,7 @@ The next example script requests 16 CPU cores in the OpenMP parallel environment
     module load apps/gcc/foo
 
     # Set the OPENMP_NUM_THREADS environment variable to 16
-    export OMP_NUM_THREADS=16
+    export OMP_NUM_THREADS=$NSLOTS
 
     # Run the program foo with input foo.dat
     # and output foo.res
