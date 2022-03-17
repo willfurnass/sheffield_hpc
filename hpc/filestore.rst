@@ -211,7 +211,7 @@ will be accessible if you ``cd`` (change directory) into a subdirectory e.g. ``c
 Specifics for Bessemer
 ^^^^^^^^^^^^^^^^^^^^^^
 
-If you need to access a ``/shared`` area on Bessemer please contact `it-servicedesk@sheffield.ac.uk <it-servicedesk@sheffield.ac.uk>`__ to arrange this.
+If you need to access a ``/shared`` area on Bessemer please contact `research-it@sheffield.ac.uk <research-it@sheffield.ac.uk>`__ to arrange this.
 
 
 .. warning::
