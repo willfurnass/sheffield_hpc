@@ -35,7 +35,7 @@ Packages
 
 Most notebooks make use of external software packages for e.g. fitting statistical models to data.
 There are several different ways you might enable/load packages on ShARC 
-(including :ref:`module files <env_modules>` and :ref:`Singularity containers <singularity_sharc>`) 
+(including :ref:`module files <env_modules>` and :ref:`Apptainer containers <apptainer_sharc>`) 
 but if using Jupyter it is recommended that you install and activate software using 
 the conda_ package manager if possible.  
 This can be done using Jupyter's graphical interface (in most cases)

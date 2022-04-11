@@ -4,7 +4,7 @@ DAFoam
 .. sidebar:: DAFoam
 
    :Version: v2.2.5
-   :Dependencies: None / provided by Singularity container.
+   :Dependencies: None
    :URL: https://dafoam.github.io/
    :Documentation: https://dafoam.github.io/mydoc_docs_user_guides.html
 
@@ -15,11 +15,11 @@ DAFoam is an Open-Source Adjoint Framework for Multidisciplinary Design Optimiza
 Interactive Usage
 -----------------
 
-DAFoam v2.2.5 is provided only as a Singularity image and can be used interactively by issuing starting an interactive session with ``qrshx`` and then issuing the command:   
+DAFoam v2.2.5 is provided only as an Apptainer (previously known as Singularity) image and can be used interactively by issuing starting an interactive session with ``qrshx`` and then issuing the command:   
 
 .. code-block:: bash
 
-    singularity shell /usr/local/packages/singularity/images/DAFoam/DAFoam-v2.2.5-docker.simg
+    apptainer shell /usr/local/packages/singularity/images/DAFoam/DAFoam-v2.2.5-docker.simg
 
 Then you must run the following command to setup the internal shell environment correctly: 
 
@@ -46,7 +46,7 @@ An example SMP batch submission script is given below with the example NACA0012_
     #$ -cwd
     #$ -V
 
-    singularity exec --bind $PE_HOSTFILE:$PE_HOSTFILE:ro /usr/local/packages/singularity/images/DAFoam/DAFoam-v2.2.5-docker.simg /home/$USER/dafoam/tutorials-master/NACA0012_Airfoil/incompressible/DAfoam_internal_script.sh #All one line.
+    apptainer exec --bind $PE_HOSTFILE:$PE_HOSTFILE:ro /usr/local/packages/singularity/images/DAFoam/DAFoam-v2.2.5-docker.simg /home/$USER/dafoam/tutorials-master/NACA0012_Airfoil/incompressible/DAfoam_internal_script.sh #All one line.
 
 Where the DAfoam_internal_script.sh is as follows: 
 
@@ -66,8 +66,8 @@ An example MPI batch submission script is given below with the example NACA0012_
 
 .. important:: 
 
-    This example uses the hybrid MPI approach specified in the Singularity documentation here: https://sylabs.io/guides/latest/user-guide/mpi.html#hybrid-model
-    This requires the matching of the container and cluster MPI versions as shown here by loading the matching MPI module for the Singularity image.
+    This example uses the hybrid MPI approach specified in the Apptainer documentation here: https://apptainer.org/docs/user/1.0/mpi.html#hybrid-model
+    This requires the matching of the container and cluster MPI versions as shown here by loading the matching MPI module for the Apptainer image.
 
 .. code-block:: bash
 
@@ -80,9 +80,9 @@ An example MPI batch submission script is given below with the example NACA0012_
     
     module load mpi/openmpi/1.10.4/gcc-6.2
 
-    singularity exec --bind $PE_HOSTFILE:$PE_HOSTFILE:ro /usr/local/packages/singularity/images/DAFoam/DAFoam-v2.2.5-docker.simg bash -c ". /home/dafoamuser/dafoam/loadDAFoam.sh && cd /home/$USER/dafoam/tutorials-master/NACA0012_Airfoil/incompressible/ && ./preProcessing.sh"
+    apptainer exec --bind $PE_HOSTFILE:$PE_HOSTFILE:ro /usr/local/packages/singularity/images/DAFoam/DAFoam-v2.2.5-docker.simg bash -c ". /home/dafoamuser/dafoam/loadDAFoam.sh && cd /home/$USER/dafoam/tutorials-master/NACA0012_Airfoil/incompressible/ && ./preProcessing.sh"
 
-    mpirun -n 4 singularity exec /usr/local/packages/singularity/images/DAFoam/DAFoam-v2.2.5-docker.simg bash -c ". /home/dafoamuser/dafoam/loadDAFoam.sh && cd /home/$USER/dafoam/tutorials-master/NACA0012_Airfoil/incompressible/ && python runScript.py"
+    mpirun -n 4 apptainer exec /usr/local/packages/singularity/images/DAFoam/DAFoam-v2.2.5-docker.simg bash -c ". /home/dafoamuser/dafoam/loadDAFoam.sh && cd /home/$USER/dafoam/tutorials-master/NACA0012_Airfoil/incompressible/ && python runScript.py"
 
 
 Installation notes
@@ -90,7 +90,7 @@ Installation notes
 
 Installation was tested as above with the batch scripts and NACA0012_Airfoil tutorial.
 
-This Singularity image has been bootstrapped from the project's provided docker container and the following configuration: ::
+This Apptainer image has been bootstrapped from the project's provided docker container and the following configuration: ::
 
     Bootstrap: docker
     From: dafoam/opt-packages:v2.2.5

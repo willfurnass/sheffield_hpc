@@ -14,7 +14,7 @@ About Tensorflow on ShARC
 
 **A GPU-enabled worker node must be requested in order to use the GPU version of this software. See** :ref:`GPUComputing_sharc` **for more information.**
 
-Tensorflow is available on ShARC as both Singularity images and by local installation.
+Tensorflow is available on ShARC as both Apptainer (previously known as Singularity) images and by local installation.
 
 As Tensorflow and all its dependencies are written in Python, it can be installed locally in your home directory. The use of Anaconda (:ref:`sharc-python-conda`) is recommended as it is able to create a virtual environment in your home directory, allowing the installation of new Python packages without admin permission.
 
@@ -149,29 +149,29 @@ The following table shows the which module to load for the various versions of T
 
 
 
-Tensorflow Singularity Images
------------------------------
+Tensorflow Apptainer/Singularity Images
+---------------------------------------
 
 .. note::
- Tensorflow singularity images support is now discontinued as the use of conda virtual environments is deemed to be more customisable and simpler to use. Existing images will still be available but to use a newer version of tensorflow, please follow instructions above to install Tensorflow to your home directory.
+ Tensorflow Apptainer image support is now discontinued as the use of conda virtual environments is deemed to be more customisable and simpler to use. Existing images will still be available but to use a newer version of tensorflow, please follow instructions above to install Tensorflow to your home directory.
 
-Singularity images are self-contained virtual machines similar to Docker. For more information on Singularity and how to use the images, see :ref:`singularity_sharc`.
+Apptainer images are self-contained virtual machines similar to Docker. For more information on Apptainer and how to use the images, see :ref:`apptainer_sharc`.
 
 A symlinked file is provided that always point to the latest image:  ::
 
- #CPU Tensorflow
+ # CPU Tensorflow
  /usr/local/packages/singularity/images/tensorflow/cpu.img
 
- #GPU Tensorflow
+ # GPU Tensorflow
  /usr/local/packages/singularity/images/tensorflow/gpu.img
 
 To get a bash terminal in to an image for example, use the command: ::
 
- singularity exec --nv /usr/local/packages/singularity/images/tensorflow/gpu.img /bin/bash
+ apptainer exec --nv /usr/local/packages/singularity/images/tensorflow/gpu.img /bin/bash
 
 The ``exec`` command can also be used to call any command/script inside the image e.g. ::
 
- singularity exec --nv /usr/local/packages/singularity/images/tensorflow/gpu.img python your_tensorflow_script.py
+ apptainer exec --nv /usr/local/packages/singularity/images/tensorflow/gpu.img python your_tensorflow_script.py
 
 **The** ``--nv`` **flag enables the use of GPUs within the image and can be removed if the software you're using does not use the GPU.**
 
@@ -184,7 +184,7 @@ Tensorflow is installed as part of Anaconda and can be found inside the image at
  /usr/local/anaconda3-4.2.0/lib/python3.5/site-packages/tensorflow
 
 
-**To submit jobs that uses a Singularity image, see** :ref:`use_image_batch_singularity_sharc` **for more detail.**
+**To submit jobs that uses an Apptainer image, see** :ref:`use_image_batch_apptainer_sharc` **for more detail.**
 
 Image Index
 ^^^^^^^^^^^

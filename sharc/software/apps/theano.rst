@@ -14,9 +14,9 @@ About Theano on ShARC
 
 **A GPU-enabled worker node must be requested in order to use the GPU version of this software. See** :ref:`GPUComputing_sharc` **for more information.**
 
-Theano is available on ShARC as both Singularity images and by local installation.
+Theano is available on ShARC as both Apptainer/Singularity images and by local installation.
 
-As Theano and all its dependencies are written in Python. A Singularity image is available for instant usage and it can also be installed locally in your home directory. For local installation, the use of Anaconda (:ref:`sharc-python-conda`) is recommended as it is able to create a virtual environment in your home directory, allowing the installation of new Python packages without admin permission.
+As Theano and all its dependencies are written in Python. An Apptainer (previously known as Singularity) image is available for instant usage and it can also be installed locally in your home directory. For local installation, the use of Anaconda (:ref:`sharc-python-conda`) is recommended as it is able to create a virtual environment in your home directory, allowing the installation of new Python packages without admin permission.
 
 This software and documentation is maintained by the `RSES group <https://rse.shef.ac.uk/>`_ and `GPUComputing@Sheffield <http://gpucomputing.shef.ac.uk/>`_. For feature requests or if you encounter any problems, please raise an issue on the `GPU Computing repository <https://github.com/RSE-Sheffield/GPUComputing/issues>`_.
 
@@ -68,13 +68,13 @@ The previous instuctions installs Theano and its dependencies inside your home d
 	module load apps/python/conda
 	source activate theano
 
-Theano Singularity Images
--------------------------
+Theano Apptainer/Singularity Images
+-----------------------------------
 
 .. note::
- Theano singularity images support is now discontinued as the use of conda virtual environments is deemed to be more customisable and simpler to use. Existing images will still be available but to use a newer version of Theano, please follow instructions above to install Theano to your home directory.
+ Theano Apptainer image support is now discontinued as the use of conda virtual environments is deemed to be more customisable and simpler to use. Existing images will still be available but to use a newer version of Theano, please follow instructions above to install Theano to your home directory.
 
-Singularity images are self-contained virtual machines similar to Docker. For more information on Singularity and how to use the images, see :ref:`singularity_sharc`.
+Apptainer (previously known as Singularity) images are self-contained virtual machines similar to Docker. For more information on Apptainer and how to use the images, see :ref:`apptainer_sharc`.
 
 A symlinked file is provided that always point to the latest image: ::
 
@@ -82,11 +82,11 @@ A symlinked file is provided that always point to the latest image: ::
 
 To get a bash terminal in to an image for example, use the command: ::
 
-	singularity exec --nv /usr/local/packages/singularity/images/theano/gpu.img /bin/bash
+	apptainer exec --nv /usr/local/packages/singularity/images/theano/gpu.img /bin/bash
 
 The ``exec`` command can also be used to call any command/script inside the image e.g. ::
 
-	singularity exec --nv /usr/local/packages/singularity/images/theano/gpu.img python your_theano_script.py
+	apptainer exec --nv /usr/local/packages/singularity/images/theano/gpu.img python your_theano_script.py
 
 **The** ``--nv`` **flag enables the use of GPUs within the image and can be removed if the software you're using does not use the GPU.**
 
@@ -98,7 +98,7 @@ Theano is installed as part of Anaconda and can be found inside the image at: ::
 
 	/usr/local/anaconda3-4.2.0/lib/python3.5/site-packages/theano
 
-**To submit jobs that uses a Singularity image, see** :ref:`use_image_batch_singularity_sharc` **for more detail.**
+**To submit jobs that uses an Apptainer image, see** :ref:`use_image_batch_apptainer_sharc` **for more detail.**
 
 Image Index
 ^^^^^^^^^^^
@@ -110,4 +110,4 @@ Paths to the actual images and definition files are provided below for downloadi
 * GPU Images
 	* Latest: 0.9.0-GPU-Ubuntu16.04-CUDA8-cudNN5.0-Anaconda3.4.2.0
 		* Path: ``/usr/local/packages/singularity/images/theano/0.9.0-GPU-Ubuntu16.04-CUDA8-cudNN5.0-Anaconda3.4.2.0.img``
-		* Def file: :download:`/sharc/software/apps/singularity/theano.def </sharc/software/apps/singularity/theano.def>`
+		* Def file: :download:`/sharc/software/apps/apptainer/theano.def </sharc/software/apps/apptainer/theano.def>`

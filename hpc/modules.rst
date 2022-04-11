@@ -35,7 +35,7 @@ If you switch to using a cluster other than Bessemer or ShARC then you will like
 Modules are not the only way of managing software on clusters: increasingly common approaches include:
 
 * the :ref:`Conda <sharc-python-conda>` package manager (Python-centric but can manage software written in any language; can be used on Bessemer and ShARC);
-* :ref:`Singularity <singularity_sharc>`, a means for deploying software in `containers <https://en.wikipedia.org/wiki/Operating-system-level_virtualization>`__ (similar to `Docker <https://www.docker.com/>`__; can be used on ShARC).
+* :ref:`Apptainer/Singularity <apptainer_sharc>`, a means for deploying software in `containers <https://en.wikipedia.org/wiki/Operating-system-level_virtualization>`__ (similar to `Docker <https://www.docker.com/>`__; can be used on ShARC).
 
 Basic guide
 -----------

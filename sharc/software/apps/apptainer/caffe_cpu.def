@@ -1,9 +1,9 @@
 Bootstrap: docker
-From: bvlc/caffe:gpu
+From: bvlc/caffe:cpu
 
 %setup
 	#Runs on host
-	#The path to the image is $SINGULARITY_ROOTFS
+	#The path to the image is $APPTAINER_ROOTFS
 
 
 %post
@@ -16,10 +16,10 @@ From: bvlc/caffe:gpu
 	#Make environment file executable
 	chmod +x /environment
 
-  #Default mount paths
+	#Default mount paths
 	mkdir /scratch /data /shared /fastdata
 
-  #Nvidia Library mount paths
+	#Nvidia Library mount paths
 	mkdir /nvlib /nvbin
 
 	#Add nvidia driver paths
@@ -34,10 +34,10 @@ From: bvlc/caffe:gpu
   echo 'export PYTHONPATH="$PYCAFFE_ROOT:$PYTHONPATH"' >> /environment
   echo 'export PATH="$CAFFE_ROOT/build/tools:$PYCAFFE_ROOT:$PATH"' >> /environment
 
-
 %runscript
-	#Executes with the singularity run command
+	#Executes with the apptainer run command
 	#delete this section to use existing docker ENTRYPOINT command
+
 
 
 

@@ -399,7 +399,7 @@ Putting a sleep of e.g. 5s between ``mpirun`` commands seems to help here. i.e.
 Warning about 'groups: cannot find name for group ID xxxxx'
 -----------------------------------------------------------
 
-You may occasionally see warnings like the above e.g. when running a :ref:`Singularity <singularity_sharc>` container or when running the standard ``groups`` Linux utility.
+You may occasionally see warnings like the above e.g. when running an :ref:`Apptainer/Singularity <apptainer_sharc>` container or when running the standard ``groups`` Linux utility.
 These warnings can be ignored.
 
 The scheduler, Son of Grid Engine, dynamically creates a Unix group per job to
