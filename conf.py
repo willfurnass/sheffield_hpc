@@ -36,9 +36,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Sheffield HPC Documentation'
-copyright = u'2021, The University of Sheffield'
-author = u'The University of Sheffield'
+project = 'Sheffield HPC Documentation'
+copyright = '2022, The University of Sheffield'
+author = 'The University of Sheffield'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
