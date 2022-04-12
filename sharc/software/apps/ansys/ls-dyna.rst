@@ -203,7 +203,7 @@ jobs please check the logs to see if the program is indicating an insufficient n
 of available licenses. If this is the case, please resubmit your job until it runs.
 
 For other issues or if you wish to purchase some reserved licenses please contact
-Research IT.
+:ref:`IT Services <need_help>`.
 
 If desired to perform post modelling analysis etc... the ANSYS Workbench GUI 
 executable can be launched with the  ``runwb2`` command. 
