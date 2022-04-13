@@ -94,8 +94,8 @@ html_theme_options = {
 #                       'navbar_title': ' ',
 #                       'navbar_links': [
 #                           ("Home", "index"),
-#                           ("Research Computing @ IT Services", "https://www.shef.ac.uk/it-services/research", True),
-#                           ("Research Software Engineering @ TUOS", "https://rse.shef.ac.uk", True)
+#                           ("Research and Innovation team, IT Services", "https://students.sheffield.ac.uk/it-services/research", True),
+#                           ("Research Software Engineering", "https://rse.shef.ac.uk", True)
 #                       ],
 #                       'globaltoc_depth': 1}
 

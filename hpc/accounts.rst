@@ -68,8 +68,8 @@ controls that the HPC may not have in place.
 
    The High Performance Computing service should not be used to store or process sensitive information.
    For example: medical records, personal information, financial data, commercially sensitive or 
-   any other form of restricted data without first discussing your requirements with the Research IT Team - 
-   research-it@sheffield.ac.uk 
+   any other form of restricted data without first
+   :ref:`discussing your requirements with IT Services <need_help>`.
 
 Extra care should always be taken when dealing with sensitive information; if you are in any doubt about 
 the sensitivity of information, or how it should be handled, then please contact IT Services 

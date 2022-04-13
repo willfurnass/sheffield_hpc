@@ -66,4 +66,5 @@ Consult the `software documentation </sharc/software/>`_.
 Getting help
 ------------
 
-If you need advice on how to parallelise your workflow, please contact `Research IT <https://www.sheffield.ac.uk/it-services/research/research-support>`_ or the `Research Software Engineering Group <https://rse.shef.ac.uk/contact/>`_
+If you need advice on how to parallelise your workflow,
+please :ref:`contact IT Services or the Research Software Engineering team <need_help>`.
