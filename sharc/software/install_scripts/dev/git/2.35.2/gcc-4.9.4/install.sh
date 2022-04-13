@@ -1,12 +1,12 @@
 #!/bin/bash
 set -eu
 
-GIT_VERS="2.19.2"
+GIT_VERS="2.35.2"
 GIT_SRC_TARBALL="git-${GIT_VERS}.tar.xz"
-GIT_SRC_TARBALL_SHA256="fce9a3a3297db5f3756c4553a2fc1fec209ee08178f8491e76ff4ff8fe7b8be9"
+GIT_SRC_TARBALL_SHA256="c73d0c4fa5dcebdb2ccc293900952351cc5fb89224bb133c116305f45ae600f3"
 GIT_SRC_TARBALL_URL="https://mirrors.edge.kernel.org/pub/software/scm/git/${GIT_SRC_TARBALL}"
 GIT_MAN_TARBALL="git-manpages-${GIT_VERS}.tar.xz"
-GIT_MAN_TARBALL_SHA256="25fd8ba1914f5859b59f72d6c6aa2324abe84891e071adae2195faa526a510eb"
+GIT_MAN_TARBALL_SHA256="a0e9baa54d66ac7d3648cf1f1b5af3585fcf25fa010921cb1a8d532da85d6ee8"
 GIT_MAN_TARBALL_URL="https://mirrors.edge.kernel.org/pub/software/scm/git/${GIT_MAN_TARBALL}"
 
 COMPILER="gcc"
@@ -30,7 +30,7 @@ trap handle_error ERR
 sha256sum ${GIT_SRC_TARBALL} | grep -q $GIT_SRC_TARBALL_SHA256
 if ! [[ -f .git_src_tarball_unpacked ]]; then
     tar -Jxf ${GIT_SRC_TARBALL}
-    touch .git_src_tarball_unpacked 
+    touch .git_src_tarball_unpacked
 fi
 
 # Create install and modulefile dirs
@@ -54,7 +54,7 @@ sha256sum ${GIT_MAN_TARBALL} | grep -q $GIT_MAN_TARBALL_SHA256
 mkdir -m 2775 -p ${PREFIX}/man
 if ! [[ -f .git_man_tarball_unpacked ]]; then
     tar -Jxf ${GIT_MAN_TARBALL} -C ${PREFIX}/man
-    touch .git_man_tarball_unpacked 
+    touch .git_man_tarball_unpacked
 fi
 
 # Set permissions and ownership
