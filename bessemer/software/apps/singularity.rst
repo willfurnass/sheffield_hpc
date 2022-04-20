@@ -194,15 +194,6 @@ without that directory being explicitly created when the corresponding Apptainer
   * Python or Conda initilisation files, (virtual/conda) envs or packages ``~/.conda/``, ``~/.condarc``, ``~/.local/python`` etc...
   * User supplied executables or libraries e.g. ``~/bin``, ``~/lib``, etc...
 
-MPI and Apptainer
--------------------
-If you try running MPI within an Apptainer container on a single node the MPI implementation may auto-detect that its processes are running under the SGE job scheduler and will try to read a SGE file containing information on the CPU cores SGE has allocated to that job.
-This **will fail** unless you run your container with a ``--bind $PE_HOSTFILE:$PE_HOSTFILE:ro`` argument e.g.: ::
-
-    apptainer exec --bind $PE_HOSTFILE:$PE_HOSTFILE:ro /usr/local/packages/singularity/images/example.sif /home/$USER/my_script.sh
-
-For a more complete guide to using MPI with Apptainer (inc. multi-node jobs) `see the Apptainer project's documentation <https://apptainer.org/docs/user/1.0/mpi.html>`__.
-
 Image Index on Github
 ---------------------
 
