@@ -294,8 +294,7 @@ Any data of value must therefore be **copied off** ``/scratch``
 
 **Where to store data beneath** ``/scratch``: 
 The scheduler automatically creates a per-job directory for you under ``/scratch``.
-If you started your job using ``qrshx``, ``qsh`` or ``qsub`` then 
-the name of this directory is stored in the ``$TMPDIR`` environment variable e.g. ::
+The name of this directory is stored in the ``$TMPDIR`` environment variable e.g. on ShARC: ::
 
     [te1st@sharc-login1 ~]$ qrshx
     [te1st@sharc-node003 ~]$ cd $TMPDIR
@@ -305,9 +304,12 @@ the name of this directory is stored in the ``$TMPDIR`` environment variable e.g
 The scheduler will then clean up (delete) ``$TMPDIR`` at the end of your job, 
 ensuring that the space can be used by other users.
 
-If using ``qrsh`` to start your job then the environment variable will unfortunately be undefined
-so you will need to manually create a directory under ``/scratch`` (named using your username)
-and this will not be cleaned up when the job ends.
+.. warning::
+
+   If using ``qrsh`` on ShARC to start an interactive job then 
+   the ``TMPDIR`` environment variable will unfortunately be undefined
+   so you will need to manually create a directory under ``/scratch`` (named using your username)
+   and this will not be cleaned up when the job ends.
 
 Anything under the ``/scratch`` may be deleted periodically when the worker-node is idle. 
 ``/scratch`` is **not backed up**.  There are no quotas for ``/scratch`` storage.
