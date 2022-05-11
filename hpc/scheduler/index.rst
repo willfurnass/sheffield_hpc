@@ -356,9 +356,13 @@ Debugging failed Jobs
 .. note::
 
     One common form of job failure on ShARC is caused by Windows style line endings. If you see
-    an error reported of the form: ::
+    an error reported by ``qacct`` of the form: ::
 
         failed searching requested shell because:
+
+    Or by ``qstat`` of the form: ::
+
+        failed: No such file or directory
 
     You must replace these line endings as detailed in the :ref:`FAQ <windows_eol_issues>`.
 
