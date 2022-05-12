@@ -24,6 +24,26 @@ The storage areas differ in terms of:
   and the maximum duration data can be retained for;
 * whether they handle permissions like a typical Linux filesystem.
 
+-----
+
+Choosing the correct filestore
+------------------------------
+
+To make a quick assessment of what storage area is likely to best fulfil your needs, please take a look at the provided decision tree below:
+
+.. warning::
+
+  This decision tree only provides a quick assessment, please check the full details of each filestore before committing to using them for your work.
+
+.. raw:: html
+
+  <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;zoom&quot;:0.75,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2022-05-12T13:11:51.554Z\&quot; agent=\&quot;5.0 (X11)\&quot; etag=\&quot;QhXgf6g9HzIt2syvAibr\&quot; version=\&quot;18.0.2\&quot; type=\&quot;google\&quot;&gt;&lt;diagram name=\&quot;Page-1\&quot; id=\&quot;9c096ad6-e400-ecc8-3e38-643d2caac077\&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+  <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+  <!--This currently uses the remote JS hosted at diagrams.net but I saved a copy in the repo at _static/js/viewer-static.min.js in case service is ever withdrawn. -->
+
+
+-----
+
 .. _home_dir:
 
 Home directories
@@ -94,6 +114,8 @@ then its contents will appear.
 Later on if you list the contents of ``/data`` again 
 you may find that ``/data/te1st`` has disappeared again, as 
 it is automatically *unmounted* following a period of inactivity.  
+
+-----
 
 .. _fastdata_dir:
 
@@ -174,6 +196,8 @@ File locking
 As of September 2020 POSIX file locking is enabled on all Lustre filesystems. 
 Prior to this the lack of file locking support on the University's Lustre filesystems caused problems for certain workflows/applications
 (e.g. for programs that create/use SQLite databases).
+
+-----
 
 .. _shared_dir:
 
@@ -271,6 +295,8 @@ The documentation for the ``/shared`` storage service includes information on:
 * `how to create folders with associated permissions <https://www.sheffield.ac.uk/it-services/research-storage/create-folders>`__ 
   within ``/shared`` storage areas
 
+-----
+
 .. _scratch_dir:
 
 *Scratch* directories
@@ -316,6 +342,8 @@ Anything under the ``/scratch`` may be deleted periodically when the worker-node
 
 ``/scratch`` uses the ext4 filesystem.
 
+-----
+
 .. _community_dir:
 
 *Community* areas for software
@@ -344,6 +372,7 @@ Note that:
 * Software installations must be maintained by a responsible owner.
 * Software which is not actively maintained may be removed.
 
+-----
 
 .. _quota_check:
 
@@ -376,6 +405,8 @@ To assess what is using up your quota within a given directory, you can make use
 :ref:`ncdu module on Bessemer <ncdu_bessemer>`. The **ncdu** utility will give you an 
 interactive display of what files/folders are taking up storage in a given directory tree.
 
+-----
+
 .. _exceed_quota:
 
 If you exceed your filesystem quota
@@ -393,6 +424,8 @@ In order to avoid this situation it is strongly recommended that you:
 * :ref:`Check your quota usage <quota_check>` regularly.
 * Copy files that do not need to be backed up to a :ref:`Fastdata area <fastdata_dir>`
   or remove them from Bessemer/ShARC completely.
+
+-----
 
 .. _recovering_snapshots:
 
