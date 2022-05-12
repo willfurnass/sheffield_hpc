@@ -41,9 +41,10 @@ To make a quick assessment of what storage area is likely to best fulfil your ne
   <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
   <!--This currently uses the remote JS hosted at diagrams.net but I saved a copy in the repo at _static/js/viewer-static.min.js in case service is ever withdrawn. -->
 
-.. _home_dir:
 
 -----
+
+.. _home_dir:
 
 Home directories
 ----------------
