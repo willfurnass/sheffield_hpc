@@ -219,6 +219,12 @@ Within your job script(s):
 * Ensure you have ``#SBATCH --partition=gpu-a100-tmp`` near the top of your job script
 * Below that include the three ``module unuse`` / ``module use`` lines shown above before you run any software
 
+
+Compiling for A100 GPUs
+^^^^^^^^^^^^^^^^^^^^^^^
+
+See :ref:<bessemer_gpu_code_gen_opts>.
+
 More information on using AMD CPUs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
