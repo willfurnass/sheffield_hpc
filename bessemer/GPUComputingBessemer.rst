@@ -207,6 +207,9 @@ Specifications per A100 node:
 * Ensure you have ``#SBATCH --partition=gpu-a100-tmp`` near the top of your job script
 * Below that include the three ``module unuse`` / ``module use`` lines shown above before you run any software
 
+**More detailed information on building and running software on AMD EPYC CPUs (e.g. AMD Milan)**:
+`PRACE's Best Practice Guide - AMD EYPC <https://prace-ri.eu/wp-content/uploads/Best-Practice-Guide_AMD.pdf>`__.
+
 Training materials
 ^^^^^^^^^^^^^^^^^^
 
