@@ -189,29 +189,39 @@ Specifications per A100 node:
       deactivate
       . activate my_non_intel_env2
 
-**Interactive usage/access**: ::
+Interactive usage/access
+^^^^^^^^^^^^^^^^^^^^^^^^
 
- # Start an interactive session on the A100 nodes, this case with just one A100 GPU:
- srun --pty --partition=gpu-a100-tmp --gpus-per-node=1 /bin/bash -i
+Start an interactive session on the A100 nodes (in this case with just one A100 GPU): ::
+
+   srun --pty --partition=gpu-a100-tmp --gpus-per-node=1 /bin/bash -i
  
- # Activate software that has been optimised for the AMD Milan CPUs in these nodes
- module unuse /usr/local/modulefiles/live/eb/all 
- module unuse /usr/local/modulefiles/live/noeb
- module use /usr/local/modulefiles/staging/eb-znver3/all/
+Activate software that has been optimised for the AMD Milan CPUs in these nodes: ::
 
- # List software available for use on these nodes
- module avail
+   module unuse /usr/local/modulefiles/live/eb/all 
+   module unuse /usr/local/modulefiles/live/noeb
+   module use /usr/local/modulefiles/staging/eb-znver3/all/
 
-**Batch job usage/access** - within your job script(s):
+List software available for use on these nodes: ::
+
+   module avail
+
+Batch job usage/access
+^^^^^^^^^^^^^^^^^^^^^^
+
+Within your job script(s):
 
 * Ensure you have ``#SBATCH --partition=gpu-a100-tmp`` near the top of your job script
 * Below that include the three ``module unuse`` / ``module use`` lines shown above before you run any software
 
-**More detailed information on building and running software on AMD EPYC CPUs (e.g. AMD Milan)**:
+More information on using AMD CPUs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+More detailed information on building and running software on AMD EPYC CPUs (e.g. AMD Milan)**:
 `PRACE's Best Practice Guide - AMD EYPC <https://prace-ri.eu/wp-content/uploads/Best-Practice-Guide_AMD.pdf>`__.
 
 Training materials
-^^^^^^^^^^^^^^^^^^
+------------------
 
-* `Introduction to CUDA by GPUComputing@Sheffield <http://gpucomputing.shef.ac.uk/education/cuda/>`_
+* `Introduction to CUDA by GPUComputing@Sheffield <https://gpucomputing.shef.ac.uk/education/cuda/>`_
 
