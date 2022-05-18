@@ -157,9 +157,6 @@ Specifications per A100 node:
    Attempts to run Intel-optimised software on these nodes
    will often result in *illegal instruction* errors.
 
-
-
-
    A limited number of software packages have been provided 
    for use on these nodes whilst they are temporarily available in Bessemer:
 
@@ -192,7 +189,7 @@ Specifications per A100 node:
       deactivate
       . activate my_non_intel_env2
 
-Interactive usage/access: ::
+**Interactive usage/access**: ::
 
  # Start an interactive session on the A100 nodes, this case with just one A100 GPU:
  srun --pty --partition=gpu-test --gpus-per-node=1 /bin/bash -i
@@ -205,7 +202,7 @@ Interactive usage/access: ::
  # List software available for use on these nodes
  module avail
 
-Batch job usage/access - within your job script(s):
+**Batch job usage/access** - within your job script(s):
 
 * Ensure you have ``#SBATCH --partition=gpu-test`` near the top of your job script
 * Below that include the three ``module unuse`` / ``module use`` lines shown above before you run any software
