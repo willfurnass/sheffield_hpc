@@ -14,18 +14,23 @@ share two NVIDIA V100 GPU nodes in :ref:`Bessemer <bessemer>`:
    * - Academic
      - Node
      - Slurm Account name
+     - Slurm Partition name
    * - `Carolina Scarton`_
      - ``bessemer-node041``
      - ``dcs-acad1``
+     - (see notes below)
    * - `Chenghua Lin`_
      - ``bessemer-node041``
      - ``dcs-acad2``
+     - (see notes below)
    * - `Matt Ellis`_
      - ``bessemer-node042``
      -  ``dcs-acad3``
+     - (see notes below)
    * - `Po Yang`_
      - ``bessemer-node042``
      - ``dcs-acad4``
+     - (see notes below)
 
 Other academics in the department have **temporary** access to some NVIDIA A100 GPU nodes in Bessemer:
 
@@ -70,10 +75,6 @@ Hardware specifications
    * - Local storage
      - 140 GB of temporary storage under ``/scratch`` (2x SSD RAID1)
 
-.. note::
-
-   Most other GPU nodes in Bessemer have 32GB of GPU memory per GPU.
-
 ``gpu-node017`` and ``gpu-node018`` 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -83,7 +84,7 @@ See the
 Requesting access
 -----------------
 
-Users other than the :ref:`four listed academics <dcs_acad_gpu_node_accounts>`
+Users other than the :ref:`listed academics <dcs_acad_gpu_node_accounts>`
 should contact one of those academics should they want access to these nodes.
 
 That academic can then grant users access to the relevant SLURM Account (e.g. ``dcs-acad1``)
