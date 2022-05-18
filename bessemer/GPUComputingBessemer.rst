@@ -122,6 +122,60 @@ GPU-enabled Software
   * :ref:`PGI Compilers_bessemer`
   * :ref:`nvidia_compiler_bessemer`
 
+Temporary NVIDIA A100 GPU nodes
+-------------------------------
+
+Prior to May 2022 the Bessemer cluster only featured :ref:`one 'public' GPU node <bessemer-gpu-specs>` containing NVIDIA V100 GPUs
+(although private GPU nodes could be accessed using :ref:`preemptable jobs, for those whose workflows could tolerate preemption<preemptable_jobs_bessemer>`).
+
+As of May 2022, 16 addtional GPUs nodes are (temporarily) available to all users of Bessemer.  
+These feature **NVIDIA A100 GPUs, which may be quite a bit faster than the (older generation) V100 GPUs** available elsewhere in Bessemer.
+
+.. warning::
+   These nodes are being made availble to Bessemer's users on a temporary basis
+   as they will be migrated to the University's new cluster
+   when that comes online in summer 2022.
+
+Specifications per A100 node:
+
+* Chassis: Dell XE8545
+* CPUs: 48 CPU cores from 2x AMD EPYC 7413 CPUs (*AMD Milan* aka *AMD Zen 3* microarchitecture; 2.65 GHz; 128MB L3 cache per CPU)
+* RAM: 512 GB (3200 MT/s)
+* Local storage: 460 GB RAID 1 on SSDs (boot device) plus 2.6 TB RAID 0 on SSDs (temporary storage)
+* GPUs: 4x `NVIDIA Tesla A100 <https://www.nvidia.com/en-gb/data-center/a100/>`__, each with
+
+  * High-bandwidth, low-latency `NVLink <https://www.nvidia.com/en-gb/design-visualization/nvlink-bridges/>`__ GPU interconnects
+  * 80GB memory (HBM2e)
+
+.. warning::
+
+   Much of the :ref:`existing centrally-provided software on Bessemer <bessemer-software>` won't work on
+   the AMD CPUs in these nodes as it has been heavily optimised for Intel CPUs.
+
+   Attempts to run Intel-optimised software on these nodes
+   will often result in *illegal instruction* errors.
+
+   A limited number of software packages have been provided for use on these nodes
+   whilst they are temporarily available in Bessemer.
+
+Interactive usage/access: ::
+
+ # Start an interactive session on the A100 nodes, this case with just one A100 GPU:
+ srun --pty --partition=gpu-test --gpus-per-node=1 /bin/bash -i
+ 
+ # Activate software that has been optimised for the AMD Milan CPUs in these nodes
+ module unuse /usr/local/modulefiles/live/eb/all 
+ module unuse /usr/local/modulefiles/live/noeb
+ module use /usr/local/modulefiles/staging/eb-znver3/all/
+
+ # List software available for use on these nodes
+ module avail
+
+Batch job usage/access - within your job script(s):
+
+* Ensure you have ``#SBATCH --partition=gpu-test`` near the top of your job script
+* Below that include the three ``module unuse`` / ``module use`` lines shown above before you run any software
+
 Training materials
 ^^^^^^^^^^^^^^^^^^
 
