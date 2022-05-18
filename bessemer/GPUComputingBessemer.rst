@@ -192,7 +192,7 @@ Specifications per A100 node:
 **Interactive usage/access**: ::
 
  # Start an interactive session on the A100 nodes, this case with just one A100 GPU:
- srun --pty --partition=gpu-test --gpus-per-node=1 /bin/bash -i
+ srun --pty --partition=gpu-a100-tmp --gpus-per-node=1 /bin/bash -i
  
  # Activate software that has been optimised for the AMD Milan CPUs in these nodes
  module unuse /usr/local/modulefiles/live/eb/all 
@@ -204,7 +204,7 @@ Specifications per A100 node:
 
 **Batch job usage/access** - within your job script(s):
 
-* Ensure you have ``#SBATCH --partition=gpu-test`` near the top of your job script
+* Ensure you have ``#SBATCH --partition=gpu-a100-tmp`` near the top of your job script
 * Below that include the three ``module unuse`` / ``module use`` lines shown above before you run any software
 
 Training materials
