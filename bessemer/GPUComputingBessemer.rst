@@ -168,6 +168,11 @@ Specifications per A100 node:
    AMD-compatible modules by 'unusing' the default modules area and 'using' the alternate ``eb-znver3`` area.
    Available modules can then be listed with the ``modules avail`` command."
 
+   Note that if you've compiled any software in your :ref:`home, fastdata or shared areas <filestore>`
+   using other nodes in Bessemer then this may or may not run on these AMD nodes
+   depending on the extent to which the compilation process optimised the code for Intel CPUs.
+   You may need to recompile.
+
    Many users of these nodes will want to use the 
    :ref:`Conda <python_conda_bessemer>` package manager 
    to install software; 
