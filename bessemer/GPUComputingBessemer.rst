@@ -122,6 +122,8 @@ GPU-enabled Software
   * :ref:`PGI Compilers_bessemer`
   * :ref:`nvidia_compiler_bessemer`
 
+.. _GPUResources_bessemer_tmp_a100_nodes:
+
 Temporary NVIDIA A100 GPU nodes
 -------------------------------
 
@@ -155,8 +157,34 @@ Specifications per A100 node:
    Attempts to run Intel-optimised software on these nodes
    will often result in *illegal instruction* errors.
 
-   A limited number of software packages have been provided for use on these nodes
-   whilst they are temporarily available in Bessemer.
+   A limited number of software packages have been provided 
+   in a separate area (activate by ``module use``) 
+   for use on these nodes whilst they are temporarily available in Bessemer:
+
+   * Some has been compiled and optimised for the AMD Milan CPUs in these nodes
+   * Other software isn't overly optimised for AMD Milan or Intel 
+     (typically as it's pre-compiled binaries provided by software vendors)
+
+   Many users of these nodes will want to use the 
+   :ref:`Conda <python_conda_bessemer>` package manager 
+   to install software; 
+   most software installed via Conda will work fine on these AMD Milan CPUs *but*
+   the default library used by numpy, pandas etc for linear algebra, the *Intel MKL*, 
+   isn't particularly performant on these CPUs.
+   If you can't offload your linear algebra onto the GPUs in these nodes then you 
+   may want to switch to using an alternative library for linear algebra e.g. ::
+
+      conda create -n my_non_intel_env1 -c anaconda python numpy scipy blas=*=*openblas openblas
+      . activate my_non_intel_env1
+
+   Or you can try using an older version of the Intel MKL instead,
+   where there's a special trick for enabling better performance on AMD CPUs: ::
+
+      conda create -n my_non_intel_env2 -c anaconda python numpy mkl=2019.* blas=*=*mkl
+      . activate my_non_intel_env2
+      conda env config vars set MKL_DEBUG_CPU_TYPE=5
+      deactivate
+      . activate my_non_intel_env2
 
 Interactive usage/access: ::
 
