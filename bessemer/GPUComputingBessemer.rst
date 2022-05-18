@@ -157,13 +157,19 @@ Specifications per A100 node:
    Attempts to run Intel-optimised software on these nodes
    will often result in *illegal instruction* errors.
 
+
+
+
    A limited number of software packages have been provided 
-   in a separate area (activate by ``module use``) 
    for use on these nodes whilst they are temporarily available in Bessemer:
 
-   * Some has been compiled and optimised for the AMD Milan CPUs in these nodes
+   * Some packages have been compiled and optimised for the AMD Milan CPUs in these nodes
    * Other software isn't overly optimised for AMD Milan or Intel 
      (typically as it's pre-compiled binaries provided by software vendors)
+
+   See the example below where we change our modules source from the normal Bessemer software packages modules to
+   AMD-compatible modules by 'unusing' the default modules area and 'using' the alternate ``eb-znver3`` area.
+   Available modules can then be listed with the ``modules avail`` command."
 
    Many users of these nodes will want to use the 
    :ref:`Conda <python_conda_bessemer>` package manager 
