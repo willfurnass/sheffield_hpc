@@ -134,7 +134,7 @@ As of May 2022, 16 addtional GPUs nodes are (temporarily) available to all users
 These feature **NVIDIA A100 GPUs, which may be quite a bit faster than the (older generation) V100 GPUs** available elsewhere in Bessemer.
 
 .. warning::
-   These nodes are being made availble to Bessemer's users on a temporary basis
+   These nodes are being made available to Bessemer's users on a temporary basis
    as they will be migrated to the University's new cluster
    when that comes online in summer 2022.
 
