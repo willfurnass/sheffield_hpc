@@ -223,12 +223,12 @@ Within your job script(s):
 Compiling for A100 GPUs
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-See :ref:<bessemer_gpu_code_gen_opts>.
+See :ref:`here <bessemer_gpu_code_gen_opts>`.
 
 More information on using AMD CPUs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-More detailed information on building and running software on AMD EPYC CPUs (e.g. AMD Milan)**:
+More detailed information on building and running software on AMD EPYC CPUs (e.g. AMD Milan):
 `PRACE's Best Practice Guide - AMD EYPC <https://prace-ri.eu/wp-content/uploads/Best-Practice-Guide_AMD.pdf>`__.
 
 Training materials
