@@ -199,7 +199,7 @@ Interactive usage/access
 
 Start an interactive session on the A100 nodes (in this case with just one A100 GPU): ::
 
-   srun --pty --partition=gpu-a100-tmp --gpus-per-node=1 /bin/bash -i
+   srun --pty --partition=gpu-a100-tmp --qos=gpu --gpus-per-node=1 /bin/bash -i
  
 Activate software that has been optimised for the AMD Milan CPUs in these nodes: ::
 
@@ -216,9 +216,8 @@ Batch job usage/access
 
 Within your job script(s):
 
-* Ensure you have ``#SBATCH --partition=gpu-a100-tmp`` near the top of your job script
-* Below that include the three ``module unuse`` / ``module use`` lines shown above before you run any software
-
+* Ensure you include the ``#SBATCH`` lines in :ref:`GPUJobs_bessemer` but change ``--partition`` from ``gpu`` to ``gpu-a100-tmp``;
+* Below that include the three ``module unuse`` / ``module use`` lines shown above before you run any software.
 
 Compiling for A100 GPUs
 ^^^^^^^^^^^^^^^^^^^^^^^
