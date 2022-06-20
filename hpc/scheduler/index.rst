@@ -194,6 +194,11 @@ be found on the `ShARC Parallel Environments <../../referenceinfo/scheduler/SGE/
 Batch Jobs
 ^^^^^^^^^^
 
+.. tip::
+
+    Batch jobs have larger resource limits than interactive jobs! For guidance on what these 
+    limits are and how best to select resources please see our :ref:`Choosing appropriate compute resources <Choosing-appropriate-compute-resources>` page.
+
 There is a single command to submit jobs via SGE:
 
 * :ref:`qsub` - Standard SGE command with no support for interactivity or graphical applications.
@@ -473,6 +478,11 @@ Slurm Command                        Description
 
 Batch Jobs
 ^^^^^^^^^^
+
+.. tip::
+
+    Batch jobs have larger resource limits than interactive jobs! For guidance on what these 
+    limits are and how best to select resources please see our :ref:`Choosing appropriate compute resources <Choosing-appropriate-compute-resources>` page.
 
 SLURM uses a single command to submit batch jobs:
 
