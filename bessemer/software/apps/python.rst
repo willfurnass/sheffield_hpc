@@ -22,8 +22,7 @@ need.
 Using Conda Python
 ------------------
 
-After connecting to Bessemer, start an interactive session
-with the ``srun --pty bash -i command``.
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import.rst
 
 Anaconda Python can be loaded with one of the following::
 
