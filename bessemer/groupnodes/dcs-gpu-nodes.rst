@@ -111,3 +111,8 @@ Resource limits per job:
    These jobs can be preempted by jobs submitted to the ``dcs-gpu`` and ``dcs-gpu-test`` partitions;
    if this happens
    the preempted jobs will be stopped mid-execution and re-queued.
+
+
+.. |partitions| replace:: dcs-gpu,dcs-gpu-test
+
+.. include:: ../../referenceinfo/imports/scheduler/SLURM/slurm-gpu-node-queries.rst
