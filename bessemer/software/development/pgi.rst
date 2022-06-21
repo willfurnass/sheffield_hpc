@@ -13,7 +13,7 @@ Making the PGI Compilers available
 .. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import.rst
 
 
-You can then activate a specific version of the compiler suite using: ::
+You can then activate a specific version of the compiler suite using one of: ::
 
    module load PGI/19.1-GCC-8.2.0-2.31.1
    module load PGI/18.10-GCC-6.4.0-2.28
