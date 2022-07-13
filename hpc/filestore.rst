@@ -37,7 +37,8 @@ To make a quick assessment of what storage area is likely to best fulfil your ne
 
 .. raw:: html
 
-  <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;zoom&quot;:0.75,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2022-05-17T10:51:33.887Z\&quot; agent=\&quot;5.0 (X11)\&quot; etag=\&quot;aTNH6U6dok4a2rC7qD6_\&quot; version=\&quot;18.0.5\&quot; type=\&quot;google\&quot;&gt;&lt;diagram name=\&quot;Page-1\&quot; id=\&quot;9c096ad6-e400-ecc8-3e38-643d2caac077\&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+
+  <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2022-07-13T11:57:30.582Z\&quot; agent=\&quot;5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36\&quot; etag=\&quot;fkK8Jvq6ORSCGxDMZFZW\&quot; version=\&quot;20.0.1\&quot; type=\&quot;device\&quot;&gt;&lt;diagram name=\&quot;Page-1\&quot; id=\&quot;9c096ad6-e400-ecc8-3e38-643d2caac077\&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
   <script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
   <!--This currently uses the remote JS hosted at diagrams.net but I saved a copy in the repo at _static/js/viewer-static.min.js in case service is ever withdrawn. -->
 
@@ -63,13 +64,21 @@ See also: :ref:`quota_check` and * :ref:`exceed_quota`.
 Snapshotting and mirrored backups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+---------------------------+--------------------+----------------------------------------+
-| Frequency of snapshotting | Snapshots retained | Backed up onto separate storage system |
-+===========================+====================+========================================+
-| Every 4 hours             | 10 most recent     | Yes                                    |
-+---------------------------+--------------------+----------------------------------------+
-| Every night               | Last 28 days       | Yes                                    |
-+---------------------------+--------------------+----------------------------------------+
++---------------------------+--------------------+
+| Frequency of snapshotting | Snapshots retained |
++===========================+====================+
+| Every 4 hours             | 10 most recent     |
++---------------------------+--------------------+
+| Every night               | Last 7 days        |
++---------------------------+--------------------+
+
++-------------------------------+------------------+
+| Frequency of mirrored backups | Backups retained |
++===============================+==================+
+| Every 4 hours                 | 6 most recent    |
++-------------------------------+------------------+
+| Every night                   | 28 most recent   |
++-------------------------------+------------------+
 
 See also: :ref:`recovering_snapshots`.
 
@@ -93,13 +102,21 @@ See also: :ref:`quota_check` and * :ref:`exceed_quota`.
 Snapshotting and mirrored backups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+---------------------------+--------------------+----------------------------------------+
-| Frequency of snapshotting | Snapshots retained | Backed up onto separate storage system |
-+===========================+====================+========================================+
-| Every 4 hours             | 10 most recent     | No                                     |
-+---------------------------+--------------------+----------------------------------------+
-| Every night               | Last 7 days        | No                                     |
-+---------------------------+--------------------+----------------------------------------+
++---------------------------+--------------------+
+| Frequency of snapshotting | Snapshots retained |
++===========================+====================+
+| Every 4 hours             | 10 most recent     |
++---------------------------+--------------------+
+| Every night               | Last 7 days        |
++---------------------------+--------------------+
+
++-------------------------------+------------------+
+| Frequency of mirrored backups | Backups retained |
++===============================+==================+
+| Every 4 hours                 | 6 most recent    |
++-------------------------------+------------------+
+| Every night                   | 28 most recent   |
++-------------------------------+------------------+
 
 See also: :ref:`recovering_snapshots`.
 
@@ -130,13 +147,13 @@ are **not performant when reading/writing lots of small files**
 (:ref:`scratch_dir` are ideal for reading/writing lots of small temporary files within jobs).
 An example of how slow it can be for large numbers of small files is detailed `here <http://www.walkingrandomly.com/?p=6167>`__.
 
-+----------+---------------------+--------+----------------+---------------------+-------------------------+---------------------------+
-| System   | Path                | Type   | Quota per user | Filesystem capacity | Shared between systems? | Network bandwith per link |
-+==========+=====================+========+================+=====================+=========================+===========================+
-| Bessemer | ``/fastdata``       | Lustre | No limits      | 460 TB              | No                      | 25Gb/s Ethernet           |
-+----------+---------------------+--------+----------------+---------------------+-------------------------+---------------------------+
-| ShARC    | ``/fastdata``       | Lustre | No limits      | 669 TB              | No                      | 100Gb/s (*Omni-Path*)     |
-+----------+---------------------+--------+----------------+---------------------+-------------------------+---------------------------+
++----------+---------------+--------+----------------+---------------------+-------------------------+---------------------------+
+| System   | Path          | Type   | Quota per user | Filesystem capacity | Shared between systems? | Network bandwith per link |
++==========+===============+========+================+=====================+=========================+===========================+
+| Bessemer | ``/fastdata`` | Lustre | No limits      | 460 TB              | No                      | 25Gb/s Ethernet           |
++----------+---------------+--------+----------------+---------------------+-------------------------+---------------------------+
+| ShARC    | ``/fastdata`` | Lustre | No limits      | 669 TB              | No                      | 100Gb/s (*Omni-Path*)     |
++----------+---------------+--------+----------------+---------------------+-------------------------+---------------------------+
 
 Snapshotting and mirrored backups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -183,7 +200,7 @@ Automatic file deletion
     We reserve the right to change this policy without warning in order to ensure efficient running of the service.
 
     It is important to therefore not use *fastdata* areas for long-term storage and 
-    **copy important data** from these areas to areas suitable for longer-term storage (:ref:`home_dir`, :ref:`data_dir` (*not* backed up) or :ref:`shared_dir`).
+    **copy important data** from these areas to areas suitable for longer-term storage (:ref:`home_dir`, :ref:`data_dir` or :ref:`shared_dir`).
 
 You can use the ``lfs``  command to find out which files in a *fastdata* directory are older than a certain number of days and hence approaching the time of deletion. 
 For example, if your username is ``te1st`` then you can find files 50 or more days old using: ::
