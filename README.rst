@@ -123,17 +123,6 @@ Important files / folders
 * ``referenceinfo/imports`` - sub-folder tree of files to be included by not directly built. This is excluded from direct building using exclude_patterns in ``conf.py``.
 * ``_static/css/custom.css`` - custom CSS overrides for the theme.
 
-Filestore flow diagram
-^^^^^^^^^^^^^^^^^^^^^^
-
-The flow diagram in ``hpc/filestore.rst`` can be updated by:
-
-#. Opening and editing ``hpc/Sheffield HPC Cluster Storage Selection decision tree.drawio.xml`` in `diagrams.net <https://app.diagrams.net>`__.
-#. Update the version of ``hpc/Sheffield HPC Cluster Storage Selection decision tree.drawio.xml`` in this repo.
-#. From diagrams.net *File* -> *Export as* -> *HTML...* and save the generated HTML file
-#. In ``hpc/filestore.rst`` update the ``<div class="mxgraph" ...>...</div>`` section beneath ``.. raw:: html``.
-#. Committing the updated ``hpc/filestore.rst`` (and ``hpc/Sheffield HPC Cluster Storage Selection decision tree.drawio.xml``) to this repo.
-
 (Re)-generating PNG images from Mermaid.js diagram definitions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
