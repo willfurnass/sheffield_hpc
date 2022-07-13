@@ -123,7 +123,6 @@ Important files / folders
 * ``referenceinfo/imports`` - sub-folder tree of files to be included by not directly built. This is excluded from direct building using exclude_patterns in ``conf.py``.
 * ``_static/css/custom.css`` - custom CSS overrides for the theme.
 
-
 (Re)-generating PNG images from Mermaid.js diagram definitions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
