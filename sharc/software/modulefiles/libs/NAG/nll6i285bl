@@ -1,5 +1,5 @@
 #%Module1.0#####################################################################
-## NAG C and Fortran libraries module file for use with the Intel compiler (>=19.0.3)
+## NAG C and Fortran libraries module file for use with the Intel compiler
 
 ## Module file logging
 source /usr/local/etc/module_logging.tcl
@@ -13,15 +13,10 @@ proc ModulesHelp { } {
     puts stderr "Makes the $product NAG C and Fortran libraries available (Mark $mark for the $compiler (>= $compilerminvers) compilers) "
 }
 
-set curMod [module-info name]
-if { [ module-info mode load ] } {
-     puts stderr "Note: '$curMod' is deprecated on this system."
-}
-
-set product         nll6i27dbl 
-set mark            27
+set product         nll6i285bl 
+set mark            28.5
 set compiler        intel
-set compilerminvers 19.0.3
+set compilerminvers 19.0.5
 set NAG_DIR         /usr/local/packages/libs/NAG/$product
 
 module-whatis   "Makes the $product NAG C and Fortran libraries available (Mark $mark for the $compiler (>= $compilerminvers) compilers)"
