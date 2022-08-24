@@ -16,7 +16,9 @@ Versions
 --------
 
 You can load a specific version using one of the following: ::
-
+    
+   module load impi/2019.9.304-iccifort-2020.4.304  # subset of intel 2020b EasyBuild toolchain
+   module load impi/2019.7.217-iccifort-2020.1.217  # subset of intel 2020a EasyBuild toolchain
    module load impi/2018.5.288-iccifort-2019.5.281  # subset of intel 2019b EasyBuild toolchain
    module load impi/2018.4.274-iccifort-2019.1.144-GCC-8.2.0-2.31.1  # subset of intel 2019a EasyBuild toolchain
    module load impi/2018.3.222-iccifort-2018.3.222-GCC-7.3.0-2.30 # subset of intel 2018b EasyBuild toolchain
