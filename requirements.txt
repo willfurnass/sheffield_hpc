@@ -14,7 +14,7 @@ pathtools==0.1.2
 port-for==0.6.2
 Pygments==2.13.0
 pyparsing==3.0.9
-pytz==2022.1
+pytz==2022.2.1
 PyYAML==6.0
 requests==2.28.1
 setuptools <63
