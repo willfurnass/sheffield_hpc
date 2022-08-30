@@ -191,10 +191,59 @@ Documentation
 
 ---------
 
+Nsight Systems
+--------------
+
+Nsight Systems is a system-wide performance analysis tool designed to visualize an application’s algorithms and identify the largest opportunities to optimize. It supports Pascal (SM 60) and newer GPUs.
+
+A common use-case for Nsight Systems is to generate application timelines via the command line, which can later be visualised on a local computer using the GUI component. Nsight Systems, ``nsys``, is provided by the following modules. ::
+
+    module load CUDAcore/11.0.2
+    module load CUDAcore/11.1.1
+    module load cuDNN/8.0.4.30-CUDA-11.0.2
+    module load cuDNN/8.0.4.30-CUDA-11.1.1
+
+You should use a version of nsys that is at least as new as the CUDA toolkit used to compile your application (if appropriate).
+
+To generate an application timeline with Nsight Systems CLI (nsys): ::
+
+    nsys profile -o timeline ./myapplication <arguments>
+
+Nsight systems can trace mulitple APIs, such as CUDA and OpenACC. The ``--trace`` argument to specify which APIs should be traced. See the `nsys profiling command switch options <https://docs.nvidia.com/nsight-systems/profiling/index.html#cli-profile-command-switch-options>`_ for further information. ::
+
+    nsys profile -o timeline --trace cuda,nvtx,osrt,openacc ./myapplication <arguments>
+
+Once this file has been downloaded to your local machine, it can be opened in ``nsys-ui``/``nsight-sys`` via File > Open > timeline.qdrep
+
+
+Nsight Compute
+--------------
+
+Nsight Compute is a kernel profiler for CUDA applications, which can also be used for API debugging. It supports Volta (SM 70) and newer GPUs.
+
+A common use-case for using Nsight Compute is to capture all available profiling metrics via the command line, which can later be analysed on a local computer using the GUI component. Nsight Compute, ``ncu``, is provided by the following modules. ::
+
+    module load CUDAcore/11.0.2
+    module load CUDAcore/11.1.1
+    module load cuDNN/8.0.4.30-CUDA-11.0.2
+    module load cuDNN/8.0.4.30-CUDA-11.1.1
+
+You should use a versions of ``ncu`` that is at least as new as the CUDA toolkit used to compile your application.
+
+To generate the default set of profile metrics with Nsight Compute CLI (``ncu``): ::
+
+    ncu -o metrics ./myapplication <arguments>
+
+Nsight compute can capture many different metrics which are used to generate the different sections of the profiling report. The ``--set`` argument can be used to control which set of metrics and sections are captured. See the `Nsight Compute CLI Command Line Options <https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html#command-line-options-profile>`_ for further information. ::
+
+    ncu -o metrics --set full ./myapplication <arguments>
+
+Once this file has been downloaded to your local machine, it can be opened in ``ncu-ui``/``nv-nsight-cu`` via File > Open File > metrics.ncu-rep
+
 Profiling using nvprof
 ----------------------
 
-Prior to September 2020 ``nvprof``, NVIDIA's CUDA profiler, could write its `SQLite <https://www.sqlite.org/>`__ database outputs to the ``/fastdata`` filesystem.
+Prior to September 2020 ``nvprof``, NVIDIA's CUDA profiler, could not write its `SQLite <https://www.sqlite.org/>`__ database outputs to the ``/fastdata`` filesystem.
 This was because SQLite requires a filesystem that supports file locking
 but file locking was not previously enabled on the (`Lustre <http://lustre.org/>`__) filesystem mounted on ``/fastdata``.
 
