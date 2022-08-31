@@ -64,7 +64,7 @@ The following code can be used in an interactive session to launch a single core
     # lsdyna_sp.e is for LS-DYNA single precision.
     # lsdyna_dp.e is for LS-DYNA double precision.
 
-    lsdyna_dp.e i=i.k memory=50m ncpu=$NSLOTS
+    lsdyna_dp.e i=i.k memory=50m ncpu=$SLURM_NTASKS
 
 
 --------------------
