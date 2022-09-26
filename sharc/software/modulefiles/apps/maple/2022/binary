@@ -1,0 +1,18 @@
+#%Module10.2#####################################################################
+
+## Module file logging
+source /usr/local/etc/module_logging.tcl
+##
+
+proc ModulesHelp { } {
+        global ver
+
+        puts stderr " Makes Maple $ver available to the system."
+}
+
+# Maple version (not in the user's environment)
+set     ver     2022
+
+module-whatis   "sets the necessary Maple $ver paths"
+
+prepend-path PATH /usr/local/packages/apps/maple/2022/binary/maple/bin
