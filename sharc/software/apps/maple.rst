@@ -21,6 +21,7 @@ The latest version of Maple (currently 2022) is made available with the command 
 Alternatively, you can load a specific version with ::
 
         module load apps/maple/2022/binary
+        module load apps/maple/2018/binary
 
 You can then run the graphical version of Maple by entering ``xmaple`` or the command line version by entering ``maple``.
 
