@@ -5,7 +5,7 @@ Apptainer/Singularity
 
 .. sidebar:: Apptainer
 
-   :Version: 1.0.x
+   :Version: 1.1.x
    :URL: https://apptainer.org/
 
 Designed around the notion of extreme mobility of compute and reproducible science,
@@ -208,7 +208,7 @@ This **will fail** unless you run your container with a ``--bind $PE_HOSTFILE:$P
 
     apptainer exec --bind $PE_HOSTFILE:$PE_HOSTFILE:ro /usr/local/packages/singularity/images/example.sif /home/$USER/my_script.sh
 
-For a more complete guide to using MPI with Apptainer (inc. multi-node jobs) `see the Apptainer project's documentation <https://apptainer.org/docs/user/1.0/mpi.html>`__.
+For a more complete guide to using MPI with Apptainer (inc. multi-node jobs) `see the Apptainer project's documentation <https://apptainer.org/docs/user/1.1/mpi.html>`__.
 
 Image Index on Github
 ---------------------

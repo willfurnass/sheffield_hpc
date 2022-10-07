@@ -66,7 +66,7 @@ An example MPI batch submission script is given below with the example NACA0012_
 
 .. important:: 
 
-    This example uses the hybrid MPI approach specified in the Apptainer documentation here: https://apptainer.org/docs/user/1.0/mpi.html#hybrid-model
+    This example uses the hybrid MPI approach specified in the Apptainer documentation here: https://apptainer.org/docs/user/1.1/mpi.html#hybrid-model
     This requires the matching of the container and cluster MPI versions as shown here by loading the matching MPI module for the Apptainer image.
 
 .. code-block:: bash
