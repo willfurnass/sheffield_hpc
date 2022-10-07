@@ -21,7 +21,7 @@ The following are the list of currently supported Deep Learning frameworks avail
 * :ref:`theano_sharc`
 * :ref:`torch_sharc`
 
-Deep Learning framworks often have a complex set of software requirements. With the introduction of Singularity on ShARC, a containerisation technology similar to Docker, it is now possible for you to create a software stack that exactly fits your needs and will run on both your local development machine and the ShARC cluster (see :ref:`singularity_sharc`).
+Deep Learning framworks often have a complex set of software requirements. With the introduction of Apptainer/Singularity on ShARC, a containerisation technology similar to Docker, it is now possible for you to create a software stack that exactly fits your needs and will run on both your local development machine and the ShARC cluster (see :ref:`apptainer_sharc`).
 
 Use of GPUs for training Neural Networks
 ----------------------------------------

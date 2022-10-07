@@ -36,7 +36,7 @@ Categories and installation locations
    #. ``libs``: libraries
    #. ``dev``: compilers and development tools
    #. ``mpi``: MPI implementations
-   #. ``singularity``: `Singularity <http://singularity.lbl.gov/>`__ container images (plus unpacked NVIDIA drivers for CUDA work)
+   #. ``apptainer``: `Apptainer/Singularity <https://apptainer.org/>`__ container images (plus unpacked NVIDIA drivers for CUDA work)
 
 - Install locations will follow this schema: ::
  
@@ -149,9 +149,9 @@ This should only be used for scripts which would be needed by **all** users
 (such as ``quota``, or ``resetenv``).  
 This should **not** be used for binaries, or for applications.
 
-Singularity images
-^^^^^^^^^^^^^^^^^^
+Apptainer/Singularity images
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Singularity images are a little different: 
+Apptainer/Singularity images are a little different: 
 images are to be installed under ``/usr/local/packages/singularity/images`` (naming hierarchy TBC).
 Unpacked NVIDIA drivers (for CUDA work) are to be installed under ``/usr/local/packages/singularity/nvidia-driver``.
