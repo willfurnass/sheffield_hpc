@@ -417,3 +417,16 @@ HPC users do not have sufficient access privileges to use sudo to install softwa
 Users can however install applications in their ``/home`` or ``/data`` directories.
 
 The webpage `Installing Applications on Bessemer and ShARC <https://docs.hpc.shef.ac.uk/en/latest/hpc/installing-software.html>`_ provides guidance on how to do this.
+
+Is data encrypted at rest on HPC storage areas?
+-----------------------------------------------
+
+At present, no HPC storage areas on any of our clusters encrypt data at rest.
+
+Are the HPC clusters certified to standards such as Cyber Essentials, Cyber Essentials Plus or ISO 27001?
+---------------------------------------------------------------------------------------------------------
+
+Due to the complexity of the multi-user High Performance Computing service,
+the service is not currently certified as being compliant with the
+Cyber Essentials, Cyber Essentials Plus or ISO 27001 schemes/standards.
+This is unlikely to change in future.
