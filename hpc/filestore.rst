@@ -24,6 +24,8 @@ The storage areas differ in terms of:
   and the maximum duration data can be retained for;
 * whether they handle permissions like a typical Linux filesystem.
 
+At present none provide *encryption at rest*.
+
 -----
 
 Choosing the correct filestore
