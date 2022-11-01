@@ -3,7 +3,7 @@ Rosetta
 
 .. sidebar:: Rosetta
    
-   :Version: 3.8
+   :Versions: 3.13, 3.10, 3.8
    :Dependencies: No prerequisite modules loaded
    :URL: https://www.rosettacommons.org/
    :Documentation: https://www.rosettacommons.org/docs/latest/Home
@@ -13,11 +13,13 @@ Rosetta is a comprehensive software suite for modeling macromolecular structures
 Usage
 -----
 
-Rosetta 3.8 can be activated using the module file::
+Rosetta can be activated by loading one of the following module files: ::
 
+    module load apps/rosetta/3.13/binary
+    module load apps/rosetta/3.10/binary
     module load apps/rosetta/3.8/binary
 
-The above module file adds the Rosetta ``/usr/local/packages/apps/rosetta/3.8/binary/main/source/bin`` executables to a user's path.
+The above module file adds the Rosetta executables to a user's path.
 
 Installation notes
 ------------------
