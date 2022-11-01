@@ -2,6 +2,18 @@
   max-width: 75% !important;
 }
 
+.wy-side-nav-search {
+	background-color: #a8d9e7!important;
+}
+
+.wy-nav-side {
+	background: #151d28!important;
+}
+
+.wy-side-nav-search .wy-dropdown > a, .wy-side-nav-search > a {
+	color: #440099!important;
+}
+
 .wy-menu-vertical li.toctree-l3, .wy-menu-vertical li.toctree-l4 .wy-menu-vertical {
     font-size: 1em;
 }
