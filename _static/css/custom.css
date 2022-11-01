@@ -6,6 +6,10 @@
 	background-color: #a8d9e7!important;
 }
 
+.wy-side-nav-search > div.version {
+	color: #440099!important;
+}
+
 .wy-nav-side {
 	background: #151d28!important;
 }
