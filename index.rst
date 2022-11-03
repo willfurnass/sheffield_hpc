@@ -1,6 +1,6 @@
 .. _hpc-home:
 
-High Performance Computing at Sheffield
+High Performance Something at Sheffield
 =======================================
 
 This is the documentation for The University of Sheffield's High Performance Computing (HPC) clusters:
