@@ -3,6 +3,11 @@
 Connecting to a cluster using myApps (web browser)
 ==================================================
 
+.. Hint::
+
+    Usernames to connect with all HPC services will be the same as those you use to login to MUSE :underline-bold:`not` the prefix on your email address.
+
+
 In order to access ShARC and Bessemer you must set up a `VPN and MFA <https://www.sheffield.ac.uk/it-services/vpn>`_. 
 Also see section **Whether/how you can connect** below. 
 
@@ -31,6 +36,12 @@ The terminal is equivalent to a login node session from which you can use ``qsh`
 
 Connecting to a cluster using SSH
 =================================
+
+
+.. Hint::
+
+    Usernames to connect with all HPC services will be the same as those you use to login to MUSE :underline-bold:`not` the prefix on your email address.
+
 
 The most versatile way to **run commands and submit jobs** on one of the clusters is to
 use a mechanism called `SSH <https://en.wikipedia.org/wiki/Secure_Shell>`__,
@@ -84,6 +95,7 @@ including *MobaXTerm*.
 | ShARC    | Password + MFA **or** public key      | Not permitted (unless using the :ref:`HPC SSH gateway service <hpcgw_summary>`)                   |
 +----------+---------------------------------------+---------------------------------------------------------------------------------------------------+
 
+
 .. _mobaxterm_connecting_profile_setup:
 
 SSH client software on Windows
@@ -135,6 +147,11 @@ Open a terminal (e.g. *Gnome Terminal* on Linux or *Terminal* on macOS) and then
 
 Establishing a SSH connection
 -----------------------------
+
+.. Hint::
+
+    Usernames to connect with all HPC services will be the same as those you use to login to MUSE :underline-bold:`not` the prefix on your email address.
+
 
 Once you have a terminal open run the following command to
 log in to a cluster: ::
