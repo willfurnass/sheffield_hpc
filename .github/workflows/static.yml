@@ -27,9 +27,9 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     strategy:
-      # Spawn and run a job for each of two supported Python 3.x versions
+      # Spawn and run a job for Python 3.7 version.
       matrix:
-        python: [3.7, 3.9]
+        python: [3.7]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
