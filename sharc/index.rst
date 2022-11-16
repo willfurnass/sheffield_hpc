@@ -5,7 +5,7 @@ ShARC
 
 .. note::
 
-    The latest changes and installed software on our clusters can be found at the `HPC Changelog <http://changelog.hpc.shef.ac.uk/>`_ microsite.
+    The latest changes and newly installed software on our clusters can be found at the `HPC Changelog <http://changelog.hpc.shef.ac.uk/>`_ microsite.
 
 
 
