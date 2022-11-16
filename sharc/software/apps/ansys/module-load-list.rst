@@ -20,3 +20,4 @@ or :ref:`submit a batch job <submit_batch_sharc>` using ANSYS programs by activa
   module load apps/ansys/20.2/binary
   module load apps/ansys/21.1/binary
   module load apps/ansys/21.2/binary
+  module load apps/ansys/22.2/binary
