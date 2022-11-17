@@ -46,6 +46,12 @@ jobs:
       # Run build stage - py37 should suffice.
       - name: Generate pages
         run: tox -e py37
+      # Match old RTD directories
+      - name: Upgrade pip and install Tox
+        run: |
+          mkdir -p _build/html/en/latest
+          cd _build/html/
+          mv * en/latest
       # Now upload to Github Pages
       - name: Setup Pages
         uses: actions/configure-pages@v2
