@@ -46,8 +46,8 @@ jobs:
       # Run build stage - py37 should suffice.
       - name: Generate pages
         run: tox -e py37
-      # Match old RTD directories
-      - name: Upgrade pip and install Tox
+      # Match old RTD directories pathing
+      - name: Move generated files
         run: |
           mkdir -p _build/html/en/latest
           cd _build/html/
