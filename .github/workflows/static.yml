@@ -50,8 +50,10 @@ jobs:
       - name: Move generated files
         run: |
           mkdir -p _build/html/en/latest
-          cd _build/html/
-          mv * en/latest
+          mv _build/html/* _build/html/en/latest
+      - name: Add root redirect HTML index.
+        run: |
+          cp rtd-root-redirect.html _build/html/index.html
       # Now upload to Github Pages
       - name: Setup Pages
         uses: actions/configure-pages@v2
