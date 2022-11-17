@@ -1,26 +1,26 @@
 name: Deploy site static content to Github Pages
 
 on:
-  # Runs on pushes targeting the default branch
+  # Runs on pushes targeting the default branch.
   push:
     branches: ["master"]
 
-  # Or manually from the Actions tab
+  # Or manually from the Actions tab.
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages.
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
+# Allow only one deployment at a time.
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
-  # Single deploy job since we're just deploying
+  # Single deploy job since we're just deploying the once to Github Pages.
   deploy:
     environment:
       name: github-pages
@@ -33,7 +33,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      # Install some Pythons.
+      # Install Python.
       - name: Set up a version of Python
         uses: actions/setup-python@v2
         with:
@@ -44,26 +44,27 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install tox
       # Run build stage - py37 should suffice.
-      - name: Generate pages
+      - name: Build the pages
         run: tox -e py37
-      # Match old RTD directories pathing
-      - name: Move generated files
+      # Match old RTD directories pathing.
+      - name: Move built files
         run: |
           mkdir -p _build/html/en/latest
           cd _build/html/
           find . -mindepth 1 -maxdepth 1 -not -name en -exec mv -t en/latest {} +
           cd ../../
-      - name: Add root redirect HTML index.
+      - name: Add webroot redirect HTML index page.
         run: |
           cp rtd-root-redirect.html _build/html/index.html
-      # Now upload to Github Pages
       - name: Setup Pages
         uses: actions/configure-pages@v2
+      # Make the artifact which is used to deploy.
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload entire repository
+          # Make the artifact with the HTML build directory.
           path: '_build/html'
+      # Now deploy with the artifact.
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
