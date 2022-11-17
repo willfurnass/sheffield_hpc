@@ -1,5 +1,5 @@
-.. image:: https://readthedocs.org/projects/iceberg/badge/?version=latest
-    :target: https://readthedocs.org/projects/iceberg/builds/
+.. image:: https://github.com/rcgsheffield/sheffield_hpc/actions/workflows/static.yml/badge.svg
+    :target: https://github.com/rcgsheffield/sheffield_hpc/actions/workflows/static.yml
 
 Sheffield High Performance Computing Documentation
 ==================================================
