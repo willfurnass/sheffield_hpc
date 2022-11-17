@@ -50,7 +50,9 @@ jobs:
       - name: Move generated files
         run: |
           mkdir -p _build/html/en/latest
-          mv _build/html/* _build/html/en/latest
+          cd _build/html/
+          find . -mindepth 1 -maxdepth 1 -not -name en -exec mv -t en/latest {} +
+          cd ../../
       - name: Add root redirect HTML index.
         run: |
           cp rtd-root-redirect.html _build/html/index.html
