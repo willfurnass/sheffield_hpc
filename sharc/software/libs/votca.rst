@@ -72,8 +72,4 @@ This section is primarily for administrators of the system.
 
 **Version .v2022**
 
-Votca v2022 was compiled with GCC 8.2 and cmake 3.1.7. This was installed using the following
-:download:`install_gdal.sh </sharc/software/install_scripts/libs/gdal/install_gdal.sh>`
-script. This script will automatically install GDAL, generate the module file and correct the file 
-permissions as needed. Build logs are also automatically generated and copied to the base install 
-directory or src directory.
+Votca v2022 was compiled with GCC 8.2 and cmake 3.1.7. 
