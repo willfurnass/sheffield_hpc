@@ -1,10 +1,35 @@
-_build/**
-html/
 .doctrees
 get_docs.py
 *.*~
 *swp
 .mypy_cache/
-.vscode/
 UNKNOWN.egg-info/
+
+# Editors
+.vscode/
+.idea/
+
+# Build deps and envs
 .tox/
+.conda
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Builds
+_build/**
+html/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Mac/OSX
+.DS_Store
+
+# Windows
+Thumbs.db
