@@ -1,4 +1,4 @@
-.. _gdal_sharc:
+.. _votca_sharc:
 
 VOTCA
 ======
