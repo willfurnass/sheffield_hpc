@@ -16,13 +16,6 @@ like drop tests, impact and penetration, smashes and crashes, occupant safety, a
 ANSYS LS-DYNA can make use of built in :ref:`MPI <parallel_MPI>` to utilize multiple cross 
 node CPU and can scale to hundreds of cores.
 
-.. warning::
-
-    For the academic year 2021-2022 a total of 12 MPP(multicore) licenses are available. 
-    
-    For any given MPI or SMP job you will use ``X-1`` ANSYS LS-DYNA MPP licenses where ``X`` is your 
-    chosen number of cores.
-
 
 ----------------
 

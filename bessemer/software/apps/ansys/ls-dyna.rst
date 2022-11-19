@@ -17,14 +17,6 @@ ANSYS LS-DYNA can make use of built in :ref:`MPI <parallel_MPI>` to utilize mult
 CPU and can scale to hundreds of cores.
 
 
-.. warning::
-
-    For the academic year 2021-2022 a total of 12 MPP (multicore) licenses are available. 
-    
-    For any given job you will use ``X-1`` ANSYS LS-DYNA MPP licenses where ``X`` is your chosen 
-    number of cores.
-
-
 ----------------
 
 .. include:: ../ansys/module-load-list.rst
