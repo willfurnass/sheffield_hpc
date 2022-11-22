@@ -11,8 +11,16 @@ proc ModulesHelp { } {
 }
 
 # julia version (not in the user's environment)
-set     ver     1.8.2
+set ver       1.8.2
+set juliaroot /usr/local/packages/apps/julia/1.8.2/binary
+
 
 module-whatis   "sets the necessary julia $ver paths"
 
-prepend-path PATH /usr/local/packages/apps/julia/1.8.2/binary/bin
+prepend-path PATH              $juliaroot/bin
+prepend-path CMAKE_PREFIX_PATH $juliaroot 
+prepend-path CPATH             $juliaroot/include 
+prepend-path LD_LIBRARY_PATH   $juliaroot/lib 
+prepend-path LIBRARY_PATH      $juliaroot/lib 
+prepend-path MANPATH           $juliaroot/share/man 
+prepend-path XDG_DATA_DIRS     $juliaroot/share 
