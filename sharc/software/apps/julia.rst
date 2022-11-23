@@ -28,8 +28,7 @@ Installation notes
 These are primarily for administrators of the system.
 
 **julia version 1.8.2**
-
- wget https://julialang-s3.julialang.org/bin/linux/x64/1.8/julia-1.8.2-linux-x86_64.tar.gz
- tar -xf julia-1.8.2-linux-x86_64.tar.gz
+Julia was installed using the
+:download:`install_julia.sh </sharc/software/install_scripts/apps/julia/1.8.2/install_julia.sh>` script.
 
 The module file is :download:`/usr/local/modulefiles/apps/julia/1.8.2/binary </sharc/software/modulefiles/apps/julia/1.8.2/binary>`.
