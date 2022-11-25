@@ -8,6 +8,8 @@ Applications on Stanage
     :glob:
 
     ansys/index
+    openfoam
+    vasp
 
 ..
     Eventually the above should look like:
