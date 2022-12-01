@@ -60,6 +60,7 @@ ANSYS example models
 ANSYS contains a large number of example models which can be used to become familiar with the software.
 The models can be found in::
 
+  /usr/local/packages/apps/ansys/22.2/binary/v222/ansys/data
   /usr/local/packages/apps/ansys/21.2/binary/v212/ansys/data
   /usr/local/packages/apps/ansys/21.1/binary/v211/ansys/data
   /usr/local/packages/apps/ansys/20.2/binary/v202/ansys/data
@@ -152,6 +153,10 @@ ANSYS 21.2 was installed using the GUI installer with all features and the modul
 file is
 :download:`/usr/local/modulefiles/apps/ansys/21.2/binary </sharc/software/modulefiles/apps/ansys/21.2/binary>`.
 
+ANSYS 22.2 was installed using the GUI installer with all features and the module
+file is
+:download:`/usr/local/modulefiles/apps/ansys/22.2/binary </sharc/software/modulefiles/apps/ansys/22.2/binary>`.
+
 
 ----------
 
@@ -161,6 +166,7 @@ ANSYS 20.1, and higher were installed using the GUI installer and then permissio
     chmod 775 -R /usr/local/packages/apps/ansys/20.2/binary
     chmod 775 -R /usr/local/packages/apps/ansys/21.1/binary
     chmod 775 -R /usr/local/packages/apps/ansys/21.2/binary
+    chmod 775 -R /usr/local/packages/apps/ansys/22.2/binary
 
 Please follow the same install directory structure.
 

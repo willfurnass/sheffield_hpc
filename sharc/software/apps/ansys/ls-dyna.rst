@@ -35,7 +35,7 @@ The following code can be used in an interactive session to launch a single core
 
 .. code-block:: bash
 
-    module load apps/ansys/21.1/binary
+    module load apps/ansys/22.2/binary
 
     #Set license type and LM server 
     export LSTC_LICENSE_FILE=network
@@ -93,7 +93,7 @@ Sample MPI LS-DYNA Batch Job Script
     #$ -N JobName
 
     #Only load ANSYS
-    module load apps/ansys/21.1/binary
+    module load apps/ansys/22.2/binary
 
     #Set license type and LM server
     export LSTC_LICENSE_FILE=network
@@ -150,7 +150,7 @@ Sample SMP LS-DYNA Batch Job Script
     #$ -N JobName
 
     #Only load ANSYS
-    module load apps/ansys/21.1/binary
+    module load apps/ansys/22.2/binary
 
     #Set license type and LM server 
     export LSTC_LICENSE_FILE=network

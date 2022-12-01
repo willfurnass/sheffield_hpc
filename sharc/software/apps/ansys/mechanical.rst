@@ -69,7 +69,7 @@ The script requests 4 cores using the MPI parallel environment with a runtime of
     #$ -l h_rt=00:10:00
     #$ -l rmem=2G
     #$ -pe mpi 4
-    module load apps/ansys/20.2/binary
+    module load apps/ansys/22.2/binary
 
     MACHINEFILE="machinefile.$JOB_ID"
 
@@ -109,7 +109,7 @@ The script requests 4 cores using the SMP (``single node shared memory``) parall
     #$ -l h_rt=00:10:00
     #$ -l rmem=2G
     #$ -pe smp 4
-    module load apps/ansys/20.2/binary
+    module load apps/ansys/22.2/binary
     mapdl -b -np $NSLOTS -smp -i CrankSlot_Flexible.inp
 
 

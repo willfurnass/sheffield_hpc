@@ -110,7 +110,7 @@ The script requests 8 cores using the MPI parallel environment ``mpi-rsh`` with 
         done
     done
 
-    module load apps/ansys/21.2/binary
+    module load apps/ansys/22.2/binary
     fluent 3ddp -i test.jou -gu -t $NSLOTS -rsh -mpi=intel -driver null -cnf=$MACHINEFILE -pib.infinipath
 
 -----------------------
@@ -131,7 +131,7 @@ The following is an example batch submission script, ``cfd_job.sh``, to run the 
     #$ -pe smp 8
     #$ -N JobName
 
-    module load apps/ansys/21.2/binary
+    module load apps/ansys/22.2/binary
 
     fluent 2ddp -i test.jou -gu -t $NSLOTS -driver null
 
