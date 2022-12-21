@@ -167,8 +167,6 @@ To build a CUDA application which targets just the public GPUS nodes, use the fo
       -gencode=arch=compute_70,code=sm_70 \
       -gencode=arch=compute_70,code=compute_70
 
-There are :ref:`(temporarily) also a number of A100 GPU nodes in Bessemer <GPUResources_bessemer_tmp_a100_nodes>`
-which are Compute Capability 80.
 To build a CUDA application which targets just those nodes
 you need CUDA >= 11 and need to supply the following ``-gencode`` arguments:
 
