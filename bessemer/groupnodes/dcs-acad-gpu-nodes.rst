@@ -32,25 +32,6 @@ share two NVIDIA V100 GPU nodes in :ref:`Bessemer <bessemer>`:
      - ``dcs-acad4``
      - (see notes below)
 
-Other academics in the department have **temporary** access to some NVIDIA A100 GPU nodes in Bessemer:
-
-.. list-table::
-   :header-rows: 1
-
-   * - Academic(s)
-     - Node
-     - Slurm Account name
-     - Slurm Partition name
-   * - `Heidi Christensen`_ / `Jon Barker`_
-     - ``gpu-node017``
-     - ``dcs-acad5``
-     - ``dcs-acad5``
-   * - `Nafise Sadat Moosavi`_
-     - ``gpu-node018``
-     - ``dcs-acad6``
-     - ``dcs-acad6``
-
-
 .. _dcs_acad_gpu_nodes_hw:
 
 Hardware specifications
@@ -74,12 +55,6 @@ Hardware specifications
      - 25 Gbps Ethernet
    * - Local storage
      - 140 GB of temporary storage under ``/scratch`` (2x SSD RAID1)
-
-``gpu-node017`` and ``gpu-node018`` 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-See the 
-:ref:`specifications of the NVIDIA A100 nodes listed here <GPUResources_bessemer_tmp_a100_nodes>`.
 
 Requesting access
 -----------------
@@ -144,31 +119,7 @@ Resource limits per job:
   i.e. multi-node jobs are not permitted.
 * Same default and maximum run-time (:ref:`as above <dcs_acad_gpu_nodes_non_prempt_access>`).
 
-gpu-node017 and gpu-node018: access to a node
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Two sets two academics (plus their collaborators) each have access to one node.
-
-To submit a job via this route, you need to 
-:ref:`specify a Partition and an Account <slurm_access_priv_nodes>` 
-when submitting a batch job or starting an interactive session:
-
-* Partition: ``dcs-acadX`` where ``X`` is 5 or 6 and :ref:`varies between the academics <dcs_acad_gpu_node_accounts>`).
-* Account: ``dcs-acadX`` where again ``X`` is 5 or 6.
-* QoS: do not specify one i.e. do not use the ``--qos`` parameter.
-
-Resource limits per job:
-
-* Default run-time: 8 hours
-* Maximum run-time: 7 days
-* CPU cores: 48
-* GPUs: 4
-* Memory: 512 GB
-
 .. _Carolina Scarton: https://www.sheffield.ac.uk/dcs/people/academic/carolina-scarton
 .. _Chenghua Lin: https://www.sheffield.ac.uk/dcs/people/academic/chenghua-lin
-.. _Heidi Christensen: https://www.sheffield.ac.uk/dcs/people/academic/heidi-christensen
-.. _Jon Barker: https://www.sheffield.ac.uk/dcs/people/academic/jon-barker
 .. _Matt Ellis: https://www.sheffield.ac.uk/dcs/people/academic/matt-ellis
-.. _Nafise Sadat Moosavi: https://www.sheffield.ac.uk/dcs/people/academic/nafise-sadat-moosavi
 .. _Po Yang: https://www.sheffield.ac.uk/dcs/people/academic/po-yang
