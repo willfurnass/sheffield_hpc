@@ -1,3 +1,4 @@
+---
 name: Deploy site static content to Github Pages
 
 on:
@@ -35,7 +36,7 @@ jobs:
         uses: actions/checkout@v3
       # Install Python.
       - name: Set up a version of Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python }}
       # Install Tox for build stage.
