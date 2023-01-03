@@ -30,7 +30,7 @@ jobs:
     strategy:
       # Spawn and run a job for Python 3.10 version.
       matrix:
-        python: [3.10]
+        python: ["3.10"]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
