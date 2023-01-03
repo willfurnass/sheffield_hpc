@@ -23,6 +23,8 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx_substitution_extensions',
+    'sphinxcontrib.jquery',
+    'sphinx_rtd_theme',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -38,7 +40,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Sheffield HPC Documentation'
-copyright = '2022, The University of Sheffield'
+copyright = '2023, The University of Sheffield'
 author = 'The University of Sheffield'
 
 # The version info for the project you're documenting, acts as replacement for
