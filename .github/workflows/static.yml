@@ -28,9 +28,9 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     strategy:
-      # Spawn and run a job for Python 3.7 version.
+      # Spawn and run a job for Python 3.10 version.
       matrix:
-        python: [3.7]
+        python: [3.10]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -46,7 +46,7 @@ jobs:
           python -m pip install tox
       # Run build stage - py37 should suffice.
       - name: Build the pages
-        run: tox -e py37
+        run: tox -e py310
       # Match old RTD directories pathing.
       - name: Move built files
         run: |

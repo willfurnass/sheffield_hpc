@@ -16,7 +16,7 @@ Rendered Documentation
 each push to the ``master`` branch causes the `ReadTheDocs <https://readthedocs.org/>`__ service to
 build and serve the documentation.
 
-The ReadTheDocs build configuration is stored in the ``.readthedocs.yaml`` file with the Python version pinned to 3.7 and the Pip 
+The ReadTheDocs build configuration is stored in the ``.readthedocs.yaml`` file with the Python version pinned to 3.10 and the Pip 
 requirements file. The requirements file is ``requirements.txt``.
 
 Please note that the use of the ``.readthedocs.yaml`` file will also override certain web UI settings set in the ReadTheDocs administrative panel.
@@ -47,25 +47,25 @@ Building the documentation on a local Windows machine
 
 #. Create a new *conda environment* for building the documentation by running the following from this window: ::
 
-    conda create --name sheffield_hpc python=3.7
+    conda create --name sheffield_hpc python=3.10
     conda activate sheffield_hpc	# . activate sheffield_hpc on older versions of conda
     pip install tox
 
 #. To build the HTML documentation run: ::
 
-    tox -e py37
+    tox -e py310
 
 The output should be written to ``./_build/html``.
 
 Building the documentation on a local Linux machine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Ensure one of Python 3.9 or 3.7 are installed.
+#. Ensure one of Python 3.10 or 3.11 are installed.
 #. Ensure the Tox_ build tool is installed and can be used/seen by your chosen Python interpreter.
 
 #. Run Tox to create an isolated Python virtual environment then build documentation: ::
 
-     tox -e py37  # OR
+     tox -e py310
      tox -e py39
 
 The output should be written to ``./_build/html``.
@@ -77,13 +77,13 @@ Building the documentation on a local Mac machine
 #. Install the Python packages needed to build the HTML documentation.  If you are using (mini)conda create a new *conda environment* for building the documentation by running: ::
 
     export PATH=${HOME}/miniconda3/bin:$PATH
-    conda create -n sheffield_hpc python=3.7
+    conda create -n sheffield_hpc python=3.10
     conda activate sheffield_hpc	# . activate sheffield_hpc on older versions of conda
     pip install tox
 
 #. To build the HTML documentation run::
 
-    tox -e py37
+    tox -e py310
 
 The output should be written to ``./_build/html``.
 
@@ -92,21 +92,21 @@ Check external links
 
 Do this with: ::
 
-   tox -e py37-linkcheck
+   tox -e py310-linkcheck
 
 Continuous build and serve
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Build and serve the site and automatically rebuild when source files change: ::
 
-   tox -e py37-livehtml
+   tox -e py310-livehtml
 
 Testing the building of the documentation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The validity of the reStructuredText in this repo and the ability to convert that to HTML with Sphinx can be tested in three ways:
 
-* Locally by contributors when they run e.g. ``tox -e py37-livehtml``
+* Locally by contributors when they run e.g. ``tox -e py310-livehtml``
 * By a [GitHub Actions](https://github.com/rcgsheffield/sheffield_hpc/actions/) Workflow each time a contributor creates or updates a Pull Request.
 * By `ReadTheDocs <https://readthedocs.org/projects/iceberg/>`__ on each push to the ``master`` branch.
 
