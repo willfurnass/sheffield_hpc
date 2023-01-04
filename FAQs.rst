@@ -430,3 +430,43 @@ Due to the complexity of the multi-user High Performance Computing service,
 the service is not currently certified as being compliant with the
 Cyber Essentials, Cyber Essentials Plus or ISO 27001 schemes/standards.
 This is unlikely to change in future.
+
+Can I use VSCode on the HPC clusters?
+---------------------------------------------------------------------------------------------------------
+
+Usage restrictions
+^^^^^^^^^^^^^^^^^^
+
+.. caution::
+
+        The usage of VSCode on the Sheffield HPC clusters is partially restricted. Usage of the **Visual Studio Code Remote - SSH** 
+        and **Visual Studio Code Remote Explorer** extensions to run VSCode on the HPC clusters is not permitted.
+
+The **Visual Studio Code Remote - SSH** and **Visual Studio Code Remote Explorer** extensions use SSH to download a copy of VSCode 
+to the cluster then start VSCode on the login nodes and forward back the interface to you. This means the VSCode and all 
+dependent processes you run in the terminal are run on the login nodes. Not only does this tend to spawn lots of processes 
+(which might hit our 100 processes per user limit on the login nodes which will lock you out of the cluster) it also fails 
+to clean up processes correctly when the SSH connection is eventually terminated. This results in orphaned processes using 
+high CPU, wasting resources. Furthermore, some users also try to use large amounts of CPU by running code / debugging on 
+the login nodes which unfairly impacts other users as well.
+
+.. hint::
+
+        As documented elsewhere in this site, if you are doing anything that will require a lot of CPU or memory you should use a worker node.
+
+Permitted alternative methods for running VSCode are detailed below in the ideal order of preference
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In the first instance, we recommend a workflow where version control with Github (or similar) is used alongside VSCode where scripts/code are 
+synchronised between machines (e.g. your local machine and the HPC cluster) using conventional Git sync commands. Users are free to use the 
+VSCode terminal on the local machine to SSH to the clusters and execute commands where necessary.
+
+If this is not possible then VSCode can be ran on a worker node and forwarded back to your local machine in a web browser 
+via our VSCode Remote HPC script, (from `Github <https://github.com/rcgsheffield/vscoderemote_sheffield_hpc>`_). Details for its use 
+are included on the linked Github page.
+
+If neither of these options are not feasible, then running VSCode on a local machine in concert with 
+`an SSHFS mount of the desired folders <https://linuxize.com/post/how-to-use-sshfs-to-mount-remote-directories-over-ssh/>`_ 
+from the HPC clusters to the local filesystem is possible but discouraged due to the likelihood of poor performance from machines remote 
+from the clusters. By mounting the folder from the HPC cluster to a local filesystem folder, users can edit files on the cluster with VSCode 
+as if they were normal local machine files.
