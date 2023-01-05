@@ -66,7 +66,7 @@ Building the documentation on a local Linux machine
 #. Run Tox to create an isolated Python virtual environment then build documentation: ::
 
      tox -e py310
-     tox -e py39
+     tox -e py311
 
 The output should be written to ``./_build/html``.
 
