@@ -461,6 +461,32 @@ The RSA, ECDSA and ED25519 fingerprints for Bessemer's login nodes are: ::
 
 ------
 
+I have a new account, how do I transfer data from my old account
+----------------------------------------------------------------
+To transfer data between your old account and your new account you could make use of either `SCP <https://docs.hpc.shef.ac.uk/en/latest/hpc/transferring-files.html#using-scp-in-the-terminal>`__ or `rsync <https://docs.hpc.shef.ac.uk/en/latest/hpc/transferring-files.html#using-rsync>`__. We encourage users to use rsync as it preserves timestamps and permisions. Follow the following workflow to carry out the transfer.
+
+* Log into your new username in the cluster you want to copy to and create a folder named "OldUserAccount". 
+
+.. code-block:: bash
+
+        mkdir OldUserAccount
+
+* Log into your old account and run the rsync command. Here we show two examples.
+
+1. You want to copy the files to the new account on the same cluster node(e.g old account on Bessemer to new account on Bessemer), here we are only going to use the "avP" options as we dont need to compress the data.
+
+.. code-block:: bash
+
+        rsync -avP /Path/To/File_Or_Directory $Your_New_UserName@localhost:/home/$Your_New_UserName/OldUserAccount
+
+2. You want to copy your files to the new account on a different cluster node(e.g old account on Bessemer to new account on shARC/Stannage), here we are going to use the option "avzP" as we are going to transfer data over the internet, and it will be faster if it is compressed.
+
+.. code-block:: bash
+
+        rsync -avzP /Path/To/File_Or_Directory $Your_New_UserName@$clustername.shef.ac.uk:/home/$Your_New_UserName/OldUserAccount
+
+------
+
 Issue when running multiple MPI jobs in sequence
 ------------------------------------------------
 
@@ -516,6 +542,7 @@ Due to the complexity of the multi-user High Performance Computing service,
 the service is not currently certified as being compliant with the
 Cyber Essentials, Cyber Essentials Plus or ISO 27001 schemes/standards.
 This is unlikely to change in future.
+
 
 Can I use VSCode on the HPC clusters?
 ---------------------------------------------------------------------------------------------------------
