@@ -27,7 +27,7 @@ Batch usage:
 
 VASP 5.4.4 can be activated using one of the module load commands below: ::
 
-    module load VASP/5.4.4-intel-2019b
+    module load VASP/5.4.4-intel-2022b
 
 The VASP executables are ``vasp_std``, ``vasp_gam`` and ``vasp_ncl``.
 
