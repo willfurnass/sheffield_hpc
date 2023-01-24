@@ -15,18 +15,10 @@ The Vienna Ab initio Simulation Package (VASP) is a computer program for atomic 
 Usage
 -----
 
-Interactive usage:
-
 VASP 5.4.4 can be activated using one of the module load commands below: ::
 
     source /opt/apps/testapps/el7/software/staging/Lmod/7.3/lmod/7.3/init/bash
     module use /opt/apps/testapps/el7/modules/staging/all/
-    module load VASP/5.4.4-intel-2022b
-
-Batch usage:
-
-VASP 5.4.4 can be activated using one of the module load commands below: ::
-
     module load VASP/5.4.4-intel-2022b
 
 The VASP executables are ``vasp_std``, ``vasp_gam`` and ``vasp_ncl``.
@@ -44,7 +36,7 @@ VASP Pseudopotentials can be found in the ``/opt/apps/testapps/common/shared/VAS
 
 .. code-block:: console
 
-    $ ls /opt/apps/testapps/common/shared/VASP?VASP_POTCAR/5.4
+    $ ls /opt/apps/testapps/common/shared/VASP/VASP_POTCAR/5.4
     potpaw_LDA  potpaw_PBE
 
 Batch jobs
@@ -59,7 +51,10 @@ Users are encouraged to write their own batch submission scripts. The following 
     #SBATCH --time 00:30:00
     #SBATCH --mail-user=jane.doe@sheffield.ac.uk
     #SBATCH --mail-type=ALL
+    source /opt/apps/testapps/el7/software/staging/Lmod/7.3/lmod/7.3/init/bash
+    module use /opt/apps/testapps/el7/modules/staging/all/
     module load VASP/5.4.4-intel-2022b
+    export PSEUDOPOTENTIAL_DIR=/opt/apps/testapps/common/shared/VASP/VASP_POTCAR/5.4
 
     rm results.dat
     drct=$(pwd)
