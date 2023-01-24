@@ -3,7 +3,7 @@ OpenFOAM
 
 .. sidebar:: OpenFOAM
 
-   :Versions: v2012 (XXXX TBC XXXX) 
+   :Versions: 8.0, v2012
    :URL: https://openfoam.org/ or https://www.openfoam.com/
    :Documentation: https://cfd.direct/openfoam/user-guide or https://www.openfoam.com/documentation/overview
    :Dependencies: Easybuild foss/2020a toolchain, NCurses 6.2, METIS 5.1.0, SCOTCH 6.0.9, CGAL 4.14.3 and Paraview 5.8.0
@@ -17,14 +17,17 @@ There are two OpenFOAM modules, choose one and load it with either:
 
 .. code-block:: bash
 
-    module load OpenFOAM/v2012-foss-2020a (XXXX TBC XXXX) 
+    module load OpenFOAM/8-foss-2020b
+    module load OpenFOAM/v2012-foss-2020a
 
 
 OpenFOAM can be used in an interactive or batch job. Both OpenFOAM modules can be activated using the module file and sourcing the OpenFOAM environment script e.g.
 
 .. code-block:: bash
 
-    module load OpenFOAM/v2012-foss-2020a (XXXX TBC XXXX) 
+    source /opt/apps/testapps/el7/software/staging/Lmod/7.3/lmod/7.3/init/bash
+    module use /opt/apps/testapps/el7/modules/staging/all/
+    module load OpenFOAM/v2012-foss-2020a
     source $FOAM_BASH
 
 
@@ -41,15 +44,17 @@ Interactive Usage
 
 The following is an example single core interactive session running the pitzDaily example model.
 
-(XXXX TBC XXXX) After connecting to Bessemer (see :ref:`ssh`), you can start an `interactive graphical session <https://docs.hpc.shef.ac.uk/en/latest/hpc/scheduler/submit.html#interactive-sessions>`_.
+After connecting to Bessemer (see :ref:`ssh`), you can start an `interactive graphical session <https://docs.hpc.shef.ac.uk/en/latest/hpc/scheduler/submit.html#interactive-sessions>`_.
 
 .. code-block:: bash
 
-    module load OpenFOAM/v2012-foss-2020a (XXXX TBC XXXX) 
+    source /opt/apps/testapps/el7/software/staging/Lmod/7.3/lmod/7.3/init/bash
+    module use /opt/apps/testapps/el7/modules/staging/all/
+    module load OpenFOAM/v2012-foss-2020a
     source $FOAM_BASH
-    rm -r /fastdata/$USER/tests/openfoam/run/ (XXXX TBC XXXX) 
-    mkdir -p /fastdata/$USER/tests/openfoam/run
-    cd /fastdata/$USER/tests/openfoam/run
+    rm -r /users/$USER/tests/openfoam/run/
+    mkdir -p /users/$USER/tests/openfoam/run
+    cd /users/$USER/tests/openfoam/run
     cp -r $FOAM_TUTORIALS/incompressible/simpleFoam/pitzDaily .
     chmod 700 -R pitzDaily && cd pitzDaily
     blockMesh
@@ -65,46 +70,111 @@ The following is an example batch job running the pitzDaily example model:
 
 .. important::
 
-    (XXXX TBC XXXX) You will need to supply a `decomposeParDict <https://cfd.direct/openfoam/user-guide/v8-running-applications-parallel/>`_ in the system subdirectory of the case - check the installation script for an example using the EOF method to add it :
+    You will need to supply a `decomposeParDict <https://cfd.direct/openfoam/user-guide/v8-running-applications-parallel/>`_ in the system subdirectory of the case - check the installation script for an example using the EOF method to add it :
 
 .. code-block:: bash
 
     #!/bin/bash
-    #SBATCH --nodes=1
-    #SBATCH --ntasks-per-node=4
-    #SBATCH --mem=8000
-    #SBATCH --job-name=name_OpenFOAM_smp_4
-    #SBATCH --output=output_OpenFOAM_smp_4
+    #SBATCH --nodes=4
+    #SBATCH --ntasks-per-node=1
+    #SBATCH --mem=16000
+    #SBATCH --job-name=name_OpenFOAM_V2012_mpi_4
+    #SBATCH --output=output_OpenFOAM_V2012_mpi_4
     #SBATCH --time=01:00:00
-    #SBATCH --mail-user=a.person@sheffield.ac.uk
+    #SBATCH --mail-user=des.ryan@sheffield.ac.uk
     #SBATCH --mail-type=ALL
-    rm -r /fastdata/$USER/tests/openfoam/run/
-    mkdir -p /fastdata/$USER/tests/openfoam/run
-    cd /fastdata/$USER/tests/openfoam/run
+    mkdir -p /users/$USER/tests/openfoam/run
+    cd /users/$USER/tests/openfoam/run
+    source /opt/apps/testapps/el7/software/staging/Lmod/7.3/lmod/7.3/init/bash
+    module use /opt/apps/testapps/el7/modules/staging/all/
     module load OpenFOAM/v2012-foss-2020a
     source $FOAM_BASH
     cp -r $FOAM_TUTORIALS/incompressible/simpleFoam/pitzDaily .
     chmod 700 -R pitzDaily && cd pitzDaily
-    cp /home/$USER/openfoam/my_custom_decomposeParDict system/decomposeParDict #You must supply you own copy or see the example modified test script below.
+    cp /users/$USER/openfoam/my_custom_decomposeParDict_4 system/decomposeParDict #You must supply you own copy or see the example below.
     blockMesh
     decomposePar
-    srun --export=ALL simpleFoam -parallel
+    srun --mpi=pmix --export=ALL simpleFoam -parallel
 
 ------------
 
 Installation note for Administrators:
 -------------------------------------
 
-OpenFOAM v2012
-^^^^^^^^^^^^^^
+Not relevant for Pilot phase.
 
-(XXXX TBC XXXX) OpenFOAM v2012 has been installed using Easybuild with all third party modules  (NCurses 6.2, METIS 5.1.0, SCOTCH 6.0.9, CGAL 4.14.3 and Paraview 5.8.0)
+Example decomposeParDict:
+-------------------------
 
-(XXXX TBC XXXX) Installation was tested as follows as above with the :download:`example batch script  </bessemer/software/modulefiles/OpenFOAM/test_OpenFOAMv2012_parallel.sbatch>` modified to load **OpenFOAM/v2012-foss-2020a** (Getting Started example from https://openfoam.org/download/8-source/) with the following decomposeParDict:
-https://openfoamwiki.net/index.php/DecomposePar
+In the batch script example above my_custom_decomposeParDict_4 (for 4 cores) is located in /users/$USER/openfoam/ and contains the following:
 
-The module file is available below (XXXX TBC XXXX):
+.. code-block:: bash
 
-- :download:`/usr/local/modulefiles/live/eb/all/OpenFOAM/v2012-foss-2020a </bessemer/software/modulefiles/OpenFOAM/v2012-foss-2020a>`
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.3                                   |
+|   \\  /    A nd           | Web:      http://www.openfoam.org               |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+
+    root            "";
+    case            "";
+    instance        "";
+    local           "";
+
+    class           dictionary;
+    object          decomposeParDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+numberOfSubdomains 4;
+
+method          simple;
+
+simpleCoeffs
+{
+    n               (1 4 1);
+    delta           0.001;
+}
+
+hierarchicalCoeffs
+{
+    n               (1 1 1);
+    delta           0.001;
+    order           xyz;
+}
+
+metisCoeffs
+{
+    processorWeights
+    (
+        1
+        1
+        1
+    );
+}
+
+manualCoeffs
+{
+    dataFile        "";
+}
+
+distributed     no;
+
+roots
+(
+);
+
+
+// ************************************************************************* //
+
 
 
