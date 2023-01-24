@@ -44,7 +44,7 @@ Interactive Usage
 
 The following is an example single core interactive session running the pitzDaily example model.
 
-After connecting to Bessemer (see :ref:`ssh`), you can start an `interactive graphical session <https://docs.hpc.shef.ac.uk/en/latest/hpc/scheduler/#submit-interactive-bessemer>`_.
+After connecting to Stanage (see section ``Connecting with SSH``), you can start an `interactive graphical session.
 
 .. code-block:: bash
 
