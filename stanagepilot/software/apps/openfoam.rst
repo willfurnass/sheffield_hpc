@@ -44,7 +44,7 @@ Interactive Usage
 
 The following is an example single core interactive session running the pitzDaily example model.
 
-After connecting to Stanage (see section Connecting with SSH), you can start an `interactive graphical session.
+After connecting to Stanage (see section Connecting with SSH), you can start an interactive graphical session.
 
 .. code-block:: bash
 
