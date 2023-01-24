@@ -44,7 +44,7 @@ Interactive Usage
 
 The following is an example single core interactive session running the pitzDaily example model.
 
-After connecting to Bessemer (see :ref:`ssh`), you can start an `interactive graphical session <https://docs.hpc.shef.ac.uk/en/latest/hpc/scheduler/submit.html#interactive-sessions>`_.
+After connecting to Bessemer (see :ref:`ssh`), you can start an `interactive graphical session <https://docs.hpc.shef.ac.uk/en/latest/hpc/scheduler/#submit-interactive-bessemer>`_.
 
 .. code-block:: bash
 
@@ -66,7 +66,7 @@ After connecting to Bessemer (see :ref:`ssh`), you can start an `interactive gra
 Batch Usage
 --------------------
 
-The following is an example batch job running the pitzDaily example model:
+The following is an example batch job running the pitzDaily example model on 4 nodes with 1 task per node:
 
 .. important::
 
@@ -81,7 +81,7 @@ The following is an example batch job running the pitzDaily example model:
     #SBATCH --job-name=name_OpenFOAM_V2012_mpi_4
     #SBATCH --output=output_OpenFOAM_V2012_mpi_4
     #SBATCH --time=01:00:00
-    #SBATCH --mail-user=des.ryan@sheffield.ac.uk
+    #SBATCH --mail-user=jane.doe@sheffield.ac.uk
     #SBATCH --mail-type=ALL
     mkdir -p /users/$USER/tests/openfoam/run
     cd /users/$USER/tests/openfoam/run
@@ -101,7 +101,7 @@ The following is an example batch job running the pitzDaily example model:
 Installation note for Administrators:
 -------------------------------------
 
-Not relevant for Pilot phase.
+Not relevant for Pilot User phase.
 
 Example decomposeParDict:
 -------------------------
@@ -110,71 +110,61 @@ In the batch script example above my_custom_decomposeParDict_4 (for 4 cores) is 
 
 .. code-block:: bash
 
-/*---------------------------------------------------------------------------*\
-| =========                 |                                                 |
-| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  1.3                                   |
-|   \\  /    A nd           | Web:      http://www.openfoam.org               |
-|    \\/     M anipulation  |                                                 |
-\*---------------------------------------------------------------------------*/
+    FoamFile
+    {
+        version         2.0;
+        format          ascii;
 
-FoamFile
-{
-    version         2.0;
-    format          ascii;
+        root            "";
+        case            "";
+        instance        "";
+        local           "";
+    
+        class           dictionary;
+        object          decomposeParDict;
+    }
 
-    root            "";
-    case            "";
-    instance        "";
-    local           "";
-
-    class           dictionary;
-    object          decomposeParDict;
-}
-
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 
-numberOfSubdomains 4;
+    numberOfSubdomains 4;
 
-method          simple;
+    method          simple;
 
-simpleCoeffs
-{
-    n               (1 4 1);
-    delta           0.001;
-}
+    simpleCoeffs
+    {
+        n               (1 4 1);
+        delta           0.001;
+    }
 
-hierarchicalCoeffs
-{
-    n               (1 1 1);
-    delta           0.001;
-    order           xyz;
-}
+    hierarchicalCoeffs
+    {
+        n               (1 1 1);
+        delta           0.001;
+        order           xyz;
+    }
 
-metisCoeffs
-{
-    processorWeights
+    metisCoeffs
+    {
+        processorWeights
+        (
+            1
+            1
+            1
+        );
+    }
+
+    manualCoeffs
+    {
+        dataFile        "";
+    }
+    
+    distributed     no;
+
+    roots
     (
-        1
-        1
-        1
     );
-}
-
-manualCoeffs
-{
-    dataFile        "";
-}
-
-distributed     no;
-
-roots
-(
-);
 
 
-// ************************************************************************* //
-
-
+    // ************************************************************************* //
 
