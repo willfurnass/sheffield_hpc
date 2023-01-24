@@ -61,13 +61,13 @@ To download, you transfer from the remote cluster to your local machine:
 
 .. code-block:: shell
 
-  scp $USER@stanage-login1.shef.ac.uk:/home/$USER/file.txt /home/user/
+  scp $USER@stanage-login1.shef.ac.uk:/users/$USER/file.txt /home/user/
 
 To copy a whole directory, we add the ``-r`` flag, for “recursive”
 
 .. code-block:: shell
 
-  scp -r $USER@stanage-login1.shef.ac.uk:/home/$USER/my_results /home/user/
+  scp -r $USER@stanage-login1.shef.ac.uk:/users/$USER/my_results /home/user/
 
 
 .. raw:: html
@@ -130,13 +130,13 @@ backup folders.
   ``rsync`` to show you the changes it will make for a given command.
 
 The ``rsync`` syntax is very similar to ``scp``. To transfer to another computer with commonly used options, 
-where below substitute **$CLUSTER_NAME** with bessemer or sharc and **$USER** with your cluster username.
+where below substitute **$USER** with your cluster username.
 You should be prompted for your Duo MFA credentials after entering your password. Request a push notification or 
 enter your passcode:
 
 .. code-block:: shell
 
-  rsync -avzP /home/user/file.iso $USER@stanage-login1.shef.ac.uk:/home/$USER/
+  rsync -avzP /home/user/file.iso $USER@stanage-login1.shef.ac.uk:/users/$USER/
 
 The ``a`` (archive) option preserves file timestamps and permissions among other things; 
 the ``v`` (verbose) option gives verbose output to help monitor the transfer; 
@@ -148,7 +148,7 @@ To recursively copy a directory, we can use the same options:
 
 .. code-block:: shell
 
-  rsync -avzP /home/user/isos/ $USER@stanage-login1.shef.ac.uk:/home/$USER/
+  rsync -avzP /home/user/isos/ $USER@stanage-login1.shef.ac.uk:/users/$USER/
 
 This will copy the local directory and its contents under the specified directory on the remote system. 
 If the trailing slash is omitted on the destination path, a new directory corresponding to the transferred 
@@ -159,6 +159,77 @@ As before with ``scp``, to download from the cluster rather than upload simply r
 
 .. code-block:: shell
 
-  rsync -avzP $USER@stanage-login1.shef.ac.uk:/home/$USER/isos /home/user/ 
+  rsync -avzP $USER@stanage-login1.shef.ac.uk:/users/$USER/isos /home/user/ 
 
 ---------
+
+.. _download_direct_to_stanage:
+
+How to download files directly to the cluster
+---------------------------------------------
+
+Downloading files directly to the cluster is usually the quickest and most efficient 
+way of getting files onto the clusters. Using your home connection will be a significant 
+speed bottleneck compared to large amounts of download bandwidth available on the clusters.
+Directly downloading to the cluster avoids this bottleneck!
+
+.. raw:: html
+
+    <hr class="hr-mid-section-separator">
+
+Using wget / curl
+^^^^^^^^^^^^^^^^^^^^
+
+One of the most efficient ways to download files to the clusters is to use either the 
+curl or wget commands to download directly.
+
+The syntax for these commands is as below:
+
+Downloading with wget
+""""""""""""""""""""""
+
+.. code-block:: shell
+
+  wget https://software.github.io/program/files/myprogram.tar.gz
+
+Downloading with curl
+""""""""""""""""""""""
+
+.. code-block:: shell
+
+  curl -O https://software.github.io/program/files/myprogram.tar.gz
+
+.. raw:: html
+
+    <hr class="hr-mid-section-separator">
+
+
+Using Git
+^^^^^^^^^
+
+The Git software and same named command can be used to download or synchronise a remote Git 
+repository onto the clusters. This can be achieved by 
+`setting up Git <https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup>`_ 
+and/or simply cloning the repository you desire.
+
+For example, cloning the source of the ``make`` software:
+
+.. code-block:: console
+    :emphasize-lines: 1
+
+    git clone https://git.savannah.gnu.org/git/make.git
+    Cloning into 'make'...
+    remote: Counting objects: 16331, done.
+    remote: Compressing objects: 100% (3434/3434), done.
+    remote: Total 16331 (delta 12822), reused 16331 (delta 12822)
+    Receiving objects: 100% (16331/16331), 5.07 MiB | 2.79 MiB/s, done.
+    Resolving deltas: 100% (12822/12822), done.
+
+Git is installed on the clusters and can be used on any node and all 
+`commands <https://blog.testproject.io/2021/03/22/git-commands-every-sdet-should-know/>`_ 
+such as **push**, **pull** etc... are supported.
+
+.. raw:: html
+
+    <hr class="hr-mid-section-separator">
+

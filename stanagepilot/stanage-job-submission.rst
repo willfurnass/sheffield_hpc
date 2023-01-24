@@ -122,10 +122,6 @@ Specify a number of nodes:
 
     #SBATCH --nodes=1
 
-.. warning::
-    
-    Note that the Bessemer free queues do not permit the use of more than 1 node per job.
-
 Specify a number of tasks per node:
 
 .. code-block:: sh
