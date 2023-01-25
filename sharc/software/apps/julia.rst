@@ -30,7 +30,7 @@ These are primarily for administrators of the system.
 
 **julia version 1.8.5**
 was installed using the
-:download:`install_julia.sh </sharc/software/install_scripts/apps/julia/1.8.5/install_julia.sge>` script.
+:download:`install_julia.sge </sharc/software/install_scripts/apps/julia/1.8.5/install_julia.sge>` script.
 
 **julia version 1.8.2**
 was installed using the
