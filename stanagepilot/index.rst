@@ -1,6 +1,6 @@
 .. _stanage-pilot:
 
-Pilot User Guide
+Stanage Pilot User Guide
 ================
 
 .. figure:: ../images/Stanage_Black.png
@@ -10,7 +10,7 @@ Pilot User Guide
 
    The Sheffield University Stanage HPC cluster logo.
 
-Welcome to the Stanage Cluster Pilot User Guide. This section will contain the instructions and information that 
+Welcome to the Stanage Cluster Pilot User Guide. This section contains the instructions and information that 
 pilot users will need to best make use of the Stanage cluster during the pilot phase.
 
 These instructions and information have been structured into the sections below. Please review all of this material 
