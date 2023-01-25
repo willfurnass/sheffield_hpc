@@ -58,14 +58,15 @@ You can use the :ref:`SMP <parallel_SMP>` OpenMP parallel environment with up to
 Sample SMP Fluent Scheduler Job Script
 """""""""""""""""""""""""""""""""""""""""""
 
-The following is an example batch submission script, ``cfd_job.sh``, to run the executable ``fluent`` with input journal file ``subjou.jou``, and carry out a 2D double precision CFD simulation.
+The following is an example batch submission script, ``cfd_job.sh``, to run the executable ``fluent`` with input journal file ``test.jou``, and carry out a 2D double precision CFD simulation.
 The script requests 4 cores using the OpenMP parallel environment with a runtime of 60 mins and 8 GB of real memory per node.
 
 .. hint::
 
-    * The ``2ddp`` argument is used to specify a 2D double precision simulation. Valid values include: ``2d``, ``2ddp``, ``3d`` and ``3ddp``
+    * The ``2ddp`` argument is used to specify a 2D double precision simulation. Valid values include: ``2d``, ``2ddp``, ``3d`` and ``3ddp``.
     * The argument ``$SLURM_NTASKS`` is a SLURM scheduler variable which will return the requested number of tasks.
-    * The arguments ``-gu`` and ``-driver null`` instruct Fluent that it will be running with no GUI to avoid errors caused by plot / figure export.
+    * The arguments ``-g`` and ``-driver null`` instruct Fluent that it will be running with no GUI to avoid errors caused by plot / figure export.
+    * The argument ``-sifile=./"$SLURM_JOBID"_fluent_server_info.txt`` tells Fluent to create a file in the working directory with the remote visualization server info.
 
 
 .. code-block:: bash
@@ -80,7 +81,7 @@ The script requests 4 cores using the OpenMP parallel environment with a runtime
     #SBATCH --mail-user=a.person@sheffield.ac.uk
     #SBATCH --mail-type=ALL
     module load ANSYS/22.2
-    fluent 2ddp -i test.jou -gu -t$SLURM_NTASKS -driver null
+    fluent 2ddp -t$SLURM_NTASKS -g -driver null -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
 
 
 The job is submitted to the queue by typing:
@@ -101,15 +102,19 @@ Sample MPI Fluent Scheduler Job Script
   
   Please attempt with caution.
 
-The following is an example batch submission script, ``cfd_job.sh``, to run the executable ``fluent`` with input journal file ``subjou.jou``, and carry out a 2D double precision CFD simulation.
+The following is an example batch submission script, ``cfd_job.sh``, to run the executable ``fluent`` with input journal file ``test.jou``, and carry out a 2D double precision CFD simulation.
 The script requests 4 cores (1 core per task, 1 task per node on 4 nodes) using the MPI parallel environment with a runtime of 60 mins and 2 GB of real memory per core.
 
 .. hint::
 
-    * The ``2ddp`` argument is used to specify a 2D double precision simulation. Valid values include: ``2d``, ``2ddp``, ``3d`` and ``3ddp``
+    * The ``srun hostname -s > hosts.$SLURM_JOB_ID`` section sets up the hostlist which is required for correct MPI task spawning in conjunction with the ``-cnf=hosts.$SLURM_JOB_ID`` argument.
+    * The ``2ddp`` argument is used to specify a 2D double precision simulation. Valid values include: ``2d``, ``2ddp``, ``3d`` and ``3ddp``.
     * The argument ``$SLURM_NTASKS`` is a SLURM scheduler variable which will return the requested number of tasks.
-    * The arguments ``-gu`` and ``-driver null`` instruct Fluent that it will be running with no GUI to avoid errors caused by plot / figure export.
-    * The ``FLUENTNODES`` sections setup the hostlist which is required for correct task spawning.
+    * The argument ``-mpi=intel`` instructs Fluent to use the Intel MPI communcation method. Consult Fluent documentation for OpenMPI instructions if applicable.
+    * The argument ``-ssh``  instructs Fluent to use SSH to implement the task spawning.
+    * The arguments ``-g`` and ``-driver null`` instruct Fluent that it will be running with no GUI to avoid errors caused by plot / figure export.
+    * The argument ``-pib.infinipath`` instructs Fluent to use the high performance Omnipath networking. 
+    * The argument ``-sifile=./"$SLURM_JOBID"_fluent_server_info.txt`` tells Fluent to create a file in the working directory with the remote visualization server info.
 
 
 .. code-block:: bash
@@ -126,10 +131,9 @@ The script requests 4 cores (1 core per task, 1 task per node on 4 nodes) using 
     #SBATCH --mail-type=ALL
     module load ANSYS/22.2
 
-    FLUENTNODES="$(scontrol show hostnames)"
-    FLUENTNODES=$(echo $FLUENTNODES | tr ' ' ',')
+    srun hostname -s > hosts.$SLURM_JOB_ID
 
-    fluent 2ddp -t$SLURM_NTASKS -cnf=$FLUENTNODES  -ssh -slurm -g -driver null -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou 
+    fluent 2ddp -t$SLURM_NTASKS -mpi=intel -ssh -cnf=hosts.$SLURM_JOB_ID -g -driver null  -pib.infinipath -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
 
 
 The job is submitted to the queue by typing:
