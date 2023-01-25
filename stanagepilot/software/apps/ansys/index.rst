@@ -60,11 +60,7 @@ ANSYS example models
 ANSYS contains a large number of example models which can be used to become familiar with the software.
 The models can be found in::
 
-   /usr/local/packages/live/noeb/ANSYS/21.2/binary/v212/ansys/data/
-   /usr/local/packages/live/noeb/ANSYS/21.1/binary/v211/ansys/data/
-   /usr/local/packages/live/noeb/ANSYS/20.2/binary/v202/ansys/data/
-   /usr/local/packages/live/noeb/ANSYS/20.1/binary/v201/ansys/data/
-   /usr/local/packages/live/eb/ANSYS/19.4/v194/ansys/data
+   /opt/apps/testapps/el7/software/staging/ANSYS/2022R2/v222/ansys/data/
 
 --------------------
 
