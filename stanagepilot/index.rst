@@ -1,7 +1,7 @@
 .. _stanage-pilot:
 
 Stanage Pilot User Guide
-================
+========================
 
 .. figure:: ../images/Stanage_Black.png
    :width: 90%
