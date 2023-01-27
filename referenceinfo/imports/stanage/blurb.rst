@@ -14,4 +14,5 @@ is particularly well suited to working with large files, possibly within paralle
 In the near future, 18 GPU nodes will be added, each with 4x NVIDIA A100 GPUs.
 These will support machine learning research and other workloads that can benefit from GPU acceleration. 
 
-Stanage uses the SLURM scheduler which is also in use on the Bessemer cluster.
+Stanage uses the SLURM scheduler which is also in use on the Bessemer cluster
+(and :ref:`JADE II and Bede clusters <other_uk_hpc_resources>`).
