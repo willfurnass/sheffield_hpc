@@ -97,11 +97,6 @@ The following is an example batch job running the pitzDaily example model on 4 n
 
 ------------
 
-Installation note for Administrators:
--------------------------------------
-
-Not relevant for Pilot User phase.
-
 Example decomposeParDict:
 -------------------------
 
@@ -167,3 +162,7 @@ In the batch script example above my_custom_decomposeParDict_4 (for 4 cores) is 
 
     // ************************************************************************* //
 
+Installation notes for Administrators:
+-------------------------------------
+
+Not relevant for Pilot User phase.
