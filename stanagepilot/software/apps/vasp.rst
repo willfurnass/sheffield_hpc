@@ -34,11 +34,12 @@ The VASP executables are ``vasp_std``, ``vasp_gam`` and ``vasp_ncl``.
 Pseudopotential files
 ^^^^^^^^^^^^^^^^^^^^^
 
-VASP Pseudopotentials can be found in the ``/opt/apps/testapps/common/shared/VASP/VASP_POTCAR/`` directory in versioned ``potpaw`` sub-directories after loading the module, e.g. :
+VASP Pseudopotentials can be found in the ``/opt/apps/testapps/common/shared/VASP/VASP_POTCAR/`` directory in versioned ``potpaw`` sub-directories. 
+This directory path is also stored in the ``$PSEUDOPOTENTIAL_DIR`` environment variable after loading the module e.g. :
 
 .. code-block:: console
 
-    $ ls /opt/apps/testapps/common/shared/VASP/VASP_POTCAR/5.4
+    $ ls $PSEUDOPOTENTIAL_DIR/5.4
     potpaw_LDA  potpaw_PBE
 
 Batch jobs
