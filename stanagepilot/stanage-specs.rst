@@ -136,6 +136,6 @@ With all workers including GPU and large memory nodes:
   
 * Total memory:  83968 GiB
 * GPUs: 64
-* Fast network filesystem (`Lustre`_):  460 TiB
+* Fast network filesystem (`Lustre`_):  2 PiB
 
 .. _Lustre:  http://lustre.org/
