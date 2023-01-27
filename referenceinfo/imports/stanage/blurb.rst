@@ -1,5 +1,5 @@
 Stanage is the University's newest HPC system. It is well suited to a variety of research workloads, 
-including large jobs or jobs requiring GPUs. It is intended to replace the ShARC HPC system, but is much larger.
+including large jobs or jobs requiring GPUs. It is intended to be the logical successor to the ShARC HPC system, but is much larger.
 
 Stanage has a similar number of worker nodes (176) to the existing ShARC cluster but these 
 have more CPU cores (64 per node for a total ~12032 cores!), with a standard memory size of 256 GB.
