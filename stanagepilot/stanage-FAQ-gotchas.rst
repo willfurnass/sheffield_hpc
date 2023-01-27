@@ -29,3 +29,9 @@ Poor performance with OpenMPI 4.1 and above
 
 Current installations of OpenMPI 4.1 and above have poor performance over Omnipath which is still under investigation. 
 These versions of OpenMPI will be in use for the ``foss-2021`` and above Easybuild toolchains.
+
+
+Shared (project) directories
+----------------------------
+
+Shared project storage areas are not yet available on the Stanage cluster.

@@ -10,6 +10,7 @@ Applications on Stanage
     ansys/index
     openfoam
     vasp
+    ncdu
 
 ..
     Eventually the above should look like:
