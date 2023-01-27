@@ -1,0 +1,165 @@
+.. _ansys-stanage-fluent:
+
+.. include:: ../ansys/stanage-sidebar.rst
+
+Fluent
+========================
+
+.. contents::
+    :depth: 3
+
+----------------
+
+ANSYS Fluent is a Computational Fluid Dynamics (CFD) code for modelling fluid flow, heat transfer, mass transfer and chemical reactions.
+Fluent has interfaces to other pre and post processing packages supplied by ANSYS such as ICEMCFD or Ensight and can incorporate user developed models via user defined functions.
+Fluent can make use of  built in :ref:`MPI <parallel_MPI>` to utilize multiple cross node CPU and can scale to hundreds of cores.
+
+----------------
+
+.. include:: ../ansys/module-load-list.rst
+
+--------------------
+
+Interactive jobs
+----------------
+
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
+
+If desired, the ANSYS Workbench GUI executable can be launched with the  ``runwb2`` command.
+To use more than a single core, you should write a batch job script and fluent journal file for submission to the batch queues.
+
+--------------------
+
+Batch jobs
+----------
+
+To submit Fluent jobs with larger resources a batch job must be submitted to the scheduler.
+A Fluent batch job is composed of a Fluent journal file which tells Fluent what to do and submission script which tells the scheduler how much resource to request and how to start Fluent.
+
+Fluent Journal files
+^^^^^^^^^^^^^^^^^^^^
+
+A Fluent journal file is effectively a sequence of TUI and/or Scheme commands that you’ll supply to Fluent instead of using the GUI / TUI.
+A more thorough explanation and tutorial on how to make a Fluent journal file can be found on the following page:  :ref:`Writing Fluent journal files. <writing-fluent-journal-files>`
+
+.. important::
+
+  It is critical that you consult with the :ref:`Fluent journal syntax <writing-fluent-journal-files>` documentation linked above in order to ensure features such as autosaving and intermediate save states are turned on and functioning correctly!
+
+Batch Submission Script
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Fluent is capable of running in both :ref:`MPI <parallel_MPI>` and :ref:`SMP <parallel_SMP>` parallel environments but will use its in-build MPI communications for both.
+On Stanage, cross node jobs are permitted and you can request either an SMP job or and MPI job.
+
+You can use the :ref:`SMP <parallel_SMP>` OpenMP parallel environment with up to 64 cores on a (single node only) or request more cores with an MPI job.
+
+
+Sample SMP Fluent Scheduler Job Script
+"""""""""""""""""""""""""""""""""""""""""""
+
+The following is an example batch submission script, ``cfd_job.sh``, to run the executable ``fluent`` with input journal file ``test.jou``, and carry out a 2D double precision CFD simulation.
+The script requests 4 cores using the OpenMP parallel environment with a runtime of 60 mins and 8 GB of real memory per node.
+
+.. hint::
+
+    * The ``2ddp`` argument is used to specify a 2D double precision simulation. Valid values include: ``2d``, ``2ddp``, ``3d`` and ``3ddp``.
+    * The argument ``$SLURM_NTASKS`` is a SLURM scheduler variable which will return the requested number of tasks.
+    * The arguments ``-g`` and ``-driver null`` instruct Fluent that it will be running with no GUI to avoid errors caused by plot / figure export.
+    * The argument ``-sifile=./"$SLURM_JOBID"_fluent_server_info.txt`` tells Fluent to create a file in the working directory with the remote visualization server info.
+
+
+.. code-block:: bash
+
+    #!/bin/bash
+    #SBATCH --nodes=1
+    #SBATCH --ntasks-per-node=4
+    #SBATCH --mem=8000
+    #SBATCH --job-name=name_fluent_smp_4
+    #SBATCH --output=output_fluent_smp_4
+    #SBATCH --time=01:00:00
+    #SBATCH --mail-user=a.person@sheffield.ac.uk
+    #SBATCH --mail-type=ALL
+    module load ANSYS/22.2
+    fluent 2ddp -t$SLURM_NTASKS -g -driver null -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
+
+
+The job is submitted to the queue by typing:
+
+.. code-block:: bash
+
+    sbatch cfd_job.sh
+
+
+
+Sample MPI Fluent Scheduler Job Script
+"""""""""""""""""""""""""""""""""""""""""""
+
+.. warning::
+
+  Multinode execution for Fluent is dependant on multiple configuration steps for the Stanage cluster which may 
+  not yet be implemented. 
+  
+  Please attempt with caution.
+
+The following is an example batch submission script, ``cfd_job.sh``, to run the executable ``fluent`` with input journal file ``test.jou``, and carry out a 2D double precision CFD simulation.
+The script requests 4 cores (1 core per task, 1 task per node on 4 nodes) using the MPI parallel environment with a runtime of 60 mins and 2 GB of real memory per core.
+
+.. hint::
+
+    * The ``srun hostname -s > hosts.$SLURM_JOB_ID`` section sets up the hostlist which is required for correct MPI task spawning in conjunction with the ``-cnf=hosts.$SLURM_JOB_ID`` argument.
+    * The ``2ddp`` argument is used to specify a 2D double precision simulation. Valid values include: ``2d``, ``2ddp``, ``3d`` and ``3ddp``.
+    * The argument ``$SLURM_NTASKS`` is a SLURM scheduler variable which will return the requested number of tasks.
+    * The argument ``-mpi=intel`` instructs Fluent to use the Intel MPI communcation method. Consult Fluent documentation for OpenMPI instructions if applicable.
+    * The argument ``-ssh``  instructs Fluent to use SSH to implement the task spawning.
+    * The arguments ``-g`` and ``-driver null`` instruct Fluent that it will be running with no GUI to avoid errors caused by plot / figure export.
+    * The argument ``-pib.infinipath`` instructs Fluent to use the high performance Omnipath networking. 
+    * The argument ``-sifile=./"$SLURM_JOBID"_fluent_server_info.txt`` tells Fluent to create a file in the working directory with the remote visualization server info.
+
+
+.. code-block:: bash
+
+    #!/bin/bash
+    #SBATCH --nodes=4
+    #SBATCH --cpus-per-task=1
+    #SBATCH --mem-per-cpu=2000 
+    #SBATCH --ntasks-per-node=1
+    #SBATCH --job-name=name_fluent_mpi_4
+    #SBATCH --output=output_fluent_mpi_4
+    #SBATCH --time=01:00:00
+    #SBATCH --mail-user=a.person@sheffield.ac.uk
+    #SBATCH --mail-type=ALL
+    module load ANSYS/22.2
+
+    srun hostname -s > hosts.$SLURM_JOB_ID
+
+    fluent 2ddp -t$SLURM_NTASKS -mpi=intel -ssh -cnf=hosts.$SLURM_JOB_ID -g -driver null  -pib.infinipath -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
+
+
+The job is submitted to the queue by typing:
+
+.. code-block:: bash
+
+    sbatch cfd_job.sh
+
+---------------
+
+
+
+.. include:: /referenceinfo/ANSYS/fluent/export-fluent-plots-while-using-batch-jobs.rst
+
+---------------
+
+ANSYS Fluent training and help resources
+----------------------------------------
+
+.. important::
+
+  Academic support requests should be directed to the `IT Services' Research and Innovation team <mailto:research-it@sheffield.ac.uk>`_  or 
+  the `ANSYS Learning Forum <https://forum.ansys.com/>`_ (**ensure you register with your University email for priority support**).
+
+ANSYS provides numerous academic training and help resources including tutorials, video lectures and examples for computational fluid dynamics products.
+A short list of the resources ANSYS maintains is summarised below:
+
+*  `"How to" youtube playlists for computational fluid dynamics products. <https://www.youtube.com/user/ANSYSHowToVideos/playlists?view=50&sort=dd&shelf_id=3>`_
+*  `An extensive number of free online courses on computational fluid dynamics products and theory <https://courses.ansys.com/index.php/fluids/>`_
