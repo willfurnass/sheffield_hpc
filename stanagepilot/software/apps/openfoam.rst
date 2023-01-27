@@ -163,6 +163,6 @@ In the batch script example above my_custom_decomposeParDict_4 (for 4 cores) is 
     // ************************************************************************* //
 
 Installation notes for Administrators:
--------------------------------------
+--------------------------------------
 
 Not relevant for Pilot User phase.
