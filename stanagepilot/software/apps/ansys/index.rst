@@ -60,7 +60,7 @@ ANSYS example models
 ANSYS contains a large number of example models which can be used to become familiar with the software.
 The models can be found in::
 
-   /opt/apps/testapps/e17/software/staging/ANSYS/2022R2/v222/ansys/data/
+   /opt/apps/testapps/el7/software/staging/ANSYS/2022R2/v222/ansys/data/
 
 --------------------
 
@@ -73,7 +73,7 @@ Installation note for Administrators:
 
 **To be confirmed** mapdl will not run without modifying the file::
 
-    /opt/apps/testapps/e17/software/staging/ANSYS/2022R2/v222/ansys/bin/anssh.ini
+    /opt/apps/testapps/el7/software/staging/ANSYS/2022R2/v222/ansys/bin/anssh.ini
 
 The following instruction should be inserted at line 2433 (tbc) in ``anssh.ini``::
 
@@ -83,4 +83,4 @@ The following instruction should be inserted at line 2433 (tbc) in ``anssh.ini``
 
 Module files are available below:
 
-- :download:`/opt/apps/testapps/e17/modules/staging/all/ANSYS/binary  </stanagepilot/software/modulefiles/ansys/22.2/binary>`
+- :download:`/opt/apps/testapps/el7/modules/staging/all/ANSYS/2022R2.lua  </stanagepilot/software/modulefiles/ansys/22.2/2022R2.lua>`
