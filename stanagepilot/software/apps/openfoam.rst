@@ -25,8 +25,6 @@ OpenFOAM can be used in an interactive or batch job. Both OpenFOAM modules can b
 
 .. code-block:: bash
 
-    source /opt/apps/testapps/el7/software/staging/Lmod/7.3/lmod/7.3/init/bash
-    module use /opt/apps/testapps/el7/modules/staging/all/
     module load OpenFOAM/v2012-foss-2020a
     source $FOAM_BASH
 
@@ -48,8 +46,6 @@ After connecting to Stanage (see section Connecting with SSH), you can start an 
 
 .. code-block:: bash
 
-    source /opt/apps/testapps/el7/software/staging/Lmod/7.3/lmod/7.3/init/bash
-    module use /opt/apps/testapps/el7/modules/staging/all/
     module load OpenFOAM/v2012-foss-2020a
     source $FOAM_BASH
     rm -r /users/$USER/tests/openfoam/run/
@@ -83,17 +79,20 @@ The following is an example batch job running the pitzDaily example model on 4 n
     #SBATCH --time=01:00:00
     #SBATCH --mail-user=jane.doe@sheffield.ac.uk
     #SBATCH --mail-type=ALL
+
     mkdir -p /users/$USER/tests/openfoam/run
     cd /users/$USER/tests/openfoam/run
-    source /opt/apps/testapps/el7/software/staging/Lmod/7.3/lmod/7.3/init/bash
-    module use /opt/apps/testapps/el7/modules/staging/all/
+
     module load OpenFOAM/v2012-foss-2020a
     source $FOAM_BASH
+
     cp -r $FOAM_TUTORIALS/incompressible/simpleFoam/pitzDaily .
     chmod 700 -R pitzDaily && cd pitzDaily
-    cp /users/$USER/openfoam/my_custom_decomposeParDict_4 system/decomposeParDict #You must supply you own copy or see the example below.
+    cp /users/$USER/openfoam/my_custom_decomposeParDict_4 system/decomposeParDict  # You must supply you own copy or see the example below.
+
     blockMesh
     decomposePar
+
     srun --mpi=pmix_v4 --export=ALL simpleFoam -parallel
 
 ------------
