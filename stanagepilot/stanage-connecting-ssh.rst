@@ -8,6 +8,11 @@
 Connecting with SSH
 ===================
 
+.. warning::
+
+  You must be connected to the VPN, whether you are located on or off campus, to connect to Stanage.
+  Note this applies even if you are on-campus using a wired ethernet connection.
+
 .. Hint::
 
     Usernames to connect with all HPC services will be the same as those you use to login to MUSE :underline-bold:`not` the prefix on your email address.

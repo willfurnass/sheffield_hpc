@@ -94,7 +94,7 @@ The following is an example batch job running the pitzDaily example model on 4 n
     cp /users/$USER/openfoam/my_custom_decomposeParDict_4 system/decomposeParDict #You must supply you own copy or see the example below.
     blockMesh
     decomposePar
-    srun --mpi=pmix --export=ALL simpleFoam -parallel
+    srun --mpi=pmix_v4 --export=ALL simpleFoam -parallel
 
 ------------
 

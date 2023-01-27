@@ -60,7 +60,7 @@ ANSYS example models
 ANSYS contains a large number of example models which can be used to become familiar with the software.
 The models can be found in::
 
-   /opt/apps/testapps/el7/software/staging/ANSYS/2022R2/v222/ansys/data/
+   /opt/apps/testapps/e17/software/staging/ANSYS/2022R2/v222/ansys/data/
 
 --------------------
 
@@ -71,33 +71,16 @@ Installation note for Administrators:
 
 ------------
 
-mapdl will not run without modifying the file::
+**To be confirmed** mapdl will not run without modifying the file::
 
-    /usr/local/packages/live/noeb/ANSYS/20.2/binary/v202/ansys/bin/anssh.ini
+    /opt/apps/testapps/e17/software/staging/ANSYS/2022R2/v222/ansys/bin/anssh.ini
 
-The following instruction should be inserted at line 2433 in ``anssh.ini``::
+The following instruction should be inserted at line 2433 (tbc) in ``anssh.ini``::
 
     setenv KMP_AFFINITY compact
 
 ------------
 
-Please note ANSYS 20.1 and higher versions have been installed manually with the GUI in the following directories and permissions corrected as follows::
-
-    chmod 775 -R /usr/local/packages/live/noeb/ANSYS/20.1/binary/
-    chmod 775 -R /usr/local/packages/live/noeb/ANSYS/20.2/binary/
-    chmod 775 -R /usr/local/packages/live/noeb/ANSYS/21.1/binary/
-    chmod 775 -R /usr/local/packages/live/noeb/ANSYS/21.2/binary/
-
-Please follow the same install directory structure.
-
-In addition the following software packages are not included with the installations for ANSYS 19.4::
-
-
-    "ANSYS Chemkin"
-    "ANSYS Geometry Interfaces".
-
-------------
-
 Module files are available below:
 
-- :download:`/usr/local/modulefiles/live/noeb/ANSYS/22.2/binary  </stanagepilot/software/modulefiles/ansys/22.2/binary>`
+- :download:`/opt/apps/testapps/e17/modules/staging/all/ANSYS/binary  </stanagepilot/software/modulefiles/ansys/22.2/binary>`

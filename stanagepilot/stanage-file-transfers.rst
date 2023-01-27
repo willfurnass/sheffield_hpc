@@ -10,8 +10,8 @@ Transfering Files
 
 .. warning::
 
-  As with all connections to the clusters, if you are not using a wired ethernet connection in a 
-  University campus building then you will need to `turn on the VPN <https://www.sheffield.ac.uk/it-services/vpn>`_.
+  You must be connected to the VPN, whether you are located on or off campus, to transfer files to/from Stanage.
+  Note this applies even if you are on-campus using a wired ethernet connection see `turn on the VPN <https://www.sheffield.ac.uk/it-services/vpn>`_.
 
 To transfer files to/from the clusters you can:
 
