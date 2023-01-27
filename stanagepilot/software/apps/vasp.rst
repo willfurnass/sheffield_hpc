@@ -34,10 +34,8 @@ Pseudopotential files
 
 VASP Pseudopotentials can be found in the directory pointed to by the ``$PSEUDOPOTENTIAL_DIR`` in versioned ``potpaw`` sub-directories: ::
 
-.. code-block:: console
-
-    $ ls $PSEUDOPOTENTIAL_DIR/5.4
-    potpaw_LDA  potpaw_PBE
+   $ ls $PSEUDOPOTENTIAL_DIR/5.4
+   potpaw_LDA  potpaw_PBE
 
 Batch jobs
 ----------
