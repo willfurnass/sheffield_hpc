@@ -11,7 +11,7 @@ The system as a whole has a 2PB high-performance shared filesystem (Lustre),
 which like the ``/fastdata`` :ref:`Lustre filesystems on ShARC and Bessemer <filestore>`, 
 is particularly well suited to working with large files, possibly within parallel jobs.
 
-The system will also eventually feature 18 GPU nodes each with 4x NVIDIA A100 GPUs which will support machine 
-learning research and other workloads that can benefit from GPU acceleration. 
+In the near future, 18 GPU nodes will be added, each with 4x NVIDIA A100 GPUs.
+These will support machine learning research and other workloads that can benefit from GPU acceleration. 
 
 Stanage uses the SLURM scheduler which is also in use on the Bessemer cluster.
