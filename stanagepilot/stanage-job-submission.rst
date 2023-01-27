@@ -8,6 +8,12 @@
 Job Submission
 ==============
 
+.. tip::
+
+    The Stanage cluster has been configured to have the same default resource request limits as the ShARC cluster. 
+    Please see our :ref:`Choosing appropriate compute resources page <Choosing-appropriate-compute-resources>` for further information.
+
+
 .. _submit_interactive_stanage:
 
 Interactive Jobs
