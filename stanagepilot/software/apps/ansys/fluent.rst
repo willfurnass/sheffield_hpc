@@ -80,7 +80,7 @@ The script requests 4 cores using the OpenMP parallel environment with a runtime
     #SBATCH --time=01:00:00
     #SBATCH --mail-user=a.person@sheffield.ac.uk
     #SBATCH --mail-type=ALL
-    module load ANSYS/22.2
+    module load ANSYS/2022R2
     fluent 2ddp -t$SLURM_NTASKS -g -driver null -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
 
 
@@ -92,7 +92,7 @@ The job is submitted to the queue by typing:
 
 
 
-Sample MPI Fluent Scheduler Job Script
+Sample MPI Fluent Scheduler Job Scripts
 """""""""""""""""""""""""""""""""""""""""""
 
 .. warning::
@@ -102,11 +102,20 @@ Sample MPI Fluent Scheduler Job Script
   
   Please attempt with caution.
 
-The following is an example batch submission script, ``cfd_job.sh``, to run the executable ``fluent`` with input journal file ``test.jou``, and carry out a 2D double precision CFD simulation.
-The script requests 4 cores (1 core per task, 1 task per node on 4 nodes) using the MPI parallel environment with a runtime of 60 mins and 2 GB of real memory per core.
+As SLURM is capable of making MPI job resource requests very specifically, two scripts are provided below. The first is a **"generic"** job submission with the scheduler allocating MPI tasks 
+and cores anywhere it can freely find them available in the cluster. The second script is a **"specific"** example with the scheduler being explicitly told to allocate tasks with cores specifically 
+across 4 nodes.
+
+.. tip::
+
+    In most cases a generic request for cores across the cluster with ``#SBATCH --ntasks=n`` is ideal to reduce queue times, (as the scheduler can more freely allocate cores), so the first example should suffice in most cases.
+
+The following is the **"generic"** batch submission script, ``cfd_job.sh``, to run the executable ``fluent`` with input journal file ``test.jou``, and carry out a 2D double precision CFD simulation.
+The script requests 4 cores, 1 core per task (the default) with 4 tasks, using the MPI parallel environment with a runtime of 60 mins and 2 GB of real memory per core.
 
 .. hint::
 
+    * The ``#SBATCH --ntasks=4`` asks the scheduler for 4 tasks (each with a single core by default) which are allocated on any node across the cluster as no further specific options are supplied.
     * The ``srun hostname -s > hosts.$SLURM_JOB_ID`` section sets up the hostlist which is required for correct MPI task spawning in conjunction with the ``-cnf=hosts.$SLURM_JOB_ID`` argument.
     * The ``2ddp`` argument is used to specify a 2D double precision simulation. Valid values include: ``2d``, ``2ddp``, ``3d`` and ``3ddp``.
     * The argument ``$SLURM_NTASKS`` is a SLURM scheduler variable which will return the requested number of tasks.
@@ -116,27 +125,55 @@ The script requests 4 cores (1 core per task, 1 task per node on 4 nodes) using 
     * The argument ``-pib.infinipath`` instructs Fluent to use the high performance Omnipath networking. 
     * The argument ``-sifile=./"$SLURM_JOBID"_fluent_server_info.txt`` tells Fluent to create a file in the working directory with the remote visualization server info.
 
-
 .. code-block:: bash
 
     #!/bin/bash
-    #SBATCH --nodes=4
-    #SBATCH --cpus-per-task=1
     #SBATCH --mem-per-cpu=2000 
-    #SBATCH --ntasks-per-node=1
-    #SBATCH --job-name=name_fluent_mpi_4
-    #SBATCH --output=output_fluent_mpi_4
+    #SBATCH --ntasks=4
+    #SBATCH --job-name=name_fluent_mpi_4_generic
+    #SBATCH --output=output_fluent_mpi_4_generic
     #SBATCH --time=01:00:00
     #SBATCH --mail-user=a.person@sheffield.ac.uk
     #SBATCH --mail-type=ALL
-    module load ANSYS/22.2
+    module load ANSYS/2022R2
 
     srun hostname -s > hosts.$SLURM_JOB_ID
 
     fluent 2ddp -t$SLURM_NTASKS -mpi=intel -ssh -cnf=hosts.$SLURM_JOB_ID -g -driver null  -pib.infinipath -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
 
 
-The job is submitted to the queue by typing:
+The following is the **"specific"** batch submission script, ``cfd_job.sh``, to run the executable ``fluent`` with input journal file ``test.jou``, and carry out a 2D double precision CFD simulation.
+The script requests 4 cores (1 core per task, 1 task per node on 4 nodes) using the MPI parallel environment with a runtime of 60 mins and 2 GB of real memory per core.
+
+.. hint::
+
+    * The ``#SBATCH --nodes=4`` asks the scheduler for 4 nodes.
+    * The ``#SBATCH --ntasks-per-node=1`` asks the scheduler for 1 task per node.
+    * The ``#SBATCH --cpus-per-task=1`` asks the scheduler for 1 core in each task.
+    
+    The above combined options taken together instruct the scheduler to allocate the job resources as described above, 1 core per task, 1 task per node on 4 nodes = 4 cores. These options can be combined 
+    together in other ways which may be optimal for certain Fluent models. e.g. some may benefit from higher CPU performance, greater memory bandwidth or other optimised resource requests.
+
+.. code-block:: bash
+
+    #!/bin/bash
+    #SBATCH --nodes=4
+    #SBATCH --ntasks-per-node=1
+    #SBATCH --cpus-per-task=1
+    #SBATCH --mem-per-cpu=2000 
+    #SBATCH --job-name=name_fluent_mpi_4_specific
+    #SBATCH --output=output_fluent_mpi_4_specific
+    #SBATCH --time=01:00:00
+    #SBATCH --mail-user=a.person@sheffield.ac.uk
+    #SBATCH --mail-type=ALL
+    module load ANSYS/2022R2
+
+    srun hostname -s > hosts.$SLURM_JOB_ID
+
+    fluent 2ddp -t$SLURM_NTASKS -mpi=intel -ssh -cnf=hosts.$SLURM_JOB_ID -g -driver null  -pib.infinipath -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
+
+
+Either job can then be submitted to the queue by typing:
 
 .. code-block:: bash
 
