@@ -3,7 +3,7 @@ git
 
 .. sidebar:: git
 
-   :Latest version: 2.39.1
+   :Latest version: 2.39.2
    :Dependancies: None
    :URL: https://git-scm.com/
 
@@ -18,9 +18,9 @@ Two version of git are available - an older version that is provided by the oper
 
 And a newer version that can be activated by loading a module file and is only available on the worker nodes: ::
 
-   $ module load git/2.39.1-GCCcore-10.3.0-nodocs 
+   $ module load git/2.39.2-GCCcore-10.3.0-nodocs 
    $ git --version
-   git version 2.39.1
+   git version 2.39.2
 
 
 .. include:: /referenceinfo/imports/software/git/git-training-help-resources.rst
@@ -29,5 +29,5 @@ And a newer version that can be activated by loading a module file and is only a
 Installation notes
 ------------------
 
-The git module has been installed using Easybuild 4.4.0 and a custom made git-2.39.1-GCCcore-10.3.0-nodocs.eb which can be found on system in the installation 
-directory: ``/usr/local/packages/live/eb/git/2.39.1-GCCcore-10.3.0-nodocs/easybuild``
+The git module has been installed using Easybuild 4.4.0 and a custom made git-2.39.2-GCCcore-10.3.0-nodocs.eb which can be found on system in the installation 
+directory: ``/usr/local/packages/live/eb/git/2.39.2-GCCcore-10.3.0-nodocs/easybuild``
