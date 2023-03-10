@@ -3,7 +3,7 @@
 .. include:: ../ansys/stanage-sidebar.rst
 
 Fluent
-========================
+======
 
 .. contents::
     :depth: 3
@@ -49,14 +49,10 @@ A more thorough explanation and tutorial on how to make a Fluent journal file ca
 Batch Submission Script
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Fluent is capable of running in both :ref:`MPI <parallel_MPI>` and :ref:`SMP <parallel_SMP>` parallel environments but will use its in-build MPI communications for both.
-On Stanage, cross node jobs are permitted and you can request either an SMP job or and MPI job.
-
-You can use the :ref:`SMP <parallel_SMP>` OpenMP parallel environment with up to 64 cores on a (single node only) or request more cores with an MPI job.
-
+On Stanage, Fluent jobs can either be run on just one node (SMP) or across multiple nodes, (but will use its in-built MPI communications for both).
 
 Sample SMP Fluent Scheduler Job Script
-"""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""
 
 The following is an example batch submission script, ``cfd_job.sh``, to run the executable ``fluent`` with input journal file ``test.jou``, and carry out a 2D double precision CFD simulation.
 The script requests 4 cores with a runtime of 60 mins and 8 GB of real memory per node.
@@ -69,7 +65,7 @@ The script requests 4 cores with a runtime of 60 mins and 8 GB of real memory pe
     * The ``#SBATCH --cpus-per-task=1`` asks the scheduler for 1 core in each task.
     * The ``srun hostname -s > hosts.$SLURM_JOB_ID`` section sets up the hostlist which is required for correct MPI task spawning in conjunction with the ``-cnf=hosts.$SLURM_JOB_ID`` argument.
     * The argument ``-mpi=intel`` instructs Fluent to use the Intel MPI communcation method. Consult Fluent documentation for OpenMPI instructions if applicable.
-    * The argument ``-ssh``  instructs Fluent to use SSH to implement the task spawning.
+    * The argument ``-scheduler_tight_coupling`` instructs Fluent to use Slurm to efficiently and safely implement task spawning.
     * The arguments ``-g`` and ``-driver null`` instruct Fluent that it will be running with no GUI to avoid errors caused by plot / figure export.
     * The argument ``-pib.infinipath`` instructs Fluent to use the high performance Omnipath networking. 
     * The argument ``-sifile=./"$SLURM_JOBID"_fluent_server_info.txt`` tells Fluent to create a file in the working directory with the remote visualization server info.
@@ -91,7 +87,7 @@ The script requests 4 cores with a runtime of 60 mins and 8 GB of real memory pe
 
     srun hostname -s > hosts.$SLURM_JOB_ID
 
-    fluent 2ddp -t$SLURM_NTASKS -mpi=intel -ssh -cnf=hosts.$SLURM_JOB_ID -g -driver null  -pib.infinipath -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
+    fluent 2ddp -t$SLURM_NTASKS -mpi=intel -scheduler_tight_coupling -cnf=hosts.$SLURM_JOB_ID -g -driver null  -pib.infinipath -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
 
 .. tip::
 
@@ -108,14 +104,7 @@ The job is submitted to the queue by typing:
 
 
 Sample MPI Fluent Scheduler Job Scripts
-"""""""""""""""""""""""""""""""""""""""""""
-
-.. warning::
-
-  Multinode execution for Fluent is dependant on multiple configuration steps for the Stanage cluster which may 
-  not yet be implemented. 
-  
-  Please attempt with caution.
+"""""""""""""""""""""""""""""""""""""""
 
 As SLURM is capable of making MPI job resource requests very specifically, two scripts are provided below. The first is a **"generic"** job submission with the scheduler allocating MPI tasks 
 and cores anywhere it can freely find them available in the cluster. The second script is a **"specific"** example with the scheduler being explicitly told to allocate tasks with cores specifically 
@@ -126,7 +115,7 @@ across 4 nodes.
     In most cases a generic request for cores across the cluster with ``#SBATCH --ntasks=n`` is ideal to reduce queue times, (as the scheduler can more freely allocate cores), so the first example should suffice in most cases.
 
 The following is the **"generic"** batch submission script, ``cfd_job.sh``, to run the executable ``fluent`` with input journal file ``test.jou``, and carry out a 2D double precision CFD simulation.
-The script requests 4 cores, 1 core per task (the default) with 4 tasks, using the MPI parallel environment with a runtime of 60 mins and 2 GB of real memory per core.
+The script requests 4 cores, 1 core per task (the default) with 4 tasks, with a runtime of 60 mins and 2 GB of real memory per core.
 
 .. hint::
 
@@ -135,7 +124,7 @@ The script requests 4 cores, 1 core per task (the default) with 4 tasks, using t
     * The ``2ddp`` argument is used to specify a 2D double precision simulation. Valid values include: ``2d``, ``2ddp``, ``3d`` and ``3ddp``.
     * The argument ``$SLURM_NTASKS`` is a SLURM scheduler variable which will return the requested number of tasks.
     * The argument ``-mpi=intel`` instructs Fluent to use the Intel MPI communcation method. Consult Fluent documentation for OpenMPI instructions if applicable.
-    * The argument ``-ssh``  instructs Fluent to use SSH to implement the task spawning.
+    * The argument ``-scheduler_tight_coupling``  instructs Fluent to use Slurm to efficiently and safely do task spawning.
     * The arguments ``-g`` and ``-driver null`` instruct Fluent that it will be running with no GUI to avoid errors caused by plot / figure export.
     * The argument ``-pib.infinipath`` instructs Fluent to use the high performance Omnipath networking. 
     * The argument ``-sifile=./"$SLURM_JOBID"_fluent_server_info.txt`` tells Fluent to create a file in the working directory with the remote visualization server info.
@@ -154,11 +143,11 @@ The script requests 4 cores, 1 core per task (the default) with 4 tasks, using t
 
     srun hostname -s > hosts.$SLURM_JOB_ID
 
-    fluent 2ddp -t$SLURM_NTASKS -mpi=intel -ssh -cnf=hosts.$SLURM_JOB_ID -g -driver null  -pib.infinipath -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
+    fluent 2ddp -t$SLURM_NTASKS -mpi=intel -scheduler_tight_coupling -cnf=hosts.$SLURM_JOB_ID -g -driver null  -pib.infinipath -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
 
 
 The following is the **"specific"** batch submission script, ``cfd_job.sh``, to run the executable ``fluent`` with input journal file ``test.jou``, and carry out a 2D double precision CFD simulation.
-The script requests 4 cores (1 core per task, 1 task per node on 4 nodes) using the MPI parallel environment with a runtime of 60 mins and 2 GB of real memory per core.
+The script requests 4 cores (1 core per task, 1 task per node on 4 nodes) with a runtime of 60 mins and 2 GB of real memory per core.
 
 .. hint::
 
@@ -185,7 +174,7 @@ The script requests 4 cores (1 core per task, 1 task per node on 4 nodes) using 
 
     srun hostname -s > hosts.$SLURM_JOB_ID
 
-    fluent 2ddp -t$SLURM_NTASKS -mpi=intel -ssh -cnf=hosts.$SLURM_JOB_ID -g -driver null  -pib.infinipath -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
+    fluent 2ddp -t$SLURM_NTASKS -mpi=intel -scheduler_tight_coupling -cnf=hosts.$SLURM_JOB_ID -g -driver null  -pib.infinipath -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
 
 
 Either job can then be submitted to the queue by typing:
