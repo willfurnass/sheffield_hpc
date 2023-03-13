@@ -30,6 +30,12 @@ The RSA, ECDSA and ED25519 fingerprints for Stanage's login nodes are: ::
     SHA256:4HdvK3C1KDm+JG1TzxQKxezMz5ojEORynHUqF9tQfoI (ECDSA)
     SHA256:aaTv+0TEc0nj7WR2ZuBYWFDD+QqzOKJpMjEFKBx6pQU (ED25519)
 
+Your terminal will show one of these fingerprints by default. If any one of these fingerprints matches you should continue. 
+
+.. warning::
+
+    If none of these fingerprints matches the fingerprint shown in your terminal please 
+    contact the `IT Services' Research and Innovation team <mailto:research-it@sheffield.ac.uk>`_ .
 
 You can then launch an interactive session on Stanage using the following command: ::
 
