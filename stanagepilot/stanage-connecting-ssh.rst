@@ -23,7 +23,7 @@ log in to a cluster: ::
 
     ssh -X $USER@stanage-login1.shef.ac.uk
 
-When connecting for the first time you should make sure that the SSH fingerprints are correct.
+When connecting for the first time you should make sure that the SSH 'fingerprint' is correct.
 The RSA, ECDSA and ED25519 fingerprints for Stanage's login nodes are: ::
 
     SHA256:mFfJmZHH0SUogoUhTtlatoZLEacfGAlj0cTrnInO5z0 (RSA)
