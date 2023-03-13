@@ -23,7 +23,15 @@ log in to a cluster: ::
 
     ssh -X $USER@stanage-login1.shef.ac.uk
 
-Launch an interactive session on Stanage using the following command: ::
+When connecting for the first time you should make sure that the SSH fingerprints are correct.
+The RSA, ECDSA and ED25519 fingerprints for Stanage's login nodes are: ::
+
+    SHA256:mFfJmZHH0SUogoUhTtlatoZLEacfGAlj0cTrnInO5z0 (RSA)
+    SHA256:4HdvK3C1KDm+JG1TzxQKxezMz5ojEORynHUqF9tQfoI (ECDSA)
+    SHA256:aaTv+0TEc0nj7WR2ZuBYWFDD+QqzOKJpMjEFKBx6pQU (ED25519)
+
+
+You can then launch an interactive session on Stanage using the following command: ::
 
     srun --mem=XXG --pty bash -i
 
