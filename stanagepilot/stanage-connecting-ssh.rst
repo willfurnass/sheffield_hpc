@@ -21,7 +21,7 @@ Connecting with SSH
 Once you have a terminal open run the following command to
 log in to a cluster: ::
 
-    ssh -X $USER@stanage-login1.shef.ac.uk
+    ssh -X $USER@stanage.shef.ac.uk
 
 Launch an interactive session on Stanage using the following command: ::
 
