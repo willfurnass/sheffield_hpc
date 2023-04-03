@@ -98,7 +98,7 @@ including *MobaXTerm*.
 .. note::
    Policy on the use of SSH public key authentication:
 
-   * All access to TUOS HPC systems via SSH public/private keypairs should use private keys that were encrypted with a passphrase at creation time.
+   * All access to TUOS HPC systems via SSH public/private keypairs should use private keys that were encrypted with a passphrase :underline-bold:`at creation time`.
    * Public key access should be from single-user machines (not shared machines) without good reason.
    * SSH agent forwarding should not be used without good reason.
    * Unencrypted private keys should not be stored on TUOS HPC systems.
