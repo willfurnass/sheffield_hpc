@@ -102,4 +102,4 @@ GPU-enabled Software
 Training materials
 ------------------
 
- `Introduction to CUDA by GPUComputing@Sheffield <https://gpucomputing.shef.ac.uk/education/cuda/>`_
+`Introduction to CUDA by GPUComputing@Sheffield <https://gpucomputing.shef.ac.uk/education/cuda/>`_
