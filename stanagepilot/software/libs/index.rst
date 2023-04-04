@@ -7,13 +7,21 @@ Libraries on Stanage
     :maxdepth: 1
     :glob:
     
+    blas
     boost
     cfitsio
+    fftw
+    gdal
+    geos
+    hdf5
+    imkl
     libsndfile
     libunistring
-    udunits
+    openblas
     proj
-    
+    scalapack
+    udunits
+
     
 
 ..
