@@ -694,7 +694,7 @@ On ShARC we recommend launching MPI tasks from batch jobs
 using the ``mpirun`` (or ``mpiexec``) program that comes with the MPI implementation you are using.
 These MPI implementations *should* able to launch tasks on the primary node of the job and on remote nodes allocated to the job
 in such a way that all consumed resources are tracked by the SGE job scheduler on ShARC;
-this is the case for the :ref:`administrator-provided versions of OpenMPI and Intel MPI on SHARC <sharc-parallel>`;
+this is the case for the :ref:`administrator-provided versions of OpenMPI and Intel MPI on ShARC <sharc-parallel>`;
 no extra configuration is required by the end user.
 
 On Bessemer and Stanage we recommend launching MPI tasks from batch jobs
