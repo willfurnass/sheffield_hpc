@@ -17,7 +17,7 @@ To start using the GPU enabled nodes interactively, type:
 
 .. code-block:: sh
 
-   srun --partition=gpu --gres=gpu:1 --pty bash
+   srun --partition=gpu --qos=gpu --gres=gpu:1 --pty bash
 
 The ``--gres=gpu:1`` parameter determines how many GPUs you are requesting
 (just one in this case).
