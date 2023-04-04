@@ -61,7 +61,7 @@ e.g. for a single GPU use ``--gres=gpu:1``:
 Requesting GPUs and multiple CPU cores from the scheduler
 ---------------------------------------------------------
 
-To request say four separate Slurm tasks within a job, each of which has four CPU cores and with four GPUs available to the entire job (shared between tasks):
+To request four separate Slurm tasks within a job, each of which has four CPU cores and with four GPUs available to the entire job (shared between tasks):
 
 .. code-block:: sh
 

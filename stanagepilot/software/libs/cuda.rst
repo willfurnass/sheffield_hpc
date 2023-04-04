@@ -18,8 +18,10 @@ Usage
 You need to first request one or more GPUs within an
 :ref:`interactive session or batch job on a worker node <submit_interactive_stanage>`.
 
-To request say three unspecified public GPUs for a batch job
-you would include *all* the following in the header of your submission script: ::
+To request three of any available public GPUs for a batch job
+you would include *all* the following in the header of your submission script:
+
+.. code-block:: sh
 
    #SBATCH --partition=gpu
    #SBATCH --qos=gpu
@@ -43,7 +45,7 @@ one of the following commands:
    module load CUDA/11.8.0
    module load CUDA/11.7.0
 
-Unlike with :ref:`older versions of CUDA on Bessemer <cuda_stanage>`
+Unlike with :ref:`older versions of CUDA on Bessemer <cuda_bessemer>`
 you will also need to explicitly load a compiler e.g. `GCC <gcc_stanage>`.
 
 Confirm which version of CUDA you are using via ``nvcc --version`` e.g.: ::
@@ -64,7 +66,7 @@ An example of the use of ``nvcc`` (the CUDA compiler): ::
 
    nvcc filename.cu
 
-will compile the CUDA program contained in the file ``filename.cu``.  
+This will compile the CUDA program contained in the file ``filename.cu``.  
 
 .. TODO: incorporate the following if install CUDA < 11 at some point.
 
@@ -85,7 +87,7 @@ but you do need at least one GPU to run them.
 
 In this demonstration, we create a batch job that
 
-#. Requests two GPUs, a single CPU core and 8GB RAM
+#. Request one GPU, a single CPU core and 8GB RAM
 #. Loads a module to provide CUDA 11.8
 #. Downloads compatible NVIDIA CUDA sample programs
 #. Compiles and runs an example that performs a matrix multiplication
