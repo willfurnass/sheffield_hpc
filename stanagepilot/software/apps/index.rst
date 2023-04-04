@@ -9,13 +9,3 @@ Applications on Stanage
 
     ansys/index
     ./*
-
-..
-    Eventually the above should look like:
-
-    .. toctree::
-        :maxdepth: 1
-        :glob:
-
-        ansys/index
-        ./*

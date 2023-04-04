@@ -7,17 +7,4 @@ Developing on Stanage
     :maxdepth: 1
     :glob:
     
-    cmake
-    doxygen
-    gcc
-    git
-    icc_ifort
-    toolchains
-..
-    Eventually the above should look like:
-
-    .. toctree::
-        :maxdepth: 1
-        :glob:
-        
-        ./*
+    ./*
