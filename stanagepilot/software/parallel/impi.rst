@@ -16,7 +16,7 @@ Versions
 --------
 
 You can load a specific version using one of the following: ::
-    
+
     module load impi/2019.7.217-iccifort-2020.1.217     # subset of the intel 2020a toolchain
     module load impi/2019.9.304-iccifort-2020.4.304     # subset of the intel 2020b toolchain
     module load impi/2021.2.0-intel-compilers-2021.2.0  # subset of the intel 2021a toolchain
@@ -31,14 +31,14 @@ which implicitly load versions of icc, ifort (and GCC).
 Examples
 --------
 
-Two examples are given below, the first assessing the MPI performance and the second demonstrating the use 
+Two examples are given below, the first assessing the MPI performance and the second demonstrating the use
 of the Intel MPI compilers.
 
 Example: MPI Performance testing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A simple test of these modules can be performed by running the built in performance benchmark tests 
-supplied by Intel. An example of this using 2 cores on one node is given below: 
+A simple test of these modules can be performed by running the built in performance benchmark tests
+supplied by Intel. An example of this using 2 cores on one node is given below:
 
 .. code-block:: bash
 
@@ -93,7 +93,7 @@ This is followed by a series of test benchmark results for each of the many test
 Example: Using the Intel MPI compilers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Another simple test of these modules can be performed by compiling and running the example executable 
+Another simple test of these modules can be performed by compiling and running the example executable
 provided by Intel. An example of this using 2 cores is given below:
 
 .. code-block:: bash
@@ -106,7 +106,7 @@ provided by Intel. An example of this using 2 cores is given below:
 
     # Show which nodes you have been allocated CPU cores on
     echo -e "\nShow node core allocation:\n"
-    
+
     echo "SLURM_JOB_NODELIST=${SLURM_JOB_NODELIST}"
     echo "SLURM_NNODES=${SLURM_NNODES}"
     echo "SLURM_NTASKS_PER_NODE=${SLURM_NTASKS_PER_NODE-1}"
@@ -137,3 +137,20 @@ This will generate output of the form:
 
     Hello world: rank 0 of 2 running on node051.pri.stanage.alces.network
     Hello world: rank 1 of 2 running on node051.pri.stanage.alces.network
+
+Installation notes
+------------------
+
+This section is primarily for administrators of the system. Intel MPI has been installed using the default Easybuild config files but with the following tweaks made via EasyBuild hooks:
+
+* Module files are patched so that
+
+   * they instruct Slurm at runtime
+     (via ``SLURM_MPI_TYPE=pmi2``) that
+     the PMI2 API is to be used for launching remote processes using ``srun``,
+     as Intel MPI currently works better with PMI2 than the newer PMIx APIs.
+   * for versions greater than 19.0.0
+     ``I_MPI_PMI_LIBRARY`` is set to the absolute path to ``libpmi2.so`` (required by ``srun``)
+
+* ``mpirun`` is patched so that ``I_MPI_PMI_LIBRARY`` is explicitly *unset* at execution time,
+  as ``I_MPI_PMI_LIBRARY`` can only be used with ``srun``.
