@@ -139,9 +139,35 @@ Your output would be something like: ::
 Installation notes
 ------------------
 
-This section is primarily for administrators of the system. OpenMPI has been installed using the default Easybuild config files.
+This section is primarily for administrators of the system. OpenMPI has been installed using the default Easybuild config files but with the following tweaks made via EasyBuild hooks:
 
-Build logs and test reports can be found in $EBROOTOPENMPI/easybuild with a given module loaded.
+* Compile-time options set so that:
+   * All versions compiled with Slurm and PMIx support enabled.
+   * Versions older than 4.1.0 are compiled with support for the PSM2 library for 
+     efficient inter-process communication inc via Omni-Path 
+     (but OpenMPI only actually uses PSM2 at runtime for versions <= 4.0.0).
+
+* Module files are patched so that at runtime:
+   * When OpenMPI is loaded, 
+     it instructs Slurm at runtime 
+     (via an environment variable - ``SLURM_MPI_TYPE=pmix_v4``) that 
+     PMIx version 4 is to be used for launching remote processes using ``srun``.
+   * Versions greater than 4.0.0 are configured at runtime to use 
+     LibFabric (OFI) for inter-process communications, which in turn is 
+     configured at runtime via environment variables to use the PSM2 OFI provider 
+     for efficient OmniPath support.  
+     
+     OFI is used instead of PSM2 as 
+     the older PSM2 library on CentOS 7 is incompatible with newer versions of OpenMPI, 
+     plus OFI is now the preferred way of doing comms over Omni-Path fabrics with MPI implementations.
+
+     Key variables set in OpenMPI module files:
+      * ``OMPI_MCA_pml=cm``
+      * ``OMPI_MCA_mtl=ofi``
+      * ``OMPI_MCA_mtl_ofi_provider_include=psm2``
+      * ``PMIX_MCA_psec=native``
+
+Build logs and test reports can be found in ``$EBROOTOPENMPI/easybuild`` with a given module loaded.
 
 
 
