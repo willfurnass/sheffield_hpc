@@ -1,6 +1,11 @@
 .. _ansys-stanage-index:
 
-.. include:: ../ansys/stanage-sidebar.rst
+..
+  ######################################################################################################################################
+  Notice: Updating the sidebar or modules load list MUST be done in the linked files in the /referenceinfo/imports/software/ansys/ area.
+  ######################################################################################################################################
+  
+.. include:: /referenceinfo/imports/software/ansys/stanage-sidebar.rst
 
 ANSYS
 ========================
@@ -14,7 +19,7 @@ The ANSYS suite of programs can be used to numerically simulate a large variety 
 
 ----------------
 
-.. include:: ../ansys/module-load-list.rst
+.. include:: /referenceinfo/imports/software/ansys/module-load-list-stanage.rst
 
 and the workbench is launched using::
 

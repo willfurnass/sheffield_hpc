@@ -1,6 +1,11 @@
 .. _ansys-sharc-ls-dyna:
 
-.. include:: ../ansys/sharc-sidebar.rst
+..
+  ######################################################################################################################################
+  Notice: Updating the sidebar or modules load list MUST be done in the linked files in the /referenceinfo/imports/software/ansys/ area.
+  ######################################################################################################################################
+  
+.. include:: /referenceinfo/imports/software/ansys/sharc-sidebar.rst
 
 ANSYS LS-DYNA
 ========================
@@ -19,7 +24,7 @@ node CPU and can scale to hundreds of cores.
 
 ----------------
 
-.. include:: ../ansys/module-load-list.rst
+.. include:: /referenceinfo/imports/software/ansys/module-load-list-sharc.rst
 
 --------------------
 

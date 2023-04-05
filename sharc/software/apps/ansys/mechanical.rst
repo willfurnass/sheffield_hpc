@@ -1,6 +1,11 @@
 .. _ansys-sharc-mechanical:
 
-.. include:: ../ansys/sharc-sidebar.rst
+..
+  ######################################################################################################################################
+  Notice: Updating the sidebar or modules load list MUST be done in the linked files in the /referenceinfo/imports/software/ansys/ area.
+  ######################################################################################################################################
+  
+.. include:: /referenceinfo/imports/software/ansys/sharc-sidebar.rst
 
 Mechanical / MAPDL
 =========================
@@ -16,7 +21,7 @@ ANSYS Mechanical has interfaces to other pre and post processing packages suppli
 
 ----------------
 
-.. include:: ../ansys/module-load-list.rst
+.. include:: /referenceinfo/imports/software/ansys/module-load-list-sharc.rst
 
 --------------------
 
