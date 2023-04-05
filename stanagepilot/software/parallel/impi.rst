@@ -144,13 +144,7 @@ Installation notes
 This section is primarily for administrators of the system. Intel MPI has been installed using the default Easybuild config files but with the following tweaks made via EasyBuild hooks:
 
 * Module files are patched so that
-
-   * they instruct Slurm at runtime
-     (via ``SLURM_MPI_TYPE=pmi2``) that
-     the PMI2 API is to be used for launching remote processes using ``srun``,
-     as Intel MPI currently works better with PMI2 than the newer PMIx APIs.
-   * for versions greater than 19.0.0
-     ``I_MPI_PMI_LIBRARY`` is set to the absolute path to ``libpmi2.so`` (required by ``srun``)
-
-* ``mpirun`` is patched so that ``I_MPI_PMI_LIBRARY`` is explicitly *unset* at execution time,
-  as ``I_MPI_PMI_LIBRARY`` can only be used with ``srun``.
+    * they instruct Slurm at runtime (via ``SLURM_MPI_TYPE=pmi2``) that the PMI2 API is to be used for launching remote processes using ``srun``,
+      as Intel MPI currently works better with PMI2 than the newer PMIx APIs.
+    * for versions greater than 19.0.0 ``I_MPI_PMI_LIBRARY`` is set to the absolute path to ``libpmi2.so`` (required by ``srun``)
+* The ``mpirun`` executable is patched so that ``I_MPI_PMI_LIBRARY`` is explicitly *unset* at execution time, as ``I_MPI_PMI_LIBRARY`` can only be used with ``srun``.
