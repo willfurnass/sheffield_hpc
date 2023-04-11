@@ -42,11 +42,17 @@ one of the following commands:
 
 .. code-block:: bash
 
-   module load CUDA/11.8.0
+   module load CUDA/10.0.130
+   module load CUDA/10.1.105-GCC-8.2.0-2.31.1
+   module load CUDA/10.1.243-GCC-8.3.0
+   module load CUDA/10.1.243
+   module load CUDA/10.2.89-GCC-8.3.0
+   module load CUDA/11.1.1-GCC-10.2.0
    module load CUDA/11.7.0
+   module load CUDA/11.8.0
 
-Unlike with :ref:`older versions of CUDA on Bessemer <cuda_bessemer>`
-you will also need to explicitly load a compiler e.g. `GCC <gcc_stanage>`.
+Note that the older versions of CUDA may implicitly load the GCC compiler.
+For newer versions you will also need to explicitly load a compiler e.g. :ref:`GCC <gcc_stanage>`.
 
 Confirm which version of CUDA you are using via ``nvcc --version`` e.g.: ::
 
