@@ -5,8 +5,8 @@
     :maxdepth: 1
     :glob:
 
-Transfering Files
-=================
+Transferring Files
+==================
 
 .. warning::
 
