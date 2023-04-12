@@ -27,7 +27,7 @@ Usage
 
 To make this library available, run one of the following: 
 
-.. code-block:: console
+.. code-block:: 
      
   module load UDUNITS/2.2.26-foss-2020a
   module load UDUNITS/2.2.26-GCCcore-8.3.0                    
@@ -43,18 +43,18 @@ This section is primarily for administrators of the system.
 
 udunits was installed using Easybuild 4.7.0, build details can be found in ``$EBROOTGMP/easybuild`` with the module loaded.
 
+------------------
+
 Testing
 -------
 
-    1. load Module
+1. Load module.
+2. Run “udunits2“.
+3. For this test we convert 5km into miles, which produces the following results:
 
-    2. Run “udunits2“
+.. code-block::
 
-    3. For this test we convert 5km into miles, which produces the following results:
-
-    .. code-block:: console
-        
-        You have: 5km
-        You want: miles
-        5 km = 3.10686 miles
-        x/miles = 0.621371*(x/km)
+    You have: 5km
+    You want: miles
+    5 km = 3.10686 miles
+    x/miles = 0.621371*(x/km)
