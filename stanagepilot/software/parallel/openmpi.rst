@@ -20,8 +20,6 @@ You can load a specific version using one of the following: ::
     module load OpenMPI/4.0.3-GCC-9.3.0   # part of the foss-2020a toolchain
     module load OpenMPI/4.0.5-GCC-9.3.0   # part of the foss-2020a toolchain
     module load OpenMPI/4.0.5-GCC-10.2.0  # part of the foss-2020b toolchain
-    module load OpenMPI/4.1.1-GCC-10.3.0  # part of the foss-2021a toolchain
-    module load OpenMPI/4.1.1-GCC-11.2.0  # part of the foss-2021b toolchain
     module load OpenMPI/4.1.4-GCC-11.3.0  # part of the foss-2022a toolchain
     module load OpenMPI/4.1.4-GCC-12.2.0  # part of the foss-2022b toolchain
 

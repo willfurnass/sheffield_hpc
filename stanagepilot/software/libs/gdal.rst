@@ -18,18 +18,15 @@ Source license by the `Open Source Geospatial Foundation <http://www.osgeo.org/>
 Usage
 -----
 
-Load by running one of the following ::
+Load by running ::
 
     module load GDAL/3.2.1-foss-2020b
-    module load GDAL/3.3.2-foss-2021b
-
+    
 This will:
 
 * add several GDAL programs to your ``PATH`` environment variable
 * allow other programs to make use of (dynamically link against) the GDAL library
 * activate the modules associated with the specific :ref:`foss toolchain <stanage_eb_toolchains>`
-
-.. include:: /referenceinfo/imports/stanage/openmpi_4.1.1_import.rst
 
 You can run ``gdal-config --version`` to test that you are running the required version ::
 
