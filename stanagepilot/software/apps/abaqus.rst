@@ -15,7 +15,7 @@ Interactive usage
 
 Abaqus can be activated using one of the following module files::
 
-    module load ABAQUS/2021/binary
+    module load ABAQUS/2021
 
 and launched using::
 
@@ -67,7 +67,7 @@ The job is submitted to the queue by typing::
 
 **User subroutines:** The ``umatmst3`` model has a user defined subroutine ``umatmst3.f``. The model files are obtained using ::
 
-    abaqus fetch job=umatst3*
+    abaqus fetch job=umatmst3*
 
 The script below is an example of a batch submission script for a single core job with a runtime of 30 mins, 8 GB of real memory and with user subroutine ``umatmst3.f`` and input file ``umatmst3.inp``. ::
 
@@ -94,7 +94,7 @@ Licensed options
 
 All available Abaqus licenses can be viewed using ``abaqus licensing r`` e.g. ::
 
-   $ module load ABAQUS/2018
+   $ module load ABAQUS/2021
    $ abaqus licensing r
 
 Run ``abaqus licensing`` for usage info for the Abaqus licensing sub-command. Run ``abaqus licensing ru`` to see current licence usage.
@@ -130,4 +130,4 @@ Installation notes
 Abaqus 2021 (non-EasyBuild install):
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Abaqus was installed using Easybuild 4.7.0, build details can be found in $EBROOTABAQUS/easybuild with the module loaded.
+Abaqus was installed using Easybuild 4.7.0, build details can be found in folder $EBROOTABAQUS/easybuild with the module loaded.
