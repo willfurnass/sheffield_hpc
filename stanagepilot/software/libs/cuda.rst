@@ -74,14 +74,6 @@ An example of the use of ``nvcc`` (the CUDA compiler): ::
 
 This will compile the CUDA program contained in the file ``filename.cu``.  
 
-.. TODO: incorporate the following if install CUDA < 11 at some point.
-
-   "'nvcc filename.cu' is correct, but will only work with CUDA >= 11.0 which introdcued SM 80.
-
-   CUDA 11.0 Release Notes: https://docs.nvidia.com/cuda/archive/11.0_GA/cuda-toolkit-release-notes/index.html#cuda-general-new-features
-
-   So may need to add a condition around that (if CUDA 10.x is avialable as suggested in Compiling the sample programs), where embedding PTX for 70 via -gencode=arch=compute_70,code=compute_70 would be the closest fit (but ideally everyone should use CUDA 11.0+ on these nodes).
-
 ---------
 
 Compiling the sample programs
@@ -149,13 +141,27 @@ i.e. ``-gencode=arch=compute_80,code=compute_80``.
 The minimum specified virtual architecture must be less than or equal to the `Compute Capability <https://developer.nvidia.com/cuda-gpus>`_ of the GPU used to execute the code.
 
 At present, all GPUs in Stanage are NVIDIA Tesla A100 GPUs, which are Compute Capability 80.
+
+CUDA 10.x is not aware of Compute Capability 80, so PTX for an older architecture (Compute Capability 70) should be embedded instead.
+
 To build a CUDA application which targets just A100 GPUs, use the following ``-gencode`` arguments:
 
-.. code-block:: sh
+.. tabs::
 
-   nvcc filename.cu \
-      -gencode=arch=compute_80,code=sm_80 \
-      -gencode=arch=compute_80,code=compute_80
+   .. group-tab:: CUDA 11.0+
+
+        .. code-block:: sh
+
+           nvcc filename.cu \
+              -gencode=arch=compute_80,code=sm_80 \
+              -gencode=arch=compute_80,code=compute_80
+
+   .. group-tab:: CUDA 10.x
+
+        .. code-block:: sh
+
+           nvcc filename.cu \
+              -gencode=arch=compute_70,code=compute_70
 
 Further details of these compiler flags can be found in the `NVCC Documentation <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#options-for-steering-gpu-code-generation>`_,
 along with details of the supported `virtual architectures <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#virtual-architecture-feature-list>`_ and `real architectures <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-feature-list>`_.
