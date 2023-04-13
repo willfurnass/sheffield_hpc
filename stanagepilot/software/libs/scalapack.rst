@@ -32,14 +32,9 @@ ScaLAPACK can be activated using one of: ::
    module load ScaLAPACK/2.0.2-gompi-2019b
    module load ScaLAPACK/2.1.0-gompi-2020a
    module load ScaLAPACK/2.1.0-gompi-2020b
-   module load ScaLAPACK/2.1.0-gompi-2021a-fb
-   module load ScaLAPACK/2.1.0-gompi-2021b-fb
    module load ScaLAPACK/2.2.0-gompi-2022a-fb
    module load ScaLAPACK/2.2.0-gompi-2022b-fb
 
    
 Note that all load OpenBLAS, despite the change in the module naming convention for more recent toolchains.
-
-
-.. include:: /referenceinfo/imports/stanage/openmpi_4.1.1_import.rst
 
