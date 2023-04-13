@@ -81,11 +81,11 @@ The script below is an example of a batch submission script for a single core jo
     #SBATCH --mail-user=a.person@sheffield.ac.uk
     #SBATCH --mail-type=ALL
     module load ABAQUS/2018
-    module load ifort/2019.1.144-GCC-8.2.0-2.31.1
+    module load iccifort/2019.5.281
     unset SLURM_GTIDS
     abaqus job=my_job input=umatmst3.inp user=umatmst3.f scratch=$TMPDIR memory="8gb" interactive
 
-Note that the module ``ifort/2019.1.144-GCC-8.2.0-2.31.1``, required for compiling the user subroutines, may not be automatically loaded when the module for Abaqus is loaded.
+Note that the module ``iccifort/2019.5.281``, required for compiling the user subroutines, is not automatically loaded when the module for Abaqus is loaded.
 
 ------------
 
@@ -127,9 +127,7 @@ Then run Abaqus specifying both the new and old job names:  ::
 Installation notes
 ------------------
 
-Addendum: Abaqus 2021 (non-EasyBuild install):
+Abaqus 2021 (non-EasyBuild install):
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Abaqus 6.14.2 was installed using the standard Abaqus interactive GUI installer (StartGUI.sh).
 
-The module file is
-:download:`/usr/local/modulefiles/live/noeb/ABAQUS/2021/binary </bessemer/software/modulefiles/ABAQUS/2021/binary>`.
+Abaqus was installed using Easybuild 4.7.0, build details can be found in $EBROOTABAQUS/easybuild with the module loaded.
