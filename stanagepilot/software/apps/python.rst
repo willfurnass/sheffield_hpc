@@ -23,7 +23,7 @@ need.
 Using Conda Python
 ------------------
 
-.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import.rst
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
 
 Anaconda Python can be loaded with one of the following::
 
