@@ -4,8 +4,9 @@ Python
 ======
 
 .. sidebar:: Python
-    
-    :Support Level: Core
+
+    :Versions: 2019.7,2020.11,2021.11,2022.05,2022.10
+    :Documentation: https://www.python.org/doc/
     :URL: https://python.org
 
 
