@@ -34,7 +34,7 @@ computing platforms (Linux, Windows, Mac), however we recommend Chrome or Firefo
 
 There are icons for ShARC Applications & Bessemer Applications respectively.
 
-For each of these you can select a HPC interactive job or a HPC terminal (where HPC choice is ShARC & Bessemer).
+For each of these you can select a HPC interactive job or a HPC terminal (where HPC choice are ShARC or Bessemer).
 The interactive job is equivalent to a ``qsh``/``qrshx`` or ``srun`` session on a worker node.
 The terminal is equivalent to a login node session from which you can use ``qsh``/``qrshx``, ``qrsh``, ``qsh-vis`` or ``srun`` respectively.
 
