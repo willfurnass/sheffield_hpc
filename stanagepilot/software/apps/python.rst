@@ -163,4 +163,24 @@ Installation notes
 Anaconda 2022.10 (EasyBuild install):
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Anaconda was installed using Easybuild 4.7.0, build details can be found in folder $EBROOTANACONDA3/easybuild with the module loaded.
+Anaconda was installed using Easybuild 4.7.1, build details can be found in folder ``$EBROOTANACONDA3/easybuild`` with the module loaded.
+
+Anaconda 2022.05 (EasyBuild install):
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Anaconda was installed using Easybuild 4.7.1, build details can be found in folder ``$EBROOTANACONDA3/easybuild`` with the module loaded.
+
+Anaconda 2021.11 (EasyBuild install):
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Anaconda was installed using Easybuild 4.7.1, build details can be found in folder ``$EBROOTANACONDA3/easybuild`` with the module loaded.
+
+Anaconda 2020.11 (EasyBuild install):
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Anaconda was installed using Easybuild 4.7.1, build details can be found in folder ``$EBROOTANACONDA3/easybuild`` with the module loaded.
+
+Anaconda 2019.7 (EasyBuild install):
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Anaconda was installed using Easybuild 4.7.1, build details can be found in folder ``$EBROOTANACONDA3/easybuild`` with the module loaded.
