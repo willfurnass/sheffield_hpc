@@ -9,7 +9,7 @@ text editors within interactive sessions for the ShARC, Bessemer and Training HP
 
 .. important:: 
     
-    Access to the Stanage cluster via the myApps service is currently unavailable.
+    The myApps service is only accessible on Bessmer and ShARC (:underline-bold:`not` Stanage).
 
 In order to access the HPC clusters you must set up a `VPN connection and MFA <https://www.sheffield.ac.uk/it-services/vpn>`_. 
 Also see section **Whether/how you can connect** below. 
