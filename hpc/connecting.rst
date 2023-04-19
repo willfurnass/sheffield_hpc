@@ -54,15 +54,6 @@ macOS and Linux come with a command-line (text-only) SSH client pre-installed.
 On Windows there are various graphical SSH clients you can use,
 including *MobaXTerm*.
 
-**Whether/how you can connect** to a University cluster using SSH (or the related protocols SCP and SFTP) **depends on**:
-
-* Where you are connecting from:
-
-  * on campus using wired ethernet;
-  * on campus using Eduroam *after* `establishing a VPN connection (required) <https://www.sheffield.ac.uk/it-services/vpn>`_;
-  * off campus *after* `establishing a VPN connection (required) <https://www.sheffield.ac.uk/it-services/vpn>`_;
-  * off campus without a VPN connection using the HPC SSH gateway.
-
 .. warning::
 
     The `University Connect for China (UCC) <https://www.sheffield.ac.uk/it-services/university-connect-china>`_ is not the same service as the SSL VPN service and will not grant access to the HPC clusters.
@@ -74,43 +65,102 @@ including *MobaXTerm*.
     Eduroam no longer grants direct access to the clusters. If using Eduroam, you must keep the  `VPN <https://www.sheffield.ac.uk/it-services/vpn>`_ 
     connected at all times while using the clusters.
 
-* Whether `Multifactor Authentication (MFA) <https://sites.google.com/sheffield.ac.uk/mfa/home>`__  has been enabled on your University account.
+Valid methods of connecting to the University clusters using SSH (or the related protocols SCP and SFTP) include:
 
-  MFA is :underline-bold:`now mandatory` for connecting to the clusters while using a password. 
-  
-  You will be prompted to enter a one-time code or send a push notification to your MFA device
-  after entering your username and password.
+* Connecting while in a campus building using wired ethernet;
+* Connecting while on campus using Eduroam or off campus *after* `establishing a VPN connection (required) <https://www.sheffield.ac.uk/it-services/vpn>`_;
+* Connecting while off campus without a VPN connection using the HPC SSH gateway.
 
-  In addition, if you do not have MFA enabled on your account then you will not be able to login from off campus without using the VPN.
 
-* Whether you want to use password-based authentication or 'public-key'-based authentication.
-
-**Authentication requirements per cluster**:
+Connecting using a password or SSH public key authentication will determine whether Multifactor Authentication (MFA) will be mandatory during the login process.
+The authentication requirements per cluster are summarized below: 
 
 +----------+---------------------------------------+---------------------------------------------------------------------------------------------------+
 | Cluster  | From campus or via VPN                | From off campus and without a VPN connection                                                      |
 +==========+=======================================+===================================================================================================+
-| Bessemer | Password + MFA **or** public key      | Not permitted (unless using the :ref:`HPC SSH gateway service <hpcgw_summary>`)                   |
+| Bessemer | Password + DUO MFA **or** public key  | Not permitted (unless using the :ref:`HPC SSH gateway service <hpcgw_summary>`)                   |
 +----------+---------------------------------------+---------------------------------------------------------------------------------------------------+
-| ShARC    | Password + MFA **or** public key      | Not permitted (unless using the :ref:`HPC SSH gateway service <hpcgw_summary>`)                   |
+| ShARC    | Password + DUO MFA **or** public key  | Not permitted (unless using the :ref:`HPC SSH gateway service <hpcgw_summary>`)                   |
++----------+---------------------------------------+---------------------------------------------------------------------------------------------------+
+| Stanage  | Password + TOTP MFA **or** public key | Not permitted (unless using the :ref:`HPC SSH gateway service <hpcgw_summary>`)                   |
 +----------+---------------------------------------+---------------------------------------------------------------------------------------------------+
 
-.. note::
-   Policy on the use of SSH public key authentication:
+Connecting with a password
+--------------------------
 
-   * All access to TUOS HPC systems via SSH public/private keypairs should use private keys that were encrypted with a passphrase :underline-bold:`at creation time`.
-   * Public key access should be from single-user machines (not shared machines) without good reason.
-   * SSH agent forwarding should not be used without good reason.
-   * Unencrypted private keys should not be stored on TUOS HPC systems.
+If connecting using your password, MFA will be mandatory. Depending on the cluster, the type of MFA
+may be standard University `DUO MFA <https://sites.google.com/sheffield.ac.uk/mfa/home>`__, or :ref:`TOTP MFA <mfa-totp-reference-info>`.
 
-   To discuss exceptions to this policy please contact research-it@sheffield.ac.uk
+.. tabs::
+
+  .. group-tab:: ShARC
+
+    On the ShARC cluster, when you connect you will be prompted to via a push notification to your DUO device to approve access 
+    or must enter a one-time code from your University provided hardware token which is associated with your DUO account.
+
+    If you have not setup your University DUO MFA, please follow the steps published at: https://www.sheffield.ac.uk/it-services/mfa/set-mfa
+
+  .. group-tab:: Bessemer
+
+    On the Bessemer cluster, when you connect you will be prompted to via a push notification to your DUO device to approve access 
+    or must enter a one-time code from your University provided hardware token which is associated with your DUO account.
+
+    If you have not setup your University DUO MFA, please follow the steps published at: https://www.sheffield.ac.uk/it-services/mfa/set-mfa
+
+  .. group-tab:: Stanage
+
+    On the Stanage cluster, when you connect you will be prompted for your password and a verification code. 
+    Enter your password and the current TOTP code for your verification code. This process should look like the following in a terminal:
+
+    .. code-block:: console
+
+        ssh test@stanage.shef.ac.uk
+        Password: 
+        Verification code: 
+        Last login: Wed Apr 12 17:09:24 2023 from r.x.y.z
+        *****************************************************************************
+        *                           Stanage HPC cluster                             *
+        *                       The University Of Sheffield                         *
+        *                       https://docs.hpc.shef.ac.uk                         *
+        *                                                                           *
+        *               Unauthorised use of this system is prohibited.              *
+        *****************************************************************************
+        [test@login1 [stanage] ~]$
+
+    If you have not setup your Stanage TOTP MFA, please follow the steps published at: :ref:`stanage-totp-setup`
+
+  
+  In addition, if you do not have MFA enabled on your account then you will not be able to login from off campus without using the VPN.
+
+Connecting with SSH keys
+------------------------
+
+If connecting using SSH public key the following policy applies around their use:
+
+    :underline-bold:`Policy on the use of SSH public key authentication:`
+    
+    |br|
+    
+    * All access to TUOS HPC systems via SSH public/private keypairs should use private keys that were encrypted with a 
+      passphrase :underline-bold:`at creation time`.
+    * All SSH private keys used to access TUOS HPC systems must be never be decrypted and stored as plaintext :underline-bold:`on any computer, at any time`.
+    * Public key access should be from single-user machines (not shared machines) without good reason.
+    * SSH agent forwarding should not be used without good reason.
+    * Unencrypted private keys should not be stored on TUOS HPC systems.
+
+To discuss exceptions to this policy please contact research-it@sheffield.ac.uk
+
+
+Suggested SSH clients
+---------------------
 
 .. _mobaxterm_connecting_profile_setup:
 
 SSH client software on Windows
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Download and install the *Installer edition* of `MobaXterm <https://mobaxterm.mobatek.net/download-home-edition.html>`_.
+We recommend the use of MobaXterm on Windows systems and users will find MobaXterm available on the University's managed desktops by default.
+For personal systems you can download and install the *Installer edition* of `MobaXterm <https://mobaxterm.mobatek.net/download-home-edition.html>`_.
 
 After starting MobaXterm you should see something like this:
 
@@ -118,17 +168,19 @@ After starting MobaXterm you should see something like this:
    :width: 100%
    :align: center
 
-Create a session profile for your login for each cluster by clicking *Session* in the top left, and then *SSH*. 
 
-Enter the details for the cluster in the *Remote host* box, either ``bessemer.shef.ac.uk`` or ``sharc.shef.ac.uk``. 
-Then click the *Specify Username* checkmark and enter your username.
-Please ensure that the checkmark for *X11 Forwarding* is ticked or GUI applications will be unable to open 
-and that *Use SCP protocol* is also ticked (or depending on MobaXterm version select *SCP (enhanced speed)* 
-option from the *SSH-browser type* dropdown menu) then click *OK* to save your session profile.
-You should add a session for each cluster.
+You should create a session profile for your login for each cluster by clicking *Session* in the top left, and then *SSH*. 
 
-You can now double click on this session profile to start connecting at which point you will be prompted for your username, password and then with a Duo MFA prompt.  
-Please enter these details and your terminal will connect as shown below.
+#. Enter the details for the cluster in the *Remote host* box, choosing ``bessemer.shef.ac.uk``, ``sharc.shef.ac.uk`` or ``stanage.shef.ac.uk``. 
+#. Now click the *Specify Username* checkmark and enter your username.
+#. Please ensure that the checkmark for *X11 Forwarding* is ticked or GUI applications will be unable to open.
+#. Please ensure that that *Use SCP protocol* is also ticked (or depending on MobaXterm version select *SCP (enhanced speed)* option from the *SSH-browser type* dropdown menu) .
+#. Now click *OK* to save your session profile.
+
+**You should add a session for each cluster.**
+
+You can now double click on this session profile to start connecting at which point you will be prompted for your username, password 
+and then with a Duo MFA prompt (or a request for your TOTP verification code on Stanage). Please enter these details and your terminal will connect as shown below.
 
 You **may** be asked to submit your username and password with a second MFA prompt in order for the file browser to work correctly. On a successful 
 login you should be presented with a screen like the below:
@@ -138,13 +190,21 @@ login you should be presented with a screen like the below:
    :align: center
 
 |br|
+
+.. note::
+
+    When you login to a cluster you reach one of two login nodes.
+    You **should not** run applications on the login nodes.
+    Running the interactive job command, ``qrshx`` (ShARC) or ``srun --pty bash -i`` (Bessemer & Stanage), gives you an interactive terminal
+    on one of the many worker nodes in the clusters.
+    
 Running commands from a terminal (from the command-line) may initially be
 unfamiliar to Windows users but this is the recommended approach for
-running commands on Bessemer or ShARC as
+running commands on Sheffield HPC clusters as
 it is the idiomatic way of interfacing with the Linux clusters.
 
 SSH client software on Mac OS/X and Linux
------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Linux and macOS (OS X) both typically come with a command-line SSH client pre-installed.
 
@@ -171,7 +231,7 @@ log in to a cluster: ::
 Here you need to:
 
 * replace ``$USER`` with your IT Services username (e.g. ``te1st``)
-* replace ``$CLUSTER_NAME`` with ``bessemer`` or ``sharc``.
+* replace ``$CLUSTER_NAME`` with ``bessemer``, ``sharc`` or ``stanage``.
 
 .. note::
 
@@ -185,57 +245,86 @@ for your username, password and then with a Duo MFA prompt.
 
 This should give you a prompt resembling the one below: 
 
-For the ShARC cluster
-^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: console
+.. tabs::
 
-    [te1st@sharc-login1 ~]$
+  .. group-tab:: ShARC
 
-At this prompt type: 
+    .. code-block:: console
 
-.. code-block:: console
+        [te1st@sharc-login1 ~]$
 
-    qrshx
+    At this prompt if you would like an interactive session you can type: 
 
-Like this: 
+    .. code-block:: console
 
-.. code-block:: console
+        qrshx
 
-    [te1st@sharc-login1 ~]$ qrshx
+    Like this: 
 
+    .. code-block:: console
 
-Which will start an interactive session, which supports graphical applications resembling the below: 
-
-.. code-block:: console
-
-    [te1st@sharc-node001 ~]$ 
-
-For the Bessemer cluster
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: console
-
-    [te1st@bessemer-login1 ~]$
-
-At this prompt type: 
-
-.. code-block:: console
-
-    srun --pty bash -i
-
-Like this: 
-
-.. code-block:: console
-
-    [te1st@bessemer-login1 ~]$ srun --pty bash -i
+        [te1st@sharc-login1 ~]$ qrshx
 
 
-Which will start an interactive session, which supports graphical applications resembling the below: 
+    Which will start an interactive session, which supports graphical applications resembling the below: 
 
-.. code-block:: console
+    .. code-block:: console
 
-    [te1st@bessemer-node001 ~]$ 
+        [te1st@sharc-node001 ~]$ 
+
+  .. group-tab:: Bessemer
+
+    .. code-block:: console
+
+        [te1st@bessemer-login1 ~]$
+
+    At this prompt if you would like an interactive session you can type:
+
+    .. code-block:: console
+
+        srun --pty bash -i
+
+    Like this: 
+
+    .. code-block:: console
+
+        [te1st@bessemer-login1 ~]$ srun --pty bash -i
+
+
+    Which will start an interactive session, which supports graphical applications resembling the below: 
+
+    .. code-block:: console
+
+        [te1st@bessemer-node001 ~]$ 
+
+
+  .. group-tab:: Stanage
+
+    .. code-block:: console
+
+        [te1st@login1 [stanage] ~]$
+
+    At this prompt if you would like an interactive session you can type:
+
+    .. code-block:: console
+
+        srun --pty bash -i
+
+    Like this: 
+
+    .. code-block:: console
+
+        [te1st@login1 [stanage] ~]$ srun --pty bash -i
+
+
+    Which will start an interactive session, which supports graphical applications resembling the below: 
+
+    .. code-block:: console
+
+        [te1st@node001 [stanage] ~]$ 
+
+
 
 
 
@@ -243,7 +332,7 @@ Which will start an interactive session, which supports graphical applications r
 
     When you login to a cluster you reach one of two login nodes.
     You **should not** run applications on the login nodes.
-    Running the interactive job command gives you an interactive terminal
+    Running the interactive job command, ``qrshx`` (ShARC) or ``srun --pty bash -i`` (Bessemer & Stanage), gives you an interactive terminal
     on one of the many worker nodes in the clusters.
 
 
@@ -272,5 +361,4 @@ What Next?
 Now you have connected to a cluster,
 you can look at how to submit jobs on the :ref:`job_submission_control` page or
 look at the software installed on
-:ref:`Bessemer <bessemer-software>` and
-:ref:`ShARC <sharc-software>`
+:ref:`Bessemer <bessemer-software>`, :ref:`ShARC <sharc-software>` and :ref:`Stanage <stanage-software>`

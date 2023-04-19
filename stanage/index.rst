@@ -18,9 +18,11 @@ This is the documentation for Stanage, the University of Sheffield's new High Pe
     software/index
     cluster_specs
     slurm
+    stanage-mfa-setup
     GPUComputingStanage
 
 * :ref:`stanage-software`
 * :ref:`stanage-specs`
 * :ref:`slurm_info_stanage`
+* :ref:`stanage-totp-setup`
 * :ref:`gpu_computing_stanage`
