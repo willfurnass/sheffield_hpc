@@ -409,7 +409,9 @@ Specifics for each Cluster
    .. group-tab:: ShARC
 
     The scheduler will automatically create a per-job directory for you under ``/scratch``.
-    The name of this directory is stored in the ``$TMPDIR`` environment variable e.g. ::
+    The name of this directory is stored in the ``$TMPDIR`` environment variable e.g. 
+    
+    .. code-block:: console
 
       [te1st@sharc-login1 ~]$ qrshx
       [te1st@sharc-node003 ~]$ cd $TMPDIR
@@ -429,26 +431,32 @@ Specifics for each Cluster
    .. group-tab:: Bessemer
 
     The scheduler will automatically create a per-job directory for you under ``/scratch``.
-    The name of this directory is stored in the ``$TMPDIR`` environment variable e.g. ::
+    The name of this directory is stored in the ``$TMPDIR`` environment variable e.g. 
+    
+    .. code-block:: console
 
       [te1st@bessemer-login1 ~]$  srun -c 1 --mem=4G --pty bash -i
       [te1st@bessemer-node001 ~]$ cd $TMPDIR
       [te1st@bessemer-node001 2660172]$ pwd
       /scratch/2660172
 
+    The scheduler will then clean up (delete) ``$TMPDIR`` at the end of your job, 
+    ensuring that the space can be used by other users.
+
    .. group-tab:: Stanage
 
-    Each user is encouraged to use ``/tmp/users/$USER`` (where ``$USER`` is the user's username) for node-local storage. 
+    The scheduler will automatically create a per-job directory for you under ``/scratch``.
+    The name of this directory is stored in the ``$TMPDIR`` environment variable e.g. 
+    
+    .. code-block:: console
 
-    This folder doesn't exist by default, you can create it with safe permissions by running the command: ::
+      [te1st@login1 [stanage] ~]$   srun -c 1 --mem=4G --pty bash -i
+      [te1st@node001 [stanage] ~]$  cd $TMPDIR
+      [te1st@node001 [stanage] ~]$  pwd
+      /tmp/2660172
 
-      mkdir -m 700 -p /tmp/users/$USER
-
-    When your job is finishing, you can then clean up this area by by running the command: ::
-
-      rm -rf /tmp/users/$USER
-
-    **You should run these commands in each batch submission script before/after using this directory!**
+    The scheduler will then clean up (delete) ``$TMPDIR`` at the end of your job, 
+    ensuring that the space can be used by other users.
 
 
 -----
@@ -546,7 +554,7 @@ you can use the ``quota`` command:
 
       .. code-block:: console
 
-          [user@login1 [stanage] ~]$ quota -u -s
+          [te1st@login1 [stanage] ~]$ quota -u -s
               Filesystem   space   quota   limit   grace   files   quota   limit   grace
           storage:/export/users
                            3289M  51200M  76800M            154k    300k    350k 
@@ -556,7 +564,7 @@ you can use the ``quota`` command:
 
       .. code-block:: console
 
-          [user@login1 [stanage] ~]$  df -h /shared/myproject1
+          [te1st@login1 [stanage] ~]$  df -h /shared/myproject1
           Filesystem                        Size  Used Avail Use% Mounted on
           172.X.X.X:/myproject1/myproject1   10T  9.1T  985G  91% /shared/myproject1
 
