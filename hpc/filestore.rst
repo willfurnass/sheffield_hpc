@@ -445,7 +445,7 @@ Specifics for each Cluster
 
    .. group-tab:: Stanage
 
-    The scheduler will automatically create a per-job directory for you under ``/scratch``.
+    The scheduler will automatically create a per-job directory for you under ``/tmp``.
     The name of this directory is stored in the ``$TMPDIR`` environment variable e.g. 
     
     .. code-block:: console
