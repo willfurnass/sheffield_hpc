@@ -453,7 +453,7 @@ Specifics for each Cluster
       [te1st@login1 [stanage] ~]$   srun -c 1 --mem=4G --pty bash -i
       [te1st@node001 [stanage] ~]$  cd $TMPDIR
       [te1st@node001 [stanage] ~]$  pwd
-      /tmp/2660172
+      /tmp/job.2660172
 
     The scheduler will then clean up (delete) ``$TMPDIR`` at the end of your job, 
     ensuring that the space can be used by other users.
