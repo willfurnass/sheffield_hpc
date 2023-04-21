@@ -39,23 +39,24 @@ Specific usage examples
 
 .. tabs::
 
-   .. group-tab:: ShARC
+   .. group-tab:: Stanage
 
     .. code-block:: console
 
-        ssh -J [username]@hpcgw.shef.ac.uk [username]@sharc.shef.ac.uk
-
+        ssh -J [username]@hpcgw.shef.ac.uk [username]@stanage.shef.ac.uk
+        
    .. group-tab:: Bessemer
 
     .. code-block:: console
 
         ssh -J [username]@hpcgw.shef.ac.uk [username]@bessemer.shef.ac.uk
 
-   .. group-tab:: Stanage
+   .. group-tab:: ShARC
 
     .. code-block:: console
 
-        ssh -J [username]@hpcgw.shef.ac.uk [username]@stanage.shef.ac.uk
+        ssh -J [username]@hpcgw.shef.ac.uk [username]@sharc.shef.ac.uk
+
 
 * Transfer a file using SCP: 
 
