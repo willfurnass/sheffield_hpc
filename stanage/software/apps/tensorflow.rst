@@ -1,4 +1,4 @@
-.. _tensorflow_bessemer:
+.. _tensorflow_stanage:
 
 TensorFlow
 ==========
@@ -18,16 +18,16 @@ within Google's Machine Intelligence research organization
 for the purposes of conducting machine learning and deep neural networks research,
 but the system is general enough to be applicable in a wide variety of other domains as well.
 
-About TensorFlow on Bessemer
+About TensorFlow on Stanage
 ----------------------------
 
 .. note::
    A GPU-enabled worker node must be requested in order to use the GPU version of this software.
-   See :ref:`GPUComputing_bessemer` for more information.
+   See :ref:`gpu_computing_stanage` for more information.
 
 As TensorFlow and all its dependencies are written in Python,
 it can be installed locally in your home directory.
-The use of Anaconda (:ref:`python_conda_bessemer`) is recommended as
+The use of Anaconda (:ref:`python_stanage`) is recommended as
 it is able to create a virtual environment in your home directory,
 allowing the installation of new Python packages without needing admin permissions.
 
@@ -42,12 +42,12 @@ Installation in Home Directory - CPU Version
 In order to to install to your home directory,
 Conda is used to create a virtual python environment for installing your local version of TensorFlow.
 
-First request an interactive session, e.g. with :ref:`submit_interactive_bessemer`.
+First request an interactive session, e.g. with :ref:`submit_interactive_stanage`.
 
 Then TensorFlow can be installed by the following: ::
 
    # Load the conda module
-   module load Anaconda3/5.3.0
+   module load Anaconda3/2022.10
 
    # Create an conda virtual environment called 'tensorflow'
    conda create -n tensorflow python=3.6
@@ -62,7 +62,7 @@ Then TensorFlow can be installed by the following: ::
 Every time you use a new session or within your job scripts, the modules must be loaded and Conda must be activated again.
 Use the following command to activate the Conda environment with TensorFlow installed: ::
 
-   module load Anaconda3/5.3.0
+   module load Anaconda3/2022.10
    source activate tensorflow
 
 Installation in Home Directory - GPU Version
@@ -73,17 +73,17 @@ is also dependent on CUDA and cuDNN libraries,
 making the installation procedure slightly different.
 
 .. warning::
-   You will need to ensure you load CUDA and cuDNN modules which are compatible with the version of TensorFlow used (see :ref:`table<tensorflow_cudnn_compat_bess>`).
+   You will need to ensure you load CUDA and cuDNN modules which are compatible with the version of TensorFlow used (see :ref:`table<tensorflow_cudnn_compat_stanage>`).
 
-First request an interactive session, e.g. see :ref:`GPUInteractive_bessemer`.
+First request an interactive session, e.g. see :ref:`gpu_interactive_stanage`.
 
 Then GPU version of TensorFlow can be installed by the following ::
 
    # Load the conda module
-   module load Anaconda3/5.3.0
+   module load Anaconda3/2022.10
 
    # Load the CUDA and cuDNN module
-   module load cuDNN/7.6.4.38-gcccuda-2019b
+   module load cuDNN/8.0.4.30-CUDA-11.1.1
 
    # Create an conda virtual environment called 'tensorflow-gpu'
    conda create -n tensorflow-gpu python=3.6
@@ -92,20 +92,20 @@ Then GPU version of TensorFlow can be installed by the following ::
    source activate tensorflow-gpu
 
    # Install GPU version of TensorFlow
-   pip install tensorflow-gpu
+   pip install tensorflow==2.4.0
 
-To install a version of ``tensorflow-gpu`` other than the latest version
+To install a different version of ``tensorflow`` other than the latest version
 you should specify a version number when running ``pip install`` i.e. ::
 
-   pip install tensorflow-gpu==<version_number>
+   pip install tensorflow==<version_number>
 
 **Every Session Afterwards and in Your Job Scripts**
 
 Every time you use a new session or within your job scripts, the modules must be loaded and Conda must be activated again.
 Use the following command to activate the Conda environment with TensorFlow installed: ::
 
-   module load Anaconda3/5.3.0
-   module load cuDNN/7.6.4.38-gcccuda-2019b
+   module load Anaconda3/2022.10
+   module load cuDNN/8.0.4.30-CUDA-11.1.1
    source activate tensorflow-gpu
 
 Testing your TensorFlow installation
@@ -146,6 +146,6 @@ This indicates that TensorFlow was expecting to find CUDA 10.0 (and an appropria
 The following table shows the which module to load for the various versions of TensorFlow,
 based on the `tested build configurations <https://www.tensorflow.org/install/source#linux>`_.
 
-.. _tensorflow_cudnn_compat_bess:
+.. _tensorflow_cudnn_compat_stanage:
 
 .. include:: /referenceinfo/imports/software/tensorflow/compat-table-import.rst
