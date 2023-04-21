@@ -313,7 +313,7 @@ As our HPC cluster are each hosted in different datacentres the policy, configur
       On the Stanage cluster, shared research areas can be made available **on all login nodes only, upon request**.  This is because:
       
       * The HPC nodes are hosted within a datacentre in Manchester distant from the shared research area filestores hosted within the University's Sheffield datacentres.
-      * Network traffic between Bessemer and Sheffield Research Filestore is not encrypted when travelling between Sheffield and Leeds over the dedicated leased line network link.
+      * Network traffic between Stanage and the Sheffield Research Filestore is not encrypted when travelling between Sheffield and Manchester over the dedicated leased line network link.
       * The leased line network link has 10Gb/s of bidirectional transfer available.
 
 
@@ -332,7 +332,7 @@ As our HPC cluster are each hosted in different datacentres the policy, configur
       On the Bessemer cluster shared research areas can be made available **on all HPC nodes upon request**.  This is because:
       
       * The HPC nodes are hosted within a datacentre in Leeds distant from the shared research area filestores hosted within the University's Sheffield datacentres.
-      * Network traffic between Bessemer and Sheffield Research Filestore is not encrypted when travelling between Sheffield and Leeds over the JANET network.
+      * Network traffic between Bessemer and the Sheffield Research Filestore is not encrypted when travelling between Sheffield and Leeds over the JANET network.
 
 
       :underline-bold:`Shared research area performance`
