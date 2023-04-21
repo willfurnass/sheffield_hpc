@@ -135,7 +135,7 @@ may be standard University `DUO MFA <https://sites.google.com/sheffield.ac.uk/mf
 Connecting with SSH keys
 ------------------------
 
-If connecting using SSH public key the following policy applies around their use:
+If connecting using SSH public keys, the following policy applies around their use:
 
     :underline-bold:`Policy on the use of SSH public key authentication:`
     
