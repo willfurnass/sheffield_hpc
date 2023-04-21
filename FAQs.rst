@@ -135,7 +135,7 @@ This usually means that you are on a `login node <https://docs.hpc.shef.ac.uk/en
 
         srun --pty bash -i
 
-   .. group-tab:: Sharc
+   .. group-tab:: ShARC
 
     .. code-block:: console
 
@@ -224,7 +224,7 @@ Following are ways to fix too much time requested
 
         Alternatively, delete the job using scancel and re-submit with the new max runtime
 
-   .. group-tab:: Sharc
+   .. group-tab:: ShARC
 
         The maximum run time for ShARC is 96 hours.
 
@@ -371,7 +371,7 @@ You can request more than this when running your ``qrshx``, ``qsh``, ``qrsh`` or
 
                 $ srun --mem=8G --pty bash -i
 
-   .. group-tab:: Sharc
+   .. group-tab:: ShARC
 
         .. code-block:: console
 
@@ -578,7 +578,7 @@ To transfer data between your old account and your new account you could make us
 
         rsync -avP /Path/To/File_Or_Directory $Your_New_UserName@localhost:/home/$Your_New_UserName/OldUserAccount
 
-2. You want to copy your files to the new account on a different cluster node(e.g old account on Bessemer to new account on shARC/Stanage), here we are going to use the option "avzP" as we are going to transfer data over the internet, and it will be faster if it is compressed.
+2. You want to copy your files to the new account on a different cluster node(e.g old account on Bessemer to new account on ShARC/Stanage), here we are going to use the option "avzP" as we are going to transfer data over the internet, and it will be faster if it is compressed.
 
 .. code-block:: bash
 

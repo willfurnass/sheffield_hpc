@@ -61,36 +61,7 @@ All users have a home directory on each system:
 
 .. tabs::
 
-   .. group-tab:: ShARC
-
-    :underline-bold:`Home filestore area details`
-
-    +------------------------+------+----------------+-----------------------------------------------+-------------------------+
-    | Path                   | Type | Quota per user | Shared between system login and worker nodes? | Shared between systems? |
-    +========================+======+================+===============================================+=========================+
-    |``/home/$USER``         | NFS  | 10GB           | Yes                                           | No                      |
-    +------------------------+------+----------------+-----------------------------------------------+-------------------------+
-
-    Where ``$USER`` is the user's username.
-
-
-    .. include:: /referenceinfo/imports/filestores/shared-areas/sharc-bessemer-snapshot-mirror-settings.rst
-
-   .. group-tab:: Bessemer
-
-    :underline-bold:`Home filestore area details`
-
-    +------------------------+------+----------------+-----------------------------------------------+-------------------------+
-    | Path                   | Type | Quota per user | Shared between system login and worker nodes? | Shared between systems? |
-    +========================+======+================+===============================================+=========================+
-    |``/home/$USER``         | NFS  | 100GB          | Yes                                           | No                      |
-    +------------------------+------+----------------+-----------------------------------------------+-------------------------+
-
-    Where ``$USER`` is the user's username.
-
-    .. include:: /referenceinfo/imports/filestores/shared-areas/sharc-bessemer-snapshot-mirror-settings.rst
-
-   .. group-tab:: Stanage
+  .. group-tab:: Stanage
 
     :underline-bold:`Home filestore area details`
 
@@ -110,6 +81,35 @@ All users have a home directory on each system:
 
       **Snapshotting is not enabled** for home areas and these areas are **not backed up**.
 
+  .. group-tab:: Bessemer
+
+    :underline-bold:`Home filestore area details`
+
+    +------------------------+------+----------------+-----------------------------------------------+-------------------------+
+    | Path                   | Type | Quota per user | Shared between system login and worker nodes? | Shared between systems? |
+    +========================+======+================+===============================================+=========================+
+    |``/home/$USER``         | NFS  | 100GB          | Yes                                           | No                      |
+    +------------------------+------+----------------+-----------------------------------------------+-------------------------+
+
+    Where ``$USER`` is the user's username.
+
+    .. include:: /referenceinfo/imports/filestores/shared-areas/sharc-bessemer-snapshot-mirror-settings.rst
+
+  .. group-tab:: ShARC
+
+    :underline-bold:`Home filestore area details`
+
+    +------------------------+------+----------------+-----------------------------------------------+-------------------------+
+    | Path                   | Type | Quota per user | Shared between system login and worker nodes? | Shared between systems? |
+    +========================+======+================+===============================================+=========================+
+    |``/home/$USER``         | NFS  | 10GB           | Yes                                           | No                      |
+    +------------------------+------+----------------+-----------------------------------------------+-------------------------+
+
+    Where ``$USER`` is the user's username.
+
+
+    .. include:: /referenceinfo/imports/filestores/shared-areas/sharc-bessemer-snapshot-mirror-settings.rst
+
 
 ------
 
@@ -121,9 +121,21 @@ All users have a home directory on each system:
 ShARC, (:underline-bold:`only`), has access to an additional larger *data* storage area:
 
 .. tabs::
+    
+ .. group-tab:: Stanage
 
-   .. group-tab:: ShARC
+    .. warning::
+      
+      There is no ``/data`` area on Stanage.
 
+ .. group-tab:: Bessemer
+
+    .. warning::
+      
+      There is no ``/data`` area on Bessemer.
+
+ .. group-tab:: ShARC
+      
     +----------+------------------------+------+----------------+-----------------------------------------------+-------------------------+
     | System   | Path                   | Type | Quota per user | Shared between system login and worker nodes? | Shared between systems? |
     +==========+========================+======+================+===============================================+=========================+
@@ -166,19 +178,7 @@ ShARC, (:underline-bold:`only`), has access to an additional larger *data* stora
     you may find that ``/data/te1st`` has disappeared again, as 
     it is automatically *unmounted* following a period of inactivity. 
 
-   .. group-tab:: Bessemer
 
-    .. warning::
-      
-      There is no ``/data`` area on Bessemer.
-
-   .. group-tab:: Stanage
-
-    .. warning::
-      
-      There is no ``/data`` area on Stanage.
-
- 
 
 -----
 
@@ -198,32 +198,6 @@ An example of how slow it can be for large numbers of small files is detailed `h
 There are separate ``fastdata`` areas on each cluster:
 
 .. tabs::
-
-   .. group-tab:: ShARC
-
-    :underline-bold:`Fastdata filestore area details`
-
-    +---------------+--------+----------------+---------------------+-------------------------+---------------------------+
-    | Path          | Type   | Quota per user | Filesystem capacity | Shared between systems? | Network bandwith per link |
-    +===============+========+================+=====================+=========================+===========================+
-    | ``/fastdata`` | Lustre | No limits      | 669 TB              | No                      | 100Gb/s (*Omni-Path*)     |
-    +---------------+--------+----------------+---------------------+-------------------------+---------------------------+
-
-    .. include:: /referenceinfo/imports/filestores/shared-areas/sharc-bessemer-fastdata-managing-import.rst
-
-
-   .. group-tab:: Bessemer
-
-    :underline-bold:`Fastdata filestore area details`
-
-    +---------------+--------+----------------+---------------------+-------------------------+---------------------------+
-    | Path          | Type   | Quota per user | Filesystem capacity | Shared between systems? | Network bandwith per link |
-    +===============+========+================+=====================+=========================+===========================+
-    | ``/fastdata`` | Lustre | No limits      | 460 TB              | No                      | 25Gb/s Ethernet           |
-    +---------------+--------+----------------+---------------------+-------------------------+---------------------------+
-
-    .. include:: /referenceinfo/imports/filestores/shared-areas/sharc-bessemer-fastdata-managing-import.rst
-      
 
    .. group-tab:: Stanage
 
@@ -278,6 +252,33 @@ There are separate ``fastdata`` areas on each cluster:
         We also reserve the right to take measures to ensure the continuing functionality of this area which could include scheduled removal of user's files 
         (after informing the user of the scheduled removal).
 
+   .. group-tab:: Bessemer
+
+    :underline-bold:`Fastdata filestore area details`
+
+    +---------------+--------+----------------+---------------------+-------------------------+---------------------------+
+    | Path          | Type   | Quota per user | Filesystem capacity | Shared between systems? | Network bandwith per link |
+    +===============+========+================+=====================+=========================+===========================+
+    | ``/fastdata`` | Lustre | No limits      | 460 TB              | No                      | 25Gb/s Ethernet           |
+    +---------------+--------+----------------+---------------------+-------------------------+---------------------------+
+
+    .. include:: /referenceinfo/imports/filestores/shared-areas/sharc-bessemer-fastdata-managing-import.rst
+
+   .. group-tab:: ShARC
+
+    :underline-bold:`Fastdata filestore area details`
+
+    +---------------+--------+----------------+---------------------+-------------------------+---------------------------+
+    | Path          | Type   | Quota per user | Filesystem capacity | Shared between systems? | Network bandwith per link |
+    +===============+========+================+=====================+=========================+===========================+
+    | ``/fastdata`` | Lustre | No limits      | 669 TB              | No                      | 100Gb/s (*Omni-Path*)     |
+    +---------------+--------+----------------+---------------------+-------------------------+---------------------------+
+
+    .. include:: /referenceinfo/imports/filestores/shared-areas/sharc-bessemer-fastdata-managing-import.rst
+
+
+
+
 -----
 
 .. _shared_dir:
@@ -304,15 +305,25 @@ As our HPC cluster are each hosted in different datacentres the policy, configur
 
 .. tabs::
 
-   .. group-tab:: ShARC
+
+   .. group-tab:: Stanage
 
       :underline-bold:`Shared research area mount availability`
 
-      On the ShARC cluster shared research areas are available **on all HPC nodes**. This is because the HPC nodes are within the same local network as the shared research area filestores as to give maximum performance.
+      On the Stanage cluster, shared research areas can be made available **on all login nodes only, upon request**.  This is because:
+      
+      * The HPC nodes are hosted within a datacentre in Manchester distant from the shared research area filestores hosted within the University's Sheffield datacentres.
+      * Network traffic between Stanage and the Sheffield Research Filestore is not encrypted when travelling between Sheffield and Manchester over the dedicated leased line network link.
+      * The leased line network link has 10Gb/s of bidirectional transfer available.
+
 
       :underline-bold:`Shared research area performance`
 
-      As the HPC nodes are within the same local network, local NFS filestorage performance is provided.
+      * If you access a ``/shared`` directory stored in Sheffield from Stanage then you may experience slower performance, especially for small files.
+      * The comparatively slower network link for Stanage than Bessemer could result in very poor performance if mounted on all worker nodes. This is why shared research areas are only made available on login nodes.
+      * Stanage does not have a local shared research area filestore, thus no local shared research areas can be made.
+
+      If you need to access a ``/shared`` area on Stanage please contact `research-it@sheffield.ac.uk <research-it@sheffield.ac.uk>`__ to arrange this.
 
    .. group-tab:: Bessemer
 
@@ -321,7 +332,7 @@ As our HPC cluster are each hosted in different datacentres the policy, configur
       On the Bessemer cluster shared research areas can be made available **on all HPC nodes upon request**.  This is because:
       
       * The HPC nodes are hosted within a datacentre in Leeds distant from the shared research area filestores hosted within the University's Sheffield datacentres.
-      * Network traffic between Bessemer and Sheffield Research Filestore is not encrypted when travelling between Sheffield and Leeds over the JANET network.
+      * Network traffic between Bessemer and the Sheffield Research Filestore is not encrypted when travelling between Sheffield and Leeds over the JANET network.
 
 
       :underline-bold:`Shared research area performance`
@@ -333,25 +344,16 @@ As our HPC cluster are each hosted in different datacentres the policy, configur
 
       If you need to access a ``/shared`` area on Bessemer please contact `research-it@sheffield.ac.uk <research-it@sheffield.ac.uk>`__ to arrange this.
 
-
-   .. group-tab:: Stanage
+   .. group-tab:: ShARC
 
       :underline-bold:`Shared research area mount availability`
 
-      On the Stanage cluster, shared research areas can be made available **on all login nodes only, upon request**.  This is because:
-      
-      * The HPC nodes are hosted within a datacentre in Manchester distant from the shared research area filestores hosted within the University's Sheffield datacentres.
-      * Network traffic between Bessemer and Sheffield Research Filestore is not encrypted when travelling between Sheffield and Leeds over the dedicated leased line network link.
-      * The leased line network link has 10Gb/s of bidirectional transfer available.
-
+      On the ShARC cluster shared research areas are available **on all HPC nodes**. This is because the HPC nodes are within the same local network as the shared research area filestores as to give maximum performance.
 
       :underline-bold:`Shared research area performance`
 
-      * If you access a ``/shared`` directory stored in Sheffield from Stanage then you may experience slower performance, especially for small files.
-      * The comparatively slower network link for Stanage than Bessemer could result in very poor performance if mounted on all worker nodes. This is why shared research areas are only made available on login nodes.
-      * Stanage does not have a local shared research area filestore, thus no local shared research areas can be made.
+      As the HPC nodes are within the same local network, local NFS filestorage performance is provided.
 
-      If you need to access a ``/shared`` area on Stanage please contact `research-it@sheffield.ac.uk <research-it@sheffield.ac.uk>`__ to arrange this.
 
 .. _shared_dir_perms:
 
@@ -406,6 +408,36 @@ Specifics for each Cluster
 
 .. tabs::
 
+   .. group-tab:: Stanage
+
+    The scheduler will automatically create a per-job directory for you under ``/tmp``.
+    The name of this directory is stored in the ``$TMPDIR`` environment variable e.g. 
+    
+    .. code-block:: console
+
+      [te1st@login1 [stanage] ~]$   srun -c 1 --mem=4G --pty bash -i
+      [te1st@node001 [stanage] ~]$  cd $TMPDIR
+      [te1st@node001 [stanage] ~]$  pwd
+      /tmp/job.2660172
+
+    The scheduler will then clean up (delete) ``$TMPDIR`` at the end of your job, 
+    ensuring that the space can be used by other users.
+
+   .. group-tab:: Bessemer
+
+    The scheduler will automatically create a per-job directory for you under ``/scratch``.
+    The name of this directory is stored in the ``$TMPDIR`` environment variable e.g. 
+    
+    .. code-block:: console
+
+      [te1st@bessemer-login1 ~]$  srun -c 1 --mem=4G --pty bash -i
+      [te1st@bessemer-node001 ~]$ cd $TMPDIR
+      [te1st@bessemer-node001 2660172]$ pwd
+      /scratch/2660172
+
+    The scheduler will then clean up (delete) ``$TMPDIR`` at the end of your job, 
+    ensuring that the space can be used by other users.
+
    .. group-tab:: ShARC
 
     The scheduler will automatically create a per-job directory for you under ``/scratch``.
@@ -428,35 +460,7 @@ Specifics for each Cluster
       so you will need to manually create a directory under ``/scratch`` (named using your username)
       and this will not be cleaned up when the job ends.
 
-   .. group-tab:: Bessemer
 
-    The scheduler will automatically create a per-job directory for you under ``/scratch``.
-    The name of this directory is stored in the ``$TMPDIR`` environment variable e.g. 
-    
-    .. code-block:: console
-
-      [te1st@bessemer-login1 ~]$  srun -c 1 --mem=4G --pty bash -i
-      [te1st@bessemer-node001 ~]$ cd $TMPDIR
-      [te1st@bessemer-node001 2660172]$ pwd
-      /scratch/2660172
-
-    The scheduler will then clean up (delete) ``$TMPDIR`` at the end of your job, 
-    ensuring that the space can be used by other users.
-
-   .. group-tab:: Stanage
-
-    The scheduler will automatically create a per-job directory for you under ``/tmp``.
-    The name of this directory is stored in the ``$TMPDIR`` environment variable e.g. 
-    
-    .. code-block:: console
-
-      [te1st@login1 [stanage] ~]$   srun -c 1 --mem=4G --pty bash -i
-      [te1st@node001 [stanage] ~]$  cd $TMPDIR
-      [te1st@node001 [stanage] ~]$  pwd
-      /tmp/job.2660172
-
-    The scheduler will then clean up (delete) ``$TMPDIR`` at the end of your job, 
-    ensuring that the space can be used by other users.
 
 
 -----
@@ -503,29 +507,14 @@ you can use the ``quota`` command:
 
 .. tabs::
 
-   .. group-tab:: ShARC
+   .. group-tab:: Stanage
 
       .. code-block:: console
 
-            [te1st@sharc-node004 binary]$ quota
-
-            Size  Used Avail Use%  Mounted on
-            10G    10G    0G 100%  /home/te1st
-            100G     0  100G   0%  /data/te1st
-
-      In the above, you can see that the quota was set to 10 gigabytes and all of this is in use which is likely to cause jobs to fail.
-
-      To determine usage in a particular :ref:`shared_dir` you can use the ``df`` command like so: 
-
-      .. code-block:: console
-
-          [te1st@sharc-node004 binary]$ df -h /shared/myproject1
-          Filesystem                        Size  Used Avail Use% Mounted on
-          172.X.X.X:/myproject1/myproject1   10T  9.1T  985G  91% /shared/myproject1
-
-      To assess what is using up your quota within a given directory, you can make use of the 
-      :ref:`ncdu module on ShARC <ncdu_sharc>`. The **ncdu** utility will give you an 
-      interactive display of what files/folders are taking up storage in a given directory tree.
+          [te1st@login1 [stanage] ~]$ quota -u -s
+              Filesystem   space   quota   limit   grace   files   quota   limit   grace
+          storage:/export/users
+                           3289M  51200M  76800M            154k    300k    350k 
 
    .. group-tab:: Bessemer
 
@@ -550,15 +539,29 @@ you can use the ``quota`` command:
       :ref:`ncdu module on Bessemer <ncdu_bessemer>`. The **ncdu** utility will give you an 
       interactive display of what files/folders are taking up storage in a given directory tree.
 
-   .. group-tab:: Stanage
+   .. group-tab:: ShARC
 
       .. code-block:: console
 
-          [te1st@login1 [stanage] ~]$ quota -u -s
-              Filesystem   space   quota   limit   grace   files   quota   limit   grace
-          storage:/export/users
-                           3289M  51200M  76800M            154k    300k    350k 
+            [te1st@sharc-node004 binary]$ quota
 
+            Size  Used Avail Use%  Mounted on
+            10G    10G    0G 100%  /home/te1st
+            100G     0  100G   0%  /data/te1st
+
+      In the above, you can see that the quota was set to 10 gigabytes and all of this is in use which is likely to cause jobs to fail.
+
+      To determine usage in a particular :ref:`shared_dir` you can use the ``df`` command like so: 
+
+      .. code-block:: console
+
+          [te1st@sharc-node004 binary]$ df -h /shared/myproject1
+          Filesystem                        Size  Used Avail Use% Mounted on
+          172.X.X.X:/myproject1/myproject1   10T  9.1T  985G  91% /shared/myproject1
+
+      To assess what is using up your quota within a given directory, you can make use of the 
+      :ref:`ncdu module on ShARC <ncdu_sharc>`. The **ncdu** utility will give you an 
+      interactive display of what files/folders are taking up storage in a given directory tree.
 
       To determine usage in a particular :ref:`stanage_shared_dir` you can use the ``df`` command like so: 
 

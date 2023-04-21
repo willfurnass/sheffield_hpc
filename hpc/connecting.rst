@@ -93,20 +93,6 @@ may be standard University `DUO MFA <https://sites.google.com/sheffield.ac.uk/mf
 
 .. tabs::
 
-  .. group-tab:: ShARC
-
-    On the ShARC cluster, when you connect you will be prompted to via a push notification to your DUO device to approve access 
-    or must enter a one-time code from your University provided hardware token which is associated with your DUO account.
-
-    If you have not setup your University DUO MFA, please follow the steps published at: https://www.sheffield.ac.uk/it-services/mfa/set-mfa
-
-  .. group-tab:: Bessemer
-
-    On the Bessemer cluster, when you connect you will be prompted to via a push notification to your DUO device to approve access 
-    or must enter a one-time code from your University provided hardware token which is associated with your DUO account.
-
-    If you have not setup your University DUO MFA, please follow the steps published at: https://www.sheffield.ac.uk/it-services/mfa/set-mfa
-
   .. group-tab:: Stanage
 
     On the Stanage cluster, when you connect you will be prompted for your password and a verification code. 
@@ -128,6 +114,21 @@ may be standard University `DUO MFA <https://sites.google.com/sheffield.ac.uk/mf
         [test@login1 [stanage] ~]$
 
     If you have not setup your Stanage TOTP MFA, please follow the steps published at: :ref:`stanage-totp-setup`
+  
+  .. group-tab:: Bessemer
+
+    On the Bessemer cluster, when you connect you will be prompted to via a push notification to your DUO device to approve access 
+    or must enter a one-time code from your University provided hardware token which is associated with your DUO account.
+
+    If you have not setup your University DUO MFA, please follow the steps published at: https://www.sheffield.ac.uk/it-services/mfa/set-mfa
+
+  .. group-tab:: ShARC
+
+    On the ShARC cluster, when you connect you will be prompted to via a push notification to your DUO device to approve access 
+    or must enter a one-time code from your University provided hardware token which is associated with your DUO account.
+
+    If you have not setup your University DUO MFA, please follow the steps published at: https://www.sheffield.ac.uk/it-services/mfa/set-mfa
+
 
   
   In addition, if you do not have MFA enabled on your account then you will not be able to login from off campus without using the VPN.
@@ -248,30 +249,30 @@ This should give you a prompt resembling the one below:
 
 .. tabs::
 
-  .. group-tab:: ShARC
+  .. group-tab:: Stanage
 
     .. code-block:: console
 
-        [te1st@sharc-login1 ~]$
+        [te1st@login1 [stanage] ~]$
 
-    At this prompt if you would like an interactive session you can type: 
+    At this prompt if you would like an interactive session you can type:
 
     .. code-block:: console
 
-        qrshx
+        srun --pty bash -i
 
     Like this: 
 
     .. code-block:: console
 
-        [te1st@sharc-login1 ~]$ qrshx
+        [te1st@login1 [stanage] ~]$ srun --pty bash -i
 
 
     Which will start an interactive session, which supports graphical applications resembling the below: 
 
     .. code-block:: console
 
-        [te1st@sharc-node001 ~]$ 
+        [te1st@node001 [stanage] ~]$
 
   .. group-tab:: Bessemer
 
@@ -299,33 +300,30 @@ This should give you a prompt resembling the one below:
         [te1st@bessemer-node001 ~]$ 
 
 
-  .. group-tab:: Stanage
+  .. group-tab:: ShARC
 
     .. code-block:: console
 
-        [te1st@login1 [stanage] ~]$
+        [te1st@sharc-login1 ~]$
 
-    At this prompt if you would like an interactive session you can type:
+    At this prompt if you would like an interactive session you can type: 
 
     .. code-block:: console
 
-        srun --pty bash -i
+        qrshx
 
     Like this: 
 
     .. code-block:: console
 
-        [te1st@login1 [stanage] ~]$ srun --pty bash -i
+        [te1st@sharc-login1 ~]$ qrshx
 
 
     Which will start an interactive session, which supports graphical applications resembling the below: 
 
     .. code-block:: console
 
-        [te1st@node001 [stanage] ~]$ 
-
-
-
+        [te1st@sharc-node001 ~]$  
 
 
 .. note::
