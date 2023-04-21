@@ -71,7 +71,7 @@ The script requests 4 cores with a runtime of 60 mins and 8 GB of real memory pe
     * The ``srun hostname -s > hosts.$SLURM_JOB_ID`` section sets up the hostlist which is required for correct MPI task spawning in conjunction with the ``-cnf=hosts.$SLURM_JOB_ID`` argument.
     * The argument ``-mpi=intel`` instructs Fluent to use the Intel MPI communcation method. Consult Fluent documentation for OpenMPI instructions if applicable.
     * The argument ``-scheduler_tight_coupling`` instructs Fluent to use Slurm to efficiently and safely implement task spawning.
-    * The arguments ``-g`` and ``-driver null`` instruct Fluent that it will be running with no GUI to avoid errors caused by plot / figure export.
+    * The arguments ``-gu`` and ``-driver null`` instruct Fluent that it will be running with no GUI to avoid errors caused by plot / figure export.
     * The argument ``-pib.infinipath`` instructs Fluent to use the high performance Omnipath networking. 
     * The argument ``-sifile=./"$SLURM_JOBID"_fluent_server_info.txt`` tells Fluent to create a file in the working directory with the remote visualization server info.
 
@@ -92,7 +92,7 @@ The script requests 4 cores with a runtime of 60 mins and 8 GB of real memory pe
 
     srun hostname -s > hosts.$SLURM_JOB_ID
 
-    fluent 2ddp -t$SLURM_NTASKS -mpi=intel -scheduler_tight_coupling -cnf=hosts.$SLURM_JOB_ID -g -driver null  -pib.infinipath -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
+    fluent 2ddp -t$SLURM_NTASKS -mpi=intel -scheduler_tight_coupling -cnf=hosts.$SLURM_JOB_ID -gu -driver null  -pib.infinipath -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
 
 .. tip::
 
@@ -130,7 +130,7 @@ The script requests 4 cores, 1 core per task (the default) with 4 tasks, with a 
     * The argument ``$SLURM_NTASKS`` is a SLURM scheduler variable which will return the requested number of tasks.
     * The argument ``-mpi=intel`` instructs Fluent to use the Intel MPI communcation method. Consult Fluent documentation for OpenMPI instructions if applicable.
     * The argument ``-scheduler_tight_coupling``  instructs Fluent to use Slurm to efficiently and safely do task spawning.
-    * The arguments ``-g`` and ``-driver null`` instruct Fluent that it will be running with no GUI to avoid errors caused by plot / figure export.
+    * The arguments ``-gu`` and ``-driver null`` instruct Fluent that it will be running with no GUI to avoid errors caused by plot / figure export.
     * The argument ``-pib.infinipath`` instructs Fluent to use the high performance Omnipath networking. 
     * The argument ``-sifile=./"$SLURM_JOBID"_fluent_server_info.txt`` tells Fluent to create a file in the working directory with the remote visualization server info.
 
@@ -148,7 +148,7 @@ The script requests 4 cores, 1 core per task (the default) with 4 tasks, with a 
 
     srun hostname -s > hosts.$SLURM_JOB_ID
 
-    fluent 2ddp -t$SLURM_NTASKS -mpi=intel -scheduler_tight_coupling -cnf=hosts.$SLURM_JOB_ID -g -driver null  -pib.infinipath -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
+    fluent 2ddp -t$SLURM_NTASKS -mpi=intel -scheduler_tight_coupling -cnf=hosts.$SLURM_JOB_ID -gu -driver null  -pib.infinipath -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
 
 
 The following is the **"specific"** batch submission script, ``cfd_job.sh``, to run the executable ``fluent`` with input journal file ``test.jou``, and carry out a 2D double precision CFD simulation.
@@ -179,7 +179,7 @@ The script requests 4 cores (1 core per task, 1 task per node on 4 nodes) with a
 
     srun hostname -s > hosts.$SLURM_JOB_ID
 
-    fluent 2ddp -t$SLURM_NTASKS -mpi=intel -scheduler_tight_coupling -cnf=hosts.$SLURM_JOB_ID -g -driver null  -pib.infinipath -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
+    fluent 2ddp -t$SLURM_NTASKS -mpi=intel -scheduler_tight_coupling -cnf=hosts.$SLURM_JOB_ID -gu -driver null  -pib.infinipath -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
 
 
 Either job can then be submitted to the queue by typing:
