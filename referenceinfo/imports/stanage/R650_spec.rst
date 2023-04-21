@@ -1,10 +1,10 @@
-* Machine: `Dell PowerEdge R650`_
-* CPUs: 2 x 32 core `Intel Xeon Platinum 8358`_
+* Machine: `Dell PowerEdge R650`_.
+* CPUs: 2 x 32 core `Intel Xeon Platinum 8358`_:
 
   * `Ice Lake`_ processor microarchitecture;
   * Base clock 2.60 GHz; Boost clock 3.40 GHz;
   * Support for `AVX-512`_ vectorisation instructions (simultaneously apply the same operation to multiple values in hardware);
-  * Support for `Fused Multiply-Add`_ instructions (expedites operations involving the accummulation of products e.g. matrix multiplication).
+  * Support for `Fused Multiply-Add`_ instructions (expedites operations involving the accumulation of products e.g. matrix multiplication);
   * `Hyperthreading`_ is disabled on all nodes.
 
 .. _AVX-512: https://en.wikipedia.org/wiki/AVX-512

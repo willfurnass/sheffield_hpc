@@ -3,6 +3,15 @@
 Stanage
 =======
 
+.. figure:: ../images/Stanage_Black.png
+   :width: 30%
+   :align: center
+   :alt: The Sheffield University Stanage HPC cluster logo.
+
+   The Sheffield University Stanage HPC cluster logo.
+
+-----
+
 .. note::
 
     The latest changes and newly installed software on our clusters can be found on the `HPC Changelog <http://changelog.hpc.shef.ac.uk/>`_ microsite.
