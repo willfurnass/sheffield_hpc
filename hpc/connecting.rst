@@ -3,33 +3,38 @@
 Connecting to a cluster using myApps (web browser)
 ==================================================
 
-.. Hint::
+For easier access to HPC resources,  IT Services runs an instance of Oracle Secure Global desktop called myApps to provide web based access to CLI terminals,
+text editors within interactive sessions for the ShARC, Bessemer and Training HPC clusters.
 
-    Usernames to connect with all HPC services will be the same as those you use to login to MUSE :underline-bold:`not` the prefix on your email address.
 
+.. important:: 
+    
+    The myApps service is only accessible on Bessmer and ShARC (:underline-bold:`not` Stanage).
 
-In order to access ShARC and Bessemer you must set up a `VPN and MFA <https://www.sheffield.ac.uk/it-services/vpn>`_. 
+In order to access the HPC clusters you must set up a `VPN connection and MFA <https://www.sheffield.ac.uk/it-services/vpn>`_. 
 Also see section **Whether/how you can connect** below. 
 
-The web browser method of access to ShARC and Bessemer is provided by the Secure Global Desktop Client. This method works well 
-for most browsers on all the common computing platforms (Linux, Windows, Mac), however we recommend Internet Explorer or Firefox.
+The web browser method of access to ShARC and Bessemer is recommended. This method works well for most browsers on all the common 
+computing platforms (Linux, Windows, Mac), however we recommend Chrome or Firefox.
 
-To login to ShARC or Bessemer click the following link: `Connect via myAPPs Portal <https://myapps.shef.ac.uk/sgd/index.jsp?langSelected=en>`_
+:underline-bold:`How to login to the myApps service`
 
-.. note::
 
-    If you are logging in for the first time, select Client Options on the myApps Portal page (bottom right) and 
-    then click option 1 to download and install the client for your system (Windows, Mac, or Linux).
+#. To login to ShARC or Bessemer click the following link: `Connect via myAPPs Portal <https://myapps.shef.ac.uk/sgd/index.jsp?langSelected=en>`_
+#. If you are logging in for the first time, select Client Options on the myApps Portal page (bottom right) and 
+   then click the HTML5 option to run myApps entirely within your browser.
 
-    Alternatively you can choose to use the HTML5 option to run myApps entirely within your browser.
+   * Alternatively you can select option 1 to download and install the client for your system (Windows, Mac, or Linux).
 
-Enter your username and password on the myApps Portal login page.
+   .. Hint::
+    Usernames to connect with all HPC services will be the same as those you use to login to MUSE :underline-bold:`not` the prefix on your email address.
 
-Once you have managed to login, you will see a window with applications on the left hand panel.
+#. Enter your username and password on the myApps Portal login page.
+#. Once you have managed to login, you will see a window with applications on the left hand panel.
 
 There are icons for ShARC Applications & Bessemer Applications respectively.
 
-For each of these you can select a HPC interactive job or a HPC terminal (where HPC choice is ShARC & Bessemer).
+For each of these you can select a HPC interactive job or a HPC terminal (where HPC choices are ShARC or Bessemer).
 The interactive job is equivalent to a ``qsh``/``qrshx`` or ``srun`` session on a worker node.
 The terminal is equivalent to a login node session from which you can use ``qsh``/``qrshx``, ``qrsh``, ``qsh-vis`` or ``srun`` respectively.
 
