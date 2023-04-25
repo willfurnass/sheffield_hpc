@@ -42,14 +42,15 @@ one of the following commands:
 
 .. code-block:: bash
 
-   module load CUDA/10.0.130
-   module load CUDA/10.1.105-GCC-8.2.0-2.31.1
+   module load CUDA/12.0.0  
+   module load CUDA/11.8.0
+   module load CUDA/11.7.0
+   module load CUDA/11.1.1-GCC-10.2.0
+   module load CUDA/10.2.89-GCC-8.3.0
    module load CUDA/10.1.243-GCC-8.3.0
    module load CUDA/10.1.243
-   module load CUDA/10.2.89-GCC-8.3.0
-   module load CUDA/11.1.1-GCC-10.2.0
-   module load CUDA/11.7.0
-   module load CUDA/11.8.0
+   module load CUDA/10.1.105-GCC-8.2.0-2.31.1
+   module load CUDA/10.0.130
 
 Note that the older versions of CUDA may implicitly load the GCC compiler.
 For newer versions you will also need to explicitly load a compiler e.g. :ref:`GCC <gcc_stanage>`.
@@ -59,9 +60,9 @@ Confirm which version of CUDA you are using via ``nvcc --version`` e.g.: ::
    $ nvcc --version
    nvcc: NVIDIA (R) Cuda compiler driver
    Copyright (c) 2005-2022 NVIDIA Corporation
-   Built on Wed_Sep_21_10:33:58_PDT_2022
-   Cuda compilation tools, release 11.8, V11.8.89
-   Build cuda_11.8.r11.8/compiler.31833905_0
+   Built on Mon_Oct_24_19:12:58_PDT_2022
+   Cuda compilation tools, release 12.0, V12.0.76
+   Build cuda_12.0.r12.0/compiler.31968024_0
 
 ---------
 
@@ -100,7 +101,7 @@ In this demonstration, we create a batch job that
    #SBATCH --time=0-00:05       # time (DD-HH:MM)
    #SBATCH --job-name=gputest
 
-   module load CUDA/11.8.0
+   module load CUDA/12.0.0
 
    mkdir -p $HOME/examples
    cd $HOME/examples
@@ -108,7 +109,7 @@ In this demonstration, we create a batch job that
        git clone https://github.com/NVIDIA/cuda-samples.git cuda-samples
    fi
    cd cuda-samples
-   git checkout tags/v11.6  # use sample programs compatible with CUDA 11.7
+   git checkout tags/v12.0  # use sample programs compatible with CUDA 12.0
    cd Samples/0_Introduction/matrixMul/
    make SMS="80"
    ./matrixMul
@@ -183,7 +184,7 @@ Nsight Systems is a system-wide performance analysis tool designed to visualize 
 
 A common use-case for Nsight Systems is to generate application timelines via the command line, which can later be visualised on a local computer using the GUI component. Nsight Systems, ``nsys``, is provided by the following modules. ::
 
-    module load CUDA/11.7.0
+    module load CUDA/12.0.0
 
 You should use a version of nsys that is at least as new as the CUDA toolkit used to compile your application (if appropriate).
 
@@ -214,7 +215,7 @@ A common use-case for using Nsight Compute is to capture all available profiling
 
 Nsight Compute, ``ncu``, is provided by the following modules. ::
 
-    module load CUDA/11.7.0
+    module load CUDA/12.0.0
 
 You should use a versions of ``ncu`` that is at least as new as the CUDA toolkit used to compile your application.
 
@@ -256,7 +257,7 @@ Run the command:
 
 Example output is: ::
 
-   NVRM version: NVIDIA UNIX x86_64 Kernel Module  525.85.12  Sat Jan 28 02:10:06 UTC 2023
+   NVRM version: NVIDIA UNIX x86_64 Kernel Module  525.105.17  Tue Mar 28 18:02:59 UTC 2023
    GCC version:  gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC)
 
 ---------
@@ -265,6 +266,13 @@ Installation notes
 ------------------
 
 These are primarily for system administrators.
+
+CUDA 12.0.0
+^^^^^^^^^^^
+
+Installed as a dependency of the ``cuDNN-8.8.0.121-CUDA-12.0.0.eb`` easyconfig.
+
+Single GPU and compiler testing was conducted as above in the ``matrixMul`` batch job.
 
 CUDA 11.8.0
 ^^^^^^^^^^^
