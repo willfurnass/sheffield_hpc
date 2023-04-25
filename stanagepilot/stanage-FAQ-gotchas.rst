@@ -17,12 +17,18 @@ Connection to Stanage requires the VPN
 A connection to the Sheffield SSL VPN must be active at all times (including on campus access from devices on wired ethernet) 
 in order to use Stanage. This may change in future, possibly during the pilot phase.
 
-
 DUO authentication
 ------------------
 
 As DUO authentication is not yet fully implemented on Stanage, users should be aware that where you may normally be prompted by DUO 
 MFA this may not occur. This may change in future, possibly during the pilot phase.
+
+Graphical applications
+----------------------
+
+At present, we only provide very limited support for running graphical sessions on Stanage.
+At this point in time we recommend that users needing graphical access to Stanage use ShARC or Bessemer instead. 
+Mechanisms for facilitating graphical access to Stanage are in development.
 
 Poor performance with OpenMPI 4.1.1
 -----------------------------------
