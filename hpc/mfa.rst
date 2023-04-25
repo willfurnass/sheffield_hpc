@@ -16,17 +16,42 @@ SSH clients
 ^^^^^^^^^^^
 
 SSH has a built in functionality to reuse existing connections for new sessions.  You can enable this feature by adding the following config
-to your `~/.ssh/config` file on your local PC::
+to your `~/.ssh/config` file on your local PC:
 
-  Host sharc.shef.ac.uk
-    ControlMaster auto
-    ControlPath ~/.ssh/sockets/%r@%h-%p
-    ControlPersist 600
+.. tabs::
+
+   .. group-tab:: ShARC
+
+      .. code-block:: bash
+
+        Host sharc.shef.ac.uk
+        ControlMaster auto
+        ControlPath ~/.ssh/sockets/%r@%h-%p
+        ControlPersist 600
+
+   .. group-tab:: Bessemer
+
+      .. code-block:: bash
+
+        Host bessemer.shef.ac.uk
+        ControlMaster auto
+        ControlPath ~/.ssh/sockets/%r@%h-%p
+        ControlPersist 600
+
+   .. group-tab:: Stanage
+
+      .. code-block:: bash
+
+        Host stanage.shef.ac.uk
+        ControlMaster auto
+        ControlPath ~/.ssh/sockets/%r@%h-%p
+        ControlPersist 600
+
 
 You will need to create the directory ``~/.ssh/sockets`` before running ssh.  The ``ControlPersist`` option allows you to specify how long (in seconds) your SSH connection
 should perist after you have closed all your existing sessions.  During this time you can start a new session without reauthenticating.
 
-.. warning::
+.. danger::
 
     If you configure your SSH client to maintain connections ensure that your client PC is kept locked whenever
     you leave it unattended.  
@@ -47,7 +72,7 @@ As long as your existing connection remains active you can start new sessions wi
 Other applications which use Putty for SSH connections can also re-use your existing connection without needing to reauthenticate.
 
 
-.. note::
+.. warning::
 
     If you perform a large file transfer over a shared session you may find that other sessions sharing the same connection become less responsive.
 
@@ -64,7 +89,7 @@ For examples of using TMUX to manage mutiple sessions see the following RSE blog
 Transferring files
 ------------------
 
-If you need to transfer data from your local PC to a research shared directory you can directly access the data from your local PC without using MFA, instead of transfering 
+If you need to transfer data from your local PC to a research shared directory you can directly access the data from your local PC without using MFA, instead of transferring 
 the files via the HPC.  
 
 For more info on how to do this see our `Research Storage documentation <https://www.sheffield.ac.uk/it-services/research-storage/using-research-storage>`_ .
