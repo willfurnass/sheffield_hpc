@@ -11,7 +11,7 @@ ShARC
 This is the documentation for ShARC (Sheffield Advanced Research Computer), one of the University of Sheffield's High Performance Computing clusters and the successor to the decommissioned Iceberg cluster. 
 ShARC is for the most part a capability cluster designed to run larger compute jobs that will use multiple nodes.
 
-If greater performance is required than ShARC can provide, the newer :ref:`stanage` cluster has more modern CPUs with significantly greater numbers of cores available.
+If greater single-threaded performance or greater numbers of cores are required than ShARC can provide, the newer :ref:`stanage` cluster has more modern CPUs with significantly greater numbers of cores available.
 
 .. toctree::
   :hidden:
