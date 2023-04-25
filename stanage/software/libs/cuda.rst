@@ -203,7 +203,16 @@ Nsight Compute
 
 Nsight Compute is a kernel profiler for CUDA applications, which can also be used for API debugging. It supports Volta (SM 70) and newer GPUs.
 
-A common use-case for using Nsight Compute is to capture all available profiling metrics via the command line, which can later be analysed on a local computer using the GUI component. Nsight Compute, ``ncu``, is provided by the following modules. ::
+A common use-case for using Nsight Compute is to capture all available profiling metrics via the command line, which can later be analysed on a local computer using the GUI component. 
+
+.. note::
+
+   If you want to perform CUDA kernel profiling on this cluster 
+   you need to explicitly request (via <mailto:research-it@sheffield.ac.uk>`_) for 
+   that to be enabled for you for a certain number of GPUs over a certain time period, 
+   otherwise attempts to use tools like Nsight Compute will result in permissions errors (``ERR_NVGPUCTRPERM``).
+
+Nsight Compute, ``ncu``, is provided by the following modules. ::
 
     module load CUDA/11.7.0
 
