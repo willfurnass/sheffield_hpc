@@ -66,13 +66,9 @@ The script requests 4 cores with a runtime of 60 mins and 8 GB of real memory pe
 
     * The ``2ddp`` argument is used to specify a 2D double precision simulation. Valid values include: ``2d``, ``2ddp``, ``3d`` and ``3ddp``.
     * The ``#SBATCH --nodes=1`` asks the scheduler for 1 node.
-    * The ``#SBATCH --ntasks-per-node=4`` asks the scheduler for 4 tasks per node.
-    * The ``#SBATCH --cpus-per-task=1`` asks the scheduler for 1 core in each task.
-    * The ``srun hostname -s > hosts.$SLURM_JOB_ID`` section sets up the hostlist which is required for correct MPI task spawning in conjunction with the ``-cnf=hosts.$SLURM_JOB_ID`` argument.
-    * The argument ``-mpi=intel`` instructs Fluent to use the Intel MPI communcation method. Consult Fluent documentation for OpenMPI instructions if applicable.
-    * The argument ``-scheduler_tight_coupling`` instructs Fluent to use Slurm to efficiently and safely implement task spawning.
+    * The ``#SBATCH --ntasks-per-node=1`` asks the scheduler for 1 task per node.
+    * The ``#SBATCH --cpus-per-task=4`` asks the scheduler for 4 cores in the single task.
     * The arguments ``-gu`` and ``-driver null`` instruct Fluent that it will be running with no GUI to avoid errors caused by plot / figure export.
-    * The argument ``-pib.infinipath`` instructs Fluent to use the high performance Omnipath networking. 
     * The argument ``-sifile=./"$SLURM_JOBID"_fluent_server_info.txt`` tells Fluent to create a file in the working directory with the remote visualization server info.
 
 
@@ -80,8 +76,8 @@ The script requests 4 cores with a runtime of 60 mins and 8 GB of real memory pe
 
     #!/bin/bash
     #SBATCH --nodes=1
-    #SBATCH --ntasks-per-node=4
-    #SBATCH --cpus-per-task=1
+    #SBATCH --ntasks-per-node=1
+    #SBATCH --cpus-per-task=4
     #SBATCH --mem=8000
     #SBATCH --job-name=name_fluent_smp_4
     #SBATCH --output=output_fluent_smp_4
@@ -90,14 +86,12 @@ The script requests 4 cores with a runtime of 60 mins and 8 GB of real memory pe
     #SBATCH --mail-type=ALL
     module load ANSYS/2022R2
 
-    srun hostname -s > hosts.$SLURM_JOB_ID
-
-    fluent 2ddp -t$SLURM_NTASKS -mpi=intel -scheduler_tight_coupling -cnf=hosts.$SLURM_JOB_ID -gu -driver null  -pib.infinipath -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
+    fluent 2ddp -t$SLURM_CPUS_PER_TASK -gu -driver null -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
 
 .. tip::
 
-    You may have noted that this SMP job uses the same arguments as the MPI jobs below. This is intended due to how Fluent spawns SMP jobs. The distinguishing factor in SMP jobs is 
-    the choice of a single node.
+    You may have noted that this SMP job uses different arguments as the MPI jobs below. The use of a single task is intentional and is in order to ensure all requested memory within a job is available to **all** Fluent application threads
+    in a single CGroup. This should avoid asymmetric memory requirements for the host Fluent process during start up in some models causing crashes due to insufficient memory being available and the scheduler terminating the job.
 
 
 The job is submitted to the queue by typing:
