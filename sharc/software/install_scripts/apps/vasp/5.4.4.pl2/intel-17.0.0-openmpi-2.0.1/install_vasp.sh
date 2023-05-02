@@ -18,7 +18,7 @@ version=5.4.4.pl2
 prefix=/usr/local/packages/apps/vasp/$version/intel-17.0.0-openmpi-2.0.1
 build_dir=/scratch/$USER/vasp
 
-filename1=/data/sa_cs1dmr/vasp/vasp.5.4.4.pl2.tgz
+filename1=/data/$USER/vasp/vasp.5.4.4.pl2.tgz
 #filename2=/usr/local/media/protected/vasp/5.4.1.05Feb16/patch.5.4.1.14032016.gz
 #filename3=/usr/local/media/protected/vasp/5.4.1.05Feb16/patch.5.4.1.03082016.gz
 baseurl=

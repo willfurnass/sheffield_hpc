@@ -17,7 +17,7 @@ version=2018.1
 prefix=/usr/local/packages/apps/gromacs/$version/gcc-4.9.4-cuda-8.0
 build_dir=/data/$USER/install_gromacs
 
-filename=/data/sa_cs1dmr/install_gromacs/gromacs-$version.tar.gz
+filename=/data/$USER/install_gromacs/gromacs-$version.tar.gz
 baseurl=
 
 # Set this to 'sudo' if you want to create the install dir using sudo.
