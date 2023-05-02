@@ -38,7 +38,7 @@ To make a quick assessment of what storage area is likely to best fulfil your ne
   This decision tree only provides a quick assessment, please check the full details of each filestore before committing to using them for your work.
 
 .. raw:: html
-    :file: /images/Sheffield-HPC-Cluster-Storage-Selection-decision-tree.drawio.svg
+    :file: ../images/Sheffield-HPC-Cluster-Storage-Selection-decision-tree.drawio.svg
 
 ..
   This flow diagram can be updated by:
