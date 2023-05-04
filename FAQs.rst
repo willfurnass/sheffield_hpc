@@ -575,7 +575,7 @@ To transfer data between your old account and your new account you could make us
 
 .. code-block:: bash
 
-        rsync -avP /Path/To/File_Or_Directory $Your_New_UserName@localhost:/home/$Your_New_UserName/OldUserAccount
+        rsync -avP /Path/To/File_Or_Directory $Your_New_UserName@$HOSTNAME:/home/$Your_New_UserName/OldUserAccount
 
 2. You want to copy your files to the new account on a different cluster node(e.g old account on Bessemer to new account on ShARC/Stanage), here we are going to use the option "avzP" as we are going to transfer data over the internet, and it will be faster if it is compressed.
 
