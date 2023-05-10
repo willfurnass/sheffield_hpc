@@ -707,3 +707,36 @@ again, no extra configuration is required by the end user.
 For those more familiar with the use of ``mpirun`` and ``mpiexec``:
 ``srun`` can here be thought to be functionally equivalent to ``mpirun`` and ``mpiexec``,
 although it takes different arguments and can also be used for starting interactive sessions on Slurm clusters.
+
+.. _ansys_license_restrictions:
+
+Are there any license restrictions for ANSYS?
+----------------------------------------------
+
+ANSYS users are subject to a per user limit of 400 concurrent cores via a maximum check out limit of 400 ANSYS multi-core licenses. There are no limitations on 
+the number of ANSYS applications users can open however:
+
+* Multi-core licenses are checked out per application;
+* when more than 4 cores are used concurrently;
+* with the number required equal to the number of cores in use greater than 4. 
+
+This restriction applies on an individual user basis across all applications and devices concurrently, including personal machines, managed desktop machines and the HPC clusters.
+
+As a result of the above anyone on HPC, personal PCs or managed PCs using more than 4 cores per application open will 
+require a number of ANSYS multi-core licenses equivalent to the number of cores they are using minus 4,
+but cannot use more than 400 at once.
+
+.. table:: **Example of license usage by a user**
+   
+   ==============================================       ===========================             
+   User using ANSYS                                     Multi-core licenses in use
+   ==============================================       ===========================
+   On a desktop open using 4 cores                      4  - 4 = 0
+   On another desktop using 6 cores                     6  - 4 = 2
+   A job on ShARC using 12 cores                        12 - 4 = 8
+   A job on Stanage using 20 cores                      20 - 4 = 16
+   Another job on Stanage using 30 cores                30 - 4 = 26     
+   **Total**                                            **52**
+   ==============================================       =========================== 
+
+|br|
