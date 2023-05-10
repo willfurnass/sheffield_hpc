@@ -104,13 +104,6 @@ If you created a virtual python environment, you must activate it at every new s
   #Activation below is only needed if you've installed your on python modules
   source activate caffe
 
-
-Caffe Training
---------------
-
-The Research Software Engineering team provide
-training materials on the `use of Caffe on the DGX-1 and ShARC cluster <http://gpucomputing.shef.ac.uk/education/intro_dl_sharc_dgx1/>`_.
-
 Installation Notes
 ------------------
 
