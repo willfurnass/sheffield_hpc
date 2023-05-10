@@ -102,4 +102,5 @@ GPU-enabled Software
 Training materials
 ------------------
 
-* `Introduction to CUDA by the Research Software Engineering (RSE) team <https://rse.shef.ac.uk/training/com4521>`_
+* The Research Software Engineering team have developed an undergraduate teaching module on CUDA;
+`lecture notes and lecture recordings for that module are accessible here <https://rse.shef.ac.uk/training/com4521>`_ for anyone with a University account.

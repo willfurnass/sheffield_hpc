@@ -252,8 +252,8 @@ but file locking was not previously enabled on the (`Lustre <http://lustre.org/>
 CUDA Training
 -------------
 
-The Research Software Engineering team provide
-a self-paced `introduction to CUDA <https://rse.shef.ac.uk/training/com4521>`_ training course.
+The Research Software Engineering team have developed an undergraduate teaching module on CUDA;
+`lecture notes and lecture recordings for that module are accessible here <https://rse.shef.ac.uk/training/com4521>`_ for anyone with a University account. 
 
 ---------
 
