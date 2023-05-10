@@ -18,10 +18,6 @@ Tensorflow is available on ShARC as both Apptainer (previously known as Singular
 
 As Tensorflow and all its dependencies are written in Python, it can be installed locally in your home directory. The use of Anaconda (:ref:`sharc-python-conda`) is recommended as it is able to create a virtual environment in your home directory, allowing the installation of new Python packages without admin permission.
 
-This software and documentation is maintained by the `RSES group <https://rse.shef.ac.uk/>`_ and `GPUComputing@Sheffield <http://gpucomputing.shef.ac.uk/>`_. For feature requests or if you encounter any problems, please raise an issue on the `GPU Computing repository <https://github.com/RSE-Sheffield/GPUComputing/issues>`_.
-
-
-
 Installation in Home Directory - CPU Version
 --------------------------------------------
 
@@ -169,6 +165,10 @@ The following table shows which module to load for the various versions of Tenso
 | >= 1.0.0   | 8.0  | 5.1    | ``libs/cudnn/5.1/binary-cuda-8.0.44``        |
 +------------+------+--------+----------------------------------------------+
 
+Training
+--------
+
+The Research Software Engineering team has an `introductory workshop on deep learning with the TensorFlow Keras framework <https://rses-dl-course.github.io/>__`.
 
 Tensorflow Apptainer/Singularity Images
 ---------------------------------------

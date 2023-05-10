@@ -16,8 +16,6 @@ About Caffe on ShARC
 
 Caffe is available on ShARC as both Apptainer/Singularity images and as a module.
 
-This software and documentation is maintained by the `RSES group <https://rse.shef.ac.uk/>`_ and GPUComputing@Sheffield_. For feature requests or if you encounter any problems, please raise an issue on the `GPU Computing repository <https://github.com/RSE-Sheffield/GPUComputing/issues>`_.
-
 
 Caffe Apptainer/Singularity Images
 ----------------------------------
@@ -110,7 +108,8 @@ If you created a virtual python environment, you must activate it at every new s
 Caffe Training
 --------------
 
-GPUComputing@Sheffield_ provides training materials on the `use of Caffe on the DGX-1 and ShARC cluster <http://gpucomputing.shef.ac.uk/education/intro_dl_sharc_dgx1/>`_.
+The Research Software Engineering team provide
+training materials on the `use of Caffe on the DGX-1 and ShARC cluster <http://gpucomputing.shef.ac.uk/education/intro_dl_sharc_dgx1/>`_.
 
 Installation Notes
 ------------------
@@ -148,6 +147,3 @@ And comes with the following libraries:
   * libpng
   * libtiff
   * opencv 3.2.0
-
-
-.. _GPUComputing@Sheffield: http://gpucomputing.shef.ac.uk

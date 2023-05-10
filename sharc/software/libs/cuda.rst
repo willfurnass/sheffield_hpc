@@ -155,8 +155,8 @@ but file locking was not previously enabled on the (`Lustre <http://lustre.org/>
 CUDA Training
 -------------
 
-`GPUComputing@sheffield <http://gpucomputing.shef.ac.uk>`_ provides 
-a self-paced `introduction to CUDA <http://gpucomputing.shef.ac.uk/education/cuda/>`_ training course.
+The Research Software Engineering team provide
+a self-paced `introduction to CUDA <https://rse.shef.ac.uk/training/com4521>`_ training course.
 
 Determining the NVIDIA Driver version
 -------------------------------------

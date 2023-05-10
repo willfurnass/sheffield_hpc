@@ -38,4 +38,4 @@ The Nvidia DGX-1 is the world's first Deep Learning supercomputer. It is availab
 Training Materials
 ------------------
 
-* `Introducting to Deep Learning using Caffe on ShARC's DGX-1 by GPUComputing@Sheffield <http://gpucomputing.shef.ac.uk/education/cuda/>`_
+* `Introducting to Deep Learning using Caffe on ShARC's DGX-1 by GPUComputing@Sheffield <https://rse.shef.ac.uk/training/com4521//>`_
