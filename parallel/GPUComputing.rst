@@ -34,7 +34,7 @@ please join the `GPUComputing google group <https://groups.google.com/a/sheffiel
 Requesting access to GPU facilities
 -----------------------------------
 
-**Public GPU nodes are available to in Bessemer and ShARC. These can be be used without acquiring extra permission.**
+**Public GPU nodes are available to in Stanage, Bessemer and ShARC. These can be be used without acquiring extra permission.**
 
 Research groups also have an option to purchase and add nodes to the cluster to be managed by IT Services.
 For these nodes (e.g. :ref:`dcs_gpu_nodes_bessemer`),
@@ -52,5 +52,6 @@ Using GPUs on the different clusters
 Hardware, software and ways to access GPUs differ between the clusters.
 Instructions specific to each cluster can be found below:
 
+* :ref:`gpu_computing_stanage`
 * :ref:`GPUComputing_bessemer`
 * :ref:`GPUComputing_sharc`
