@@ -21,7 +21,7 @@ The following are the list of currently supported Deep Learning frameworks avail
 * :ref:`theano_sharc`
 * :ref:`torch_sharc`
 
-Deep Learning framworks often have a complex set of software requirements. With the introduction of Apptainer/Singularity on ShARC, a containerisation technology similar to Docker, it is now possible for you to create a software stack that exactly fits your needs and will run on both your local development machine and the ShARC cluster (see :ref:`apptainer_sharc`).
+Deep Learning frameworks often have a complex set of software requirements. With the introduction of Apptainer/Singularity on ShARC, a containerisation technology similar to Docker, it is now possible for you to create a software stack that exactly fits your needs and will run on both your local development machine and the ShARC cluster (see :ref:`apptainer_sharc`).
 
 Use of GPUs for training Neural Networks
 ----------------------------------------
@@ -38,4 +38,4 @@ The Nvidia DGX-1 is the world's first Deep Learning supercomputer. It is availab
 Training Materials
 ------------------
 
-* `Introducting to Deep Learning using Caffe on ShARC's DGX-1 by GPUComputing@Sheffield <http://gpucomputing.shef.ac.uk/education/cuda/>`_
+The Research Software Engineering team has an `introductory workshop on deep learning with the TensorFlow Keras framework <https://rses-dl-course.github.io/>__`.

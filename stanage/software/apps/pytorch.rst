@@ -22,11 +22,6 @@ The use of Anaconda (:ref:`python_stanage`) is recommended as
 it is able to create a virtual environment in your home directory,
 allowing for the installation of new Python packages without needing admin permission.
 
-This software and documentation is maintained by the `RSES group <https://rse.shef.ac.uk/>`_
-and `GPUComputing@Sheffield <http://gpucomputing.shef.ac.uk/>`_.
-For feature requests or if you encounter any problems,
-please raise an issue on the `GPU Computing repository <https://github.com/RSE-Sheffield/GPUComputing/issues>`_.
-
 Installation in Home Directory
 ------------------------------
 

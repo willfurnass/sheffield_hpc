@@ -123,5 +123,5 @@ GPU-enabled Software
 Training materials
 ^^^^^^^^^^^^^^^^^^
 
-* `Introduction to CUDA by GPUComputing@Sheffield <http://gpucomputing.shef.ac.uk/education/cuda/>`_
-* `Introducting to Deep Learning using Caffe on ShARC's DGX-1 by GPUComputing@Sheffield <http://gpucomputing.shef.ac.uk/education/cuda/>`_
+* The Research Software Engineering team have developed an undergraduate teaching module on CUDA;
+  `lecture notes and lecture recordings for that module are accessible here <https://rse.shef.ac.uk/training/com4521>`_ for anyone with a University account.

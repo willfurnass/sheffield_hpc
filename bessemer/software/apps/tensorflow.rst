@@ -31,11 +31,6 @@ The use of Anaconda (:ref:`python_conda_bessemer`) is recommended as
 it is able to create a virtual environment in your home directory,
 allowing the installation of new Python packages without needing admin permissions.
 
-This software and documentation is maintained by the `RSES group <https://rse.shef.ac.uk/>`_
-and `GPUComputing@Sheffield <http://gpucomputing.shef.ac.uk/>`_.
-For feature requests or if you encounter any problems,
-please raise an issue on the `GPU Computing repository <https://github.com/RSE-Sheffield/GPUComputing/issues>`_.
-
 Installation in Home Directory - CPU Version
 --------------------------------------------
 
@@ -149,3 +144,8 @@ based on the `tested build configurations <https://www.tensorflow.org/install/so
 .. _tensorflow_cudnn_compat_bess:
 
 .. include:: /referenceinfo/imports/software/tensorflow/compat-table-import.rst
+
+Training
+--------
+
+The Research Software Engineering team has an `introductory workshop on deep learning with the TensorFlow Keras framework <https://rses-dl-course.github.io/>__`.
