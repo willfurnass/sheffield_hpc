@@ -12,7 +12,11 @@ Caffe
 About Caffe on ShARC
 --------------------
 
-**A GPU-enabled worker node must be requested in order to use the GPU version of this software. See** :ref:`GPUComputing_sharc` **for more information.**
+.. note::
+
+   The use of Caffe is no longer recommended; the last release of Caffe was in 2017.
+
+A GPU-enabled worker node must be requested in order to use the GPU version of this software. See :ref:`GPUComputing_sharc` for more information.
 
 Caffe is available on ShARC as both Apptainer/Singularity images and as a module.
 
