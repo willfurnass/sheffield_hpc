@@ -106,6 +106,52 @@ All users have a home directory on each system:
     .. include:: /referenceinfo/imports/filestores/shared-areas/sharc-bessemer-snapshot-mirror-settings.rst
 
 
+.. note::
+
+  As you can see in the above tabs the full path to your home directory is different depending on the cluster you are on:
+
+  +-------------------+------------------------+
+  | Cluster           | Path                   |
+  +===================+========================+
+  | Stanage           |``/users/$USER``        |
+  +-------------------+------------------------+
+  | Bessemer & ShARC  |``/home/$USER``         |
+  +-------------------+------------------------+ 
+
+  To ensure that your code is compatible with all three clusters, we suggest using the symbols "~" or "$HOME" to represent the home directory. This approach ensures that the correct path is used regardless of the cluster you are working on, making your code more portable and agnostic to the specific cluster environment.
+
+  .. tabs::
+
+   .. group-tab:: Stanage
+
+      .. code-block:: console
+        :emphasize-lines: 1,3
+
+        $ echo $HOME
+        /users/te1st
+        $ echo ~
+        /users/te1st
+
+   .. group-tab:: Bessemer
+
+      .. code-block:: console
+        :emphasize-lines: 1,3
+
+        $ echo $HOME
+        /home/te1st
+        $ echo ~
+        /home/te1st
+
+   .. group-tab:: ShARC
+      
+      .. code-block:: console
+        :emphasize-lines: 1,3
+
+        $ echo $HOME
+        /home/te1st
+        $ echo ~
+        /home/te1st
+
 ------
 
 .. _data_dir:
