@@ -39,6 +39,7 @@ VASP Pseudopotentials can be found in the directory pointed to by the ``$PSEUDOP
 
 Note that the ``$PSEUDOPOTENTIAL_DIR`` environment variable is only defined *after* you have loaded a VASP environment module.
 
+
 Batch jobs
 ----------
 

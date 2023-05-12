@@ -704,6 +704,36 @@ that is compatible with the PMI2 or PMI-X library used by the Slurm job schedule
 This is the case for the administrator-provided versions of OpenMPI and Intel MPI on Bessemer and Stanage;
 again, no extra configuration is required by the end user.
 
+On Bessemer and Stanage in batch scripts you should use the ``--export=ALL`` option with the ``srun`` command, 
+which tells Slurm to export all of the current shell environment variables to the job environment.
+
+.. code-block:: console
+
+        srun --export=ALL my_program
+
+This is important because many applications and libraries rely on environment variables to locate their dependencies, such as shared libraries.
+
+Take, for instance, if we were to submit this :ref:`OpenMPI non-interactive hello world job <batch_openmpi_stanage>` without the ``--export=ALL`` option, i.e:
+
+.. code-block:: console
+       :emphasize-lines: 5
+        
+        #!/bin/bash
+        #SBATCH --nodes=1
+        #SBATCH --ntasks-per-node=8
+        module load OpenMPI/4.1.4-GCC-12.2.0
+        srun hello
+
+On the Stanage cluster, we would encounter an error message containing:
+
+.. code-block:: console
+
+        [node140.pri.stanage.alces.network:12429] PMIX ERROR: NOT-FOUND in file client/pmix_client.c at line 562
+
+While loading the OpenMPI module will set the variable ``SLURM_MPI_TYPE=pmix_v4``, 
+when ``srun`` is initiated it creates a new environment. Since we haven't instructed it to export the environment variables to this new environment,
+it will not be able to locate ``SLURM_MPI_TYPE``, even if it's available in the current shell environment.
+
 For those more familiar with the use of ``mpirun`` and ``mpiexec``:
 ``srun`` can here be thought to be functionally equivalent to ``mpirun`` and ``mpiexec``,
 although it takes different arguments and can also be used for starting interactive sessions on Slurm clusters.
@@ -740,3 +770,5 @@ but cannot use more than 400 at once.
    ==============================================       =========================== 
 
 |br|
+
+
