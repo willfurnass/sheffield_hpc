@@ -29,6 +29,7 @@ CMake can be loaded with one of:
         .. code-block:: console
 
            module load CMake/3.24.3-GCCcore-11.3.0
+           module load CMake/3.24.3-GCCcore-12.2.0
   
 CMake has a run-time dependency on ``libstdc++`` so
 the cmake module files depend on and load particular versions of the :ref:`GCC compiler <gcc_stanage>`,

@@ -38,6 +38,7 @@ by running *one* of the following lines:
         .. code-block:: console
 
            module load GCCcore/11.3.0 
+           module load GCC/12.2.0
 
 Confirm that you've loaded the version of gcc you wanted using ``gcc -v``.
 
