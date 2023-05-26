@@ -33,7 +33,7 @@ Requesting access
 -----------------
 
 If you would like to use JADE for the purpose of machine learning, `please fill in this form <https://shef.topdesk.net/tas/public/ssp/content/serviceflow?unid=89acfdddb2bf4600bdc386a541a569ca>`__ to request access.
-The application will be put through a short internal review process by the `RSE`_ team before approval.
+The application will be put through a short internal review process by the `RSE`_ team and/or IT Services before approval.
 Please contact ``jade@sheffield.ac.uk`` if you have any questions regarding JADE 2 in general and the application process.
 
 .. _RSE: https://rse.shef.ac.uk
