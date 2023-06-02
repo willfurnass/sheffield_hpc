@@ -282,7 +282,7 @@ You will also need to add the ``--writable`` flag to the command when going in t
   sudo apptainer shell --writable myimage_folder
 
 
-How Apptainer is installed and 'versioned' on the cluster
+How Apptainer is Installed and 'versioned' on the Cluster
 -----------------------------------------------------------
 
 Apptainer, unlike much of the other key software packages on Stanage,
