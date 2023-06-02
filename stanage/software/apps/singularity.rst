@@ -205,7 +205,7 @@ You will need Apptainer installed on your machine in order to locally run, creat
 See the `Apptainer project's installation instructions <https://github.com/apptainer/apptainer/blob/main/INSTALL.md>`__.
 
 
-Manually mounting paths
+Manually Mounting Paths
 -----------------------
 
 When using Stanage's pre-built images on your local machine,
