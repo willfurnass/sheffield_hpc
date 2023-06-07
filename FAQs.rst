@@ -554,6 +554,12 @@ The RSA, ECDSA and ED25519 fingerprints for Bessemer's login nodes are: ::
    SHA256:eG/eFhOXyKS77WCsMmkDwZSV4t7y/D8zBFHt1mFP280 (ECDSA)
    SHA256:TVzevzGC2uz8r1Z16MB9C9xEQpm7DAJC4tcSvYSD36k (ED25519)
 
+The RSA, ECDSA and ED25519 fingerprints for Stanage's login nodes are: ::
+
+   SHA256:mFfJmZHH0SUogoUhTtlatoZLEacfGAlj0cTrnInO5z0 (RSA)
+   SHA256:4HdvK3C1KDm+JG1TzxQKxezMz5ojEORynHUqF9tQfoI (ECDSA)
+   SHA256:aaTv+0TEc0nj7WR2ZuBYWFDD+QqzOKJpMjEFKBx6pQU (ED25519)
+
 ------
 
 I have a new account, how do I transfer data from my old account
