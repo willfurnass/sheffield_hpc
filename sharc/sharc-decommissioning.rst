@@ -10,11 +10,13 @@ Once ShARC has been decommissioned and all data securely deleted the system is t
 
 We recommend users move to the :ref:`Stanage<stanage>` cluster which is a new, much larger system than previous TUOS clusters with drastically larger numbers of CPU cores, numbers of cores per node, memory per node (especially with Stanage's 1TB and 2TB nodes) and a large number of GPUs.
 
-Please get in touch with us if you have any concerns regarding this announcement via `research-it@sheffield.ac.uk <mailto:research-it@sheffield.ac.uk?subject=ShARC%20HPC%20decommissioning>`_ or
-HPC drop-in sessions (every Friday).
+Please get in touch with us if you have any concerns regarding this announcement via HPC drop-in sessions (every Friday) or `research-it@sheffield.ac.uk. <mailto:research-it@sheffield.ac.uk?subject=ShARC%20HPC%20decommissioning>`_
+
 
 Key things you need to know
 ---------------------------
+
+.. :: 
 
 ----
 
