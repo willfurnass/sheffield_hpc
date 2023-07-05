@@ -12,6 +12,11 @@ We recommend users move to the :ref:`Stanage<stanage>` cluster which is a new, m
 
 Please get in touch with us if you have any concerns regarding this announcement via HPC drop-in sessions (every Friday) or `research-it@sheffield.ac.uk. <mailto:research-it@sheffield.ac.uk?subject=ShARC%20HPC%20decommissioning>`_
 
+.. hint::
+
+    We are running some virtual sessions to assist researchers in migrating workflows to and familiarising themselves with Stanage. 
+    If you would like to attend a Stanage HPC onboarding session, you can register for our next one via `Google Forms <https://docs.google.com/forms/d/e/1FAIpQLSfUCYu68V4ArImUfqrJKveO5-72W0bFOUzaKdHMiNE2U9dyyw/viewform>`_.
+
 
 Key things you need to know
 ---------------------------
