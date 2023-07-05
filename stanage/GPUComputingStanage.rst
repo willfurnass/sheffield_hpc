@@ -42,6 +42,8 @@ To start an interactive session with access to one GPU on a GPU node (:ref:`Stan
 
 Note it's not possible to request GPUs using ``--gpus=N`` on Stanage at this time (unlike on Bessemer).
 
+.. include:: /referenceinfo/imports/stanage/h100-gpu-opt-in-warning.rst
+
 Interactive sessions provide you with 2 GB of CPU RAM by default,
 which is significantly less than the amount of GPU RAM available on a single GPU.
 This can lead to issues where your session has insufficient CPU RAM to transfer data to and from the GPU.

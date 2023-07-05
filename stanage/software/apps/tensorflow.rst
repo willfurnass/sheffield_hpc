@@ -39,6 +39,8 @@ allowing the installation of new Python packages without needing admin permissio
    Attempts to run TensorFlow on H100 nodes will result in GPU-architecture-independent 'PTX' code that is bundled with TensorFlow being compiled on the fly to target the ``sm_90`` NVIDIA Compute Capability.
    Be warned that this process can take up to ~30 minutes.
 
+.. include:: /referenceinfo/imports/stanage/h100-gpu-opt-in-warning.rst
+
 Installation in Home Directory - CPU Version
 --------------------------------------------
 
