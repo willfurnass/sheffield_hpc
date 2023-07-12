@@ -6,7 +6,7 @@ ShARC decommissioning
 **ShARC will be decommissioned on 30th November 2023, after which time users will no longer be able to access that cluster and any jobs running or 
 queueing at that time will be cancelled.**
 
-Once ShARC has been decommissioned and all data securely deleted the system is to be donated to the `Taras Shevchenko National University of Kyiv <http://www.univ.kiev.ua/en/>`_.
+Once ShARC has been decommissioned and all data securely deleted the system is to be donated to the `Igor Sikorsky Kyiv Polytechnic Institute <https://kpi.ua/en>`_ in Kyiv, Ukraine.
 
 We recommend users move to the :ref:`Stanage<stanage>` cluster which is a new, much larger system than previous TUOS clusters with drastically larger numbers of CPU cores, numbers of cores per node, memory per node (especially with Stanage's 1TB and 2TB nodes) and a large number of GPUs.
 
