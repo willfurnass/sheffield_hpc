@@ -52,7 +52,7 @@ Stanage is our recommended target for migration
 
 Stanage is our newest HPC cluster and is the logical successor to ShARC; it is well suited to running larger parallel jobs spanning multiple nodes and benefits from a high-performance network interconnect between nodes.  
 
-As Bessemer only permits single node execution and has approximately 18 months of life left, we recommend that ShARC users preferentially migrate workloads to Stanage instead.
+As Bessemer only permits single node execution and is several years older than Stanage, we recommend that ShARC users preferentially migrate workloads to Stanage instead.
 
 ----
 
