@@ -3,7 +3,7 @@
 ShARC decommissioning
 =====================
 
-**ShARC will be decommissioned on the 30th November 2023, after which time users will no longer be able to access that cluster and any jobs running or 
+**ShARC will be decommissioned on the 30th of November 2023, after which time users will no longer be able to access that cluster and any jobs running or 
 queueing at that time will be cancelled.**
 
 Once ShARC has been decommissioned and all data securely deleted the system is to be donated to the `Igor Sikorsky Kyiv Polytechnic Institute <https://kpi.ua/en>`_ in Kyiv, Ukraine.
