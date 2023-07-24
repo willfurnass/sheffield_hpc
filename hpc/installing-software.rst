@@ -28,6 +28,7 @@ software available to other Bessemer and ShARC users by copying/installing scrip
     * Users should endeavour to download source code or software binaries 
          * produced by trusted developers/vendors and
          * acquired from trusted repositories/locations.
+    * Users should keep software up to date where reproducibility is not a concern.
     * Users should remove any software that is definitely no longer needed.
 
 To discuss and get support regarding these requirements 
