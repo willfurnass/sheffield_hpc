@@ -109,6 +109,76 @@ system. Here is an example:
     difference between these date/times to determine the actual time taken.
 
 
+Determining time used by your jobs
+----------------------------------
+
+The time used by a job is typical quantified into 2 values by the scheduler:
+
+* the **"wallclock"** (the time your job took if measured by a clock on your wall)
+* the consumed **"CPU time"** (a number of seconds of compute, derived directly from the amount of CPU time used on all cores of a job).
+
+How to determine these values can be seen below using the seff and qacct commands as below:
+
+.. tabs::
+
+    .. group-tab:: Stanage
+
+        The ``seff`` script can be used as follows with the job's ID to give summary of important job info including the wallclock time:
+
+        .. code-block:: console
+            :emphasize-lines: 8,9,10
+
+            $ seff 64626
+            Job ID: 64626
+            Cluster: stanage.alces.network
+            User/Group: a_user/clusterusers
+            State: COMPLETED (exit code 0)
+            Nodes: 2
+            Cores per node: 1
+            CPU Utilized: 00:02:37
+            CPU Efficiency: 35.68% of 00:07:20 core-walltime
+            Job Wall-clock time: 00:03:40
+            Memory Utilized: 137.64 MB (estimated maximum)
+            Memory Efficiency: 1.71% of 7.84 GB (3.92 GB/core)
+
+        Here we can see the wallclock was ``03:40`` (220s) and the consumed CPU time was ``02:37`` (157s). As this job requested 2 cores (2 nodes * 1 core), we can also see there was a maximum core-walltime of ``07:20`` (440s) available.
+        The CPU Efficiency follows as ``(157/440)*100=35.68%``.
+
+    .. group-tab:: Bessemer
+
+        The ``seff`` script can be used as follows with the job's ID to give summary of important job info including the wallclock time:
+
+        .. code-block:: console
+            :emphasize-lines: 8,9,10
+
+            $ seff 64626
+            Job ID: 64626
+            Cluster: bessemer
+            User/Group: a_user/a_group
+            State: COMPLETED (exit code 0)
+            Nodes: 1
+            Cores per node: 2
+            CPU Utilized: 00:02:37
+            CPU Efficiency: 35.68% of 00:07:20 core-walltime
+            Job Wall-clock time: 00:03:40
+            Memory Utilized: 137.64 MB (estimated maximum)
+            Memory Efficiency: 1.71% of 7.84 GB (3.92 GB/core)
+
+        Here we can see the wallclock was ``03:40`` (220s) and the consumed CPU time was ``02:37`` (157s). As this job requested 2 cores (1 node * 2 cores), we can also see there was a maximum core-walltime of ``07:20`` (440s) available.
+        The CPU Efficiency follows as ``(157/440)*100=35.68%``.
+
+    .. group-tab:: ShARC
+
+        The ``qstat`` can be used as follows to display the CPU time as well as the wallclock:
+
+        .. code-block:: console
+            :emphasize-lines: 2,3
+
+            $ qacct -j 628 | grep -E "ru_wallclock|cpu" 
+            ru_wallclock 13s
+            cpu          4.187s
+
+        Here we can see the wallclock time is 13s and the consumed CPU time was 4.187s.
 
 
 -----------------
@@ -145,6 +215,111 @@ Some additional important considerations to make are:
 * `Amdahl's law <https://en.wikipedia.org/wiki/Amdahl%27s_law>`_ - an increase in cores or computational power will not scale in a perfectly linear manner. Using 2 cores will not be twice as fast as a single core - and the proportional time reduction from using more cores will decrease with larger core counts.
 * Job workload optimisation is highly dependent on the workload type - workloads can be CPU, memory bandwidth or IO (reading and writing to disk) limited - detailed exploration and profiling of workloads is beyond the scope of this guide.
 * Trying a smaller job (or preferably a set of smaller jobs of different sizes) will allow you to extrapolate likely resource requirements but you must remain aware of the limitations as stated above.
+
+Determining job CPU efficiencies
+--------------------------------
+
+When quantifying the CPU usage efficiency two values are important:
+
+* the **"wallclock"** (the time your job took if measured by a clock on your wall)
+* the consumed **"CPU time"** (a number of seconds of compute, derived directly from the amount of CPU time used on all cores of a job).
+
+To optimise your CPU requests you can investigate how efficiently your job is making use of your requested cores with the :ref:`seff` or :ref:`qacct` command:
+
+
+.. tabs::
+
+    .. group-tab:: Stanage
+
+        The ``seff`` script can be used as follows with the job's ID to give summary of important job info including the wallclock time:
+
+        .. code-block:: console
+            :emphasize-lines: 8,9,10
+
+            $ seff 64626
+            Job ID: 64626
+            Cluster: stanage.alces.network
+            User/Group: a_user/clusterusers
+            State: COMPLETED (exit code 0)
+            Nodes: 2
+            Cores per node: 1
+            CPU Utilized: 00:02:37
+            CPU Efficiency: 35.68% of 00:07:20 core-walltime
+            Job Wall-clock time: 00:03:40
+            Memory Utilized: 137.64 MB (estimated maximum)
+            Memory Efficiency: 1.71% of 7.84 GB (3.92 GB/core)
+
+        Here we can see the wallclock was ``03:40`` (220s) and the consumed CPU time was ``02:37`` (157s). As this job requested 2 cores (2 nodes * 1 core), we can also see there was a maximum core-walltime of ``07:20`` (440s) available.
+        The CPU Efficiency follows as ``(157/440)*100=35.68%``.
+
+        The ideal value for CPU efficiency is 100%.
+
+        If a value of **100/n requested cores** is observed, you are likely to be using a single threaded program (which cannot benefit from multiple cores) or a multithreaded program incorrectly configured to use the multiple cores requested.
+        In general, you should request a single core for single threaded programs and ensure multicore programs are correctly configured with as few cores as possible requested to shorten your queue time.
+
+    .. group-tab:: Bessemer
+
+        The ``seff`` script can be used as follows with the job's ID to give summary of important job info including the wallclock time:
+
+        .. code-block:: console
+            :emphasize-lines: 8,9,10
+
+            $ seff 64626
+            Job ID: 64626
+            Cluster: bessemer
+            User/Group: a_user/a_group
+            State: COMPLETED (exit code 0)
+            Nodes: 1
+            Cores per node: 2
+            CPU Utilized: 00:02:37
+            CPU Efficiency: 35.68% of 00:07:20 core-walltime
+            Job Wall-clock time: 00:03:40
+            Memory Utilized: 137.64 MB (estimated maximum)
+            Memory Efficiency: 1.71% of 7.84 GB (3.92 GB/core)
+
+        Here we can see the wallclock was ``03:40`` (220s) and the consumed CPU time was ``02:37`` (157s). As this job requested 2 cores (1 node * 2 cores), we can also see there was a maximum core-walltime of ``07:20`` (440s) available.
+        The CPU Efficiency follows as ``(157/440)*100=35.68%``.
+
+        The ideal value for CPU efficiency is 100%.
+
+        If a value of **100/n requested cores** is observed, you are likely to be using a single threaded program (which cannot benefit from multiple cores) or a multithreaded program incorrectly configured to use the multiple cores requested.
+        In general, you should request a single core for single threaded programs and ensure multicore programs are correctly configured with as few cores as possible requested to shorten your queue time.
+
+    .. group-tab:: ShARC
+
+        CPU efficiency on ShARC can be computed using the qacct command to show the job info and then be computer as ``cpuefficiency = cpu / (ru_wallclock*slots)``. 
+
+        For example:
+
+        .. code-block:: console
+
+            $ qacct -j 628 | grep -E 'slots|ru_wallclock|cpu'
+            slots        1                   
+            ru_wallclock 13s
+            cpu          4.187s
+
+        Where efficiency is ``4.187/(13*1)=0.3221`` or 32.21%.
+
+        This can be calculated on the command line with: 
+
+        .. code-block:: console
+
+            $  qacct -j 628 | grep -E "slots|ru_wallclock|cpu" | sed "s/[^0-9.]//g" | awk "{num[NR] = \$1} END {result = (num[1] * num[3]) / num[2] * 100; printf \"%.2f%%\\n\", result}"
+            32.21%
+
+        You may wish to add this as an alias in your ``.bashrc`` file:
+
+        .. code-block:: shell
+
+            alias qcpueff='grep -E "slots|ru_wallclock|cpu" | sed "s/[^0-9.]//g" | awk "{num[NR] = \$1} END {result = (num[1] * num[3]) / num[2] * 100; printf \"%.2f%%\\n\", result}"'
+
+        You could then call this as:
+
+        .. code-block:: console
+
+            $ qacct -j 628 | qcpueff
+            32.21%
+
 
 
 -----------------
@@ -197,7 +372,7 @@ When the job completes, you will receive an email reporting the memory and time 
 
 -----------------
 
-**By using the qstat or sstat / sacct command:**
+**By using the qstat/qacct or seff / sstat / sacct command:**
 
 .. tabs::
     .. include:: ../referenceinfo/imports/scheduler/memory_used_commands.rst
