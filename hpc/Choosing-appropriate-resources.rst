@@ -372,7 +372,7 @@ When the job completes, you will receive an email reporting the memory and time 
 
 -----------------
 
-**By using the qstat/qacct or seff / sstat / sacct command:**
+**By using the qstat/qacct or seff/sstat/sacct command:**
 
 .. tabs::
     .. include:: ../referenceinfo/imports/scheduler/memory_used_commands.rst
