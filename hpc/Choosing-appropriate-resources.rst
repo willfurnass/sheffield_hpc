@@ -117,7 +117,7 @@ The time used by a job is typical quantified into 2 values by the scheduler:
 * the **"wallclock"** (the time your job took if measured by a clock on your wall)
 * the consumed **"CPU time"** (a number of seconds of compute, derived directly from the amount of CPU time used on all cores of a job).
 
-How to determine these values can be seen below using the seff and qacct commands as below:
+How to determine these values can be seen below using the :ref:`seff` or :ref:`qacct` commands as below:
 
 .. tabs::
 
