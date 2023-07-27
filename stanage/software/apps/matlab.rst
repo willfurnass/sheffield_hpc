@@ -50,7 +50,7 @@ We assume you'll call this ``my_job.slurm``:
    # Load the MATLAB module 
    module load MATLAB/2022a
 
-   matlab -nodesktop -nosplash -r helloworld
+   matlab -nodesktop -nosplash -r "helloworld"
 
 Ensure that ``helloworld.m`` and ``my_job.slurm`` are both in your current working directory, 
 then submit your job to the batch system:
@@ -69,7 +69,7 @@ The output will be written to the job text file when the job finishes.
 Parallel MATLAB
 ---------------
 
-Parallel MATLAB using multiple nodes is restricted to a maximum of 40 cores. 
+Parallel MATLAB using multiple nodes is restricted to a maximum of 64 cores. 
 
 Here is an example using 4 cores on a single node.
 Create a Slurm submission script called ``parallel_example.slurm`` containing:
@@ -86,6 +86,8 @@ Create a Slurm submission script called ``parallel_example.slurm`` containing:
    module load MATLAB/2022a
    
    matlab -nodisplay -nosplash -r "parallel_example($SLURM_NTASKS)"
+
+   sleep 10
 
 And create a MATLAB script called ``parallel_example.m`` containing:
 
@@ -126,10 +128,6 @@ and records the maximum eigenvalue for each matrix in the array ``max_eigenvals`
 Installation method
 ^^^^^^^^^^^^^^^^^^^
 
-MATLAB 2022a was installed using Easybuild in the following directory:
-
-.. code-block:: bash
-   
-   /opt/apps/testapps/el7/software/staging/MATLAB/2022a
+MATLAB was installed using Easybuild 4.7.0, build details can be found in folder $EBROOTMATLAB/easybuild with the module loaded.
 
 
