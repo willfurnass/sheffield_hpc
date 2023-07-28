@@ -670,7 +670,14 @@ Jobs can be stopped or cancelled using the ``scancel`` command:
 Investigating finished Jobs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Jobs which have already finished can be investigated using the ``sacct`` command:
+Jobs which have already finished can be investigated using the ``seff`` script:
+
+* :ref:`seff` 
+
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/seff_usage_import.rst
+
+
+Or in even more depth using the ``sacct`` command:
 
 * :ref:`sacct` 
 
