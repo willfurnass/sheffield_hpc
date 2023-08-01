@@ -15,7 +15,7 @@ port-for==0.7.0
 Pygments==2.15.1
 pyparsing==3.0.9
 pytz==2023.3
-PyYAML==6.0
+PyYAML==6.0.1
 requests==2.31.0
 setuptools==68.0.0
 six==1.16.0
