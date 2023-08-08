@@ -15,9 +15,9 @@
      - 251 GB
      - 1007 GB 
      - 2014 GB
-     - 2 GB / 251 GB
-     - 2 GB / 251 GB (SMP) ~74404 GB (MPI)
-     - **Per job basis** ``--mem=<nn>``
+     - 4016 MB / 251 GB
+     - 4016 MB / 251 GB (SMP) ~74404 GB (MPI)
+     - **Per node basis** ``--mem=<nn>``
 
    * - SLURM (Bessemer)
      - 192 GB
@@ -25,7 +25,7 @@
      - N/A
      - 2 GB / 192 GB
      - 2 GB / 192 GB
-     - **Per job basis** ``--mem=<nn>``
+     - **Per node (job) basis** ``--mem=<nn>``
 
    * - SGE (ShARC)
      - 64 GB
