@@ -105,7 +105,7 @@ To request four separate Slurm tasks within a job, each of which has four CPU co
     #SBATCH --nodes=1
     #SBATCH --ntasks=4
     #SBATCH --cpus-per-task=4
-    #SBATCH --gres:gpu=4       # 4 GPUs for job
+    #SBATCH --gres=gpu:4       # 4 GPUs for job
 
 Note that:
 
