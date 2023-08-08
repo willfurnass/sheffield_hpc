@@ -15,8 +15,8 @@
      - 251 GB
      - 1007 GB 
      - 2014 GB
-     - 4 GB / 251 GB
-     - 4 GB / 251 GB (SMP) ~74404 GB (MPI)
+     - 4016 MB / 251 GB
+     - 4016 MB / 251 GB (SMP) ~74404 GB (MPI)
      - **Per node basis** ``--mem=<nn>``
 
    * - SLURM (Bessemer)
