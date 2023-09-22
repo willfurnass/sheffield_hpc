@@ -70,7 +70,7 @@ By using bash ``xargs`` and ``find`` you can also parse multiple files to list j
 
     find $SGE_ROOT/default/common/accounting-archive/ -mtime -90 -type f | xargs -t -n1 qacct -j -u $USER -f
 
-This command is instructing the linux ``find`` executable to look for files younger than 60 days and 
+This command is instructing the linux ``find`` executable to look for files younger than 90 days and 
 then ``xargs`` passes the accounting files it finds to the qacct command (in bold.)
 
 Like previous ``qacct`` commands the ``-j`` flag can once again take a job ID to pull up a specific 
