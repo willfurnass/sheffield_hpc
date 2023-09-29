@@ -20,26 +20,7 @@ to your `~/.ssh/config` file on your local PC:
 
 .. tabs::
 
-   .. group-tab:: ShARC
-
-      .. code-block:: bash
-
-        Host sharc.shef.ac.uk
-        ControlMaster auto
-        ControlPath ~/.ssh/sockets/%r@%h-%p
-        ControlPersist 600
-
-   .. group-tab:: Bessemer
-
-      .. code-block:: bash
-
-        Host bessemer.shef.ac.uk
-        ControlMaster auto
-        ControlPath ~/.ssh/sockets/%r@%h-%p
-        ControlPersist 600
-
    .. group-tab:: Stanage
-
       .. code-block:: bash
 
         Host stanage.shef.ac.uk
@@ -47,6 +28,23 @@ to your `~/.ssh/config` file on your local PC:
         ControlPath ~/.ssh/sockets/%r@%h-%p
         ControlPersist 600
 
+   .. group-tab:: Bessemer
+      .. code-block:: bash
+
+        Host bessemer.shef.ac.uk
+        ControlMaster auto
+        ControlPath ~/.ssh/sockets/%r@%h-%p
+        ControlPersist 600
+
+   .. group-tab:: ShARC
+      .. code-block:: bash
+
+        Host sharc.shef.ac.uk
+        ControlMaster auto
+        ControlPath ~/.ssh/sockets/%r@%h-%p
+        ControlPersist 600
+
+   
 
 You will need to create the directory ``~/.ssh/sockets`` before running ssh.  The ``ControlPersist`` option allows you to specify how long (in seconds) your SSH connection
 should perist after you have closed all your existing sessions.  During this time you can start a new session without reauthenticating.
