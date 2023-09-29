@@ -78,7 +78,7 @@ Valid methods of connecting to the University clusters using SSH (or the related
 
 
 Connecting using a password or SSH public key authentication will determine whether Multifactor Authentication (MFA) will be mandatory during the login process.
-The authentication requirements per cluster are summarized below: 
+The authentication requirements per cluster are summarised below: 
 
 +----------+---------------------------------------+---------------------------------------------------------------------------------------------------+
 | Cluster  | From campus or via VPN                | From off campus and without a VPN connection                                                      |
