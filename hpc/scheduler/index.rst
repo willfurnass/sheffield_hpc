@@ -850,11 +850,17 @@ Specify a number of cores per task:
 
     #SBATCH --cpus-per-task=4
 
-Request a specific amount of memory **per job**:
+Request a specific amount of memory **per node**:
 
 .. code-block:: sh
 
     #SBATCH --mem=16G
+
+Request a specific amount of memory **per CPU core**:
+
+.. code-block:: sh
+
+    #SBATCH --mem-per-cpu=16G
 
 Specify the job output log file name:
 
