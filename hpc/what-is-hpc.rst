@@ -248,7 +248,7 @@ Account sharing is also not permitted and any users/parties caught sharing accou
 will also likely result in an investigation under the host organisation's IT Code
 of Practice.
 
-The University of Sheffield IT Code of Practise can be found at the following link:
+The University of Sheffield IT Code of Practice can be found at the following link:
 https://www.sheffield.ac.uk/it-services/codeofpractice/core
 
 ------
