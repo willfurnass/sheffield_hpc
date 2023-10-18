@@ -188,7 +188,11 @@ You should create a session profile for your login for each cluster by clicking 
 #. Please ensure that that *Use SCP protocol* is also ticked (or depending on MobaXterm version select *SCP (enhanced speed)* option from the *SSH-browser type* dropdown menu) .
 #. Now click *OK* to save your session profile.
 
-**You should add a session for each cluster.**
+You should add a session for each cluster.
+
+.. hint::
+   Alternatively you can use a terminal within MobaXterm for SSHing to remote machines but
+   be warned that this may cause authentication issues when trying to connect to Stanage using MFA.
 
 You can now double click on this session profile to start connecting at which point you will be prompted for your username, password 
 and then with a Duo MFA prompt (or a request for your TOTP verification code on Stanage). Please enter these details and your terminal will connect as shown below.
