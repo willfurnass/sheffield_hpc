@@ -199,7 +199,7 @@ ANSYS LS-DYNA training and help resources
 
 .. important::
 
-  Academic support requests should be directed to ``mailto:research-it@sheffield.ac.uk`` or 
+  Academic support requests should be directed to ``research-it@sheffield.ac.uk`` or 
   the `ANSYS Learning Forum <https://forum.ansys.com/>`_ (**ensure you register with your University email for priority support**).
 
 ANSYS provides numerous academic training and help resources including tutorials, video lectures and examples. 
