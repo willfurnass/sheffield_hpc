@@ -41,7 +41,6 @@ Take a look at the `Research Software Engineering <https://rse.shef.ac.uk/>`_ we
    parallel/index
    glossary
    other-uk-hpc-resources
-   oldsystems
    help
    Courses / Training Index<https://rcgsheffield.github.io/TUoS-RIT-training-resources/training.html>
    FAQs

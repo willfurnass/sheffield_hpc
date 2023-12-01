@@ -1,12 +1,9 @@
-.. _oldsystems:
-
-Old systems
------------
+.. _iceberg:
 
 Iceberg
-^^^^^^^
+=======
 
-.. image:: images/iceberg.png
+.. image:: ../images/iceberg.png
    :width: 40%
    :align: right
    :alt: Some of the Iceberg hardware.

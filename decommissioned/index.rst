@@ -9,5 +9,7 @@ Decommissioned Clusters
   :glob:
 
   sharc/index
+  iceberg
 
 * :ref:`sharc`
+* :ref:`iceberg`
