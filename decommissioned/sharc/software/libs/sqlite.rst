@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _sqlite_sharc:
 
    :Version: 3.32.3
@@ -21,3 +24,4 @@ This section is primarily for administrators of the system.
 
 # :download:`Install script </decommissioned/sharc/software/install_scripts/libs/sqlite/3.32.3/gcc-8.2.0/install.sh>`
 # :download:`Module File </decommissioned/sharc/software/modulefiles/libs/sqlite/3.32.3/gcc-8.2.0>` as ``/usr/local/modulefiles/modulefiles/libs/sqlite/3.32.3/gcc-8.2.0``
+

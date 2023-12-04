@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 GATK
 ====
 
@@ -40,4 +43,5 @@ GATK 4.1.4 was installed using
 :download:`install_gatk.sh </decommissioned/sharc/software/install_scripts/apps/gatk/4.1.4/binary/install_gatk.sh>` script, the module
 file is
 :download:`/usr/local/modulefiles/apps/gatk/4.1.4/binary </decommissioned/sharc/software/modulefiles/apps/gatk/4.1.4/binary>`.
+
 

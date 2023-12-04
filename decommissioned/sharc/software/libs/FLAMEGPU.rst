@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _flamegpu_sharc:
 
 .. highlight:: bash
@@ -66,3 +69,4 @@ Additional information on compiling FLAME GPU examples can be found via ::
 And additional information on the command line arguments via :: 
 
     ../../bin/linux-x64/Release_Console/GameOfLife --help
+

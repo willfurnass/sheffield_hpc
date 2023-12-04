@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _`PGI Compilers_sharc`:
 
 PGI Compilers
@@ -161,3 +164,4 @@ Exceptions to this are noted below.
 Version 12.10
 ^^^^^^^^^^^^^
 The installer is interactive and the process was identical to that of version 16.10 above however, it does not create its own module file and so the 16.10 modulefile was copied and amended to suit 12.10.
+

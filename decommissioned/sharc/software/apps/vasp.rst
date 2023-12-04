@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 VASP
 ====
 
@@ -78,3 +81,4 @@ the module file is
 :download:`/usr/local/modulefiles/apps/vasp/5.4.1.05Feb16/intel-17.0.0-openmpi-2.0.1 </decommissioned/sharc/software/modulefiles/apps/vasp/5.4.1.05Feb16/intel-17.0.0-openmpi-2.0.1>`.
 
 The VASP 5.4.1 installation was tested by running a batch job using the ``my_job.sh`` batch script above with the input for the "O atom" example (https://www.vasp.at/wiki/index.php/O_atom) from the online VASP tutorials (https://www.vasp.at/wiki/index.php/Category:Tutorials).
+

@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 DAFoam
 ========
 
@@ -113,3 +116,4 @@ This Apptainer image has been bootstrapped from the project's provided docker co
          chmod 755 -R /home/dafoamuser/dafoam
          sed -i 's!$HOME!/home/dafoamuser!g'  /home/dafoamuser/dafoam/loadDAFoam.sh
          sed -i 's!source!.!g'  /home/dafoamuser/dafoam/loadDAFoam.sh
+

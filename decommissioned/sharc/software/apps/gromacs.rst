@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 GROMACS
 =======
 
@@ -172,3 +175,4 @@ GROMACS 2018.1 with OPENMPI support was installed using the
 the module file is
 :download:`/usr/local/modulefiles/apps/gromacs/2018.1/gcc-4.9.4-openmpi-2.0.1 </decommissioned/sharc/software/modulefiles/apps/gromacs/2018.1/gcc-4.9.4-openmpi-2.0.1>`.
 The GROMACS 2016.4 & 2018.1 installations were tested by using ``make check`` to run regression tests as part of the installation process.
+

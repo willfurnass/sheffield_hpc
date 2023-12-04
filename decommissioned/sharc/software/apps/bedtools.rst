@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 Bedtools
 ========
 
@@ -70,3 +73,4 @@ The contents of the module file is: ::
 
     prepend-path    CMAKE_PREFIX_PATH               $root
     prepend-path    PATH            $root/bin
+

@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 Maven
 =====
 
@@ -37,3 +40,4 @@ Modulefile
 ----------
 
 The module file is on the system at :download:`/usr/local/modulefiles/apps/maven/3.8.4/binary </decommissioned/sharc/software/modulefiles/apps/maven/3.8.4/binary>`.
+

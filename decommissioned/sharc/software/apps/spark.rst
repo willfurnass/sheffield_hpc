@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _spark_sharc:
 
 spark
@@ -146,4 +149,5 @@ which
 * sets ``SPARK_HOME``
 * prepends the Spark ``bin`` directory to the ``PATH``
 * sets ``MASTER`` to ``local\[1\]`` (i.e. Spark will default to using 1 core)
+
 

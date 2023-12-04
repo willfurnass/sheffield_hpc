@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _maple_sharc:
 
 Maple
@@ -59,4 +62,5 @@ These are primarily for administrators of the system.
 * Check 'Check for updates now'
 
 The module file is :download:`/usr/local/modulefiles/apps/maple/2022/binary </decommissioned/sharc/software/modulefiles/apps/maple/2022/binary>`.
+
 

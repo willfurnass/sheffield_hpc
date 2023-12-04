@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _proj_sharc:
 
 PROJ.7
@@ -93,4 +96,5 @@ PROJ 7.1.0 was compiled with v8.2.0 of the GCC compiler suite.
 
 #. Download, configure, build and install by switching to a scratch directory and running :download:`this script </decommissioned/sharc/software/install_scripts/libs/proj/7.1.0/gcc-8.2.0/install.sh>`
 #. Install :download:`this modulefile </decommissioned/sharc/software/modulefiles/libs/proj/7.1.0/gcc-8.2.0>` as ``/usr/local/modulefiles/libs/proj/7.1.0/gcc-8.2.0``
+
 

@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _sharc-python-conda:
 
 Python
@@ -242,3 +245,4 @@ Then copy the modulefile for the previous version of anaconda to the new
 version and update the name of the environment. Also you will need to append
 the new module to the ``conflict`` line in
 `apps/python/.conda-environments.tcl`.
+

@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 BWA
 ===
 
@@ -28,3 +31,4 @@ file is
 :download:`/usr/local/modulefiles/apps/bwa/0.7.17/gcc-6.2 </decommissioned/sharc/software/modulefiles/apps/bwa/0.7.17/gcc-6.2>`.
 The installation of BWA 0.7.17 was compiled with GCC 6.2.0.
     
+

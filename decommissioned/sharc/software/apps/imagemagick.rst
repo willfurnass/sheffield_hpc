@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 ImageMagick
 ===========
 
@@ -83,3 +86,4 @@ Version 6.7.8.9-15
 ^^^^^^^^^^^^^^^^^^
 
 This was installed on the worker nodes using the operating system's package manager (i.e. the RPM for Centos 7.x is installed).
+

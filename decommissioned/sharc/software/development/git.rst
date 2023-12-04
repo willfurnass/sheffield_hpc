@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 git
 ===
 
@@ -60,3 +63,4 @@ Retired due to CVE-2022-24765.
 
 * :download:`Install script </decommissioned/sharc/software/install_scripts/dev/git/2.19.2/gcc-4.9.4/install.sh>`
 * :download:`Module file </decommissioned/sharc/software/modulefiles/dev/git/2.19.2/gcc-4.9.4>`, located on the system at ``/usr/local/modulefiles/dev/git/2.19.2/gcc-4.9.4``
+

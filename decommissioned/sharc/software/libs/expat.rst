@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _sharc_expat:
 
 Expat
@@ -42,3 +45,4 @@ This was compiled with GCC 8.2.0 and 4.9.4 .
 * To install Qsub :download:`this script </decommissioned/sharc/software/install_scripts/libs/expat/2.2.7/gcc-8.2/install_expat.sh>`
 * Edit the script to change the version of GCC if desired.
 * The installer script automatically creates a module file and logs.
+

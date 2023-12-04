@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _geos_sharc:
 
 geos
@@ -93,3 +96,4 @@ The build was tested by running ``make check`` from the build directory: ::
     # XFAIL: 0
     # FAIL:  0
     # XPASS: 0
+

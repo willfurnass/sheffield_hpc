@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 Ansys EM
 ========
 
@@ -138,3 +141,4 @@ the module file is
 
 
 The binary installations were tested using ``runwb2`` and the above batch submission script.
+

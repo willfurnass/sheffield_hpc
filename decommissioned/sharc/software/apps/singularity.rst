@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _apptainer_sharc:
 
 Apptainer/Singularity
@@ -314,3 +317,4 @@ are considered to outweigh the risk of upgrading to backwards incompatible versi
 Apptainer has been installed on all worker nodes
 using the latest RPM package
 from the `EPEL <https://fedoraproject.org/wiki/EPEL>`_ repository.
+

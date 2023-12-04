@@ -1,3 +1,4 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
 .. _decommissioned:
 
 Decommissioned Clusters

@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 OpenFOAM
 ========
 
@@ -162,3 +165,4 @@ Installation was tested as follows (Getting Started example from https://openfoa
     $ blockMesh
     $ simpleFoam
     $ paraFoam
+

@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _gulp_sharc:
 
 GULP
@@ -234,3 +237,4 @@ A summary of the issues encountered during these 58 tests: ::
           1 !! ERROR : RFO keyword cannot be used with conjugate gradients
          31 !! ERROR : second derivatives unavailable in parallel
           1 !! WARNING : Not all configurations optimised successfully in relaxed
+

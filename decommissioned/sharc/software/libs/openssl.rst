@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 OpenSSL
 =======
 
@@ -50,3 +53,4 @@ Installation Notes
 
 The ``openssl`` RPM is installed by default in Centos 7.x.
 The ``openssl-devel`` RPM (header files) was installed using Puppet.
+

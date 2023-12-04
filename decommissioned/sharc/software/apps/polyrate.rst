@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 Polyrate
 ========
 
@@ -60,3 +63,4 @@ the module file is
 Polyrate 17 and Gaussrate 17-B were compiled on ShARC to use the Reaction Path Variational Transition State Theory (RP-VTST) executables.
 
 The Polyrate 17 and Gaussrate 17-B installation was tested by running a batch job using the ``my_job.sh`` batch script, above, for the *ch5tr1* test run.
+

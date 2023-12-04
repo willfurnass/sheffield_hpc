@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _sharc_udunits:
 
 udunits
@@ -51,3 +54,4 @@ This was compiled with GCC 4.9.4
 
 * Run :download:`this script </decommissioned/sharc/software/install_scripts/libs/udunits/2.2.26/gcc-4.9.4/install_udunits.sh>`
 * Next, :download:`this modulefile </decommissioned/sharc/software/modulefiles/libs/udunits/2.2.26/gcc-4.9.4>` as ``/usr/local/modulefiles/libs/udunits/2.2.26/gcc-4.9.4`` 
+

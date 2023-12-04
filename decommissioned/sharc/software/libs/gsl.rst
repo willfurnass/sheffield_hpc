@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _gsl_sharc:
 
 GSL
@@ -69,3 +72,4 @@ Installation notes
   :download:`install log </decommissioned/sharc/software/install_scripts/libs/gsl/2.4/gcc-6.2/install.log>`;
   :download:`modulefile </decommissioned/sharc/software/modulefiles/libs/gsl/2.4/gcc-6.2>`.
   The installation was tested during the build process using ``make check``.
+

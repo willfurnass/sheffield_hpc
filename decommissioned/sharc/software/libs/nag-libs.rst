@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _naglibs_sharc:
 
 NAG Fortran and C Library
@@ -122,3 +125,4 @@ Module Files
 
 * The module file is on the system at ``/usr/local/modulefiles/libs/NAG/nll6i285bl``
 * The module file is :download:`on github </decommissioned/sharc/software/modulefiles/libs/NAG/nll6i285bl>`.
+

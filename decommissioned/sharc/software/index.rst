@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _sharc-software:
 
 Software on ShARC
@@ -27,3 +30,4 @@ an omission, or wish to request new software submit a request to `research-it@sh
    * :ref:`sharc-parallel`
    * :ref:`sharc-software-install-guide`
    * :ref:`sharc-community`
+

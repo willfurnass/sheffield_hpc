@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _ansys-sharc-ls-dyna:
 
 ..
@@ -224,3 +227,4 @@ For other issues or if you wish to purchase some reserved licenses please contac
 
 If desired to perform post modelling analysis etc... the ANSYS Workbench GUI 
 executable can be launched with the  ``runwb2`` command. 
+

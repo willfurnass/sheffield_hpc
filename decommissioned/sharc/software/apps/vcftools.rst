@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 
 VCFtools
 ========
@@ -32,3 +35,4 @@ VCFtools was compiled using the
 :download:`install_vcftools.sh </decommissioned/sharc/software/install_scripts/apps/vcftools/0.1.14/install_vcftools.sh>` script, the module
 file is
 :download:`0.1.14 </decommissioned/sharc/software/modulefiles/apps/vcftools/0.1.14>`.
+

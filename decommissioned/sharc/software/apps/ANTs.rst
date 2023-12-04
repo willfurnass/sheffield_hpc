@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _sharc_ants:
 
 ANTs
@@ -73,3 +76,4 @@ ANTs was compiled using the
 :download:`install_ANTs.sh </decommissioned/sharc/software/install_scripts/apps/ANTs/2.1.0-a/gcc-4.9.4/install_ANTs.sh>` script, the module
 file is
 :download:`gcc-4.9.4 </decommissioned/sharc/software/modulefiles/apps/ANTs/2.1.0-a/gcc-4.9.4>`.
+

@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _pytorch_sharc:
 
 PyTorch
@@ -95,3 +98,4 @@ Additionally, to check if your GPU driver and CUDA is enabled and accessible by 
 
   import torch
   torch.cuda.is_available()
+

@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _sharc:
 
 ShARC
@@ -32,3 +35,4 @@ If greater single-threaded performance or greater numbers of cores are required 
 * :ref:`GPUComputing_sharc`
 * :ref:`DeepLearning_sharc`
 * :ref:`groupnodes_sharc`
+

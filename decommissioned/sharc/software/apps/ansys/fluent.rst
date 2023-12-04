@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _ansys-sharc-fluent:
 
 ..
@@ -179,3 +182,4 @@ All available versions above 18.2 have been tested and should function correctly
 
 * **-sge** forcing Fluent to recognise job submission via SGE.
 * **-sgepe** selecting the *mpi-rsh* SGE parallel environment.
+

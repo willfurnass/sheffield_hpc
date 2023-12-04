@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _sharc-software-install-guide:
 
 Software install guidelines
@@ -155,3 +158,4 @@ Apptainer/Singularity images
 Apptainer/Singularity images are a little different: 
 images are to be installed under ``/usr/local/packages/singularity/images`` (naming hierarchy TBC).
 Unpacked NVIDIA drivers (for CUDA work) are to be installed under ``/usr/local/packages/singularity/nvidia-driver``.
+

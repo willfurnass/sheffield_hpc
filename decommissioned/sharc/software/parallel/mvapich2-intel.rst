@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _mvapich2_intel_sharc:
 
 MVAPICH2 (Intel version)
@@ -102,3 +105,4 @@ Version 2.3b, Intel 17.0.0 compiler
 #. NB the ``MVAPICH_ENV`` environment variable is set by the module file and 
    is used to pass multiple environment variables to slaves for controlling process binding.  
    See the module file for more info.
+

@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _lammps_sharc:
 
 LAMMPS
@@ -120,4 +123,5 @@ LAMMPS was compiled using the
 
 The module file is
 :download:`/usr/local/modulefiles/apps/lammps/22_08_2018/gcc-4.9.4-openmpi-2.0.1 </decommissioned/sharc/software/modulefiles/apps/lammps/22_08_2018/gcc-4.9.4-openmpi-2.0.1>`.
+
 

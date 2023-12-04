@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _theano_sharc:
 
 Theano
@@ -107,3 +110,4 @@ Paths to the actual images and definition files are provided below for downloadi
 	* Latest: 0.9.0-GPU-Ubuntu16.04-CUDA8-cudNN5.0-Anaconda3.4.2.0
 		* Path: ``/usr/local/packages/singularity/images/theano/0.9.0-GPU-Ubuntu16.04-CUDA8-cudNN5.0-Anaconda3.4.2.0.img``
 		* Def file: :download:`/sharc/software/apps/apptainer/theano.def </decommissioned/sharc/software/apps/apptainer/theano.def>`
+

@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _cuda_sharc:
 
 CUDA
@@ -254,3 +257,4 @@ CUDA 7.5.18
 
 #. Installed with :download:`install.sh </decommissioned/sharc/software/install_scripts/libs/CUDA/install.sh>` with ``7.5.18`` as the sole argument.
 #. :download:`This modulefile </decommissioned/sharc/software/modulefiles/libs/CUDA/7.5.18/binary>` was installed as ``/usr/local/modulefiles/libs/CUDA/7.5.18/binary``
+

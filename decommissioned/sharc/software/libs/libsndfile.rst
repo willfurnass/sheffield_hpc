@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _libsndfile_sharc:
 
 libsndfile
@@ -48,3 +51,4 @@ Libsndfile was compiled with v4.9.4 of the GCC compiler suite.
 
 #. Download, configure, build, test and install using :download:`this script </decommissioned/sharc/software/install_scripts/libs/libsndfile/1.0.28/gcc-4.9.4/install_libsndfile.sh>`. 
 #. Install :download:`this modulefile </decommissioned/sharc/software/modulefiles/libs/libsndfile/1.0.28/gcc-4.9.4>` as ``/usr/local/modulefiles/libs/libsndfile/1.0.28/gcc-4.9.4``
+

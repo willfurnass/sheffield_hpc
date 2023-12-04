@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _magma_sharc:
 
 Magma
@@ -64,3 +67,4 @@ These are primarily for administrators of the system.
 * Install script: :download:`install.sh </decommissioned/sharc/software/install_scripts/community/rse/apps/magma/2.24/install.sh>`
 * AVX build module file: :download:`/usr/local/community/rse/mods/apps/magma/2.24/binary-avx64 </decommissioned/sharc/software/modulefiles/community/rse/apps/magma/2.24/binary-avx64>`.
 * CUDA build module file: :download:`/usr/local/community/rse/mods/apps/magma/2.24/binary-cuda8 </decommissioned/sharc/software/modulefiles/community/rse/apps/magma/2.24/binary-cuda8>`.
+

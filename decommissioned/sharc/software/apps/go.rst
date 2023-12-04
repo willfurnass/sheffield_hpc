@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _sharc_go:
 
 Go
@@ -68,3 +71,4 @@ Effective Go: https://golang.org/doc/effective_go.html
 An interactive web page for small Go snippets: https://play.golang.org/
 
 END
+

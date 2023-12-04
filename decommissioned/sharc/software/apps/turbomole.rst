@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 TURBOMOLE
 =========
 
@@ -61,3 +64,4 @@ the module file is
 :download:`/usr/local/modulefiles/apps/turbomole/7.2.1/binary </decommissioned/sharc/software/modulefiles/apps/turbomole/7.2.1/binary>`.
 
 The TURBOMOLE 7.2 and 7.2.1 installations were tested by running the ``TTEST`` command in the ``$TURBODIR/TURBOTEST`` directory as part of the installation procedure.
+

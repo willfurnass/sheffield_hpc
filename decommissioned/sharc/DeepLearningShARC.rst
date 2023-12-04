@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _DeepLearning_sharc:
 
 Deep Learning on ShARC
@@ -39,3 +42,4 @@ Training Materials
 ------------------
 
 The Research Software Engineering team has an `introductory workshop on deep learning with the TensorFlow Keras framework <https://rses-dl-course.github.io/>__`.
+

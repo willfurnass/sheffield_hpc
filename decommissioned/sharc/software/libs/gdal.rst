@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _gdal_sharc:
 
 Geospatial Data Abstraction Library (GDAL)
@@ -131,3 +134,4 @@ GDAL 2.2.0 was compiled with v4.9.4 of the GCC compiler suite.
 
 The **file formats** supported by this build are listed in the compilation log files which can be found 
 in the module top level directory.
+

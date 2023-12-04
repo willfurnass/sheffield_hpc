@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 Abaqus
 ======
 
@@ -168,3 +171,4 @@ file is
 
 The binary installations were tested by launching ``abaqus cae`` and by using the above batch submission scripts.
 Abaqus at present does not run on more than one node when using MPI due to password-less ssh being disabled across nodes on ShARC.
+

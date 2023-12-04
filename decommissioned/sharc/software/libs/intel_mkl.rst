@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _sharc-intel-mkl:
 
 Intel Math Kernel Library
@@ -110,3 +113,4 @@ Intel MKL 2015.7
 Installed as part of :ref:`Parallel Studio Composer Edition 2015.7 <sharc-intel-parallel-studio>`.
 
 :download:`This modulefile </decommissioned/sharc/software/modulefiles/libs/intel-mkl/2015.7/binary>` was installed as ``/usr/local/modulefiles/libs/intel-mkl/2015.7/binary``.
+

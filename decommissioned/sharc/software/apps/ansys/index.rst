@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _ansys-sharc-index:
 
 ..
@@ -186,3 +189,4 @@ For versions 19.3 & 19.4 and onward mapdl will not run without modifying the fil
 The following instruction should be inserted at line 2127 in ``anssh.ini``::
 
     setenv KMP_AFFINITY compact
+

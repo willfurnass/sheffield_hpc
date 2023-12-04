@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _ads_sharc:
 
 ADS
@@ -31,4 +34,5 @@ These are primarily for administrators of the system.
 * Choose a network license, and enter the license server adslm.shef.ac.uk
 
 The module file is :download:`/usr/local/modulefiles/apps/ads/2020/binary </decommissioned/sharc/software/modulefiles/apps/ads/2020/binary>`.
+
 

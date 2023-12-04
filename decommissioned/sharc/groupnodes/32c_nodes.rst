@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _32_core_dcs_groupnodes_sharc:
 
 32-core nodes (Computer Science)
@@ -42,3 +45,4 @@ Submitting batch jobs
 Same as per the :ref:`COM big memory nodes <big_mem_dcs_groupnodes_sharc>`.
 
 .. _OpenDreamKit: https://opendreamkit.org/
+

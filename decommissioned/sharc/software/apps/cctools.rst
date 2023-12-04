@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _cctools-sharc:
 
 cctools
@@ -57,3 +60,4 @@ These are primarily for administrators of the system.
 #. Save this file to ``/usr/local/media/cctools/7.0.14/``
 #. Install cctools using :download:`this script </decommissioned/sharc/software/install_scripts/apps/cctools/7.0.14/binary/install.sh>`
 #. Install :download:`this modulefile </decommissioned/sharc/software/modulefiles/apps/cctools/7.0.14/binary>` as ``/usr/local/modulefiles/apps/cctools/7.0.14/binary``
+

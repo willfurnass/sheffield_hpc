@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 Gnuplot
 =======
 
@@ -28,3 +31,4 @@ file is
 :download:`gcc-4.8.5 </decommissioned/sharc/software/modulefiles/apps/gnuplot/5.0.6/gcc-4.8.5>`.
 The installation of Gnuplot 5.0.6 was compiled with GCC 4.8.5 and was tested using the ``make check`` command as part of running the above installation script.
     
+

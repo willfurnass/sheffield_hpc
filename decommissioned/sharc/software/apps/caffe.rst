@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _caffe_sharc:
 
 Caffe
@@ -144,3 +147,4 @@ And comes with the following libraries:
   * libpng
   * libtiff
   * opencv 3.2.0
+

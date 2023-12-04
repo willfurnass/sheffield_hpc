@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _intelmpi_sharc:
 
 Intel MPI 
@@ -220,4 +223,5 @@ This module file can be downloaded here: :download:`impi/2018.5.288/binary </dec
 The module was subsequently tested using the built in 
 `IMB-MPI1 <https://software.intel.com/content/www/us/en/develop/documentation/imb-user-guide/top/mpi-1-benchmarks.html>`_ 
 tests with the script in the examples section.
+
 

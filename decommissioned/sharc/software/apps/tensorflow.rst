@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _tensorflow_sharc:
 
 Tensorflow
@@ -231,3 +234,4 @@ Paths to the actual images and definition files are provided below for downloadi
        * Path: ``/usr/local/packages/singularity/images/tensorflow/1.5.0-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA9-cudNN7.img``
    * 1.0.1-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA8-cudNN5.0.img (GCC 5.4.0, Python 3.5)
        * Path: ``/usr/local/packages/singularity/images/tensorflow/1.0.1-GPU-Ubuntu16.04-Anaconda3.4.2.0-CUDA8-cudNN5.0.img``
+

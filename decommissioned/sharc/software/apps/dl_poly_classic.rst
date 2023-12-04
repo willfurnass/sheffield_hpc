@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 DL_POLY_CLASSIC
 ===============
 
@@ -49,3 +52,4 @@ file is
 The installation of DL_POLY_CLASSIC was tested using TEST01 for DL_POLY_CLASSIC
 (https://ccpforge.cse.rl.ac.uk/gf/download/frsrelease/145/8489/TEST1.tar.gz)
     
+

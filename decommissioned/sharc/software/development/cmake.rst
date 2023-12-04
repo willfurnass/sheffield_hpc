@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _cmake_sharc:
 
 CMake
@@ -44,3 +47,4 @@ Version 3.17.1 with gcc-10.1
 
 1. Install using :download:`this script </decommissioned/sharc/software/install_scripts/dev/cmake/3.17.1/gcc-10.1/install.sh>`
 2. Install :download:`this modulefile </decommissioned/sharc/software/modulefiles/dev/cmake/3.17.1/gcc-10.1>` as ``/usr/local/modulefiles/dev/cmake/3.17.1/gcc-10.1``
+

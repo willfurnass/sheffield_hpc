@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _big_mem_dcs_groupnodes_sharc:
 
 Big memory nodes (Computer Science)
@@ -108,3 +111,4 @@ You can use the ``qstat`` command to check the status of your current job.
 An output file is created in your home directory that captures your script's outputs.
 
 See :ref:`submit_batch_sharc` for more information on job submission and the Sun Grid Engine scheduler.
+

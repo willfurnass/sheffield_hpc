@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _tiff_sharc:
 
    :Version: 4.1.0
@@ -21,3 +24,4 @@ This section is primarily for administrators of the system.
 
 # :download:`Install script </decommissioned/sharc/software/install_scripts/libs/tiff/4.1.0/gcc-8.2.0/install.sh>`
 # :download:`Module File </decommissioned/sharc/software/modulefiles/libs/tiff/4.1.0/gcc-8.2.0>` as ``/usr/local/modulefiles/libs/tiff/4.1.0/gcc-8.2.0``
+

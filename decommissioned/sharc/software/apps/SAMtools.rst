@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 
 SAMtools
 ========
@@ -62,3 +65,4 @@ SAMtools was compiled using the
 :download:`install_SAMtools.sh </decommissioned/sharc/software/install_scripts/apps/SAMtools/1.7/gcc-4.9.4/install_SAMtools.sh>` script, the module
 file is
 :download:`/usr/local/modulefiles/apps/SAMtools/1.7/gcc-4.9.4 </decommissioned/sharc/software/modulefiles/apps/SAMtools/1.7/gcc-4.9.4>`.
+

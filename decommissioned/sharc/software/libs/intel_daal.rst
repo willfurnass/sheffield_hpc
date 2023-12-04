@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _sharc-intel-daal:
 
 Intel Data Analytics Acceleration Library 
@@ -42,3 +45,4 @@ Installed as part of :ref:`Parallel Studio Composer Edition 2017 <sharc-intel-pa
 Installed as part of :ref:`Parallel Studio Composer Edition 2016.1 <sharc-intel-parallel-studio>`.
 
 :download:`This modulefile </decommissioned/sharc/software/modulefiles/libs/intel-daal/2016.1/binary>` was installed as ``/usr/local/modulefiles/libs/intel-daal/2016.1/binary``.
+

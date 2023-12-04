@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 CASTEP
 ======
 
@@ -239,4 +242,5 @@ The following script was submitted via ``qsub`` from the ``Test`` subdirectory o
    ../bin/testcode.py -q  --total-processors=4 --processors=4 -e castep.mpi -c simple -v -v -v
 
 All 455 tests passed. 
+
 

@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 Code Saturne
 ============
 
@@ -93,4 +96,5 @@ The output ``./T_junction/case1/RESU/yyyymmdd-hhmm/listing`` file should contain
     $ cd ./T_junction/case1/SRC
     $ cp ./REFERENCE/cs_user_parameters.f90 .
     $ code_saturne compile
+
 

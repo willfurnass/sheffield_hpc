@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 SIESTA
 ======
 
@@ -59,3 +62,4 @@ The module file for the parallel version is
 :download:`/usr/local/modulefiles/apps/siesta/4.0.1/intel-17.0.0-openmpi-2.0.1 </decommissioned/sharc/software/modulefiles/apps/siesta/4.0.1/intel-17.0.0-openmpi-2.0.1>`.
 
 The installations of SIESTA 4.0.1 were tested by using ``make check`` to run tests as part of the installation process (see the installation script for details).
+

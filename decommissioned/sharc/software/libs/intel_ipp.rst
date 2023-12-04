@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _sharc-intel-ipp:
 
 Intel Integrated Performance Primitives
@@ -49,3 +52,4 @@ Installed as part of :ref:`Parallel Studio Composer Edition 2016.1 <sharc-intel-
 Installed as part of :ref:`Parallel Studio Composer Edition 2015.7 <sharc-intel-parallel-studio>`.
 
 :download:`This modulefile </decommissioned/sharc/software/modulefiles/libs/intel-ipp/2015.7/binary>` was installed as ``/usr/local/modulefiles/libs/intel-ipp/2015.7/binary``.
+

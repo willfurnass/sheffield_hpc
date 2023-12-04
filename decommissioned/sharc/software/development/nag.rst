@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 NAG Fortran Compiler
 ====================
 
@@ -114,3 +117,4 @@ Finally, test the installation by compiling and building a sample Fortran 90 pro
         module load dev/NAG/6.0
         nagfor -o /tmp/f90_util /usr/local/packages/dev/NAG/6.0/lib/NAG_Fortran/f90_util.f90
         /tmp/f90_util
+

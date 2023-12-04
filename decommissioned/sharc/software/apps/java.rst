@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _Java-sharc:
 
 Java
@@ -47,3 +50,4 @@ These are primarily for administrators of the system.
 #. Save this file to ``/usr/local/media/java/1.8.0_102/``.
 #. Install Java using :download:`this script </decommissioned/sharc/software/install_scripts/apps/java/jdk1.8.0_102/binary/install.sh>`.
 #. Install :download:`this modulefile </decommissioned/sharc/software/modulefiles/apps/java/jdk1.8.0_102/binary>` as ``/usr/local/modulefiles/apps/java/jdk1.8.0_102/binary``
+

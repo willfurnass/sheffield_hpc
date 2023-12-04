@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _nextflow_sharc:
 
 Nextflow
@@ -177,3 +180,4 @@ Version 22.04.0
 
 * Installed using :download:`install.sh </decommissioned/sharc/software/install_scripts/apps/nextflow/22.04.0/install_nextflow.sh>`
 * :download:`This module file </decommissioned/sharc/software/modulefiles/apps/nextflow/22.04.0>` was installed as ``/usr/local/modulefiles/apps/Nextflow/22.04.0/binary``
+

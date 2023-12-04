@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. |softwarename| replace:: ncdu
 .. |currentver| replace:: 1.15.1
 
@@ -73,4 +76,5 @@ Modulefiles
 
 The module file is on the system at 
 :download:`/usr/local/modulefiles/utils/ncdu/1.15.1/binary </decommissioned/sharc/software/modulefiles/utils/ncdu/1.15.1/binary>`.
+
 

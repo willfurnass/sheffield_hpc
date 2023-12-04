@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _sharc-intel-parallel-studio:
 
 Intel Parallel Studio
@@ -163,3 +166,4 @@ Parallel Studio XE Composer Edition 2015.7
    then try compiling `a trivial C program
    <https://en.wikipedia.org/wiki/%22Hello,_World!%22_program>`_ using the
    ``icc`` compiler.
+

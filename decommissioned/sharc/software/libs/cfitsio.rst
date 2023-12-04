@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _cfitsio_sharc:
 
 cfitsio
@@ -30,3 +33,4 @@ The compilation used this :download:`script </decommissioned/sharc/software/inst
 and it is loaded with this :download:`modulefile </decommissioned/sharc/software/modulefiles/libs/cfitsio/3.49/gcc-8.2>`.
 
 The module was tested with the process described here: https://heasarc.gsfc.nasa.gov/docs/software/fitsio/c/c_user/node13.html.
+

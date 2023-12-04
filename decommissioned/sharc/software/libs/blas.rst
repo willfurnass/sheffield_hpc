@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _blas_sharc:
 
 BLAS
@@ -20,3 +23,4 @@ BLAS was extracted from the RPMs for **blas** and **blas-devel**
 
 # :download:`Install script </decommissioned/sharc/software/install_scripts/libs/blas/3.4.2-5/binary/install.sh>`
 # :download:`Module File </decommissioned/sharc/software/modulefiles/libs/blas/3.4.2-5/binary>` as ``/usr/local/modulefiles/modulefiles/libs/blas/3.4.2-5/binary``
+

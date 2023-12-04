@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 Repast HPC
 ==========
 
@@ -58,3 +61,4 @@ The module file is
 Third-party software required by Repast HPC 2.2.0 (Curl 7.42.1, NetCDF 4.2.1.1, NetCDF-CXX 4.2 and Boost 1.61.0) were installed in ``/usr/local/packages/apps/repast_hpc/2.2.0/third-party-mpich-3.1.4`` using the GCC 6.2.0 compiler with MPICH-3.1.4.
 
 The installation of Repast HPC 2.2.0 was tested by running the example batch submission script (above).
+

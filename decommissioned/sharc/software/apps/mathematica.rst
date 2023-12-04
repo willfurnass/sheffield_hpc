@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 Mathematica
 ===========
 
@@ -128,3 +131,4 @@ Install the University network license ``mathpass`` file at ``/usr/local/package
 Modulefiles
 -----------
 * The :download:`12.0.0 module file </decommissioned/sharc/software/modulefiles/apps/mathematica/12.0.0/binary>`.
+

@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 ORCA
 ====
 
@@ -57,3 +60,4 @@ The ORCA 4.0.1 installation was tested by running a batch job using the ``my_job
     C 0 0 0
     O 0 0 1.13
     *
+

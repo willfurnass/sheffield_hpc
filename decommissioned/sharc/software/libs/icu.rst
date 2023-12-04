@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 icu - International Components for Unicode
 ==========================================
 
@@ -42,3 +45,4 @@ This Icu 58.2 build links against the GCC 8.2.0 C++ standard library and was ins
 #. Download, configure, build, test and install using :download:`this script </decommissioned/sharc/software/install_scripts/libs/icu/58.2/gcc-8.2-cmake-3.17.1/install_script.sge>`
 #. Optional: Enable tests and check the console output of the install process for any failing tests.
 #. Install :download:`this modulefile </decommissioned/sharc/software/modulefiles/libs/icu/58.2/gcc-8.2-cmake-3.17.1>` as ``/usr/local/modulefiles/libs/icu/58.2/gcc-8.2-cmake-3.17.1``
+

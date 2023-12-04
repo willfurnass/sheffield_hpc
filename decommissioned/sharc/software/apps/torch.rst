@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _torch_sharc:
 
 Torch (Lua)
@@ -101,3 +104,4 @@ In the interactive session or your batch script, load the relevant modules and (
 
 	#Optional
 	source activate torch
+

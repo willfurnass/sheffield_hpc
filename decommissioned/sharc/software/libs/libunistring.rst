@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 libunistring
 ============
 
@@ -48,3 +51,4 @@ This build was installed as a dependency of `boost_sharc` (build using the same 
 #. Download, configure, build, test and install using :download:`this script </decommissioned/sharc/software/install_scripts/libs/libunistring/0.9.7/gcc-4.9.4/install.sh>`
 #. Check the console output of the install process to check that no tests have errored/failed: ``TOTAL: 499 / PASS: 489 / SKIP: 10``
 #. Install :download:`this modulefile </decommissioned/sharc/software/modulefiles/libs/libunistring/0.9.7/gcc-4.9.4>` as ``/usr/local/modulefiles/libs/libunistring/0.9.7/gcc-4.9.4``
+

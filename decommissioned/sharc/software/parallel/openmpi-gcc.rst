@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 OpenMPI (gcc version)
 =====================
 
@@ -139,3 +142,4 @@ These are primarily for administrators of the system.
    * the ``oob`` (MCA out of band messaging) to use the intra-cluster Ethernet fabric (specified using a network address in CIDR format rather than by specifying Ethernet interface name, which can vary between nodes).
 
 #. Install :download:`this modulefile </decommissioned/sharc/software/modulefiles/mpi/openmpi/1.10.4/gcc-4.9.4>` as ``/usr/local/modulefiles/mpi/openmpi/1.10.4/gcc-4.9.4``
+

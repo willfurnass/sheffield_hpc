@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _cudnn_sharc:
 
 cuDNN
@@ -414,3 +417,4 @@ Version 4.0
    Result of classification: 1 3 5
 
    Test passed!
+

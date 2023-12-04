@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 sbt
 ===
 
@@ -47,3 +50,4 @@ Module files
 
 * The module file is on the system at ``/usr/local/modulefiles/dev/sbt/0.13.13``
 * On github: :download:`0.13.13 </decommissioned/sharc/software/modulefiles/dev/sbt/0.13.13>`.
+

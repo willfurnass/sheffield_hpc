@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _fftw_sharc:
 
 fftw
@@ -42,3 +45,4 @@ During the testing stage you should see lots of numerical output plus: ::
   --------------------------------------------------------------
 
 Next, :download:`this modulefile </decommissioned/sharc/software/modulefiles/libs/fftw/3.3.5/gcc-4.9.4>` as ``/usr/local/modulefiles/libs/fftw/3.3.5/gcc-4.9.4`` 
+

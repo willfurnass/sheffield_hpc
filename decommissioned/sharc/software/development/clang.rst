@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _clang_sharc:
 
 Clang
@@ -29,3 +32,4 @@ Version 11.0.0
 
 1. Install using :download:`this script </decommissioned/sharc/software/install_scripts/dev/clang/11.0.0/gcc-8.2/install.sh>`
 2. Install :download:`this modulefile </decommissioned/sharc/software/modulefiles/dev/clang/11.0.0/gcc-8.2>` as ``/usr/local/modulefiles/dev/clang/11.0.0/gcc-8.2``
+

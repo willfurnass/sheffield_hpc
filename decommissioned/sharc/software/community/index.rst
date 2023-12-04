@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _sharc-community:
 
 Community software
@@ -16,3 +19,4 @@ Publicly-documented community software
     :glob:
     
     ./*
+

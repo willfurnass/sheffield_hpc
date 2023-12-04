@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 Dakota
 ========
 
@@ -108,3 +111,4 @@ GUI binaries provided at https://dakota.sandia.gov/download.html. An insertion o
 Both the Dakota CLI and Dakota GUI appear to function correctly under a ``qrshx`` / batch sessions, 
 running the ``rosen_multidim.in`` example successfully both in the CLI and GUI but no extensive further 
 testing has been undertaken.
+

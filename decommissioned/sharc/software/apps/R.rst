@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _sharc_r:
 
 R
@@ -297,3 +300,4 @@ This was a scripted install. It was compiled from source with gcc 4.8.5 and with
 * :download:`install_r_3.3.2_gcc4.8.5.sh </decommissioned/sharc/software/install_scripts/apps/R/3.3.2/gcc-4.8.5/install_r_3.3.2_gcc4.8.5.sh>` Downloads, compiles, tests and installs R 3.3.2 and the ``Rmath`` library.
 * :download:`R 3.3.2 Modulefile </decommissioned/sharc/software/modulefiles/apps/R//3.3.2/gcc-4.8.5>` located on the system at ``/usr/local/modulefiles/apps/R/3.3.2/``
 * Install log-files, including the output of the ``make check`` tests are available on the system at ``/usr/local/packages/apps/R/3.3.2/gcc-4.8.5/install_logs/``
+

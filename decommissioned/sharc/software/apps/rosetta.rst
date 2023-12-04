@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 Rosetta
 =======
 
@@ -30,3 +33,4 @@ file is
 :download:`/usr/local/modulefiles/apps/rosetta/3.8/binary </decommissioned/sharc/software/modulefiles/apps/rosetta/3.8/binary>`.
 The installation of Rosetta 3.8 was a binary installation.
     
+

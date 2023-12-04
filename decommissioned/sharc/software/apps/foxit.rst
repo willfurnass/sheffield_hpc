@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 
 Foxit
 =====
@@ -27,3 +30,4 @@ Foxit was installed using the
 :download:`install_foxit.sh </decommissioned/sharc/software/install_scripts/apps/foxit/2.4.0/install_foxit.sh>` script, the module
 file is
 :download:`2.4.0 </decommissioned/sharc/software/modulefiles/apps/foxit/2.4.0>`.
+

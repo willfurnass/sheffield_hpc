@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _sharc_itksnap:
 
 ITK-SNAP
@@ -30,3 +33,4 @@ ITK-SNAP was compiled using the
 :download:`install_itksnap.sh </decommissioned/sharc/software/install_scripts/apps/itksnap/install_itksnap.sh>` script, the module
 file is
 :download:`3.6 </decommissioned/sharc/software/modulefiles/apps/itksnap/3.6>`.
+

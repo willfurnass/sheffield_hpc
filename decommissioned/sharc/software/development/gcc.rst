@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _gcc_sharc:
 
 GNU Compiler Collection (gcc)
@@ -67,3 +70,4 @@ Version 4.9.4
 ^^^^^^^^^^^^^
 * :download:`this script </decommissioned/sharc/software/install_scripts/dev/gcc/4.9.4/install.sh>`
 * :download:`this modulefile </decommissioned/sharc/software/modulefiles/dev/gcc/4.9.4>`, saved as ``/usr/local/modulefiles/dev/gcc/4.9.4``
+

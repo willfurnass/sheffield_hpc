@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 FFmpeg
 ======
 
@@ -89,3 +92,4 @@ The test suite was executed (immediately post make install) ::
     make check
 
 All tests passed.
+

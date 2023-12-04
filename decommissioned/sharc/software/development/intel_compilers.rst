@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _sharc-intel-compilers:
 
 Intel Compilers
@@ -89,3 +92,4 @@ Intel Compilers 15.0.7
 Installed as part of :ref:`Parallel Studio Composer Edition 2015.7 <sharc-intel-parallel-studio>`.
 
 :download:`This modulefile </decommissioned/sharc/software/modulefiles/dev/intel-compilers/15.0.7>` was installed as ``/usr/local/modulefiles/dev/intel-compilers/15.0.7``.
+

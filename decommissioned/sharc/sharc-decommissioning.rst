@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _sharc_decommissioning:
 
 ShARC decommissioning
@@ -62,5 +65,6 @@ User installed software may require recompiling
 If you have compiled and installed your own applications on ShARC you should recompile your applications on the newer clusters when migrating your workloads in order to ensure compatibility and potentially significant performance increases. 
 
 If you currently use IT Services-managed applications on ShARC which are not currently available on Stanage or Bessemer then you can submit a request to `research-it@sheffield.ac.uk <mailto:research-it@sheffield.ac.uk?subject=HPC%20Software%20installation%20request>`_.
+
 
 

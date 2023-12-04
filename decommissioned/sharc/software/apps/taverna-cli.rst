@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 
 Taverna-cli
 ===========
@@ -29,3 +32,4 @@ Taverna-cli was compiled using the
 :download:`install_taverna-cli.sh </decommissioned/sharc/software/install_scripts/apps/taverna-cli/install_taverna-cli.sh>` script, the module
 file is
 :download:`2.5.0 </decommissioned/sharc/software/modulefiles/apps/taverna-cli/2.5.0>`.
+

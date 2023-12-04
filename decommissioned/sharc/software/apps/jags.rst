@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _jags_sharc:
 
 JAGS
@@ -99,3 +102,4 @@ JAGS 4.2 was built with gcc 4.9.4
 
 * Installed using :download:`install.sh </decommissioned/sharc/software/install_scripts/apps/jags/4.2/gcc-4.9.4/install_jags.sh>`
 * :download:`This module file </decommissioned/sharc/software/modulefiles/apps/jags/4.2/gcc-4.9.4>` was installed as ``/usr/local/modulefiles/apps/jags/4.2/gcc-4.9.4``
+

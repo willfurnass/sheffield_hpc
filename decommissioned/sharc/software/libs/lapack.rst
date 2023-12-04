@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _lapack_sharc:
 
 LAPACK
@@ -32,3 +35,4 @@ LAPACK was extracted from the RPMs for **lapack** and **lapack-devel**
 
 * :download:`Install script </decommissioned/sharc/software/install_scripts/libs/lapack/3.4.2-5/binary/install.sh>` as ``/usr/local/packages/libs/lapack/3.9.1/gcc-8.2-cmake-3.17.1/install_script.sge``
 * :download:`Module File </decommissioned/sharc/software/modulefiles/libs/lapack/3.4.2-5/binary>` as ``/usr/local/modulefiles/libs/lapack/3.4.2-5/binary``
+

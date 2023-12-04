@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _matlab_sharc:
 
 MATLAB
@@ -319,3 +322,4 @@ In more detail:
     cp -r /usr/local/packages/apps/matlab/parallel_mpi_integration_scripts/* .
 
 #. R2018a Update 4 to mitigate Matlab crashes on Centos 7.5. Download R2018a Update 4 installer. Copy to ShARC, and run using ./R2018a_Update_4_glnxa64.sh, and specify install directory /usr/local/packages/matlab/2018a/binary
+

@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 DL_POLY
 =======
 
@@ -49,3 +52,4 @@ During compilation DL_POLY 4.08 was optionally interfaced with the PLUMED 2.3.2 
 
 The installation of DL_POLY 4.08 was tested using TEST 28 (see the above installation script and ftp://ftp.dl.ac.uk/ccp5/DL_POLY/DL_POLY_4.0/DATA/ for details).
     
+

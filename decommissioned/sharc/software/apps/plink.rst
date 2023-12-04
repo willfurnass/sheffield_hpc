@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 Plink
 =====
 
@@ -42,4 +45,5 @@ Both versions of Plink were installed like so ::
   mv * /usr/local/packages/apps/plink/$ver/binary
 
 The modulefiles is at :download:`/usr/local/modulefiles/apps/plink/1.90b6.5/binary </decommissioned/sharc/software/modulefiles/apps/plink/1.90b6.5/binary>`.
+
 

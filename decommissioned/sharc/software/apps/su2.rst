@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 SU2
 ===
 
@@ -33,3 +36,4 @@ SU2 6.0.0 was installed using the
 file is
 :download:`/usr/local/modulefiles/apps/su2/6.0.0/gcc-6.2-openmpi-2.1.1 </decommissioned/sharc/software/modulefiles/apps/su2/6.0.0/gcc-6.2-openmpi-2.1.1>`.
     
+

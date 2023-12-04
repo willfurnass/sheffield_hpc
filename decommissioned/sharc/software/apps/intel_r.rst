@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _`Intel R (Sharc)`:
 
 R (Intel Build)
@@ -111,3 +114,4 @@ It was run in batch mode.
 * :download:`intel-17.0-sequential.sh </decommissioned/sharc/software/install_scripts/apps/R/3.3.2/intel-17.0-sequential.sh>` Downloads, compiles, tests and installs R 3.3.2 using Intel Compilers and the sequential MKL.
 * :download:`intel-17.0-parallel </decommissioned/sharc/software/modulefiles/apps/R/3.3.2/intel-17.0-parallel>` Parallel Module File
 * :download:`intel-17.0-sequential </decommissioned/sharc/software/modulefiles/apps/R/3.3.2/intel-17.0-sequential>` Sequential Module File
+

@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _dgx1_dcs_groupnodes_sharc:
 
 NVIDIA DGX-1 (Computer Science)
@@ -119,3 +122,4 @@ Deep Learning on the DGX-1
 
 Many popular Deep Learning packages are available to use on the DGX-1 and the ShARC cluster. 
 Please see :ref:`DeepLearning_sharc` for more information.
+

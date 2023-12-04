@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 Gaussian
 ========
 
@@ -129,6 +132,7 @@ The Gaussian 09/16 installations were tested by running a batch job using the fo
     r1 1.0
     r2 1.0
     a1 105.0
+
 
 
 

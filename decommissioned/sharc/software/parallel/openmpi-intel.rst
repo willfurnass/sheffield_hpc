@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _openmpi_intel_sharc:
 
 OpenMPI (Intel version)
@@ -93,3 +96,4 @@ Version 1.10.4, Intel 15.0.7 compiler
 
 #. Install :download:`this modulefile </decommissioned/sharc/software/modulefiles/mpi/openmpi/1.10.4/intel-15.0.7>` as ``/usr/local/modulefiles/mpi/openmpi/1.10.4/intel-15.0.7``
 #. Test by running some Examples_.
+

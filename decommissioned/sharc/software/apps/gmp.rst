@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 GnuMP
 =====
 
@@ -28,3 +31,4 @@ file is
 :download:`gcc-8.2.0 </decommissioned/sharc/software/modulefiles/apps/gmp/6.2.0/gcc-8.2.0>`.
 
     
+

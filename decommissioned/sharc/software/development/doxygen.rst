@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 .. _doxygen_sharc:
 
 Doxygen
@@ -31,3 +34,4 @@ Version 1.8.13 GCC v4.9.4
 
 1. Install using :download:`this script </decommissioned/sharc/software/install_scripts/apps/doxygen/1.8.13/gcc-4.9.4/install.sh>`
 2. Install :download:`this modulefile </decommissioned/sharc/software/modulefiles/apps/doxygen/1.8.13/gcc-4.9.4>` as ``/usr/local/modulefiles/apps/doxygen/1.8.13/gcc-4.9.4``
+

@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 PLUMED
 ======
 
@@ -29,3 +32,4 @@ file is
 
 The installation of PLUMED 2.3.2 was tested using the ``make`` command as part of running the above installation script.
     
+

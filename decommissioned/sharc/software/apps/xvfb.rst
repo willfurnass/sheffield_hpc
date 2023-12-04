@@ -1,3 +1,6 @@
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
 Xvfb 
 ====
 
@@ -58,3 +61,4 @@ Installation notes
 ------------------
 
 Installed and updated using the ``centos-updates`` YUM repository.
+
