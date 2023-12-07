@@ -120,18 +120,18 @@ Using the previously given port number, enter the connection details into the Ti
 
     localhost:5911
 
-Click *Connect*, you will then be prompted for a password which was given in the previous output.
+Click *Connect*, you will then be prompted for the VNC session password.
 
 .. caution:: 
     
-    Do not enter your university credentials password.
+    Do not enter your normal university account password, use the password which was given in the previous output.
 
 You should now see a desktop within a window, as below. This desktop is running within the interactive session
 we requested on Stanage.
 
 .. image:: /images/flight_desktop_session.png
 
-You can click *close* on the error dialog. Then open a terminal at the bottom of the screen which will rejoin the interactive session you first requested. 
+You can click *close* on the error dialog. Then open a terminal at the bottom of the screen which will open inside the interactive session you first requested. 
 
 When you are finished, close VNC Viewer then return to the terminal within which you started ``Flight Desktop`` and log out or continue with other tasks.
 
@@ -151,7 +151,8 @@ An example, starting a MATLAB GUI in TigerVNC Viewer by entering the following c
 
 Troubleshooting
 ^^^^^^^^^^^^^^^
-- **You're seeing the following error message**:
+You're seeing a "missing prerequisites": error message:
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 .. code-block::
 
@@ -169,7 +170,8 @@ In most cases, this can be resolved using the following command:
 
     mv ~/.local/share/flight/desktop ~/.local/share/flight/desktop_bk
 
-- **The GUI is slow or unresponsive**:
+The GUI is slow or unresponsive:
+""""""""""""""""""""""""""""""""
 
 You may wish to consider requesting more resources for your session, please see :ref:`requesting an interactive session on slurm <submit_interactive_stanage>`  
 
