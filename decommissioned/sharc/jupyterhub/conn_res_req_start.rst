@@ -1,3 +1,7 @@
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+
 .. _jh_conn_res_req_start: 
 
 JupyterHub on ShARC: connecting, requesting resources and starting a session 
