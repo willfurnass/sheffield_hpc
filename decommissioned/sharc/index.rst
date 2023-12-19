@@ -27,6 +27,7 @@ If greater single-threaded performance or greater numbers of cores are required 
   GPUComputingShARC
   DeepLearningShARC
   groupnodes/index
+  jupyterhub
   sharc-decommissioning
 
 * :ref:`sharc-software`
