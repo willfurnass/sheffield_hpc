@@ -1,5 +1,9 @@
 :orphan:
 
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+
 .. _jh_cpus_gpus: 
 
 JupyterHub on ShARC: using multiple CPUs and using GPUs

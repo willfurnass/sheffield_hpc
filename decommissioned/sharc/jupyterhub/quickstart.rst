@@ -1,5 +1,9 @@
 :orphan:
 
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+
 .. _jh_quickstart: 
 
 JupyterHub on ShARC: Quickstart

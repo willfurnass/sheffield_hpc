@@ -1,3 +1,7 @@
+.. include:: /referenceinfo/imports/decommissioned/sharc_decom.rst
+
+.. include:: /referenceinfo/imports/decommissioned/decom_watermark.rst
+
 .. _jh_nb_usage:
 
 Creating, editing and running Jupyter Notebooks
