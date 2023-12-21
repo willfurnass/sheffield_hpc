@@ -36,4 +36,5 @@ If greater single-threaded performance or greater numbers of cores are required 
 * :ref:`GPUComputing_sharc`
 * :ref:`DeepLearning_sharc`
 * :ref:`groupnodes_sharc`
+* :ref:`jupyterhub_sge`
 
