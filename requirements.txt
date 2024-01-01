@@ -30,7 +30,7 @@ sphinxcontrib-qthelp==1.0.6
 sphinxcontrib-serializinghtml==1.1.9
 tornado==6.4
 Sphinx-Substitution-Extensions==2022.02.16
-urllib3==2.0.7
+urllib3==2.1.0
 watchdog==3.0.0
 sphinxcontrib-jquery==4.1
 sphinx-copybutton==0.5.2
