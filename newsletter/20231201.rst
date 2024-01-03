@@ -47,12 +47,10 @@ Stanage planned maintenance
 ----------------------------
 - We are pleased to inform you that the planned Stanage outage that took place place from the 15th December to the 19th December was completed successfully. The team has ensured that everything is now functioning as expected. Should you notice any issues please do not hesitate to report it. Thank you for your patience and cooperation during the outage period.
 
-
-Other planned maintenance Update
------------------------------------
+Other planned maintenance updates
+---------------------------------
 - Abaqus license update end of December.
 - Ansys license update end of December. 
-
 
 Useful Links
 -------------
