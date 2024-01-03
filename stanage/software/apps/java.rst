@@ -1,12 +1,12 @@
 .. _java-stanage:
 
-Java (OpenJDK)
-==============
+Java (Temurin/OpenJDK)
+======================
 
 .. sidebar:: Java
 
    :Latest Version: 17.0.4
-   :URL: https://openjdk.java.net/
+   :URL: https://adoptium.net/en-GB/temurin/releases/
 
 Java is a programming language and computing platform first released by Sun Microsystems in 1995.
 
@@ -22,7 +22,11 @@ You can then load a version of of Java using one of the following: ::
 
       module load Java/11.0.2
       module load Java/11.0.16
+      module load Java/11.0.20
       module load Java/17.0.4
+
+NB ``Java/11.0.2`` is `OpenJDK <https://openjdk.org/>`__;
+``Java/11.0.16`` and newer are `Eclipse Temurin <https://adoptium.net/en-GB/temurin/releases/>`__, which is based on OpenJDK.
 
 
 Check that you have the version you expect. First, the runtime:
