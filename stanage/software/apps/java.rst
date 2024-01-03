@@ -1,7 +1,7 @@
 .. _java-stanage:
 
 Java (Temurin/OpenJDK)
-==============
+======================
 
 .. sidebar:: Java
 
