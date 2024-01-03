@@ -22,7 +22,7 @@ You can then load a version of of Java using one of the following: ::
 
       module load Java/11.0.2
       module load Java/11.0.16
-      module load Java/Java/11.0.20
+      module load Java/11.0.20
       module load Java/17.0.4
 
 NB ``Java/11.0.2`` is `OpenJDK <https://openjdk.org/>`__;
