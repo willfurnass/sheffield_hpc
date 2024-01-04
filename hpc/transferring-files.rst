@@ -57,7 +57,7 @@ Using SCP in the terminal
 If your local machine has a terminal and the ``scp``  (“secure copy”) command is available 
 you can use it to make transfers of files or folders.
 
-Where below substitute **$CLUSTER_NAME** with stanage, bessemer or sharc
+Where below substitute **$CLUSTER_NAME** with stanage or bessemer
 and **$USER** with your cluster username. 
 
 You should be prompted for your Duo MFA credentials after entering your password. Request a push notification or enter your passcode.
@@ -114,7 +114,7 @@ You can create a new site by selecting *file* from top menu bar then *site manag
 
 After hitting the *new site* button you can enter your credentials in the general tab:
 
-* **Host**: sftp://$CLUSTER_NAME.shef.ac.uk (replace $CLUSTER_NAME with stanage, bessemer or sharc.)
+* **Host**: sftp://$CLUSTER_NAME.shef.ac.uk (replace $CLUSTER_NAME with stanage or bessemer)
 * **User**: Your cluster username
 * **Password**: Your cluster password (leave blank and fill this interactively if on a shared machine.)
 * **Port**: (leave blank to use the default port)
@@ -152,7 +152,7 @@ backup folders.
   ``rsync`` to show you the changes it will make for a given command.
 
 The ``rsync`` syntax is very similar to ``scp``. To transfer to another computer with commonly used options, 
-where below substitute **$CLUSTER_NAME** with stanage, bessemer or sharc and **$USER** with your cluster username.
+where below substitute **$CLUSTER_NAME** with stanage or bessemer and **$USER** with your cluster username.
 You should be prompted for your Duo MFA credentials after entering your password. Request a push notification or 
 enter your passcode:
 
@@ -254,7 +254,7 @@ For example, cloning the source of the ``make`` software:
 .. code-block:: console
     :emphasize-lines: 1
 
-    [user@sharc-login4 make-git]$ git clone https://git.savannah.gnu.org/git/make.git
+    [user@login1 make-git]$ git clone https://git.savannah.gnu.org/git/make.git
     Cloning into 'make'...
     remote: Counting objects: 16331, done.
     remote: Compressing objects: 100% (3434/3434), done.

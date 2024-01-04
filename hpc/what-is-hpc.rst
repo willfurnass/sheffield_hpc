@@ -61,8 +61,8 @@ What is a HPC cluster?
 A HPC cluster is a large computer composed of a collection of many smaller
 separate servers (computers) which are called nodes. Nodes are typically connected
 to one another with a fast interconnect, such as
-`Intel Omnipath <https://www.intel.co.uk/content/www/uk/en/high-performance-computing-fabrics/omni-path-driving-exascale-computing.html>`_
-on the :ref:`ShARC Cluster <sharc>`, in order to pass data in between them very
+`Omnipath <https://www.cornelisnetworks.com/>`__
+on the Stanage cluster, in order to pass data in between them very
 quickly.
 
 
@@ -141,8 +141,7 @@ Jobs requiring or desiring the use of specialist nodes must specify this require
 as part of their job resource request.
 
 At The University of Sheffield, the available reserved nodes and their details can be
-found on their specific pages for the :ref:`ShARC <groupnodes_sharc>` and
-:ref:`Bessemer <groupnodes_bessemer>` clusters.
+found on their specific pages for the :ref:`Bessemer <groupnodes_bessemer>` cluster.
 
 ------
 
