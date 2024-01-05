@@ -240,7 +240,9 @@ Then if you want to load these modules **in an interactive session or in a batch
     source /home/te1st/proj1/setup_env.sh
 
 If you want to run the job on Stanage and Bessemer (which provide different software / module files) 
-you could adapt your script to load different modules depending on which cluster you are using: ::
+you could adapt your script to load different modules depending on which cluster you are using:
+
+.. code-block:: bash 
 
     if [[ "$HOSTNAME" == *"stanage"* ]]; then
         # On Stanage:
