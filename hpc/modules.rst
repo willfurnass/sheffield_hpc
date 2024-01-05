@@ -10,17 +10,17 @@ Activating software using Environment Modules
 Overview and rationale
 ----------------------
 
-'Environment Modules' are the mechanism by which much of the software is made available to the users of our clusters (Stanage, Bessemer and ShARC).
+'Environment Modules' are the mechanism by which much of the software is made available to the users of our clusters (Stanage and Bessemer).
 
 To make a particular piece of software available a user will *load* a module e.g. 
-on ShARC, you can load a particular version of the '``scotch``' library (version 6.0.4, built using the GCC 6.2 compiler and with support for parallel execution using OpenMPI 2.0.1) with: ::
+on Stanage you can load a particular version of the ``OpenFOAM`` application (version 22.06, built with a particular compiler, BLAS library and MPI implementation (collectively the ``foss-2022a`` toolchain)) with: ::
 
-    module load libs/scotch/6.0.4/gcc-6.2-openmpi-2.0.1
+    module load OpenFOAM/v2206-foss-2022a
 
 This command manipulates `environment variables <https://en.wikipedia.org/wiki/Environment_variable>`_ to make this piece of software available.  
 If you then want to switch to using a different version of ``scotch`` (should another be installed on the cluster you are using) then you can run: ::
 
-    module unload libs/scotch/6.0.4/gcc-6.2-openmpi-2.0.1
+    module unload OpenFOAM/v2206-foss-2022a
     
 Then load the other version.  
 
@@ -29,13 +29,13 @@ In shared high-performance computing environments such as our clusters:
 
 * Users typically want control over the version of applications that is used (e.g. to give greater confidence that results of numerical simulations can be reproduced);
 * Users may want to use applications built using compiler X rather than compiler Y as compiler X might generate faster code and/or more accurate numerical results in certain situations;
-* Users may want a version of an application built with support for particular parallelisation mechanisms such as MPI for distributing work between machines (Stanage and ShARC only), OpenMP for distributing work between CPU cores or CUDA for parallelisation on GPUs);
+* Users may want a version of an application built with support for particular parallelisation mechanisms such as MPI for distributing work within and between machines, OpenMP for distributing work between CPU cores or CUDA for parallelisation on GPUs);
 * Users may want an application built with support for a particular library.
 
 There is therefore a need to maintain multiple versions of the same applications on our clusters.
 Module files allow users to select and use the versions they need for their research.
 
-If you switch to using a cluster other than Stanage, Bessemer or ShARC then you will likely find that environment modules are used there too.  
+If you switch to using a cluster other than Stanage or Bessemer then you will likely find that environment modules are used there too.  
 Modules are not the only way of managing software on clusters: increasingly common approaches include:
 
 .. tabs::
@@ -43,19 +43,13 @@ Modules are not the only way of managing software on clusters: increasingly comm
    .. group-tab:: Stanage
 
         * The :ref:`Conda <python_stanage>` package manager (Python-centric but can manage software written in any language);
-        * Apptainer/Singularity, a means for deploying software in `containers <https://en.wikipedia.org/wiki/Operating-system-level_virtualization>`__ (similar to `Docker <https://www.docker.com/>`__; currently can only be used on Bessemer and ShARC).
+        * Apptainer/Singularity, a means for deploying software in `containers <https://en.wikipedia.org/wiki/Operating-system-level_virtualization>`__ (similar to `Docker <https://www.docker.com/>`__.
 
 
    .. group-tab:: Bessemer
 
         * The :ref:`Conda <python_conda_bessemer>` package manager (Python-centric but can manage software written in any language);
         * :ref:`Apptainer/Singularity <apptainer_bessemer>`, a means for deploying software in `containers <https://en.wikipedia.org/wiki/Operating-system-level_virtualization>`__ (similar to `Docker <https://www.docker.com/>`__).
-
-
-   .. group-tab:: ShARC
-
-        * The :ref:`Conda <sharc-python-conda>` package manager (Python-centric but can manage software written in any language);
-        * :ref:`Apptainer/Singularity <apptainer_sharc>`, a means for deploying software in `containers <https://en.wikipedia.org/wiki/Operating-system-level_virtualization>`__ (similar to `Docker <https://www.docker.com/>`__).
 
 -----
 
@@ -68,14 +62,14 @@ You can list all (loaded and unloaded) modules on our clusters using: ::
 
 You can then load a module using e.g.: ::
 
-    module load libs/geos/3.6.1/gcc-4.9.4
+    module load GEOS/3.9.1-GCC-11.2.0
 
 .. note::
-    Modules are not available on ShARC and Bessemer login nodes. You must start an interactive job on a worker node using ``qrshx``, ``qsh`` or ``qrsh`` / ``srun`` (see :ref:`job_submission_control`) before any of the following commands will work.
+    Modules are not available on Bessemer's login nodes. You must start an interactive job on a worker node using ``srun`` (see :ref:`job_submission_control`) before any of the following commands will work.
 
 You can then load further modules e.g.::
 
-    module load libs/gdal/2.2.0/gcc/gcc-4.9.4
+    module load PROJ/8.1.0-GCCcore-11.2.0
 
 Confirm which modules you have loaded using: ::
 
@@ -83,7 +77,7 @@ Confirm which modules you have loaded using: ::
 
 If you want to stop using a module (by undoing the changes that loading that module made to your environment): ::
 
-    module unload libs/gdal/2.2.0/gcc/gcc-4.9.4
+    module unload  PROJ/8.1.0-GCCcore-11.2.0
 
 Or to unload all loaded modules: ::
 
@@ -93,7 +87,6 @@ To learn more about what software is available on the system and discover the na
 
 * :ref:`Software on Stanage <stanage-software>`
 * :ref:`Software on Bessemer <bessemer-software>`
-* :ref:`Software on ShARC <sharc-software>`
 
 
 The name of a Module should tell you:
@@ -103,18 +96,13 @@ The name of a Module should tell you:
 * The name and version of compiler that the software was built using (if applicable; not all installed software was installed from source);
 * The name and version of used libraries that distinguish the different installs of a given piece of software (e.g. the version of OpenMPI an application was built with).
 
-
-.. caution::
-
-    Please note that the module naming convention differs between ShARC and our newer clusters (Stanage and Bessemer).
-
 Some other things to be aware of:
 
 * You can load and unload modules in both interactive and batch jobs;
 * Modules may themselves load other modules.  If this is the case for a given module then it is typically noted in our documentation for the corresponding software;
 * Available applications and application versions may differ between our clusters;
 * The order in which you load modules may be significant (e.g. if module A sets ``SOME_ENV_VAR=apple`` and module B sets ``SOME_ENV_VAR=pear``);
-* Some related module files have been set up so that they are mutually exclusive e.g. on ShARC the modules ``dev/NAG/6.0`` and ``dev/NAG/6.1`` cannot be loaded simultaneously (as users should never want to have both loaded). 
+* Related module files e.g. multiple versions of the same application typically cannot be loaded concurrently.
 
 -----
 
@@ -193,43 +181,13 @@ Searching for Modules
             VASP/5.4.1-intel-2019b
             VASP/5.4.4-intel-2019b
 
-
-   .. group-tab:: ShARC
-
-        You can search for a module using: ::
-
-            module avail |& grep -i somename
-
-        Where you replace **somename** with the string you wish to search for.
-
-        You may wish to setup a bash alias in your ``$HOME/.bashrc`` file with this as a short cut e.g. : ::
-        
-            alias modulefind="module avail |& grep -i"
-
-        After sourcing ``$HOME/.bashrc`` this command can then be called like so: 
-
-        .. code-block:: console
-        
-            $ source $HOME/.bashrc
-            $ modulefind intel
-            CFITSIO/3.45-intel-2018b
-            FDS/6.7.5-intel-2020a
-            intel/2018b
-            intel/2019a
-            intel/2019b
-            intel/2020a
-            VASP/5.4.1-intel-2019b
-            VASP/5.4.4-intel-2019b
-
 -----
 
 Behind the scenes
 -----------------
 
-Let's look at what happens when you load an environment.  
-You can run the following example on ShARC (regardless of whether the ``dev/NAG/6.1`` module file loaded): 
-
-.. code-block:: console
+Let's look at what happens when you load an environment module.
+If we inspect the contents of a module file we see something like: ::
 
     $ module show dev/NAG/6.1
     -------------------------------------------------------------------
@@ -281,8 +239,10 @@ Then if you want to load these modules **in an interactive session or in a batch
 
     source /home/te1st/proj1/setup_env.sh
 
-If you want to run the job on Stanage, Bessemer and ShARC (which provide different software / module files) 
-you could adapt your script to load different modules depending on which cluster you are using: ::
+If you want to run the job on Stanage and Bessemer (which provide different software / module files) 
+you could adapt your script to load different modules depending on which cluster you are using:
+
+.. code-block:: bash 
 
     if [[ "$HOSTNAME" == *"stanage"* ]]; then
         # On Stanage:
@@ -292,9 +252,6 @@ you could adapt your script to load different modules depending on which cluster
         # On Bessemer:
         hostname="bessemer"
         module load different/module
-    elif [[ "$HOSTNAME" == *"sharc"* ]]; then
-        # On ShARC:
-        module load someOther/module
     fi
 
 Managing your environment this way is more likely to result in reproducible research, 
@@ -386,17 +343,3 @@ Here is a list of the most useful ``module`` commands. For full details, type ``
         * ``module purge`` – unload all modules
         * ``module help modulename`` – may show longer description of the module if present in the modulefile
         * ``man module`` – detailed explanation of the above commands and others
-
-
-   .. group-tab:: ShARC
-
-        * ``module list`` – lists currently loaded modules
-        * ``module avail`` – lists all available modules
-        * ``module load modulename`` – loads module ``modulename``
-        * ``module unload modulename`` – unloads module ``modulename``
-        * ``module switch oldmodulename newmodulename`` – switches between two modules
-        * ``module show modulename`` - Shows how loading ``modulename`` will affect your environment
-        * ``module purge`` – unload all modules
-        * ``module help modulename`` – may show longer description of the module if present in the modulefile
-        * ``man module`` – detailed explanation of the above commands and others
-
