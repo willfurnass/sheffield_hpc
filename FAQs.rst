@@ -15,6 +15,24 @@ Symptoms include many of the commands not working and just ``bash-4.1$`` or ``sh
 This may be because you've deleted your ``.bashrc`` and ``.bash_profile`` files - these are 'hidden' files which live in your home directory and are used to correctly set up your shell environment.
 If you hit this problem you can run the command ``resetenv`` which will restore the default files, then you should logout and log back in.
 
+.. note:: 
+
+        Alternatively, you can run the resetenv command directly:
+
+        .. tabs::
+
+                .. group-tab:: Stanage
+
+                        .. code-block:: console
+
+                                . /opt/site/etc/profile.d/060-bash-shell-helpers.sh && resetenv
+
+
+                .. group-tab:: Bessemer
+
+                        .. code-block:: console
+
+                                . /usr/local/scripts/resetenv
 ------
 
 I can no longer log in
