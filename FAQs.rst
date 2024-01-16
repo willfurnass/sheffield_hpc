@@ -17,7 +17,7 @@ If you hit this problem you can run the command ``resetenv`` which will restore 
 
 .. note:: 
 
-        Alternatively, you can run the resetenv command directly:
+        If the command ``restenv`` is not working (possibly removed from $PATH), you can run the resetenv command directly:
 
         .. tabs::
 
