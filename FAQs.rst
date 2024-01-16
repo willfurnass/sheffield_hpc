@@ -33,6 +33,7 @@ If you hit this problem you can run the command ``resetenv`` which will restore 
                         .. code-block:: console
 
                                 . /usr/local/scripts/resetenv
+
 ------
 
 I can no longer log in
