@@ -116,7 +116,7 @@ If you are in MobaXterm, you should attempt to navigate to the folder with using
 
 .. note:: 
 
-        On **Stanage** shared areas are only accesible from a login node and not from a worker node. 
+        On **Stanage** shared areas are only accessible from a login node and not from a worker node. 
 
 ---------
 
