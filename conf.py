@@ -28,7 +28,12 @@ extensions = [
     'sphinx_copybutton',
     'sphinx_tabs.tabs',
     'sphinx_design',
+    'sphinx_sitemap',
 ]
+
+# Sphinx Sitemap
+html_baseurl = "https://docs.hpc.shef.ac.uk/"
+sitemap_url_scheme = "{lang}latest/{link}"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
