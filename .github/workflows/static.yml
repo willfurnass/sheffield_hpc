@@ -57,6 +57,9 @@ jobs:
       - name: Add webroot redirect HTML index page.
         run: |
           cp rtd-root-redirect.html _build/html/index.html
+      - name: Add Google Search console site verification
+        run: |
+          cp gsv/google92a5d9499987ed3e.html _build/html/google92a5d9499987ed3e.html
       - name: Setup Pages
         uses: actions/configure-pages@v2
       # Make the artifact which is used to deploy.
