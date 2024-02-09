@@ -116,6 +116,21 @@ Important files / folders
 * ``_static/css/custom.css`` - custom CSS overrides for the theme.
 * ``.github/workflows`` - GitHub Actions workflows for pull requests, pushes to ``master`` and link checking.
 
+Custom Google Search Engine
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As the built in Sphinx search is naive / poor, a custom Google CSE has been added (currently implemented as per https://github.com/rcgsheffield/sheffield_hpc/pull/1971).
+
+This is implemented with the following steps:
+
+1. Create Google custom search on console: https://cse.google.com/cse/all
+2. Copy HTML snippet for Google custom search
+3. Paste it into `_templates/searchbox.html`.
+4. Configure `html_sidebars` to use `searchbox.html` in your document.
+5. Ensure your `templates_path ` is set to correctly source the templates directory.
+6. Customise the theming, search domain and other settings at https://cse.google.com/cse/all if not done already.
+7. Test the search is configured and functioning as desired.
+
 Making or using imported files from the ``referenceinfo/imports`` area
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
