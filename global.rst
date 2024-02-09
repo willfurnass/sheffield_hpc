@@ -1,7 +1,3 @@
-.. raw:: html 
-    
-    <meta name="google-site-verification" content="jk5z1gVjOQDxlwdNUBdg8RoeUEYEcrBxS4Ggvjn5FMw" />
-
 .. |br| raw:: html
 
     <br/>
