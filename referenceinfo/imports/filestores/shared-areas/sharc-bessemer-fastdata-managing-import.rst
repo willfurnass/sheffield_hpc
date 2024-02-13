@@ -2,17 +2,20 @@
 
 We recommend users create their own personal folder in the ``/fastdata`` area.  As this doesn't exist by default, you can create it with safe permissions by running the command: ::
 
-    mkdir -m 0700 /fastdata/$USER
+    mkdir /fastdata/$USER
+    chmod 700 /fastdata/$USER
 
-By running the command above, your area will only be accessible to you. If desired, you could have a more sophisticated sharing scheme with private and public directories ::
+By running the command above, your area will only be accessible to you. If desired, you could have a more sophisticated sharing scheme with private and fully public directories: ::
 
-    mkdir -m 0755 /fastdata/$USER
+    mkdir /fastdata/$USER
     mkdir /fastdata/$USER/public
     mkdir /fastdata/$USER/private
 
     chmod 755 /fastdata/$USER
     chmod 755 /fastdata/$USER/public
     chmod 700 /fastdata/$USER/private
+
+Note however that the ``public`` folder in this instance will be readable to **all users**!
 
 :underline-bold:`Fastdata filestore backups and snapshots details`
 
