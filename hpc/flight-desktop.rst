@@ -24,8 +24,14 @@ Initialise and start Flight Desktop:
     flight start # Start the Flight environment to enable further Flight commands
     flight desktop verify xfce   # only do this once
     flight desktop start --geometry 1800x1000 xfce
-    
-The following is example output, in case of error please see :ref:`trouble shooting<trouble_flight>`:
+
+.. warning::
+
+  If you get a warning about "missing prerequisites", please ensure you have requested an interactive session and your terminal shows ``node001`` or ``node002``. 
+
+  In the case of "missing prerequisites" warnings while in an interactive session, please see :ref:`troubleshooting<trouble_flight>`:
+
+The following is example output:
 
 .. code-block:: console
   :emphasize-lines: 22
