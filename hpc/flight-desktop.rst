@@ -31,6 +31,8 @@ Initialise and start Flight Desktop:
 
   In the case of "missing prerequisites" warnings while in an interactive session, please see :ref:`troubleshooting<trouble_flight>`:
 
+The following is example output:
+
 .. code-block:: console
   :emphasize-lines: 22
 
