@@ -176,13 +176,13 @@ There are separate ``fastdata`` areas on each cluster:
 
     Note however that the ``public`` folder in this instance will be readable to **all users**!
 
-..
-  Comment: There is a need for 755 on a truely public directory here rather than 705 due to the nature of the inherited effective permissions.
-  These effective permissions are determined based on the first class the user falls within in the order of user, group then others. Thus 705 would 
-  have the group's "0" at a higher priority than the other's "5" resulting in blocked access.
+    ..
+      Comment: There is a need for 755 on a truely public directory here rather than 705 due to the nature of the inherited effective permissions.
+      These effective permissions are determined based on the first class the user falls within in the order of user, group then others. Thus 705 would 
+      have the group's "0" at a higher priority than the other's "5" resulting in blocked access.
 
-  Selecting 705 would allow everyone but the chosen group access.
-  Selecting 755 would allow everyone access including the chosen group.
+      Selecting 705 would allow everyone but the chosen group access.
+      Selecting 755 would allow everyone access including the chosen group.
 
     :underline-bold:`Fastdata filestore backups and snapshots details`
 
