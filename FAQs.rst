@@ -25,14 +25,14 @@ If you hit this problem you can run the command ``resetenv`` which will restore 
 
                         .. code-block:: console
 
-                                . /opt/site/etc/profile.d/060-bash-shell-helpers.sh && resetenv
+                                /opt/site/bin/resetenv
 
 
                 .. group-tab:: Bessemer
 
                         .. code-block:: console
 
-                                . /usr/local/scripts/resetenv
+                                /usr/local/scripts/resetenv
 
 ------
 
