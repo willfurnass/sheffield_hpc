@@ -153,9 +153,9 @@ Here you need to:
 
 
 After typing in this command hit enter to start connecting at which point you will be prompted 
-for your username, password and then with a Duo MFA prompt. 
+for your username, password and then with a Duo or TOTP MFA prompt. 
 
-This should give you a prompt resembling the one below: 
+This should give you a session resembling the one below: 
 
 
 .. tabs::
