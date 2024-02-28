@@ -11,8 +11,7 @@ text editors within interactive sessions for the Bessemer and Training HPC clust
     
     The myApps service is only accessible on Bessemer (:underline-bold:`not` Stanage).
 
-In order to access the HPC clusters you must set up a `VPN connection and MFA <https://www.sheffield.ac.uk/it-services/vpn>`_. 
-Also see section **Whether/how you can connect** below. 
+In order to access the HPC clusters you must set up a `VPN connection and MFA <https://www.sheffield.ac.uk/it-services/vpn>`_.
 
 The web browser method of access to Bessemer is recommended. This method works well for most browsers on all the common 
 computing platforms (Linux, Windows, Mac), however we recommend Chrome or Firefox.
