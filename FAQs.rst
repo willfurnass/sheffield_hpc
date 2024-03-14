@@ -244,11 +244,11 @@ Following are ways to fix too much time requested:
 
 ------
 
-"No space left on device" errors and jobs prematurely stopping
---------------------------------------------------------------
+"No space left on device", "Disk quota exceeded" errors and jobs prematurely stopping
+-------------------------------------------------------------------------------------
 
 Each user of the system has a fixed amount of disk space available in their home directory. If you see an error in your job's logs indicating "No space left on device"
-it is likely that your quota has ran out.
+or "Disk quota exceeded" it is likely that your quota has ran out.
 
 If you attempt to exceed this quota, various problems can emerge such as an inability to launch applications or run jobs, the inability to login or abruptly terminated jobs
 as programs or executables are now unable to write to your ``/home`` folder.
