@@ -114,6 +114,8 @@ html_theme_options = {
 #                 'using-iceberg/**': ['softwaretoc.html'],
 #                 'index': []}
 
+# This template override file can be found in _templates/searchbox.html
+# The sidebar is currently being overridden with the Google Custom Search engine.
 html_sidebars = {'**': ['searchbox.html']}
 
 # The name for this set of Sphinx documents.  If None, it defaults to
