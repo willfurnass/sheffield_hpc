@@ -50,21 +50,6 @@ Noteworthy features of the system
 * High-bandwidth, low-latency networking between nodes (100 Gb/s EDR Infiniband)
 * High-performance parallel file system (Lustre)
 * Slurm job scheduler
-* Installed software
-
-  * IBM Watson Machine Learning Community Edition
-
-    * Includes Conda packages for helping transparently distribute Deep Learning training and inference tasks 
-      over multiple GPUs and/or nodes 
-      when using e.g. TensorFlow, IBM Caffe and Pytorch.
-    * Includes conda packages for accelerating the training of generalized linear models 
-      (e.g. in scikit-learn and Apache Spark) using GPUs and multiple nodes
-
-  * Standard GNU toolkit via the IBM Advanced Toolchain for Linux
-
-    * Inc. IBM-optimised GNU compilers, BLAS/LAPACK, glibc, gdb, valgrind, itrace, Boost, Python, Go and more
-
-  * NVIDIA profilers and debuggers
 
 Further information
 -------------------
