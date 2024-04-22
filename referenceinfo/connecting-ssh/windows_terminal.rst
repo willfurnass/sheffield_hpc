@@ -5,11 +5,11 @@ Setting up Profiles in Windows Terminal
 
 We recommend the use of Windows Terminal on Windows systems and users will find Windows Terminal available on the University's managed desktops by default.
 
-Windows has a built-in SSH client that you can use in Windows Terminal. See also `Tutorial: SHH in Windows Terminal <https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh>`_
+Windows has a built-in SSH client that you can use in Windows Terminal. See also `Tutorial: SSH in Windows Terminal <https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh>`_
 
 The latest builds of Windows 10 and Windows 11 include a built-in SSH server and client that are based on OpenSSH, a connectivity tool for remote sign-in that uses the SSH protocol.
 
-You can start an SSH session in your command prompt by executing ``ssh YOUR_USERNAM@CLUSTER.shef.ac.uk`` and you will be prompted to enter your password. 
+You can start an SSH session in your command prompt by executing ``ssh YOUR_USERNAM@CLUSTER_NAME.shef.ac.uk`` and you will be prompted to enter your password. 
 You can create a Windows Terminal profile that does this on startup by adding the commandline setting to a profile in your settings.json file inside the list of profile objects.
 
 To open the settings.json file in your default editor click settings (shown below) whilst holding the **Alt** key. Alternatively hold ``Alt`` + ``Ctrl`` + ``,``.
