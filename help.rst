@@ -63,10 +63,55 @@ Steps%20leading%20to%20the%20problem:%0D%0A
 1.%20[step1]%0D%0A
 2.%20[step2]%0D%0A
 3.%20[step3]%0D%0A%0D%0A
-Relevant%20scripts:%0D%0A
-Please%20place%20your%20scripts%20here%20or%20include%20it%20as%20an%20attachment.%0D%0A>`_
+Relevant%20scripts%20and%20job%20log%20files:%0D%0A
+Please%20place%20your%20scripts%20and%20job%20log%20files%20here%20or%20include%20it%20as%20an%20attachment.%0D%0A>`_
 template for guidance to get the best help efficiently.
-If possible, please include the steps, screenshots and scripts for IT Services Support teams to reproduce the issue.
+If possible, please include the steps, screenshots, scripts and job log files for IT Services Support teams to reproduce the issue.
+
+If you encounter issues with the link above, use the template provided in the code block below.
+Copy the content and paste it into your email body, replacing placeholders (e.g., [module1], [software1], [jobid1]) with specific details about your issue.
+
+.. code-block:: none
+
+    Subject: [CLUSTER_USERNAME] Issue Summary
+
+    
+    Hi there,
+
+    Issue Summary
+    Please provide a clear and concise description of the issue.
+
+
+    System Details
+    Cluster Name: Stanage / Bessemer
+
+    Environment modules loaded:
+    1. [module1]
+    2. [module2]
+    3. [module3]
+
+    List of Software / Libraries used (with the versions):
+    1. [software1] [version]
+    2. [software2] [version]
+    3. [software3] [version]
+
+
+    Specific Details about the issue
+    Job IDs:
+    1. [jobid1]
+    2. [jobid2]
+    3. [jobid3]
+
+    Error messages and the command leading to the error:
+    Please place your screenshots of your error messages here.
+
+    Steps leading to the problem:
+    1. [step1]
+    2. [step2]
+    3. [step3]
+
+    Relevant scripts and job log files:
+    Please place your scripts and job log files here or include it as an attachment.
 
 ------
 
