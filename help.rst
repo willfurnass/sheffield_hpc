@@ -35,6 +35,39 @@ If you are still having issues or need specific advice e.g. how to best parallel
 `IT Services' Research and Innovation team <mailto:research-it@sheffield.ac.uk>`_ or if you have more specific queries about programming / coding for HPC clusters e.g. CUDA programming please contact
 the `Research Software Engineering team <https://rse.shef.ac.uk/contact/>`_.
 
+Use the `Email support 
+<mailto:research-it@sheffield.ac.uk?
+subject=[CLUSTER_USERNAME]%20Issue%20Summary&
+body=
+Hi%20there,%0D%0A%0D%0A
+Issue%20Summary%0D%0A
+Please%20provide%20a%20clear%20and%20concise%20description%20of%20the%20issue.%0D%0A%0D%0A%0D%0A%0D%0A
+System%20Details%0D%0A
+Cluster%20Name:%20Stanage%20/%20Bessemer%0D%0A%0D%0A
+Environment%20modules%20loaded:%0D%0A
+1.%20[module1]%0D%0A
+2.%20[module2]%0D%0A
+3.%20[module3]%0D%0A%0D%0A
+List%20of%20Software%20/%20Libraries%20used%20(with%20the%20versions):%0D%0A
+1.%20[software1]%20[version]%0D%0A
+2.%20[software2]%20[version]%0D%0A
+3.%20[software3]%20[version]%0D%0A%0D%0A%0D%0A%0D%0A
+Specific%20Details%20about%20the%20issue%0D%0A
+Job%20IDs:%0D%0A
+1.%20[jobid1]%0D%0A
+2.%20[jobid2]%0D%0A
+3.%20[jobid3]%0D%0A%0D%0A
+Error%20messages%20and%20the%20command%20leading%20to%20the%20error:%0D%0A
+Please%20place%20your%20screenshots%20of%20your%20error%20messages%20here.%0D%0A%0D%0A
+Steps%20leading%20to%20the%20problem:%0D%0A
+1.%20[step1]%0D%0A
+2.%20[step2]%0D%0A
+3.%20[step3]%0D%0A%0D%0A
+Relevant%20scripts:%0D%0A
+Please%20place%20your%20scripts%20here%20or%20include%20it%20as%20an%20attachment.%0D%0A>`_
+template for guidance to get the best help efficiently.
+If possible, please include the steps, screenshots and scripts for IT Services Support teams to reproduce the issue.
+
 ------
 
 HPC training?
