@@ -40,6 +40,8 @@ Use the `Email support
 subject=[CLUSTER_USERNAME]%20Issue%20Summary&
 body=
 Hi%20there,%0D%0A%0D%0A
+I%20confirm%20that%20I%20have%20checked%20the%20
+FAQs%20at%20https://docs.hpc.shef.ac.uk/en/latest/FAQs.html#frequently-asked-questions%20for%20a%20possible%20solution%20to%20my%20issue.%0D%0A%0D%0A%0D%0A
 Issue%20Summary%0D%0A
 Please%20provide%20a%20clear%20and%20concise%20description%20of%20the%20issue.%0D%0A%0D%0A%0D%0A%0D%0A
 System%20Details%0D%0A
@@ -64,7 +66,7 @@ Steps%20leading%20to%20the%20problem:%0D%0A
 2.%20[step2]%0D%0A
 3.%20[step3]%0D%0A%0D%0A
 Relevant%20scripts%20and%20job%20log%20files:%0D%0A
-Please%20place%20your%20scripts%20and%20job%20log%20files%20here%20or%20include%20it%20as%20an%20attachment.%0D%0A>`_
+Please%20attach%20your%20scripts%20and%20job%20log%20files%20as%20an%20attachment.%0D%0A%0D%0A%0D%0A>`_
 template for guidance to get the best help efficiently.
 If possible, please include the steps, screenshots, scripts and job log files for IT Services Support teams to reproduce the issue.
 
@@ -77,6 +79,9 @@ Copy the content and paste it into your email body, replacing placeholders (e.g.
 
     
     Hi there,
+
+    I confirm that I have checked the FAQs at https://docs.hpc.shef.ac.uk/en/latest/FAQs.html#frequently-asked-questions for a possible solution to my issue.
+
 
     Issue Summary
     Please provide a clear and concise description of the issue.
@@ -111,7 +116,8 @@ Copy the content and paste it into your email body, replacing placeholders (e.g.
     3. [step3]
 
     Relevant scripts and job log files:
-    Please place your scripts and job log files here or include it as an attachment.
+    Please attach your scripts and job log files as an attachment.
+    
 
 ------
 
