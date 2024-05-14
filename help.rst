@@ -37,7 +37,7 @@ the `Research Software Engineering team <https://rse.shef.ac.uk/contact/>`_.
 
 Use the `Email support 
 <mailto:research-it@sheffield.ac.uk?
-subject=[CLUSTER_USERNAME]%20Issue%20Summary&
+subject=HPC%20Help%20Request%20-%20[CLUSTER_USERNAME]%20-%20[SHORT%20DESCRIPTION]&
 body=
 Hi%20there,%0D%0A%0D%0A
 I%20confirm%20that%20I%20have%20checked%20the%20
@@ -75,7 +75,7 @@ Copy the content and paste it into your email body, replacing placeholders (e.g.
 
 .. code-block:: none
 
-    Subject: [CLUSTER_USERNAME] Issue Summary
+    Subject: HPC Help Request - [CLUSTER_USERNAME] - [SHORT DESCRIPTION]
 
     
     Hi there,
