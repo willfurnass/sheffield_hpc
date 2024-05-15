@@ -86,11 +86,11 @@ To view the man page (official manual) for a command, you can use the command:
 
 You can navigate man pages using (the same keyboard shorcuts as **less**):
 
-        * **Space** to advance one page
-        * **d** to advance half a page
-        * **b** to go back one page
-        * **u** to go back half a page
-        * **/** starts search mode, after which you enter a search term
+* **Space** to advance one page
+* **d** to advance half a page
+* **b** to go back one page
+* **u** to go back half a page
+* **/** starts search mode, after which you enter a search term
 
 Whilst in search mode press **n** for next occurrence and **N** for previous occurrence.
 
@@ -733,8 +733,21 @@ How can I stay connected to the cluster for longer?
 
 .. include:: /referenceinfo/imports/staying_connected.rst
 
+-----
 
-|br|
+"Out of Memory", "OOM" errors and job prematurely stopping
+----------------------------------------------------------
+
+When "Out of Memory" (OOM) errors occur in an interactive or batch session, it indicates insufficient memory has been allocated for the job to run to completion.
+
+See :ref:`seff` and :ref:`sacct` commands for details on memory usage/efficiency for historical or currently running jobs.
+
+.. note::
+    When an Out-of-Memory (OOM) error occurs in a system, the metrics shown by Slurm may not be truly accurate due to the metric polling interval for Slurm being slower than the CGroup limit enforcement.
+    This means not enough memory was given despite memory allocated being higher than the reported memory peak for the job.
+
+Requesting higher memory normally fixes this error. See :ref:`Memory Allocation <Memory-allocation>` for details.
+
 -----
 
 How to change the ownership of files and folders when not the root user?
