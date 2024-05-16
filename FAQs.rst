@@ -728,6 +728,13 @@ but cannot use more than 400 at once.
 
 -----
 
+How can I stay connected to the cluster for longer?
+---------------------------------------------------
+
+.. include:: /referenceinfo/imports/staying_connected.rst
+
+-----
+
 "Out of Memory", "OOM" errors and job prematurely stopping
 ----------------------------------------------------------
 
