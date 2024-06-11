@@ -829,4 +829,33 @@ The files/folders have to be stored in public Fastdata areas, detailed instructi
 
         rm -rf /the/directory/changing/ownership
 
+
+-----
+
+How do I avoid large Conda environments filling up my home directory?
+---------------------------------------------------------------------
+
+.. include:: referenceinfo/imports/software/python/conda_in_fastdata.rst
+
+How do I remove conda environments from my home directory?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you are rebuilding conda environments in your fastdata area and want to remove current conda environments from your home directory follow the instructions below:
+
+.. hint::
+        
+        Deactivate your conda environments before removing them using ``source deactivate``
+
+1. To list your environments run:
+
+.. code-block:: console
+        
+        conda info --envs
+        
+2. Remove environments using the following command. Replace ``<environment_name>`` with the name of the environment you want to remove.
+
+.. code-block:: console
+        
+        conda remove -n <environment_name> --all
+
 |br|
