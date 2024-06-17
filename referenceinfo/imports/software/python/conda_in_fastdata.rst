@@ -7,7 +7,6 @@ To avoid this, build your conda environments in a :ref:`fastdata area <fastdata_
 1. Create a ``.condarc`` file in your home directory if it does not already exist.
 2. Add an ``envs_dirs:`` and ``pkgs_dirs:`` section to your ``.condarc`` file as shown below:
 
-
 .. tabs::
 
     .. group-tab:: Stanage
@@ -15,10 +14,10 @@ To avoid this, build your conda environments in a :ref:`fastdata area <fastdata_
         ::
 
             pkgs_dirs:
-            - /mnt/parscratch/$USER/anaconda/.pkg-cache/
+            - /mnt/parscratch/users/$USER/anaconda/.pkg-cache/
 
             envs_dirs:
-            - /mnt/parscratch/$USER/anaconda/.envs
+            - /mnt/parscratch/users/$USER/anaconda/.envs
 
 
     .. group-tab:: Bessemer
@@ -31,7 +30,8 @@ To avoid this, build your conda environments in a :ref:`fastdata area <fastdata_
             envs_dirs:
             - /fastdata/$USER/anaconda/.envs
 
-3. Then create ``.envs`` and ``.pkg-cache`` directories in your fastdata area as shown below:
+3. We recommend users create their own personal folder in the /fastdata area. As this doesn’t exist by default, you can create it with safe permissions. See :ref:`fastdata area <fastdata_dir>`
+4. Then create ``.envs`` and ``.pkg-cache`` directories in your fastdata area as shown below:
 
 .. tabs::
 
@@ -39,7 +39,7 @@ To avoid this, build your conda environments in a :ref:`fastdata area <fastdata_
 
         ::
 
-            mkdir -p /mnt/parscratch/$USER/anaconda/.pkg-cache/  /mnt/parscratch/$USER/anaconda/.envs
+            mkdir -p /mnt/parscratch/users/$USER/anaconda/.pkg-cache/  /mnt/parscratch/users/$USER/anaconda/.envs
 
 
     .. group-tab:: Bessemer
