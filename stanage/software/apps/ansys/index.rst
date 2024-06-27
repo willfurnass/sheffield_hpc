@@ -42,6 +42,7 @@ As the ANSYS suite contains a large number of packages, links to each dedicated 
 
   fluent
   mechanical
+
 --------------------
 
 ANSYS training and help resources
