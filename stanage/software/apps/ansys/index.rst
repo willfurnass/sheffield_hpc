@@ -41,7 +41,7 @@ As the ANSYS suite contains a large number of packages, links to each dedicated 
   :glob:
 
   fluent
-
+  mechanical
 --------------------
 
 ANSYS training and help resources
