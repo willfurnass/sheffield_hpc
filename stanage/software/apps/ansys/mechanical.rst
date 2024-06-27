@@ -109,6 +109,7 @@ The job is submitted to the queue by typing:
 .. code-block:: bash
 
     sbatch mech_job.sh
+
 -----------------------
 
 ANSYS Mechnical training and help resources
