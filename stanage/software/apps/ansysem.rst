@@ -4,7 +4,7 @@ ANSYSEM
 .. sidebar:: ANSYSEM
 
    :Version: 21.2
-   :Dependencies: GCC 10.2 and OpenMPI 4.0.5 (MPI support).
+   :Dependencies:
    :URL: http://www.ansys.com
 
 
