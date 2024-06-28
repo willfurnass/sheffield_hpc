@@ -22,7 +22,7 @@ ANSYS Electromagnetics Suite for Linux/Unix.
 Usage
 -----
 
-ANSYSEM software can be loaded using one of the following module load commands:
+ANSYSEM software can be loaded using the following module commands:
 
 .. code-block:: 
 
