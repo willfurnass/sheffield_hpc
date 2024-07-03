@@ -48,6 +48,7 @@ The following is an example batch submission script which is submitted to the qu
     #SBATCH --time=00:30:00
     #SBATCH --mail-user=a.person@sheffield.ac.uk
     #SBATCH --mail-type=ALL
+
     module use /opt/apps/testapps/precompiled-el7/modules/staging
     module load ANSYSEM/21.2/binary
 
