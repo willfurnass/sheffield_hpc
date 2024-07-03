@@ -64,6 +64,7 @@ The script requests 2 cores using the SMP parallel environment with a runtime of
     #SBATCH --time=01:00:00
     #SBATCH --mail-user=a.person@sheffield.ac.uk
     #SBATCH --mail-type=ALL
+
     module load ANSYS/2023R2
     mapdl -smp -dir $(pwd) -b -np $SLURM_NTASKS -j solution -i CrankSlot_Flexible.inp
 
@@ -95,6 +96,7 @@ The script requests 2 cores using the MPI parallel environment with a runtime of
     #SBATCH --time=01:00:00
     #SBATCH --mail-user=a.person@sheffield.ac.uk
     #SBATCH --mail-type=ALL
+
     module load ANSYS/2023R2
     # Create a hosts file with the allocated nodes
     echo ===========================
