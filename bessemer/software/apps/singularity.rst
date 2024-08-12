@@ -12,7 +12,7 @@ Designed around the notion of extreme mobility of compute and reproducible scien
 Apptainer (:ref:`previously known as Singularity <apptainer_vs_singularity_bessemer>`)
 enables users to have full control of their operating system environment.
 This means that a non-privileged user can "swap out" the operating system on the host for one they control.
-So if the host system is running CentOS Linux but your application runs in Ubuntu Linux,
+So if the host system is running Liberty Linux 7 but your application runs in Ubuntu Linux,
 you can create an Ubuntu image,
 install your applications into that image,
 copy the image to another host,
