@@ -43,7 +43,7 @@ Modules are not the only way of managing software on clusters: increasingly comm
    .. group-tab:: Stanage
 
         * The :ref:`Conda <python_stanage>` package manager (Python-centric but can manage software written in any language);
-        * Apptainer/Singularity, a means for deploying software in `containers <https://en.wikipedia.org/wiki/Operating-system-level_virtualization>`__ (similar to `Docker <https://www.docker.com/>`__.
+        * :ref:`Apptainer/Singularity <apptainer_stanage>`, a means for deploying software in `containers <https://en.wikipedia.org/wiki/Operating-system-level_virtualization>`__ (similar to `Docker <https://www.docker.com/>`__).
 
 
    .. group-tab:: Bessemer
