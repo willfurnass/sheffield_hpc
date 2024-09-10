@@ -49,6 +49,24 @@ Once the job has successfully completed, the output will be in a file named like
   The machine name is node301
   The result of the integral is
   x/2 - Sin[2*x]/4
+
+
+ GUI Usage
+ ----------
+ To use Mathematica in GUI mode you will need to be in a :ref:`flight graphical session on Stanage <flight-desktop>` and start a terminal inside of the flight session. 
+
+ Load both the Mathematica and QT modules (Mathematica requires the Qt framework/library to create its graphical user interface). To start the IDE you will need to type ``Mathematica``.
+
+ .. code-block:: bash
+
+    #load the necessary modules
+    module load Mathematica/13.2.1
+    module load Qt5/5.15.7-GCCcore-12.2.0
+
+    #Start Mathematica in GUI mode
+    Mathematica
+
+
   
 
 Installation notes
