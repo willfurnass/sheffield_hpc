@@ -75,7 +75,8 @@ Each user can run a maximum of two of these jobs concurrently.
 2. DCS access for larger jobs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you want to run a longer job that uses up to *all* the resources available in *one* of these nodes
+If you want to run a longer batch job which uses up to *all* the resources available in *one* of these nodes,
+or a longer interactive job which uses up to 2 GPUs,
 then you can :ref:`specify a different Partition <slurm_access_priv_nodes>` when submitting a batch job or starting an interactive session:
 
 * Partition: ``dcs-gpu``
@@ -86,7 +87,8 @@ Please *only run batch jobs this way*: long-running interactive sessions that ar
 
 Resource limits per job:
 
-* At least one GPU must be requested
+* 1 to 4 GPUs must be requested for batch jobs
+* 1 or 2 GPUs must be requested for interactive sessions
 * Default run-time: 8 hours
 * Maximum run-time: 7 days
 * :ref:`Number of CPU cores, amount of RAM and number of GPUs in a single node <dcs_gpu_nodes_hw>`
