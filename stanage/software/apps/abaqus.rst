@@ -10,23 +10,29 @@ Abaqus
 
 Abaqus is a software suite for Finite Element Analysis (FEA) developed by Dassault Systèmes.
 
-Interactive usage
------------------
+Interactive and GUI Usage
+-------------------------
 
-Abaqus can be activated using one of the following module files::
+Abaqus can be activated using one of the following module files:
 
-    module load ABAQUS/2021
+.. code-block:: bash
 
-and launched using::
-
-    abaqus cae
-
+  module load ABAQUS/2021
 
 .. note::
 
   Users must unset the SLURM environment variable SLURM_GTIDS. Failure to do so will cause Abaqus to get stuck due to the MPI that Abaqus ships with not supporting the SLURM scheduler. SLURM_GTIDS should be unset for both interactive/GUI and batch jobs:
 
   ``unset SLURM_GTIDS``
+
+To use Abaqus in GUI mode you will need to connect using a :ref:`flight graphical session on Stanage <flight-desktop>`, then after starting a terminal inside of the flight session: 
+
+.. code-block:: bash
+
+  module load ABAQUS/2021
+  abaqus cae
+
+
 
 ------------
 
