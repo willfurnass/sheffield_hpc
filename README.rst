@@ -159,3 +159,30 @@ How to install mermaid-cli and regenerate one of these diagrams: ::
 .. _reStructuredText: https://docutils.sourceforge.io/rst.html
 .. _Miniconda: https://conda.io/miniconda.html
 .. _Tox: https://tox.readthedocs.io/en/latest/
+
+Use of Tags in Documentation Repository
+---------------------------------------
+
+Tags allow us to easily access historical documentation states before key events, such as cluster decommissioning. To 
+add a tag whilst on recently updated master branch: ::
+
+        git tag -a v.0.0.1 <commit hash> -m "Enter message here"
+        git push origin v.0.0.1
+
+Where ``v.0.0.1`` is the tag name. 
+
+Retrieving Documentation with Git Tags
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To find relevant documentation just before decommissioning a cluster, we can now use these tags. For example, to view files from a tag version (v.0.0.1 "Pre Iceberg Decommissioning"), follow these steps:
+
+Use the following to list all files where the file paths match some condition e.g. each path contains the substrings `rst`, `apps` and `iceberg`: ::
+
+        git ls-tree -r v.0.0.1 --name-only | grep iceberg | grep rst | grep apps
+
+Where ``v.0.0.1`` is the tag name. Here we could have specified a commit hash.
+
+To view one of the listed files we can use for example: ::
+
+        git show v.0.0.1:iceberg/software/apps/povray.rst
+
