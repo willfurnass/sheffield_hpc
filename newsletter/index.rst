@@ -8,6 +8,7 @@ News
     :maxdepth: 1
     :glob:
 
+    20241010
     20240416
     20240301
     20240201
@@ -15,6 +16,7 @@ News
     mfa-update-21-10-2021
     bessemer-maintenance-27-06-2024
     
+* :ref:`nl20241010` 
 * :ref:`nl20240416`
 * :ref:`nl20240301`
 * :ref:`nl20240201`
