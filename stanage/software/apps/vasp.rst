@@ -3,7 +3,7 @@ VASP
 
 .. sidebar:: VASP
 
-   :Version: 5.4.4
+   :Latest Version: 6.4.2
    :Dependencies: Fortran and C compilers, an implementation of MPI, numerical libraries BLAS, LAPACK, ScaLAPACK, FFTW. Modules for Intel compiler 2022.2.1, Intel MPI 2021.7.1 and Intel MKL 2022.2.1 loaded.
    :URL: https://www.vasp.at/
    :Documentation: https://www.vasp.at/documentation
@@ -17,11 +17,21 @@ Usage
 
 After connecting to Stanage (see section Connecting with SSH), you can start an interactive graphical session.
 
-VASP 5.4.4 can be activated using one of the module load command below: ::
+VASP can be activated using one of the module load command below: ::
 
+    module load VASP/6.4.2-intel-2022b
     module load VASP/5.4.4-intel-2022b
+    module load VASP/5.4.4-intel-2022b-vtst           
+    module load VASP/5.4.4-intel-2022b-vaspsol-vtst   
+    module load VASP/5.4.4-intel-2020b
+
 
 The VASP executables are ``vasp_std``, ``vasp_gam`` and ``vasp_ncl``.
+
+Variants of VASP 5.4.4 have been compiled with added functionality:
+
+- **vasp_vtst** with VASP-VTST functions. See `Transition State Tools <https://theory.cm.utexas.edu/vtsttools>`_  
+- **vaspsol_vtst** with VASP-VTST and `VASPsol <https://github.com/VASPsol/VASPsol>`_ functions.
 
 .. important::
 
