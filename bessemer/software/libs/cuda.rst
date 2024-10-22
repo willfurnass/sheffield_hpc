@@ -47,6 +47,8 @@ one of the following commands:
    module load CUDA/10.2.89-GCC-8.3.0
    module load CUDAcore/11.0.2
    module load CUDAcore/11.1.1
+   module load CUDA/11.8.0
+   module load CUDA/12.4.0
 
 .. warning:: 
    
