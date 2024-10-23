@@ -66,8 +66,8 @@ Shared research areas are available on the Stanage cluster :underline-bold:`upon
 My tmux or screen session is missing from the login node?  
 ---------------------------------------------------------
 
-The Stanage cluster uses two login nodes in a round robin DNS configuration. This means when you connect via ``stanage.shef.ac.uk`` you will actually connect to
-one of the two login nodes: ``stanage-login1.shef.ac.uk`` ``stanage-login2.shef.ac.uk``.
+The Stanage cluster uses two login nodes in a active-backup configuration. This means when you connect via ``stanage.shef.ac.uk`` you will actually connect to
+one of the two login nodes, ``stanage-login1.shef.ac.uk`` or ``stanage-login2.shef.ac.uk`` depending on which is currently the active login node.
 
 If you disconnect from the cluster and return at a later time, you may not connect back to the same login node and won't be able to access the session you left running. 
 If you are going to make use of ``tmux`` or ``screen`` sessions on Stanage, you should choose one of the two login nodes and consistently directly connect via it.
