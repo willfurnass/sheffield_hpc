@@ -40,7 +40,7 @@ Noteworthy features of the system
   * 4x `NVIDIA T4`_ GPUs
   * 256 GB RAM
 
-* 3x `NVIDIA Grace Hopper Superchip (GH200 480GB)`_ nodes each with
+* 6x `NVIDIA Grace Hopper Superchip (GH200 480GB)`_ nodes each with
 
   * 1x `NVIDIA Grace CPU`_ (72 Arm Neoverse V2 cores)
   * 1x `NVIDIA H100`_ 96GB GPU
