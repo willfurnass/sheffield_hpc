@@ -122,30 +122,6 @@ GPU-enabled Software
   * :ref:`PGI Compilers_bessemer`
   * :ref:`nvidia_compiler_bessemer`
 
-.. _GPUResources_bessemer_tmp_a100_nodes:
-
-Temporary NVIDIA A100 GPU nodes
--------------------------------
-
-Prior to May 2022 the Bessemer cluster only featured :ref:`one 'public' GPU node <bessemer-gpu-specs>` containing NVIDIA V100 GPUs
-(although private GPU nodes could be accessed using :ref:`preemptable jobs, for those whose workflows could tolerate preemption<preemptable_jobs_bessemer>`).
-
-Between May and December 2022, 16 addtional GPUs nodes were (temporarily) available to all users of Bessemer.  
-These featured **NVIDIA A100 GPUs, which were quite a bit faster than the (older generation) V100 GPUs** in Bessemer.
-
-.. note::
-   These nodes were removed from Bessemer in December 2022 and will be available in the University's new HPC cluster, Stanage, early in 2023.
-
-Specifications per A100 node:
-
-* Chassis: Dell XE8545
-* CPUs: 48 CPU cores from 2x AMD EPYC 7413 CPUs (*AMD Milan* aka *AMD Zen 3* microarchitecture; 2.65 GHz; 128MB L3 cache per CPU)
-* RAM: 512 GB (3200 MT/s)
-* Local storage: 460 GB boot device (SSD) plus 2.88 TB :ref:`'/scratch' temporary storage<scratch_dir>` (RAID 0 on SSDs)
-* GPUs: 4x `NVIDIA Tesla A100 <https://www.nvidia.com/en-gb/data-center/a100/>`__, each with
-
-  * High-bandwidth, low-latency `NVLink <https://www.nvidia.com/en-gb/design-visualization/nvlink-bridges/>`__ GPU interconnects
-  * 80GB memory (HBM2e)
 
 Training materials
 ------------------
