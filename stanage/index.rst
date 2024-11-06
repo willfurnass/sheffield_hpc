@@ -6,9 +6,9 @@ Stanage
 .. figure:: ../images/Stanage_Black.png
    :width: 30%
    :align: center
-   :alt: The Sheffield University Stanage HPC cluster logo.
+   :alt: The University of Sheffield Stanage HPC cluster logo.
 
-   The Sheffield University Stanage HPC cluster logo.
+   The University of Sheffield Stanage HPC cluster logo.
 
 -----
 
