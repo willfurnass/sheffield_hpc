@@ -25,8 +25,6 @@ Don't forget to specify ``--nodes=1`` too.
 Currently, the maximum number of GPUs allowed per job is set to 4,
 as Bessemer is configured to only permit single-node jobs
 and GPU nodes contain up to 4 GPUs.
-If you think you would benefit from using >4 GPUs in a single job
-then consider requesting access to :ref:`jade`.
 
 Interactive sessions provide you with 2 GB of CPU RAM by default,
 which is significantly less than the amount of GPU RAM available on a single GPU.
