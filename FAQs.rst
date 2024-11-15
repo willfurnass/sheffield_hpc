@@ -41,7 +41,7 @@ If you hit this problem you can run the command ``resetenv`` which will restore 
 ------
 
 I can no longer log in
-----------------------
+------------------------
 
 If you are confident that you have no password entry issues, have already requested and been granted a HPC account and are connected to the VPN but you still can not log onto a cluster,
 you may have inadvertently corrupted your shell environment if you have been installing software or making changes in your .bashrc file. Please attempt to resolve this first by resetting
@@ -56,8 +56,8 @@ or temporarily moved to your ``/mnt/parscratch`` area on Stanage or ``/fastdata`
 
 ------
 
-I can not log into a cluster via the MyApps applications portal
----------------------------------------------------------------
+I can not log in to a cluster via the MyApps applications portal
+-----------------------------------------------------------------
 
 Most of the time such problems arise due to Java version issues. As Java updates are released regularly, these problems are usually caused by the changes to the Java plug-in for the browser.
 
@@ -241,6 +241,13 @@ Following are ways to fix too much time requested:
 
         Alternatively, delete the job using ``scancel`` and re-submit with the new max runtime.
 
+
+------
+
+Case sensitivity
+----------------
+
+The High-Performance Computers at Sheffield run a Linux operating system, which is case sensitive. When logging in your username should be written like ``te1st`` and **not** ``TE1ST``. Similarly, files named ``my_file.txt`` can not be opened using ``MY_FILE.TXT`` and the original matching case version should be used.
 
 ------
 

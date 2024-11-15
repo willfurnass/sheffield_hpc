@@ -35,9 +35,9 @@ If you add the following to your settings.json inside the list of profile object
 
 .. tip::
 
-    Usernames to connect with all HPC services will be the same as those you use to login to MUSE :underline-bold:`not` the prefix on your email address.
+    Usernames to connect with all HPC services will be the same as those you use to login to MUSE :underline-bold:`not` the prefix on your email address, and should always be entered in lowercase.
 
-#. Replace YOUR_USERNAME with your university IT user name. 
+#. Replace YOUR_USERNAME with your university IT username, which should be all lowercase (e.g., ``te1st``).
 #. Now save changes to the settings.json.
 
 

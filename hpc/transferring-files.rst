@@ -58,7 +58,7 @@ If your local machine has a terminal and the ``scp``  (“secure copy”) comman
 you can use it to make transfers of files or folders.
 
 Where below substitute **CLUSTER_NAME** with stanage or bessemer
-and **YOUR_USERNAME** with your cluster username. 
+and **YOUR_USERNAME** with your cluster username, and should always be entered in lowercase. 
 
 You should be prompted for your Duo MFA credentials after entering your password. Request a push notification or enter your passcode.
 
@@ -115,7 +115,7 @@ You can create a new site by selecting *file* from top menu bar then *site manag
 After hitting the *new site* button you can enter your credentials in the general tab:
 
 * **Host**: sftp://CLUSTER_NAME.shef.ac.uk (replace CLUSTER_NAME with stanage or bessemer)
-* **User**: Your cluster username
+* **User**: Your cluster username, which should always be entered in lowercase.
 * **Password**: Your cluster password (leave blank and fill this interactively if on a shared machine.)
 * **Port**: (leave blank to use the default port)
 * **Protocol**: sftp
@@ -196,7 +196,7 @@ backup folders.
       
 
 The ``rsync`` syntax is very similar to ``scp``. To transfer to another computer with commonly used options, 
-where below substitute **CLUSTER_NAME** with stanage or bessemer and **YOUR_USERNAME** with your cluster username.
+where below substitute **CLUSTER_NAME** with stanage or bessemer and **YOUR_USERNAME** with your cluster username, which should always be entered in lowercase.
 You should be prompted for your Duo MFA credentials after entering your password. Request a push notification or 
 enter your passcode:
 

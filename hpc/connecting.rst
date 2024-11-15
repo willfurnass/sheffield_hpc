@@ -134,7 +134,7 @@ Establishing a SSH connection
 
 .. Hint::
 
-    Usernames to connect with all HPC services will be the same as those you use to login to MUSE :underline-bold:`not` the prefix on your email address.
+    Usernames to connect with all HPC services will be the same as those you use to login to MUSE :underline-bold:`not` the prefix on your email address, and should always be entered in lowercase.
 
 
 Once you have a terminal open run the following command to
@@ -163,7 +163,7 @@ log in to a cluster:
 
 Here you need to:
 
-* replace ``YOUR_USERNAME`` with your IT Services username (e.g. ``te1st``)
+* replace ``YOUR_USERNAME`` with your IT Services username, which should be all lowercase (e.g., ``te1st``).
 * replace ``CLUSTER_NAME`` with ``stanage`` or ``bessemer``.
 
 

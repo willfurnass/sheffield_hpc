@@ -47,7 +47,12 @@ Overview of the connection process
 Specific usage examples
 -----------------------
 
+.. hint::
+
+    Usernames to connect with all HPC services will be the same as those you use to login to MUSE :underline-bold:`not` the prefix on your email address.
+
 * Access a HPC cluster via SSH: 
+
 
 .. tabs::
 
