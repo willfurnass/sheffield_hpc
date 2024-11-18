@@ -20,7 +20,7 @@ Suggested text:
    a state of the art High Performance Compute cluster, Stanage,
    to meet the computational requirements of its researchers.
 
-   Stanage complements the two existing HPCs (ShARC & Bessemer), and provides
+   Stanage complements the existing Bessemer HPC, and provides
    a large increase in CPU compute cores (~12,000),
    and high performance GPUs (64 A100s & 12 H100s).
    Researchers will leverage this in-house resource to
@@ -29,6 +29,6 @@ Suggested text:
 
    In addition, through the University of Sheffield researchers can
    access and get local Research Software Engineer support for
-   the Bede and JADE2 'tier 2' (regional) GPU-equipped HPC systems.
-   Bede has 32 GPU-equipped worker nodes, each with 4 V100 GPUs
-   and JADE2 has 63 worker nodes, each with 8 V100 GPUs.
+   the Bede 'tier 2' (regional) GPU-equipped HPC system.
+   Bede has 32 GPU-equipped worker nodes that each have 4 V100 GPUs, 
+   and 4 GPU-equipped worker nodes, each with 1 GH200 GPU/CPU.
