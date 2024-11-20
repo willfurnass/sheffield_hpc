@@ -74,8 +74,8 @@ Only certain users have access to a given Account.
 
 .. _dcs_acad_gpu_nodes_non_prempt_access:
 
-sharc-node041 and sharc-node042: non-preemptable access to half a node
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bessemer-node041 and bessemer-node042: non-preemptable access to half a node
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Each of four academics (plus their collaborators) have ring-fenced, on-demand access to the resources of half a node.
 
@@ -96,8 +96,8 @@ Resource limits per job:
 .. todo::
    If using cluster-wide values for default and max run time then link to central info re that rather than duplicating here.
 
-sharc-node041 and sharc-node042: preemptable access to both nodes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bessemer-node041 and bessemer-node042: preemptable access to both nodes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If any of the four academics (or their collaborators) want to run a larger job that requires
 up to *all* the resources available in *one* of these two nodes
