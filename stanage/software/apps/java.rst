@@ -1,4 +1,4 @@
-.. _java-stanage:
+.. _java_stanage:
 
 Java (Temurin/OpenJDK)
 ======================

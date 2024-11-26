@@ -117,7 +117,7 @@ GPU-enabled Software
 
 * Development Tools
 
-  * :ref:`PGI Compilers_bessemer`
+  * :ref:`pgi_bessemer`
   * :ref:`nvidia_compiler_bessemer`
 
 

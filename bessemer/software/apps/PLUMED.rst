@@ -1,4 +1,5 @@
-.. _PLUMED_bessemer:
+.. _plumed_bessemer:
+
 .. |softwarename| replace:: PLUMED
 .. |currentver| replace:: 2.6.2
 .. |ebtoolchain| replace:: intel-2020b

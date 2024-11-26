@@ -1,4 +1,4 @@
-.. _molpro:
+.. _molpro_stanage:
 
 Molpro
 ======

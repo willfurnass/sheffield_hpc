@@ -1,4 +1,4 @@
-.. _icc_ifort_stanage:
+.. _iccifort_stanage:
 
 Intel Compilers
 ===============

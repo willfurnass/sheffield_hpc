@@ -1,4 +1,4 @@
-.. _DL_POLY_4_bessemer:
+.. _dl_poly_4_bessemer:
 .. |softwarename| replace:: DL_POLY_4
 .. |currentver| replace:: 5.0.0
 .. |ebtoolchain| replace:: intel-2020b

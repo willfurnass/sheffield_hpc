@@ -18,7 +18,7 @@ The two supported toolchains on Stanage are:
    - Fourier transforms: :ref:`FFTW <fftw_stanage>`
 
 - ``intel``
-   - C, C++ and Fortran compilers (:ref:`icc/icpc/ifort <icc_ifort_stanage>`)
+   - C, C++ and Fortran compilers (:ref:`icc/icpc/ifort <iccifort_stanage>`)
    - MPI implementation (:ref:`Intel MPI <impi_stanage>`)
    - BLAS, LAPACK and fourier transforms: :ref:`Intel MKL <imkl_stanage>`
 

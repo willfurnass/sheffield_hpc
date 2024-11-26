@@ -1,3 +1,5 @@
+.. _openfoam_stanage:
+
 OpenFOAM
 ==========
 

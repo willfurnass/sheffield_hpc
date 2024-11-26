@@ -1,4 +1,4 @@
-.. _bessemer_SAMtools:
+.. _samtools_bessemer:
 
 SAMtools
 ========

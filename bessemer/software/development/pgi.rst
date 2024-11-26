@@ -1,4 +1,4 @@
-.. _`PGI Compilers_bessemer`:
+.. _pgi_bessemer:
 
 PGI Compilers
 =============

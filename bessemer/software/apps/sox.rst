@@ -1,4 +1,5 @@
-.. _SoX_bessemer:
+.. _sox_bessemer:
+
 .. |softwarename| replace:: SoX
 .. |currentver| replace:: 14.4.2
 .. |ebtoolchain| replace:: foss-2019b

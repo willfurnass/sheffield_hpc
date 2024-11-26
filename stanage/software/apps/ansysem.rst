@@ -1,3 +1,5 @@
+.. _ansysem_stanage:
+
 ANSYSEM
 =======
 

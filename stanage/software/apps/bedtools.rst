@@ -1,3 +1,5 @@
+.. _bedtools_stanage:
+
 Bedtools
 ========
 

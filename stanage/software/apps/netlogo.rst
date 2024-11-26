@@ -1,7 +1,7 @@
 .. |softwarename| replace:: NetLogo
 .. |currentver| replace:: 6.2.0
 
-.. _NetLogo_stanage:
+.. _netlogo_stanage:
 
 |softwarename|
 ==========================================================================================================

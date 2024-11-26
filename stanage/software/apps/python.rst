@@ -1,4 +1,5 @@
 .. _python_stanage:
+.. _anaconda3_stanage:
 
 Python
 ======

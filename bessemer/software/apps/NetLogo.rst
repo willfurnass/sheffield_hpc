@@ -2,7 +2,7 @@
 .. |currentver| replace:: 6.2.0
 .. |ebtoolchain| replace:: Java
 
-.. _NetLogo_bessemer:
+.. _netlogo_bessemer:
 
 |softwarename|
 ==========================================================================================================

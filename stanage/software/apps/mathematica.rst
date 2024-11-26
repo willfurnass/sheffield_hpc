@@ -1,3 +1,5 @@
+.. _mathematica_stanage:
+
 Mathematica
 ============
 

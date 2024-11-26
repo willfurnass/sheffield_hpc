@@ -42,7 +42,7 @@ which will also load a particular :ref:`GCC <gcc_stanage>`,
 
 	module load GSL/2.6-iccifort-2020.1.217
 
-if you also want to activate or have already activated :ref:`icc/icpc/ifort <icc_ifort_stanage>` 2020.1.217.
+if you also want to activate or have already activated :ref:`icc/icpc/ifort <iccifort_stanage>` 2020.1.217.
 
 Example
 -------

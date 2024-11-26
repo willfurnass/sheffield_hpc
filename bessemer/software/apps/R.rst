@@ -1,4 +1,4 @@
-.. _bessemer_r:
+.. _r_bessemer:
 
 R
 =
