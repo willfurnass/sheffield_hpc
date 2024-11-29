@@ -205,12 +205,12 @@ This method will automatically check the package integrity and check it also has
 """""""""""""""""""""""""""""""""""""
 
 `pkgs.org <https://pkgs.org/>`_ is a website which allows a user to search for and download binary packages 
-for numerous Linux and Unix operating systems. Using this website you will be able to query for Centos 7 
+for numerous Linux and Unix operating systems. Using this website you will be able to query for CentOS 7 
 x86_64 compatible packages and then download them.
 
 .. caution::
 
-    It is possible to download and use packages for different versions of Centos (or RHEL as both 
+    It is possible to download and use packages for different versions of CentOS (or RHEL as both 
     operating systems are binary compatible) but this is not recommended and may lead to application 
     instability or errors.
 

@@ -14,7 +14,7 @@ Stanage Specifications
 Operating System and software
 -----------------------------
 
-* OS: CentOS 7.x (binary compatible with RedHat Enterprise Linux 7.x) on all nodes.
+* OS: SUSE Liberty Linux 7 (previously CentOS 7.9; both binary compatible with RedHat Enterprise Linux 7.9) on all nodes.
 * Interactive and batch job scheduling software: Slurm.
 * Many applications, compilers, libraries and parallel processing tools. See :ref:`stanage-software`.
 
