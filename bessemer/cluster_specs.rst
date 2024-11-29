@@ -63,7 +63,7 @@ Networking
 Operating System and software
 -----------------------------
 
-* OS: Liberty Linux 7 (binary compatible with RedHat Enterprise Linux 7) on all nodes.
+* OS: SUSE Liberty Linux 7 (previously CentOS 7.9 Linux; both binary compatible with RedHat Enterprise Linux 7.9) on all nodes.
 * Interactive and batch job scheduling software: Slurm.
 * Many applications, compilers, libraries and parallel processing tools. See :ref:`bessemer-software`.
 

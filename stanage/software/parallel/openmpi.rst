@@ -157,7 +157,7 @@ This section is primarily for administrators of the system. OpenMPI has been ins
      for efficient OmniPath support.  
      
      OFI is used instead of PSM2 as 
-     the older PSM2 library on CentOS 7 is incompatible with newer versions of OpenMPI, 
+     the older PSM2 library on EL7 is incompatible with newer versions of OpenMPI, 
      plus OFI is now the preferred way of doing comms over Omni-Path fabrics with MPI implementations.
 
      Key variables set in OpenMPI module files:
