@@ -1,4 +1,4 @@
-.. _julia_stanage:
+.. _rstudio_stanage:
 
 .. |softwarename| replace:: RStudio
 .. |currentver| replace:: 2023.12.0-369
