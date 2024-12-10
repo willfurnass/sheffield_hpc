@@ -8,10 +8,6 @@ This is the documentation for The University of Sheffield's High Performance Com
 * :ref:`stanage`
 * :ref:`bessemer` 
 
-Recently decommissioned cluster's documentation is currently still available for reference:
-
-* :ref:`sharc` 
-
 Run by IT Services' Research and Innovation team
 with additional support from the Research Software Engineering team in Computer Science,
 they support the computational needs of hundreds of researchers across all departments.

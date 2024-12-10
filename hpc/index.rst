@@ -21,9 +21,11 @@ This guide will get you set up using the University's clusters
    filestore
    transferring-files
    scheduler/index
-   scheduler/advanced_job_submission_and_control
+   scheduler/advanced/advanced_job_submission_and_control
+   scheduler/advanced/advanced_job_analysis_and_profiling
    modules
    Choosing-appropriate-resources
    installing-software
    flight-desktop
    hpcgateway
+   

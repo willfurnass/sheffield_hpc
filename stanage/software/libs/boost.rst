@@ -22,7 +22,7 @@ To activate the library run one of the following: ::
         
 Note that this **also activates a particular version of the GCC compiler** (as Boost depends on the C++ standard library, which is provided by the compiler).  You must use this version of the compiler to build your code if you want to use this build of the Boost library.  If you want to use a different compiler / compiler version then you need to request that a new build of Boost be compiled or compile a new build yourself.
 
-Boost has been built *without* Python support: use :ref:`conda <sharc-python-conda>` and install the ``boost`` conda package if you want to use Boost with Python.
+Boost has been built *without* Python support: use :ref:`conda <python_stanage>` and install the ``boost`` conda package if you want to use Boost with Python.
 
 Build a simple program using Boost
 ----------------------------------

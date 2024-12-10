@@ -13,7 +13,6 @@ ShARC and Bessemer clusters.
   :maxdepth: 1
   :glob:
 
-  SGE/index
   SLURM/index
   TimeAllocationLimits
   MemoryAllocationLimits

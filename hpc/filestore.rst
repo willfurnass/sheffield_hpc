@@ -87,7 +87,7 @@ All users have a home directory on each system:
 
     Where ``$USER`` is the user's username.
 
-    .. include:: /referenceinfo/imports/filestores/shared-areas/sharc-bessemer-snapshot-mirror-settings.rst
+    .. include:: /referenceinfo/imports/filestores/shared-areas/bessemer-snapshot-mirror-settings.rst
 
 
 .. note::
@@ -220,7 +220,7 @@ There are separate ``fastdata`` areas on each cluster:
     | ``/fastdata`` | Lustre | No limits      | 460 TB              | No                      | 25Gb/s Ethernet           |
     +---------------+--------+----------------+---------------------+-------------------------+---------------------------+
 
-    .. include:: /referenceinfo/imports/filestores/shared-areas/sharc-bessemer-fastdata-managing-import.rst
+    .. include:: /referenceinfo/imports/filestores/shared-areas/bessemer-fastdata-managing-import.rst
 
 
 -----

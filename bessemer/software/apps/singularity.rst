@@ -88,16 +88,6 @@ from the mounted directories (See :ref:`auto_mounting_filestore_apptainer_bessem
 
     apptainer exec path/to/imgfile.img my_script.sh
 
-.. note::
-
-    You may get a warning similar to:
-
-    .. code-block:: none
-
-        groups: cannot find name for group ID ...
-
-    :ref:`This can be ignored <unnamed_groups>` and will not have an affect on running the image.
-
 
 .. _use_image_batch_apptainer_bessemer:
 

@@ -1,3 +1,0 @@
-#%Module1.0
-## Set default CUDA version
-set ModulesVersion "10.2.89"

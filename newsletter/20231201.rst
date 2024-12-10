@@ -7,7 +7,7 @@ Welcome to the first edition of our monthly newsletter where we plan to update y
 
 ShARC Decommissioned
 ---------------------
-- As of November 30th, we have officially decommissioned our oldest High-Performance Computing (HPC) cluster, ShARC. For reference, we have archived ShARC's documentation :ref:`here <decommissioned>`.  
+- As of November 30th, we have officially decommissioned our oldest High-Performance Computing (HPC) cluster, ShARC. For reference, we have archived ShARC's documentation (**Update December 2024:** this has now been removed). 
 - Support remains available for users needing assistance transitioning to Stanage and Bessemer. You can access support through 
 	- The `courses <https://sites.google.com/sheffield.ac.uk/research-training/>`_ we offer 
 	- Join our drop-in sessions by signing up through the Google Form included in our weekly email that advertises these sessions.
@@ -21,7 +21,7 @@ GPU Benchmarks
 Recent HPC documentation updates:
 ---------------------------------
 - :ref:`Graphical user interface sessions on Stanage <flight-desktop>`
-- The ShARC documentation section has been moved to the :ref:`Decommissioned Clusters <decommissioned>` section.
+- The ShARC documentation section has been moved to the :ref:`Decommissioned Clusters <decommissioned>` section. (**Update December 2024:** Only brief details of ShARC now remain).
 - Job completion emails contain limited job efficiency information, displaying job status with :ref:`seff  <seff>` gives more detail. Please make use of these to optimise your resource request.
 
 New Packages and software

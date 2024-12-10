@@ -71,8 +71,7 @@ The following code can be used in an interactive session to launch a single core
 Batch jobs
 ----------
 
-ANSYS LS-DYNA is capable of running in both :ref:`MPI <parallel_MPI>` and :ref:`SMP <parallel_SMP>` 
-parallel environments.
+ANSYS LS-DYNA is capable of running in parallel on a single node or across multiple nodes and this is facilitated by :ref:`MPI <parallel_MPI>`. 
 
 Batch Submission Script
 ^^^^^^^^^^^^^^^^^^^^^^^

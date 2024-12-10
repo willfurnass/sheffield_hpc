@@ -25,8 +25,6 @@ This access is provided by a SSH gateway server which is configured to function 
 * Run an interactive SSH terminal session on the gateway server. 
 
 
-
-
 Access conditions
 -----------------
 
@@ -67,12 +65,6 @@ Specific usage examples
     .. code-block:: console
 
         ssh -J [username]@hpcgw.shef.ac.uk [username]@bessemer.shef.ac.uk
-
-   .. group-tab:: ShARC
-
-    .. code-block:: console
-
-        ssh -J [username]@hpcgw.shef.ac.uk [username]@sharc.shef.ac.uk
 
 
 * Transfer a file using SCP: 

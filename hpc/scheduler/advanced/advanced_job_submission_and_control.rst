@@ -1,0 +1,363 @@
+.. _advanced_job_submission_control:
+
+Advanced Job Submission and Control
+===================================
+
+.. toctree::
+    :hidden:
+    :maxdepth: 1
+    :glob:
+    
+.. tip::
+
+    If you are not familiar with basic job submission and control you should first read our :ref:`job_submission_control` page.
+
+
+Introduction
+------------
+
+This page details more advanced job submission and control methods that can be used 
+with :ref:`SLURM scheduler <slurm_info>` on Bessemer and Stanage.
+
+
+.. raw:: html
+
+    <hr class="hr-mid-section-separator">
+
+Advanced Job Submission Methods
+-------------------------------
+
+In this section, the concept of each advanced submission method will be described with 
+subsequent explanations of how to implement these on each scheduler.
+
+-----
+
+.. _array_jobs:
+
+.. _array_jobs_bessemer:
+
+.. _array_jobs_stanage:
+
+Job or task arrays
+^^^^^^^^^^^^^^^^^^^
+
+An "array job" is a set of tasks run from a single batch job submission script. Each of these tasks should consume a relatively large amount of 
+compute time to maintain optimum efficiency.  If each task is short (seconds or even a few minutes),  array jobs will saturate the scheduler 
+and more time is spent managing jobs than running your jobs. This will also negatively impacts other users!
+
+**Advantages of array jobs:**
+
+* You only need to submit one job to run a series of very similar tasks;
+* These tasks are independent and do not all need to run at once so
+  the job scheduler can efficiently run one or more queued tasks as the requested computational resources become available;
+* They are particularly useful for `Embarrassingly Parallel <https://en.wikipedia.org/wiki/Embarrassingly_parallel>`_ problems such as:
+
+  * Monte Carlo simulations;
+  * Parameter sensitivity analysis;
+  * Batch file processing.
+
+**Disadvantages of array jobs:**
+
+* If a single task fails to run correctly it can be a pain to determine and re-submit failed tasks.
+* If the tasks are small, the scheduler will spend more time managing and queueing your tasks than computing them.
+
+.. warning::
+
+  Array jobs on Bessemer and Stanage can have a maximum of 1000 tasks.
+
+SLURM job arrays are only supported for batch jobs and the array index values are specified using 
+the ``--array`` or ``-a`` option of the sbatch command as follows: 
+
+.. code-block:: console
+
+  # Submit a job array with index values between 0 and 31
+  $ sbatch --array=0-31
+
+  # Submit a job array with index values of 1, 3, 5 and 7
+  $ sbatch --array=1,3,5,7
+
+  # Submit a job array with index values between 1 and 7
+  # with a step size of 2 (i.e. 1, 3, 5 and 7)
+  $ sbatch --array=1-7:2
+
+Job arrays will have two additional environment variable set. ``SLURM_ARRAY_JOB_ID`` 
+will be set to the first job ID of the array. ``SLURM_ARRAY_TASK_ID`` will be set to the job array 
+index value. ``SLURM_ARRAY_TASK_COUNT`` will be set to the number of tasks in the job array. 
+``SLURM_ARRAY_TASK_MAX`` will be set to the highest job array index value. 
+``SLURM_ARRAY_TASK_MIN`` will be set to the lowest job array index value. 
+
+For example a job submission of this sort:
+
+.. code-block:: console
+
+  $ sbatch --array=1-3
+  Submitted batch job 39319
+
+Will generate a job array containing three jobs with the environment variables set as follows:
+
+.. code-block:: shell
+
+  SLURM_JOB_ID=39319
+  SLURM_ARRAY_JOB_ID=39319
+  SLURM_ARRAY_TASK_ID=3
+  SLURM_ARRAY_TASK_COUNT=3
+  SLURM_ARRAY_TASK_MAX=3
+  SLURM_ARRAY_TASK_MIN=1
+
+  SLURM_JOB_ID=39320
+  SLURM_ARRAY_JOB_ID=39319
+  SLURM_ARRAY_TASK_ID=1
+  SLURM_ARRAY_TASK_COUNT=3
+  SLURM_ARRAY_TASK_MAX=3
+  SLURM_ARRAY_TASK_MIN=1
+
+  SLURM_JOB_ID=39321
+  SLURM_ARRAY_JOB_ID=39319
+  SLURM_ARRAY_TASK_ID=2
+  SLURM_ARRAY_TASK_COUNT=3
+  SLURM_ARRAY_TASK_MAX=3
+  SLURM_ARRAY_TASK_MIN=1
+
+All SLURM commands and APIs recognize the ``SLURM_JOB_ID`` value. Most commands also recognize the ``SLURM_ARRAY_JOB_ID`` 
+plus ``SLURM_ARRAY_TASK_ID`` values separated by an underscore as identifying an element of a job array. Using the 
+example above, "39320" or "39319_1" would be equivalent ways to identify the second array element of job 39319 as 
+shown in the following ``sacct`` command example. 
+
+.. code-block:: console
+  :emphasize-lines: 1,7
+   
+   $ sacct -j 39319_1
+   JobID           JobName  Partition    Account  AllocCPUS      State ExitCode
+   ------------ ---------- ---------- ---------- ---------- ---------- --------
+   39319_1      array.sh  sheffield       free          1  COMPLETED      0:0
+   39319_1.b+      array                  free          1  COMPLETED      0:0
+   
+   $ sacct -j 39320
+   JobID           JobName  Partition    Account  AllocCPUS      State ExitCode
+   ------------ ---------- ---------- ---------- ---------- ---------- --------
+   39319_1      array.sh  sheffield       free          1  COMPLETED      0:0
+   39319_1.b+      array                  free          1  COMPLETED      0:0
+
+Note that the parent job runs the final task. In the following ``sacct`` command example using
+``SLURM_ARRAY_JOB_ID`` (39319 i.e spawning job) will retrieve details of the whole task array:   
+
+.. code-block:: console
+  :emphasize-lines: 1
+   
+   $ sacct -j 39319
+   JobID           JobName  Partition    Account  AllocCPUS      State ExitCode
+   ------------ ---------- ---------- ---------- ---------- ---------- --------
+   39319_1      array.sh  sheffield       free          1  COMPLETED      0:0
+   39319_1.b+      array                  free          1  COMPLETED      0:0
+   39319_2      array.sh  sheffield       free          1  COMPLETED      0:0
+   39319_2.b+      array                  free          1  COMPLETED      0:0
+   39319_3      array.sh  sheffield       free          1  COMPLETED      0:0
+   39319_3.b+      array                  free          1  COMPLETED      0:0
+
+The same output could have been achieved with ``sacct -j 39319_3`` .
+
+**Using email notifications**
+
+By default in SLURM, the emails for events **BEGIN**, **END** and **FAIL** apply to the job array as a whole rather 
+than individual tasks. So:
+
+.. code-block:: shell
+
+  #SBATCH --mail-type=BEGIN,END,FAIL
+
+Would result in one email per job, not per task. If you want per task emails, specify:
+
+.. code-block:: shell
+
+ #SBATCH --mail-type=BEGIN,END,FAIL,ARRAY_TASKS
+
+Which will send emails for each task in the array. 
+
+**Managing output and error files**
+
+SLURM uses the ``%A`` and ``%a`` replacement strings for the master job ID and task ID, respectively.
+
+For example:
+
+.. code-block:: shell
+
+  #SBATCH --output=Array_test.%A_%a.out
+  #SBATCH --error=Array_test.%A_%a.error
+
+The error log is optional as both types of logs can be written to the 'output' log.
+
+.. code-block:: shell
+
+  #SBATCH --output=Array_test.%A_%a.log
+
+.. warning::
+
+    If you only use ``%A`` in the log all array tasks will try to write to a single file. 
+    The performance of the run will approach zero asymptotically. Make sure to use both ``%A`` and ``%a`` in the log file name specification.
+
+**Grouping tasks for efficiency**
+
+**Limiting number of concurrent tasks**
+
+A maximum number of simultaneously running tasks from the job array may be specified using a ``%`` separator. 
+For example ``--array=0-15%4`` will limit the number of simultaneously running tasks from this job array to 4.
+
+-----
+
+.. _dependent_jobs_bessemer:
+
+.. _dependent_jobs_stanage:
+
+Dependent jobs
+^^^^^^^^^^^^^^
+
+Dependent jobs, or jobs submitted with dependencies on other jobs will wait until 
+the job they are dependent on has met with a certain conditon. This can allow you 
+to build workflows with pre-processing or post-processing steps.
+
+Job dependencies with the SLURM scheduler on Bessemer and Stanage are 
+specified with the ``--dependency`` option to ``sbatch`` using job IDs only in the format:
+
+.. code-block:: console
+
+  $ sbatch --dependency=<type:job_id[:job_id][,type:job_id[:job_id]]> ...
+
+The different dependency types available are:
+
+.. code-block:: shell
+
+  after:jobid[:jobid...] 	#job can begin after the specified jobs have started
+  afterany:jobid[:jobid...] 	#job can begin after the specified jobs have terminated
+  afternotok:jobid[:jobid...] 	#job can begin after the specified jobs have failed
+  afterok:jobid[:jobid...] 	#job can begin after the specified jobs have run to completion with an exit code of zero (see the user guide for caveats).
+  singleton 	                #jobs can begin execution after all previously launched jobs with the same name and user have ended. This is useful to collate results of a swarm or to send a notification at the end of a swarm.
+
+The most simple way to use dependencies are to use the **afterany** type for single consecutive jobs e.g. :
+
+.. code-block:: console
+
+  $ sbatch job1.sh
+  Submitted batch job 12345678
+  $ sbatch --dependency=afterany:12345678 job2.sh
+
+In this case when job 1 finishes (terminates), job 2 will become eligible for scheduling. This means even if 
+job 1 fails, job 2 will run.
+
+A further example with more complicated conditions is shown below:
+
+.. code-block:: shell
+
+  #! /bin/bash
+
+  # first job - no dependencies
+  cmd1=$(sbatch --parsable --mem=12g --cpus-per-task=4 job1.sh)
+  jid1=$( $cmd1 | cut -d ";" -f 1)
+
+  # multiple jobs can depend on a single job
+  cmd2=$(sbatch --parsable --dependency=afterany:$jid1 --mem=20g job2.sh)
+  jid2=$( $cmd2 | cut -d ";" -f 1)
+
+  cmd3=$(sbatch --parsable  --dependency=afterany:$jid1 --mem=20g job3.sh)
+  jid3=$( $cmd3 | cut -d ";" -f 1)
+
+
+  # a single job can depend on multiple jobs
+  cmd4=$(sbatch --parsable  --dependency=afterany:$jid2:$jid3 job4.sh)
+  jid4=$( $cmd4 | cut -d ";" -f 1)
+
+
+  # a single job can depend on all jobs by the same user with the same name
+  cmd5=$(sbatch --parsable --dependency=afterany:$jid4 --job-name=dtest job5.sh)
+  jid5=$( $cmd5 | cut -d ";" -f 1)
+
+  cmd6=$(sbatch --parsable --dependency=afterany:$jid5 --job-name=dtest job6.sh)
+  jid6=$( $cmd6 | cut -d ";" -f 1)
+
+
+  sbatch --dependency=singleton --job-name=dtest job9.sh
+
+-----
+
+.. _timed_jobs_bessemer:
+
+.. _timed_jobs_stanage:
+
+Timed start jobs
+^^^^^^^^^^^^^^^^
+
+Jobs can be submitted to the schedulers to run at a specific time. This section explains how 
+to achieve this with SLURM on Bessemer and Stanage.
+
+Timed start jobs using the Slurm scheduler are requested with the ``--begin`` argument in the following formats:
+
+.. code-block:: shell
+
+  sbatch --begin=16:00 job.sh
+  sbatch --begin=now+60 job.sh #(seconds by default)
+  sbatch --begin=now+1hour job.sh
+  sbatch --begin=2023-06-30T12:34:00 job.sh
+
+The scheduler will immediately submit these jobs but will wait until the elected date/time has passed before starting them.
+
+-----
+
+.. _preemptable_jobs_bessemer:
+
+.. _preemptable_jobs_stanage:
+
+Preemptable jobs
+^^^^^^^^^^^^^^^^
+
+A preemptable job is a job which has been set to run in a reserved queue's node when those nodes are idle.
+
+The reserved queues are typically private (researcher, research group-owned or dept-owned) nodes :ref:`on Bessemer <groupnodes_bessemer>`.
+
+Usage of preemptable jobs will typically allow users to access significant amounts of resource very quickly due to poor  
+utilisation of private nodes by their owners, however these resources will be instantly reclaimed (and the associated jobs preempted) 
+if private node owners submit jobs that can only start immediately using their private node resources.
+
+Usage of preemptable jobs will typically allow users to access significant amounts of compute resource very quickly due to poor private node 
+utilisation of private nodes by their owners.
+
+.. warning::
+
+  If your job is preempted by a job from the owner of the reserved queue your job will be terminated so your jobs must be tolerant 
+  to being able to stop quickly and cleanly or they will be terminated uncleanly and you can lose output data.
+
+  i.e. your job must be able to make use of checkpointing and / or receive, understand and act on the scheduler signalling to stop execution. 
+
+Under certain conditions,
+SLURM on Bessemer and Stanage allows jobs running in higher-priority Partitions (sets of nodes) to
+*preempt* jobs in lower-priority Partitions.
+When a higher priority job *preempts* a lower priority job,
+the lower priority job is stopped (and by default cancelled) and
+the higher priority job takes its place.
+
+Specifically, SLURM allows users to run interactive sessions and batch jobs using idle resources
+in :ref:`private (research group-owned or dept-owned) nodes <groupnodes_bessemer>`,
+but these resources will be reclaimed (and the associated jobs preempted) if
+members of those groups/departments submit jobs that can only start if those resources are repurposed.
+
+.. note::
+    Support for preemptable jobs has been enabled on Bessemer **only**, on a trial basis
+    and will be disabled if it impacts on
+    priority access by groups / departments to
+    private nodes they have purchased.
+
+An example of the use of preemptable jobs:
+
+1. Researcher A wants to run a job using 2 GPUs.  All 'public' GPUs are being used by jobs, but some GPUs in a private node belonging to research group X are idle.
+2. Researcher A decides that they want to use those idle GPUs but they aren't a member of research group X; however, they are happy to take the risk of their job being preempted by a member of research group X.
+3. Researcher A submits a job and makes it preemptable (by adding submitting it to the ``preempt`` Partition using ``--partition=preempt``).
+4. The job starts running on a node which is a member of the ``preempt`` and ``research-group-X`` Partitions.
+5. Researcher B is a member of research group X and submits a job to the ``research-group-X`` Partition.  
+6. This job can only start if the resources being used by the first job are reclaimed.
+7. As a result, SLURM preempts the first job with this second job, as a result of which the first job is cancelled.
+8. The second job runs to completion.
+
+.. tip::
+
+  Tips for using preemptable jobs:
+
+  * Ensure that you're able to reliably re-submit your preemptable job if it is preempted before completion.  A common way of doing this is to write out state/progress information periodically whilst the job is running.
+  * Select a sensible frequency for writing out state/progress information or you may cause poor performance due to storage write speed limits.

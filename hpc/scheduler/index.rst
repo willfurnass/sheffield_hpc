@@ -4,16 +4,15 @@ Job Submission and Control
 ==========================
 
 .. toctree::
-    :hidden:
     :maxdepth: 1
-    :glob:
 
-    ./*
+.. contents::
+    :depth: 2
 
 Introduction
 ------------
 
-As mentioned in the :ref:`what is HPC section <what_is_hpc>`, HPC clusters like :ref:`ShARC <sharc>`,
+As mentioned in the :ref:`what is HPC section <what_is_hpc>`, HPC clusters like 
 :ref:`Bessemer <Bessemer>` and :ref:`Stanage <stanage>` use a program called a scheduler to control and submit work to 
 appropriate nodes.
 
@@ -23,9 +22,8 @@ appropriate nodes.
     single scheduler and allow a user to request either an immediate interactive job, 
     or a queued batch job.
 
-Here at the University of Sheffield, we use 2 different schedulers, the :ref:`SGE scheduler <sge_info>` on ShARC 
-and the more modern :ref:`SLURM scheduler <slurm_info>` on Bessemer and Stanage. Both have the same purpose, use similar 
-commands and work on the same three basic principles:
+Here at the University of Sheffield, on both Bessemer and Stanage we use the 
+:ref:`SLURM scheduler <slurm_info>`, which follows three basic principles:
 
 * they allocate exclusive and/or non-exclusive access to resources (compute nodes) to users for some duration of time so they can perform work,
 * they provide a framework for starting, executing, and monitoring work on the set of allocated nodes,
@@ -80,8 +78,6 @@ batch job from the scheduler and prepare an appropriate batch script.
     requesting an interactive session for a very long time. Doing this will
     lead to better cluster performance for all users.
 
-
-
 Queues and partitions
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -131,14 +127,22 @@ intentionally block a job from running simply because the priority is lower than
 
 .. _submit_job_bessemer:
 
-Job Submission / Control on Bessemer
-------------------------------------
+.. _submit_job_stanage:
+
+Job Submission / Control on Stanage & Bessemer
+----------------------------------------------
+
+.. tip::
+
+    The Stanage & Bessemer clusters have been configured with resource request limits. 
+    Please see our :ref:`Choosing appropriate compute resources page <Choosing-appropriate-compute-resources>` for further information.
 
 .. _submit_interactive_bessemer:
 
+.. _submit_interactive_stanage:
+
 Interactive Jobs
 ^^^^^^^^^^^^^^^^
-
 
 SLURM uses a single command to launch interactive jobs:
 
@@ -167,7 +171,7 @@ To start a session with access to 2 cores, use **either**:
 Please take care with your chosen options as usage in concert with other options
 can be multiplicative.
 
-A further explanation of why you may use the tasks options or cpus options can be found :ref:`here<slurm_tasks_vs_cpus_per_task_bessemer>`.
+A further explanation of why you may use the tasks options or cpus options can be found :ref:`here<slurm_tasks_vs_cpus_per_task>`.
 
 A table of common interactive job options is given below; any of these can be
 combined together to request more resources.
@@ -201,6 +205,8 @@ Slurm Command                        Description
 
 .. _sattach_interactive_bessemer:
 
+.. _sattach_interactive_stanage:
+
 Rejoining an interactive job
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If we lose connection to an interactive job, we can use the ``sattach`` command which attaches to a running Slurm job step.
@@ -209,16 +215,33 @@ set up for direct attachment.
 
 Example:
 
-.. code-block:: console
+.. tabs::
 
-    [te1st@bessemer-login1 ~]$ squeue --me
-            JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-            833300 interacti     bash   te1st  R      31:22      1 node001
-    [te1st@bessemer-login1 ~]$ sattach 833300.0 
-    [te1st@bessemer-node001 ~]$ echo $SLURM_JOB_ID
-    833300
+    .. group-tab:: Stanage
+
+        .. code-block:: console
+
+            [te1st@login1 [stanage] ~]$ squeue --me
+                    JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+                    833300 interacti     bash   te1st  R      31:22      1 node001
+            [te1st@login1 [stanage] ~]$ sattach 833300.0 
+            [te1st@node001 [stanage] ~]$ echo $SLURM_JOB_ID
+            833300
+
+    .. group-tab:: Bessemer
+
+        .. code-block:: console
+
+            [te1st@bessemer-login1 ~]$ squeue --me
+                    JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+                    833300 interacti     bash   te1st  R      31:22      1 node001
+            [te1st@bessemer-login1 ~]$ sattach 833300.0 
+            [te1st@bessemer-node001 ~]$ echo $SLURM_JOB_ID
+            833300
 
 Here we attached to SLURM job 833300 step 0. For more information type ``man sattach``
+
+.. _submit_batch_stanage:
 
 .. _submit_batch_bessemer:
 
@@ -291,11 +314,29 @@ Specify a number of cores per task:
 
     #SBATCH --cpus-per-task=4
 
-Request a specific amount of memory **per job**:
+.. tabs::
 
-.. code-block:: sh
+    .. group-tab:: Stanage
+        
+        Request a specific amount of memory **per node**:
 
-    #SBATCH --mem=16G
+        .. code-block:: sh
+
+            #SBATCH --mem=16G
+
+        Request a specific amount of memory **per CPU core**:
+
+        .. code-block:: sh
+
+            #SBATCH --mem-per-cpu=16G
+
+    .. group-tab:: Bessemer
+
+        Request a specific amount of memory **per job**:
+
+        .. code-block:: sh
+
+            #SBATCH --mem=16G
 
 Specify the job output log file name:
 
@@ -333,7 +374,7 @@ Here is an example SLURM batch submission script that runs a fictitious program 
     # and output foo.res
     foo foo.dat foo.res
 
-.. _slurm_tasks_vs_cpus_per_task_bessemer:
+.. _slurm_tasks_vs_cpus_per_task:
 
 Some things to note:
 
@@ -347,12 +388,21 @@ Some things to note:
   using distributed parallelism (:ref:`MPI<parallel_MPI>`). Note that the Bessemer free queues do not 
   permit the use of more than 1 node per job.
 * You should use the SLURM option ``--cpus-per-task=nn`` Number of "cores per task", for programs using 
-  shared memory parallelism (:ref:`SMP<parallel_SMP>` or :ref:`openmp<parallel_SMP>`).
+  shared memory parallelism.
 * You will often require one or more ``module`` commands in your submission file to make programs and 
   libraries available to your scripts. Many applications and libraries are available as modules on 
-  :ref:`Bessemer <bessemer-software>`.
+  :ref:`Bessemer <bessemer-software>` and :ref:`Stanage <stanage-software>`.
 
-Here is a more complex :ref:`SMP<parallel_SMP>` example that requests more resources:
+.. parallel_bits  
+    * You should use the SLURM option ``--cpus-per-task=nn`` Number of "cores per task", for programs using 
+    shared memory parallelism (:ref:`SMP<parallel_SMP_sharc>` or :ref:`openmp<parallel_SMP>`).
+    * You will often require one or more ``module`` commands in your submission file to make programs and 
+    libraries available to your scripts. Many applications and libraries are available as modules on 
+    :ref:`Bessemer <bessemer-software>`.
+
+    Here is a more complex :ref:`SMP<parallel_SMP_sharc>` example that requests more resources:
+
+Here is a more complex example that requests more resources:
 
 .. code-block:: bash
 
@@ -368,7 +418,7 @@ Here is a more complex :ref:`SMP<parallel_SMP>` example that requests more resou
     # Change the name of the output log file.
     #SBATCH --output=output.%j.test.out
     # Rename the job's name
-    #SBATCH --job-name=my_smp_job
+    #SBATCH --job-name=my_job
 
 
     # Load the modules required by our program
@@ -430,7 +480,7 @@ Or in even more depth using the ``sacct`` command:
 
 .. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/sacct_usage_import.rst
 
-.. _job_debugging_bessemer:
+.. _job_debugging:
 
 Debugging failed Jobs
 ^^^^^^^^^^^^^^^^^^^^^
@@ -454,242 +504,10 @@ all of the job's steps (srun invocations).
 
 --------
 
-.. _submit_job_stanage:
-
-Job Submission / Control on Stanage
------------------------------------
-
-.. tip::
-
-    The Stanage cluster has been configured to have the same default resource request limits as the ShARC cluster. 
-    Please see our :ref:`Choosing appropriate compute resources page <Choosing-appropriate-compute-resources>` for further information.
-
-
-.. _submit_interactive_stanage:
-
-Interactive Jobs
-^^^^^^^^^^^^^^^^
-
-
-SLURM uses a single command to launch interactive jobs:
-
-* :ref:`srun` Standard SLURM command supporting graphical applications.
-
-Usage of the command is as follows:
-
-.. code-block:: console
-
-    $ srun --pty bash -i
-
-You can configure the resources available to the interactive session by adding command line options.
-For example to start an interactive session with access to 16 GB of RAM:
-
-.. code-block:: console
-
-    $ srun --mem=16G --pty bash -i
-
-To start a session with access to 2 cores, use **either**:
-
-.. code-block:: console
-
-    $ srun --cpus-per-task=2 --pty bash -i #2 cores per task, 1 task and 1 node per job default. Preferred!
-    $ srun --ntasks-per-node=2 --pty bash -i #2 tasks per node, 1 core per task and 1 node per job default.
-
-Please take care with your chosen options as usage in concert with other options
-can be multiplicative.
-
-A further explanation of why you may use the tasks options or cpus options can be found :ref:`here<slurm_tasks_vs_cpus_per_task_stanage>`.
-
-A table of common interactive job options is given below; any of these can be
-combined together to request more resources.
-
-==================================== =======================================================================
-Slurm Command                        Description
-==================================== =======================================================================
-``-t min`` or ``-t days-hh:mm:ss``   Specify the total maximum wall clock execution time for the job. 
-                                     The upper limit is 08:00:00. **Note:** these limits may differ
-                                     for reservations /projects.
-
-``--mem=xxG``                        |br| 
-                                     ``--mem=xxG`` is used to specify the maximum amount (``xx``)
-                                     of real memory to be requested **per node**.
- 
- 
-                                     |br| If the real memory usage of your job exceeds this value 
-                                     multiplied by the number of cores / nodes you requested then your
-                                     job will be killed.
-
-``-c nn`` or ``--cpus-per-task=nn``
-                                     |br| ``-c`` is cores per task, take care with your chosen
-                                     number of tasks.
-
-``--ntasks-per-node=nn``
-                                     |br| ``--ntasks-per-node=`` is tasks per node, take care with your 
-                                     chosen number of cores per node. The default is one task per node, 
-                                     but note that other options can adjust the default of 1 core per task 
-                                     e.g. ``--cpus-per-task``. 
-==================================== =======================================================================
-
-.. _sattach_interactive_stanage:
-
-Rejoining an interactive job
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If we lose connection to an interactive job, we can use the ``sattach`` command which attaches to a running Slurm job step.
-Just keep in mind that ``sattach`` doesn't work for external or batch steps, as they aren't 
-set up for direct attachment.
-
-Example:
-
-.. code-block:: console
-
-    [te1st@login1 [stanage] ~]$ squeue --me
-            JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-            833300 interacti     bash   te1st  R      31:22      1 node001
-    [te1st@login1 [stanage] ~]$ sattach 833300.0 
-    [te1st@node001 [stanage] ~]$ echo $SLURM_JOB_ID
-    833300
-
-Here we attached to SLURM job 833300 step 0. For more information type ``man sattach``
-
-.. _submit_batch_stanage:
-
-Batch Jobs
-^^^^^^^^^^
-
-.. tip::
-
-    Batch jobs have larger resource limits than interactive jobs! For guidance on what these 
-    limits are and how best to select resources please see our :ref:`Choosing appropriate compute resources <Choosing-appropriate-compute-resources>` page.
-
-SLURM uses a single command to submit batch jobs:
-
-* :ref:`sbatch` Standard SLURM command with no support for interactivity or graphical applications.
-
-The `Slurm docs <https://slurm.schedmd.com/sbatch.html>`_ have a complete list of available ``sbatch`` options.
-
-The batch submission scripts are executed for submission as below:
-
-.. code-block:: sh
-
-    sbatch submission.sh
-
-Note the job submission number. For example:
-
-.. code-block:: sh
-
-    Submitted batch job 1226
-
-You can check your output log or error log file as below:
-
-.. code-block:: sh
-
-    cat JOB_NAME-1226.out
-
-There are numerous further options you can request in your batch submission files which are 
-detailed below:
-
-Name your job submission:
-
-.. code-block:: sh
-
-    #SBATCH --job-name=JOB_NAME
-
-Specify a number of nodes:
-
-.. code-block:: sh
-
-    #SBATCH --nodes=1
-
-Specify a number of tasks per node:
-
-.. code-block:: sh
-
-    #SBATCH --ntasks-per-node=4
-
-Specify a number of tasks:
-
-.. code-block:: sh
-
-    #SBATCH --ntasks=4
-
-Specify a number of cores per task:
-
-.. code-block:: sh
-
-    #SBATCH --cpus-per-task=4
-
-Request a specific amount of memory **per node**:
-
-.. code-block:: sh
-
-    #SBATCH --mem=16G
-
-Request a specific amount of memory **per CPU core**:
-
-.. code-block:: sh
-
-    #SBATCH --mem-per-cpu=16G
-
-Specify the job output log file name:
-
-.. code-block:: sh
-
-    #SBATCH --output=output.%j.test.out
-
-Request a specific amount of time:
-
-.. code-block:: sh
-
-    #SBATCH --time=00:30:00
-
-Request job update email notifications:
-
-.. code-block:: sh
-
-    #SBATCH --mail-user=username@sheffield.ac.uk
-
-For the full list of the available options please visit the SLURM manual webpage for 
-sbatch here: https://slurm.schedmd.com/sbatch.html
-
-Here is an example SLURM batch submission script that runs a fictitious program called ``foo``:
-
-.. code-block:: bash
-
-    #!/bin/bash
-    # Request 5 gigabytes of real memory (mem)
-    #SBATCH --mem=5G
-
-    # load the module for the program we want to run
-    module load apps/gcc/foo
-
-    # Run the program foo with input foo.dat
-    # and output foo.res
-    foo foo.dat foo.res
-
-.. _slurm_tasks_vs_cpus_per_task_stanage:
-
-Some things to note:
-
-* The first line always needs to be ``#!/bin/bash`` (to tell the scheduler that this is a bash batch script).
-* Comments start with a ``#``.
-* It is always best to fully specify job's resources with your submission script.
-* All **Slurm** Scheduler options start with ``#SBATCH``
-* You should use the SLURM option ``--ntasks=nn`` Number of "tasks", for programs using distributed 
-  parallelism (:ref:`MPI<parallel_MPI>`).
-* You should use the SLURM option ``--ntasks-per-node=nn`` Number of "tasks per node", for programs 
-  using distributed parallelism (:ref:`MPI<parallel_MPI>`).
-* You should use the SLURM option ``--cpus-per-task=nn`` Number of "cores per task", for programs using 
-  shared memory parallelism (:ref:`SMP<parallel_SMP>` or :ref:`openmp<parallel_SMP>`).
-* You will often require one or more ``module`` commands in your submission file to make programs and 
-  libraries available to your scripts. 
-
-
------
-
 Cluster job resource limits
 ---------------------------
 
-While the Sheffield cluster have very large amounts of resources to use for your jobs there 
+While the Sheffield clusters have very large amounts of resources to use for your jobs there 
 are limits applied in order for the schedulers to function.  The limits below apply to the default 
 free queues. Other queues may have different settings.
 
@@ -700,10 +518,6 @@ free queues. Other queues may have different settings.
 
 CPU Limits
 ^^^^^^^^^^
-
-Please note that the CPU limits do depend on the chosen :ref:`parallel <parallel>` environment for ShARC 
-jobs, with SMP type jobs limited to a maximum of 16 cores in either job type. Please also note that interactive 
-jobs with more than 16 cores are only available in the MPI parallel environment 
 
 .. warning::
 
@@ -726,12 +540,13 @@ Memory Limits
 Advanced / Automated job submission and management
 --------------------------------------------------
 
-Further information on advanced or automated job submission and management can be found on our dedicated page: :ref:`advanced_job_submission_control` 
+Further information on advanced or automated job submission and management can be found on our dedicated
+pages: :ref:`advanced_job_submission_control` and  :ref:`advanced_job_profiling_and_analysis`.
 
 Reference information and further resources
 -------------------------------------------
 
-Quick reference information for the SGE scheduler (ShARC), Bessemer scheduler (SLURM) and Stanage scheduler can be 
+Quick reference information for the SLURM scheduler used on both the Stanage and Bessemer clusters can be 
 found in the :ref:`scheduler-reference-info` section.
 
-Stanford Research Computing Center provide a `SGE to SLURM conversion guide <https://srcc.stanford.edu/sge-slurm-conversion>`_.
+An :ref:`SGE to SLURM conversion guide <sge-to-slurm>` is provided in the :ref:`Quick Reference section <cheatsheets>`.

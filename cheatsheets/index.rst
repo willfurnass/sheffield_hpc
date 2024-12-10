@@ -39,6 +39,8 @@ Linux Cheat Sheet
   
 ---------
 
+.. _sge-to-slurm:
+
 SGE to SLURM conversions
 ------------------------
 
