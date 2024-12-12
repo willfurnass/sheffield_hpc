@@ -71,7 +71,7 @@ The script requests 4 cores with a runtime of 60 mins and 8 GB of real memory pe
     * The ``#SBATCH --ntasks-per-node=1`` asks the scheduler for 1 task per node.
     * The ``#SBATCH --cpus-per-task=4`` asks the scheduler for 4 cores in the single task.
     * The arguments ``-gu`` and ``-driver null`` instruct Fluent that it will be running with no GUI to avoid errors caused by plot / figure export.
-    * The argument ``-sifile=./"$SLURM_JOBID"_fluent_server_info.txt`` tells Fluent to create a file in the working directory with the remote visualization server info.
+    * The argument ``-sifile=./"$SLURM_JOB_ID"_fluent_server_info.txt`` tells Fluent to create a file in the working directory with the remote visualization server info.
 
 
 .. code-block:: bash
@@ -88,7 +88,7 @@ The script requests 4 cores with a runtime of 60 mins and 8 GB of real memory pe
     #SBATCH --mail-type=ALL
     module load ANSYS/2023R2
 
-    fluent 2ddp -t$SLURM_CPUS_PER_TASK -gu -driver null -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
+    fluent 2ddp -t$SLURM_CPUS_PER_TASK -gu -driver null -sifile=./"$SLURM_JOB_ID"_fluent_server_info.txt -i test.jou
 
 .. tip::
 
@@ -128,7 +128,7 @@ The script requests 4 cores, 1 core per task (the default) with 4 tasks, with a 
     * The argument ``-scheduler_tight_coupling``  instructs Fluent to use Slurm to efficiently and safely do task spawning.
     * The arguments ``-gu`` and ``-driver null`` instruct Fluent that it will be running with no GUI to avoid errors caused by plot / figure export.
     * The argument ``-pib.infinipath`` instructs Fluent to use the high performance Omnipath networking. 
-    * The argument ``-sifile=./"$SLURM_JOBID"_fluent_server_info.txt`` tells Fluent to create a file in the working directory with the remote visualization server info.
+    * The argument ``-sifile=./"$SLURM_JOB_ID"_fluent_server_info.txt`` tells Fluent to create a file in the working directory with the remote visualization server info.
 
 .. code-block:: bash
 
@@ -144,7 +144,7 @@ The script requests 4 cores, 1 core per task (the default) with 4 tasks, with a 
 
     srun hostname -s > hosts.$SLURM_JOB_ID
 
-    fluent 2ddp -t$SLURM_NTASKS -mpi=intel -scheduler_tight_coupling -cnf=hosts.$SLURM_JOB_ID -gu -driver null  -pib.infinipath -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
+    fluent 2ddp -t$SLURM_NTASKS -mpi=intel -scheduler_tight_coupling -cnf=hosts.$SLURM_JOB_ID -gu -driver null  -pib.infinipath -sifile=./"$SLURM_JOB_ID"_fluent_server_info.txt -i test.jou
 
 
 The following is the **"specific"** batch submission script, ``cfd_job.sh``, to run the executable ``fluent`` with input journal file ``test.jou``, and carry out a 2D double precision CFD simulation.
@@ -175,7 +175,7 @@ The script requests 4 cores (1 core per task, 1 task per node on 4 nodes) with a
 
     srun hostname -s > hosts.$SLURM_JOB_ID
 
-    fluent 2ddp -t$SLURM_NTASKS -mpi=intel -scheduler_tight_coupling -cnf=hosts.$SLURM_JOB_ID -gu -driver null  -pib.infinipath -sifile=./"$SLURM_JOBID"_fluent_server_info.txt -i test.jou
+    fluent 2ddp -t$SLURM_NTASKS -mpi=intel -scheduler_tight_coupling -cnf=hosts.$SLURM_JOB_ID -gu -driver null  -pib.infinipath -sifile=./"$SLURM_JOB_ID"_fluent_server_info.txt -i test.jou
 
 
 Either job can then be submitted to the queue by typing:

@@ -51,7 +51,7 @@ supplied by Intel. An example of this using 2 cores is given below:
 
     module load impi/2018.5.288-iccifort-2019.5.281
 
-    MACHINEFILE="machinefile.$JOB_ID"
+    MACHINEFILE="machinefile.$SLURM_JOB_ID"
 
     # Show which nodes you have been allocated CPU cores on
     echo -e "\nShow node core allocation:\n"

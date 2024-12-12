@@ -23,7 +23,9 @@ You can then load a specific version of R using: ::
    module load R/3.6.2-foss-2019b
    module load R/4.0.0-foss-2020a
 
-R can then be run with: ::
+R can then be run with: 
+
+.. code-block:: console
 
    $ R
 
@@ -45,16 +47,16 @@ We assume you'll call this ``my_job.slurm``:
 
    module load R/3.6.2-foss-2019b  # Recommended to load a specific version of R
 
-   R CMD BATCH my_code.r my_code.r.o$JOB_ID
+   R CMD BATCH my_code.r my_code.r.${SLURM_JOB_ID}.out
 
 Note that R must be called with both the ``CMD`` and ``BATCH`` options 
 which tell it to run an R program, 
 in this case ``my_code.r``. 
 If you do not do this, R will attempt to open an interactive prompt.
 
-The final argument, ``my_code.r.o$JOBID``, tells R to send output to a file with this name. 
-Since ``$JOBID`` will always be unique, this ensures that all of your output files are unique. 
-Without this argument R sends all output to a file called ``my_code.Rout``.
+The final argument, ``my_code.r.${SLURM_JOB_ID}.out``, tells R to send output to a file with this name. 
+Since ``my_code.r.${SLURM_JOB_ID}.out`` will always be unique, this ensures that all of your output files are unique. 
+Without this argument R sends all output to a file called ``my_code.r.Rout``.
 
 Ensuring that ``my_code.r`` and ``my_job.slurm`` are both in your current working directory, 
 submit your job to the batch system ::
@@ -68,7 +70,7 @@ Replace ``my_job.slurm`` with the name of your submission script.
    (in a file called ``.RData``) 
    when a script exits and reload them when it starts from the same directory. 
    To disable this, add the ``--no-save`` and ``--no-restore`` options to your command 
-   e.g. ``R CMD BATCH --no-save --no-restore my_code.r my_code.r.o$JOB_ID``.
+   e.g. ``R CMD BATCH --no-save --no-restore my_code.r my_code.r.${SLURM_JOB_ID}.out``.
 
 Graphical output
 ----------------
@@ -159,8 +161,7 @@ For example, consider this C program:
 This makes use of R's ``qbeta`` function. 
 You can compile and run this on a worker node as follows.
 
-Start a session on a worker node with ``qrshx`` and load a version of R: ::
-start an :ref:`interactive session <submit_interactive_bessemer>` on a worker node
+Start an :ref:`interactive session <submit_interactive_bessemer>` on a worker node
 and load a version of R: ::
 
    module load R/3.6.2-foss-2019b
@@ -174,22 +175,13 @@ see section 6.7 of the document `Writing R extensions <https://cran.r-project.or
 
 Installation Notes
 ------------------
-These notes are primarily for administrators of the system.
 
-R/4.0.0-foss-2020a
-^^^^^^^^^^^^^^^^^^
+This section is primarily for administrators of the system.
 
-Installed using an eponymous easyconfig,
-which is the easyconfig that shipped with EasyBuild 4.3.1
+R has been installed using the default Easybuild config files,
 minus any of the configuration to install 765 packages from CRAN
 (i.e. just base R was installed).
 
-R/3.6.2-foss-2019b
-^^^^^^^^^^^^^^^^^^
-
-Installed using an eponymous easyconfig,
-which is the easyconfig that shipped with EasyBuild 4.2.2
-minus any of the configuration to install 765 packages from CRAN
-(i.e. just base R was installed).
+Build logs and test reports can be found in ``$EBOOTR/easybuild`` with a given module loaded.
 
 NOTE: all R versions patched to address the CVE vulnerability using R-4.x_fix-CVE-2024-27322.patch

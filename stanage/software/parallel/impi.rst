@@ -48,7 +48,7 @@ supplied by Intel. An example of this using 2 cores on one node is given below:
 
     module load impi/2021.7.1-intel-compilers-2022.2.1
 
-    MACHINEFILE="machinefile.$JOB_ID"
+    MACHINEFILE="machinefile.$SLURM_JOB_ID"
 
     # Show which node you have been allocated CPU cores on
     echo -e "\nShow node core allocation:\n"

@@ -490,7 +490,7 @@ job records held by the scheduler with the :ref:`sacct` referenced above as well
 job logs.
  
 These output and error log files will be generated in the job working directory with the job name or 
-output log file name as of the form ``slurm-$JOBID.out`` where ``$JOBID`` is the scheduler provided job id. 
+output log file name as of the form ``slurm-$SLURM_JOB_ID.out`` where ``$SLURM_JOB_ID`` is the scheduler provided job id. 
 Looking at these logs should indicate the source of any issues.
 
 :ref:`sacct` will also give a job's **state** and **ExitCode** field with each job.

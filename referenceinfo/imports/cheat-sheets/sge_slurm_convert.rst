@@ -15,7 +15,7 @@ Cluster status                      qhost -q                            sinfo
 GUI                                 qmon                                sview       
 **Environmental variables**
 ------------------------------------------------------------------------------------------------                               
-Job ID                              $JOB_ID                             $SLURM_JOBID 
+Job ID                              $JOB_ID                             $SLURM_JOB_ID 
 Submit directory                    $SGE_O_WORKDIR                      $SLURM_SUBMIT_DIR 
 Submit host                         $SGE_O_HOST                         $SLURM_SUBMIT_HOST 
 Node list                           $PE_HOSTFILE                        $SLURM_JOB_NODELIST 
