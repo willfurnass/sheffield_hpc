@@ -73,59 +73,111 @@ Batch jobs
 
 ANSYS LS-DYNA is capable of running in parallel on a single node or across multiple nodes and this is facilitated by :ref:`MPI <parallel_MPI>`. 
 
-Batch Submission Script
-^^^^^^^^^^^^^^^^^^^^^^^
+Single-Node & Multi-Node Batch Job Scripts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sample SMP LS-DYNA Batch Job Script
-"""""""""""""""""""""""""""""""""""""""""
+Create a Slurm submission script called ``batch.sh`` containing:
+
+.. tabs:: 
+
+    .. group-tab:: Multi-Node (MPI)
+
+        .. code-block:: bash
+            
+            #!/bin/bash
+            #SBATCH --ntasks=4
+            #SBATCH --mem=4000
+            #SBATCH --job-name=ANSYS-LSDYNA-MPI-Example
+            #SBATCH --output=ANSYS-LSDYNA-MPI-Example
+            #SBATCH --time=01:00:00
+            #SBATCH --mail-user=a.person@sheffield.ac.uk
+            #SBATCH --mail-type=ALL
+            
+            #Only load ANSYS
+            module load ANSYS/2023R2
+            
+            #Set license type and LM server
+            export LSTC_LICENSE_FILE=network
+            export LSTC_LICENSE_SERVER=ansyslm.shef.ac.uk
+            export LSTC_LICENSE=ANSYS
+            
+            # Add the LS-DYNA executables to the PATH
+            export PATH=$EBROOTANSYS/v232/ansys/bin/linx64/:$PATH
+            
+            # Add the MPI executables and libs to the PATH / LD_LIBRARY_PATH
+            # Depending on ANSYS version the MPI paths may require changing.
+            export PATH=$EBROOTANSYS/v232/commonfiles/MPI/Intel/2021.8.0/linx64/bin/:$PATH
+            export LD_LIBRARY_PATH=$EBROOTANSYS/v232/commonfiles/MPI/Intel/2021.8.0/linx64/lib/:$LD_LIBRARY_PATH
+            
+            MACHINEFILE="machinefile.$SLURM_JOB_ID"
+            srun hostname | awk -F '.' '{print $1}' | sort | uniq -c | awk '{print $2 ":" $1}' > $MACHINEFILE
+            echo "MACHINE FILE CREATED: $MACHINEFILE"
+            
+            # Setup my variables
+            #
+            # lsdyna_sp_mpp.e is for LS-DYNA single precision massively parallel.
+            # lsdyna_dp_mpp.e is for LS-DYNA double precision massively parallel.
+            
+            SOLVER=lsdyna_dp_mpp.e
+            INPUT=i.k
+            MEMORY=50m
+            
+            #Run your LS-DYNA work below:
+            mpirun -hostfile $MACHINEFILE $SOLVER i=$INPUT memory=$MEMORY
+        
+
+    .. group-tab:: Single-Node
+
+        .. code-block:: bash
+        
+        
+            #!/bin/bash
+            #SBATCH --ntasks-per-node=4
+            #SBATCH --mem=4000
+            #SBATCH --job-name=ANSYS-LSDYNA-Example
+            #SBATCH --output=ANSYS-LSDYNA-Example
+            #SBATCH --time=01:00:00
+            #SBATCH --mail-user=a.person@sheffield.ac.uk
+            #SBATCH --mail-type=ALL
+         
+            #Only load ANSYS
+            module load ANSYS/2023R2
+         
+            #Set license type and LM server 
+            export LSTC_LICENSE_FILE=network
+            export LSTC_LICENSE_SERVER=ansyslm.shef.ac.uk
+            export LSTC_LICENSE=ANSYS
+         
+            # Add the LS-DYNA executables to the PATH
+            export PATH=$ANSYSPATH/ansys/bin/linx64/:$PATH
+         
+            # Add the MPI executables and libs to the PATH / LD_LIBRARY_PATH
+            # Depending on ANSYS version the MPI paths may require changing.
+            export PATH=$ANSYSPATH/commonfiles/MPI/Intel/2021.8.0/linx64/bin/:$PATH
+            export LD_LIBRARY_PATH=$ANSYSPATH/commonfiles/MPI/Intel/2021.8.0/linx64/lib/:$LD_LIBRARY_PATH
+         
+            # Setup my variables
+            #
+            # lsdyna_sp.e is for LS-DYNA single precision.
+            # lsdyna_dp.e is for LS-DYNA double precision.
+         
+            SOLVER=lsdyna_dp.e
+            INPUT=i.k
+            MEMORY=50m
+         
+            #Run your LS-DYNA work below:
+            $SOLVER i=$INPUT memory=$MEMORY ncpu=$SLURM_NTASKS
+
+
+Further details about how to construct batch jobs can be found in the 
+:ref:`batch submission guide <submit_batch_stanage>`.
+
+The job is submitted to the queue by entering the command:
 
 .. code-block:: bash
 
+    sbatch batch.sh
 
-    #SBATCH --ntasks-per-node=4
-    #SBATCH --mem=4000
-    #SBATCH --job-name=ANSYS-LSDYNA-Example
-    #SBATCH --output=ANSYS-LSDYNA-Example
-    #SBATCH --time=01:00:00
-    #SBATCH --mail-user=a.person@sheffield.ac.uk
-    #SBATCH --mail-type=ALL
-
-    #Only load ANSYS
-    module load ANSYS/2023R2
-
-    #Set license type and LM server 
-    export LSTC_LICENSE_FILE=network
-    export LSTC_LICENSE_SERVER=ansyslm.shef.ac.uk
-    export LSTC_LICENSE=ANSYS
-
-    # Add the LS-DYNA executables to the PATH
-    export PATH=$ANSYSPATH/ansys/bin/linx64/:$PATH
-
-    # Add the MPI executables and libs to the PATH / LD_LIBRARY_PATH
-    # Depending on ANSYS version the MPI paths may require changing.
-    export PATH=$ANSYSPATH/commonfiles/MPI/Intel/2021.8.0/linx64/bin/:$PATH
-    export LD_LIBRARY_PATH=$ANSYSPATH/commonfiles/MPI/Intel/2021.8.0/linx64/lib/:$LD_LIBRARY_PATH
-
-    # Setup my variables
-    #
-    # lsdyna_sp.e is for LS-DYNA single precision.
-    # lsdyna_dp.e is for LS-DYNA double precision.
-
-    SOLVER=lsdyna_dp.e
-    INPUT=i.k
-    MEMORY=50m
-
-    #Run your LS-DYNA work below:
-    $SOLVER i=$INPUT memory=$MEMORY ncpu=$SLURM_NTASKS
-
-Further details about how to construct batch jobs can be found on the 
-:ref:`batch submission guide <submit_batch_stanage>` page
-
-The job is submitted to the queue by typing:
-
-.. code-block:: bash
-
-    sbatch my_job_script.sh
 
 -----------------------
 
@@ -158,4 +210,4 @@ For other issues or if you wish to purchase some reserved licenses please
 :ref:`contact IT Services<need_help>`.
 
 If desired to perform post modelling analysis etc... the ANSYS Workbench GUI 
-executable can be launched with the  ``runwb2`` command. 
+executable can be launched with the  ``runwb2`` command, from within a :ref:`flight session <flight-desktop>`.
