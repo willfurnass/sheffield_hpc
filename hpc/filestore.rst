@@ -5,7 +5,7 @@ Filestores
 
 Every HPC user has access to *up to* five different storage areas:
 
-* :ref:`home_dir`: per-user :term:`backed-up <Mirrored backups>`, :term:`snapshotted <Snapshotted storage>` storage
+* :ref:`home_dir`: per-user storage
 * :ref:`fastdata_dir`: high-performance shared filesystem for temporary data - optimised for reading/writing large files from multiple nodes and threads simultaneously
 * :ref:`shared_dir`: per-PI shared storage areas (snapshotted and backed-up) for project data - can be accessed from non-HPC machines too
 * :ref:`scratch_dir`: per-node temporary storage - useful for reading/writing lots of small files within *one job*
