@@ -156,7 +156,7 @@ The Markup
 
         This section is primarily for administrators of the system. |softwarename| has been installed using the default Easybuild config files.
 
-        Build logs and test reports can be found in ``$EBDEVELSOFTWARENAME`` with a given module loaded.
+        Build logs and test reports can be found in ``$EBOOTSOFTWARENAME/easybuild`` with a given module loaded.
 
         Testing method
         ^^^^^^^^^^^^^^^
