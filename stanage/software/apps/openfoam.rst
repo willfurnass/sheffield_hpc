@@ -162,6 +162,15 @@ In the batch script example above my_custom_decomposeParDict_4 (for 4 cores) is 
 
     // ************************************************************************* //
 
+.. attention::
+
+    OpenFOAM can cause a few perfomance issues on Lustre / Fastdata. The dropdown below discuses this further and how to remedy it.
+
+    .. dropdown:: OpenFoam Issues With Lustre
+        
+        .. include:: /referenceinfo/imports/software/OpenFoam/openfoam_best_practice.rst
+
+
 Installation notes
 ------------------
 
@@ -169,7 +178,7 @@ Installation method
 ^^^^^^^^^^^^^^^^^^^
 
 This section is primarily for administrators of the system. OpenFOAM has been installed using the default Easybuild config files.
-Build logs and test reports can be found in ``$EBDEVELOPENFOAM`` with a given module loaded.
+Build logs and test reports can be found in ``$$EBROOTOPENFOAM/easybuild`` with a given module loaded.
 
 Testing method
 ^^^^^^^^^^^^^^^

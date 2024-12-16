@@ -93,6 +93,15 @@ The following is an example batch job running the pitzDaily example model:
 
 ------------
 
+
+.. attention::
+
+    OpenFOAM can cause a few perfomance issues on Lustre / Fastdata. The dropdown below discuses this further and how to remedy it.
+
+    .. dropdown:: OpenFoam Issues With Lustre
+        
+        .. include:: /referenceinfo/imports/software/OpenFoam/openfoam_best_practice.rst
+
 Installation note for Administrators:
 -------------------------------------
 
