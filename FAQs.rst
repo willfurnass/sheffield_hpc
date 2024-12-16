@@ -56,17 +56,12 @@ or temporarily moved to your ``/mnt/parscratch`` area on Stanage or ``/fastdata`
 
 ------
 
+.. _myapps:
+
 I can not log in to a cluster via the MyApps applications portal
 -----------------------------------------------------------------
 
-Most of the time such problems arise due to Java version issues. As Java updates are released regularly, these problems are usually caused by the changes to the Java plug-in for the browser.
-
-Most users can swap to using the HTML5 client to resolve these problems via the **"Client Options"** link at the bottom right of the login window and then clicking the **"To use the HTML5 Client login"** link.
-
-It can also help to try a different browser to see if it makes any difference.
-All failing, you may have to fall back to one of the `non-browser access methods <https://docs.hpc.shef.ac.uk/en/latest/hpc/connecting.html#connecting-to-a-cluster-using-ssh>`_.
-
-------
+As of ``16/12/2024``, MyApps on Bessemer has been retired. Users are urged to preferably use :ref:`Flight Graphical sessions<flight-desktop>` on stanage or :ref:`X11 Forwarding<x11_forwarding>` if they need a GUI Bessemer, though the latter is not as perfomative.
 
 
 .. _man_pages:
@@ -866,3 +861,37 @@ If you are rebuilding conda environments in your fastdata area and want to remov
         conda remove -n <environment_name> --all
 
 |br|
+
+.. _x11_forwarding:
+
+What is X11 Forwarding?
+-----------------------
+
+X11 forwarding is a feature in SSH (Secure Shell) that allows Linux machines including the Bessemer HPC clusters  push interactive windows to be displayed on your local machine over a network. Stanage uses :ref:`Flight <flight-desktop>`  for interactive graphical sessions. **Flight is the preferred option in terms of performance and features.**
+
+.. tabs::
+
+   .. group-tab:: Windows
+
+        Windows does not natively have the ability to receive X windows, so you will need to use an :ref:` SSH session with an SSH Client <connecting>` which supports X11 GUI forwarding for example MobaXterm. The link should show you how to enable X11 Forwarding for your SSH sessions on MobaXterm.
+
+   .. group-tab:: macOS
+
+        Like Windows, macOS does not natively have the ability to receive X windows. The most commonly used X server for macOS is :ref:`XQuartz <macosquartz>`.
+
+   .. group-tab:: Linux
+
+        Almost all Linux versions natively support X11 forwarding so you do not need to install any other client. You just need to add the `-X` option to your SSH command in order to enable X11 forwarding.
+
+        .. code-block:: console
+
+                ssh -X UserName@bessemer.sheffield.ac.uk
+
+X11 forwarding has the following drawbacks:
+
+1. **Latency** : Interactions over X11 forwarding may feel sluggish over slow network connections because it transmits graphical data.
+
+2. **Inefficient Rendering** : Applications that require high frame rates or frequent graphical updates, such as animations, may struggle because of X11's inefficient rendering pipeline.  It does not take full advantage of modern hardware to offer features such as hardware accelerated rendering.
+
+While X11 is a very helpful tool in many scenarios, its disadvantages make it less ideal for modern graphical computing. We suggest you migrate your workflow to Stanage and use :ref:`Flight Graphical sessions<flight-desktop>`, if you require a graphical user interface on the HPC clusters.
+

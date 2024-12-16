@@ -252,6 +252,10 @@ For personal systems you can download and install the *Installer edition* of `Mo
 
 - :ref:`Setting up Profiles in MobaXterm <mobaxterm_connecting_profile_setup>`.
 
+----------
+
+.. _macosquartz:
+
 SSH client software on Mac OS/X and Linux
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

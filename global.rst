@@ -10,4 +10,3 @@
 
 .. role:: underline-bold
     :class: underline-bold
-

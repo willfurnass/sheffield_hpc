@@ -15,7 +15,6 @@ This guide will get you set up using the University's clusters
 
    what-is-hpc
    accounts
-   myapps
    connecting
    mfa
    filestore
