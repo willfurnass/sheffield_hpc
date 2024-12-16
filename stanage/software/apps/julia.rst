@@ -16,13 +16,12 @@ The Julia programming language is a flexible dynamic language, appropriate for s
 
 Interactive Usage
 -----------------
-After connecting to Stanage,  start an interactive session with the ``srun --pty bash –i`` command.
+
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
 
 Load a particular version of Julia with:
 
-.. code-block:: bash
-
-   module load Julia/1.9.0-linux-x86_64
+.. include:: /referenceinfo/imports/stanage/packages/julia-ml-el7-icelake-znver-stanage.rst
 
 You can then start Julia with ``julia``.
 

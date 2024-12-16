@@ -31,11 +31,9 @@ Interactive Usage
 
 The latest version of Nextflow (currently version |currentver|) is made available with the commands:
 
-.. code-block:: console
-        
-    module load Nextflow/23.10.0
+.. include:: /referenceinfo/imports/stanage/packages/nextflow-ml-el7-icelake-znver-stanage.rst
 
-Note: The module file also loads ``Java/11.0.16``
+Note: These module files also loads ``Java/11.0.16``
 
 You can now run the ``nextflow`` command:
 

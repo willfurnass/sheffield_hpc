@@ -35,13 +35,7 @@ Using Conda Python
 
 Anaconda Python can be loaded with one of the following:
 
-.. code-block:: bash
-
-    module load Anaconda3/2019.07
-    module load Anaconda3/2020.11 
-    module load Anaconda3/2021.11
-    module load Anaconda3/2022.05
-    module load Anaconda3/2022.10
+.. include:: /referenceinfo/imports/stanage/packages/anaconda3-ml-el7-icelake-znver-stanage.rst
 
 The ``root`` conda environment (the default) provides Python 3 and no extra
 modules, it is automatically updated, and not recommended for general use, just
@@ -205,26 +199,11 @@ This guide explains how to set up Python environments using ``venv`` as an alter
 specifically for users who want to leverage the Python interpreters optimised for the HPC environment.
 By following this guide, you will learn how to create, activate, and manage a virtual environment that integrates seamlessly with other module system built software.
 
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
+
 Python can be loaded with one of the following:
 
-.. code-block:: bash
-
-   module load Python/3.9.6-GCCcore-11.2.0-bare
-   module load Python/3.9.6-GCCcore-11.2.0
-   module load Python/3.9.5-GCCcore-10.3.0-bare
-   module load Python/3.9.5-GCCcore-10.3.0
-   module load Python/3.8.6-GCCcore-10.2.0
-   module load Python/3.8.2-GCCcore-9.3.0
-   module load Python/3.11.3-GCCcore-12.3.0
-   module load Python/3.10.8-GCCcore-12.2.0-bare
-   module load Python/3.10.8-GCCcore-12.2.0
-   module load Python/3.10.4-GCCcore-11.3.0-bare
-   module load Python/3.10.4-GCCcore-11.3.0
-   module load Python/2.7.18-GCCcore-9.3.0
-   module load Python/2.7.18-GCCcore-12.2.0-bare
-   module load Python/2.7.18-GCCcore-11.3.0-bare
-   module load Python/2.7.18-GCCcore-11.2.0-bare
-   module load Python/2.7.18-GCCcore-10.2.0
+.. include:: /referenceinfo/imports/stanage/packages/python-ml-el7-icelake-znver-stanage.rst
 
 This command loads a version of Python, built using a version of GCCcore.
 Make sure to adjust the module name to match GCC/GCCcore version of any other modules you need to load.

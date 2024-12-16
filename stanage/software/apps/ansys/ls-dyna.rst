@@ -25,7 +25,7 @@ CPU and can scale to hundreds of cores.
 
 ----------------
 
-.. include:: /referenceinfo/imports/software/ansys/module-load-list-stanage.rst
+.. include:: /referenceinfo/imports/stanage/packages/ansys-ml-el7-icelake-znver-stanage.rst
 
 --------------------
 

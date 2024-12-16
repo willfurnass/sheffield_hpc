@@ -14,15 +14,10 @@ It also provides some optimised LAPACK routines.
 Usage
 -----
 
-OpenBLAS can be activated using one of: ::
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
 
-   module load OpenBLAS/0.3.7-GCC-8.3.0      # foss-2019b toolchain
-   module load OpenBLAS/0.3.9-GCC-9.3.0      # foss-2020a toolchain
-   module load OpenBLAS/0.3.12-GCC-10.2.0    # foss-2020b toolchain
-   module load OpenBLAS/0.3.15-GCC-10.3.0    # foss-2021a toolchain
-   module load OpenBLAS/0.3.18-GCC-11.2.0    # foss-2021b toolchain
-   module load OpenBLAS/0.3.20-GCC-11.3.0    # foss-2022a toolchain
-   module load OpenBLAS/0.3.21-GCC-12.2.0    # foss-2022b toolchain
+OpenBLAS can be activated using one of:
 
+.. include:: /referenceinfo/imports/stanage/packages/openblas-ml-el7-icelake-znver-stanage.rst
    
 which also loads a version of the :ref:`GCC <gcc_stanage>` compiler.

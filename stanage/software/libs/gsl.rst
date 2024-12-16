@@ -8,7 +8,7 @@ GSL
 
 .. sidebar:: |softwarename|
    
-   :Version: |currentver|
+   :Latest Version: |currentver|
    :URL: https://www.gnu.org/software/gsl/
    :Documentation: https://www.gnu.org/software/gsl/doc/html/index.html
 
@@ -23,17 +23,11 @@ See `here <https://www.gnu.org/software/gsl/doc/html/intro.html>`__ for the type
 Usage
 -----
 
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
+
 The GSL library can be loaded by running one of: 
 
-.. code-block::
-
-	module load GSL/2.5-GCC-7.3.0-2.30
-	module load GSL/2.6-GCC-9.3.0
-	module load GSL/2.6-GCC-10.2.0
-	module load GSL/2.7-GCC-10.3.0
-	module load GSL/2.7-GCC-11.2.0
-	module load GSL/2.7-GCC-11.3.0
-	module load GSL/2.7-GCC-12.2.0
+.. include:: /referenceinfo/imports/stanage/packages/gsl-ml-el7-icelake-znver-stanage.rst
 
 which will also load a particular :ref:`GCC <gcc_stanage>`,
 *or*: 

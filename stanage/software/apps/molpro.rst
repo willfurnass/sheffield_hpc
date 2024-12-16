@@ -17,9 +17,11 @@ Molpro is a comprehensive system of ab initio programs for advanced molecular el
 Usage
 -----
 
-Molpro 2015.1.22 can be activated using the module file::
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
 
-    module load Molpro/mpp-2022.3.2.linux_x86_64_sockets
+Molpro 2022.3.2 can be loaded using the following command:
+
+.. include:: /referenceinfo/imports/stanage/packages/molpro-ml-el7-icelake-znver-stanage.rst
 
 The Molpro executable is ``molpro``.
 

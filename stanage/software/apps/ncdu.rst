@@ -1,6 +1,6 @@
 .. |softwarename| replace:: ncdu
 .. |currentver| replace:: 1.18
-.. |ebtoolchain| replace:: GCCcore-12.3.0
+.. |ebtoolchain| replace:: GCC-12.3.0
 
 .. _ncdu_stanage:
 
@@ -27,22 +27,7 @@ Interactive usage
 
 The latest version of |softwarename| on Stanage (currently version |currentver|) is made available with the command:
 
-.. tabs::
-
-           .. group-tab:: icelake
-
-                .. code-block:: bash
-
-                        module load ncdu/1.18-GCC-12.3.0
-                        module load ncdu/1.17-GCC-11.3.0
-                        module load ncdu/1.15.1-GCCcore-9.3.0
-                        
-           .. group-tab:: znver3
-
-                .. code-block:: bash
-
-                        module load ncdu/1.18-GCC-12.3.0 
-
+.. include:: /referenceinfo/imports/stanage/packages/ncdu-ml-el7-icelake-znver-stanage.rst
 
 After this any of the |softwarename| commands can be run from the terminal prompt. The available 
 commands can be obtained using:

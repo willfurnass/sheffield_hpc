@@ -5,7 +5,7 @@ fftw
 
 .. sidebar:: fftw
 
-   :Latest version: 3.3.8
+   :Latest version: 3.3.10
    :URL: https://www.fftw.org/
 
 FFTW is a C subroutine library for
@@ -18,16 +18,12 @@ i.e. the discrete cosine/sine transforms or DCT/DST).
 
 Usage
 -----
-To make this library available, run one the following: ::
 
-      module load FFTW/3.3.8-gompi-2019b
-      module load FFTW/3.3.8-gompi-2020a
-      module load FFTW/3.3.8-gompi-2020b
-      module load FFTW/3.3.10-GCC-11.3.0
-      module load FFTW/3.3.10-GCC-12.2.0
-      module load FFTW.MPI/3.3.10-gompi-2022a
-      module load FFTW.MPI/3.3.10-gompi-2022b
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
 
+To make this library available, run one the following:
+
+.. include:: /referenceinfo/imports/stanage/packages/fftw-ml-el7-icelake-znver-stanage.rst
 
 - `gompi` versions are a subset of the :ref:`foss toolchain <stanage_eb_toolchains>`
   and also load GCC and OpenMPI

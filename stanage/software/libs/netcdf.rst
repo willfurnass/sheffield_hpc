@@ -12,43 +12,25 @@ netCDF
 Usage
 -----
 
-To **load this library** plus
+All of the module files for netCDF will also load:
 
 * the :ref:`gompi or iimpi toolchain<stanage_eb_toolchains>`
 * an :ref:`HDF5 library <hdf5_stanage>`
 * (and the zlib and Szip libraries)
 
-run *one* of the following: ::
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
 
-   module load netCDF/4.7.4-gompi-2020b
-   module load netCDF/4.8.0-gompi-2021a
-   module load netCDF/4.8.1-gompi-2021b
-   module load netCDF/4.9.0-gompi-2022a
-   module load netCDF/4.9.0-gompi-2022b
+To load **netCDF** run *one* of the following:
 
-To load the **Fortran bindings** for netCDF plus
+.. include:: /referenceinfo/imports/stanage/packages/netcdf-ml-el7-icelake-znver-stanage.rst
 
-* netCDF itself
-* the :ref:`gompi or iimpi toolchain<stanage_eb_toolchains>`
-* an :ref:`HDF5 library <hdf5_stanage>`
-* (and the zlib and Szip libraries)
+To load the **Fortran bindings** for netCDF run *one* of the following:
 
-run *one* of the following: ::
+.. include:: /referenceinfo/imports/stanage/packages/netcdf-fortran-ml-el7-icelake-znver-stanage.rst
 
-   module load netCDF-Fortran/4.5.3-gompi-2021a
-   module load netCDF-Fortran/4.6.0-gompi-2022a
-   module load netCDF-Fortran/4.6.0-gompi-2022b
+To load the **C++ bindings** for netCDF run *one* of the following:
 
-To load the **C++ bindings** for netCDF plus
-
-* netCDF itself
-* the :ref:`gompi or iimpi toolchain<stanage_eb_toolchains>`
-* an :ref:`HDF5 library <hdf5_stanage>`
-* (and the zlib and Szip libraries)
-
-run *one* of the following: ::
-
-   module load netCDF-C++4/4.3.1-gompi-2022a
+.. include:: /referenceinfo/imports/stanage/packages/netcdf-c++4-ml-el7-icelake-znver-stanage.rst
 
 Testing
 -------

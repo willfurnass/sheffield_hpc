@@ -5,7 +5,7 @@ libunistring
 
 .. sidebar:: libunistring
     
-    :Versions: 0.9.10, 1.0
+    :Latest Version: 1.0
     :Documentation:  http://www.gnu.org/software/libunistring/
 
 
@@ -22,13 +22,12 @@ manipulating C strings according to the Unicode standard.
 
 Usage
 -----
+
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
+
 To make the library available, run one of the following: 
 
-.. code-block:: 
-         
-      module load libunistring/0.9.10-foss-2019b
-      module load libunistring/0.9.10-GCCcore-10.3.0                     
-      module load libunistring/1.0-GCCcore-11.3.0  
+.. include:: /referenceinfo/imports/stanage/packages/libunistring-ml-el7-icelake-znver-stanage.rst
 
 This correctly populates the environment variables ``LD_LIBRARY_PATH``, ``LIBRARY_PATH`` and ``CPATH``.
 

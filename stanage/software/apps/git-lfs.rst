@@ -22,11 +22,7 @@ Interactive Usage
 
 The latest versions of |softwarename| is made available with the command:
 
-.. code-block:: console
-        
-    module load git-lfs/3.4.0
-    module load git-lfs/3.2.0
-        
+.. include:: /referenceinfo/imports/stanage/packages/git-lfs-ml-el7-icelake-znver-stanage.rst
 
 You can now run the ``git lfs`` command:
 

@@ -5,7 +5,7 @@ PROJ
 
 .. sidebar:: PROJ
 
-   :Versions: 9.1.1, 8.1.0, 7.2.1
+   :Latest Version: 9.1.1
    :URL: https://github.com/OSGeo/proj
 
 PROJ consists of programs and a library for managing cartographic projections.
@@ -13,20 +13,17 @@ PROJ consists of programs and a library for managing cartographic projections.
 Usage
 -----
 
-By running one of the following ::
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
+
+Running one of the following:
         
-        module load PROJ/7.2.1-GCCcore-10.2.0
-        module load PROJ/8.1.0-GCCcore-11.2.0
-        module load PROJ/9.1.1-GCCcore-12.2.0
+.. include:: /referenceinfo/imports/stanage/packages/proj-ml-el7-icelake-znver-stanage.rst
 
-
-you
+will
 
 * add several PROJ programs to your ``PATH`` environment variable
 * allow other programs to make use of (dynamically link against) the PROJ library
-* activate version 10.2.0 of the GCC compiler (as its C++ standard library is required when using PROJ.7)
-* activate version 11.2.0 of the GCC compiler (as its C++ standard library is required when using PROJ.8)
-* activate version 12.2.0 of the GCC compiler (as its C++ standard library is required when using PROJ.9)
+* activate a version of the GCC compiler (as its C++ standard library is required when using PROJ.X)
 
 You can run ``proj`` to test that you are running the required version ::
 

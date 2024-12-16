@@ -5,7 +5,7 @@ Xvfb
 
 .. sidebar:: Xvfb
 
-    :Versions: 1.20.9
+    :Lateset Version: 21.1.6
     :Documentation: https://linux.die.net/man/1/xvfb
     :URL: https://linux.die.net/  
 
@@ -29,10 +29,9 @@ Usage
 
 .. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
 
-xvfb can be loaded with one of the following::
+xvfb can be loaded with one of the following:
 
-    module load Xvfb/1.20.9-GCCcore-9.3.0
-    module load Xvfb/1.20.9-GCCcore-10.2.0
+.. include:: /referenceinfo/imports/stanage/packages/xvfb-ml-el7-icelake-znver-stanage.rst
 
 For example, to 
 
@@ -66,4 +65,4 @@ you could add something similar to the following to your batch job submission sc
 Installation notes
 ------------------
 
-xvfb was installed using Easybuild 4.7.0, build details can be found in folder $EBROOTXVFB/easybuild with the module loaded.
+xvfb was installed using Easybuild, build details can be found in folder $EBROOTXVFB/easybuild with a given module loaded.

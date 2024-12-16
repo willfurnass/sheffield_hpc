@@ -21,13 +21,12 @@ Castep is free for academic use.
 
 Interactive Usage
 -----------------
-After connecting to Stanage,  start an interactive session with the ``srun --pty bash –i`` command.
+
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
 
 Castep can be made available by running:
 
-.. code-block:: bash
-
-   module load CASTEP/23.1-intel-2022a
+.. include:: /referenceinfo/imports/stanage/packages/castep-ml-el7-icelake-znver-stanage.rst
 
 Castep has multiple executables that carry out various calculations and procedures. To list them all you will need to list its been directory. In the case of version 23.1 this can be by typing  
 

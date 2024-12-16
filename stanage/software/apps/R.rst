@@ -24,13 +24,9 @@ Interactive Usage
 
 .. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
 
-You can then load a specific version of R using: ::
-        
-   module load R/4.4.1-foss-2022b  (Recommended)
-   module load R/4.2.2-foss-2022b
-   module load R/4.2.1-foss-2022a
-   module load R/4.0.5-foss-2020b
-   module load R/4.0.0-foss-2020a
+You can then load a specific version of R using:
+
+.. include:: /referenceinfo/imports/stanage/packages/r-ml-el7-icelake-znver-stanage.rst
 
 R can then be run with: ::
 

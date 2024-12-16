@@ -5,7 +5,7 @@ cfitsio
 
 .. sidebar:: cfitsio
 
-   :Versions: 3.48, 3.49
+   :Latest Version: 4.2.0
    :URL: http://heasarc.gsfc.nasa.gov/fitsio/fitsio.html
 
 CFITSIO is a library of C and Fortran subroutines for reading and writing data
@@ -15,15 +15,12 @@ the programmer from the internal complexities of the FITS format.
 
 Usage
 -----
-To make this library available, run one of the following module commands ::
 
-        module load CFITSIO/3.48-GCCcore-9.3.0
-        module load CFITSIO/3.49-GCCcore-10.2.0
-        module load CFITSIO/3.49-GCCcore-10.3.0
-        module load CFITSIO/3.49-GCCcore-11.2.0
-        
-The modulefile creates a variable ``$CPATH`` which is the path
-to the include directory.
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
+
+To make this library available, run one of the following module commands:
+
+.. include:: /referenceinfo/imports/stanage/packages/cfitsio-ml-el7-icelake-znver-stanage.rst
 
 Installation notes
 ------------------

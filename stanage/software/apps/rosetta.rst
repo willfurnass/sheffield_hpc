@@ -18,11 +18,11 @@ more have been run on supercomputer clusters.
 Usage
 -----
 
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
+
 Rosetta can be activated by loading the module:
 
-.. code-block ::
-
-    module load rosetta/2023.35
+.. include:: /referenceinfo/imports/stanage/packages/rosetta-ml-el7-icelake-znver-stanage.rst
 
 The above module file adds the Rosetta executables to a user's path.
 

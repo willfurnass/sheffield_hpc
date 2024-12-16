@@ -26,11 +26,13 @@ including Python, Java, .NET and MATLAB.
 Usage
 -----
 
-To make this library available, run the following: ::
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
 
-    module load NAG/nll6i30dbl  
+To make this library available, run the following:
 
-This also activates the intel compiler iccifort/2019.5.281
+.. include:: /referenceinfo/imports/stanage/packages/nag-ml-el7-icelake-znver-stanage.rst
+   
+The latest version ``nll6i30dbl`` also activates the intel compiler iccifort/2019.5.281
 
 --------
 

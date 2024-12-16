@@ -57,6 +57,8 @@ GUI Usage
 ----------
 To use Mathematica in GUI mode you will need to be in a :ref:`flight graphical session on Stanage <flight-desktop>` and start a terminal inside of the flight session. 
 
+.. include:: /referenceinfo/imports/stanage/packages/mathematica-ml-el7-icelake-znver-stanage.rst
+
 Load both the Mathematica and QT modules (Mathematica requires the Qt framework/library to create its graphical user interface). To start the IDE you will need to type ``Mathematica``.
 
 .. code-block:: bash

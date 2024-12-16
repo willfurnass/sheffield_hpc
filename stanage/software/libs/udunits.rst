@@ -25,17 +25,11 @@ for investigating units and converting values.
 Usage
 -----
 
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
+
 To make this library available, run one of the following: 
 
-.. code-block:: 
-     
-  module load UDUNITS/2.2.26-foss-2020a
-  module load UDUNITS/2.2.26-GCCcore-8.3.0                    
-  module load UDUNITS/2.2.26-GCCcore-10.2.0                
-  module load UDUNITS/2.2.28-GCCcore-11.2.0                
-  module load UDUNITS/2.2.28-GCCcore-11.3.0
-  
---------
+.. include:: /referenceinfo/imports/stanage/packages/udunits-ml-el7-icelake-znver-stanage.rst
 
 Installation notes
 ------------------

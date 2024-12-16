@@ -17,17 +17,12 @@ The Vienna Ab initio Simulation Package (VASP) is a computer program for atomic 
 Usage
 -----
 
-After connecting to Stanage (see section Connecting with SSH), you can start an interactive graphical session.
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
 
-VASP can be activated using one of the module load command below: ::
+VASP can be activated using one of the module load command below:
 
-    module load VASP/6.4.2-intel-2022b
-    module load VASP/5.4.4-intel-2022b
-    module load VASP/5.4.4-intel-2022b-vtst           
-    module load VASP/5.4.4-intel-2022b-vaspsol-vtst   
-    module load VASP/5.4.4-intel-2020b
-
-
+.. include:: /referenceinfo/imports/stanage/packages/vasp-ml-el7-icelake-znver-stanage.rst
+   
 The VASP executables are ``vasp_std``, ``vasp_gam`` and ``vasp_ncl``.
 
 Variants of VASP 5.4.4 have been compiled with added functionality:

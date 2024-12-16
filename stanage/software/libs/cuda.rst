@@ -40,19 +40,7 @@ versions of CUDA are activated via the :ref:`'module load' command<env_modules>`
 To load one of the currently available CUDA versions you can run
 one of the following commands:
 
-.. code-block:: bash
-
-   module load CUDA/12.4.0 
-   module load CUDA/12.1.1 
-   module load CUDA/12.0.0  
-   module load CUDA/11.8.0
-   module load CUDA/11.7.0
-   module load CUDA/11.1.1-GCC-10.2.0
-   module load CUDA/10.2.89-GCC-8.3.0
-   module load CUDA/10.1.243-GCC-8.3.0
-   module load CUDA/10.1.243
-   module load CUDA/10.1.105-GCC-8.2.0-2.31.1
-   module load CUDA/10.0.130
+.. include:: /referenceinfo/imports/stanage/packages/cuda-ml-el7-icelake-znver-stanage.rst
 
 Note that the older versions of CUDA may implicitly load the GCC compiler.
 For newer versions you will also need to explicitly load a compiler e.g. :ref:`GCC <gcc_stanage>`.

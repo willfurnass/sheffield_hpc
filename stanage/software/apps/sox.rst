@@ -25,9 +25,7 @@ Interactive Usage
 
 The latest version of |softwarename| (currently version |currentver|) is made available with the command:
 
-.. code-block:: console
-
-	$ module load SoX/14.4.2-GCC-8.3.0
+.. include:: /referenceinfo/imports/stanage/packages/sox-ml-el7-icelake-znver-stanage.rst
 
 After this the |softwarename| command can be run from the terminal prompt with the ``sox`` command.
 

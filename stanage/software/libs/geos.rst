@@ -5,7 +5,7 @@ geos
 
 .. sidebar:: geos
 
-   :Version: 3.9.1
+   :Version: 3.11.1
    :URL: http://trac.osgeo.org/geos/
 
 GEOS (Geometry Engine, Open Source) is a C/C++ port of a subset of 
@@ -27,10 +27,11 @@ which in turn is a library that:
 Usage
 -----
 
-To make this library available, run one of the following: ::
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
 
-    module load GEOS/3.9.1-GCC-10.2.0
-    module load GEOS/3.9.1-GCC-11.2.0    
+To make this library available, run one of the following:
+
+.. include:: /referenceinfo/imports/stanage/packages/geos-ml-el7-icelake-znver-stanage.rst
 
 This also activates the matching version of the GCC compiler suite (as its C++ standard library is required by GEOS.)
 

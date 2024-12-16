@@ -15,14 +15,11 @@ OpenFOAM is leading software for computational fluid dynamics (CFD). It is licen
 Usage
 -----
 
-There are two OpenFOAM modules, choose one and load it with either:
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
 
-.. code-block:: bash
+Load OpenFOAM with one of the following:
 
-    module load OpenFOAM/v2206-foss-2022a
-    module load OpenFOAM/8-foss-2020b
-    module load OpenFOAM/v2012-foss-2020a
-
+.. include:: /referenceinfo/imports/stanage/packages/openfoam-ml-el7-icelake-znver-stanage.rst
 
 OpenFOAM can be used in an interactive or batch job. OpenFOAM modules can be activated using the module file and sourcing the OpenFOAM environment script e.g.
 

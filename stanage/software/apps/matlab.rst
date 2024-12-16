@@ -18,14 +18,12 @@ Scientific computing and visualisation.
 
 Interactive usage
 -----------------
-After connecting to Stanage,  start an interactive session with the ``srun --pty bash –i`` command.
+
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
 
 The latest version of MATLAB (currently 2022a) is made available by running:
 
-.. code-block:: bash
-
-   module load MATLAB/2023b
-   module load MATLAB/2022a
+.. include:: /referenceinfo/imports/stanage/packages/matlab-ml-el7-icelake-znver-stanage.rst
 
 You can then run MATLAB by entering ``matlab``. This provides a matlab terminal (Please note that graphical sessions are not yet available on Stanage, so the matlab GUI will not load).
 

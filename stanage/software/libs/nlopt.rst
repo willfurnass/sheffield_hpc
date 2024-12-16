@@ -13,13 +13,11 @@ NLopt is a library for nonlinear local and global optimization, for functions wi
 Usage
 -----
 
-NLopt can be activated using one of: ::
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
 
-   module load NLopt/2.6.1-GCCcore-9.3.0
-   module load NLopt/2.6.2-GCCcore-10.2.0
-   module load NLopt/2.7.0-GCCcore-11.2.0
-   module load NLopt/2.7.1-GCCcore-11.3.0
-   module load NLopt/2.7.1-GCCcore-12.2.0
+NLopt can be activated using one of:
+
+.. include:: /referenceinfo/imports/stanage/packages/nlopt-ml-el7-icelake-znver-stanage.rst
 
 Installation method
 ^^^^^^^^^^^^^^^^^^^

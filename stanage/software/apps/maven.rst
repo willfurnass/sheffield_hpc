@@ -14,11 +14,11 @@ Apache Maven is a software project management and comprehension tool. Based on t
 Usage
 -----
 
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
+
 Maven can be activated as follows:
 
-.. code-block::
-         
-    module load Maven/3.9.7
+.. include:: /referenceinfo/imports/stanage/packages/maven-ml-el7-icelake-znver-stanage.rst
 
 
 Installation notes

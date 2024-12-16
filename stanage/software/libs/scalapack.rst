@@ -20,6 +20,8 @@ ScaLAPACK solves:
 Usage
 -----
 
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
+
 ScaLAPACK can be activated in several ways.
 
 To load ScaLAPACK plus
@@ -27,14 +29,9 @@ To load ScaLAPACK plus
 * a version of :ref:`OpenBLAS <openblas_stanage>`,
 * and the :ref:`gompi or gompic toolchain <stanage_eb_toolchains>`
 
-ScaLAPACK can be activated using one of: ::
+ScaLAPACK can be activated using one of:
 
-   module load ScaLAPACK/2.0.2-gompi-2019b
-   module load ScaLAPACK/2.1.0-gompi-2020a
-   module load ScaLAPACK/2.1.0-gompi-2020b
-   module load ScaLAPACK/2.2.0-gompi-2022a-fb
-   module load ScaLAPACK/2.2.0-gompi-2022b-fb
-
+.. include:: /referenceinfo/imports/stanage/packages/scalapack-ml-el7-icelake-znver-stanage.rst
    
 Note that all load OpenBLAS, despite the change in the module naming convention for more recent toolchains.
 

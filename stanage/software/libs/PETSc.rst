@@ -8,7 +8,7 @@ PETSc
 
 .. sidebar::  |softwarename|
 
-   :Versions: |currentver|
+   :Lateset Version: |currentver|
    :URL: https://petsc.org/release/
    :Documentation: https://petsc.org/release/manual/
 
@@ -18,14 +18,11 @@ The Portable, Extensible Toolkit for Scientific Computation (PETSc, pronounced P
 Usage
 -----
 
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
+
 PETSc can be activated using one of:
 
-.. code-block:: bash
-
-   module load PETSc/3.20.1-foss-2022b
-   module load PETSc/3.17.4-foss-2022b
-
-
+.. include:: /referenceinfo/imports/stanage/packages/petsc-ml-el7-icelake-znver-stanage.rst
 
 Installation Notes
 ------------------

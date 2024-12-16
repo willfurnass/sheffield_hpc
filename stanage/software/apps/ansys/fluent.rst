@@ -23,7 +23,7 @@ Fluent can make use of built in :ref:`MPI <parallel_MPI>` to utilize multiple cr
 
 ----------------
 
-.. include:: /referenceinfo/imports/software/ansys/module-load-list-stanage.rst
+.. include:: /referenceinfo/imports/stanage/packages/ansys-ml-el7-icelake-znver-stanage.rst
 
 --------------------
 

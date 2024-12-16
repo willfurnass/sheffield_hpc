@@ -5,7 +5,7 @@ Geospatial Data Abstraction Library (GDAL)
 
 .. sidebar:: GDAL
 
-   :Latest version: 3.2.1,3.3.2
+   :Latest version: 3.6.2
    :URL: http://www.gdal.org/
 
 GDAL is a library used by many Geographic Information Systems (GIS) packages for converting 
@@ -18,9 +18,11 @@ Source license by the `Open Source Geospatial Foundation <http://www.osgeo.org/>
 Usage
 -----
 
-Load by running ::
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
 
-    module load GDAL/3.2.1-foss-2020b
+Load by running one of the following:
+
+.. include:: /referenceinfo/imports/stanage/packages/gdal-ml-el7-icelake-znver-stanage.rst
     
 This will:
 

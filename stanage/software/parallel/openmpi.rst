@@ -14,15 +14,12 @@ The OpenMPI Project is an open source Message Passing Interface implementation t
 Versions
 --------
 
-You can load a specific version using one of the following: ::
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
 
-    module load OpenMPI/3.1.4-GCC-8.3.0   # part of the foss-2019b toolchain
-    module load OpenMPI/4.0.3-GCC-9.3.0   # part of the foss-2020a toolchain
-    module load OpenMPI/4.0.5-GCC-9.3.0   # part of the foss-2020a toolchain
-    module load OpenMPI/4.0.5-GCC-10.2.0  # part of the foss-2020b toolchain
-    module load OpenMPI/4.1.4-GCC-11.3.0  # part of the foss-2022a toolchain
-    module load OpenMPI/4.1.4-GCC-12.2.0  # part of the foss-2022b toolchain
+You can load a specific version using one of the following:
 
+.. include:: /referenceinfo/imports/stanage/packages/openmpi-ml-el7-icelake-znver-stanage.rst
+   
 .. warning:: 
 
     The current installation of OpenMPI 4.1.1 has poor performance over Omnipath which is still under investigation.

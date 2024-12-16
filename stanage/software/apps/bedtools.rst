@@ -17,13 +17,9 @@ Interactive usage
 
 The latest version of bedtools (currently version 2.31.0) is made available with the command:
 
-.. code-block:: none
-
-        module load BEDTools/2.31.0-GCC-12.3.0
-
+.. include:: /referenceinfo/imports/stanage/packages/bedtools-ml-el7-icelake-znver-stanage.rst
 
 After this any of the bedtools commands can be run from the prompt.
-
 
 
 Installation notes

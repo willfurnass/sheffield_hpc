@@ -25,11 +25,7 @@ Interactive Usage
 
 You can load a specific version with the following command:
 
-.. code-block:: bash
-
-   module load LAMMPS/3Mar2020-foss-2020a-Python-3.8.2-kokkos
-   module load LAMMPS/3Mar2020-intel-2020a-Python-3.8.2-kokkos
-
+.. include:: /referenceinfo/imports/stanage/packages/lammps-ml-el7-icelake-znver-stanage.rst
 
 Serial (one core) Batch usage
 -----------------------------

@@ -15,28 +15,11 @@ OpenJDK is an open-source implementation of Java.
 Interactive Usage
 -----------------
 
-After :ref:`connecting to Stanage <connecting>`,
-start an interactive session with the ``srun --pty bash -i`` command.
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
 
 You can then load a version of of Java using one of the following:
 
-.. tabs::
-
-   .. group-tab:: icelake
-
-        .. code-block:: console
-
-           module load Java/11.0.2
-           module load Java/11.0.16
-           module load Java/11.0.20
-           module load Java/17.0.4
-
-   .. group-tab:: znver3
-
-        .. code-block:: console
-
-           module load Java/11.0.18
-           module load Java/11.0.20
+.. include:: /referenceinfo/imports/stanage/packages/java-ml-el7-icelake-znver-stanage.rst
 
 NB ``Java/11.0.2`` is `OpenJDK <https://openjdk.org/>`__;
 ``Java/11.0.16`` and newer are `Eclipse Temurin <https://adoptium.net/en-GB/temurin/releases/>`__, which is based on OpenJDK.

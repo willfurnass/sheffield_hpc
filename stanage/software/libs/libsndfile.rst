@@ -1,15 +1,15 @@
 .. _libsndfile_stanage:
 
 .. |softwarename| replace:: libsndfile
-.. |currentver| replace:: 1.0.28
-.. |ebtoolchain| replace:: GCCcore-10.2.0
+.. |currentver| replace:: 1.2.0
+.. |ebtoolchain| replace:: GCCcore-12.2.0
 
 |softwarename|
 ==========================================================================================================
 
 .. sidebar:: 
        
-    :Version: |currentver|
+    :Latest Version: |currentver|
     :Dependencies: |ebtoolchain| (see Easybuild for details.)
     :URL: http://www.mega-nerd.com/libsndfile/
     
@@ -35,16 +35,12 @@ libsndfile has the following main features:
 
 Usage
 -----
+
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
+
 To make this library available, run one of the following module commands:
 
-.. code-block:: 
-
-    module load libsndfile/1.0.28-GCCcore-9.3.0
-    module load libsndfile/1.0.28-GCCcore-10.2.0
-    module load libsndfile/1.0.31-GCCcore-11.2.0
-    module load libsndfile/1.1.0-GCCcore-11.3.0
-    module load libsndfile/1.2.0-GCCcore-12.2.0
-
+.. include:: /referenceinfo/imports/stanage/packages/libsndfile-ml-el7-icelake-znver-stanage.rst
 
 Installation method
 ^^^^^^^^^^^^^^^^^^^

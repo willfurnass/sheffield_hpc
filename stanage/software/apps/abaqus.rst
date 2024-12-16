@@ -5,7 +5,7 @@ Abaqus
 
 .. sidebar:: Abaqus
 
-   :Versions: 2021
+   :Latest Version: 2023
    :Dependencies: User subroutines need the Intel FORTRAN compiler 2019
    :URL: http://www.3ds.com/products-services/simulia/products/abaqus/
    :Documentation: https://help.3ds.com/ (note: register for an account to access.)
@@ -15,11 +15,9 @@ Abaqus is a software suite for Finite Element Analysis (FEA) developed by Dassau
 Interactive and GUI Usage
 -------------------------
 
-Abaqus can be activated using one of the following module files:
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
 
-.. code-block:: bash
-
-  module load ABAQUS/2021
+.. include:: /referenceinfo/imports/stanage/packages/abaqus-ml-el7-icelake-znver-stanage.rst
 
 .. note::
 

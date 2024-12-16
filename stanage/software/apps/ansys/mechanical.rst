@@ -23,7 +23,7 @@ ANSYS Mechanical has interfaces to other pre and post processing packages suppli
   
 ----------------
 
-.. include:: /referenceinfo/imports/software/ansys/module-load-list-stanage.rst
+.. include:: /referenceinfo/imports/stanage/packages/ansys-ml-el7-icelake-znver-stanage.rst
 
 --------------------
 
