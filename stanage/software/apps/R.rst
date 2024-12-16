@@ -26,10 +26,11 @@ Interactive Usage
 
 You can then load a specific version of R using: ::
         
-   module load R/4.0.0-foss-2020a
-   module load R/4.0.5-foss-2020b
-   module load R/4.2.1-foss-2022a
+   module load R/4.4.1-foss-2022b  (Recommended)
    module load R/4.2.2-foss-2022b
+   module load R/4.2.1-foss-2022a
+   module load R/4.0.5-foss-2020b
+   module load R/4.0.0-foss-2020a
 
 R can then be run with: ::
 
