@@ -386,3 +386,10 @@ The cluster tabs should be arranged from the most recent cluster to the oldest c
 
                 $ srun --mem=8G --pty bash -i
 
+Hover Tooltips
+--------------
+
+Hover tooltips are enabled by the `sphinx_tippy <https://sphinx-tippy.readthedocs.io/en/latest/index.html>`_ extension. 
+Currently the tooltip will show the first few lines after an internal target reference, such as text, titles, admonitions and tables,
+but will not show code-blocks or group tabs. 
+

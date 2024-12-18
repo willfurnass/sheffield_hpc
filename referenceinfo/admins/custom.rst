@@ -63,6 +63,7 @@ Extensions
 * `sphinx_tabs.tabs <https://sphinx-tabs.readthedocs.io/en/latest/>`_
     * ``sphinx_tabs_valid_builders = ['linkcheck']`` *- extension will be enabled when running the linkcheck builder* 
     * ``sphinx_tabs_disable_tab_closing = True`` *- user won't be able to close tabs in the generated documentation* 
+* `sphinx_tippy <https://sphinx-tippy.readthedocs.io/en/latest/index.html>`_
 
 Currently used directives 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

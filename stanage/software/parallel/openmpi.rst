@@ -20,6 +20,8 @@ You can load a specific version using one of the following:
 
 .. include:: /referenceinfo/imports/stanage/packages/openmpi-ml-el7-icelake-znver-stanage.rst
    
+:ref:`See matching foss toolchains<foss-toolchain-table>`
+
 .. warning:: 
 
     The current installation of OpenMPI 4.1.1 has poor performance over Omnipath which is still under investigation.

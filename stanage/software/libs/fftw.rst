@@ -26,7 +26,7 @@ To make this library available, run one the following:
 .. include:: /referenceinfo/imports/stanage/packages/fftw-ml-el7-icelake-znver-stanage.rst
 
 - `gompi` versions are a subset of the :ref:`foss toolchain <stanage_eb_toolchains>`
-  and also load GCC and OpenMPI
+  and also load GCC and OpenMPI. :ref:`See matching foss toolchains<foss-toolchain-table>`.
 - `gompic` versions are a subset of the :ref:`fosscuda toolchain <stanage_eb_toolchains>`
   and also load GCC, OpenMPI and CUDA.
 

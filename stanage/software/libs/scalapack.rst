@@ -33,5 +33,5 @@ ScaLAPACK can be activated using one of:
 
 .. include:: /referenceinfo/imports/stanage/packages/scalapack-ml-el7-icelake-znver-stanage.rst
    
-Note that all load OpenBLAS, despite the change in the module naming convention for more recent toolchains.
+Note that all load OpenBLAS, despite the change in the module naming convention for more recent toolchains. :ref:`See matching foss toolchains<foss-toolchain-table>`
 

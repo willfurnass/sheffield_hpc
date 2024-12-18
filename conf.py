@@ -29,6 +29,7 @@ extensions = [
     'sphinx_tabs.tabs',
     'sphinx_design',
     'sphinx_sitemap',
+    'sphinx_tippy',
 ]
 
 # Sphinx Sitemap

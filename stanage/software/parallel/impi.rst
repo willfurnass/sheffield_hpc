@@ -15,17 +15,11 @@ perform better on HPC clusters based on Intel® processors."
 Versions
 --------
 
-You can load a specific version using one of the following: ::
+You can load a specific version using one of the following:
 
-    module load impi/2019.7.217-iccifort-2020.1.217     # subset of the intel 2020a toolchain
-    module load impi/2019.9.304-iccifort-2020.4.304     # subset of the intel 2020b toolchain
-    module load impi/2021.2.0-intel-compilers-2021.2.0  # subset of the intel 2021a toolchain
-    module load impi/2021.4.0-intel-compilers-2021.4.0  # subset of the intel 2021b toolchain
-    module load impi/2021.6.0-intel-compilers-2022.1.0  # subset of the intel 2022a toolchain
-    module load impi/2021.7.1-intel-compilers-2022.2.1  # subset of the intel 2022b toolchain
+.. include:: /referenceinfo/imports/stanage/packages/impi-ml-el7-icelake-znver-stanage.rst
 
-
-which implicitly load versions of icc, ifort (and GCC).
+which implicitly load versions of icc, ifort (and GCC). :ref:`See matching intel toolchains <intel-toolchain-table>`
 
 
 Examples

@@ -15,7 +15,7 @@ by running *one* of the following lines:
 
 .. include:: /referenceinfo/imports/stanage/packages/gcc-ml-el7-icelake-znver-stanage.rst
 
-Confirm that you've loaded the version of gcc you wanted using ``gcc -v``.
+Confirm that you've loaded the version of gcc you wanted using ``gcc -v``. :ref:`See matching foss toolchains<foss-toolchain-table>`
 
 Language support
 ----------------

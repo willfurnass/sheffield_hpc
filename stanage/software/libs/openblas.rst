@@ -20,4 +20,4 @@ OpenBLAS can be activated using one of:
 
 .. include:: /referenceinfo/imports/stanage/packages/openblas-ml-el7-icelake-znver-stanage.rst
    
-which also loads a version of the :ref:`GCC <gcc_stanage>` compiler.
+which also loads a version of the :ref:`GCC <gcc_stanage>` compiler. :ref:`See matching foss toolchains<foss-toolchain-table>`
