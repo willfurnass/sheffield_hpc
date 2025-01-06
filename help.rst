@@ -118,6 +118,26 @@ Copy the content and paste it into your email body, replacing placeholders (e.g.
     Relevant scripts and job log files:
     Please attach your scripts and job log files as an attachment.
     
+Recording your terminal 
+-----------------------
+
+When submitting a request for help it may be useful to also send a record of your terminal showing the steps you have 
+taken and the resulting terminal outputs, the following will show you how you can do this using ``script``.
+
+.. code-block:: bash
+
+   script myScript
+
+Now every command you type and any output out of those commands will be saved in the file ``myScript``.
+The recording stops when you enter the ``exit`` command.
+
+To check the contents of the file:
+
+.. code-block:: bash
+
+   cat myScript
+
+If you want to learn more about ``script`` and its companion ``scriptreplay``, you can use the ``man`` :ref:`command <man_pages>`.
 
 ------
 
