@@ -451,6 +451,123 @@ Here, for clairty we have removed files such as ``*.dist-info`` from the termina
 
 ------------------
 
+Installing a personal copy of miniconda
+---------------------------------------
+
+
+.. dropdown:: We recommend using Anaconda3, however if you would like to have a personal install of miniconda please follow this guide
+   
+
+        Miniconda is a free, minimal installer for Conda. It is a small bootstrap version of Anaconda that includes only Conda,
+        Python, their dependencies, and a small number of other useful packages such as pip and zlib.
+
+        .. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
+
+        The latest miniconda releases will be made available at https://docs.conda.io/en/latest/miniconda.html
+
+        On Stanage you should install miniconda to your home directory, e.g., ``$HOME/software/installs/miniconda``.
+
+        Download the installer: ::
+
+            wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+        Check the sums match with those listed on the `downloads page <https://repo.anaconda.com/miniconda/>`_ : ::
+
+            sha256sum Miniconda3-latest-Linux-x86_64.sh
+
+        Make the file executable: ::
+
+            chmod +x Miniconda3-latest-Linux-x86_64.sh
+
+        Create a directory for the installation::
+
+             mkdir -p $HOME/software/installs
+
+        Run the installer and choose the directory created above (``$HOME/software/installs``) as the installation target. 
+
+        .. code-block:: bash
+
+            ./Miniconda3-latest-Linux-x86_64.sh
+
+        After accepting the licence agreement enter the path for the installation: ::
+
+            $HOME/software/installs/miniconda
+            
+        .. caution:: 
+
+             Ensure you **do not initialise Miniconda** as this will interfere with loading other Anaconda modules on the cluster.
+
+        Make a modules directory for yourself: ::
+
+            mkdir $HOME/modules
+            
+        Make a module file for the install you just made: ::
+
+            nano $HOME/modules/miniconda.lua
+            
+        With content as follows:
+
+        .. code-block:: lua
+
+                    ------------------------------------------------------------------------------------------------
+                    -- ~/modules/miniconda.lua:
+                    ------------------------------------------------------------------------------------------------
+                    
+                    help([[
+                    Description
+                    ===========
+                    Makes my personal Miniconda install available.
+
+                    More information
+                    ================
+                    - Homepage: https://www.anaconda.org
+                    ]])
+
+                    -- Describe the module.
+                    whatis("Description: Makes my personal Miniconda install available.")
+                    whatis("Homepage: https://docs.anaconda.com/miniconda")
+                    whatis("URL: https://www.anaconda.org")
+
+                    conflict("Anaconda3")
+
+                    local HOME = os.getenv("HOME")
+                    local MINICONDA_DIR = HOME .. "/software/installs/miniconda"
+                    setenv("MINICONDA_DIR", MINICONDA_DIR)
+
+                    -- Add directories to environment variables.
+                    prepend_path("PATH", pathJoin(MINICONDA_DIR, "bin"))
+            
+        Note: We have added Anaconda3 as a conflicting module to prevent Miniconda from being loaded concurrently.
+        This partially avoids conflicts, as loading Anaconda3 after Miniconda would still result in conflicts.
+
+        .. warning::
+
+            Module files are written in LUA not bash. See :ref:`Making software available via a custom module file<custom-module-files>`.
+            
+        Make your custom modules available: ::
+
+            module use $HOME/modules
+
+        To skip doing the above everytime you login, you can add this line to the .bashrc file in your home directory::
+
+            echo "module use $HOME/modules" >> ~/.bashrc
+
+        Assuming the module file is named ``miniconda``, you can load it with: ::
+
+            module load miniconda
+
+        .. warning::
+        
+            Since Miniconda is installed as a module, use the ``source`` command instead of ``conda`` to activate or deactivate environments.
+
+        To activate the base environment:
+
+        .. code-block:: bash
+           
+            source activate
+
+--------------
+
 Installation notes
 ------------------
 

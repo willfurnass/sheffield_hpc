@@ -51,7 +51,7 @@ command to your ``.bashrc`` file.
         .. code-block:: lua
 
             ------------------------------------------------------------------------------------------------
-            /users/my_username/software/installs/my_new_program.lua:
+            /users/my_username/modules/my_new_program.lua:
             ------------------------------------------------------------------------------------------------
             
             -- Provide help text for the module.

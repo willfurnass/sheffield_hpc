@@ -497,6 +497,8 @@ to get an idea of what these should look like.
 Further detail on the environment modules system in use on the clusters can be found on the 
 :ref:`modules page <env_modules>`.
 
+.. _custom-module-files:
+
 .. include:: ../referenceinfo/environment-modules/creating-custom-modulefiles.rst
 
 .. raw:: html
