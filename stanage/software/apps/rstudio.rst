@@ -78,4 +78,4 @@ I created the following easy config. (Hasn't been pushed to the EB community yet
 Testing
 ^^^^^^^
 
-Testing has been conducted by running an interactive session and running some of the examples found `here. <https://moderndive.netlify.app/1-getting-started.html>`
+Testing has been conducted by running an interactive session and running some of the examples found `here. <https://moderndive.netlify.app/1-getting-started.html>`_
