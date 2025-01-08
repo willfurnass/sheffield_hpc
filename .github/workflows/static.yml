@@ -7,6 +7,7 @@ on:
     branches:
       - master
       - EL9-beta
+      - all-packages-update-20250107-114714
 
   # Or manually from the Actions tab.
   workflow_dispatch:
@@ -116,9 +117,55 @@ jobs:
           name: el9-beta
           path: '_build/html'
 
+  build-all-packages-update-20250107-114714:
+    runs-on: ubuntu-latest
+    strategy:
+      # Spawn and run a job for Python 3.10 version.
+      matrix:
+        python: ["3.10"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: all-packages-update-20250107-114714
+      # Install Python.
+      - name: Set up a version of Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      # Install Tox for build stage.
+      - name: Upgrade pip and install Tox
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install tox
+      # Run build stage - py37 should suffice.
+      - name: Build the pages
+        run: tox -e py310
+      # Match old RTD directories pathing.
+      - name: Move built files
+        run: |
+          mkdir -p _build/html/en/all-package-index
+          cd _build/html/
+          find . -mindepth 1 -maxdepth 1 -not -name en -exec mv -t en/all-package-index {} +
+          cd ../../
+      - name: Add webroot redirect HTML index page.
+        run: |
+          cp rtd-root-redirect.html _build/html/index.html
+      - name: Add Google Search console site verification
+        run: |
+          cp gsv/google92a5d9499987ed3e.html _build/html/google92a5d9499987ed3e.html
+      - name: Add robots.txt
+        run: |
+          cp robots-txt/robots.txt _build/html/robots.txt
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: latest
+          path: '_build/html'
+
   deploy-static-site:
     # Don't deploy before the previous steps build the pages.
-    needs: [build-latest, build-el9-beta]
+    needs: [build-latest, build-el9-beta, build-all-packages-update-20250107-114714]
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -137,6 +184,11 @@ jobs:
           name: el9-beta
           path: '_build/el9-beta'
 
+      - uses: actions/download-artifact@master
+        with:
+          name: all-package-index
+          path: '_build/all-package-index'
+
       - name: Ensure _build/html folder exists
         run: mkdir -p _build/html
 
@@ -146,6 +198,9 @@ jobs:
 
       - name: Extract el9-beta build to _build/html
         run: tar -xf _build/el9-beta/artifact.tar -C _build/html
+
+      - name: Extract all-packages-update-20250107-114714 build to _build/html
+        run: tar -xf _build/all-package-index/artifact.tar -C _build/html
 
       # Make the GH pages artifact which is used to deploy.
       - name: Upload artifact
