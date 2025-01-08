@@ -139,6 +139,8 @@ To check the contents of the file:
 
 If you want to learn more about ``script`` and its companion ``scriptreplay``, you can use the ``man`` :ref:`command <man_pages>`.
 
+.. asciinema:: CFVJ0u4spj5xcfc0U9JmCc36L
+
 ------
 
 HPC training?

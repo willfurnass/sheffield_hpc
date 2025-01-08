@@ -30,6 +30,7 @@ extensions = [
     'sphinx_design',
     'sphinx_sitemap',
     'sphinx_tippy',
+    'sphinxcontrib.asciinema',
 ]
 
 # Sphinx Sitemap
