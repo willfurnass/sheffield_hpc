@@ -160,7 +160,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          name: latest
+          name: all-package-index
           path: '_build/html'
 
   deploy-static-site:
