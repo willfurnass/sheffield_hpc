@@ -244,7 +244,7 @@ Suggested SSH clients
 SSH client software on Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We recommend the use of Windows Terminal on Windows systems and users will find Windows Terminal available on the University's managed desktops by default.
+For Windows PCs, we recommend the use of Windows Terminal which is available on the University's managed desktops by default. If not already installed on your device, Windows Terminal can be found on the `Microsoft Store <https://apps.microsoft.com/detail/9n0dx20hk701?hl=en-gb&gl=GB&ocid=pdpshare>`_.
 
 - :ref:`Setting up Profiles in Windows Terminal <terminal_connecting_profile_setup>`.
 
