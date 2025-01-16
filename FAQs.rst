@@ -777,6 +777,16 @@ The files/folders have to be stored in public Fastdata areas, detailed instructi
         group::r-x
         other::r-x
 
+.. note::
+
+   Before making changes to ACLs it is advisable to backup the current ACL settings using ``getfacl``. This enables restoration in case of mistakes.
+
+   .. code::
+
+       getfacl -R /full/path/to/directory > acl_backup.txt
+       # To reapply backed-up ACLs:
+       setfacl --restore=acl_backup.txt
+
 3. **user1** makes the files/folders available to read by **user2** with Linux ACLs:
 
 .. code-block:: console
