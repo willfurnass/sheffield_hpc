@@ -46,12 +46,8 @@ The authentication requirements per cluster are summarised below:
 +==========+======================================================+===================================================================================================+
 | Bessemer | Password + DUO MFA **or** public key                 | Not permitted (unless using the :ref:`HPC SSH gateway service <hpcgw_summary>`)                   |
 +----------+------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-| Stanage  | Password/public key + TOTP MFA **or** VPN + password | Not permitted (unless using the :ref:`HPC SSH gateway service <hpcgw_summary>`)                   |
+| Stanage  | Password + DUO MFA **or** public key                 | Not permitted (unless using the :ref:`HPC SSH gateway service <hpcgw_summary>`)                   |
 +----------+------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-
-.. hint::
-
-    On our Stanage cluster: VPN + Password is needed to setup :ref:`TOTP MFA <mfa-totp-reference-info>`.
 
 
 Connecting with a Password or SSH keys
@@ -60,15 +56,14 @@ Connecting with a Password or SSH keys
 .. tabs:: 
     
     .. tab:: With a Password 
-        If connecting using your password, MFA will be mandatory. Depending on the cluster, the type of MFA
-        may be standard University `DUO MFA <https://sites.google.com/sheffield.ac.uk/mfa/home>`__, or :ref:`TOTP MFA <mfa-totp-reference-info>`.
+        If connecting using your password, MFA will be mandatory. The standard University `DUO MFA <https://sites.google.com/sheffield.ac.uk/mfa/home>`__ is utilised.
 
         .. tabs::
 
             .. group-tab:: Stanage
 
-                On the Stanage cluster, when you connect you will be prompted for your password and a verification code. 
-                Enter your password and the current TOTP code for your verification code. This process should look like the following in a terminal:
+                On the Stanage cluster, when you connect you will be prompted via a push notification to your DUO device to approve access
+                or must enter a one-time code from your University provided hardware token which is associated with your DUO account.
 
                 .. code-block:: console
 
@@ -85,11 +80,11 @@ Connecting with a Password or SSH keys
                     *****************************************************************************
                     [te1st@login1 [stanage] ~]$
 
-                If you have not setup your Stanage TOTP MFA, please follow the steps published at: :ref:`stanage-totp-setup`
+                If you have not setup your University DUO MFA, please follow the steps published at: https://www.sheffield.ac.uk/it-services/mfa/set-mfa
             
             .. group-tab:: Bessemer
 
-                On the Bessemer cluster, when you connect you will be prompted to via a push notification to your DUO device to approve access 
+                On the Bessemer cluster, when you connect you will be prompted via a push notification to your DUO device to approve access 
                 or must enter a one-time code from your University provided hardware token which is associated with your DUO account.
 
                 .. code-block:: console
@@ -168,7 +163,7 @@ Here you need to:
 
 
 After typing in this command hit enter to start connecting at which point you will be prompted 
-for your username, password and then with a Duo or TOTP MFA prompt. 
+for your username, password and then with a Duo MFA prompt. 
 
 This should give you a session resembling the one below: 
 

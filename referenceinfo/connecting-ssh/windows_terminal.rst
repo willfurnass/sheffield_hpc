@@ -42,7 +42,7 @@ If you add the following to your settings.json inside the list of profile object
 
 
 You can now click on a session profile (as shown below) to start connecting at which point you will be prompted for your username, password 
-and then with a Duo MFA prompt (or a request for your TOTP verification code on Stanage). Please enter these details and your terminal will connect as shown below.
+and then with a Duo MFA prompt. Please enter these details and your terminal will connect as shown below.
 
 .. image:: /images/windows-terminal-profiles.png 
    :width: 100%

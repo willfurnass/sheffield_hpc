@@ -31,7 +31,7 @@ You should add a session for each cluster.
    be warned that this may cause authentication issues when trying to connect to Stanage using MFA.
 
 You can now double click on this session profile to start connecting at which point you will be prompted for your username, password 
-and then with a Duo MFA prompt (or a request for your TOTP verification code on Stanage). Please enter these details and your terminal will connect as shown below.
+and then with a Duo MFA prompt. Please enter these details and your terminal will connect as shown below.
 
 You **may** be asked to submit your username and password with a second MFA prompt in order for the file browser to work correctly. On a successful 
 login you should be presented with a screen like the below:

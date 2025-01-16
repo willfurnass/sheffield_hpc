@@ -19,5 +19,4 @@ This section should be used to look for a quick references to very specific info
   scheduler/index
   computer-architecture/index
   connecting-ssh/index
-  mfa/index
   admins/index
