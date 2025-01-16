@@ -883,7 +883,7 @@ X11 forwarding is a feature in SSH (Secure Shell) that allows Linux machines inc
 
    .. group-tab:: Windows
 
-        Windows does not natively have the ability to receive X windows, so you will need to use an :ref:` SSH session with an SSH Client <connecting>` which supports X11 GUI forwarding for example MobaXterm. The link should show you how to enable X11 Forwarding for your SSH sessions on MobaXterm.
+        Windows does not natively have the ability to receive X windows, so you will need to use an :ref:`SSH session with an SSH Client <connecting>` which supports X11 GUI forwarding for example MobaXterm. The link should show you how to enable X11 Forwarding for your SSH sessions on MobaXterm.
 
    .. group-tab:: macOS
 
