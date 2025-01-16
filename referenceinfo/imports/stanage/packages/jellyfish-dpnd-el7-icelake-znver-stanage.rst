@@ -1,0 +1,3 @@
+.. dropdown:: Dependencies for latest version of Jellyfish
+
+   - :ref:`GCC/11.3.0 <gcc-compiler-el7-icelake-znver-stanage>`

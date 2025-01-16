@@ -1,0 +1,7 @@
+.. sidebar:: PMIx
+
+   :Latest Version (Icelake): 4.2.2
+   :Installed on (Icelake): 2023-01-30
+   :Latest Version (Znver3): 4.1.2
+   :Installed on (Znver3): 2023-09-08
+   :URL: https://pmix.org/

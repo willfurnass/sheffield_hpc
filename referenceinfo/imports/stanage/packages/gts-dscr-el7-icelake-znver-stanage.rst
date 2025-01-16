@@ -1,0 +1,4 @@
+GTS stands for the GNU Triangulated Surface Library.
+It is an Open Source Free Software Library intended to provide a set of useful
+functions to deal with 3D surfaces meshed with interconnected triangles.
+

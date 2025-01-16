@@ -4,19 +4,19 @@
 
         .. code-block:: console
 
-            module load GCC/12.3.0       # part of the foss-2023a toolchain
-            module load GCC/12.2.0       # part of the foss-2022b toolchain
-            module load GCC/11.3.0       # part of the foss-2022a toolchain
-            module load GCC/11.2.0       # part of the foss-2021b toolchain
+            module load GCC/12.3.0
+            module load GCC/12.2.0
+            module load GCC/11.3.0
+            module load GCC/11.2.0
             module load GCC/11.1.0
-            module load GCC/10.3.0       # part of the foss-2021a toolchain
-            module load GCC/10.2.0       # part of the foss-2020b toolchain
+            module load GCC/10.3.0
+            module load GCC/10.2.0
             module load GCC/10.1.0
             module load GCC/9.5.0
-            module load GCC/9.3.0        # part of the foss-2020a toolchain
+            module load GCC/9.3.0
             module load GCC/9.2.0
-            module load GCC/8.3.0        # part of the foss-2019b toolchain
-            module load GCC/8.2.0-2.31.1 # part of the foss-2019a toolchain 
+            module load GCC/8.3.0
+            module load GCC/8.2.0-2.31.1
             module load GCC/7.3.0-2.30
             module load GCC/6.4.0-2.28
             module load GCC/4.9.3-2.25
@@ -26,11 +26,10 @@
 
         .. code-block:: console
 
-            module load GCC/12.3.0       # part of the foss-2023a toolchain
-            module load GCC/12.2.0       # part of the foss-2022b toolchain
-            module load GCC/11.3.0       # part of the foss-2022a toolchain
-            module load GCC/11.2.0       # part of the foss-2021b toolchain
-            module load GCC/10.2.0       # part of the foss-2020b toolchain
-            module load GCC/8.3.0        # part of the foss-2019b toolchain
-            module load GCC/8.2.0-2.31.1 # part of the foss-2019a toolchain 
-
+            module load GCC/12.3.0
+            module load GCC/12.2.0
+            module load GCC/11.3.0
+            module load GCC/11.2.0
+            module load GCC/10.2.0
+            module load GCC/8.3.0
+            module load GCC/8.2.0-2.31.1

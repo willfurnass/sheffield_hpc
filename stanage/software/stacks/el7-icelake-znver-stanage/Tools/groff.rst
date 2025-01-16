@@ -1,0 +1,26 @@
+.. _groff-tools-el7-icelake-znver-stanage:
+
+groff
+=====
+
+.. include:: /referenceinfo/imports/stanage/packages/groff-sdbr-el7-icelake-znver-stanage.rst
+
+.. include:: /referenceinfo/imports/stanage/packages/groff-dscr-el7-icelake-znver-stanage.rst
+
+.. include:: /referenceinfo/imports/stanage/packages/packages_note.rst
+
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/srun_start_interactive_session_import_stanage.rst
+
+A version of groff can then be made available with *one* of the following:
+
+.. include:: /referenceinfo/imports/stanage/packages/groff-ml-el7-icelake-znver-stanage.rst
+
+.. include:: /referenceinfo/imports/stanage/packages/custom/groff-cust-el7-icelake-znver-stanage.rst
+
+Notes
+-----
+
+.. include:: /referenceinfo/imports/stanage/packages/groff-inst-el7-icelake-znver-stanage.rst
+
+.. include:: /referenceinfo/imports/stanage/packages/groff-dpnd-el7-icelake-znver-stanage.rst
+

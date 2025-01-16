@@ -1,0 +1,1 @@
+snakemake was installed using Easybuild, build details can be found in ``$EBROOTSNAKEMAKE/easybuild`` with a given module loaded.

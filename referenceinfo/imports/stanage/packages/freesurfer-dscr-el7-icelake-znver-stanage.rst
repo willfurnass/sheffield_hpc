@@ -1,0 +1,5 @@
+FreeSurfer is a set of tools for analysis and visualization
+of structural and functional brain imaging data.  FreeSurfer contains a fully
+automatic structural imaging stream for processing cross sectional and
+longitudinal data.
+

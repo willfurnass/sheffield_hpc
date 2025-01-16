@@ -1,0 +1,23 @@
+.. dropdown:: Dependencies for latest version of LAMMPS
+
+   - :ref:`cURL/7.69.1-GCCcore-9.3.0 <curl-tools-el7-icelake-znver-stanage>`
+   - :ref:`Eigen/3.3.7-GCCcore-9.3.0 <eigen-math-el7-icelake-znver-stanage>`
+   - :ref:`FFmpeg/4.2.2-GCCcore-9.3.0 <ffmpeg-vis-el7-icelake-znver-stanage>`
+   - :ref:`foss/2020a <foss-toolchain-el7-icelake-znver-stanage>`
+   - :ref:`GSL/2.6-GCC-9.3.0 <gsl-numlib-el7-icelake-znver-stanage>`
+   - :ref:`gzip/1.10-GCCcore-9.3.0 <gzip-tools-el7-icelake-znver-stanage>`
+   - :ref:`HDF5/1.10.6-gompi-2020a <hdf5-data-el7-icelake-znver-stanage>`
+   - :ref:`kim-api/2.1.3-foss-2020a <kim-api-chem-el7-icelake-znver-stanage>`
+   - :ref:`libjpeg-turbo/2.0.4-GCCcore-9.3.0 <libjpeg-turbo-lib-el7-icelake-znver-stanage>`
+   - :ref:`libpng/1.6.37-GCCcore-9.3.0 <libpng-lib-el7-icelake-znver-stanage>`
+   - :ref:`libxml2/2.9.10-GCCcore-9.3.0 <libxml2-lib-el7-icelake-znver-stanage>`
+   - :ref:`netCDF/4.7.4-gompi-2020a <netcdf-data-el7-icelake-znver-stanage>`
+   - :ref:`PCRE/8.44-GCCcore-9.3.0 <pcre-devel-el7-icelake-znver-stanage>`
+   - :ref:`PLUMED/2.6.0-foss-2020a-Python-3.8.2 <plumed-chem-el7-icelake-znver-stanage>`
+   - :ref:`Python/3.8.2-GCCcore-9.3.0 <python-lang-el7-icelake-znver-stanage>`
+   - :ref:`ScaFaCoS/1.0.1-foss-2020a <scafacos-math-el7-icelake-znver-stanage>`
+   - :ref:`tbb/2020.1-GCCcore-9.3.0 <tbb-lib-el7-icelake-znver-stanage>`
+   - :ref:`Voro++/0.4.6-GCCcore-9.3.0 <voro++-math-el7-icelake-znver-stanage>`
+   - :ref:`VTK/8.2.0-foss-2020a-Python-3.8.2 <vtk-vis-el7-icelake-znver-stanage>`
+   - :ref:`yaff/1.6.0-foss-2020a-Python-3.8.2 <yaff-chem-el7-icelake-znver-stanage>`
+   - :ref:`zlib/1.2.11-GCCcore-9.3.0 <zlib-lib-el7-icelake-znver-stanage>`

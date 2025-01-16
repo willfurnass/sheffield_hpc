@@ -13,5 +13,6 @@ This section contains reference information for admins of https://docs.hpc.shef.
   code-snippets
   software
   custom
+  all_package_index
   readme
   

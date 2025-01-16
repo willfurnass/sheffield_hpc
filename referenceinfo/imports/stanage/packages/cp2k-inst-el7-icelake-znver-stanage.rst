@@ -1,0 +1,1 @@
+CP2K was installed using Easybuild, build details can be found in ``$EBROOTCP2K/easybuild`` with a given module loaded.

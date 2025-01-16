@@ -4,5 +4,4 @@
 
         .. code-block:: console
 
-            module load rosetta/2023.35
-
+            module load Rosetta/2023.35
