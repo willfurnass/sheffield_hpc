@@ -76,9 +76,9 @@ Documentation
 
         $ man gdal_contour
 
-    Much more information is available on the `project site <http://www.gdal.org/>`_.
+    Much more information is available on the `project site <gdal_>`_.
 
-Documentation is available on the `project site <http://www.gdal.org/>`_.
+Documentation is available on the `project site <gdal_>`_.
 
 -------
 
@@ -96,3 +96,4 @@ This section is primarily for administrators of the system. GDAL has been instal
 
 Build logs and test reports can be found in ``$EBROOTGDAL/easybuild`` with a given module loaded.
 
+.. _gdal: http://www.gdal.org/

@@ -1,4 +1,3 @@
-.. _cfitsio_stanage:
 
 cfitsio
 ========
@@ -30,7 +29,7 @@ Build logs and test reports can be found in ``$EBDEVELCFITSIO`` with a given mod
 
 Testing
 -------
-Create a ``test.c`` file containing the following (`source <https://heasarc.gsfc.nasa.gov/docs/software/fitsio/quick/node4.html>`_):
+Create a ``test.c`` file containing the following (`source <cfitsio_example_>`_):
 
 .. code-block::
 
@@ -82,7 +81,7 @@ The output should look like::
 Multi-thread Testing
 --------------------
 
-Download and unpack `threadtest.tar.gz <https://heasarc.gsfc.nasa.gov/docs/software/fitsio/quick/node4.html>`_
+Download and unpack `threadtest.tar.gz <cfitsio_example_>`_
 
 Navigate into unpacked directory ``threadtest/``. Next enter the following commands:
 
@@ -139,3 +138,5 @@ Next source each compiled file (expected output shown):
         Hello from thread 0, nthreads 8
         Hello from thread 1, nthreads 8
         Hello from thread 4, nthreads 8
+
+.. _cfitsio_example: https://heasarc.gsfc.nasa.gov/docs/software/fitsio/quick/node4.html

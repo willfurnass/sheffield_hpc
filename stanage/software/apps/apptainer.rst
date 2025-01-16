@@ -250,7 +250,7 @@ First create an Apptainer definition file for bootstrapping an image your image.
   %test
     # Test script to verify that the image is built and running correctly
 
-The definition file takes a base image from `DockerHub <https://hub.docker.com/>`_,
+The definition file takes a base image from `DockerHub <docker_>`_,
 in this case the latest version of Ubuntu ``ubuntu:latest``.
 Other images on the hub can also be used as the base for the Apptainer image,
 e.g. ``From: nvidia/cuda:8.0-cudnn5-devel-ubuntu16.04`` uses Nvidia's docker image with Ubuntu 16.04 that already has CUDA 8 installed.
@@ -259,7 +259,7 @@ After creating a definition file, use the ``build`` command to build the image f
 
   sudo apptainer build apptainer-test.sif apptainer-test.def
 
-It is also possible to build Apptainer images directory directly from images on `DockerHub <https://hub.docker.com/>`_: ::
+It is also possible to build Apptainer images directory directly from images on `DockerHub <docker_>`_: ::
 
   sudo apptainer build myimage.sif docker://ubuntu:latest
 
@@ -284,3 +284,5 @@ The security risks associated with providing outdated builds of Apptainer
 are considered to outweigh the risk of upgrading to backwards incompatible versions.
 
 Apptainer has been installed on all worker and login nodes.
+
+.. _docker: https://hub.docker.com/

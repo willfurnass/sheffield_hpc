@@ -35,9 +35,20 @@ Links
 
 .. code-block:: rst
     
-    `Research Software Engineering <https://rse.shef.ac.uk/>`_
+   `Research Software Engineering <https://rse.shef.ac.uk/>`_
 
---------------------
+**Indirect External link**
+
+Useful when an external link is referenced multiple times within a file.
+
+`Research Software Engineering <rse_>`_
+
+.. code-block:: rst
+    
+   `Research Software Engineering <rse_>`_
+   
+   # At the bottom of rst
+   .. _rse: https://rse.shef.ac.uk/
 
 **Internal link**
 
@@ -393,3 +404,4 @@ Hover tooltips are enabled by the `sphinx_tippy <https://sphinx-tippy.readthedoc
 Currently the tooltip will show the first few lines after an internal target reference, such as text, titles, admonitions and tables,
 but will not show code-blocks or group tabs. 
 
+.. _rse: https://rse.shef.ac.uk/

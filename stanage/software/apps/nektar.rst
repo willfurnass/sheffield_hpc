@@ -47,14 +47,14 @@ To see a list of the available commands with a given |softwarename| module loade
 Batch Usage
 --------------------
 
-First we download an example `tutorial <https://doc.nektar.info/tutorials/latest/incns/taylor-green-vortex/incns-taylor-green-vortex.html#incns-taylor-green-vortexch4.html>`_:
+First we download an example `tutorial <nektar_tutorial_>`_:
 
 .. code-block:: bash
 
         wget https://doc.nektar.info/tutorials/latest/incns/taylor-green-vortex/incns-taylor-green-vortex.tar.gz
         tar -xvzf incns-taylor-green-vortex.tar.gz
 
-The following is an example submission script for this `tutorial <https://doc.nektar.info/tutorials/latest/incns/taylor-green-vortex/incns-taylor-green-vortex.html#incns-taylor-green-vortexch4.html>`_:
+The following is an example submission script for this `tutorial <nektar_tutorial_>`_:
 
 .. code-block:: bash
 
@@ -90,3 +90,5 @@ Build logs and test reports can be found in ``$EBROOTNEKTARPLUSPLUS/EasyBuild`` 
 Testing method
 ^^^^^^^^^^^^^^^
 Testing has been conducted by following the above example.
+
+.. _nektar_tutorial: https://doc.nektar.info/tutorials/latest/incns/taylor-green-vortex/incns-taylor-green-vortex.html#incns-taylor-green-vortexch4.html

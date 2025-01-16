@@ -204,7 +204,7 @@ This method will automatically check the package integrity and check it also has
 2. Downloading binaries from pkgs.org
 """""""""""""""""""""""""""""""""""""
 
-`pkgs.org <https://pkgs.org/>`_ is a website which allows a user to search for and download binary packages 
+`pkgs.org <pkgs>`_ is a website which allows a user to search for and download binary packages 
 for numerous Linux and Unix operating systems. Using this website you will be able to query for CentOS 7 
 x86_64 compatible packages and then download them.
 
@@ -253,7 +253,7 @@ package has been signed as trusted. We can do this with the ``rpm --checksig`` c
 
 .. hint::
 
-    The `pkgs.org <https://pkgs.org/>`_ website will also show the dependencies of a package in the 
+    The `pkgs.org <pkgs_>`_ website will also show the dependencies of a package in the 
     **Requires** section. This can be very useful for resolving package / library dependencies.
 
 ---------
@@ -522,3 +522,5 @@ What alternative methods exist?
 
 * Conda
 * Pip
+
+.. _pkgs: https://pkgs.org/

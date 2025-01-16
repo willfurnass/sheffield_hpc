@@ -13,11 +13,11 @@ For Staff
 
 HPC access is made available for staff by request via the HPC access
 request form which can be found at the
-`IT Service Desk Self Service Portal <https://shef.topdesk.net/tas/public/ssp/>`_ under the option
+`IT Service Desk Self Service Portal <self_service_>`_ under the option
 Service Request Forms.
 
 We recommend that staff also complete the
-`HPC Driving License test <https://infosecurity.shef.ac.uk/>`_. **(The VPN must be connected for
+`HPC Driving License test <infosec_>`_. **(The VPN must be connected for
 access.)**
 
 For Students
@@ -31,12 +31,12 @@ the permission of their supervisors:
 * Undergraduates 3rd & 4th year  - for project work
 
 To be granted HPC access, all students must first pass the
-`HPC Driving License test <https://infosecurity.shef.ac.uk/>`_. **(The VPN must be connected for
+`HPC Driving License test <infosec_>`_. **(The VPN must be connected for
 access.)**
 
 Following this, they should request that their academic supervisor fill in the HPC access
 request form which can be found at the
-`IT Service Desk Self Service Portal <https://shef.topdesk.net/tas/public/ssp/>`_ under the option
+`IT Service Desk Self Service Portal <self_service_>`_ under the option
 Service Request Forms.
 
 Once you have been granted HPC access by the service desk, you can use your normal
@@ -80,6 +80,5 @@ Extra care should always be taken when dealing with sensitive information; if yo
 the sensitivity of information, or how it should be handled, then please contact IT Services
 `research-it@sheffield.ac.uk <research-it@sheffield.ac.uk>`_ for advice.
 
-
-
-
+.. _infosec: https://infosecurity.shef.ac.uk/
+.. _self_service: https://shef.topdesk.net/tas/public/ssp/

@@ -28,13 +28,13 @@ including *Windows Terminal*.
 
 .. warning::
 
-    Eduroam no longer grants direct access to the clusters. If using Eduroam, you must keep the  `VPN <https://www.sheffield.ac.uk/it-services/vpn>`_ 
+    Eduroam no longer grants direct access to the clusters. If using Eduroam, you must keep the  `VPN <vpn_>`_ 
     connected at all times while using the clusters.
 
 Valid methods of connecting to the University clusters using SSH (or the related protocols SCP and SFTP) include:
 
 * Connecting while in a campus building using wired ethernet;
-* Connecting while on campus using Eduroam or off campus *after* `establishing a VPN connection (required) <https://www.sheffield.ac.uk/it-services/vpn>`_;
+* Connecting while on campus using Eduroam or off campus *after* `establishing a VPN connection (required) <vpn_>`_;
 * Connecting while off campus without a VPN connection using the HPC SSH gateway.
 
 
@@ -153,7 +153,7 @@ log in to a cluster:
 
             If this fails then:
 
-            * Check that your `XQuartz <https://www.xquartz.org/>`_ is up to date then try again *or*
+            * Check that your `XQuartz <xquartz_>`_ is up to date then try again *or*
             * Try again with ``-Y`` instead of ``-X``
 
 Here you need to:
@@ -257,7 +257,7 @@ SSH client software on Mac OS/X and Linux
 Linux and macOS (OS X) both typically come with a command-line SSH client pre-installed.
 
 If you are using macOS and want to be able to run graphical applications on the clusters then
-you need to install the latest version of the `XQuartz <https://www.xquartz.org/>`_ *X Windows server*.
+you need to install the latest version of the `XQuartz <xquartz_>`_ *X Windows server*.
 
 Open a terminal (e.g. *Gnome Terminal* on Linux or *Terminal* on macOS) and then go to :ref:`ssh`.
 
@@ -288,3 +288,6 @@ Now you have connected to a cluster,
 you can look at how to submit jobs on the :ref:`job_submission_control` page or
 look at the software installed on
 :ref:`Stanage <stanage-software>` and :ref:`Bessemer <bessemer-software>`. 
+
+.. _vpn: https://www.sheffield.ac.uk/it-services/vpn
+.. _xquartz: https://www.xquartz.org/

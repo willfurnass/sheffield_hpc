@@ -43,13 +43,13 @@ Modules are not the only way of managing software on clusters: increasingly comm
    .. group-tab:: Stanage
 
         * The :ref:`Conda <python_stanage>` package manager (Python-centric but can manage software written in any language);
-        * :ref:`Apptainer/Singularity <apptainer_stanage>`, a means for deploying software in `containers <https://en.wikipedia.org/wiki/Operating-system-level_virtualization>`__ (similar to `Docker <https://www.docker.com/>`__).
+        * :ref:`Apptainer/Singularity <apptainer_stanage>`, a means for deploying software in `containers <containers_>`__ (similar to `Docker <docker_>`__).
 
 
    .. group-tab:: Bessemer
 
         * The :ref:`Conda <python_conda_bessemer>` package manager (Python-centric but can manage software written in any language);
-        * :ref:`Apptainer/Singularity <apptainer_bessemer>`, a means for deploying software in `containers <https://en.wikipedia.org/wiki/Operating-system-level_virtualization>`__ (similar to `Docker <https://www.docker.com/>`__).
+        * :ref:`Apptainer/Singularity <apptainer_bessemer>`, a means for deploying software in `containers <containers_>`__ (similar to `Docker <docker_>`__).
 
 -----
 
@@ -343,3 +343,6 @@ Here is a list of the most useful ``module`` commands. For full details, type ``
         * ``module purge`` – unload all modules
         * ``module help modulename`` – may show longer description of the module if present in the modulefile
         * ``man module`` – detailed explanation of the above commands and others
+
+.. _containers: https://en.wikipedia.org/wiki/Operating-system-level_virtualization
+.. _docker: https://www.docker.com/

@@ -38,7 +38,7 @@ Please note majority of the exucatables require ``srun`` to run, so can only be 
 
 Batch Submission - Parallel
 ---------------------------
-The parallel version of CASTEP is called ``castep.mpi``. Below is an example of a parallel ``castep.mpi batch`` job. It follows the example documented on the `officcial castep tutorial <https://castep.org/Tutorials/BandStructureAndDOS>`_ .
+The parallel version of CASTEP is called ``castep.mpi``. Below is an example of a parallel ``castep.mpi batch`` job. It follows the example documented on the `official castep tutorial <castep_tutorial_>`_ .
 
 .. code-block:: bash
 
@@ -71,4 +71,6 @@ Testing
 
 Version 23.1
 ^^^^^^^^^^^^^
-The none GPU installation was tested using the example batch scripts and the instructions listed on `officcial castep tutorial <https://castep.org/Tutorials/BandStructureAndDOS>`_ .
+The none GPU installation was tested using the example batch scripts and the instructions listed on `official castep tutorial <castep_tutorial_>`_ .
+
+.. _castep_tutorial: https://castep.org/Tutorials/BandStructureAndDOS
