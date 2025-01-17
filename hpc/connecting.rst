@@ -247,6 +247,11 @@ For personal systems you can download and install the *Installer edition* of `Mo
 
 - :ref:`Setting up Profiles in MobaXterm <mobaxterm_connecting_profile_setup>`.
 
+.. caution::
+
+   We discourage the use of Warp Terminal when accessing our HPC clusters.
+   This is due to multiple environment-related issues encountered by users who connect via Warp.
+
 ----------
 
 .. _macosquartz:
