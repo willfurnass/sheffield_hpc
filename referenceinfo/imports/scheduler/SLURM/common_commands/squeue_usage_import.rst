@@ -33,6 +33,11 @@ using the ``--start`` flag:
 
   $ squeue --me --start
 
+.. _squeue-start-estimate:
+
+The accuracy of ``squeue --start`` estimates varies due to factors like queue dynamics,
+resource availability (affected by maintenance, node failures, etc), making it a guideline rather than a guarantee.
+
 When checking the status of a job you may wish to check for updates at a time interval. This can 
 be achieved by using the ``--iterate`` flag and a number of seconds: 
 
