@@ -192,7 +192,7 @@ Following are ways to fix too much time requested:
    .. group-tab:: Stanage
         The maximum run time for Stanage is 96 hours.
 
-        You can get an estimate for when your job will run on Stanage using:
+        You can get an :ref:`estimate <squeue-start-estimate>` for when your job will run on Stanage using:
 
         .. code-block:: console
 
@@ -216,7 +216,7 @@ Following are ways to fix too much time requested:
 
         The maximum run time for Bessemer is 168 hours.
 
-        You can get an estimate for when your job will run on Bessemer using:
+        You can get an :ref:`estimate <squeue-start-estimate>` for when your job will run on Bessemer using:
 
         .. code-block:: console
 
