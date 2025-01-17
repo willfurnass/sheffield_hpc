@@ -137,3 +137,5 @@ Abaqus 2021 (EasyBuild install):
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Abaqus was installed using Easybuild 4.7.0, build details can be found in folder $EBROOTABAQUS/easybuild with the module loaded.
+
+.. include:: /referenceinfo/imports/stanage/packages/abaqus-dpnd-el7-icelake-znver-stanage.rst

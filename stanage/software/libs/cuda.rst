@@ -342,3 +342,5 @@ Results: ::
       134217728      33554432     float     sum      -1    974.9  137.67  206.51      0    962.4  139.46  209.20      0
    # Out of bounds values : 0 OK
    # Avg bus bandwidth    : 39.6794
+
+.. include:: /referenceinfo/imports/stanage/packages/cuda-dpnd-el7-icelake-znver-stanage.rst

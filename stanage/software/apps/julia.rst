@@ -80,3 +80,5 @@ Testing
 ^^^^^^^
 
 Testing has been conducted by running an interactive session and also submitting the above slurm job.
+
+.. include:: /referenceinfo/imports/stanage/packages/julia-dpnd-el7-icelake-znver-stanage.rst

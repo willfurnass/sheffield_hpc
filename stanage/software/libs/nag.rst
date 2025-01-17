@@ -120,3 +120,5 @@ Testing
 -------
 
 Run an example program (as detailed above). The run_example copies the relevant Fortran code file & associated data, compiles & executes the test. Note: the example code contains a function call to the relevant pre-built NAG library function.
+
+.. include:: /referenceinfo/imports/stanage/packages/nag-dpnd-el7-icelake-znver-stanage.rst

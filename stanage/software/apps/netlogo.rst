@@ -148,3 +148,5 @@ Installation method
 
 |softwarename| version 6.2.0 was installed using Easybuild 4.7.1, build details can be found in folder ``$EBROOTNETLOGO/easybuild`` with the module loaded.
 
+
+.. include:: /referenceinfo/imports/stanage/packages/netlogo-dpnd-el7-icelake-znver-stanage.rst

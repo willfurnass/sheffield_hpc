@@ -40,3 +40,5 @@ Intel MKL-FFTW can be activated using one of the following: ::
    module load imkl-FFTW/2022.1.0-iimpi-2022a
    module load imkl-FFTW/2022.2.1-iimpi-2022b
 
+
+.. include:: /referenceinfo/imports/stanage/packages/imkl-dpnd-el7-icelake-znver-stanage.rst

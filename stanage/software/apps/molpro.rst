@@ -58,3 +58,5 @@ Installation notes
 ------------------
 
 The software was installed using a custom config called ``Molpro-mpp-2022.3.2.linux_x86_64_sockets.eb``, which should be available in the easybuild-easyconfig repository shortly.
+
+.. include:: /referenceinfo/imports/stanage/packages/molpro-dpnd-el7-icelake-znver-stanage.rst

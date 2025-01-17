@@ -92,3 +92,5 @@ Build logs and test reports can be found in ``$EBDEVELGSL`` with a given module 
 Testing method
 ^^^^^^^^^^^^^^^
 Testing has been conducted using the above example.
+
+.. include:: /referenceinfo/imports/stanage/packages/gsl-dpnd-el7-icelake-znver-stanage.rst

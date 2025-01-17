@@ -169,3 +169,5 @@ Build logs and test reports can be found in ``$EBROOTOPENMPI/easybuild`` with a 
 
 
 
+
+.. include:: /referenceinfo/imports/stanage/packages/openmpi-dpnd-el7-icelake-znver-stanage.rst

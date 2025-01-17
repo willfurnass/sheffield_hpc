@@ -66,3 +66,5 @@ Installation notes
 ------------------
 
 xvfb was installed using Easybuild, build details can be found in folder $EBROOTXVFB/easybuild with a given module loaded.
+
+.. include:: /referenceinfo/imports/stanage/packages/xvfb-dpnd-el7-icelake-znver-stanage.rst

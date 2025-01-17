@@ -35,3 +35,5 @@ script; the module file is
 The installation of Rosetta weekly release 2023.35 was a binary installation.
     
 
+
+.. include:: /referenceinfo/imports/stanage/packages/rosetta-dpnd-el7-icelake-znver-stanage.rst

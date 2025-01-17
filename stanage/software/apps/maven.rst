@@ -25,3 +25,5 @@ Installation notes
 ------------------
 
 Maven was installed using Easybuild 4.7.0, build details can be found in ``$EBROOTMAVEN/easybuild`` with the module loaded.
+
+.. include:: /referenceinfo/imports/stanage/packages/maven-dpnd-el7-icelake-znver-stanage.rst

@@ -48,3 +48,5 @@ Installation notes
 This section is primarily for administrators of the system. Java has been installed using the default Easybuild config files.
 
 Build logs and test reports can be found in ``$EBROOTJAVA/easybuild`` with a given module loaded.
+
+.. include:: /referenceinfo/imports/stanage/packages/java-dpnd-el7-icelake-znver-stanage.rst

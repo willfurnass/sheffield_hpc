@@ -50,3 +50,5 @@ For more details, you can refer to the `NetCDF installation guide <https://jules
    # NetCDF Fortran components
    nc-config --all # General information on the NetCDF installation
    nf-config --all # Check whether NetCDF Fortran components have been installed
+
+.. include:: /referenceinfo/imports/stanage/packages/netcdf-dpnd-el7-icelake-znver-stanage.rst

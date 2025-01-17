@@ -119,3 +119,5 @@ Next compile the ``geos_hello_world.c`` file::
 Output should look like this::
 
     Geometry: POINT (1.0000000000000000 1.0000000000000000)
+
+.. include:: /referenceinfo/imports/stanage/packages/geos-dpnd-el7-icelake-znver-stanage.rst

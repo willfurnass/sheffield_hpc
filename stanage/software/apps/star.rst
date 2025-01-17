@@ -133,3 +133,5 @@ The output file should resemble:
 
 
 
+
+.. include:: /referenceinfo/imports/stanage/packages/star-dpnd-el7-icelake-znver-stanage.rst

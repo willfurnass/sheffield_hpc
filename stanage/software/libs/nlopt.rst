@@ -24,3 +24,5 @@ Installation method
 
 
 This was installed as an Easybuild dependency for `R <https://docs.hpc.shef.ac.uk/en/latest/stanage/software/apps/R.html>`_
+
+.. include:: /referenceinfo/imports/stanage/packages/nlopt-dpnd-el7-icelake-znver-stanage.rst

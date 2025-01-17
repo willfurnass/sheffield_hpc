@@ -29,3 +29,5 @@ This section is primarily for administrators of the system. HDF5 has been instal
 
 Build logs and test reports can be found in ``$EBROOTHDF5/easybuild`` with a given module loaded.
 
+
+.. include:: /referenceinfo/imports/stanage/packages/hdf5-dpnd-el7-icelake-znver-stanage.rst

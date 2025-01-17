@@ -133,3 +133,5 @@ GROMACS was installed using Easybuild 4.7.0, build details can be found in ``$EB
 GROMACS should just be installed using a batch session otherwise the installation will crash when it comes to build ``gmx_mpi``.
 
 Testing was done using the example on `Lysozyme in Water <http://www.mdtutorials.com/gmx/lysozyme/index.html>`_
+
+.. include:: /referenceinfo/imports/stanage/packages/gromacs-dpnd-el7-icelake-znver-stanage.rst

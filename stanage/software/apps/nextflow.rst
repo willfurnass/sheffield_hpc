@@ -161,3 +161,5 @@ Build logs and test reports can be found in ``$EBDEVELNEXTFLOW`` with a given mo
 Testing method
 ^^^^^^^^^^^^^^^
 Testing has been conducted with the above examples.
+
+.. include:: /referenceinfo/imports/stanage/packages/nextflow-dpnd-el7-icelake-znver-stanage.rst

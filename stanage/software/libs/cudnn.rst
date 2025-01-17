@@ -55,3 +55,5 @@ compile and execute it by running the following on a GPU node
    g++ -o hw.o -c hw.cpp
    nvcc -ccbin g++ -m64 -gencode arch=compute_80,code=sm_80 -o hw hw.o -lcublasLt -lcudart -lcublas -lcudnn -lstdc++ -lm
    ./hw
+
+.. include:: /referenceinfo/imports/stanage/packages/cudnn-dpnd-el7-icelake-znver-stanage.rst

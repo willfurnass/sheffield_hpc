@@ -79,3 +79,5 @@ Testing
 ^^^^^^^
 
 Testing has been conducted by running an interactive session and running some of the examples found `here. <https://moderndive.netlify.app/1-getting-started.html>`_
+
+.. include:: /referenceinfo/imports/stanage/packages/rstudio-dpnd-el7-icelake-znver-stanage.rst

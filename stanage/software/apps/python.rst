@@ -578,3 +578,5 @@ Anaconda was installed using Easybuild, build details can be found in folder ``$
 Python
 ^^^^^^
 Python was installed using Easybuild, build details can be found in folder ``$EBROOTPYTHON/easybuild`` with a given module loaded.
+
+.. include:: /referenceinfo/imports/stanage/packages/python-dpnd-el7-icelake-znver-stanage.rst

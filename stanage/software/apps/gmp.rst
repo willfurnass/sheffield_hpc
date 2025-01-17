@@ -28,3 +28,5 @@ Installation notes
 
 GnuMP was installed using Easybuild 4.7.0, build details can be found in ``$EBROOTGMP/easybuild`` with the module loaded.
 
+
+.. include:: /referenceinfo/imports/stanage/packages/gmp-dpnd-el7-icelake-znver-stanage.rst

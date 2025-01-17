@@ -74,3 +74,5 @@ Version 23.1
 The none GPU installation was tested using the example batch scripts and the instructions listed on `official castep tutorial <castep_tutorial_>`_ .
 
 .. _castep_tutorial: https://castep.org/Tutorials/BandStructureAndDOS
+
+.. include:: /referenceinfo/imports/stanage/packages/castep-dpnd-el7-icelake-znver-stanage.rst

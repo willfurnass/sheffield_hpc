@@ -26,3 +26,5 @@ Installation notes
 ------------------
 
 Bed tools was installed using EasyBuild/4.9.4, build details can be found in ``$EBROOTBEDTOOLS/easybuild`` with the module loaded.
+
+.. include:: /referenceinfo/imports/stanage/packages/bedtools-dpnd-el7-icelake-znver-stanage.rst

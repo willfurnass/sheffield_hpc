@@ -10,4 +10,3 @@ Applications on Stanage
     ansys/index
     ./*
 
-    

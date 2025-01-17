@@ -32,3 +32,5 @@ Once you have loaded the required version of ``gcc``, type ::
     man gcc
 
 * `What's new in the gcc version 12 series? <https://gcc.gnu.org/gcc-12/changes.html>`__
+
+.. include:: /referenceinfo/imports/stanage/packages/gcc-dpnd-el7-icelake-znver-stanage.rst

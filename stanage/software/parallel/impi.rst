@@ -142,3 +142,5 @@ This section is primarily for administrators of the system. Intel MPI has been i
       as Intel MPI currently works better with PMI2 than the newer PMIx APIs.
     * for versions greater than 19.0.0 ``I_MPI_PMI_LIBRARY`` is set to the absolute path to ``libpmi2.so`` (required by ``srun``).
 * The ``mpirun`` executable is patched so that ``I_MPI_PMI_LIBRARY`` is explicitly *unset* at execution time, as ``I_MPI_PMI_LIBRARY`` can only be used with ``srun``.
+
+.. include:: /referenceinfo/imports/stanage/packages/impi-dpnd-el7-icelake-znver-stanage.rst

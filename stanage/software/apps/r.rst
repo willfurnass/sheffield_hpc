@@ -187,3 +187,5 @@ minus any of the configuration to install 765 packages from CRAN
 Build logs and test reports can be found in ``$EBOOTR/easybuild`` with a given module loaded.
 
 NOTE: all R versions patched to address the CVE vulnerability using R-4.x_fix-CVE-2024-27322.patch
+
+.. include:: /referenceinfo/imports/stanage/packages/r-dpnd-el7-icelake-znver-stanage.rst

@@ -35,3 +35,5 @@ Installation notes
 ------------------
 
 This section is primarily for administrators of the system. |softwarename| has been installed using the default Easybuild config files.
+
+.. include:: /referenceinfo/imports/stanage/packages/git-dpnd-el7-icelake-znver-stanage.rst

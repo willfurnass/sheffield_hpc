@@ -92,3 +92,5 @@ Testing method
 Testing has been conducted by following the above example.
 
 .. _nektar_tutorial: https://doc.nektar.info/tutorials/latest/incns/taylor-green-vortex/incns-taylor-green-vortex.html#incns-taylor-green-vortexch4.html
+
+.. include:: /referenceinfo/imports/stanage/packages/nektar++-dpnd-el7-icelake-znver-stanage.rst

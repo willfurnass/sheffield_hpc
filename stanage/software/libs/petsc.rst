@@ -65,3 +65,5 @@ Compile using the following command:
 .. code-block:: bash
 
     mpicc -o example example.c
+
+.. include:: /referenceinfo/imports/stanage/packages/petsc-dpnd-el7-icelake-znver-stanage.rst

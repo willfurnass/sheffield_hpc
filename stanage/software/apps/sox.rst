@@ -43,3 +43,5 @@ Installation method
 This section is primarily for administrators of the system. SoX has been installed using the default Easybuild config files.
 
 Build logs and test reports can be found in ``$EBDEVELSOX`` with a given module loaded.
+
+.. include:: /referenceinfo/imports/stanage/packages/sox-dpnd-el7-icelake-znver-stanage.rst

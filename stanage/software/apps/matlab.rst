@@ -130,3 +130,5 @@ Installation method
 MATLAB was installed using Easybuild 4.7.0, build details can be found in folder $EBROOTMATLAB/easybuild with the module loaded.
 
 
+
+.. include:: /referenceinfo/imports/stanage/packages/matlab-dpnd-el7-icelake-znver-stanage.rst

@@ -87,3 +87,5 @@ Download the Mathematica package, Mathematica_13.2.1_LINUX.sh, from Wolfram.
 Mathematica was installed using Easybuild 4.7.0, build details can be found in ``$EBDEVELMATHEMATICA``
 
 Testing was performed using the above examples.
+
+.. include:: /referenceinfo/imports/stanage/packages/mathematica-dpnd-el7-icelake-znver-stanage.rst

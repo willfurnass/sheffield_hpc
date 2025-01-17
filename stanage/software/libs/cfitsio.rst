@@ -140,3 +140,5 @@ Next source each compiled file (expected output shown):
         Hello from thread 4, nthreads 8
 
 .. _cfitsio_example: https://heasarc.gsfc.nasa.gov/docs/software/fitsio/quick/node4.html
+
+.. include:: /referenceinfo/imports/stanage/packages/cfitsio-dpnd-el7-icelake-znver-stanage.rst

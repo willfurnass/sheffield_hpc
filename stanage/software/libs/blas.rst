@@ -16,3 +16,5 @@ Two BLAS and LAPACK implementations are available on Stanage:
 
 * :ref:`openblas_stanage`
 * :ref:`imkl_stanage`
+
+.. include:: /referenceinfo/imports/stanage/packages/blast+-dpnd-el7-icelake-znver-stanage.rst

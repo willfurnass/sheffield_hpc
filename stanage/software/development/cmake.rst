@@ -18,3 +18,5 @@ Usage of CMake often involves:
 
 1. Creating and ``cd``-ing into a dedicated build directory within a source tree then
 2. Running something like ``cmake -DSOME_OPTION -DANOTHER_OPTION ..``
+
+.. include:: /referenceinfo/imports/stanage/packages/cmake-dpnd-el7-icelake-znver-stanage.rst

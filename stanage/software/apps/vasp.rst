@@ -81,3 +81,5 @@ Installation notes
 ------------------
 
 Not relevant for Pilot User phase.
+
+.. include:: /referenceinfo/imports/stanage/packages/vasp-dpnd-el7-icelake-znver-stanage.rst

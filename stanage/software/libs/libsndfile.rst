@@ -58,3 +58,5 @@ Using the command :
 .. code-block:: 
 
     gcc list_formats.c $(pkg-config --libs sndfile) -o output
+
+.. include:: /referenceinfo/imports/stanage/packages/libsndfile-dpnd-el7-icelake-znver-stanage.rst

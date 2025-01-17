@@ -86,3 +86,5 @@ This section is primarily for administrators of the system. Boost has been insta
 Build logs and test reports can be found in ``$EBROOTBOOST/easybuild`` with a given module loaded.
 
 Tested by compiling and running the two programs shown above.
+
+.. include:: /referenceinfo/imports/stanage/packages/boost-dpnd-el7-icelake-znver-stanage.rst

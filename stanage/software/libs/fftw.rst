@@ -33,3 +33,5 @@ To make this library available, run one the following:
 
 Also see :ref:`imkl-fftw <imkl_fftw_stanage>` which is a library that combines FFTW library with Intel's Math Kernel Library (IMKL)
 to provide optimized FFT routines that are specifically optimized for Intel processors.
+
+.. include:: /referenceinfo/imports/stanage/packages/fftw-dpnd-el7-icelake-znver-stanage.rst

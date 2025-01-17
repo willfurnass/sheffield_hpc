@@ -159,3 +159,5 @@ Training
 --------
 
 The Research Software Engineering team has an `introductory workshop on deep learning with the TensorFlow Keras framework <https://rses-dl-course.github.io/>__`.
+
+.. include:: /referenceinfo/imports/stanage/packages/tensorflow-dpnd-el7-icelake-znver-stanage.rst

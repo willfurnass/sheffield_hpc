@@ -73,3 +73,5 @@ Modulefiles
 The module file is on the system at 
 :download:`/opt/apps/testapps/el7/modules/staging/all/ncdu/1.15.1-GCCcore-9.3.0.lua </stanage/software/modulefiles/ncdu/1.15.1-GCCcore-9.3.0.lua>`.
 
+
+.. include:: /referenceinfo/imports/stanage/packages/ncdu-dpnd-el7-icelake-znver-stanage.rst

@@ -33,3 +33,9 @@ Once you have loaded the required version of icc/icpc/ifort, run: ::
 
    man icc
    man ifort
+
+.. include:: /referenceinfo/imports/stanage/packages/iccifort-dpnd-el7-icelake-znver-stanage.rst
+
+.. include:: /referenceinfo/imports/stanage/packages/icc-dpnd-el7-icelake-znver-stanage.rst
+
+.. include:: /referenceinfo/imports/stanage/packages/ifort-dpnd-el7-icelake-znver-stanage.rst

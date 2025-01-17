@@ -97,3 +97,5 @@ This section is primarily for administrators of the system. GDAL has been instal
 Build logs and test reports can be found in ``$EBROOTGDAL/easybuild`` with a given module loaded.
 
 .. _gdal: http://www.gdal.org/
+
+.. include:: /referenceinfo/imports/stanage/packages/gdal-dpnd-el7-icelake-znver-stanage.rst

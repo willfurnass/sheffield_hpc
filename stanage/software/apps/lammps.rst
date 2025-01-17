@@ -163,3 +163,5 @@ Testing method
 ^^^^^^^^^^^^^^^
 
 Testing has been conducted with the above examples.
+
+.. include:: /referenceinfo/imports/stanage/packages/lammps-dpnd-el7-icelake-znver-stanage.rst

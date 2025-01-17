@@ -52,3 +52,5 @@ Testing
     You want: miles
     5 km = 3.10686 miles
     x/miles = 0.621371*(x/km)
+
+.. include:: /referenceinfo/imports/stanage/packages/udunits-dpnd-el7-icelake-znver-stanage.rst

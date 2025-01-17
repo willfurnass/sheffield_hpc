@@ -70,3 +70,5 @@ Installation notes
 
 |softwarename| version 24.1.0 was installed using Easybuild 4.9.2, build details can be found 
 in ``$EBROOTENERGYPLUS/easybuild`` with the module loaded.
+
+.. include:: /referenceinfo/imports/stanage/packages/energyplus-dpnd-el7-icelake-znver-stanage.rst
