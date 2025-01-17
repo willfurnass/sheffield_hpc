@@ -31,6 +31,8 @@ Initialise and start Flight Desktop:
 
   In the case of "missing prerequisites" warnings while in an interactive session, please see :ref:`troubleshooting<trouble_flight>`:
 
+.. _continue-flight:
+
 The following is example output:
 
 .. code-block:: console
@@ -170,7 +172,7 @@ You're seeing a "missing prerequisites": error message:
 
     Desktop type xfce has missing prerequisites:
 
-    * Reprostory: EPEL
+    * Repository: EPEL
     Before this desktop type can be used, it must be prepared by your
     cluster administrator using the 'prepare' command, i.e.:
 
@@ -181,6 +183,15 @@ In most cases, this can be resolved using the following command:
 .. code-block:: 
 
     mv ~/.local/share/flight/desktop ~/.local/share/flight/desktop_bk
+
+Next verify again:
+
+.. code-block:: bash
+
+    flight desktop verify xfce   # only do this once
+    flight desktop start --geometry 1800x1000 xfce
+
+Then continue from :ref:`here <continue-flight>`.
 
 The GUI is slow or unresponsive:
 """"""""""""""""""""""""""""""""
