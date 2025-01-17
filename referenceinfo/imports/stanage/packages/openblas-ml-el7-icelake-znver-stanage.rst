@@ -19,4 +19,5 @@
         .. code-block:: console
 
             module load OpenBLAS/0.3.20-GCC-11.3.0
+            module load OpenBLAS/0.3.18-GCC-11.2.0
 

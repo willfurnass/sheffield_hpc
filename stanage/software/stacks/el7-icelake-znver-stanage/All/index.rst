@@ -9,12 +9,10 @@ All
     :maxdepth: 1
     :glob:
 
-
 * :ref:`ABAQUS <abaqus-cae-el7-icelake-znver-stanage>`
 * :ref:`Abseil <abseil-lib-el7-icelake-znver-stanage>`
 * :ref:`ADMIXTURE <admixture-bio-el7-icelake-znver-stanage>`
 * :ref:`AlphaFold <alphafold-bio-el7-icelake-znver-stanage>`
-* :ref:`AmberTools <ambertools-chem-el7-icelake-znver-stanage>`
 * :ref:`Anaconda3 <anaconda3-lang-el7-icelake-znver-stanage>`
 * :ref:`annovar <annovar-bio-el7-icelake-znver-stanage>`
 * :ref:`ANSYS <ansys-tools-el7-icelake-znver-stanage>`

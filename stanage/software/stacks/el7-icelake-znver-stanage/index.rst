@@ -1,4 +1,4 @@
-.. _el7-icelake-znver-stanage--:
+.. _el7-icelake-znver-stanage:
 
 Icelake and Znver3 (OS: RHEL 7) Packages
 ========================================
