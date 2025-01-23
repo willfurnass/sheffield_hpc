@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of OpenMPI
+.. dropdown:: Direct dependencies for latest version of OpenMPI
 
    - :ref:`GCC/12.2.0 <gcc-compiler-el7-icelake-znver-stanage>`
    - :ref:`hwloc/2.8.0-GCCcore-12.2.0 <hwloc-system-el7-icelake-znver-stanage>`

@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of Tk
+.. dropdown:: Direct dependencies for latest version of Tk
 
    - :ref:`GCCcore/12.2.0 <gcccore-compiler-el7-icelake-znver-stanage>`
    - :ref:`Tcl/8.6.12-GCCcore-12.2.0 <tcl-lang-el7-icelake-znver-stanage>`

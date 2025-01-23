@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of Graphviz
+.. dropdown:: Direct dependencies for latest version of Graphviz
 
    - :ref:`bzip2/1.0.8-GCCcore-12.2.0 <bzip2-tools-el7-icelake-znver-stanage>`
    - :ref:`expat/2.4.9-GCCcore-12.2.0 <expat-tools-el7-icelake-znver-stanage>`

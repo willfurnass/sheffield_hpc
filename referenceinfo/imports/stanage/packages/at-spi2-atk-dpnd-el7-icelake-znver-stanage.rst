@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of at-spi2-atk
+.. dropdown:: Direct dependencies for latest version of at-spi2-atk
 
    - :ref:`at-spi2-core/2.46.0-GCCcore-12.2.0 <at-spi2-core-vis-el7-icelake-znver-stanage>`
    - :ref:`ATK/2.38.0-GCCcore-12.2.0 <atk-vis-el7-icelake-znver-stanage>`

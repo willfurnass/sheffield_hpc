@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of Mesa
+.. dropdown:: Direct dependencies for latest version of Mesa
 
    - :ref:`GCCcore/12.2.0 <gcccore-compiler-el7-icelake-znver-stanage>`
    - :ref:`libdrm/2.4.114-GCCcore-12.2.0 <libdrm-lib-el7-icelake-znver-stanage>`

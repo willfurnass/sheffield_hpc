@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of intltool
+.. dropdown:: Direct dependencies for latest version of intltool
 
    - :ref:`GCCcore/12.3.0 <gcccore-compiler-el7-icelake-znver-stanage>`
    - :ref:`Perl-bundle-CPAN/5.36.1-GCCcore-12.3.0 <perl-bundle-cpan-lang-el7-icelake-znver-stanage>`

@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of IQ-TREE
+.. dropdown:: Direct dependencies for latest version of IQ-TREE
 
    - :ref:`Boost/1.77.0-GCC-11.2.0 <boost-devel-el7-icelake-znver-stanage>`
    - :ref:`gompi/2021b <gompi-toolchain-el7-icelake-znver-stanage>`

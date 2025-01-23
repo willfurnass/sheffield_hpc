@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of gmsh
+.. dropdown:: Direct dependencies for latest version of gmsh
 
    - :ref:`FLTK/1.3.8-GCCcore-12.2.0 <fltk-vis-el7-icelake-znver-stanage>`
    - :ref:`foss/2022b <foss-toolchain-el7-icelake-znver-stanage>`

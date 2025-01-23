@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of TensorFlow
+.. dropdown:: Direct dependencies for latest version of TensorFlow
 
    - :ref:`cURL/7.83.0-GCCcore-11.3.0 <curl-tools-el7-icelake-znver-stanage>`
    - :ref:`dill/0.3.6-GCCcore-11.3.0 <dill-data-el7-icelake-znver-stanage>`

@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of NCCL-tests
+.. dropdown:: Direct dependencies for latest version of NCCL-tests
 
    - :ref:`CUDA/11.7.0 <cuda-system-el7-icelake-znver-stanage>`
    - :ref:`GCC/11.3.0 <gcc-compiler-el7-icelake-znver-stanage>`

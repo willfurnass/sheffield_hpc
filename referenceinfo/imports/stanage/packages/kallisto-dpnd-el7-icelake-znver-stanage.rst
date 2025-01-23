@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of kallisto
+.. dropdown:: Direct dependencies for latest version of kallisto
 
    - :ref:`gompi/2022a <gompi-toolchain-el7-icelake-znver-stanage>`
    - :ref:`HDF5/1.12.2-gompi-2022a <hdf5-data-el7-icelake-znver-stanage>`

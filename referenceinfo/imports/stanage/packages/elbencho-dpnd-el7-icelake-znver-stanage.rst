@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of elbencho
+.. dropdown:: Direct dependencies for latest version of elbencho
 
    - :ref:`Boost/1.76.0-GCC-10.3.0 <boost-devel-el7-icelake-znver-stanage>`
    - :ref:`GCC/10.3.0 <gcc-compiler-el7-icelake-znver-stanage>`

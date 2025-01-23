@@ -1,3 +1,3 @@
-.. dropdown:: Dependencies for latest version of BLIS
+.. dropdown:: Direct dependencies for latest version of BLIS
 
    - :ref:`GCC/12.3.0 <gcc-compiler-el7-icelake-znver-stanage>`

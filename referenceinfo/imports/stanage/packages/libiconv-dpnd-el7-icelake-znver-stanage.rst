@@ -1,3 +1,3 @@
-.. dropdown:: Dependencies for latest version of libiconv
+.. dropdown:: Direct dependencies for latest version of libiconv
 
    - :ref:`GCCcore/12.3.0 <gcccore-compiler-el7-icelake-znver-stanage>`

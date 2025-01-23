@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of SRA-Toolkit
+.. dropdown:: Direct dependencies for latest version of SRA-Toolkit
 
    - :ref:`bzip2/1.0.8-GCCcore-11.3.0 <bzip2-tools-el7-icelake-znver-stanage>`
    - :ref:`file/5.43-GCCcore-11.3.0 <file-system-el7-icelake-znver-stanage>`

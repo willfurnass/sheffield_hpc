@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of libsndfile
+.. dropdown:: Direct dependencies for latest version of libsndfile
 
    - :ref:`FLAC/1.4.2-GCCcore-12.2.0 <flac-lib-el7-icelake-znver-stanage>`
    - :ref:`GCCcore/12.2.0 <gcccore-compiler-el7-icelake-znver-stanage>`

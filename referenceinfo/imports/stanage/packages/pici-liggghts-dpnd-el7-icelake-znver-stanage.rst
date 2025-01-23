@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of PICI-LIGGGHTS
+.. dropdown:: Direct dependencies for latest version of PICI-LIGGGHTS
 
    - :ref:`foss/2022a <foss-toolchain-el7-icelake-znver-stanage>`
    - :ref:`libjpeg-turbo/2.1.3-GCCcore-11.3.0 <libjpeg-turbo-lib-el7-icelake-znver-stanage>`

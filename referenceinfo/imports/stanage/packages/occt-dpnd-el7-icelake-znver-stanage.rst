@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of occt
+.. dropdown:: Direct dependencies for latest version of occt
 
    - :ref:`foss/2022b <foss-toolchain-el7-icelake-znver-stanage>`
    - :ref:`FreeImage/3.18.0-GCCcore-12.2.0 <freeimage-vis-el7-icelake-znver-stanage>`

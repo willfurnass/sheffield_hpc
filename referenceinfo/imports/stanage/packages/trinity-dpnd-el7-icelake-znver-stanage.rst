@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of Trinity
+.. dropdown:: Direct dependencies for latest version of Trinity
 
    - :ref:`ant/1.10.12-Java-11 <ant-devel-el7-icelake-znver-stanage>`
    - :ref:`BLAST+/2.13.0-gompi-2022a <blast+-bio-el7-icelake-znver-stanage>`

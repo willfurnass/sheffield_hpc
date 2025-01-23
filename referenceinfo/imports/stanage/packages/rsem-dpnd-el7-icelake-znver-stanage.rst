@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of RSEM
+.. dropdown:: Direct dependencies for latest version of RSEM
 
    - :ref:`Bowtie/1.3.1-GCC-11.3.0 <bowtie-bio-el7-icelake-znver-stanage>`
    - :ref:`Bowtie2/2.4.5-GCC-11.3.0 <bowtie2-bio-el7-icelake-znver-stanage>`

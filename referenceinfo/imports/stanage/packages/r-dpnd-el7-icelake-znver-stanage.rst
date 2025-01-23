@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of R
+.. dropdown:: Direct dependencies for latest version of R
 
    - :ref:`bzip2/1.0.8-GCCcore-12.2.0 <bzip2-tools-el7-icelake-znver-stanage>`
    - :ref:`cairo/1.17.4-GCCcore-12.2.0 <cairo-vis-el7-icelake-znver-stanage>`

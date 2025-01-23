@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of gmpy2
+.. dropdown:: Direct dependencies for latest version of gmpy2
 
    - :ref:`GCC/11.3.0 <gcc-compiler-el7-icelake-znver-stanage>`
    - :ref:`GMP/6.2.1-GCCcore-11.3.0 <gmp-math-el7-icelake-znver-stanage>`

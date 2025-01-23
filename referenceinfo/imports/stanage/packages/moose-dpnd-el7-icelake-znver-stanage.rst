@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of MOOSE
+.. dropdown:: Direct dependencies for latest version of MOOSE
 
    - :ref:`foss/2022a <foss-toolchain-el7-icelake-znver-stanage>`
    - :ref:`libpng/1.6.37-GCCcore-11.3.0 <libpng-lib-el7-icelake-znver-stanage>`

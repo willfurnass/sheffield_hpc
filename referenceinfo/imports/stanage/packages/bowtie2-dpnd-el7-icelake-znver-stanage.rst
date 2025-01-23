@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of Bowtie2
+.. dropdown:: Direct dependencies for latest version of Bowtie2
 
    - :ref:`GCC/11.3.0 <gcc-compiler-el7-icelake-znver-stanage>`
    - :ref:`Perl/5.34.1-GCCcore-11.3.0 <perl-lang-el7-icelake-znver-stanage>`

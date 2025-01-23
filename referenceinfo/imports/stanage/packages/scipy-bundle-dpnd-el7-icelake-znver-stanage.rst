@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of SciPy-bundle
+.. dropdown:: Direct dependencies for latest version of SciPy-bundle
 
    - :ref:`foss/2022a <foss-toolchain-el7-icelake-znver-stanage>`
    - :ref:`gfbf/2022b <gfbf-toolchain-el7-icelake-znver-stanage>`

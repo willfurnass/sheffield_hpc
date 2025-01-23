@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of FLTK
+.. dropdown:: Direct dependencies for latest version of FLTK
 
    - :ref:`GCCcore/12.2.0 <gcccore-compiler-el7-icelake-znver-stanage>`
    - :ref:`libGLU/9.0.2-GCCcore-12.2.0 <libglu-vis-el7-icelake-znver-stanage>`

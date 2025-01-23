@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of Python
+.. dropdown:: Direct dependencies for latest version of Python
 
    - :ref:`binutils/2.40-GCCcore-12.3.0 <binutils-tools-el7-icelake-znver-stanage>`
    - :ref:`bzip2/1.0.8-GCCcore-12.3.0 <bzip2-tools-el7-icelake-znver-stanage>`

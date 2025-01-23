@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of SQLite
+.. dropdown:: Direct dependencies for latest version of SQLite
 
    - :ref:`GCCcore/12.3.0 <gcccore-compiler-el7-icelake-znver-stanage>`
    - :ref:`libreadline/8.2-GCCcore-12.3.0 <libreadline-lib-el7-icelake-znver-stanage>`

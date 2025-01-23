@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of ParaView
+.. dropdown:: Direct dependencies for latest version of ParaView
 
    - :ref:`Boost/1.81.0-GCC-12.2.0 <boost-devel-el7-icelake-znver-stanage>`
    - :ref:`FFmpeg/5.1.2-GCCcore-12.2.0 <ffmpeg-vis-el7-icelake-znver-stanage>`

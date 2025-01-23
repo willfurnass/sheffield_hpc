@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of NSS
+.. dropdown:: Direct dependencies for latest version of NSS
 
    - :ref:`GCCcore/12.2.0 <gcccore-compiler-el7-icelake-znver-stanage>`
    - :ref:`NSPR/4.35-GCCcore-12.2.0 <nspr-lib-el7-icelake-znver-stanage>`

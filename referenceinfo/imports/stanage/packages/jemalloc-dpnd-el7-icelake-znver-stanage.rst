@@ -1,3 +1,3 @@
-.. dropdown:: Dependencies for latest version of jemalloc
+.. dropdown:: Direct dependencies for latest version of jemalloc
 
    - :ref:`GCCcore/12.2.0 <gcccore-compiler-el7-icelake-znver-stanage>`

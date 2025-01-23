@@ -1,3 +1,3 @@
-.. dropdown:: Dependencies for latest version of ParMETIS
+.. dropdown:: Direct dependencies for latest version of ParMETIS
 
    - :ref:`foss/2022b <foss-toolchain-el7-icelake-znver-stanage>`

@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of VTK
+.. dropdown:: Direct dependencies for latest version of VTK
 
    - :ref:`foss/2022a <foss-toolchain-el7-icelake-znver-stanage>`
    - :ref:`libGLU/9.0.2-GCCcore-11.3.0 <libglu-vis-el7-icelake-znver-stanage>`

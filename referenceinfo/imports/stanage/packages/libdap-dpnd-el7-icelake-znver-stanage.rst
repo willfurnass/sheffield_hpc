@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of libdap
+.. dropdown:: Direct dependencies for latest version of libdap
 
    - :ref:`cURL/7.83.0-GCCcore-11.3.0 <curl-tools-el7-icelake-znver-stanage>`
    - :ref:`GCCcore/11.3.0 <gcccore-compiler-el7-icelake-znver-stanage>`

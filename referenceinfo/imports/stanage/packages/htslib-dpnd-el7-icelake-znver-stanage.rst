@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of HTSlib
+.. dropdown:: Direct dependencies for latest version of HTSlib
 
    - :ref:`bzip2/1.0.8-GCCcore-12.2.0 <bzip2-tools-el7-icelake-znver-stanage>`
    - :ref:`cURL/7.86.0-GCCcore-12.2.0 <curl-tools-el7-icelake-znver-stanage>`

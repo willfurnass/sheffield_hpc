@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of jax
+.. dropdown:: Direct dependencies for latest version of jax
 
    - :ref:`flatbuffers-python/2.0-GCCcore-11.3.0 <flatbuffers-python-devel-el7-icelake-znver-stanage>`
    - :ref:`foss/2022a <foss-toolchain-el7-icelake-znver-stanage>`

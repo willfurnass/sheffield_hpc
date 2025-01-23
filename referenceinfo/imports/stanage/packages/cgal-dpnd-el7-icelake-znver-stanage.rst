@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of CGAL
+.. dropdown:: Direct dependencies for latest version of CGAL
 
    - :ref:`Boost/1.74.0-GCC-10.2.0 <boost-devel-el7-icelake-znver-stanage>`
    - :ref:`GMP/6.2.0-GCCcore-10.2.0 <gmp-math-el7-icelake-znver-stanage>`

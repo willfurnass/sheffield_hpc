@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of Salmon
+.. dropdown:: Direct dependencies for latest version of Salmon
 
    - :ref:`Boost/1.79.0-GCC-11.3.0 <boost-devel-el7-icelake-znver-stanage>`
    - :ref:`bzip2/1.0.8-GCCcore-11.3.0 <bzip2-tools-el7-icelake-znver-stanage>`

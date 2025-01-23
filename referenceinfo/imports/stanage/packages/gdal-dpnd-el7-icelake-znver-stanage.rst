@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of GDAL
+.. dropdown:: Direct dependencies for latest version of GDAL
 
    - :ref:`Armadillo/11.4.3-foss-2022b <armadillo-numlib-el7-icelake-znver-stanage>`
    - :ref:`Brunsli/0.1-GCCcore-12.2.0 <brunsli-lib-el7-icelake-znver-stanage>`

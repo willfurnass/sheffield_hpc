@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of xarray
+.. dropdown:: Direct dependencies for latest version of xarray
 
    - :ref:`foss/2022a <foss-toolchain-el7-icelake-znver-stanage>`
    - :ref:`Python/3.10.4-GCCcore-11.3.0 <python-lang-el7-icelake-znver-stanage>`

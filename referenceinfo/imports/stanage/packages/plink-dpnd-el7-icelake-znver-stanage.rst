@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of PLINK
+.. dropdown:: Direct dependencies for latest version of PLINK
 
    - :ref:`foss/2022a <foss-toolchain-el7-icelake-znver-stanage>`
    - :ref:`libdeflate/1.10-GCCcore-11.3.0 <libdeflate-system-el7-icelake-znver-stanage>`

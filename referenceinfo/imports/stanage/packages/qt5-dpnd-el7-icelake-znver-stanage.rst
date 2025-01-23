@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of Qt5
+.. dropdown:: Direct dependencies for latest version of Qt5
 
    - :ref:`bzip2/1.0.8-GCCcore-12.2.0 <bzip2-tools-el7-icelake-znver-stanage>`
    - :ref:`DBus/1.15.2-GCCcore-12.2.0 <dbus-devel-el7-icelake-znver-stanage>`

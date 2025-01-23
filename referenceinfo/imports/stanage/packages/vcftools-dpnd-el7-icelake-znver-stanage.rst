@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of VCFtools
+.. dropdown:: Direct dependencies for latest version of VCFtools
 
    - :ref:`GCC/11.3.0 <gcc-compiler-el7-icelake-znver-stanage>`
    - :ref:`HTSlib/1.15.1-GCC-11.3.0 <htslib-bio-el7-icelake-znver-stanage>`

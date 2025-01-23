@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of BLAT
+.. dropdown:: Direct dependencies for latest version of BLAT
 
    - :ref:`freetype/2.12.1-GCCcore-11.3.0 <freetype-vis-el7-icelake-znver-stanage>`
    - :ref:`GCC/11.3.0 <gcc-compiler-el7-icelake-znver-stanage>`

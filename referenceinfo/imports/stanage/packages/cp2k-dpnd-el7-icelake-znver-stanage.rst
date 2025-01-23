@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of CP2K
+.. dropdown:: Direct dependencies for latest version of CP2K
 
    - :ref:`FFTW/3.3.8-gompi-2020b <fftw-numlib-el7-icelake-znver-stanage>`
    - :ref:`foss/2020b <foss-toolchain-el7-icelake-znver-stanage>`

@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of GMT
+.. dropdown:: Direct dependencies for latest version of GMT
 
    - :ref:`cURL/7.83.0-GCCcore-11.3.0 <curl-tools-el7-icelake-znver-stanage>`
    - :ref:`foss/2022a <foss-toolchain-el7-icelake-znver-stanage>`

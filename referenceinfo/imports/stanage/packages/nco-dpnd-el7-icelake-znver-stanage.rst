@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of NCO
+.. dropdown:: Direct dependencies for latest version of NCO
 
    - :ref:`ANTLR/2.7.7-GCCcore-11.3.0-Java-11 <antlr-tools-el7-icelake-znver-stanage>`
    - :ref:`ESMF/8.3.0-foss-2022a <esmf-geo-el7-icelake-znver-stanage>`

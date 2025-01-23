@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of LibTIFF
+.. dropdown:: Direct dependencies for latest version of LibTIFF
 
    - :ref:`GCCcore/12.2.0 <gcccore-compiler-el7-icelake-znver-stanage>`
    - :ref:`jbigkit/2.1-GCCcore-12.2.0 <jbigkit-vis-el7-icelake-znver-stanage>`

@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of XML-Parser
+.. dropdown:: Direct dependencies for latest version of XML-Parser
 
    - :ref:`expat/2.2.5-GCCcore-9.3.0 <expat-tools-el7-icelake-znver-stanage>`
    - :ref:`GCCcore/9.3.0 <gcccore-compiler-el7-icelake-znver-stanage>`

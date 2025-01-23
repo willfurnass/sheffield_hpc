@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of foss
+.. dropdown:: Direct dependencies for latest version of foss
 
    - :ref:`FFTW.MPI/3.3.10-gompi-2022a <fftw.mpi-numlib-el7-icelake-znver-stanage>`
    - :ref:`FFTW/3.3.10-GCC-11.3.0 <fftw-numlib-el7-icelake-znver-stanage>`

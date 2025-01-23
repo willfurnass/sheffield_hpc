@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of libgd
+.. dropdown:: Direct dependencies for latest version of libgd
 
    - :ref:`fontconfig/2.14.1-GCCcore-12.2.0 <fontconfig-vis-el7-icelake-znver-stanage>`
    - :ref:`GCCcore/12.2.0 <gcccore-compiler-el7-icelake-znver-stanage>`

@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of GLib
+.. dropdown:: Direct dependencies for latest version of GLib
 
    - :ref:`GCCcore/12.2.0 <gcccore-compiler-el7-icelake-znver-stanage>`
    - :ref:`gettext/0.21.1-GCCcore-12.2.0 <gettext-tools-el7-icelake-znver-stanage>`

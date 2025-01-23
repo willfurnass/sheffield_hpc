@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of at-spi2-core
+.. dropdown:: Direct dependencies for latest version of at-spi2-core
 
    - :ref:`DBus/1.15.2-GCCcore-12.2.0 <dbus-devel-el7-icelake-znver-stanage>`
    - :ref:`GCCcore/12.2.0 <gcccore-compiler-el7-icelake-znver-stanage>`

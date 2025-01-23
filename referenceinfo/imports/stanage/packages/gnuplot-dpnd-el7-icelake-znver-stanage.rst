@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of gnuplot
+.. dropdown:: Direct dependencies for latest version of gnuplot
 
    - :ref:`cairo/1.17.4-GCCcore-11.3.0 <cairo-vis-el7-icelake-znver-stanage>`
    - :ref:`GCCcore/11.3.0 <gcccore-compiler-el7-icelake-znver-stanage>`

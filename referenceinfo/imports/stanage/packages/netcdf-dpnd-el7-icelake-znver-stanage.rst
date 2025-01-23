@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of netCDF
+.. dropdown:: Direct dependencies for latest version of netCDF
 
    - :ref:`bzip2/1.0.8-GCCcore-11.3.0 <bzip2-tools-el7-icelake-znver-stanage>`
    - :ref:`cURL/7.83.0-GCCcore-11.3.0 <curl-tools-el7-icelake-znver-stanage>`

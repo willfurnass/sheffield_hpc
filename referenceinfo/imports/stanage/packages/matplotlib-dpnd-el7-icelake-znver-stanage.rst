@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of matplotlib
+.. dropdown:: Direct dependencies for latest version of matplotlib
 
    - :ref:`foss/2022a <foss-toolchain-el7-icelake-znver-stanage>`
    - :ref:`freetype/2.12.1-GCCcore-11.3.0 <freetype-vis-el7-icelake-znver-stanage>`

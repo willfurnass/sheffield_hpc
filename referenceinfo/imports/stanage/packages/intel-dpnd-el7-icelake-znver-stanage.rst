@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of intel
+.. dropdown:: Direct dependencies for latest version of intel
 
    - :ref:`binutils/2.38-GCCcore-11.3.0 <binutils-tools-el7-icelake-znver-stanage>`
    - :ref:`GCCcore/11.3.0 <gcccore-compiler-el7-icelake-znver-stanage>`

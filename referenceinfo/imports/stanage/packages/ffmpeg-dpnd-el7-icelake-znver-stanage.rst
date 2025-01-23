@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of FFmpeg
+.. dropdown:: Direct dependencies for latest version of FFmpeg
 
    - :ref:`bzip2/1.0.8-GCCcore-12.3.0 <bzip2-tools-el7-icelake-znver-stanage>`
    - :ref:`fontconfig/2.14.2-GCCcore-12.3.0 <fontconfig-vis-el7-icelake-znver-stanage>`

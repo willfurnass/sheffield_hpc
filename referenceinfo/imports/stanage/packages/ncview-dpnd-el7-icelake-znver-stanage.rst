@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of ncview
+.. dropdown:: Direct dependencies for latest version of ncview
 
    - :ref:`gompi/2022a <gompi-toolchain-el7-icelake-znver-stanage>`
    - :ref:`libpng/1.6.37-GCCcore-11.3.0 <libpng-lib-el7-icelake-znver-stanage>`

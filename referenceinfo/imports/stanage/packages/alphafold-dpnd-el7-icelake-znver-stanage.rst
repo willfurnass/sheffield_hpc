@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of AlphaFold
+.. dropdown:: Direct dependencies for latest version of AlphaFold
 
    - :ref:`Biopython/1.79-foss-2022a <biopython-bio-el7-icelake-znver-stanage>`
    - :ref:`foss/2022a <foss-toolchain-el7-icelake-znver-stanage>`

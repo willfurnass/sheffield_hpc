@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of libxml2
+.. dropdown:: Direct dependencies for latest version of libxml2
 
    - :ref:`GCCcore/12.3.0 <gcccore-compiler-el7-icelake-znver-stanage>`
    - :ref:`XZ/5.4.2-GCCcore-12.3.0 <xz-tools-el7-icelake-znver-stanage>`

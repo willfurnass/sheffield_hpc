@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of POV-Ray
+.. dropdown:: Direct dependencies for latest version of POV-Ray
 
    - :ref:`Boost/1.81.0-GCC-12.2.0 <boost-devel-el7-icelake-znver-stanage>`
    - :ref:`foss/2022b <foss-toolchain-el7-icelake-znver-stanage>`

@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of OpenJPEG
+.. dropdown:: Direct dependencies for latest version of OpenJPEG
 
    - :ref:`GCCcore/11.3.0 <gcccore-compiler-el7-icelake-znver-stanage>`
    - :ref:`libpng/1.6.37-GCCcore-11.3.0 <libpng-lib-el7-icelake-znver-stanage>`

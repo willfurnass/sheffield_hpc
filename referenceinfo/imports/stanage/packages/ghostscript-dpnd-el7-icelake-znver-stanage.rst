@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of Ghostscript
+.. dropdown:: Direct dependencies for latest version of Ghostscript
 
    - :ref:`cairo/1.17.4-GCCcore-12.2.0 <cairo-vis-el7-icelake-znver-stanage>`
    - :ref:`expat/2.4.9-GCCcore-12.2.0 <expat-tools-el7-icelake-znver-stanage>`

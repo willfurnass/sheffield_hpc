@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of OpenFOAM
+.. dropdown:: Direct dependencies for latest version of OpenFOAM
 
    - :ref:`CGAL/5.2-gompi-2020b <cgal-numlib-el7-icelake-znver-stanage>`
    - :ref:`foss/2020b <foss-toolchain-el7-icelake-znver-stanage>`

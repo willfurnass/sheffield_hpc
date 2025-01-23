@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of LAMMPS
+.. dropdown:: Direct dependencies for latest version of LAMMPS
 
    - :ref:`cURL/7.69.1-GCCcore-9.3.0 <curl-tools-el7-icelake-znver-stanage>`
    - :ref:`Eigen/3.3.7-GCCcore-9.3.0 <eigen-math-el7-icelake-znver-stanage>`

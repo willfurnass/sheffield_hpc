@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of ESMF
+.. dropdown:: Direct dependencies for latest version of ESMF
 
    - :ref:`foss/2022a <foss-toolchain-el7-icelake-znver-stanage>`
    - :ref:`libarchive/3.6.1-GCCcore-11.3.0 <libarchive-tools-el7-icelake-znver-stanage>`

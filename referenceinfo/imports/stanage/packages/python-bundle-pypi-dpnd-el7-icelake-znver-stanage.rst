@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of Python-bundle-PyPI
+.. dropdown:: Direct dependencies for latest version of Python-bundle-PyPI
 
    - :ref:`cryptography/41.0.1-GCCcore-12.3.0 <cryptography-tools-el7-icelake-znver-stanage>`
    - :ref:`GCCcore/12.3.0 <gcccore-compiler-el7-icelake-znver-stanage>`

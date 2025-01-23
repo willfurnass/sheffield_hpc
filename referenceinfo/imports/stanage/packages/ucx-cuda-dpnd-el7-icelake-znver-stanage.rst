@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of UCX-CUDA
+.. dropdown:: Direct dependencies for latest version of UCX-CUDA
 
    - :ref:`CUDA/12.0.0 <cuda-system-el7-icelake-znver-stanage>`
    - :ref:`GCCcore/12.2.0 <gcccore-compiler-el7-icelake-znver-stanage>`

@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of GROMACS
+.. dropdown:: Direct dependencies for latest version of GROMACS
 
    - :ref:`foss/2020b <foss-toolchain-el7-icelake-znver-stanage>`
    - :ref:`networkx/2.5-foss-2020b <networkx-tools-el7-icelake-znver-stanage>`

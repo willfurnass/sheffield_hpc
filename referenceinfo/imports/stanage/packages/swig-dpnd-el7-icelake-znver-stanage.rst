@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of SWIG
+.. dropdown:: Direct dependencies for latest version of SWIG
 
    - :ref:`GCCcore/12.2.0 <gcccore-compiler-el7-icelake-znver-stanage>`
    - :ref:`PCRE/8.45-GCCcore-11.3.0 <pcre-devel-el7-icelake-znver-stanage>`

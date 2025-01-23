@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of SU2
+.. dropdown:: Direct dependencies for latest version of SU2
 
    - :ref:`Eigen/3.4.0-GCCcore-12.2.0 <eigen-math-el7-icelake-znver-stanage>`
    - :ref:`foss/2022b <foss-toolchain-el7-icelake-znver-stanage>`

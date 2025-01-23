@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of CDFlib
+.. dropdown:: Direct dependencies for latest version of CDFlib
 
    - :ref:`astropy/5.1.1-foss-2022a <astropy-astro-el7-icelake-znver-stanage>`
    - :ref:`foss/2022a <foss-toolchain-el7-icelake-znver-stanage>`

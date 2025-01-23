@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of HarfBuzz
+.. dropdown:: Direct dependencies for latest version of HarfBuzz
 
    - :ref:`cairo/1.17.4-GCCcore-12.2.0 <cairo-vis-el7-icelake-znver-stanage>`
    - :ref:`freetype/2.12.1-GCCcore-12.2.0 <freetype-vis-el7-icelake-znver-stanage>`

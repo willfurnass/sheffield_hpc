@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of ScaFaCoS
+.. dropdown:: Direct dependencies for latest version of ScaFaCoS
 
    - :ref:`foss/2020a <foss-toolchain-el7-icelake-znver-stanage>`
    - :ref:`GMP/6.2.0-GCCcore-9.3.0 <gmp-math-el7-icelake-znver-stanage>`

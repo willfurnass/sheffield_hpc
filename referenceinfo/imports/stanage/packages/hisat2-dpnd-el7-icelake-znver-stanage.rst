@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of HISAT2
+.. dropdown:: Direct dependencies for latest version of HISAT2
 
    - :ref:`gompi/2022a <gompi-toolchain-el7-icelake-znver-stanage>`
    - :ref:`ncbi-vdb/3.0.2-gompi-2022a <ncbi-vdb-bio-el7-icelake-znver-stanage>`

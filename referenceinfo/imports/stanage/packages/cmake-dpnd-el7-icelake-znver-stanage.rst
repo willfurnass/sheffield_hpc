@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of CMake
+.. dropdown:: Direct dependencies for latest version of CMake
 
    - :ref:`bzip2/1.0.8-GCCcore-12.3.0 <bzip2-tools-el7-icelake-znver-stanage>`
    - :ref:`cURL/8.0.1-GCCcore-12.3.0 <curl-tools-el7-icelake-znver-stanage>`

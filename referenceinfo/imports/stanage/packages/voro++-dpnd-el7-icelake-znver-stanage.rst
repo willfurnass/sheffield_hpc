@@ -1,3 +1,3 @@
-.. dropdown:: Dependencies for latest version of Voro++
+.. dropdown:: Direct dependencies for latest version of Voro++
 
    - :ref:`GCCcore/11.2.0 <gcccore-compiler-el7-icelake-znver-stanage>`

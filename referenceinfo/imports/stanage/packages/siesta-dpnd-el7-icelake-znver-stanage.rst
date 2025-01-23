@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of Siesta
+.. dropdown:: Direct dependencies for latest version of Siesta
 
    - :ref:`ELPA/2019.11.001-foss-2020a <elpa-math-el7-icelake-znver-stanage>`
    - :ref:`foss/2020a <foss-toolchain-el7-icelake-znver-stanage>`

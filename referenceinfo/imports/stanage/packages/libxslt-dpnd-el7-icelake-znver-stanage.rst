@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of libxslt
+.. dropdown:: Direct dependencies for latest version of libxslt
 
    - :ref:`GCCcore/12.2.0 <gcccore-compiler-el7-icelake-znver-stanage>`
    - :ref:`libxml2/2.10.3-GCCcore-12.2.0 <libxml2-lib-el7-icelake-znver-stanage>`

@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of libarchive
+.. dropdown:: Direct dependencies for latest version of libarchive
 
    - :ref:`GCCcore/12.3.0 <gcccore-compiler-el7-icelake-znver-stanage>`
    - :ref:`OpenSSL/1.1 <openssl-system-el7-icelake-znver-stanage>`

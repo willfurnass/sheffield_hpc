@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of Guile
+.. dropdown:: Direct dependencies for latest version of Guile
 
    - :ref:`gc/7.6.12-GCCcore-9.3.0 <gc-lib-el7-icelake-znver-stanage>`
    - :ref:`GCCcore/9.3.0 <gcccore-compiler-el7-icelake-znver-stanage>`

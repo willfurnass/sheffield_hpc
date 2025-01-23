@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of h5py
+.. dropdown:: Direct dependencies for latest version of h5py
 
    - :ref:`foss/2022a <foss-toolchain-el7-icelake-znver-stanage>`
    - :ref:`HDF5/1.12.2-gompi-2022a <hdf5-data-el7-icelake-znver-stanage>`

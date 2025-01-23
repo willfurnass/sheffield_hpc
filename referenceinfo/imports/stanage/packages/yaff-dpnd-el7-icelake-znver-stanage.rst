@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of yaff
+.. dropdown:: Direct dependencies for latest version of yaff
 
    - :ref:`foss/2020a <foss-toolchain-el7-icelake-znver-stanage>`
    - :ref:`h5py/2.10.0-foss-2020a-Python-3.8.2 <h5py-data-el7-icelake-znver-stanage>`

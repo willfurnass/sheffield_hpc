@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of netCDF-Fortran
+.. dropdown:: Direct dependencies for latest version of netCDF-Fortran
 
    - :ref:`bzip2/1.0.8-GCCcore-11.3.0 <bzip2-tools-el7-icelake-znver-stanage>`
    - :ref:`gompi/2022a <gompi-toolchain-el7-icelake-znver-stanage>`

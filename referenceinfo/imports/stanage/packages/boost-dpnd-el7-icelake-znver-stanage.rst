@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of Boost
+.. dropdown:: Direct dependencies for latest version of Boost
 
    - :ref:`bzip2/1.0.8-GCCcore-12.2.0 <bzip2-tools-el7-icelake-znver-stanage>`
    - :ref:`GCC/12.2.0 <gcc-compiler-el7-icelake-znver-stanage>`

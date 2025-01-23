@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of Nektar++
+.. dropdown:: Direct dependencies for latest version of Nektar++
 
    - :ref:`Boost/1.74.0-GCC-10.2.0 <boost-devel-el7-icelake-znver-stanage>`
    - :ref:`foss/2020b <foss-toolchain-el7-icelake-znver-stanage>`

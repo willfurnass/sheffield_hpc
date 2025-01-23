@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of DBD-mysql
+.. dropdown:: Direct dependencies for latest version of DBD-mysql
 
    - :ref:`GCC/12.2.0 <gcc-compiler-el7-icelake-znver-stanage>`
    - :ref:`MariaDB/10.11.2-GCC-12.2.0 <mariadb-data-el7-icelake-znver-stanage>`

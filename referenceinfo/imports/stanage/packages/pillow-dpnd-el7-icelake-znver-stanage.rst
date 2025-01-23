@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of Pillow
+.. dropdown:: Direct dependencies for latest version of Pillow
 
    - :ref:`freetype/2.12.1-GCCcore-11.3.0 <freetype-vis-el7-icelake-znver-stanage>`
    - :ref:`GCCcore/11.3.0 <gcccore-compiler-el7-icelake-znver-stanage>`

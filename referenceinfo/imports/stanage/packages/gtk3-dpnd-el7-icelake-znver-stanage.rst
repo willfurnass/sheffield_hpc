@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of GTK3
+.. dropdown:: Direct dependencies for latest version of GTK3
 
    - :ref:`at-spi2-atk/2.38.0-GCCcore-12.2.0 <at-spi2-atk-vis-el7-icelake-znver-stanage>`
    - :ref:`ATK/2.38.0-GCCcore-12.2.0 <atk-vis-el7-icelake-znver-stanage>`

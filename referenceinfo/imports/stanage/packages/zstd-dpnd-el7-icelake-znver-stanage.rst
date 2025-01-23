@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of zstd
+.. dropdown:: Direct dependencies for latest version of zstd
 
    - :ref:`GCCcore/12.2.0 <gcccore-compiler-el7-icelake-znver-stanage>`
    - :ref:`gzip/1.12-GCCcore-12.2.0 <gzip-tools-el7-icelake-znver-stanage>`

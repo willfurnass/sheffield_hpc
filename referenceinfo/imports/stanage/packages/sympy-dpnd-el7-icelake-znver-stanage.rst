@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of sympy
+.. dropdown:: Direct dependencies for latest version of sympy
 
    - :ref:`foss/2022a <foss-toolchain-el7-icelake-znver-stanage>`
    - :ref:`gmpy2/2.1.2-GCC-11.3.0 <gmpy2-math-el7-icelake-znver-stanage>`

@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of snakemake
+.. dropdown:: Direct dependencies for latest version of snakemake
 
    - :ref:`foss/2020b <foss-toolchain-el7-icelake-znver-stanage>`
    - :ref:`GitPython/3.1.14-GCCcore-10.2.0 <gitpython-lib-el7-icelake-znver-stanage>`

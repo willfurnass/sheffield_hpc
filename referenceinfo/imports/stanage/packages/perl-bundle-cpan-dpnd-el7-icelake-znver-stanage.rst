@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of Perl-bundle-CPAN
+.. dropdown:: Direct dependencies for latest version of Perl-bundle-CPAN
 
    - :ref:`expat/2.5.0-GCCcore-12.3.0 <expat-tools-el7-icelake-znver-stanage>`
    - :ref:`GCCcore/12.3.0 <gcccore-compiler-el7-icelake-znver-stanage>`

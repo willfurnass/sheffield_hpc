@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of ImageMagick
+.. dropdown:: Direct dependencies for latest version of ImageMagick
 
    - :ref:`bzip2/1.0.8-GCCcore-12.2.0 <bzip2-tools-el7-icelake-znver-stanage>`
    - :ref:`FriBidi/1.0.12-GCCcore-12.2.0 <fribidi-lang-el7-icelake-znver-stanage>`

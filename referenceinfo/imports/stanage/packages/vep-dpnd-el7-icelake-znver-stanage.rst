@@ -1,4 +1,4 @@
-.. dropdown:: Dependencies for latest version of VEP
+.. dropdown:: Direct dependencies for latest version of VEP
 
    - :ref:`Archive-Zip/1.68-GCCcore-12.2.0 <archive-zip-tools-el7-icelake-znver-stanage>`
    - :ref:`Bio-DB-HTS/3.01-GCC-12.2.0 <bio-db-hts-bio-el7-icelake-znver-stanage>`
