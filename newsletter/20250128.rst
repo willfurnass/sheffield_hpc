@@ -35,10 +35,10 @@ This comprehensive index includes all packages installed on Stanage, with conten
 
 *Please note* more detail including examples may be available for a package, found in the first section of :ref:`stanage-software`
 
-OpenmMPI HFI Context Issue On Stanage 
+OpenMPI HFI Context Issue On Stanage 
 -------------------------------------
 
-ver the last few weeks, a few of you might have noticed that some of your OpenMPI jobs would have terminated as soon as they started, with an error message complaining about there not being enough HFI context units. We have investigated and found a solution to this which we are rolling out system wide  starting today. It should be fully rolled out by 4th of February . 
+Over the last few weeks, a few of you might have noticed that some of your OpenMPI jobs would have terminated as soon as they started, with an error message complaining about there not being enough HFI context units. We have investigated and found a solution to this which we are rolling out system wide  starting today. It should be fully rolled out by 4th of February . 
 
 A special thanks to the members of our HPC user base who assisted us in diagnosing the problem and testing our solution.
 
