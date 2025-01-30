@@ -53,7 +53,7 @@ More cluster specific information: :ref:`stanage-specs` and :ref:`bessemer-specs
 
 .. _Time-allocation:
 
-.. include:: ../referenceinfo/scheduler/TimeAllocationLimits.rst
+.. include:: /referenceinfo/scheduler/TimeAllocationLimits.rst
 
 
 The time allocation limits will differ between job types and by cluster. A summary of these differences can be seen above. Time requirements are highly dependent on 
@@ -114,7 +114,7 @@ The CPU Efficiency follows as ``(157/440)*100=35.68%``.
 
 .. _Cores-allocation:
 
-.. include:: ../referenceinfo/scheduler/CpuAllocationLimits.rst
+.. include:: /referenceinfo/scheduler/CpuAllocationLimits.rst
 
 The CPU allocation limits will differ between job types and by cluster - a summary of these differences can be seen above. It is important to note that SLURM and SGE will request CPU on a different basis as detailed above.
 
@@ -187,7 +187,7 @@ In general, you should request a single core for single threaded programs and en
 
 .. _Memory-allocation:
 
-.. include:: ../referenceinfo/scheduler/MemoryAllocationLimits.rst
+.. include:: /referenceinfo/scheduler/MemoryAllocationLimits.rst
 
 The memory allocation limits will differ between job types and by cluster - a summary of these differences can be seen above. It is important to note that SLURM and SGE will request memory on a different basis as detailed above.
 
@@ -214,13 +214,13 @@ When the job completes, you will receive an email reporting the memory and time 
 
 **By using the seff/sstat/sacct command:**
 
-.. include:: ../referenceinfo/imports/scheduler/memory_used_commands.rst
+.. include:: /referenceinfo/imports/scheduler/memory_used_commands.rst
 
 -----------------
 
 .. _Filestore-limits:
 
-.. include:: ../referenceinfo/scheduler/FileStoreLimits.rst
+.. include:: /referenceinfo/scheduler/FileStoreLimits.rst
 
 
 -----------------
@@ -250,4 +250,4 @@ If you have access to additional queues / partitions and want to know their limi
 
 -----------------
 
-.. include:: ../referenceinfo/scheduler/ListingQueues.rst
+.. include:: /referenceinfo/scheduler/ListingQueues.rst

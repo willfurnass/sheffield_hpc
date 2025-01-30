@@ -117,4 +117,4 @@ Resource limits per job:
 
 .. |partitions| replace:: dcs-gpu,dcs-gpu-test
 
-.. include:: ../../referenceinfo/imports/scheduler/SLURM/slurm-gpu-node-queries.rst
+.. include:: /referenceinfo/imports/scheduler/SLURM/slurm-gpu-node-queries.rst

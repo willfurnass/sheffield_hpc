@@ -104,7 +104,7 @@ The job is submitted to the queue by typing:
 
 
 
-.. include:: ../../../../referenceinfo/ANSYS/fluent/export-fluent-plots-while-using-batch-jobs.rst
+.. include:: /referenceinfo/ANSYS/fluent/export-fluent-plots-while-using-batch-jobs.rst
 
 ---------------
 

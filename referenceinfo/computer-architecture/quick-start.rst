@@ -47,79 +47,79 @@ Physical architecture refers to the real physical components and structures used
 
     <hr class="hr-mid-section-separator-dashed">
 
-.. include:: ../imports/computer-architecture/cpu.rst
+.. include:: /referenceinfo/imports/computer-architecture/cpu.rst
 
 .. raw:: html
 
     <hr class="hr-mid-section-separator-dashed">
 
-.. include:: ../imports/computer-architecture/cpu-cache.rst
+.. include:: /referenceinfo/imports/computer-architecture/cpu-cache.rst
 
 .. raw:: html
 
     <hr class="hr-mid-section-separator-dashed">
 
-.. include:: ../imports/computer-architecture/core.rst
+.. include:: /referenceinfo/imports/computer-architecture/core.rst
 
 .. raw:: html
 
     <hr class="hr-mid-section-separator-dashed">
 
-.. include:: ../imports/computer-architecture/cpu-socket.rst
+.. include:: /referenceinfo/imports/computer-architecture/cpu-socket.rst
 
 .. raw:: html
 
     <hr class="hr-mid-section-separator-dashed">
 
-.. include:: ../imports/computer-architecture/motherboard.rst
+.. include:: /referenceinfo/imports/computer-architecture/motherboard.rst
 
 .. raw:: html
 
     <hr class="hr-mid-section-separator-dashed">
 
-.. include:: ../imports/computer-architecture/system-buses.rst
+.. include:: /referenceinfo/imports/computer-architecture/system-buses.rst
 
 .. raw:: html
 
     <hr class="hr-mid-section-separator-dashed">
 
-.. include:: ../imports/computer-architecture/memory-slot.rst
+.. include:: /referenceinfo/imports/computer-architecture/memory-slot.rst
 
 .. raw:: html
 
     <hr class="hr-mid-section-separator-dashed">
 
-.. include:: ../imports/computer-architecture/memory.rst
+.. include:: /referenceinfo/imports/computer-architecture/memory.rst
 
 .. raw:: html
 
     <hr class="hr-mid-section-separator-dashed">
 
-.. include:: ../imports/computer-architecture/memory-bus.rst
+.. include:: /referenceinfo/imports/computer-architecture/memory-bus.rst
 
 .. raw:: html
 
     <hr class="hr-mid-section-separator-dashed">
 
-.. include:: ../imports/computer-architecture/pcie-bus.rst
+.. include:: /referenceinfo/imports/computer-architecture/pcie-bus.rst
 
 .. raw:: html
 
     <hr class="hr-mid-section-separator-dashed">
 
-.. include:: ../imports/computer-architecture/pcie-slot.rst
+.. include:: /referenceinfo/imports/computer-architecture/pcie-slot.rst
 
 .. raw:: html
 
     <hr class="hr-mid-section-separator-dashed">
 
-.. include:: ../imports/computer-architecture/gpu.rst
+.. include:: /referenceinfo/imports/computer-architecture/gpu.rst
 
 .. raw:: html
 
     <hr class="hr-mid-section-separator-dashed">
 
-.. include:: ../imports/computer-architecture/CPU-microarchitecture.rst
+.. include:: /referenceinfo/imports/computer-architecture/CPU-microarchitecture.rst
     
 -----
 
@@ -132,13 +132,13 @@ In this case, virtual architecture refers to the virtual components, concepts or
 
     <hr class="hr-mid-section-separator-dashed">
 
-.. include:: ../imports/computer-architecture/threads-hyperthreading.rst
+.. include:: /referenceinfo/imports/computer-architecture/threads-hyperthreading.rst
 
 .. raw:: html
 
     <hr class="hr-mid-section-separator-dashed">
 
-.. include:: ../imports/computer-architecture/virtual-memory.rst
+.. include:: /referenceinfo/imports/computer-architecture/virtual-memory.rst
 
 .. _instruction_sets:
 
@@ -146,6 +146,6 @@ In this case, virtual architecture refers to the virtual components, concepts or
 
     <hr class="hr-mid-section-separator-dashed">
 
-.. include:: ../imports/computer-architecture/instruction-sets.rst
+.. include:: /referenceinfo/imports/computer-architecture/instruction-sets.rst
     
 

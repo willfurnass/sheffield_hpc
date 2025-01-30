@@ -17,4 +17,4 @@ Documentation is available on the system using the command
 Usage
 -----
 
-.. include:: ../../../../referenceinfo/imports/scheduler/SLURM/common_commands/sstat_usage_import.rst
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/sstat_usage_import.rst

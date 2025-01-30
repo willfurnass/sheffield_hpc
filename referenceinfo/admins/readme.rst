@@ -10,7 +10,7 @@ Read Me
 **Sheffield High Performance Computing Documentation**
 ------------------------------------------------------
 
-.. include:: ../../README.rst
+.. include:: /README.rst
     :start-after: ==================================================
 
     

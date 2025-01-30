@@ -23,4 +23,4 @@ Documentation on the usage of the command can be found by running:
 Usage
 -----
 
-.. include:: ../../../../referenceinfo/imports/scheduler/SLURM/common_commands/seff_usage_import.rst
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/seff_usage_import.rst

@@ -19,6 +19,6 @@ Usage
 
 Sometimes you may need to stop a job while it’s running. 
 
-.. include:: ../../../../referenceinfo/imports/scheduler/SLURM/common_commands/scancel_usage_import.rst
+.. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/scancel_usage_import.rst
 
  

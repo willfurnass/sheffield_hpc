@@ -119,7 +119,7 @@ Linux systems if desired by a user. Examples include: ash, dash, csh, tcsh, ksh 
 
 ---------
 
-.. include:: ../referenceinfo/linux-shell/what-are-environment-variables.rst
+.. include:: /referenceinfo/linux-shell/what-are-environment-variables.rst
 
 ---------
 
@@ -270,7 +270,7 @@ You may be able to use the ``wget`` command to download this directly to the clu
 transfer this manually using SCP or similar. Once downloaded you should verify the software download's 
 integrity and validity.
 
-.. include:: ../referenceinfo/linux-shell/verifying-software-package-downloads.rst
+.. include:: /referenceinfo/linux-shell/verifying-software-package-downloads.rst
 
 If you know that the vendor or maintainer already signs their other releases into the Centos repository 
 and has supplied you an RPM then alternatively you can :ref:`check signatures as detailed previously <rpm-check-sigs>`.
@@ -283,11 +283,11 @@ Unpacking your binaries
 Unpacking binaries is typically an easy process but will depend on how they have been packaged, examples 
 of unpacking an RPM and a Tarball are given below.
 
-.. include:: ../referenceinfo/linux-shell/unpacking-an-rpm.rst
+.. include:: /referenceinfo/linux-shell/unpacking-an-rpm.rst
 
 ---------
 
-.. include:: ../referenceinfo/linux-shell/unpacking-a-tarball.rst
+.. include:: /referenceinfo/linux-shell/unpacking-a-tarball.rst
 
 Making your binaries available in the shell
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -335,11 +335,11 @@ integrity and validity.
 
 ---------
 
-.. include:: ../referenceinfo/linux-shell/verifying-software-package-downloads.rst
+.. include:: /referenceinfo/linux-shell/verifying-software-package-downloads.rst
 
 ---------
 
-.. include:: ../referenceinfo/linux-shell/unpacking-a-tarball.rst
+.. include:: /referenceinfo/linux-shell/unpacking-a-tarball.rst
 
 With the files now decompressed and available on the local file system you are ready to compile your 
 software.
@@ -471,9 +471,9 @@ versions of the same software without conflicts.
 
 .. _software_installs_bashrc:
 
-.. include:: ../referenceinfo/linux-shell/the-bashrc-file.rst
+.. include:: /referenceinfo/linux-shell/the-bashrc-file.rst
 
-.. include:: ../referenceinfo/linux-shell/making-software-available-with-bashrc.rst
+.. include:: /referenceinfo/linux-shell/making-software-available-with-bashrc.rst
 
 ------------
 
@@ -499,7 +499,7 @@ Further detail on the environment modules system in use on the clusters can be f
 
 .. _custom-module-files:
 
-.. include:: ../referenceinfo/environment-modules/creating-custom-modulefiles.rst
+.. include:: /referenceinfo/environment-modules/creating-custom-modulefiles.rst
 
 .. raw:: html
 
