@@ -1,0 +1,74 @@
+.. _nl20250128:
+
+News - 2025-01-28
+=================
+
+Hello everyone! Welcome back and a happy new year from the team.
+
+This months news letter details:
+
+- Support offered by research computing for researchers who will be applying for early access to Isambard-AI & Dawn.   
+- Stanage HPC launches the :ref:`all-package-index`, a major update to the documentation, offering a comprehensive, regularly updated list of installed software with key details.
+- A solution for the HFI context issue that has been breaking OpenMPI jobs.
+
+Tier 1 HPC/GPU Clusters (AIRR) for large scale AI workloads: access call is live
+-------------------------------------------------------------------------------------
+
+UK Research and Innovation (UKRI), on behalf of the Department for Science, Innovation and Technology (DSIT), invites researchers and innovators from across the UK to express their interest in accessing large-scale AI compute, the new AI Research Resource (AIRR), in particular, the Isambard AI (Bristol) and Dawn compute services (Cambridge). This call is for testing phase access as aspects of the service are still being developed and for at least Isambard AI the bulk of the GPU node capacity is yet to be brought online. AIRR workloads are likely to include (but will not be limited to) large language models (LLMs), big data analytics, and data-driven predictions and equation discovery in areas such as climate research, green fusion energy development and healthcare.
+
+UKRI/DSIT state that expressions of interest in testing phase access must include info on: 
+
+- the nature and history of your research and how it relates to Government priorities
+- the rationale and scope of your AI requirements, plus the technical 'readiness' of the project
+- the size and type of compute resources needed
+- the research team’s experience of using large-scale compute and what support they will need
+
+The Research and Innovation IT team in IT Services and the Research Software Engineering (RSE) teams are supporting and coordinating applications, and sharing knowledge to increase the success of applications. Not only will we provide technical input into applications, but we will apply experience of other access calls to strengthen your application and ensure it has the best chance of success.  We can also provide technical, collaborative support to projects once access to AIRR has been granted.  IT Services and the RSE team have prior experience of offering such support to TUoS users of the Bede and JADE2 HPC/GPU systems. 
+
+
+Major HPC documentation update: New Stanage All Package Index launched!
+-----------------------------------------------------------------------
+
+We are excited to announce the launch of the :ref:`all-package-index` for the Stanage Software pages.
+
+This comprehensive index includes all packages installed on Stanage, with content generated automatically. It is updated regularly to reflect the latest installations and mirrors the full range of packages available on Stanage. Each package entry includes minimal documentation, providing key details such as descriptions, version information, direct dependencies of the latest version, URLs, and build log locations. 
+
+*Please note* more detail including examples may be available for a package, found in the first section of :ref:`stanage-software`
+
+OpenmMPI HFI Context Issue On Stanage 
+-------------------------------------
+
+ver the last few weeks, a few of you might have noticed that some of your OpenMPI jobs would have terminated as soon as they started, with an error message complaining about there not being enough HFI context units. We have investigated and found a solution to this which we are rolling out system wide  starting today. It should be fully rolled out by 4th of February . 
+
+A special thanks to the members of our HPC user base who assisted us in diagnosing the problem and testing our solution.
+
+
+
+Upcoming Training
+-----------------
+
+Below are our research computing key training dates for in February and the rest of this semester. You can register for these courses and more at  `Research Computing Training <https://sites.google.com/sheffield.ac.uk/research-training/>`_ . 
+
+.. warning::
+    For our taught postgraduate users who don't have access to MyDevelopment, please email us at ``researchcomputing@sheffield.ac.uk`` with the course you want to register for, and we should be able to help you.
+
+- 30/01/2025 - Matlab 1
+- 04/02/2025 - High-Performance Computing
+- 05/02/2025 - Data Science and AI for Medical Research in R
+- 06/02/2025 - Matlab 2
+- 11/02/2025 - Introducing AI into Research
+- 12/02/2025 - Data Science and AI for Medical Research in R
+- 13/02/2025 - Introduction to R Programming
+- 27/02/2025 - High-Performance Computing
+
+Below are some training from our third party collaborators:
+
+- 18/02/2025 to 27/02/2025 - The Archer group will be running an online training session on **Advanced OpenMP** on **18th, 20th, 25th and 27th February 2025**. You can register by following this `link <https://safe.epcc.ed.ac.uk/TransitionServlet/TrainingCourse/250218-Advanced-OpenMP>`_ . 
+
+Useful Links
+------------
+
+- :ref:`HPC documentation  <hpc-home>`
+- :ref:`Citing the HPC services in publications.  <citing>`
+- `RSE code clinics <https://rse.shef.ac.uk/support/code-clinic/>`_ . These are fortnightly support sessions run by the RSE team and IT Services' Research IT and support team. They are open to anyone at TUOS writing code for research to get help with programming problems and general advice on best practice.
+- `Training and courses <https://sites.google.com/sheffield.ac.uk/research-training/>`_ (You must be logged into the main university website to view).
