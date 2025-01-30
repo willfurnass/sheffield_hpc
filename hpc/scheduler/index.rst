@@ -502,6 +502,8 @@ and will result in a Job State of FAILED with a Reason of "NonZeroExitCode".
 The job logs may also include a "derived exit code" field. This is set to the value of the highest exit code returned by 
 all of the job's steps (srun invocations). 
 
+.. include:: /referenceinfo/imports/scheduler/failure_codes_import.rst
+
 --------
 
 Cluster job resource limits
