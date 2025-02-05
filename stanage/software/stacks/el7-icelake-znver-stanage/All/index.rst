@@ -373,6 +373,7 @@ All
 * :ref:`SQLite <sqlite-devel-el7-icelake-znver-stanage>`
 * :ref:`SRA-Toolkit <sra-toolkit-bio-el7-icelake-znver-stanage>`
 * :ref:`STAR <star-bio-el7-icelake-znver-stanage>`
+* :ref:`Stata <stata-data-el7-icelake-znver-stanage>`
 * :ref:`StringTie <stringtie-bio-el7-icelake-znver-stanage>`
 * :ref:`SU2 <su2-cae-el7-icelake-znver-stanage>`
 * :ref:`SuiteSparse <suitesparse-numlib-el7-icelake-znver-stanage>`

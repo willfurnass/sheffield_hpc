@@ -11,6 +11,7 @@
             module load libpng/1.6.37-GCCcore-10.2.0
             module load libpng/1.6.37-GCCcore-9.3.0
             module load libpng/1.6.34-GCCcore-9.3.0
+            module load libpng/1.5.30
 
 
     .. group-tab:: Znver3

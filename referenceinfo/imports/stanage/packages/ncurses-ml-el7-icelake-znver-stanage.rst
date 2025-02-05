@@ -21,6 +21,7 @@
             module load ncurses/6.0
             module load ncurses/6.0-GCCcore-9.3.0
             module load ncurses/6.0-GCCcore-6.4.0
+            module load ncurses/5.9
 
 
     .. group-tab:: Znver3
