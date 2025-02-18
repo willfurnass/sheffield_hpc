@@ -9,9 +9,7 @@ Xvfb
     :Documentation: https://linux.die.net/man/1/xvfb
     :URL: https://linux.die.net/  
 
-Xvfb is:
-
-   an X server that can run on machines with no display hardware and no physical input devices. It emulates a dumb framebuffer using virtual memory.
+Xvfb is an X server that can run on machines with no display hardware and no physical input devices. It emulates a dumb framebuffer using virtual memory.
 
 Some applications can require a display to run properly, 
 even if no interaction with the user is actually required. 
@@ -65,6 +63,6 @@ you could add something similar to the following to your batch job submission sc
 Installation notes
 ------------------
 
-xvfb was installed using Easybuild, build details can be found in folder $EBROOTXVFB/easybuild with a given module loaded.
+xvfb was installed using Easybuild, build details can be found in folder ``$EBROOTXVFB/easybuild`` with a given module loaded.
 
 .. include:: /referenceinfo/imports/stanage/packages/xvfb-dpnd-el7-icelake-znver-stanage.rst

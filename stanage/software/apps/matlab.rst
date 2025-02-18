@@ -127,7 +127,7 @@ and records the maximum eigenvalue for each matrix in the array ``max_eigenvals`
 Installation method
 ^^^^^^^^^^^^^^^^^^^
 
-MATLAB was installed using Easybuild 4.7.0, build details can be found in folder $EBROOTMATLAB/easybuild with the module loaded.
+MATLAB was installed using Easybuild 4.7.0, build details can be found in folder ``$EBROOTMATLAB/easybuild`` with a given module loaded.
 
 
 
