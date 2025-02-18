@@ -523,4 +523,6 @@ What alternative methods exist?
 * Conda
 * Pip
 
+See :ref:`Python on Stanage <python_stanage>` or :ref:`Python on Bessemer <python_conda_bessemer>`. 
+
 .. _pkgs: https://pkgs.org/
