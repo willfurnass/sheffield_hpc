@@ -20,12 +20,19 @@ About PyTorch on Stanage
 As PyTorch and all its dependencies are written in Python, it can be installed locally in your home directory.
 The use of Conda (:ref:`python_stanage`) is recommended as
 it is able to create virtual environment(s) in your home directory,
-allowing for the installation of new Python packages without needing admin permission.
+allowing for the installation of new Python packages without needing admin permissions. However, as official Conda support
+for PyTorch as ended, PyTorch itself should now be installed using pip within a conda environmment.
 
-.. note::
-   All 'stable' releases of PyTorch to date (up to and including 2.0.1) are not compatible with Stanage nodes with H100 GPUs (see :ref:`Stanage specs <stanage-gpu-specs>`).
+.. note:: 
 
-   To use PyTorch on the H100 nodes you must install and use a 'nightly' build of PyTorch (see installation instructions below).
+   The H100 GPU nodes in Stanage (see :ref:`Stanage specs <stanage-gpu-specs>`) require torch >= 2.0.0 built using CUDA 11.8 or newer. 
+
+   * Torch >= 2.1.0 can be installed using pip from pypi or https://download.pytorch.org/whl/cu121.
+   * Torch >= 2.0.0 can be installed using pip from https://download.pytorch.org/whl/cu118.
+   * Torch < 2.0.0 is not compatible with the H100 GPUs.
+   * Official conda support has ended, but conda-forge may still work.
+
+   For more information on how to install pytorch using CUDA >= 11.8, see the `torch documentation <https://pytorch.org/>`_
 
 Installation in Home Directory
 ------------------------------
@@ -64,10 +71,8 @@ Then PyTorch can be installed by the following ::
    # Activate the 'pytorch' environment
    source activate pytorch
 
-   # Install the latest stable PyTorch release if you only want to run PyTorch using A100 GPUs
+   # Install the latest stable PyTorch release
    python -m pip install torch torchvision
-   # Or use a nightly PyTorch build instead if you want to be able to use H100 GPUs also / as well.
-   # python -m pip install --pre torch torchvision --index-url https://download.pytorch.org/whl/nightly/cu118
 
 
 **Every Session Afterwards and in Your Job Scripts**
