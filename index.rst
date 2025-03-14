@@ -46,5 +46,5 @@ Take a look at the `Research Software Engineering <https://rse.shef.ac.uk/>`_ we
    referenceinfo/index
    citing
    decommissioned/index
-
+   privacy-policy
 

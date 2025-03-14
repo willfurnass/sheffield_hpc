@@ -134,6 +134,25 @@ This is implemented with the following steps:
 6. Customise the theming, search domain and other settings at https://cse.google.com/cse/all if not done already.
 7. Test the search is configured and functioning as desired.
 
+Google Analytics 4 (GA4)
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+* We use Google Analytics 4 (GA4) to track usage statistics for our documentation.
+* This helps us understand which pages are most visited, how users navigate the docs, and where improvements can be made.
+* GA4 is enabled via the `sphinxcontrib-googleanalytics <https://pypi.org/project/sphinxcontrib-googleanalytics/>`_ plugin.
+* The Privacy Policy is linked in the footer of every documentation page.
+
+The tracking ID is set in `conf.py`: ::
+
+        googleanalytics_id = 'G-HTK1JMDS73'
+        googleanalytics_enabled = True
+
+If tracking needs to be disabled, set: ::
+
+        googleanalytics_enabled = False
+
+* Test tracking using `Google Tag Assistant <https://tagassistant.google.com/>`_ or GA4's real-time reporting in `Google Analytics <https://developers.google.com/analytics>`_.
+
 Making or using imported files from the ``referenceinfo/imports`` area
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

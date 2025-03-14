@@ -7,7 +7,7 @@
 import sys
 import os
 import shlex
-
+import datetime
 import glob
 import shutil
 
@@ -29,6 +29,7 @@ extensions = [
     'sphinx_tabs.tabs',
     'sphinx_design',
     'sphinx_sitemap',
+    'sphinxcontrib.googleanalytics',
     'sphinx_tippy',
     'sphinxcontrib.asciinema',
 ]
@@ -50,7 +51,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Sheffield HPC Documentation'
-copyright = '2024, The University of Sheffield'
+current_year = datetime.datetime.now().year
+copyright = f'{current_year}, The University of Sheffield'
 author = 'The University of Sheffield'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -166,3 +168,6 @@ sphinx_tabs_disable_tab_closing = True
 html_additional_pages = {
     'stanage/software/apps/singularity': 'singularity-stanage-redirect.html',
 }
+## Options for googleanalytics
+googleanalytics_id = 'G-HTK1JMDS73'
+googleanalytics_enabled = True
