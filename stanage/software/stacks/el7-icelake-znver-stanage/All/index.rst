@@ -134,6 +134,7 @@ All
 * :ref:`gompi <gompi-toolchain-el7-icelake-znver-stanage>`
 * :ref:`googletest <googletest-tools-el7-icelake-znver-stanage>`
 * :ref:`gperf <gperf-devel-el7-icelake-znver-stanage>`
+* :ref:`Grace <grace-vis-el7-icelake-znver-stanage>`
 * :ref:`graphite2 <graphite2-lib-el7-icelake-znver-stanage>`
 * :ref:`Graphviz <graphviz-vis-el7-icelake-znver-stanage>`
 * :ref:`groff <groff-tools-el7-icelake-znver-stanage>`
@@ -264,6 +265,7 @@ All
 * :ref:`molmod <molmod-math-el7-icelake-znver-stanage>`
 * :ref:`Molpro <molpro-chem-el7-icelake-znver-stanage>`
 * :ref:`MOOSE <moose-phys-el7-icelake-znver-stanage>`
+* :ref:`motif <motif-vis-el7-icelake-znver-stanage>`
 * :ref:`MPC <mpc-math-el7-icelake-znver-stanage>`
 * :ref:`MPFR <mpfr-math-el7-icelake-znver-stanage>`
 * :ref:`mpi4py <mpi4py-lib-el7-icelake-znver-stanage>`
