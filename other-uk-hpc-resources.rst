@@ -67,20 +67,66 @@ ARCHER2
 .. image:: images/uk-hpc-institution-logos/ARCHER2_logo.png
   :scale: 20%
   :align: left
-  :target: https://www.archer2.ac.uk/
+  :target: ARCHER2_
 
-`ARCHER2 <https://www.archer2.ac.uk/>`_, the new UK national supercomputing service
-offers a capability resource for running very large parallel jobs. Based around an HPE
-Cray EX supercomputing system with an estimated peak performance of 28 PFLOP/s, the
-machine will have 5,848 compute nodes, each with dual AMD EPYC Zen2 (Rome) 64 core CPUs
-at 2.2GHz, giving 748,544 cores in total. The initial service, which will be live from
-early 2021, is based on a subset of 4 cabinets of the total 23 cabinet system. The
-remaining 19 cabinets will be added later in 2021. The service includes a service
-desk staffed by HPC experts from EPCC with support from HPE Cray. Access is free at
-point of use for academic researchers working in the EPSRC and NERC domains. Users
-will also be able to purchase access at a variety of rates.
+ARCHER2_, the UK national supercomputing service offers
+a capability resource for running very large parallel jobs.
+Based around an HPE Cray EX supercomputing system with an estimated peak performance of 28 PFLOP/s,
+the
+machine will have 5,848 compute nodes,
+each with dual AMD EPYC Zen2 (Rome) 64 core CPUs at 2.2GHz,
+giving 748,544 cores in total. 
+The service includes a service desk staffed by HPC experts from EPCC with support from HPE Cray.
+Access is free at point of use for academic researchers working in the EPSRC and NERC domains.
+Users are also able to purchase access at a variety of rates.
 
---------
+Isambard AI
+-----------
+
+.. image:: images/uk-hpc-institution-logos/isambard_ai_racks.jpg
+  :scale: 10%
+  :align: left
+  :target: `Isambard_AI_Phase_1`_
+
+Isambard AI is one of the UK's AI Research Resource (AIRR) large-scale HPC/AI systems.
+It is operated by the University of Bristol for UKRI/DSIT.
+
+Specification: `Phase 1 of Isambard AI <Isambard_AI_Phase_1_>`_ comprises 40 compute nodes,
+each of which contains 4 Nvidia Grace-Hopper (GH200) superchips.
+Each node has 288 Grace CPU cores and 4 H100 GPUs.
+There is 512 GB of CPU memory per node, and 384 GB of High Bandwidth (GPU) memory.
+The nodes are connected using a Slingshot high performance network interconnect (4x 200 Gbps injection points per node).
+
+From summer 2025, users will also be able to access Isambard-AI phase 2 through an early access call while the system is being tested,
+which has an additional 5,280 Nvidia Grace Hopper (GH200) superchips.
+
+Access to Isambard AI Phase 1 is via a `UKRI/DSIT call <AIRR_first_access_call_>`__.
+
+
+Dawn
+----
+
+.. image:: images/uk-hpc-institution-logos/dawn_hpc_logo.png
+  :scale: 10%
+  :align: left
+  :target: Dawn_
+
+Dawn_ is one of the UK's AI Research Resource (AIRR) large-scale HPC/AI systems.
+It is operated by the University of Cambridge for UKRI/DSIT.
+
+Specification: Dawn consists of 256 Dell XE9640 server nodes.
+Each server has 4 Intel Data Centre Max 1550 GPUs
+(each GPU has 128 GB HBM RAM configured in a 4-way SMP mode with XE-LINK).
+In total there are 1024 Intel GPUs.
+Each server has 2 Gen 5 XEONs, and 1TB RAM and 4 HDR200 Infiniband links connected to a fully non-blocking fat tree.
+There is 14TB of local NVMe storage on each server.
+Dawn also has 2.8PB of NVMe flash storage.
+This consists of 18 quad-connected HDR infiniband servers providing 1.8 TB/s of network bandwidth to 432 NVMe drives designed to match the network performance.
+This High Performance storage layer will be tightly integrated with the scheduling software to support complex pipelines and AI workloads.
+Dawn has also access to 5PB of HPC Lustre storage on spinning disks.
+During the pilot phase 100 nodes will be available to users whilst development and performance work continues on the rest of the cluster.
+
+Access to Dawn is via a `UKRI/DSIT call <AIRR_first_access_call_>`__.
 
 ===========================
 EPSRC affliated HPC Systems
@@ -224,3 +270,9 @@ architectures. These range from an extreme scaling IBM BG/Q system, a large SGI/
 system, and a number of Intel Xeon multicore HPC systems. Free access is available to
 academic researchs working in the STFC domain; academic researchers from other domains
 can purchase access.
+
+
+.. _AIRR_first_access_call: https://engagementhub.ukri.org/epsrc-researchinfrastructure/airr-eoi/consultation/intro/
+.. _ARCHER2: https://www.archer2.ac.uk/
+.. _Dawn: https://www.hpc.cam.ac.uk/d-w-n
+.. _Isambard_AI_Phase_1: https://docs.isambard.ac.uk/specs/#system-specifications-isambard-ai-phase-1
