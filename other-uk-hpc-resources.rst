@@ -8,12 +8,27 @@ Access to External UK HPC Facilities
 *****************************************
 
 The United Kingdom has a number of HPC facilities external to the University of Sheffield
-which will grant researchers HPC resources. These include National facilities (Tier 1) such
-as Archer 2 and regional systems (Tier 2) such as :ref:`BEDE <bede>`.
+which will grant researchers HPC resources. These include Isambard-AI (the UK's first Tier-0 system),
+national facilities (Tier-1) such as Archer 2 and regional systems (Tier-2) such as :ref:`BEDE <bede>`.
 
 The University of Sheffield is a member of the :ref:`BEDE <bede>` regional system thus
 registration for using resources on that system is straightforward, with a dedicated page
 describing that system and its application processes listed below.
+
+The Research and Innovation IT team in IT Services and the Research Software Engineering
+(RSE) teams are supporting and coordinating applications, and sharing knowledge to increase
+the success of applications. Not only will we provide technical input into applications,
+but we will apply experience of other access calls to strengthen your application and ensure
+it has the best chance of success.
+
+We can also provide technical, collaborative support to projects once access to external
+HPC systems has been granted, including but not limited to:
+
+- Bede
+- Isambard AI
+
+IT Services and the RSE team have prior experience of offering such support to TUoS users
+of the Bede and JADE2 HPC/GPU systems.
 
 Further Tier 1 and Tier 2 systems are also listed below with a brief explanation of their
 purpose along with links for further details.
