@@ -272,7 +272,7 @@ academic researchs working in the STFC domain; academic researchers from other d
 can purchase access.
 
 
-.. _AIRR_first_access_call: https://engagementhub.ukri.org/epsrc-researchinfrastructure/airr-eoi/consultation/intro/
+.. _AIRR_first_access_call: https://engagementhub.ukri.org/ukri-infrastructure/airr-eoi/consultation/intro/
 .. _ARCHER2: https://www.archer2.ac.uk/
 .. _Dawn: https://www.hpc.cam.ac.uk/d-w-n
 .. _Isambard_AI_Phase_1: https://docs.isambard.ac.uk/specs/#system-specifications-isambard-ai-phase-1
