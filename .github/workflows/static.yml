@@ -7,7 +7,7 @@ on:
     branches:
       - master
       - EL9-beta
-      - all-packages-update-20250107-114714
+      - Parallel-section-refactor_branch
 
   # Or manually from the Actions tab.
   workflow_dispatch:
@@ -117,7 +117,7 @@ jobs:
           name: el9-beta
           path: '_build/html'
 
-  build-all-packages-update-20250107-114714:
+  build-Parallel-section-refactor_branch:
     runs-on: ubuntu-latest
     strategy:
       # Spawn and run a job for Python 3.10 version.
@@ -127,7 +127,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: all-packages-update-20250107-114714
+          ref: parallel-section-refactor_branch
       # Install Python.
       - name: Set up a version of Python
         uses: actions/setup-python@v5
@@ -144,9 +144,9 @@ jobs:
       # Match old RTD directories pathing.
       - name: Move built files
         run: |
-          mkdir -p _build/html/en/all-package-index
+          mkdir -p _build/html/en/parallel-section-refactor
           cd _build/html/
-          find . -mindepth 1 -maxdepth 1 -not -name en -exec mv -t en/all-package-index {} +
+          find . -mindepth 1 -maxdepth 1 -not -name en -exec mv -t en/parallel-section-refactor {} +
           cd ../../
       - name: Add webroot redirect HTML index page.
         run: |
@@ -160,12 +160,12 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          name: all-package-index
+          name: Parallel-section-refactor
           path: '_build/html'
 
   deploy-static-site:
     # Don't deploy before the previous steps build the pages.
-    needs: [build-latest, build-el9-beta, build-all-packages-update-20250107-114714]
+    needs: [build-latest, build-el9-beta, build-Parallel-section-refactor_branch]
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -187,7 +187,7 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: all-package-index
-          path: '_build/all-package-index'
+          path: '_build/parallel-section-refactor'
 
       - name: Ensure _build/html folder exists
         run: mkdir -p _build/html
@@ -200,7 +200,7 @@ jobs:
         run: tar -xf _build/el9-beta/artifact.tar -C _build/html
 
       - name: Extract all-packages-update-20250107-114714 build to _build/html
-        run: tar -xf _build/all-package-index/artifact.tar -C _build/html
+        run: tar -xf _build/parallel-section-refactor/artifact.tar -C _build/html
 
       # Make the GH pages artifact which is used to deploy.
       - name: Upload artifact

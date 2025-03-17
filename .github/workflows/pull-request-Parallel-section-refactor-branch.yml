@@ -1,10 +1,10 @@
 ---
-name: test_docs_build_all-package-index_branch
+name: test_docs_Parallel-section-refactor_branch
 on:
-  # Trigger on pull requests against the all-packages-update-20250107-114714 branch
+  # Trigger on pull requests against the Parallel-section-refactor_branch branch
   pull_request:
     branches:
-      - all-packages-update-20250107-114714
+      - Parallel-section-refactor_branch
 jobs:
   test_docs_build:
     runs-on: ubuntu-latest
