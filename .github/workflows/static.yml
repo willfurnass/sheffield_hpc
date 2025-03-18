@@ -127,7 +127,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: parallel-section-refactor_branch
+          ref: Parallel-section-refactor_branch
       # Install Python.
       - name: Set up a version of Python
         uses: actions/setup-python@v5
