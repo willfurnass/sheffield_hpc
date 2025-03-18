@@ -49,6 +49,7 @@ command to your ``.bashrc`` file.
         look something like:
 
         .. code-block:: lua
+           :force:
 
             ------------------------------------------------------------------------------------------------
             -- ~/modules/my_new_program.lua:
