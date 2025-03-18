@@ -186,7 +186,7 @@ jobs:
 
       - uses: actions/download-artifact@master
         with:
-          name: all-package-index
+          name: Parallel-section-refactor
           path: '_build/parallel-section-refactor'
 
       - name: Ensure _build/html folder exists
@@ -199,7 +199,7 @@ jobs:
       - name: Extract el9-beta build to _build/html
         run: tar -xf _build/el9-beta/artifact.tar -C _build/html
 
-      - name: Extract all-packages-update-20250107-114714 build to _build/html
+      - name: Extract Parallel-section-refactor build to _build/html
         run: tar -xf _build/parallel-section-refactor/artifact.tar -C _build/html
 
       # Make the GH pages artifact which is used to deploy.
