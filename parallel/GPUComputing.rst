@@ -1,4 +1,4 @@
-.. _GPUIntro:
+.. _GPU_computing:
 
 GPU Computing
 =============
@@ -30,3 +30,6 @@ Instructions specific to each cluster can be found below:
 
 * :ref:`gpu_computing_stanage`
 * :ref:`GPUComputing_bessemer`
+
+..
+.. include:: /referenceinfo/imports/attrib_AaltoSciComp.rst

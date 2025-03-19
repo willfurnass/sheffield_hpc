@@ -52,3 +52,6 @@ It is assumed that ``executable`` was previously compiled using that exact same 
 MPI Training
 ------------
 Training courses from the national supercomputing centre are available `here <https://www.archer2.ac.uk/training/courses/210000-mpi-self-service/>`_
+
+..
+.. include:: /referenceinfo/imports/attrib_AaltoSciComp.rst
