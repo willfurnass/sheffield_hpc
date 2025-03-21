@@ -20,8 +20,9 @@ How to Contribute
 To contribute to this documentation, first you have to fork it on GitHub and clone it to your machine,
 see `Fork a Repo <https://help.github.com/articles/fork-a-repo/>`_ for the GitHub documentation on this process.
 
-Once you have the git repository locally on your computer,
-you will need to ensure you have Python and the Tox_ build tool installed.
+Once you have the git repository locally on your computer, 
+you will also need to clone `hpc-examples <https://github.com/rcgsheffield/hpc-examples>`_ into sheffield_hpc
+and ensure you have Python and the Tox_ build tool installed.
 
 Please see our `Documentation Reference <https://docs.hpc.shef.ac.uk/en/latest/referenceinfo/admins/>`_ which is a valuable resource for admins of our documentation.
 
@@ -118,6 +119,7 @@ Important files / folders
 * ``_static/css/custom.css`` - custom CSS overrides for the theme.
 * ``themes/sheffieldhpc`` - Sheffield HPC custom theme components (Sphinx HTML templates, media files, CSS etc...). This functions as an overlay to the default Sphinx RTD theme.
 * ``.github/workflows`` - GitHub Actions workflows for pull requests, pushes to ``master`` and link checking.
+* ``fetch-scripts.sh`` - Clones or pulls `hpc-examples repository <https://github.com/rcgsheffield/hpc-examples>`_. 
 
 Custom Google Search Engine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

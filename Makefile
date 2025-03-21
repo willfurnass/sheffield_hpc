@@ -52,6 +52,8 @@ clean:
 	rm -rf $(BUILDDIR)/*
 
 html:
+	./fetch_scripts.sh --https
+	@echo "hpc-examples have been fetched succesfully."
 	$(SPHINXBUILD) -b html -W $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."

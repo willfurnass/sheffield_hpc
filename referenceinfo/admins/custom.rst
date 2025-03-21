@@ -5,7 +5,7 @@
     :maxdepth: 1
     :glob:
     
-Custom configuration
+Custom Configuration
 ====================
 
 Global.rst
