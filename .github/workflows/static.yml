@@ -36,19 +36,24 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: master
+          submodules: recursive
+
       # Install Python.
       - name: Set up a version of Python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
+
       # Install Tox for build stage.
       - name: Upgrade pip and install Tox
         run: |
           python -m pip install --upgrade pip
           python -m pip install tox
+
       # Run build stage - py37 should suffice.
       - name: Build the pages
         run: tox -e py310
+
       # Match old RTD directories pathing.
       - name: Move built files
         run: |
@@ -56,15 +61,19 @@ jobs:
           cd _build/html/
           find . -mindepth 1 -maxdepth 1 -not -name en -exec mv -t en/latest {} +
           cd ../../
+
       - name: Add webroot redirect HTML index page.
         run: |
           cp rtd-root-redirect.html _build/html/index.html
+
       - name: Add Google Search console site verification
         run: |
           cp gsv/google92a5d9499987ed3e.html _build/html/google92a5d9499987ed3e.html
+
       - name: Add robots.txt
         run: |
           cp robots-txt/robots.txt _build/html/robots.txt
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -82,19 +91,24 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: EL9-beta
+          submodules: recursive
+
       # Install Python.
       - name: Set up a version of Python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
+
       # Install Tox for build stage.
       - name: Upgrade pip and install Tox
         run: |
           python -m pip install --upgrade pip
           python -m pip install tox
+
       # Run build stage - py37 should suffice.
       - name: Build the pages
         run: tox -e py310
+
       # Match old RTD directories pathing.
       - name: Move built files
         run: |
@@ -102,15 +116,19 @@ jobs:
           cd _build/html/
           find . -mindepth 1 -maxdepth 1 -not -name en -exec mv -t en/el9-beta {} +
           cd ../../
+
       - name: Add webroot redirect HTML index page.
         run: |
           cp rtd-root-redirect.html _build/html/index.html
+
       - name: Add Google Search console site verification
         run: |
           cp gsv/google92a5d9499987ed3e.html _build/html/google92a5d9499987ed3e.html
+
       - name: Add robots.txt
         run: |
           cp robots-txt/robots.txt _build/html/robots.txt
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -128,19 +146,24 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: Parallel-section-refactor_branch
+          submodules: recursive
+
       # Install Python.
       - name: Set up a version of Python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
+
       # Install Tox for build stage.
       - name: Upgrade pip and install Tox
         run: |
           python -m pip install --upgrade pip
           python -m pip install tox
+
       # Run build stage - py37 should suffice.
       - name: Build the pages
         run: tox -e py310
+
       # Match old RTD directories pathing.
       - name: Move built files
         run: |
@@ -148,15 +171,19 @@ jobs:
           cd _build/html/
           find . -mindepth 1 -maxdepth 1 -not -name en -exec mv -t en/parallel-section-refactor {} +
           cd ../../
+
       - name: Add webroot redirect HTML index page.
         run: |
           cp rtd-root-redirect.html _build/html/index.html
+
       - name: Add Google Search console site verification
         run: |
           cp gsv/google92a5d9499987ed3e.html _build/html/google92a5d9499987ed3e.html
+
       - name: Add robots.txt
         run: |
           cp robots-txt/robots.txt _build/html/robots.txt
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -173,12 +200,13 @@ jobs:
     steps:
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       # Download the previously generated artifacts.
       - uses: actions/download-artifact@master
         with:
           name: latest
           path: '_build/latest'
-    
+
       - uses: actions/download-artifact@master
         with:
           name: el9-beta
@@ -209,7 +237,9 @@ jobs:
           # Make the artifact with the HTML build directory we just extracted everything to.
           name: github-pages
           path: '_build/html'
+
       # Now deploy the GH pages artifact.
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
