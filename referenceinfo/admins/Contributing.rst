@@ -52,3 +52,5 @@ If you are working on contributing to the documentation, here is a possible chec
     * Choose appropriate reviewers for the changes you have made.
     * Monitor the PR for feedback and address any issues or concerns raised by other contributors.
     * Once the changes have been reviewed and approved, merge the PR into the main codebase.
+
+.. include:: /referenceinfo/imports/hpc-examples-submodule-guide.rst

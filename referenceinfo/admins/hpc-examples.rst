@@ -8,6 +8,7 @@ The hpc-examples_ repository is a public collection of useful scripts and workfl
 Integrating ``hpc-examples`` into ``sheffield_hpc``
 ---------------------------------------------------
 
+The hpc-examples_ repository is included as a `Git submodule <https://git-scm.com/book/en/v2/Git-Tools-Submodules>`_ within sheffield_hpc.
 Site maintainers can reference or include content from hpc-examples_ within the sheffield_hpc_
 repository to enhance documentation and provide users with tested examples.
 
@@ -17,15 +18,22 @@ Steps to Use ``hpc-examples``
 1. **Clone or Update the Repository**
 
 Clone the hpc-examples_ repository if it has not already been added, or pull the latest changes:
+To ensure the hpc-examples submodule is included:
 
 .. code-block:: bash
 
-   cd sheffield_hpc
-   ./fetch_scripts.sh
+   git clone --recurse-submodules git@github.com:rcgsheffield/sheffield_hpc.git
+
+If you've already cloned without submodules:
+
+.. code-block:: bash
+
+   git submodule update --init --recursive
+
 
 2. **Reference Examples in Documentation**
 
-Use Sphinx's ``literalinclude`` directive to include scripts directly from the hpc-examples_ repository. For example:
+Use Sphinx's ``literalinclude`` directive to embed scripts directly from the hpc-examples_ submodule. For example:
 
 .. code-block:: bash
 
@@ -48,11 +56,9 @@ Where ``$PATH_TO_FILE`` is the relative path within hpc-examples_ , for example 
 - Review the examples in ``hpc-examples`` to ensure they align with the configurations and best practices of Sheffield’s HPC systems.
 - If customisation is required, document the changes explicitly in the sheffield_hpc_ repository without modifying the original hpc-examples_ content.
 
-5. **Simultaneous `hpc-examples` pull requests**
-
-- If changes or additions to hpc-examples_ are needed for a PR you are working on in sheffield_hpc_ , please submit a PR in hpc-examples_ simultaneously and link each PR to the other.
-
 -------------------
+
+.. include:: /referenceinfo/imports/hpc-examples-submodule-guide.rst
 
 Repository Structure
 --------------------
@@ -65,6 +71,7 @@ Repository Structure
 - ``tools/``: Utilities or helper scripts for HPC users.
 - ``scripts/``: General-purpose scripts for users.
 - ``configs/``: Example configuration files for applications or tools.
+- ``tutorials/``: Scripts required for tutorials within our docmentation.
 
 **Naming Conventions**
 

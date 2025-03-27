@@ -33,6 +33,3 @@ pip-delete-this-directory.txt
 
 # Windows
 Thumbs.db
-
-# hpc-examples repository
-hpc-examples/
