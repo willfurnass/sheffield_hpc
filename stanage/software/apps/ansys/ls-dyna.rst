@@ -102,12 +102,12 @@ Create a Slurm submission script called ``batch.sh`` containing:
             export LSTC_LICENSE=ANSYS
             
             # Add the LS-DYNA executables to the PATH
-            export PATH=$EBROOTANSYS/v232/ansys/bin/linx64/:$PATH
-            
+            export PATH=$ANSYSPATH/ansys/bin/linx64/:$PATH
+         
             # Add the MPI executables and libs to the PATH / LD_LIBRARY_PATH
             # Depending on ANSYS version the MPI paths may require changing.
-            export PATH=$EBROOTANSYS/v232/commonfiles/MPI/Intel/2021.8.0/linx64/bin/:$PATH
-            export LD_LIBRARY_PATH=$EBROOTANSYS/v232/commonfiles/MPI/Intel/2021.8.0/linx64/lib/:$LD_LIBRARY_PATH
+            export PATH=$ANSYSPATH/commonfiles/MPI/Intel/2021.8.0/linx64/bin/:$PATH
+            export LD_LIBRARY_PATH=$ANSYSPATH/commonfiles/MPI/Intel/2021.8.0/linx64/lib/:$LD_LIBRARY_PATH
             
             MACHINEFILE="machinefile.$SLURM_JOB_ID"
             srun hostname | awk -F '.' '{print $1}' | sort | uniq -c | awk '{print $2 ":" $1}' > $MACHINEFILE
