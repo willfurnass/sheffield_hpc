@@ -1,0 +1,121 @@
+.. _nl20250401:
+
+News - 2025-04-01
+=================
+
+Hello everyone! Spring is finally upon us.
+
+This month's newsletter details:
+
+- A planned maintenance period (6-7th May - subject to change)
+- Omni-Path networking issues on Stanage
+- Upcoming talks from the RSE team
+- New training sessions from IT Services and our external partners
+- New Python packages not supporting our current HPC operating system
+
+Planned Maintenance Period (6-7th May - subject to change)
+-----------------------------------------------------------
+
+We would like to inform you that there will be a scheduled outage for maintenance from the 6th to 7th of May (dates subject to change). During this time, Stanage and Bessemer will be temporarily unavailable whilst the Research Platforms team carries essential updates and improvements. We apologise for any inconvenience this may cause and appreciate your understanding as we work to update the clusters. Please plan accordingly, and if you have any questions, feel free to reach out to our support team. Thank you for your patience! More details will be shared closer to the date.
+
+HFI Errors On Stanage Due To Omni-Path Architecture (OPA) 
+-------------------------------------------------------------
+
+For a few weeks we have been experiencing issues with the Omni-Path network cards and drivers that provide Stanage's high-performance networking. Nodes would spontaneously reboot or the Omni-Path card would become unavailable to the operating system meaning users running MPI jobs would get HFI/PML errors or access to **/mnt/parscratch** would fail. These issues have been sporadic and aren't currently affecting all jobs/nodes/users. Users who have been affected will always receive communication about affected jobs and be asked to resubmit their jobs. Research Platforms are currently investigating this issue, though the specific source of this issue is still unknown. We understand the severity of this issue to the affected users and are working relentlessly to fix the issue. We appreciate your patience and understanding during this period.
+
+GPU Node Clean-up Issues
+-------------------------
+
+We're investigating GPU node instability caused by incomplete clean-up after job timeout or cancellation, leading to GPU node failures. This appears linked to NCCL-based workloads, kernel 3.10.0 (CentOS 7), and NVIDIA driver compatibility. Affected jobs may hang or fail to release GPU resources. Upgrading the operating system is expected to resolve these issues. In the meantime, please set conservative time limits and monitor job behaviour.
+
+
+New Python Package Incompatibility With Stanage And Bessemer
+-------------------------------------------------------------
+
+Newer Python packages are increasingly being built against Linux versions that do not support the glibc used by the Stanage and Bessemer EL7 operating systems, which is currently glibc 2.17. The new Python packages will start requiring approximately glibc 2.34 and above. Since glibc is a core component of the system, upgrading it independently is risky and not officially supported on older distributions like EL 7. As such the only way to upgrade to newer versions of glibc on our two clusters is to upgrade the operating system (OS) to a new version. The Research Platforms team is very busy preparing to do this OS upgrade in a way that will have least impact on our users but this requires time to prepare. Due to this, there will be a small period of time where users will not be able to use the latest Python packages due to missing dependencies if the package developers choose to not support glibc 2.17.
+
+
+Tier 1 HPC/GPU Clusters (AIRR) for Large Scale AI Workloads: Access Call is Live
+----------------------------------------------------------------------------------
+
+UK Research and Innovation (UKRI), on behalf of the Department for Science, Innovation and Technology (DSIT), invites researchers and innovators from across the UK to express their interest in accessing large-scale AI compute, in particular, the new AI Research Resource, the Isambard-AI and Dawn compute services.
+
+UKRI/DSIT state that expressions of interest are open to all UK-based researchers and innovators, however, they are particularly keen to hear from projects that contribute to delivering against the government’s five missions: 
+- Growing the economy
+- An NHS fit for the future 
+- Safer streets
+- Opportunity for all
+- Making Britain a clean energy superpower
+
+Some potential projects focused on these might include:
+
+- Applying foundation models to particular scientific disciplines, such as climate science or biology
+- Developing autonomous scientists capable of generating novel hypotheses, coding up basic experiments, analysing results, and increasing research productivity
+- Exploring new paradigms in basic AI research such as in AI safety or novel architectures
+
+The Research and Innovation IT team in IT Services and the Research Software Engineering (RSE) teams are supporting and coordinating applications, and sharing knowledge to increase application success. Not only will we provide technical input into applications, but we will also apply our experience working on other access calls to strengthen your application and ensure it has the best chance of success. We can also provide technical and collaborative support to projects once access to AIRR has been granted. The Research and Innovation IT and RSE teams have prior experience of offering such support to TUoS users of the Bede and JADE2 HPC/GPU systems.
+
+
+Access to High Performance Computing Facilities: Spring 2025
+------------------------------------------------------------
+
+On top of Isambard-AI, UKRI is also opening calls to access Isambard 3. This is a purely compute HPC resource based in Bristol, that consists of 384 nodes based on the NVIDIA Grace CPU (**These are not GPUs**). Each node has two NVIDIA Grace CPU Superchips with 72 high-performance and power-efficient Arm cores. All together users will have acces to 55,296 cores for their computational work flows.
+
+This opportunity provides an open and flexible route to computational support for high quality projects across the entire UK Research and Innovation (UKRI) remit.
+
+UKRI particularly encourage applications that:
+
+- Involve early career researchers
+- Onboard and train new users
+- Significantly push the boundaries in computational research using high performance computing (HPC) in your field
+
+You can `register your interests here  <https://www.ukri.org/opportunity/access-to-high-performance-computing-facilities-spring-2025/>`_ .
+
+Misuse Of Fastdata For Longterm Storage
+----------------------------------------
+
+The fast data storage area (Lustre) is designed for temporary, high-speed access to data rather than long-term storage. It is optimised for large file operations and has no backups, snapshots, quota controls, or automatic file deletion. Users are expected to regularly clear their data after their experimentation period. For long-term storage, please use research storage, which is backed up and accessible outside of the HPC cluster.
+
+Upcoming Talks
+--------------
+
+LunchBytes: A monthly series of short talks by and for the research community on all aspects of digital research.
+
+- 29/04/2025 - **Publish your Software!**. Join us for a 1-hour Lunchbytes Seminar where we’ll introduce the Journal of Open Source Software (JOSS) — a leading academic journal dedicated to publishing research software papers.  You can register on `MyDevelopment <https://mydevelopment.csod.com/ui/lms-learning-details/app/event/9fa9503c-81a1-4667-af7b-14d62a4b82bc>`_.
+
+
+Upcoming Training
+-----------------
+
+Below are our key research computing training dates for April and the rest of this semester. You can register for these courses and more at  `Research Computing Training <https://sites.google.com/sheffield.ac.uk/research-training/>`_ . 
+
+.. warning::
+    For our taught postgraduate users who don't have access to MyDevelopment, please email us at ``researchcomputing@sheffield.ac.uk`` with the course you want to register for, and we should be able to help you.
+
+- 03/04/2025 - Introduction to Python / R
+- 03/04/2025 - High-Performance Computing
+- 08/04/2025 - Introduction to Python / R
+- 01/05/2025 - Introduction to Python / R
+- 03/05/2025 - High-Performance Computing
+
+Below are some training from our third party collaborators:
+
+The Archer group will be running the following training sessions:
+
+- 23/04/2025 -  **High Performance Algorithms for the Computation of the Hardy Function - Dissemination & Development** . You can `register for the course here <https://www.archer2.ac.uk/training/courses/250423-ecse11-07-vt/>`_ . 
+- 13/05/2025 -  **Green software use on HPC (in person)** . You can join `register for the session here <https://www.archer2.ac.uk/training/courses/250513-green-computing/>`_ . 
+- 27/05/2025 - 29/05/2025 - **AMD MI300 Series Hackathon**. ARCHER2 and AMD are hosting a three-day in-person hackathon to explore the potential of AMD GPUs for research. The event will focus on porting and optimizing code using the latest AMD development suite.  You can `register here <https://www.archer2.ac.uk/training/courses/250527-amd-hackathon/>`_ . 
+
+The University of Oxford will be running:
+
+- 21/07/2025 - 25/07/2025 - CUDA Programming training course on NVIDIA GPUs (Open to members of other instutution at the cost of a £250 fee). You can register `here <https://www.oxforduniversitystores.co.uk/conferences-and-events/mathematical-institute/events/cuda-programming-on-nvidia-gpus-july-2125-2025/>`_ . 
+- 21/07/2025 - 25/07/2025 - CUDA Programming training course on NVIDIA GPUs (Open to members of other instutution at the cost of a £250 fee). You can `register to attend here <https://www.oxforduniversitystores.co.uk/conferences-and-events/mathematical-institute/events/cuda-programming-on-nvidia-gpus-july-2125-2025/>`_ . 
+
+
+Useful Links
+------------
+
+- :ref:`HPC documentation  <hpc-home>`
+- :ref:`Citing the HPC services in publications.  <citing>`
+- `RSE code clinics <https://rse.shef.ac.uk/support/code-clinic/>`_ . These are fortnightly support sessions run by the RSE team and IT Services' Research IT and support team. They are open to anyone at TUOS writing code for research to get help with programming problems and general advice on best practice.
+- `Training and courses <https://sites.google.com/sheffield.ac.uk/research-training/>`_ (You must be logged into the main university website to view).
