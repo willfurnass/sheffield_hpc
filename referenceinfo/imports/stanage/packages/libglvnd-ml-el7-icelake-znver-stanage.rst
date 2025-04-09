@@ -10,3 +10,10 @@
             module load libglvnd/1.3.2-GCCcore-10.2.0
             module load libglvnd/1.2.0-GCCcore-9.3.0
 
+
+    .. group-tab:: Znver3
+
+        .. code-block:: console
+
+            module load libglvnd/1.6.0-GCCcore-12.2.0
+

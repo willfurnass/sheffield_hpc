@@ -16,5 +16,6 @@
 
         .. code-block:: console
 
+            module load zstd/1.5.2-GCCcore-12.2.0
             module load zstd/1.5.2-GCCcore-11.3.0
 

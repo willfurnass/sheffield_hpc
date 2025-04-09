@@ -16,5 +16,6 @@
 
         .. code-block:: console
 
+            module load LibTIFF/4.4.0-GCCcore-12.2.0
             module load LibTIFF/4.3.0-GCCcore-11.3.0
 

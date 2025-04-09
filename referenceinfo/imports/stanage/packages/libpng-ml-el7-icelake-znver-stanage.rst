@@ -19,5 +19,6 @@
         .. code-block:: console
 
             module load libpng/1.6.39-GCCcore-12.3.0
+            module load libpng/1.6.38-GCCcore-12.2.0
             module load libpng/1.6.37-GCCcore-11.3.0
 

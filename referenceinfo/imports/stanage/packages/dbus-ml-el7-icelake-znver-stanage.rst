@@ -10,3 +10,10 @@
             module load DBus/1.13.18-GCCcore-10.2.0
             module load DBus/1.13.12-GCCcore-9.3.0
 
+
+    .. group-tab:: Znver3
+
+        .. code-block:: console
+
+            module load DBus/1.15.2-GCCcore-12.2.0
+

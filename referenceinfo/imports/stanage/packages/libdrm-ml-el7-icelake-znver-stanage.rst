@@ -10,3 +10,10 @@
             module load libdrm/2.4.102-GCCcore-10.2.0
             module load libdrm/2.4.100-GCCcore-9.3.0
 
+
+    .. group-tab:: Znver3
+
+        .. code-block:: console
+
+            module load libdrm/2.4.114-GCCcore-12.2.0
+

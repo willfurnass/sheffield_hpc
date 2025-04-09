@@ -10,3 +10,10 @@
             module load libunwind/1.4.0-GCCcore-10.2.0
             module load libunwind/1.3.1-GCCcore-9.3.0
 
+
+    .. group-tab:: Znver3
+
+        .. code-block:: console
+
+            module load libunwind/1.6.2-GCCcore-12.2.0
+

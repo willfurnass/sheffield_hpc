@@ -78,6 +78,7 @@ All
 * :ref:`EasyBuild <easybuild-tools-el7-icelake-znver-stanage>`
 * :ref:`Eigen <eigen-math-el7-icelake-znver-stanage>`
 * :ref:`elbencho <elbencho-tools-el7-icelake-znver-stanage>`
+* :ref:`elfutils <elfutils-lib-el7-icelake-znver-stanage>`
 * :ref:`ELPA <elpa-math-el7-icelake-znver-stanage>`
 * :ref:`EnergyPlus <energyplus-phys-el7-icelake-znver-stanage>`
 * :ref:`ESMF <esmf-geo-el7-icelake-znver-stanage>`
@@ -135,13 +136,18 @@ All
 * :ref:`googletest <googletest-tools-el7-icelake-znver-stanage>`
 * :ref:`gperf <gperf-devel-el7-icelake-znver-stanage>`
 * :ref:`Grace <grace-vis-el7-icelake-znver-stanage>`
+* :ref:`Graphene <graphene-lib-el7-icelake-znver-stanage>`
 * :ref:`graphite2 <graphite2-lib-el7-icelake-znver-stanage>`
 * :ref:`Graphviz <graphviz-vis-el7-icelake-znver-stanage>`
 * :ref:`groff <groff-tools-el7-icelake-znver-stanage>`
 * :ref:`GROMACS <gromacs-bio-el7-icelake-znver-stanage>`
 * :ref:`GSL <gsl-numlib-el7-icelake-znver-stanage>`
+* :ref:`GST-plugins-bad <gst-plugins-bad-vis-el7-icelake-znver-stanage>`
+* :ref:`GST-plugins-base <gst-plugins-base-vis-el7-icelake-znver-stanage>`
+* :ref:`GStreamer <gstreamer-vis-el7-icelake-znver-stanage>`
 * :ref:`GTK2 <gtk2-vis-el7-icelake-znver-stanage>`
 * :ref:`GTK3 <gtk3-vis-el7-icelake-znver-stanage>`
+* :ref:`GTK4 <gtk4-vis-el7-icelake-znver-stanage>`
 * :ref:`GTS <gts-vis-el7-icelake-znver-stanage>`
 * :ref:`Guile <guile-lang-el7-icelake-znver-stanage>`
 * :ref:`gzip <gzip-tools-el7-icelake-znver-stanage>`
@@ -231,6 +237,7 @@ All
 * :ref:`libunistring <libunistring-lib-el7-icelake-znver-stanage>`
 * :ref:`libunwind <libunwind-lib-el7-icelake-znver-stanage>`
 * :ref:`libvorbis <libvorbis-lib-el7-icelake-znver-stanage>`
+* :ref:`libwebp <libwebp-lib-el7-icelake-znver-stanage>`
 * :ref:`libxc <libxc-chem-el7-icelake-znver-stanage>`
 * :ref:`libxml2 <libxml2-lib-el7-icelake-znver-stanage>`
 * :ref:`libxslt <libxslt-lib-el7-icelake-znver-stanage>`
@@ -300,6 +307,7 @@ All
 * :ref:`numactl <numactl-tools-el7-icelake-znver-stanage>`
 * :ref:`occt <occt-cae-el7-icelake-znver-stanage>`
 * :ref:`OpenBLAS <openblas-numlib-el7-icelake-znver-stanage>`
+* :ref:`OpenCV <opencv-vis-el7-icelake-znver-stanage>`
 * :ref:`OpenEXR <openexr-vis-el7-icelake-znver-stanage>`
 * :ref:`OpenFOAM <openfoam-cae-el7-icelake-znver-stanage>`
 * :ref:`OpenJPEG <openjpeg-lib-el7-icelake-znver-stanage>`
@@ -336,7 +344,9 @@ All
 * :ref:`protobuf <protobuf-devel-el7-icelake-znver-stanage>`
 * :ref:`protobuf-python <protobuf-python-devel-el7-icelake-znver-stanage>`
 * :ref:`pybind11 <pybind11-lib-el7-icelake-znver-stanage>`
+* :ref:`PyCairo <pycairo-vis-el7-icelake-znver-stanage>`
 * :ref:`PyCharm <pycharm-devel-el7-icelake-znver-stanage>`
+* :ref:`PyGObject <pygobject-vis-el7-icelake-znver-stanage>`
 * :ref:`pytest-xdist <pytest-xdist-tools-el7-icelake-znver-stanage>`
 * :ref:`Python <python-lang-el7-icelake-znver-stanage>`
 * :ref:`Python-bundle-PyPI <python-bundle-pypi-lang-el7-icelake-znver-stanage>`
@@ -404,6 +414,7 @@ All
 * :ref:`virtualenv <virtualenv-tools-el7-icelake-znver-stanage>`
 * :ref:`Voro++ <voro++-math-el7-icelake-znver-stanage>`
 * :ref:`VTK <vtk-vis-el7-icelake-znver-stanage>`
+* :ref:`Wayland <wayland-vis-el7-icelake-znver-stanage>`
 * :ref:`X11 <x11-vis-el7-icelake-znver-stanage>`
 * :ref:`x264 <x264-vis-el7-icelake-znver-stanage>`
 * :ref:`x265 <x265-vis-el7-icelake-znver-stanage>`

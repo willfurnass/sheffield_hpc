@@ -17,4 +17,5 @@
         .. code-block:: console
 
             module load Yasm/1.3.0-GCCcore-12.3.0
+            module load Yasm/1.3.0-GCCcore-12.2.0
 

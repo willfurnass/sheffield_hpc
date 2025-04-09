@@ -10,3 +10,10 @@
             module load LLVM/11.0.0-GCCcore-10.2.0
             module load LLVM/9.0.1-GCCcore-9.3.0
 
+
+    .. group-tab:: Znver3
+
+        .. code-block:: console
+
+            module load LLVM/15.0.5-GCCcore-12.2.0
+

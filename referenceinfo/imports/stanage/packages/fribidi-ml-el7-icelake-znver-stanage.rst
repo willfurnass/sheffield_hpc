@@ -17,4 +17,5 @@
         .. code-block:: console
 
             module load FriBidi/1.0.12-GCCcore-12.3.0
+            module load FriBidi/1.0.12-GCCcore-12.2.0
 

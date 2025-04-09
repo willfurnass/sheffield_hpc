@@ -18,5 +18,6 @@
         .. code-block:: console
 
             module load X11/20230603-GCCcore-12.3.0
+            module load X11/20221110-GCCcore-12.2.0
             module load X11/20220504-GCCcore-11.3.0
 

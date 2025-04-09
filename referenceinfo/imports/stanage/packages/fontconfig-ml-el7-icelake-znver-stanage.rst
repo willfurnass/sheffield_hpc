@@ -18,5 +18,6 @@
         .. code-block:: console
 
             module load fontconfig/2.14.2-GCCcore-12.3.0
+            module load fontconfig/2.14.1-GCCcore-12.2.0
             module load fontconfig/2.14.0-GCCcore-11.3.0
 

@@ -1,0 +1,3 @@
+The elfutils project provides libraries and tools for ELF files
+and DWARF data.
+

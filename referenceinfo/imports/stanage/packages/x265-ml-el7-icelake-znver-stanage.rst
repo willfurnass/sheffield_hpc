@@ -17,4 +17,5 @@
         .. code-block:: console
 
             module load x265/3.5-GCCcore-12.3.0
+            module load x265/3.5-GCCcore-12.2.0
 

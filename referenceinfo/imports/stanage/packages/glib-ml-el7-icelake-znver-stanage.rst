@@ -10,3 +10,10 @@
             module load GLib/2.66.1-GCCcore-10.2.0
             module load GLib/2.64.1-GCCcore-9.3.0
 
+
+    .. group-tab:: Znver3
+
+        .. code-block:: console
+
+            module load GLib/2.75.0-GCCcore-12.2.0
+

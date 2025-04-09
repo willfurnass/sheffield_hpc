@@ -10,3 +10,10 @@
             module load HarfBuzz/2.6.7-GCCcore-10.2.0
             module load HarfBuzz/2.6.4-GCCcore-9.3.0
 
+
+    .. group-tab:: Znver3
+
+        .. code-block:: console
+
+            module load HarfBuzz/5.3.1-GCCcore-12.2.0
+

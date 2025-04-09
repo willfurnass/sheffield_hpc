@@ -1,6 +1,7 @@
 .. dropdown:: Direct dependencies for latest version of CGAL
 
    - :ref:`Boost/1.74.0-GCC-10.2.0 <boost-devel-el7-icelake-znver-stanage>`
+   - :ref:`GCCcore/12.2.0 <gcccore-compiler-el7-icelake-znver-stanage>`
    - :ref:`GMP/6.2.0-GCCcore-10.2.0 <gmp-math-el7-icelake-znver-stanage>`
    - :ref:`gompi/2020b <gompi-toolchain-el7-icelake-znver-stanage>`
    - :ref:`libGLU/9.0.1-GCCcore-10.2.0 <libglu-vis-el7-icelake-znver-stanage>`

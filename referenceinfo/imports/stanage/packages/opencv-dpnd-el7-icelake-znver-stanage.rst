@@ -1,0 +1,21 @@
+.. dropdown:: Direct dependencies for latest version of OpenCV
+
+   - :ref:`ant/1.10.12-Java-11 <ant-devel-el7-icelake-znver-stanage>`
+   - :ref:`FFmpeg/5.1.2-GCCcore-12.2.0 <ffmpeg-vis-el7-icelake-znver-stanage>`
+   - :ref:`foss/2022b <foss-toolchain-el7-icelake-znver-stanage>`
+   - :ref:`freetype/2.12.1-GCCcore-12.2.0 <freetype-vis-el7-icelake-znver-stanage>`
+   - :ref:`GLib/2.75.0-GCCcore-12.2.0 <glib-vis-el7-icelake-znver-stanage>`
+   - :ref:`GTK4/4.11.3-GCC-12.2.0 <gtk4-vis-el7-icelake-znver-stanage>`
+   - :ref:`HarfBuzz/5.3.1-GCCcore-12.2.0 <harfbuzz-vis-el7-icelake-znver-stanage>`
+   - :ref:`HDF5/1.14.0-gompi-2022b <hdf5-data-el7-icelake-znver-stanage>`
+   - :ref:`JasPer/4.0.0-GCCcore-12.2.0 <jasper-vis-el7-icelake-znver-stanage>`
+   - :ref:`Java/11 <java-lang-el7-icelake-znver-stanage>`
+   - :ref:`libjpeg-turbo/2.1.4-GCCcore-12.2.0 <libjpeg-turbo-lib-el7-icelake-znver-stanage>`
+   - :ref:`libpng/1.6.38-GCCcore-12.2.0 <libpng-lib-el7-icelake-znver-stanage>`
+   - :ref:`LibTIFF/4.4.0-GCCcore-12.2.0 <libtiff-lib-el7-icelake-znver-stanage>`
+   - :ref:`libwebp/1.3.1-GCCcore-12.2.0 <libwebp-lib-el7-icelake-znver-stanage>`
+   - :ref:`OpenEXR/3.1.5-GCCcore-12.2.0 <openexr-vis-el7-icelake-znver-stanage>`
+   - :ref:`OpenJPEG/2.5.0-GCCcore-12.2.0 <openjpeg-lib-el7-icelake-znver-stanage>`
+   - :ref:`Python/3.10.8-GCCcore-12.2.0 <python-lang-el7-icelake-znver-stanage>`
+   - :ref:`SciPy-bundle/2023.02-gfbf-2022b <scipy-bundle-lang-el7-icelake-znver-stanage>`
+   - :ref:`zlib/1.2.12-GCCcore-12.2.0 <zlib-lib-el7-icelake-znver-stanage>`

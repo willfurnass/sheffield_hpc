@@ -10,3 +10,10 @@
             module load Pango/1.47.0-GCCcore-10.2.0
             module load Pango/1.44.7-GCCcore-9.3.0
 
+
+    .. group-tab:: Znver3
+
+        .. code-block:: console
+
+            module load Pango/1.50.12-GCCcore-12.2.0
+

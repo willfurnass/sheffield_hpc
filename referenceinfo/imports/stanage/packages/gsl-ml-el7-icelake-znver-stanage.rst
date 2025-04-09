@@ -13,3 +13,10 @@
             module load GSL/2.6-iccifort-2020.1.217
             module load GSL/2.5-GCC-7.3.0-2.30
 
+
+    .. group-tab:: Znver3
+
+        .. code-block:: console
+
+            module load GSL/2.7-GCC-12.2.0
+

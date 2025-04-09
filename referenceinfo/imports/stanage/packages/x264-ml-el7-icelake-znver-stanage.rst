@@ -17,4 +17,5 @@
         .. code-block:: console
 
             module load x264/20230226-GCCcore-12.3.0
+            module load x264/20230226-GCCcore-12.2.0
 
