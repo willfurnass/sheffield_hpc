@@ -188,7 +188,7 @@ There are separate ``fastdata`` areas on each cluster:
 
     .. warning:: 
 
-      **Snapshotting is not enabled** for home areas and these areas are **not backed up**.
+      **Snapshotting is not enabled** for fastdata areas and these areas are **not backed up**.
 
 
     :underline-bold:`File locking`
