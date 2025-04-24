@@ -389,13 +389,13 @@ Also, users may want to install software on the clusters that they want to be ac
 To address these two needs users can request the creation of a new directory beneath of the three directories listed below
 and if their request is granted they will be given write access to this area:
 
-+----------+--------------------------+------+-----------------------------+-------------------------------------+-----------------------------------------+
-| System   | Path                     | Type | Software install guidelines | Public index of areas               | Notes                                   |
-+==========+==========================+======+=============================+=====================================+=========================================+
-| Stanage  | N/A                      | N/A  |                             |                                     |                                         |
-+----------+--------------------------+------+-----------------------------+-------------------------------------+-----------------------------------------+
-| Bessemer | ``/usr/local/community`` | NFS  |                             |                                     |                                         |
-+----------+--------------------------+------+-----------------------------+-------------------------------------+-----------------------------------------+
++----------+--------------------------+------+
+| System   | Path                     | Type |
++==========+==========================+======+
+| Stanage  | N/A                      | N/A  |
++----------+--------------------------+------+
+| Bessemer | ``/usr/local/community`` | NFS  |
++----------+--------------------------+------+
 
 Note that:
 
