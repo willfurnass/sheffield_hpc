@@ -12,4 +12,5 @@
         .. code-block:: console
 
             module load GST-plugins-base/1.22.1-GCC-12.2.0
+            module load GST-plugins-base/1.20.2-GCC-11.3.0
 

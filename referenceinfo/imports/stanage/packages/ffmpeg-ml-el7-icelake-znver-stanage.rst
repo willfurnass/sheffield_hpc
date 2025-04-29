@@ -18,4 +18,5 @@
 
             module load FFmpeg/6.0-GCCcore-12.3.0
             module load FFmpeg/5.1.2-GCCcore-12.2.0
+            module load FFmpeg/4.4.2-GCCcore-11.3.0
 

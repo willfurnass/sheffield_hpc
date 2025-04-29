@@ -5,7 +5,7 @@ All Packages Index
 
 .. note::
 
-   Last updated: 2025-04-09
+   Last updated: 2025-04-24
 
 This comprehensive index includes all packages installed on Stanage, with content generated automatically. It is updated regularly to reflect the latest installations and mirrors the full range of packages available on Stanage.
 

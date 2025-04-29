@@ -10,3 +10,10 @@
             module load NSS/3.57-GCCcore-10.2.0
             module load NSS/3.51-GCCcore-9.3.0
 
+
+    .. group-tab:: Znver3
+
+        .. code-block:: console
+
+            module load NSS/3.79-GCCcore-11.3.0
+

@@ -16,4 +16,5 @@
         .. code-block:: console
 
             module load cairo/1.17.4-GCCcore-12.2.0
+            module load cairo/1.17.4-GCCcore-11.3.0
 

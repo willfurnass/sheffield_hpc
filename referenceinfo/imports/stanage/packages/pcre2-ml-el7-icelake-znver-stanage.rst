@@ -16,4 +16,5 @@
         .. code-block:: console
 
             module load PCRE2/10.40-GCCcore-12.2.0
+            module load PCRE2/10.40-GCCcore-11.3.0
 

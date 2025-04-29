@@ -12,4 +12,5 @@
         .. code-block:: console
 
             module load Graphene/1.10.8-GCCcore-12.2.0
+            module load Graphene/1.10.8-GCCcore-11.3.0
 

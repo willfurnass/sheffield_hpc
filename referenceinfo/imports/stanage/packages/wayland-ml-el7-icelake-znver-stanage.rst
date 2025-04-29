@@ -12,4 +12,5 @@
         .. code-block:: console
 
             module load Wayland/1.22.0-GCCcore-12.2.0
+            module load Wayland/1.20.0-GCCcore-11.3.0
 

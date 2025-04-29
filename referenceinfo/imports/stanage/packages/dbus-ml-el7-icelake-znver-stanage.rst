@@ -16,4 +16,5 @@
         .. code-block:: console
 
             module load DBus/1.15.2-GCCcore-12.2.0
+            module load DBus/1.14.0-GCCcore-11.3.0
 

@@ -19,4 +19,5 @@
         .. code-block:: console
 
             module load GSL/2.7-GCC-12.2.0
+            module load GSL/2.7-GCC-11.3.0
 

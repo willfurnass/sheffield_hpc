@@ -14,3 +14,10 @@
             module load Boost/1.72.0-gompi-2020a
             module load Boost/1.72.0-iimpi-2020a
 
+
+    .. group-tab:: Znver3
+
+        .. code-block:: console
+
+            module load Boost/1.79.0-GCC-11.3.0
+

@@ -12,4 +12,5 @@
         .. code-block:: console
 
             module load PyGObject/3.44.1-GCCcore-12.2.0
+            module load PyGObject/3.42.1-GCCcore-11.3.0
 
