@@ -8,18 +8,17 @@ Here are some techniques you can use to reduce the number of times that you need
 .. include:: /referenceinfo/imports/staying_connected.rst
 
 
-TMUX/screen
------------
+TMUX
+----
 
-`TMUX <https://github.com/tmux/tmux/wiki>`_ and `screen <https://www.gnu.org/software/screen/manual/screen.html>`_
-are available on the HPC login nodes and can be used to run multiple shell sessions within a single SSH session.
+`TMUX <https://github.com/tmux/tmux/wiki>`_ is available on the HPC login nodes and can be used to run multiple shell sessions within a single SSH session.
 
 .. note::
 
     A *shell* is the command-line interface where you type commands.
     Normally, when you SSH into the cluster you only get one shell session.
 
-    Tools like TMUX and screen let you:
+    Tools like TMUX let you:
 
     - Detach from and reattach to sessions so your processes keep running even if you disconnect.
     - Run several virtual terminals concurrently.
