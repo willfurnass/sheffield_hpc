@@ -144,6 +144,10 @@ htmlhelp_basename = 'hpcdoc'
 # Hide 'view page source' link
 html_show_sourcelink = False
 
+# -- Options for tippy ----------------------------------------------------
+# Disable wiki tips for now. Needs futher investigation
+tippy_enable_wikitips = False
+
 # -- Options for manual page output ---------------------------------------
 
 # One entry per manual page. List of tuples
