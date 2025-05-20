@@ -1,4 +1,13 @@
+[project]
+name = "sheffield-hpc"
+version = "1.0.1"
+description = "Documentation for University of Sheffield HPC services"
+readme = "README.md"
+requires-python = ">=3.8"
+
 [build-system]
-# Pin setuptools because of https://github.com/ryan-roemer/sphinx-bootstrap-theme/issues/216
-requires = ["setuptools<58", "wheel"]
+requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = []
