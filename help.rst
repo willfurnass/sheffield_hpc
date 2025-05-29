@@ -154,12 +154,4 @@ and RIT 102 (High-Performance Computing) courses.
 
 These courses are very popular and run through both semesters. You can find details and how to register at the website: https://sites.google.com/sheffield.ac.uk/research-training/ (Only accessible with the VPN turned on.)
 
-IT Services' Research and Innovation training index
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The `Research and Innovation team's training index <https://rcgsheffield.github.io/TUoS-RIT-training-resources/training.html>`__ 
-allows you to search for internal (to TUoS) and external training resources 
-covering categories including HPC, Data Analysis / Visualisation, containerisation as well as domain specific resources such as 
-FEA, CFD, Chemistry and more.
-
-This site is currently in beta and more links are resources are being added.
