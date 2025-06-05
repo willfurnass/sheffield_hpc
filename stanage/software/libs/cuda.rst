@@ -77,7 +77,7 @@ but you do need at least one GPU to run them.
 In this demonstration, we create a batch job that
 
 #. Request one GPU, a single CPU core and 8GB RAM
-#. Loads a module to provide CUDA 11.8
+#. Loads a module to provide CUDA 12.0
 #. Downloads compatible NVIDIA CUDA sample programs
 #. Compiles and runs an example that performs a matrix multiplication
 
