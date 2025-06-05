@@ -12,6 +12,8 @@ At present you need to decide which node type to target when
 submitting a batch job or 
 starting an interactive session on a worker node.
 
+Before proceeding, ensure you’ve worked through our introductory :ref:`GPU tutorial <GPU_computing>`.
+
 .. _gpu_interactive_stanage:
 
 Interactive use of the GPUs

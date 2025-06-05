@@ -3,6 +3,7 @@
 Using GPUs on Bessemer
 ======================
 
+Before proceeding, ensure you’ve worked through our introductory :ref:`GPU tutorial <GPU_computing>`.
 
 .. _GPUInteractive_bessemer:
 

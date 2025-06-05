@@ -18,6 +18,8 @@ Advanced Job Profiling and Analysis
 
     Abuse of this feature to carry out tasks that are not profiling and perfomance analysis of your running batch job might lead to your account being suspended.
 
+.. _access_running_job:
+
 Accessing a Running Single-Node Slurm Batch job
 -----------------------------------------------
 
