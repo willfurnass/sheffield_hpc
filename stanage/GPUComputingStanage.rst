@@ -97,7 +97,7 @@ e.g. for two GPUs use ``--gres=gpu:2``:
 Requesting GPUs and multiple CPU cores from the scheduler
 ---------------------------------------------------------
 
-To request four separate Slurm tasks within a job, each of which has four CPU cores and with four (A100) GPUs available to the entire job (shared between tasks):
+To request four separate Slurm tasks within a job, each of which has eight CPU cores and with four (A100) GPUs available to the entire job (shared between tasks):
 
 .. code-block:: sh
 
@@ -106,7 +106,7 @@ To request four separate Slurm tasks within a job, each of which has four CPU co
     #SBATCH --qos=gpu
     #SBATCH --nodes=1
     #SBATCH --ntasks=4
-    #SBATCH --cpus-per-task=4
+    #SBATCH --cpus-per-task=8
     #SBATCH --gres=gpu:4       # 4 GPUs for job
 
 Note that:
