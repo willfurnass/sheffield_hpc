@@ -143,7 +143,7 @@ Compile the CUDA program for multiple GPU architectures:
 
 After compiling, type ``exit`` to return to a login node.
 
-Run the program interactively (this is the preferred method for small tests, as it frees up valuable resoruces immediately upon completion):
+Run the program interactively (this is the preferred method for small tests, as it frees up valuable resources immediately upon completion):
 
 .. code-block:: bash
 
@@ -189,7 +189,7 @@ You can monitor GPU usage during a job by running the nvidia-smi command in the 
 
 This will generate a log file ``gpu_stats_${SLURM_JOB_ID}.log`` containing GPU utilisation and memory usage data every two seconds.
 
-To view the first few entries of the log file:
+To view the first few entries of the log file we can use the ``head`` command:
 
 .. code-block:: console
 
@@ -210,7 +210,7 @@ If GPU utilisation is low you should check CPU utilistion after the job has fini
 
 .. include:: /referenceinfo/imports/scheduler/SLURM/common_commands/seff_usage_import.rst
 
-These commands report on CPU and memory usage (but not GPU details, as GPU stats are not available in seff here).
+These commands report on CPU and memory usage (but not GPU details as GPU stats are not available in ``seff`` on our clusters).
 If you see high CPU usage but low GPU utilisation, it may indicate that the CPUs are struggling to keep the GPU fed with data.
 In this case, consider requesting more CPUs (e.g. using ``--cpus-per-task=8`` or higher) — **provided your application can actually use them effectively**, such as multi-threaded data loading.
 Be mindful not to request more CPUs than needed, as this can lead to resource waste and reduced availability for other users.   

@@ -93,7 +93,7 @@ Your First Array Job
 
 .. include:: /referenceinfo/imports/hpc-examples-repo.rst
 
-Let's see an array job in practice. Let's use the script names ``array_example.sh``
+Let's see an array job in practice. Look at the script ``${HPC_EXAMPLES}/array/array_example.sh``
 
 .. literalinclude:: /hpc-examples/examples/array/array_example.sh
    :language: slurm
@@ -161,14 +161,14 @@ Often, computations require processing different input files. The ``$SLURM_ARRAY
     srun ./my_application -input input_data_${SLURM_ARRAY_TASK_ID}
 
 Hardcoding Arguments in the Batch Script
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You can explicitly set arguments within the batch script. Suppose you want to run a pi estimation simulation with five different seed values, each executing 2.5 million iterations:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Suppose you want to run a π estimation simulation with five different seed values, each executing 2.5 million iterations.
+The following two examples show different ways to embed these arguments in the batch script.
 
 Case-Based Argument Selection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We will use ``${HPC_EXAMPLES}/examples/array/pi_array_hardcoded_case.sh`` :
+The script ``${HPC_EXAMPLES}/array/pi_array_hardcoded_case.sh`` uses a case statement to choose arguments:
 
 .. literalinclude:: /hpc-examples/examples/array/pi_array_hardcoded_case.sh
    :language: slurm
@@ -191,7 +191,7 @@ Each task produces its own output, such as:
 Using Bash Arrays for Parameter Selection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-An alternative approach is using Bash arrays ``${HPC_EXAMPLES}/hpc-examples/examples/array/pi_array_hardcoded_array.sh`` :
+An alternative approach using Bash arrays is demonstrated in the script ``${HPC_EXAMPLES}/array/pi_array_hardcoded_array.sh`` :
 
 .. literalinclude:: /hpc-examples/examples/array/pi_array_hardcoded_array.sh
    :language: slurm
@@ -205,7 +205,7 @@ Submit the job with:
    $ sbatch ${HPC_EXAMPLES}/array/pi_array_hardcoded_array.sh
 
 Reading Parameters from a File
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Rather than hardcoding values, you can store them in a file and read them dynamically. For example, running ``pi.py`` with different iteration values:
 
@@ -218,7 +218,7 @@ Create a file named ``iterations.txt`` containing:
    50000
    1000000
 
-We modify the script to read values using ``sed`` (see `sed <https://en.wikipedia.org/wiki/Sed>`_  and ``man sed``)
+We can modify the previous script to read values using ``sed`` (see `sed <https://en.wikipedia.org/wiki/Sed>`_  and ``man sed``)
 ``${HPC_EXAMPLES}/array/pi_array_parameter.sh`` :
 
 .. literalinclude:: /hpc-examples/examples/array/pi_array_parameter.sh
@@ -227,7 +227,7 @@ We modify the script to read values using ``sed`` (see `sed <https://en.wikipedi
 This approach can be extended to read multiple parameters from CSV files or similar structured data formats.
 
 Two-Dimensional Array Scanning (Advanced) 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If your tasks are very short (a few minutes), launching numerous individual jobs
 can lead to scheduling inefficiencies and an overwhelming number of output files.
@@ -244,8 +244,7 @@ For example, if you need to run a simulation with 50 different seed values,
 you can process them in groups of 10, reducing the number of array jobs to just 5.
 This significantly decreases the load on the scheduler.
 
-An example implementation is provided in the `hpc-examples`_ script:
-``examples/array/pi_array_grouped.sh``
+An example implementation is provided in the script ``${HPC_EXAMPLES}/array/pi_array_grouped.sh``:
 
 .. literalinclude:: /hpc-examples/examples/array/pi_array_grouped.sh
   :language: slurm
@@ -338,8 +337,4 @@ What's Next?
 
 The next tutorial covers :ref:`shared memory parallelism <parallel_SMP>`.
 
-
-
 .. include:: /referenceinfo/imports/attrib_AaltoSciComp.rst
-
-.. _hpc-examples: https://github.com/rcgsheffield/hpc-examples

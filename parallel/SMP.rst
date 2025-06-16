@@ -259,10 +259,13 @@ Exercises
 
 .. include:: /referenceinfo/imports/hpc-examples-repo.rst
 
-- Run and scale ``pi.py`` using 1, 2, and 4 CPUs. Compare time and utilisation (``seff JOBID``).
-- Use ``--serial=0.1`` or ``--serial=0.5`` to simulate serial bottlenecks.
-- Try ``--optimized`` to explore the performance benefits of vectorised NumPy code.
-- Reflect on whether your own software can benefit from shared-memory parallelism. Look for flags such as ``nprocs``, ``nworkers``, ``OpenMP``, etc.
+This section explores shared-memory parallelism using practical Python examples. You’ll experiment with CPU scaling, identify performance bottlenecks, and assess the impact of code optimisation.
+
+1. Scale the `ngrams` example using 1–8 CPUs to find the sweet spot for performance vs efficiency.
+2. Run and scale ``pi.py`` using 1, 2, and 4 CPUs. Compare wall time and CPU utilisation using ``seff JOBID``.
+3. Use ``--serial=0.1``, ``--serial=0.5``, etc., to simulate partial serial workloads.
+4. Try ``--optimized`` to explore the performance benefits of vectorised NumPy code.
+5. Reflect on whether your own software could benefit from shared-memory parallelism. Look for hints like ``nprocs``, ``nworkers``, or ``OpenMP`` usage.
 
 .. admonition:: Shared memory parallelism 1: Scaling the ngrams example
 
@@ -379,7 +382,7 @@ Exercises
 	  	- Writing plain text + JSON output is inefficient; binary formats would be faster.
 	  	- Python's ``multiprocessing`` has overhead when transferring large data between workers.
 
-.. admonition:: Shared memory parallelism 1: Scaling with different CPU counts
+.. admonition:: Shared memory parallelism 2: Scaling with different CPU counts
 
         Run `pi.py` with 100,000,000 trials using 1, 2, and 4 CPUs. Record the wall-clock time and CPU usage reported by ``seff JOBID``.
         
@@ -389,19 +392,19 @@ Exercises
            
              .. code-block:: bash
            
-                srun --time=00:10:00 --mem=1G python3 ${HPC_EXAMPLES}/slurm/pi.py 100000000
+                srun --export=ALL --time=00:10:00 --mem=1G python3 ${HPC_EXAMPLES}/slurm/pi.py 100000000
            
              Then test with 2 and 4 cores:
            
              .. code-block:: bash
            
-                srun --cpus-per-task=2 --time=00:10:00 --mem=1G python3 ${HPC_EXAMPLES}/slurm/pi.py --nprocs=2 100000000
-                srun --cpus-per-task=4 --time=00:10:00 --mem=1G python3 ${HPC_EXAMPLES}/slurm/pi.py --nprocs=4 100000000
+                srun --export=ALL --cpus-per-task=2 --time=00:10:00 --mem=1G python3 ${HPC_EXAMPLES}/slurm/pi.py --nprocs=2 100000000
+                srun --export=ALL --cpus-per-task=4 --time=00:10:00 --mem=1G python3 ${HPC_EXAMPLES}/slurm/pi.py --nprocs=4 100000000
            
              Use ``seff JOBID`` to compare wall time and CPU efficiency. Ideally, wall time should decrease proportionally to CPU count,
              while total CPU time stays consistent.
 
-.. admonition:: Shared memory parallelism 2: Simulating partial serial workload
+.. admonition:: Shared memory parallelism 3: Simulating partial serial workload
 
         ``pi.py`` accepts a ``--serial`` flag to simulate a serial portion of the code. Run with 100,000,000 trials, 4 CPUs,
         and different values of ``--serial``: 0.1, 0.5, and 0.8.
@@ -412,13 +415,13 @@ Exercises
           
             .. code-block:: bash
           
-               srun --cpus-per-task=4 --time=00:10:00 --mem=1G python3 ${HPC_EXAMPLES}/slurm/pi.py --serial=0.1 --nprocs=4 100000000
-               srun --cpus-per-task=4 --time=00:10:00 --mem=1G python3 ${HPC_EXAMPLES}/slurm/pi.py --serial=0.5 --nprocs=4 100000000
-               srun --cpus-per-task=4 --time=00:10:00 --mem=1G python3 ${HPC_EXAMPLES}/slurm/pi.py --serial=0.8 --nprocs=4 100000000
+               srun --export=ALL --cpus-per-task=4 --time=00:10:00 --mem=1G python3 ${HPC_EXAMPLES}/slurm/pi.py --serial=0.1 --nprocs=4 100000000
+               srun --export=ALL --cpus-per-task=4 --time=00:10:00 --mem=1G python3 ${HPC_EXAMPLES}/slurm/pi.py --serial=0.5 --nprocs=4 100000000
+               srun --export=ALL --cpus-per-task=4 --time=00:10:00 --mem=1G python3 ${HPC_EXAMPLES}/slurm/pi.py --serial=0.8 --nprocs=4 100000000
           
             Higher serial portions will reduce the benefit from parallelism. Use ``seff`` to observe diminishing speedup.
 
-.. admonition:: Shared memory parallelism 3: Comparing parallel vs optimised code
+.. admonition:: Shared memory parallelism 4: Comparing parallel vs optimised code
 
         ``pi.py`` has an ``--optimized`` mode using `NumPy <https://numpy.org/>`_ for vectorised operations.
         Run the normal version with 4 CPUs and the optimised version with 1 CPU. Compare runtime and utilisation.
@@ -438,18 +441,19 @@ Exercises
            
              .. code-block:: bash
            
-                srun --cpus-per-task=4 --time=00:10:00 --mem=1G bash -c "module load Anaconda3 && source activate numpy-env && \
-                python3 ${HPC_EXAMPLES}/slurm/pi.py --nprocs=4 100000000"
+                srun --cpus-per-task=4 --time=00:10:00 --mem=1G bash -c "module load Anaconda3 hpc-examples && \
+                source activate numpy-env && python3 ${HPC_EXAMPLES}/slurm/pi.py --nprocs=4 100000000"
            
              Then run the optimised version:
            
              .. code-block:: bash
            
-                srun --time=00:10:00 --mem=1G bash -c "module load Anaconda3 && source activate numpy-env && python3 ${HPC_EXAMPLES}/slurm/pi.py --optimized 100000000"
+                srun --time=00:10:00 --mem=1G bash -c "module load Anaconda3 hpc-examples && \
+                source activate numpy-env && python3 ${HPC_EXAMPLES}/slurm/pi.py --optimized 100000000"
            
              NumPy's vectorised implementation may outperform the multiprocess version even on fewer cores, due to efficient C/Fortran backends.
 
-.. admonition:: Shared memory parallelism 4: Assess your own code
+.. admonition:: Shared memory parallelism 5: Assess your own code
 
         Reflect on whether your own code supports shared-memory parallelism. Look for indications such as:
         
