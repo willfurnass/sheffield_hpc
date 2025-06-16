@@ -44,6 +44,13 @@ As the ANSYS suite contains a large number of packages, links to each dedicated 
   mechanical
   ls-dyna
 
+ANSYS Electromagnetics (ANSYSEM) — e.g. Maxwell, HFSS — is a separate product with its own module.
+It is not included in the standard ANSYS module.
+
+.. seealso::
+
+   :ref:`ANSYS Electromagnetics Suite <ansysem_stanage>`
+
 --------------------
 
 ANSYS training and help resources

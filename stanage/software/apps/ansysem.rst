@@ -67,7 +67,7 @@ The script requests 4 cores with a runtime of 30 mins and 2 GB of real memory pe
       and one of the older modules this option is unlikely to be required.
     * If you are using an older module the batch options may need adjusting from 
       ``-batchoptions 'HPCLicenseType'='pool'`` to project type specific options 
-      `click here and see post 4. <https://forum.ansys.com/discussion/5955/hfsshpc-vs-hfsshpc-pack-license>`_
+      `click here and see post 4. <https://innovationspace.ansys.com/forum/forums/topic/hfsshpc-vs-hfsshpc_pack-license/>`_
     * If you are using commercial licenses the use of ``-batchoptions 'HPCLicenseType'='pack'`` 
       is likely compulsory.
 
