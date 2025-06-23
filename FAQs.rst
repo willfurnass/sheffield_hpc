@@ -539,7 +539,7 @@ To transfer data between your old account and your new account you could make us
 
 .. code-block:: bash
 
-        rsync -avzP /Path/To/File_Or_Directory $Your_New_UserName@$clustername.shef.ac.uk:/home/$Your_New_UserName/OldUserAccount
+        rsync -avzP /Path/To/File_Or_Directory $Your_New_UserName@$clustername.shef.ac.uk:/users/$Your_New_UserName/OldUserAccount
 
 ------
 
