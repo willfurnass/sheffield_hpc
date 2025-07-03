@@ -905,3 +905,20 @@ X11 forwarding has the following drawbacks:
 
 While X11 is a very helpful tool in many scenarios, its disadvantages make it less ideal for modern graphical computing. We suggest you migrate your workflow to Stanage and use :ref:`Flight Graphical sessions<flight-desktop>`, if you require a graphical user interface on the HPC clusters.
 
+.. _glibc_stanage_centos7:
+
+Why is the version of glibc on Stanage still 2.17, and what should I do if I need a newer version?
+--------------------------------------------------------------------------------------------------
+
+If you're getting errors like:
+
+.. code-block:: console
+
+    GLIBC_2.28 not found
+
+then your software was likely built on a newer system and is incompatible with Stanage’s old glibc.
+
+Stanage currently runs CentOS 7, which ships with glibc 2.17. This will not be updated until the planned OS upgrade later this year.
+In the meantime, if your software requires a newer glibc (e.g. 2.28+), we recommend using Apptainer containers. You can build containers based on newer distributions (e.g. Rocky 9) that provide a more modern glibc.
+
+See our :ref:`Apptainer guide <apptainer_stanage>` for how to get started.
