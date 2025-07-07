@@ -13,7 +13,13 @@ For a guide on the rst file format see `this <http://thomas-cokelaer.info/tutori
 Rendered Documentation
 ----------------------
 `This website <https://docs.hpc.shef.ac.uk/en/latest/>`_  is currently automatically built from `this repository <https://github.com/rcgsheffield/sheffield_hpc>`_:
-each push to the ``master`` branch causes a `GitHub Actions <https://github.com/rcgsheffield/sheffield_hpc/actions/>`__ workflow to build and serve the documentation via GitHub Pages.
+each push to the ``master`` branch causes a `GitHub Actions <https://github.com/rcgsheffield/sheffield_hpc/actions/>`__ workflow, which:
+
+* Builds the documentation using Sphinx
+* Adds a ``robots.txt`` file to the web root to guide indexing and reference the sitemap
+* Adds a Google Search Console verification file for ownership validation
+* Generates a sitemap using the ``sphinx-sitemap`` plugin to support better SEO
+* Deploys the resulting HTML to GitHub Pages
 
 How to Contribute
 -----------------
