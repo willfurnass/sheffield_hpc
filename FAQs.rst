@@ -653,26 +653,28 @@ Launching MPI tasks with srun versus mpirun or mpiexec
 Documentation found elsewhere may recommend launching MPI tasks from batch jobs
 using the ``mpirun`` (or ``mpiexec``) program that comes with the MPI implementation you are using.
 
-On Bessemer and Stanage we recommend launching MPI tasks from batch jobs
-using Slurm's ``srun`` command.
-This only works if the MPI implmentation you are using is
-built against a version of the PMI2 or PMI-X library
-that is compatible with the PMI2 or PMI-X library used by the Slurm job scheduler.
-This is the case for the administrator-provided versions of OpenMPI and Intel MPI on Bessemer and Stanage;
-no extra configuration is required by the end user.
+For those more familiar with the use of ``mpirun`` and ``mpiexec``, you can consider
+``srun`` to be functionally equivalent
+although it takes different arguments and can also be used for starting interactive sessions on Slurm clusters.
 
-On Bessemer and Stanage in batch scripts you should use the ``--export=ALL`` option with the ``srun`` command, 
-which tells Slurm to export all of the current shell environment variables to the job environment.
+On Bessemer and Stanage we recommend using ``srun`` so long as the MPI implementation is built
+against a compatible version of SLURM’s PMI2 or PMIx libraries — this is true for centrally installed
+OpenMPI and Intel MPI modules on Stanage and Bessemer.
 
-.. code-block:: console
+**Always use** ``--export=ALL`` **with** ``srun``
+
+In batch scripts, include:
+
+.. code-block:: slurm
 
         srun --export=ALL my_program
 
-This is important because many applications and libraries rely on environment variables to locate their dependencies, such as shared libraries.
+This ensures your current shell environment (including module variables) is preserved. Without it, 
+applications may fail with errors.
 
 Take, for instance, if we were to submit this :ref:`OpenMPI non-interactive hello world job <batch_openmpi_stanage>` without the ``--export=ALL`` option, i.e:
 
-.. code-block:: console
+.. code-block:: slurm
        :emphasize-lines: 5
         
         #!/bin/bash
@@ -681,19 +683,48 @@ Take, for instance, if we were to submit this :ref:`OpenMPI non-interactive hell
         module load OpenMPI/4.1.4-GCC-12.2.0
         srun hello
 
-On the Stanage cluster, we would encounter an error message containing:
+We would encounter an error message containing:
+
+.. code-block:: slurm
+
+        PMIX ERROR: NOT-FOUND in file client/pmix_client.c at line 562
+
+**If using** ``mpirun``
+
+If you must use ``mpirun``, also set:
+
+.. code-block:: slurm
+       :emphasize-lines: 1
+
+        export SLURM_EXPORT_ENV=ALL
+        mpirun -np $SLURM_NTASKS my_program
+
+Without this, ``mpirun`` may fail to find internal commands like ``orted``, particularly on multi-node jobs, producing cryptic errors like:
+
+.. code-block:: slurm
+        
+       An ORTE daemon has unexpectedly failed after launch...
+
+To see what’s going wrong, add:
 
 .. code-block:: console
 
-        [node140.pri.stanage.alces.network:12429] PMIX ERROR: NOT-FOUND in file client/pmix_client.c at line 562
+      mpirun --mca plm_base_verbose 10 ...
 
-While loading the OpenMPI module will set the variable ``SLURM_MPI_TYPE=pmix_v4``, 
-when ``srun`` is initiated it creates a new environment. Since we haven't instructed it to export the environment variables to this new environment,
-it will not be able to locate ``SLURM_MPI_TYPE``, even if it's available in the current shell environment.
+This increases debug output showing how ``mpirun`` is attempting to launch processes.
 
-For those more familiar with the use of ``mpirun`` and ``mpiexec``:
-``srun`` can here be thought to be functionally equivalent to ``mpirun`` and ``mpiexec``,
-although it takes different arguments and can also be used for starting interactive sessions on Slurm clusters.
+
+.. dropdown:: Why does this matter? (PMI2/PMIx and SLURM internals)
+
+   SLURM uses PMI2 or PMIx for launching and managing MPI processes. When you load an MPI module, it often sets variables like:
+
+   .. code-block:: console
+      
+          SLURM_MPI_TYPE=pmix_v4
+
+   But ``srun`` (and ``mpirun`` if it internally calls ``srun``) starts a clean environment by default.
+   If these variables aren’t exported (e.g. via ``--export=ALL`` or ``SLURM_EXPORT_ENV=ALL``),
+   your job may break before your program even starts — hence the confusing errors.
 
 -----
 
