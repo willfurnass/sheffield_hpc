@@ -39,6 +39,13 @@ the same job script.
 Array jobs enable you to manage large-scale workloads on the cluster.
 In :ref:`parallel`, we explore alternatives.
 
+.. note::
+
+   Although the examples here are drawn from scientific computing,
+   job arrays are equally useful in many other fields.
+   You might use them to analyse batches of text files,
+   run different models on survey data, or automate large-scale
+   media processing — anywhere you need to repeat a task across multiple inputs or parameters.
 
 Introduction
 ------------
@@ -84,7 +91,7 @@ for handling input/output files.
    For example, launching an array job with hundreds of tasks that
    depend on a Python environment stored on shared storage may cause
    significant file system load due to repeated access to thousands of files.
-   
+
    If you are unsure how your job will behave, seek guidance from the `IT Services' Research
    and Innovation team <mailto:research-it@sheffield.ac.uk>`_.
 
@@ -195,7 +202,7 @@ An alternative approach using Bash arrays is demonstrated in the script ``${HPC_
 
 .. literalinclude:: /hpc-examples/examples/array/pi_array_hardcoded_array.sh
    :language: slurm
-   
+
 
 Submit the job with:
 
@@ -226,7 +233,7 @@ We can modify the previous script to read values using ``sed`` (see `sed <https:
 
 This approach can be extended to read multiple parameters from CSV files or similar structured data formats.
 
-Two-Dimensional Array Scanning (Advanced) 
+Two-Dimensional Array Scanning (Advanced)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If your tasks are very short (a few minutes), launching numerous individual jobs
@@ -261,15 +268,15 @@ Array Job Exercises
       Computing n-grams across the Gutenberg-Fiction dataset can take considerable time.
       Using array jobs is an efficient way to parallelise the process. Follow along
       with this example:
-      
+
       The following batch script ``${HPC_EXAMPLES}/ngrams/array.sh`` calculates 3-grams in 20 batches, saving each result
       to a separate file:
-      
+
       .. literalinclude:: /hpc-examples/examples/ngrams/array.sh
          :language: slurm
 
       The final output now contains all computed n-grams:
-      
+
       .. code-block:: console
 
             $ head -5 ngrams3-words-all.out
@@ -307,8 +314,8 @@ Array Job Exercises
       details.
 
       .. dropdown:: Solution
-      
-           You can specify a step size for the job array using a colon and number after the range. For example: ``--array=1-X:2`` 
+
+           You can specify a step size for the job array using a colon and number after the range. For example: ``--array=1-X:2``
 
 .. admonition:: Array-6: Varying Memory Requirements
 

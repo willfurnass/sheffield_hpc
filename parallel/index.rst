@@ -18,7 +18,7 @@ An Overview of Parallel Computing Methods
 
 Parallel computing lies at the heart of High-Performance Computing (HPC),
 enabling tasks to be distributed across multiple processors for simultaneous execution.
-Before diving into this material, ensure you've reviewed all prior tutorials.
+Before diving into this material, ensure you've reviewed all prior :ref:`getting-started` sections.
 
 Understanding Parallelisation Paradigms
 ---------------------------------------
@@ -58,7 +58,7 @@ Frequently used for tasks requiring the same program to be run repeatedly with d
 
 .. image:: /images/Array-jobs.png
   :scale: 40%
- 
+
 - **Job Arrays:** SLURM provides an easy way to handle large batches of such tasks. Any program can be run this way if the problem can be divided into independent tasks. Each job in an array is assigned a unique identifier.
 - **Resource Allocation:** Specify resources for a single job and define the total number of jobs in the array.
 - **Use Cases:** Parameter sweeps, independent data processing tasks.
@@ -139,24 +139,24 @@ Combining Parallelisation Models
 
 Some advanced workflows require combining different parallelisation approaches. Below are examples of such combinations:
 
-- **Embarrassingly Parallel Everything**  
-  Any task can be executed in an embarrassingly parallel manner, including shared memory, MPI, or GPU jobs.  
+- **Embarrassingly Parallel Everything**
+  Any task can be executed in an embarrassingly parallel manner, including shared memory, MPI, or GPU jobs.
   Each job runs independently with its own resources.
 
-- **Hybrid Parallelisation**  
-  Combining MPI and shared memory models.  
-  *Programs that utilise this model can require both multiple tasks and multiple CPUs per task.*  
+- **Hybrid Parallelisation**
+  Combining MPI and shared memory models.
+  *Programs that utilise this model can require both multiple tasks and multiple CPUs per task.*
 
-  - Example: Hybrid CP2K configurations (e.g., psmp) use both methods, whereas standard MPI versions (e.g., popt) do not.  
+  - Example: Hybrid CP2K configurations (e.g., psmp) use both methods, whereas standard MPI versions (e.g., popt) do not.
   - The optimal balance of MPI tasks and CPUs per task should be determined through testing.
 
-- **Shared Memory with GPUs**  
-  GPUs are highly efficient for calculations, while multiple CPUs handle preprocessing to minimise idle GPU time.  
+- **Shared Memory with GPUs**
+  GPUs are highly efficient for calculations, while multiple CPUs handle preprocessing to minimise idle GPU time.
 
   - Common in machine learning frameworks like TensorFlow and PyTorch.
 
-- **Multi-Node Without MPI**  
-  Some programs can parallelise across nodes without using MPI for communication.  
+- **Multi-Node Without MPI**
+  Some programs can parallelise across nodes without using MPI for communication.
 
   - These setups often require custom scripts and depend on the software.
 
@@ -165,7 +165,7 @@ Some advanced workflows require combining different parallelisation approaches. 
 Getting help
 ------------
 
-We are here to support you with any aspect of parallel computing. If you require further support or need specific advice, please contact 
+We are here to support you with any aspect of parallel computing. If you require further support or need specific advice, please contact
 `IT Services' Research and Innovation team <mailto:research-it@sheffield.ac.uk>`_ or if you have more specific queries about programming
 / coding for HPC clusters e.g. CUDA programming please contact
 the `Research Software Engineering team <https://rse.shef.ac.uk/contact/>`_.

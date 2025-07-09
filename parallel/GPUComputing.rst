@@ -3,7 +3,6 @@
 GPU Computing
 =============
 
-
 .. admonition:: Overview
 
    * Request a GPU in Slurm with ``--qos=gpu``, ``--partition=GPU_TYPE``, and ``--gres=gpu:1`` (Stanage) or ``--nodes=1 --gpus-per-node=1`` (Bessemer).
@@ -57,13 +56,13 @@ GPUs are requested in Slurm as generic trackable resource (GRES). For most jobs:
     .. group-tab:: Stanage
 
         .. code-block:: bash
-        
+
            --qos=gpu --partition=gpu --gres=gpu:1
 
     .. group-tab:: Bessemer
 
         .. code-block:: bash
-        
+
            --qos=gpu --partition=gpu --nodes=1 --gpus-per-node=1
 
 Available GPU resources
@@ -80,23 +79,24 @@ The columns of ``NODES(A/I/O/T)`` are the number of nodes that are currently **a
 Requesting multiple GPUs
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can request multiple GPUs with:
+You can request multiple GPUs (per node) with:
 
 .. tabs::
 
     .. group-tab:: Stanage
 
         .. code-block:: bash
-        
+
            --qos=gpu --partition=gpu --gres=gpu:G
 
     .. group-tab:: Bessemer
 
         .. code-block:: bash
-        
+
            --qos=gpu --partition=gpu --nodes=1 --gpus-per-node=G
 
-Where ``G`` is the number of GPUs.
+Where ``G`` is the number of GPUs per node. Make sure that ``G`` does not exceed the number
+of GPUs available on a single node in that partition — otherwise, your job will never start.
 
 .. note::
 
@@ -129,17 +129,38 @@ Load the required modules:
 .. code-block:: bash
 
    module load hpc-examples
-   module load GCC/12.3.0 
+   module load GCC/12.3.0
    module load CUDA/12.4.0
 
 Compile the CUDA program for multiple GPU architectures:
 
-.. code-block:: bash
+.. tabs::
 
-   nvcc -gencode=arch=compute_70,code=sm_70 \
-        -gencode=arch=compute_80,code=sm_80 \
-        -gencode=arch=compute_90,code=sm_90 \
-        -o pi-gpu ${HPC_EXAMPLES}/slurm/pi-gpu.cu
+    .. group-tab:: Stanage (this example)
+
+        .. code-block:: bash
+
+           nvcc -gencode=arch=compute_80,code=sm_80 \
+                -gencode=arch=compute_90,code=sm_90 \
+                -gencode=arch=compute_90,code=compute_90 \  # PTX fallback
+                -o pi-gpu ${HPC_EXAMPLES}/slurm/pi-gpu.cu
+
+    .. group-tab:: Bessemer (for reference)
+
+        .. code-block:: bash
+
+           nvcc -gencode=arch=compute_70,code=sm_70 \
+                -gencode=arch=compute_70,code=compute_70 \  # PTX fallback
+                -o pi-gpu ${HPC_EXAMPLES}/slurm/pi-gpu.cu
+
+
+.. note::
+
+   Each example includes a line of the form: ``-gencode=arch=compute_XX,code=compute_XX``
+   This embeds PTX (Parallel Thread Execution) for the target GPU architecture.
+   While not required, it is good practice: the PTX allows your binary to run on
+   future GPUs that support the same compute capability, even if they don't exactly match
+   any compiled ``sm_XX`` binary. The driver can just-in-time compile from PTX if needed.
 
 After compiling, type ``exit`` to return to a login node.
 
@@ -162,12 +183,12 @@ Alternatively, use a Slurm script (even for small tests, it's useful when the sy
    #SBATCH --time=00:10:00
    #SBATCH --partition=gpu
    #SBATCH --qos=gpu
-   #SBATCH --gres=gpu:1 
+   #SBATCH --gres=gpu:1
    #SBATCH --mem=500M
    #SBATCH --output=pi-gpu.out
 
-   module load GCC/12.3.0 
-   module load CUDA/12.4.0 
+   module load GCC/12.3.0
+   module load CUDA/12.4.0
    ./pi-gpu 1000000
 
 .. error::
@@ -203,8 +224,9 @@ To view the first few entries of the log file we can use the ``head`` command:
 .. tip::
 
    For live monitoring, you can use: ``tail -f gpu_stats_JOBID.log``
-   
-   This feedback is useful for confirming that your program is fully utilising the GPU resources as expected.
+
+   This feedback is useful for confirming that your program is utilising the GPU resources as expected.
+   If GPU utilisation or memory usage appears suspiciously low, it may be a sign that your GPU code isn't running effectively — or at all.
 
 If GPU utilisation is low you should check CPU utilistion after the job has finished with ``seff``.
 
@@ -213,7 +235,7 @@ If GPU utilisation is low you should check CPU utilistion after the job has fini
 These commands report on CPU and memory usage (but not GPU details as GPU stats are not available in ``seff`` on our clusters).
 If you see high CPU usage but low GPU utilisation, it may indicate that the CPUs are struggling to keep the GPU fed with data.
 In this case, consider requesting more CPUs (e.g. using ``--cpus-per-task=8`` or higher) — **provided your application can actually use them effectively**, such as multi-threaded data loading.
-Be mindful not to request more CPUs than needed, as this can lead to resource waste and reduced availability for other users.   
+Be mindful not to request more CPUs than needed, as this can lead to resource waste and reduced availability for other users.
 
 Typical example:
 
@@ -223,15 +245,15 @@ Typical example:
    #SBATCH --time=02:00:00
    #SBATCH --partition=gpu
    #SBATCH --qos=gpu
-   #SBATCH --gres=gpu:1 
+   #SBATCH --gres=gpu:1
    #SBATCH --nodes=1
    #SBATCH --ntasks=1
    #SBATCH --cpus-per-task=8
    #SBATCH --mem=82G
    #SBATCH --output=output.%j.out
 
-   module load GCC/12.3.0 
-   module load CUDA/12.4.0 
+   module load GCC/12.3.0
+   module load CUDA/12.4.0
    ./your_program
 
 If you’re unsure about how to strike the right balance between CPU and GPU usage, don’t hesitate to
@@ -275,25 +297,42 @@ Setting CUDA architecture flags
 
 When compiling CUDA programs, use architecture flags that match available GPUs:
 
-.. code-block:: make
+.. tabs::
 
-   -gencode=arch=compute_70,code=sm_70 \
-   -gencode=arch=compute_80,code=sm_80 \
-   -gencode=arch=compute_90,code=sm_90  
+    .. group-tab:: Stanage
 
-These flags together target the V100, A100, and H100 cards.
+        .. code-block:: make
+
+           -gencode=arch=compute_80,code=sm_80 \
+           -gencode=arch=compute_90,code=sm_90 \
+           -gencode=arch=compute_90,code=compute_90  # PTX fallback
+
+        These flags together target the A100, and H100 cards.
+
+    .. group-tab:: Bessemer
+
+        .. code-block:: make
+
+           -gencode=arch=compute_70,code=sm_70
+           -gencode=arch=compute_70,code=compute_70  # PTX fallback
+
+        These flags target the V100 cards.
+
+.. tip::
+
+   Reminder: ``code=compute_XX`` embeds PTX for future-proofing your binary.
 
 For further detail, see:
 
-* `Arnon Shimoni’s article <https://arnon.dk/matching-sm-architectures-arch-and-gencode-for-various-nvidia-cards/>`_
-* `CUDA documentation <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#options-for-steering-gpu-code-generation>`_
 * :ref:`CUDA on Stanage <cuda_stanage>`
 * :ref:`CUDA on Bessemer <cuda_bessemer>`
+* `Arnon Shimoni’s article <https://arnon.dk/matching-sm-architectures-arch-and-gencode-for-various-nvidia-cards/>`_
+* `CUDA documentation <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#options-for-steering-gpu-code-generation>`_
 
-.. _gpu-occupancy:
+.. _gpu-utilisation:
 
-Keeping GPUs occupied: data-loading tips
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Maximising GPU utilisation: data-loading tips
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Efficient data loading is crucial to avoid underutilising your GPU:
 
@@ -314,7 +353,7 @@ Profiling GPU usage
 
 Profiling tools can help you spot bottlenecks and optimise GPU workloads:
 
-* **NVIDIA Nsight Systems and Nsight Compute**: Visualise GPU performance and track kernel execution.
+* **NVIDIA Nsight Systems and Nsight Compute**: Visualise GPU performance and track kernel execution. (*_Note: Nsight Compute is not currently usable on Stanage*)
 * **PyTorch Profiler**: Integrated profiling for PyTorch workflows.
 
 For usage, see :ref:`CUDA on Stanage <cuda_stanage>`, Pytorch profiler `documentation <https://docs.pytorch.org/docs/stable/profiler.html>`_ and  `tutorials <https://pytorch.org/tutorials/recipes/recipes/profiler_recipe.html>`_ .
@@ -343,7 +382,7 @@ Exercises
    .. code-block:: bash
 
       nvidia-smi --query-gpu=index,timestamp,utilization.gpu,memory.total,memory.used,memory.free --format=csv -l 1 > gpu_stats_${SLURM_JOB_ID}.log &
-      
+
    For this short test, logging every second is appropriate.
 
    Also use ``${HPC_TOOLS}/analyse_gpu_log.sh`` to find maximum and average values. Try adding this to your batch script.
@@ -359,7 +398,7 @@ Exercises
 .. admonition:: GPU Exercise 5: Is Your Code GPU-Capable?
 
    Think about whether your application is designed to exploit GPU acceleration. Does it use:
-   
+
    - CUDA, ROCm, OpenCL, OpenMP offload, or OpenACC?
    - Libraries with GPU backends (e.g. cuBLAS, cuDNN, TensorFlow, PyTorch)?
 

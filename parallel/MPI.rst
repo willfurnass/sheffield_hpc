@@ -18,7 +18,7 @@ Overview
 
 * Always check resource usage with tools like ``seff JOBID`` to ensure efficient use of allocations.
 
-* If you are uncertain about scaling up, contact the `IT Services' Research 
+* If you are uncertain about scaling up, contact the `IT Services' Research
   and Innovation team <mailto:research-it@sheffield.ac.uk>`_ at an early stage.
 
 
@@ -28,36 +28,36 @@ MPI allows a program to run concurrently across many cluster nodes, although it 
 What is MPI?
 ------------
 
-The Message Passing Interface is a standard for passing data and other messages between running `processes <https://en.wikipedia.org/wiki/Process_(computing)>`_ 
-which may or may not be on a single computer.  
-It is commonly used on computer clusters as a means by which a set of related processes can work together in parallel on one or more tasks. 
+The Message Passing Interface is a standard for passing data and other messages between running `processes <https://en.wikipedia.org/wiki/Process_(computing)>`_
+which may or may not be on a single computer.
+It is commonly used on computer clusters as a means by which a set of related processes can work together in parallel on one or more tasks.
 These strands (processes) must therefore communicate data and other information by passing messages between each other.
 
-MPI is used on systems ranging from a few interconnected `Raspberry Pi's <http://thenewstack.io/installing-mpi-python-raspberry-pi-cluster-runs-docker/>`_ through to 
-the UK's national supercomputer, `Archer <http://www.archer2.ac.uk/>`_.  
+MPI is used on systems ranging from a few interconnected `Raspberry Pi's <http://thenewstack.io/installing-mpi-python-raspberry-pi-cluster-runs-docker/>`_ through to
+the UK's national supercomputer, `Archer <http://www.archer2.ac.uk/>`_.
 
 .. _mpi_impl:
 
 MPI Implementations
 -------------------
-The `Message Passing Interface (MPI) <http://mpi-forum.org/>`_ itself is just a *specification* for a message passing library.  
+The `Message Passing Interface (MPI) <http://mpi-forum.org/>`_ itself is just a *specification* for a message passing library.
 
-There are multiple implementations of this specification, each produced by a different organisation, 
+There are multiple implementations of this specification, each produced by a different organisation,
 including `OpenMPI <https://www.open-mpi.org/>`_ and `Intel MPI <https://www.intel.com/content/www/us/en/developer/tools/oneapi/mpi-library.html>`_.
-This documentation includes information on the MPI implementations available on :ref:`Stanage <stanage-parallel>` and :ref:`Bessemer <bessemer-parallel>`. 
+This documentation includes information on the MPI implementations available on :ref:`Stanage <stanage-parallel>` and :ref:`Bessemer <bessemer-parallel>`.
 On the Stanage cluster these implementations have been compiled in a way that allows them to make optimal use of the high-speed network infrastructure (OmniPath).
 If you are not sure which implementation to use then try the latest available version of OpenMPI.
 
 Batch MPI
 ---------
-To use MPI you need use ``module load`` to activate a particular :ref:`MPI implementation <mpi_impl>` 
+To use MPI you need use ``module load`` to activate a particular :ref:`MPI implementation <mpi_impl>`
 (or ``module load`` an application that itself loads an MPI implementation behind the scenes).
 
-Here is an example that requests 4 *slots* (CPU cores) with 8GB of RAM per slot then runs a program called ``executable`` 
-in the current directory using the OpenMPI library (version 4.1.4, built using version 12.2.0 of the gcc compiler).  
-It is assumed that ``executable`` was previously compiled using that exact same MPI library.  
+Here is an example that requests 4 *slots* (CPU cores) with 8GB of RAM per slot then runs a program called ``executable``
+in the current directory using the OpenMPI library (version 4.1.4, built using version 12.2.0 of the gcc compiler).
+It is assumed that ``executable`` was previously compiled using that exact same MPI library.
 
-.. code-block:: console 
+.. code-block:: console
 
    #!/bin/bash
    # Request one node
@@ -105,7 +105,7 @@ For information on other installed versions, see :ref:`stanage-parallel`.
 Requesting MPI Resources in Slurm
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To allocate resources for an MPI job, the typical format is: ``--nodes=1 --ntasks=N``. 
+To allocate resources for an MPI job, the typical format is: ``--nodes=1 --ntasks=N``.
 This ensures all MPI tasks run on a single machine—ideal for communication-intensive programs.
 
 When scaling to multiple nodes, use: ``--nodes=N --ntasks-per-node=n``. This launches **N x n** tasks,
@@ -143,7 +143,7 @@ Or via a Slurm script (``pi-mpi.sh``):
     #SBATCH --output=pi-mpi.out
     #SBATCH --nodes=1
     #SBATCH --ntasks=2
-    
+
     module load OpenMPI
     srun --export=ALL ./pi-mpi 1000000
 
@@ -161,13 +161,13 @@ You can inspect the output file using ``cat``:
   node032.pri.stanage.alces.network: This is rank 1 doing 500000 trials
   Calculating pi using 1000000 stochastic trials
   node032.pri.stanage.alces.network: This is rank 0 doing 500000 trials
-  Throws: 785491 / 1000000 Pi: 3.141964 
+  Throws: 785491 / 1000000 Pi: 3.141964
 
 .. important::
 
    Here we didn’t specify an OpenMPI version, so the system default was used.
    However, for reproducibility and to avoid runtime errors, **always load the same version of OpenMPI**
-   as you used when compiling the program.  
+   as you used when compiling the program.
    Mismatched major versions (e.g. 3.x vs 4.x) can cause MPI initialisation errors or crashes,
    and even minor differences can affect runtime behaviour.
 
@@ -214,13 +214,13 @@ Exercises
     Try these commands and observe their behaviour:
 
     .. code-block:: console
-    
+
         srun --cpus-per-task=4 hostname
         srun --ntasks=4 hostname
         srun --nodes=4 hostname
-    
+
     .. dropdown:: Solution
-    
+
        - The first uses 4 CPUs in one task.
        - The second starts 4 tasks, one CPU each.
        - The third won't work, as Stanage doesn't permit interactive jobs spanning multiple nodes.
@@ -234,27 +234,27 @@ Exercises
           #SBATCH --time=00:01:00
           #SBATCH --mem=2G
           #SBATCH --output=4node-test.out
-          
+
           srun hostname
 
        To submit: ``sbatch submit.sh``
 
        The output file will show that the tasks were spread across 4 nodes.
- 
+
 .. admonition:: Exercise 2: Run MPI with Various Slurm Options
 
     Try the ``pi-mpi.c`` :ref:`example <pi-mpi-example>` using:
-    
+
     1. ``--ntasks=4``
     2. ``--ntasks-per-node=4``
     3. ``--nodes=2 --ntasks-per-node=2``
-    
+
     .. dropdown:: Solution
-    
+
       You can test with:
-    
+
       .. code-block:: bash
-          
+
          module load OpenMPI
          srun --export=ALL --ntasks=4 --time=00:10:00 --mem=500M ./pi-mpi 2000000000
          srun --export=ALL --ntasks-per-node=4 --time=00:10:00 --mem=500M ./pi-mpi 2000000000
@@ -264,12 +264,12 @@ Exercises
       .. code-block:: slurm
 
          #!/bin/bash
-         #SBATCH --nodes=2 
-         #SBATCH --ntasks-per-node=2 
-         #SBATCH --time=00:10:00 
-         #SBATCH --mem=500M 
+         #SBATCH --nodes=2
+         #SBATCH --ntasks-per-node=2
+         #SBATCH --time=00:10:00
+         #SBATCH --mem=500M
          #SBATCH --output=pi-mpi-multi-node-test.out
-         
+
          module load OpenMPI
          srun --export=ALL ./pi-mpi 2000000000
 
@@ -291,10 +291,10 @@ Exercises
          ``ntasks=4``                   | 00:08      | 00:32     | 96.88
          ``ntasks-per-node=4``          | 00:09      | 00:36     | 86.11
          ``ntasks=2 ntasks-per-node=2`` | 00:17      | 01:08     | 60.29
-      
+
       - The slight difference between the first two cases is likely just due to small startup and timing artefacts, typical for short jobs.
       - The significant drop in efficiency in the third case is expected — it reflects the overhead of communicating across nodes, especially for small jobs.
-      
+
 
       .. tip::
 
@@ -304,16 +304,16 @@ Exercises
 .. admonition:: Exercise 3: Can Your Code Use MPI?
 
     Look at your code’s documentation or output. Keywords that hint at MPI support include:
-    
+
     * MPI
     * mpirun
     * mpiexec
     * distributed
     * rank
 
-.. admonition:: Exercise 4: 
-   
-  Explore our documentation pages on parallel implementations on  :ref:`Stanage <stanage-parallel>` and :ref:`Bessemer <bessemer-parallel>`.  
+.. admonition:: Exercise 4:
+
+  Explore our documentation pages on parallel implementations on  :ref:`Stanage <stanage-parallel>` and :ref:`Bessemer <bessemer-parallel>`.
   Pay attention to examples, best practices, and cluster-specific tweaks -
   they’ll give you a head start in deploying MPI effectively on our systems.
 
