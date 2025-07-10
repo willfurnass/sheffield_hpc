@@ -20,6 +20,7 @@ This guide will get you set up using the University's clusters
    filestore
    transferring-files
    scheduler/index
+   ../parallel/index
    scheduler/advanced/advanced_job_submission_and_control
    scheduler/advanced/advanced_job_analysis_and_profiling
    modules

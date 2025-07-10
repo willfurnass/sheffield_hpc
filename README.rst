@@ -23,16 +23,24 @@ each push to the ``master`` branch causes a `GitHub Actions <https://github.com/
 
 How to Contribute
 -----------------
-To contribute to this documentation, first you have to fork it on GitHub and clone it to your machine,
-see `Fork a Repo <https://help.github.com/articles/fork-a-repo/>`_ for the GitHub documentation on this process.
+To contribute to this documentation, you need to clone both the main repository and its submodule
+`hpc-examples <https://github.com/rcgsheffield/hpc-examples>`_ to your machine, use: ::
 
-Once you have the git repository locally on your computer,
+    git clone --recurse-submodules git@github.com:rcgsheffield/main-repo.git
+
+Once you have the git repository locally on your computer, 
 you will need to ensure you have Python and the Tox_ build tool installed.
 
 Please see our `Documentation Reference <https://docs.hpc.shef.ac.uk/en/latest/referenceinfo/admins/>`_ which is a valuable resource for admins of our documentation.
 
-Once you have made your changes and updated your Fork on GitHub you will need to `Open a Pull Request <https://help.github.com/articles/using-pull-requests/>`_.
+Once you have made your changes and pushed them to GitHub you will need to `Open a Pull Request <https://help.github.com/articles/using-pull-requests/>`_.
 All changes to the repository should be made through Pull Requests, including those made by the people with direct push access.
+
+**If you make changes to** ``hpc-examples``:
+
+#. Open a PR to ``hpc-examples/main`` first.
+#. Do not update the submodule pointer in ``sheffield_hpc`` until the PR is merged.
+#. Once merged, update the submodule pointer and create a separate PR in sheffield_hpc.
 
 Building the documentation on a local Windows machine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

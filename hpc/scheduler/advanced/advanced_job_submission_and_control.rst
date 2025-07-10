@@ -50,7 +50,7 @@ and more time is spent managing jobs than running your jobs. This will also nega
 * You only need to submit one job to run a series of very similar tasks;
 * These tasks are independent and do not all need to run at once so
   the job scheduler can efficiently run one or more queued tasks as the requested computational resources become available;
-* They are particularly useful for `Embarrassingly Parallel <https://en.wikipedia.org/wiki/Embarrassingly_parallel>`_ problems such as:
+* They are particularly useful for `embarrassingly parallel <https://en.wikipedia.org/wiki/Embarrassingly_parallel>`_ problems such as:
 
   * Monte Carlo simulations;
   * Parameter sensitivity analysis;
@@ -60,6 +60,10 @@ and more time is spent managing jobs than running your jobs. This will also nega
 
 * If a single task fails to run correctly it can be a pain to determine and re-submit failed tasks.
 * If the tasks are small, the scheduler will spend more time managing and queueing your tasks than computing them.
+
+.. seealso::
+
+    See our :ref:`tutorial <embarrassing>` with worked examples using job arrays for embarrassingly parallel tasks.
 
 .. warning::
 

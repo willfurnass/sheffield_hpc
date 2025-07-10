@@ -5,7 +5,7 @@
     :glob:
 
 **************
-Code snippets
+Code Snippets
 **************
 
 .. note::
@@ -268,6 +268,40 @@ Code blocks
     ::
         This is a literal code block
         
+------------------------------------    
+
+.. _hpc-examples-example:
+
+We have a public `hpc-examples repository <https://github.com/rcgsheffield/hpc-examples>`_ which we can utilise. See  :ref:`hpc-examples-admin` for more guidance.
+
+.. literalinclude:: /hpc-examples/test.sh
+   :language: bash
+
+::
+
+   .. literalinclude:: /hpc-examples/test.sh
+      :language: bash
+
+We can also include a selection of lines from a script:
+
+.. literalinclude:: /hpc-examples/test.sh
+   :language: bash
+   :lines: 3-8
+
+::
+
+   .. literalinclude:: /hpc-examples/test.sh
+      :language: bash
+      :lines: 3-8
+
+We can also download individual files using the following command:
+
+.. code-block:: bash
+     
+   wget https://raw.githubusercontent.com/rcgsheffield/hpc-examples/refs/heads/main/test.sh
+
+Where ``test.sh`` is the relative path to the file. 
+
 ------------------------------------    
 
 .. code-block::

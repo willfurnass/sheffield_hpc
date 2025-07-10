@@ -8,3 +8,7 @@ Parallel Systems on Stanage
     :glob:
 
     ./*
+
+.. seealso::
+    
+   See our :ref:`tutorial <parallel_MPI>` with worked examples for MPI-based parallel tasks.

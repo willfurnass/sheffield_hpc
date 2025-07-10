@@ -9,10 +9,10 @@ This section contains reference information for admins of https://docs.hpc.shef.
 .. toctree::
   :maxdepth: 1  
 
+  readme
   Contributing
   code-snippets
   software
   custom
+  hpc-examples  
   all_package_index
-  readme
-  
