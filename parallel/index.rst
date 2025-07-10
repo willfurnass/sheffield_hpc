@@ -30,7 +30,7 @@ This process can sometimes be tricky but is essential for optimising performance
 Types of Parallelisation:
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- **Embarrassingly Parallel Tasks:** Fully independent processes – use :ref:`job arrays <array_jobs>` for these.
+- **Embarrassingly Parallel Tasks:** Fully independent processes – use :ref:`job arrays <embarrassing>` for these.
 - **Multiprocessing or Multithreading(OpenMP):** Leverage :ref:`shared memory parallelism. <parallel_SMP>`
 - **Message Passing (MPI):** Use options for :ref:`MPI parallelism <parallel_MPI>`.
 - **GPU Computing:** Use options for :ref:`GPU-specific configurations <GPU_computing>`.
@@ -62,7 +62,7 @@ Frequently used for tasks requiring the same program to be run repeatedly with d
 - **Job Arrays:** SLURM provides an easy way to handle large batches of such tasks. Any program can be run this way if the problem can be divided into independent tasks. Each job in an array is assigned a unique identifier.
 - **Resource Allocation:** Specify resources for a single job and define the total number of jobs in the array.
 - **Use Cases:** Parameter sweeps, independent data processing tasks.
-- **See:** :ref:`SLURM Job Arrays <array_jobs>` .
+- **See:** :ref:`Embarrassingly Parallel <embarrassing>` .
 
 .. _smp-snippet:
 

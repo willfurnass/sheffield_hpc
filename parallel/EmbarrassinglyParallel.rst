@@ -7,7 +7,7 @@ Overview
 --------
 
 :ref:`Slurm job arrays<array_jobs>` enable you to submit jobs that run multiple times with the same Slurm parameters.
-Use the ``--array=`` Slurm argument to define array indices, e.g. ``--array=1-10,12-15``.
+Use the ``--array`` Slurm argument to define array indices, e.g. ``--array=1-10,12-15``.
 The ``$SLURM_ARRAY_TASK_ID`` environment variable provides each job with its
 corresponding array index.
 
@@ -336,8 +336,10 @@ Array Job Exercises
 See Also
 --------
 
+* Our reference material on :ref:`array_jobs`
 * If you are uncertain about scaling up, contact the `IT Services' Research
   and Innovation team <mailto:research-it@sheffield.ac.uk>`_ at an early stage.
+
 
 What's Next?
 ------------

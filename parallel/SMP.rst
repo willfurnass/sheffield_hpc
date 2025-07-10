@@ -14,7 +14,7 @@ Shared Memory Parallelism
         * Ensure your code uses the same number of CPUs you've requested. The ``$SLURM_CPUS_PER_TASK``
           environment variable provides this value.
 
-        * Always monitor your job (e.g., `seff JOBID`) to confirm it's using
+        * Always monitor your job (e.g., ``seff JOBID``) to confirm it's using
           resources as expected.
 
         * If you are uncertain about scaling up, contact the `IT Services' Research and Innovation
