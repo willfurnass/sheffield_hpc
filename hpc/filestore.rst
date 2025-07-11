@@ -159,7 +159,7 @@ There are separate ``fastdata`` areas on each cluster:
 
     :underline-bold:`Managing your files in fastdata areas`
 
-    We recommend users create their own personal folder in the ``/fastdata`` area.  As this doesn't exist by default, you can create it with safe permissions by running the command: ::
+    We recommend users create their own personal folder in the ``/mnt/parscratch`` area.  As this doesn't exist by default, you can create it with safe permissions by running the command: ::
 
         mkdir /mnt/parscratch/users/$USER
         chmod 700 /mnt/parscratch/users/$USER
