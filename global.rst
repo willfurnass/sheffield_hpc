@@ -10,3 +10,8 @@
 
 .. role:: underline-bold
     :class: underline-bold
+
+.. attention::
+
+    **Advance Notice: Bessemer will be retired at the end of the day on Friday 31st October 2025.**
+
