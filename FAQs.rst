@@ -315,7 +315,7 @@ Insufficient memory in an interactive session
 
 By default, an interactive session on Stanage provides you with 4016 MB of memory or on Bessemer with 2 GB (2048 MB) of memory.
 
-You can request more than this when running your ``srun`` command.
+You can request more than this when running your :ref:`srun <srun>` command.
 
 .. tabs::
 
