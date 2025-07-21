@@ -33,30 +33,25 @@ To start an interactive session with access to one GPU on a GPU node (:ref:`Stan
 
       .. code-block:: sh
 
-         srun --partition=gpu --qos=gpu --gres=gpu:1 --pty bash
+         srun --partition=gpu --qos=gpu --gres=gpu:1 --mem=82G --pty bash
 
    .. group-tab:: H100 GPU node(s)
 
       .. code-block:: sh
 
-         srun --partition=gpu-h100 --qos=gpu --gres=gpu:1 --pty bash
+         srun --partition=gpu-h100 --qos=gpu --gres=gpu:1 --mem=82G --pty bash
 
+Note: you can now request GPUs using ``--gpus=N`` on Stanage (as an alternative to ``--gres=gpu:N``), following a recent Slurm upgrade.
 
-Note it's not possible to request GPUs using ``--gpus=N`` on Stanage at this time (unlike on Bessemer).
+Interactive sessions default to just 2 GB of CPU RAM, which is far less than the 80 GB of GPU RAM available on each NVIDIA A100 or H100 GPU.
+This mismatch can cause problems — for instance, failing to transfer data between CPU and GPU due to insufficient CPU-side memory.
+
+The examples above request 82 GB CPU RAM, giving you a slight buffer above the GPUs 80 GB.
+
+Please also carefully consider your ``--cpus-per-task`` and ``--time`` requests - shorter sessions tend to start sooner.
 
 .. include:: /referenceinfo/imports/stanage/h100-gpu-opt-in-warning.rst
 
-Interactive sessions provide you with 2 GB of CPU RAM by default,
-which is significantly less than the amount of GPU RAM available on a single GPU.
-This can lead to issues where your session has insufficient CPU RAM to transfer data to and from the GPU.
-As such, it is recommended that you request enough CPU memory to communicate properly with the GPU e.g.
-
-.. code-block:: sh
-
-   # NB Each NVIDIA A100 (and H100) GPU in Stanage has 80GB of GPU RAM
-   srun --partition=gpu --qos=gpu --gres=gpu:1 --mem=82G --pty bash
-
-The above will give you 2GB more CPU RAM than the 80GB of GPU RAM available on an NVIDIA A100 (and H100).
 
 .. _gpu_jobs_stanage:
 
