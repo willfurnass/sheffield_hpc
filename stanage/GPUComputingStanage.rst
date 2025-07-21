@@ -67,7 +67,7 @@ e.g. for two GPUs use ``--gres=gpu:2``:
 
 .. tabs::
 
-   .. group-tab:: A100 node(s)
+   .. group-tab:: A100 GPU node(s)
 
       .. code-block:: sh
 
@@ -79,7 +79,7 @@ e.g. for two GPUs use ``--gres=gpu:2``:
 
          # Your code below...
 
-   .. group-tab:: H100 node(s)
+   .. group-tab:: H100 GPU node(s)
 
       .. code-block:: sh
 
