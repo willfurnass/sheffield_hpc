@@ -23,6 +23,12 @@ Interactive use of the GPUs
 
   See :ref:`requesting an interactive session on slurm <submit_interactive_stanage>` if you're not already familiar with the concept.
 
+.. attention::
+
+   Interactive use of GPUs is strongly discouraged, as they are a valuable and limited resource.
+   Please use interactive GPU sessions only for short debugging, essential visualisation, or compiling GPU-enabled software.
+   All other GPU workloads must be submitted as :ref:`batch jobs <gpu_jobs_stanage>`.
+
 To start an interactive session with access to one GPU on a GPU node (:ref:`Stanage hardware specifications <stanage-gpu-specs>`):
 
 
