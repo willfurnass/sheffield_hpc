@@ -72,7 +72,7 @@ To see available GPU resources:
 
 .. code-block:: bash
 
-   sinfo -s -O NodeList,NodeAIOT,Gres,GresUsed
+   sinfo -p gpu,gpu-h100 -O NodeList,NodeAIOT,Gres,GresUsed
 
 The columns of ``NODES(A/I/O/T)`` are the number of nodes that are currently **allocated**, **idle** (free for jobs), **other** states (e.g., down, draining, reserved), and **total**. The ``GRES`` column shows the number of GPUs available for each node in that row. The ``GRES_USED`` column shows the number of GPUs currently in use on the nodes on that row. For example, ``gpu:a100:4(IDX:0-3)`` shows that four A100 GPUs are in use in each node and hence none are available for new jobs, whilst ``gpu:h100:0(IDX:N/A)`` shows that zero H100 GPUs are in use, and hence two are available for new jobs on each node shown on that row.
 
@@ -353,7 +353,7 @@ Profiling GPU usage
 
 Profiling tools can help you spot bottlenecks and optimise GPU workloads:
 
-* **NVIDIA Nsight Systems and Nsight Compute**: Visualise GPU performance and track kernel execution. (*_Note: Nsight Compute is not currently usable on Stanage*)
+* **NVIDIA Nsight Systems and Nsight Compute**: Visualise GPU performance and track kernel execution. (*Note: Nsight Compute is not currently usable on Stanage*)
 * **PyTorch Profiler**: Integrated profiling for PyTorch workflows.
 
 For usage, see :ref:`CUDA on Stanage <cuda_stanage>`, Pytorch profiler `documentation <https://docs.pytorch.org/docs/stable/profiler.html>`_ and  `tutorials <https://pytorch.org/tutorials/recipes/recipes/profiler_recipe.html>`_ .
