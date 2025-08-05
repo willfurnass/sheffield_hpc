@@ -1,0 +1,105 @@
+.. _nl20250801:
+
+News - 2025-08-01
+=================
+
+Hello everyone! We are finally past the solstice and as the days slowly get shorter I am always reminded of a snippet of Stephanie Laird's poem "Midsummer Eve" :
+
+.. line-block:
+
+|   "And as the wheel turns to shorter days,
+|   May well-being be yours in the coming phase."
+
+This month's newsletter details:
+
+- Advanced notice of Bessemer decommissioning
+- Revamped tutorial-style Parallel Computing Docs
+- Outcomes of the Stanage maintenance period
+- Summer training courses and opportunities
+- Update on unexpected job failures
+
+Bessemer Decommissioning
+------------------------
+
+Our Bessemer cluster is planned to be decommissioned on **Friday 31st October 2025**. Bessemer has been in service for over 6 years and has served us well, but it is now time to retire it. To prepares for this, we are asking all users to:
+
+- Transfer all relevant/needed data/files/models (in ``/home`` & ``/fastdata``) to Stanage. Bessemer ``/home`` & ``/fastdata`` areas will become inaccessible post 31st October 2025
+- Confirm that the software you currently use on Bessemer is available on Stanage (do not assume it is) - if it's not then you need to advise us as soon as possible so we can look into getting it installed on Stanage. You can check if the software available on Stanage by running ``module spider <SOFTWARE_NAME>`` on Stanage or by looking at the `HPC documentation <https://docs.hpc.shef.ac.uk/en/latest/stanage/software/stacks/el7-icelake-znver-stanage/All/index.html>`_ . If you need new software installed, please raise a ticket via research-it@sheffield.ac.uk.
+- Test your workloads on Stanage
+- Request your Research Storage (``/shared``) to be mounted on Stanage (if you have not already done so). You will also need to confirm that your ``/shared`` areas do not have any sensitive information stored. Please raise a ticket to request this & confirm that you do not have sensitive data stored there
+
+.. warning::
+    
+     Shared areas are only available on Stanage _login_ nodes, **NOT** worker nodes as they are on Bessemer. You will need to amend your workflows to take this change into account.
+
+In the meantime, please do not hesitate to reach out if you have any questions or concerns. Remember, the earlier you migrate to Stanage, the less stressful it will be to you and the HPC support team in October.
+
+Revamped Parallel Computing Docs
+---------------------------------
+
+We have made several updates to the Parallel Computing documentation to improve clarity and usability. Key changes include:
+
+- **Embarrassingly Parallel:** Job arrays and simple parallel strategies
+
+- **Shared Memory Parallelism:** OpenMP and multi-threading
+
+- **MPI for Multi-node and Parallel Jobs:** distributed memory jobs across nodes
+
+- **GPU Computing:** harnessing GPU acceleration with Slurm and CUDA
+
+These updates are designed to help users better understand and utilise the parallel computing capabilities of our HPC systems. We encourage all users to review the updated documentation at `Parallel Computing Docs <https://docs.hpc.shef.ac.uk/en/latest/parallel/index.html?utm_source=newsletter&utm_medium=email&utm_campaign=august2025>`_.
+
+We’d really appreciate your feedback - please get in touch via `<research-it@sheffield.ac.uk>`_.
+
+Upcoming Training
+-----------------
+
+Below are our key research computing training dates for August and the rest of this semester. You can register for these courses and more at  `MyDevelopment <https://mydevelopment.csod.com/>`_ . 
+
+.. warning::
+    For our taught postgraduate users who don't have access to MyDevelopment, please email us at `<researchcomputing@sheffield.ac.uk>`_ with the course you want to register for, and we should be able to help you.
+
+- 21/08/2025 - **High-Performance Computing**. This course will cover the basics of using the HPC cluster, including job submission, file management, and basic parallel programming concepts. 
+
+Below are some training from our third party collaborators:
+
+EPCC, who provide the ARCHER2 HPC service, are running the following training session:
+
+- 07/08/2025 -  **Measuring hardware performance counters on ARCHER2 using LIKWID**. You can `register for the course here <https://www.archer2.ac.uk/training/courses/250807-likwid-vt/>`_ . 
+
+The N8 Centre of Excellence in Computationally Intensive Research, are running the following in person training session:
+
+- 18 - 19 Aug 2025 - **Message-Passing Programming with MPI**. You can `register for the course <https://n8cir.org.uk/events/message-passing-programming-with-mpi/>`_ .
+
+Update following the recent Stanage maintenance
+-----------------------------------------------
+
+From the  30th June to the 7th July 2025, Stanage was taken offline for a planned maintenance period. During this time, we successfully completed the following:
+
+- Upgrade the Slurm job scheduler to version 24.05.8.
+- Expanded the home directory area as it was getting full (Please note that the 50GB quota limit on /home will remain in place).
+- Upgraded drivers and firmware for the nodes and GPUs.
+
+We were unfortunately unable to address the ongoing Omni-Path-related issues during this maintenance window and our investigations into these are continuing.
+
+We would like to thank you for your patience during this period and apologise for any inconvenience caused. We are pleased to report that the upgrade went smoothly and Stanage is now back online with improved performance and stability.
+
+Unexpected job failures
+-----------------------
+
+For information, there is currently an issue on Stanage where jobs can fail due to hardware/driver issues. This is still under investigation and IT Services are working with a hardware vendor to determine the root cause.
+
+When this issue occurs worker nodes can either unexpectedly reboot or the network interface used for Lustre filesystem (/mnt/parscratch) traffic and for MPI inter-process communications can become unavailable.
+
+At present there is a strong correlation between occurrences of the issue and certain types of predominantly jobs that use MPI for inter-process communication but are single-node jobs so shared memory segments are used for efficient data transfers between processes, but reliably reproducing the problem has been non-trivial.
+
+We will keep users informed of progress in resolving this issue.
+
+Useful Links
+------------
+
+- :ref:`HPC documentation  <hpc-home>`
+- :ref:`Citing the HPC services in publications.  <citing>`
+- `RSE code clinics <https://rse.shef.ac.uk/support/code-clinic/>`_ . These are fortnightly support sessions run by the RSE team and IT Services' Research IT and support team. They are open to anyone at TUOS writing code for research to get help with programming problems and general advice on best practice.
+- `Training and courses <https://sites.google.com/sheffield.ac.uk/research-training/>`_ (You must be logged into the main university website to view).
+
