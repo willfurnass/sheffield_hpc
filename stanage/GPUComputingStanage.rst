@@ -66,7 +66,8 @@ Submitting GPU batch jobs
 
 .. note::
 
-  See :ref:`submitting jobs on slurm <submit_job_stanage>` if you're not already familiar with the concept.
+    |  See :ref:`submitting jobs on slurm <submit_job_stanage>` if you're not already familiar with the concept.
+    |  Each user can use at most 12 GPUs concurrently (A100 + H100 combined); further jobs will wait until prior ones release GPUs. (*Reduced from 16 in Aug 2025.*)
 
 To run batch jobs on GPU nodes, ensure your job submission script includes a request for GPUs,
 e.g. for two GPUs use ``--gres=gpu:2``:
@@ -143,4 +144,5 @@ Training materials
 ------------------
 
 * The Research Software Engineering team have developed an undergraduate teaching module on CUDA;
+  
   `lecture notes and lecture recordings for that module are accessible here <https://rse.shef.ac.uk/training/com4521>`_ for anyone with a University account.
