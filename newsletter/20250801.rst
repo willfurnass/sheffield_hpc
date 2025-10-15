@@ -21,7 +21,7 @@ This month's newsletter details:
 Bessemer Decommissioning
 ------------------------
 
-Our Bessemer cluster is planned to be decommissioned on **Friday 31st October 2025**. Bessemer has been in service for over 6 years and has served us well, but it is now time to retire it. To prepares for this, we are asking all users to:
+Our Bessemer cluster is planned to be decommissioned on **Friday 31st October 2025** at 17:00. Bessemer has been in service for over 6 years and has served us well, but it is now time to retire it. To prepares for this, we are asking all users to:
 
 - Transfer all relevant/needed data/files/models (in ``/home`` & ``/fastdata``) to Stanage. Bessemer ``/home`` & ``/fastdata`` areas will become inaccessible post 31st October 2025
 - Confirm that the software you currently use on Bessemer is available on Stanage (do not assume it is) - if it's not then you need to advise us as soon as possible so we can look into getting it installed on Stanage. You can check if the software available on Stanage by running ``module spider <SOFTWARE_NAME>`` on Stanage or by looking at the `HPC documentation <https://docs.hpc.shef.ac.uk/en/latest/stanage/software/stacks/el7-icelake-znver-stanage/All/index.html>`_ . If you need new software installed, please raise a ticket via research-it@sheffield.ac.uk.
