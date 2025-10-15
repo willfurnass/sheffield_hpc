@@ -13,5 +13,5 @@
 
 .. attention::
 
-    **Advance Notice: Bessemer will be retired at the end of the day on Friday 31st October 2025.**
+    **Advance Notice: Bessemer will be retired on Friday 31st October 2025 at 17:00.**
 
