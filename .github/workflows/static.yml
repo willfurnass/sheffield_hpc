@@ -27,10 +27,6 @@ jobs:
   # Build pages per branch we want!
   build-latest:
     runs-on: ubuntu-latest
-    strategy:
-      # Spawn and run a job for Python 3.10 version.
-      matrix:
-        python: ["3.10"]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -42,7 +38,7 @@ jobs:
       - name: Set up a version of Python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python }}
+          python-version: 3.13
 
       # Install Tox for build stage.
       - name: Upgrade pip and install Tox
@@ -50,9 +46,9 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install tox
 
-      # Run build stage - py37 should suffice.
+      # Run build stage
       - name: Build the pages
-        run: tox -e py310
+        run: tox -e py313
 
       # Match old RTD directories pathing.
       - name: Move built files
@@ -82,10 +78,6 @@ jobs:
 
   build-el9-beta:
     runs-on: ubuntu-latest
-    strategy:
-      # Spawn and run a job for Python 3.10 version.
-      matrix:
-        python: ["3.10"]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -97,7 +89,7 @@ jobs:
       - name: Set up a version of Python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python }}
+          python-version: 3.13
 
       # Install Tox for build stage.
       - name: Upgrade pip and install Tox
@@ -105,9 +97,9 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install tox
 
-      # Run build stage - py37 should suffice.
+      # Run build stage
       - name: Build the pages
-        run: tox -e py310
+        run: tox -e py313
 
       # Match old RTD directories pathing.
       - name: Move built files
@@ -137,10 +129,6 @@ jobs:
 
   build-Parallel-section-refactor_branch:
     runs-on: ubuntu-latest
-    strategy:
-      # Spawn and run a job for Python 3.10 version.
-      matrix:
-        python: ["3.10"]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -152,7 +140,7 @@ jobs:
       - name: Set up a version of Python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python }}
+          python-version: 3.13
 
       # Install Tox for build stage.
       - name: Upgrade pip and install Tox
@@ -160,9 +148,9 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install tox
 
-      # Run build stage - py37 should suffice.
+      # Run build stage
       - name: Build the pages
-        run: tox -e py310
+        run: tox -e py313
 
       # Match old RTD directories pathing.
       - name: Move built files

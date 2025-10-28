@@ -8,11 +8,6 @@ on:
 jobs:
   test_docs_build:
     runs-on: ubuntu-latest
-    strategy:
-      # Spawn and run a job for each of two supported Python 3.x versions
-      matrix:
-        python: ["3.10", "3.11"]
-
     steps:
       - uses: actions/checkout@v4
         with:
@@ -21,7 +16,7 @@ jobs:
       - name: Set up a version of Python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python }}
+          python-version: 3.13
 
       - name: Upgrade pip and install Tox
         run: |

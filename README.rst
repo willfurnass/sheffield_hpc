@@ -56,26 +56,25 @@ Building the documentation on a local Windows machine
 
 #. Create a new *conda environment* for building the documentation by running the following from this window: ::
 
-    conda create --name sheffield_hpc python=3.10
+    conda create --name sheffield_hpc python=3.13
     conda activate sheffield_hpc	# . activate sheffield_hpc on older versions of conda
     pip install tox
 
 #. To build the HTML documentation run: ::
 
-    tox -e py310
+    tox -e py313
 
 The output should be written to ``./_build/html``.
 
 Building the documentation on a local Linux machine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Ensure one of Python 3.10 or 3.11 are installed.
+#. Ensure that Python 3.13 is installed.
 #. Ensure the Tox_ build tool is installed and can be used/seen by your chosen Python interpreter.
 
 #. Run Tox to create an isolated Python virtual environment then build documentation: ::
 
-     tox -e py310
-     tox -e py311
+     tox -e py313
 
 The output should be written to ``./_build/html``.
 
@@ -86,13 +85,13 @@ Building the documentation on a local Mac machine
 #. Install the Python packages needed to build the HTML documentation.  If you are using (mini)conda create a new *conda environment* for building the documentation by running: ::
 
     export PATH=${HOME}/miniconda3/bin:$PATH
-    conda create -n sheffield_hpc python=3.10
+    conda create -n sheffield_hpc python=3.13
     conda activate sheffield_hpc	# . activate sheffield_hpc on older versions of conda
     pip install tox
 
 #. To build the HTML documentation run::
 
-    tox -e py310
+    tox -e py313
 
 The output should be written to ``./_build/html``.
 
@@ -101,21 +100,21 @@ Check external links
 
 Do this with: ::
 
-   tox -e py310-linkcheck
+   tox -e py313-linkcheck
 
 Continuous build and serve
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Build and serve the site and automatically rebuild when source files change: ::
 
-   tox -e py310-livehtml
+   tox -e py313-livehtml
 
 Testing the building of the documentation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The validity of the reStructuredText in this repo and the ability to convert that to HTML with Sphinx can be tested in three ways:
 
-* Locally by contributors when they run e.g. ``tox -e py310-livehtml``
+* Locally by contributors when they run e.g. ``tox -e py313-livehtml``
 * By a `GitHub Actions <https://github.com/rcgsheffield/sheffield_hpc/actions/>`__ Workflow each time a contributor creates or updates a Pull Request.
 * By a `GitHub Actions <https://github.com/rcgsheffield/sheffield_hpc/actions>`__) Workflow on each push to the ``master`` branch.
 
